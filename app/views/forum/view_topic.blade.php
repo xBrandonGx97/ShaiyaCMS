@@ -261,15 +261,16 @@
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        postID:    postID,
+                        postID,
                         likedUser: $("#likedUser").val(),
                         uid:       curTrgt.data("uid"),
                         action:    isLiked ? "unlike" : "like"
                     })
                 })
-                .then(response => {
+                .then(r => r.json())
+                /*.then(response => {
                     return response.json()
-                })
+                })*/
                 .then(data => {
                     // Work with JSON data here
                     //console.log(data)
