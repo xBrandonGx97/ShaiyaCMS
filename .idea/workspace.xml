@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/post.like.php" line="26" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d73ac2fc-d219-4a35-b24c-f5aecc646fdd" name="Default Changelist" comment="" />
+    <list default="true" id="d73ac2fc-d219-4a35-b24c-f5aecc646fdd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cache/ec56c9c145b70d3e9ef94571e65da14b476bb8fc.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/ec56c9c145b70d3e9ef94571e65da14b476bb8fc.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -28,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="2544">
               <caret line="106" column="38" lean-forward="true" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
             </state>
           </provider>
@@ -37,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/forum.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
+            <state relative-caret-position="2736">
               <caret line="408" column="8" selection-start-line="408" selection-start-column="8" selection-end-line="423" selection-end-column="9" />
               <folding>
                 <element signature="n#__construct#0;n#forum#0;n#!!top" />
@@ -56,7 +59,6 @@
                 <element signature="n#userStatus#0;n#forum#0;n#!!top" />
                 <element signature="n#loginStatus#0;n#forum#0;n#!!top" />
                 <element signature="n#getUserRoles#0;n#forum#0;n#!!top" />
-                <element signature="e#6557#7146#0#PHP" />
                 <element signature="n#ifCanCreateForum#0;n#forum#0;n#!!top" />
                 <element signature="n#isMod#0;n#forum#0;n#!!top" />
                 <element signature="n#getUserTitle#0;n#forum#0;n#!!top" />
@@ -117,6 +119,9 @@
     <replaceStrings>
       <replace>'</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -203,36 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="my_own_router" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_own_router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_own_router" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_own_router" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_own_router" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_own_router" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_own_router" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_own_router" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,17 +274,18 @@
       <workItem from="1582572727132" duration="46562000" />
       <workItem from="1582662431625" duration="49603000" />
       <workItem from="1582716237034" duration="7646000" />
+      <workItem from="1582746471309" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217072000" />
+    <option name="totallyTimeSpent" value="217084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33742005" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3411514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -458,23 +436,11 @@
         <state relative-caret-position="-2880" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../sanguto/includes/Webmall.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-337">
-          <caret line="668" column="42" lean-forward="true" selection-start-line="668" selection-start-column="42" selection-end-line="668" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../sanguto/includes/Webmall.class.php" />
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/support/send_ticket.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../sanguto/tieredspender.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="266" column="39" selection-start-line="266" selection-start-column="39" selection-end-line="266" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../sanguto/tieredspender.php" />
     <entry file="file://$PROJECT_DIR$/public/resources/themes/godlike/vendor/bower_components/ionicons/css/ionicons.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -718,16 +684,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="2544">
           <caret line="106" column="38" lean-forward="true" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/forum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="2736">
           <caret line="408" column="8" selection-start-line="408" selection-start-column="8" selection-end-line="423" selection-end-column="9" />
           <folding>
             <element signature="n#__construct#0;n#forum#0;n#!!top" />
@@ -746,7 +719,6 @@
             <element signature="n#userStatus#0;n#forum#0;n#!!top" />
             <element signature="n#loginStatus#0;n#forum#0;n#!!top" />
             <element signature="n#getUserRoles#0;n#forum#0;n#!!top" />
-            <element signature="e#6557#7146#0#PHP" />
             <element signature="n#ifCanCreateForum#0;n#forum#0;n#!!top" />
             <element signature="n#isMod#0;n#forum#0;n#!!top" />
             <element signature="n#getUserTitle#0;n#forum#0;n#!!top" />
@@ -765,13 +737,6 @@
             <element signature="n#isTopicPinned#0;n#forum#0;n#!!top" />
             <element signature="n#isTopicClosed#0;n#forum#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
