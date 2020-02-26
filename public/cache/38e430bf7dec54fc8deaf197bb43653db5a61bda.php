@@ -159,25 +159,14 @@
                                     $data['forum']->displayNameToUserUID($post->PostAuthor);
                                     $postUserUID    =   $data['forum']->convertedName->UserUID;
                                  ?>
-                                <?php if($data['forum']->checkPost==true): ?>
-                                        <span class="nk-forum-action-btn heart like-button like" data-liked="true" data-id="<?php echo e($post->PostID); ?>" data-uid="<?php echo e($post->PostID); ?>~<?php echo e($data['User']['UserUID']); ?>~<?php echo e($postUserUID); ?>~<?php echo e($post->PostAuthor); ?>">
-                                            <span class="nk-action-heart">
-                                                <span class="num<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->postLikes->Likes); ?></span>
-                                                <span class="like-icon ion-android-favorite"></span>
-                                                <span class="liked-icon ion-android-favorite"></span>
-                                                <text class="like-text<?php echo e($post->PostID); ?>">Unlike</text>
-                                            </span>
-                                        </span>
-                                    <?php else: ?>
-                                        <span class="nk-forum-action-btn heart like-button like" data-liked="false" data-id="<?php echo e($post->PostID); ?>" data-uid="<?php echo e($post->PostID); ?>~<?php echo e($data['User']['UserUID']); ?>~<?php echo e($postUserUID); ?>~~<?php echo e($post->PostAuthor); ?>">
-                                            <span class="nk-action-heart">
-                                                <span class="num<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->postLikes->Likes); ?></span>
-                                                <span class="like-icon ion-android-favorite-outline"></span>
-                                                <span class="liked-icon ion-android-favorite"></span>
-                                                <text class="like-text<?php echo e($post->PostID); ?>">Like</text>
-                                            </span>
-                                        </span>
-                                <?php endif; ?>
+                                <span class="nk-forum-action-btn heart like-button like" data-liked="<?php echo e($data['forum']->checkPost ? 'true' : 'false'); ?>" data-id="<?php echo e($post->PostID); ?>" data-uid="<?php echo e($post->PostID); ?>~<?php echo e($data['User']['UserUID']); ?>~<?php echo e($postUserUID); ?>~<?php echo e($post->PostAuthor); ?>">
+                                    <span class="nk-action-heart">
+                                        <span class="num<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->postLikes->Likes); ?></span>
+                                        <span class="<?php echo e($data['forum']->checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline'); ?>"></span>
+                                        <span class="liked-icon ion-android-favorite"></span>
+                                        <text class="like-text<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->checkPost ? 'Unlike' : 'Like'); ?></text>
+                                    </span>
+                                </span>
                             <?php else: ?>
                                 <span class="nk-forum-action-btn">
                                     <span class="nk-action-heart">
@@ -253,51 +242,48 @@
             $(".like-button").click(e => {
                 e.preventDefault();
 
-                const $this = $(e.currentTarget);
-                const isLiked = $this.data('liked');
-                let action = isLiked ? "unlike" : "like";
-                let postID  =   $this.data('id');
-                let likedUser =  $("#likedUser").val();
-                let uid = $this.data("uid");
-                console.log(typeof(isLiked));
-                /*fetch('/resources/jquery/addons/ajax/site/forum/post.like.php', {
+                const curTrgt = $(e.currentTarget);
+                const isLiked = curTrgt.data('liked');
+                let postID  =   curTrgt.data('id');
+                //console.log(typeof(isLiked));
+
+                // Replace ./data.json with your JSON feed
+                fetch('/resources/jquery/addons/ajax/site/forum/post.like.php', {
                     method: 'post',
+                    mode: "same-origin",
+                    credentials: "same-origin",
                     headers: {
-                      "Content-type": "application/x-www-form-urlencoded"
+                        "Content-Type": "application/json"
                     },
-                    body: 'postID='+postID+'&likedUser='+likedUser+'&uid='+uid+'&action='+action
+                    body: JSON.stringify({
+                        postID:    postID,
+                        likedUser: $("#likedUser").val(),
+                        uid:       curTrgt.data("uid"),
+                        action:    isLiked ? "unlike" : "like"
+                    })
                 })
-                .then(response => response.text())
-                .then(function (data) {
-                    console.log(data);
+                .then(response => {
+                    return response.json()
                 })
-                .catch(function (error) {
-                    console.log('Failed', error);
-                });*/
-                $.post({
-                        url: '/resources/jquery/addons/ajax/site/forum/post.like.php',
-                        data: {
-                            postID:    $this.data('id'),
-                            likedUser: $("#likedUser").val(),
-                            uid:       $this.data("uid"),
-                            action:    action,
-                        },
-                        success: function(response) {
-                            const parse = JSON.parse(response);
-                            $('li.' + postID).prepend(parse.errors);
-                            console.log("counter:"+parse.newCount);
-                            $(".num" + postID).text(parse.newCount);
-                            $(".nk-forum-topic-author-likes" + postID).text("Likes: " + parse.newCount);
-                            if (parse.liked === 'true') {
-                                $this.data("liked", true);
-                                $(".like-text" + postID).text("Unlike");
-                            } else {
-                                $this.data("liked", false);
-                                $(".like-text" + postID).text("Like");
-                            }
-                        }
+                .then(data => {
+                    // Work with JSON data here
+                    //console.log(data)
+                    $('li.' + postID).prepend(data.errors);
+                    //console.log("counter:"+data.newCount);
+                    $(".num" + postID).text(data.newCount);
+                    $(".nk-forum-topic-author-likes" + postID).text("Likes: " + data.newCount);
+                    if (data.liked === 'true') {
+                        curTrgt.data("liked", true);
+                        $(".like-text" + postID).text("Unlike");
+                    } else {
+                        curTrgt.data("liked", false);
+                        $(".like-text" + postID).text("Like");
+                    }
                 })
-            });
+                .catch(err => {
+                    // Do something for an error here
+                })
+            })
             $(document).on('click', '.open_discord_modal', function (e) {
                 e.preventDefault();
 

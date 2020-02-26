@@ -8,7 +8,6 @@
     <?php echo $__env->make('inc.cms.rightNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php echo $__env->make('inc.cms.mobileNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="nk-main">
-        man u r gay tbh xd
         <div class="nk-gap-4"></div>
         <div class="container-fluid">
             <div class="row">
