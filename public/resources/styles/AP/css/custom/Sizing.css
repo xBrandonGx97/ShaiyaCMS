@@ -1,0 +1,15 @@
+/* 
+	Title: ws_Sizing.css
+	Author: Bradley Sweeten
+	Rel: Custom Sizing Stylesheet
+	Date: 04.11.2017
+*/
+
+/* Sizing in PX*/
+.w_100_px{width:100px !important;}
+.w_200_px{width:200px !important;}
+.w_300_px{width:300px !important;}
+
+/* Sizing in % */
+.w_50_p{width:50% !important;}
+.w_100_p{width:100% !important;}

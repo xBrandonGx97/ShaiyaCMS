@@ -1,0 +1,15 @@
+/**************************************************************************************************************
+	Title: Keyframes.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Keyframes Stylesheet
+	Date: 01.19.2019	1418
+**************************************************************************************************************/
+
+@keyframes shadow-pulse{
+	0%{
+		box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+	}
+	100%{
+		box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+	}
+}

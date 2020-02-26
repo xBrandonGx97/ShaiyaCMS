@@ -1,0 +1,136 @@
+td{
+/*	color: #008aff; */
+}
+th{
+	text-align: center;
+	color: #004784;
+}
+/*
+a{
+	color: #147ac1;
+	text-decoration: none;
+}
+a:visited{
+	color: #147ac1;
+	text-decoration: none;
+}
+a:hover{
+	color: #005c9c;
+	text-decoration: underline;
+}
+*/
+td.i0{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px 3px;
+	width: 28px;
+	height: 16px;
+}
+td.i1{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -26px;
+	width: 28px;
+	height: 16px;
+}
+td.i2{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -70px;
+	width: 28px;
+	height: 16px;
+}
+td.i3{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -102px;
+	width: 28px;
+	height: 16px;
+}
+td.i4{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -134px;
+	width: 28px;
+	height: 16px;
+}
+td.i5{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -166px;
+	width: 28px;
+	height: 16px;
+}
+td.i6{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -198px;
+	width: 28px;
+	height: 16px;
+}
+td.i7{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -230px;
+	width: 28px;
+	height: 16px;
+}
+td.i8{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -262px;
+	width: 29px;
+	height: 16px;
+}
+td.i9{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -294px;
+	width: 28px;
+	height: 16px;
+}
+td.i10{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -326px;
+	width: 28px;
+	height: 16px;
+}
+td.i11{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -358px;
+	width: 28px;
+	height: 16px;
+}
+td.i12{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -390px;
+	width: 28px;
+	height: 16px;
+}
+td.i13{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -422px;
+	width: 28px;
+	height: 16px;
+}
+td.i14{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -454px;
+	width: 28px;
+	height: 16px;
+}
+td.i15{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -486px;
+	width: 28px;
+	height: 16px;
+}
+td.i16{
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 3px -518px;
+	width: 28px;
+	height: 16px;
+}
+td.i17{ /* bow */
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 1px -991px;
+	width: 26px;
+	height: 31px;
+}
+td.i18{ /* shield */
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 1px -1031px;
+	width: 26px;
+	height: 27px;
+}
+td.i19{ /* claws */
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 1px -1074px;
+	width: 24px;
+	height: 24px;
+}
+td.i20{ /* spear */
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 1px -1114px;
+	width: 24px;
+	height: 24px;
+}
+td.i21{ /* mage */
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 1px -1156px;
+	width: 24px;
+	height: 24px;
+}
+td.i22{ /* priest */
+	background: url('../images/misc/pvp_rank_sprite.png') no-repeat 1px -1196px;
+	width: 24px;
+	height: 24px;
+}

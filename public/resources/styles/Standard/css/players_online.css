@@ -1,0 +1,116 @@
+body{
+	background:#000;
+}
+.playerOnlineTable .defaultTh{
+	color:rgba(0,0,0,1);
+	background-color:rgba(255,255,255,0.5);
+	box-shadow:inset 3px 3px 9px rgba(255,255,255,0.9),inset -2px -2px 3px rgba(0,0,0,0.9),inset 2px 2px 3px rgba(255,255,255,0.8),2px 2px 3px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(0,0,0,0.8);
+	border-radius:5px;
+	padding:3px 6px;
+	text-shadow:1px 1px rgba(255,255,255,0.6);
+}
+.playerOnlineTable .defaultTd{
+	background-color:rgba(0,0,0,0.6);
+	box-shadow:inset 2px 2px 3px rgba(0,0,0,0.8), inset 1px 1px 2px rgba(0,0,0,1);
+	border:2px solid rgba(255,255,255,0.5);
+	border-radius:5px;
+	color:rgba(255,255,255,0.8);
+	text-shadow:1px 1px 2px rgba(0,0,0,0.7),1px 0 rgba(0,0,0,1),-1px 0 rgba(0,0,0,1),0 -1px rgba(0,0,0,1),0 1px rgba(0,0,0,1);
+	padding:3px 6px;
+}
+
+/*///////////////////////////////////////////
+///////////		Themes		/////////////////
+///////////////////////////////////////////*/
+
+.black60bg{	
+	background-color:rgba(0,0,0,0.6);
+}
+.blueGlassBoxShadow{
+	box-shadow:inset 3px 3px 9px rgba(0,175,255,0.9),inset -2px -2px 3px rgba(0,0,0,0.9),inset 2px 2px 3px rgba(0,175,255,0.5),2px 2px 3px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(0,175,255,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.purpleGlassBoxShadow{
+	box-shadow:inset 3px 3px 9px rgba(175,0,255,0.9),inset -2px -2px 3px rgba(0,0,0,0.9),inset 2px 2px 3px rgba(175,0,255,0.5),2px 2px 3px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(175,0,255,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.orangeGlassBoxShadow{
+	box-shadow:inset 3px 3px 9px rgba(255,153,0,0.9),inset -2px -2px 3px rgba(0,0,0,0.9),inset 2px 2px 3px rgba(255,153,0,0.5),2px 2px 3px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(255,153,0,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.greenGlassBoxShadow{
+	box-shadow:inset 3px 3px 9px rgba(76,255,0,0.9),
+			   inset -2px -2px 3px rgba(0,0,0,0.9),
+			   inset 2px 2px 3px rgba(7,255,0,0.5),
+			   2px 2px 3px rgba(0,0,0,0.8), 1px 1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(76,255,0,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+
+.blueGlassInsetBoxShadow{
+	box-shadow:inset -3px -3px 9px rgba(0,175,255,0.9),
+			   inset 2px 2px 3px rgba(0,0,0,0.9),
+			   inset -2px -2px 3px rgba(0,175,255,0.5),
+			   -2px -2px 3px rgba(0,0,0,0.8),
+			   -1px -1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(255,255,255,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.purpleGlassInsetBoxShadow{
+	box-shadow:inset -3px -3px 9px rgba(175,0,255,0.9),inset 2px 2px 3px rgba(0,0,0,0.9),inset -2px -2px 3px rgba(175,0,255,0.5),-2px -2px 3px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(255,255,255,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.orangeGlassInsetBoxShadow{
+	box-shadow:inset -3px -3px 9px rgba(255,153,0,0.9),inset 2px 2px 3px rgba(0,0,0,0.9),inset -2px -2px 3px rgba(255,153,0,0.5),-2px -2px 3px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(255,255,255,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.greenGlassInsetBoxShadow{
+	box-shadow:inset -3px -3px 9px rgba(76,255,0,0.9),
+			   inset 2px 2px 3px rgba(0,0,0,0.9),
+			   inset -2px -2px 3px rgba(76,255,0,0.5),
+			   -2px -2px 3px rgba(0,0,0,0.8),
+			   -1px -1px 2px rgba(0,0,0,1);
+	border:1px solid rgba(255,255,255,0.7);
+	border-radius:5px;
+	padding:3px 6px;
+}
+.blueTextShadow{
+	color:rgba(255,255,255,1);
+	text-shadow:1px 0 rgba(0,0,0,1),-1px 0 rgba(0,0,0,1),0 -1px rgba(0,0,0,1),0 1px rgba(0,0,0,1),2px 0 2px rgba(0,153,255,1),-2px 0 2px rgba(0,153,255,1),0 -2px 2px rgba(0,153,255,1),0 2px 2px rgba(0,153,255,1),0 0 2px rgba(0,153,255,0.9),0 0 5px rgba(0,153,255,0.8),0 0 7px rgba(0,153,255,0.7),0 0 9px rgba(0,153,255,0.8);
+}
+.purpleTextShadow{
+	color:rgba(255,255,255,1);
+	text-shadow:1px 0 rgba(0,0,0,1),-1px 0 rgba(0,0,0,1),0 -1px rgba(0,0,0,1),0 1px rgba(0,0,0,1),2px 0 2px rgba(175,0,255,1),-2px 0 2px rgba(175,0,255,1),0 -2px 2px rgba(175,0,255,1),0 2px 2px rgba(175,0,255,1),0 0 2px rgba(175,0,255,0.9),0 0 5px rgba(175,0,255,0.8),0 0 7px rgba(175,0,255,0.7),0 0 9px rgba(175,0,255,0.8);
+}
+.orangeTextShadow{
+	color:rgba(255,255,255,1);
+	text-shadow:1px 0 rgba(0,0,0,1),-1px 0 rgba(0,0,0,1),0 -1px rgba(0,0,0,1),0 1px rgba(0,0,0,1),2px 0 2px rgba(255,153,0,1),-2px 0 2px rgba(255,153,0,1),0 -2px 2px rgba(255,153,0,1),0 2px 2px rgba(255,153,0,1),0 0 2px rgba(255,153,0,0.9),0 0 5px rgba(255,153,0,0.8),0 0 7px rgba(255,153,0,0.7),0 0 9px rgba(255,153,0,0.8);
+}
+.greenTextShadow{
+	color:rgba(255,255,255,1);
+	text-shadow:1px 0 rgba(0,0,0,1),
+			    -1px 0 rgba(0,0,0,1),
+				0 -1px rgba(0,0,0,1),
+				0 1px rgba(0,0,0,1),
+				2px 0 2px rgba(76,255,0,1),
+				-2px 0 2px rgba(76,255,0,1),
+				0 -2px 2px rgba(76,255,0,1),
+				0 2px 2px rgba(76,255,0,1),
+				0 0 2px rgba(76,255,0,0.9),
+				0 0 5px rgba(76,255,0,0.8),
+				0 0 7px rgba(76,255,0,0.7),
+				0 0 9px rgba(76,255,0,0.8);
+}

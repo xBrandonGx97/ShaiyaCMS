@@ -1,0 +1,16 @@
+/* 
+	Title: ws_Forms.css
+	Author: Bradley Sweeten
+	Rel: Forms
+	Date: 12.21.2016
+*/
+
+/* Disabled Form Fields */
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+	background-color: #c0c0c0 !important;
+}
+.acp_form {
+	background:none !important;
+}

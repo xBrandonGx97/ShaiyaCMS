@@ -1,0 +1,11 @@
+/* 
+	Title: ws_Modular.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Modular Stylesheet
+	Date: 07.24.2017
+*/
+.modular{
+	border:1px dashed lime;
+	display:block;
+	min-height: 20px;
+}

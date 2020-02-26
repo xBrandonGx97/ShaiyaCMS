@@ -1,0 +1,29 @@
+.acp_modal{
+	color:#fff;
+}
+.acp_modal_title{
+	color:#fff;
+}
+.modal-header,.modal-footer{
+	border-top:1px solid #0094ff;
+	border-bottom:1px solid #0094ff;
+}
+.ui-dialog-titlebar{
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+}
+.no-close .ui-dialog-titlebar-close{
+	display:none;
+}
+.ui-dialog{
+	-webkit-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+	-webkit-transition:0.5s;
+	transition:0.5s;
+	animation:pulse 2s infinite;
+	-moz-animation:pulse 2s infinite;
+	-webkit-animation:pulse 2s infinite;
+	border-radius:15px !important;
+}

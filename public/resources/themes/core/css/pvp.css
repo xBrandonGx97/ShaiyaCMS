@@ -1,0 +1,94 @@
+#rankingsFormResult{width:100%;}
+#rankingsForm {display:block;background-color:#222222;height:64px;padding:8px;margin-bottom:8px;border-radius:4px 4px 4px 4px;-webkit-border-radius:4px 4px 4px 4px;-moz-border-radius:4px 4px 4px 4px;}
+#rankingsForm fieldset{border:0 none;float:left;height:48px;margin:0;}
+#rankingsForm fieldset.border{border:1px solid #444444;padding:4px 8px 8px 8px;margin:0 4px;}
+#rankingsForm fieldset legend{color: #ffffff;font-family: Georgia,"Times New Roman",Times,serif;font-size:16px;padding-bottom:4px;}
+#rankingsFormSubmit{margin-top:4px;}
+.RankIcon{background:url("../images/pvpranking/ranks.png") repeat scroll 0 0 transparent;background-repeat:no-repeat;display:inline-table;height:16px;width:32px;cursor:pointer;}
+.Rank01{background-position:0px 0px;}
+.Rank02{background-position:0px -32px;}
+.Rank03{background-position:0px -64px;}
+.Rank04{background-position:0px -96px;}
+.Rank05{background-position:0px -128px;}
+.Rank06{background-position:0px -160px;}
+.Rank07{background-position:0px -192px;}
+.Rank08{background-position:0px -224px;}
+.Rank09{background-position:0px -256px;}
+.Rank10{background-position:0px -288px;}
+.Rank11{background-position:0px -320px;}
+.Rank12{background-position:0px -352px;}
+.Rank13{background-position:0px -384px;}
+.Rank14{background-position:0px -416px;}
+.Rank15{background-position:0px -448px;}
+.Rank16{background-position:0px -480px;}
+.Rank17{background-position:0px -512px;}
+.Rank18{background-position:0px -544px;}
+.Rank19{background-position:0px -576px;}
+.Rank20{background-position:0px -608px;}
+.Rank21{background-position:0px -640px;}
+.Rank22{background-position:0px -672px;}
+.Rank23{background-position:0px -704px;}
+.Rank24{background-position:0px -736px;}
+.Rank25{background-position:0px -768px;}
+.Rank26{background-position:0px -800px;}
+.Rank27{background-position:0px -832px;}
+.Rank28{background-position:0px -864px;}
+.Rank29{background-position:0px -896px;}
+.Rank30{background-position:0px -928px;}
+.Rank31{background-position:0px -960px;}
+.Rank32{background-position:0px -992px;}
+.Rank33{background-position:0px -1024px;}
+.ClassIcon{background:url("../images/pvpranking/classes.png") repeat scroll 0 0 transparent;background-repeat:no-repeat;display:inline-table;height:16px;width:16px;cursor:pointer;}
+.Fighter{background-position:0px 0px;}
+.Warrior{background-position:0px 0px;}
+.Defender{background-position:-16px 0px;}
+.Guardian{background-position:-16px 0px;}
+.Ranger{background-position:-32px 0px;}
+.Assassin{background-position:-32px 0px;}
+.Priest{background-position:-48px 0px;}
+.Oracle{background-position:-48px 0px;}
+.Mage{background-position:-64px 0px;}
+.Pagan{background-position:-64px 0px;}
+.Archer{background-position:-80px 0px;}
+.Hunter{background-position:-80px 0px;}
+.IconHolder{
+	/*padding-left:30px !important;*/
+	text-align:center;
+}
+.left{float:left;}
+.right{float:right;}
+.title{margin:8px 0;}
+.AoL{background:#cccccc;width:100%;height:100%;display:block;border-radius:2px 2px 2px 2px;-webkit-border-radius:2px 2px 2px 2px;-moz-border-radius:2px 2px 2px 2px;}
+.UoF{background:#333333;width:100%;height:100%;display:block;border-radius:2px 2px 2px 2px;-webkit-border-radius:2px 2px 2px 2px;-moz-border-radius:2px 2px 2px 2px;}
+.CharName{cursor:pointer;}
+.CharName:hover{color:#ffff00;}
+.GearStat{color:#ffff00;font-size:10px;}
+.Online{color:#ffff00;}
+.Offline{color:red;}
+.Bold{font-weight:bold;}
+.ajaxLoaderContainer {height:100px;width:200px;position:relative;background:#000000;}
+.ajaxLoader{width:32px;height:32px;position:absolute;left:50%;top:50%;margin-left:-16px;margin-top:-16px;display:block;background:url("./ajax-loader.gif");background-repeat:no-repeat;}
+
+td.i0{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 0; width: 28px; height: 16px; }
+td.i1{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -26px; width: 28px; height: 16px; }
+td.i2{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -52px; width: 28px; height: 16px; }
+td.i3{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -78px; width: 29px; height: 16px; }
+td.i4{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -104px; width: 29px; height: 15px; }
+td.i5{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -129px; width: 28px; height: 18px; }
+td.i6{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -157px; width: 30px; height: 17px; }
+td.i7{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -184px; width: 29px; height: 17px; }
+td.i8{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -211px; width: 28px; height: 16px; }
+td.i9{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -237px; width: 28px; height: 18px; }
+td.i10{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -265px; width: 29px; height: 18px; }
+td.i11{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -293px; width: 29px; height: 24px; }
+td.i12{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -327px; width: 29px; height: 18px; }
+td.i13{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -355px; width: 29px; height: 18px; }
+td.i14{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -383px; width: 29px; height: 18px; }
+td.i15{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -411px; width: 29px; height: 18px; }
+td.i16{background:url(../images/pvpranking/image.png) no-repeat; background-position: 0 -439px; width: 29px; height: 18px; }
+td.i17{background:url(../images/pvpranking/image.png) no-repeat; position: relative; left: 5px; background-position: 0 -467px; width: 24px; height: 24px; }
+td.i18{background:url(../images/pvpranking/image.png) no-repeat; position: relative; left: 5px; background-position: 0 -501px; width: 24px; height: 24px; }
+td.i19{background:url(../images/pvpranking/image.png) no-repeat; position: relative; left: 5px; background-position: 0 -535px; width: 24px; height: 24px; }
+td.i20{background:url(../images/pvpranking/image.png) no-repeat; position: relative; left: 5px; background-position: 0 -569px; width: 24px; height: 24px; }
+td.i21{background:url(../images/pvpranking/image.png) no-repeat; position: relative; left: 5px; background-position: 0 -603px; width: 24px; height: 24px; }
+td.i22{background:url(../images/pvpranking/image.png) no-repeat; position: relative; left: 5px; background-position: 0 -637px; width: 24px; height: 24px; }

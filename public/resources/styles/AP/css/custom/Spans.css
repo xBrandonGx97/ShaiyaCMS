@@ -1,0 +1,30 @@
+/* 
+	Title: Classic Theme Design
+	Author: Ash Artanis
+	Rel: Spans
+	Date: 12.21.2016
+*/
+[class*="span"] {
+	float:left;
+	margin-left:20px;
+	font-size:18px;
+}
+[id*="span"] {
+	float:right;
+	margin-right:20px;
+	font-size:18px;
+}
+
+/* Standard Spans */
+.span1 {width: 60px !important;}
+.span2 {width: 140px !important;}
+.span3 {width: 220px !important;}
+.span4 {width: 300px !important;}
+.span5 {width: 380px !important;}
+.span6 {width: 460px !important;}
+.span7 {width: 540px !important;}
+.span8 {width: 620px !important;}
+.span9 {width: 700px !important;}
+.span10 {width: 780px !important;}
+.span11 {width: 860px !important;}
+.span12 {width: 940px !important;}

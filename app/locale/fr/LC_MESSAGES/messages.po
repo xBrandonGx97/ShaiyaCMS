@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: php-gettext 0.0.1\n"
+"Report-Msgid-Bugs-To: example@example.com\n"
+"POT-Creation-Date: 2010-05-28 06:18-0500\n"
+"PO-Revision-Date: 2013-08-07 11:34+0330\n"
+"Last-Translator: example translateor <example@example.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+
+# Home
+msgid "home"
+msgstr "Home"
+
+# Downloads
+msgid "dwnl"
+msgstr "Downloads"
+
+# Server Info
+msgid "srvinfo"
+msgstr "Server Info"
+
+# About
+msgid "about"
+msgstr "About"
+
+# Drop List
+msgid "drp_lst"
+msgstr "Droplist"
+
+# Drop Finder
+msgid "drp_finder"
+msgstr "Dropfinder"
+
+# Boss Records
+msgid "boss_rcrds"
+msgstr "Boss Records"
+
+# Terms
+msgid "trms"
+msgstr "Terms and Conditions"
+
+# Community
+msgid "community"
+msgstr "Community"
+
+# Discord
+msgid "dscord"
+msgstr "Discord"
+
+# News
+msgid "news"
+msgstr "News"
+
+# Patch Notes
+msgid "ptch_nts"
+msgstr "Patch Notes"
+
+# PvP Rankings
+msgid "pvp_rnkings"
+msgstr "PvP Rankings"
+
+# Guild Rankings
+msgid "gld_rnkigns"
+msgstr "Guild Rankings"
+
+# Staff Team
+msgid "stff_tm"
+msgstr "Staff Team"
+
+# Guilds
+msgid "glds"
+msgstr "Guilds"

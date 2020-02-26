@@ -1,0 +1,50 @@
+/* 
+	Title: ws_Margins.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Margins Stylesheet
+	Date: 04.11.2017
+*/
+
+/* Margins */
+.ml_5 {margin-left:5px !important;}
+.ml_10 {margin-left:10px !important;}
+.ml_20 {margin-left:20px !important;}
+
+.mr_0 {margin-right:0px !important;}
+.mr_5 {margin-right:5px !important;}
+.mr_10 {margin-right:10px !important;}
+.mr_20 {margin-right:20px !important;}
+
+.m_t_3 {margin-top:3px !important;}
+.m_t_5 {margin-top:5px !important;}
+.m_t_10 {margin-top:10px !important;}
+
+.m_b_5 {margin-bottom:5px !important;}
+.m_b_10 {margin-bottom:10px !important;}
+.m_b_15 {margin-bottom:15px !important;}
+.m_b_20 {margin-bottom:20px !important;}
+.m_b_30 {margin-bottom:30px !important;}
+.m_b_40 {margin-bottom:40px !important;}
+.m_b_50 {margin-bottom:50px !important;}
+
+.m_l_10{margin-left:10px !important;}
+.m_r_10{margin-right:10px !important;}
+.m_l_neg_10{margin-left:-10px !important;}
+.m_r_neg_10{margin-right:-10px !important;}
+
+.m_lr_10 {margin: 10 0 !important;}
+.m_lr_10_tb_5 {margin: 10 5 !important;}
+.m0_auto{margin:0 auto !important;}
+.mlr_5 {margin: 0 5px !important;}
+.mlr_10 {margin: 0 10px !important;}
+.mlr_15 {margin: 0 15px !important;}
+.m_tb_10{margin:10px 0 !important;}
+.mtb_8_0 {margin-top:8px !important;margin-bottom:0 !important;}
+.m_all_5 {margin:5px;}
+.m_15_all{margin:15px;}
+.blue_base .form-group {
+	margin-bottom:0;
+}
+.m_auto{
+	margin:0 auto;
+}

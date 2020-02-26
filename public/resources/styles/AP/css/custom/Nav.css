@@ -1,0 +1,4 @@
+nav.sidebar{height:100vh !important;background-color:#000;border-right:1px solid #0094ff;margin-top:-1px !important;z-index:9999;min-height:100% !important;height:100% !important;position:fixed;top:50px;left:0;}
+nav.nav_top_border{border-bottom:1px solid #0094ff;}
+nav.sidebar .cms_version{position:fixed;bottom:0;left:0;min-height:60px;border:1px solid lime;z-index:1;}
+nav.sidebar .cms_version .text{text-align:center;}

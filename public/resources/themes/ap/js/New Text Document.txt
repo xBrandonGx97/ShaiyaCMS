@@ -1,0 +1,105 @@
+function serverstatus() 
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "status";
+		document.CUSTOMCOMMAND.submit();		
+		}
+function maplist()
+		{
+                document.CUSTOMCOMMAND.COMMAND.value = "maps *";
+                document.CUSTOMCOMMAND.submit();
+		}
+function changemap()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("changelevel " + document.COMMONCOMMANDS.MAPNAME.value);
+		document.CUSTOMCOMMAND.submit();
+		}
+function restart()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "_restart";
+                document.CUSTOMCOMMAND.submit();
+                }
+function kickid()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("kickid " + document.COMMONCOMMANDS.KICKID.value + " " + "\"" + document.COMMONCOMMANDS.KICKREASON.value + "\"");
+                document.CUSTOMCOMMAND.submit();
+                }
+function say()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("say " + "\"" + document.COMMONCOMMANDS.SAY.value + "\"");
+		document.CUSTOMCOMMAND.submit();
+		}
+function search()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("cvarlist " + document.COMMONCOMMANDS.SEARCH.value); 
+		document.CUSTOMCOMMAND.submit();
+		}
+function exec()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("exec " + document.COMMONCOMMANDS.EXEC.value); 
+		document.CUSTOMCOMMAND.submit();
+		}
+function restartgame()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "mp_restartgame 1";
+                document.CUSTOMCOMMAND.submit();
+        }
+function pause()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "pause";
+                document.CUSTOMCOMMAND.submit();
+        }
+function kick()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("kick " + document.COMMONCOMMANDS.KICK.value);
+		document.CUSTOMCOMMAND.submit();
+		}
+function kickbots()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "bot_kick";
+                document.CUSTOMCOMMAND.submit();
+        }
+function addtbot()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "bot_add_t";
+                document.CUSTOMCOMMAND.submit();
+        }
+function addctbot()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "bot_add_ct";
+                document.CUSTOMCOMMAND.submit();
+        }
+function lel()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = ("exec " + document.COMMONCOMMANDS.LEL.value); 
+		document.CUSTOMCOMMAND.submit();
+		}
+function ffaon()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "mp_teammates_are_enemies 1";
+                document.CUSTOMCOMMAND.submit();
+        }
+function ffaoff()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "mp_teammates_are_enemies 0";
+                document.CUSTOMCOMMAND.submit();
+        }
+function armsrace()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "game_mode 0; game_type 1; exec gamemode_armsrace; changelevel ar_baggage; mapgroup mg_armsrace";
+                document.CUSTOMCOMMAND.submit();
+		}
+function competitive()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "game_mode 1; game_type 0; exec gamemode_competitive; changelevel de_dust2; mapgroup mg_active";
+                document.CUSTOMCOMMAND.submit();
+        }
+function randon()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "mp_randomspawn 1";
+                document.CUSTOMCOMMAND.submit();
+        }
+function randoff()
+		{
+		document.CUSTOMCOMMAND.COMMAND.value = "mp_randomspawn 0";
+                document.CUSTOMCOMMAND.submit();
+        }

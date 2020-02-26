@@ -1,0 +1,9 @@
+/* Footer Bar */
+.cms_footer{position:fixed;width:100%;color:gold;bottom:0;left:0;}
+.cms_footer .fl{float:left;padding-left:10px;}
+.cms_footer .fr{float:right;padding-right:10px;}
+.cms_footer{background:transparent -webkit-linear-gradient(transparent,#0094ff) 50% 50% repeat-x;background:transparent linear-gradient(transparent,#0094ff) 50% 50% repeat-x;}
+
+.acp_footer{position:fixed;width:100vw;color:gold;bottom:0;left:0;z-index:1;border-top:1px solid #0094ff;}
+.acp_footer .fl{float:left;padding-left:10px;}
+.acp_footer .fr{float:right;padding-right:10px;}

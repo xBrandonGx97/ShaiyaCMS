@@ -1,0 +1,429 @@
+/*--------------------------------------------------------------
+	Theme Name:	Helpers
+	Author: [Dev]Velocity
+	Version: 1.0
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+	[Table of Contents]
+	3. Helpers
+		3.1 Displays
+		3.2 Separators
+		3.3 Paddings
+		3.4 Margins
+		3.5 Opacitys
+		3.6 Background Colors
+		3.7 Colors
+		3.8 Text-Aligns
+		3.9 Text-Transforms
+		3.10 Font-Sizes
+		3.11 Font-Decoration
+		3.12 Line-Heights
+		3.13 Borders
+		3.14 Border-Radiuses
+		3.15 Overflows
+		3.16 Heights
+		3.17 Widths
+		3.18 Floats
+--------------------------------------------------------------*/
+
+/* 3. Helpers */
+
+/* 3.1 Displays */
+
+.display_block {
+	display: block !important;
+}
+
+.display_inlineblock {
+	display: inline-block !important;
+}
+
+/* 3.2 Separators */
+
+.ns_separator_5 {
+	height: 5px !important;
+}
+
+.ns_separator_10 {
+	height: 10px !important;
+}
+
+.ns_separator_15 {
+	height: 15px !important;
+}
+
+.ns_separator_20 {
+	height: 20px !important;
+}
+
+.ns_separator_30 {
+	height: 30px !important;
+}
+
+.ns_separator_40 {
+	height: 40px !important;
+}
+
+.ns_separator_50 {
+	height: 50px !important;
+}
+
+.ns_separator_60 {
+	height: 60px !important;
+}
+
+.ns_separator_70 {
+	height: 70px !important;
+}
+
+.ns_separator_80 {
+	height: 80px !important;
+}
+
+.ns_separator_90 {
+	height: 50px !important;
+}
+
+.ns_separator_100 {
+	height: 100px !important;
+}
+
+.ns_separator_120 {
+	height: 120px !important;
+}
+
+.ns_separator_150 {
+	height: 150px !important;
+}
+
+/* 3.3 Paddings */
+
+/* Padding Tops */
+
+.pt_0 {
+	padding-top:0 !important;
+}
+.pt_5 {
+	padding-top:5 !important;
+}
+.pt_10 {
+	padding-top:10px !important;
+}
+
+/* Padding Bottoms */
+
+.pb_5{
+	padding-bottom:5px !important;
+}
+.pb_10 {
+	padding-bottom:10px !important;
+}
+.pb_15 {
+	padding-bottom:15px !important;
+}
+
+/* Padding Top/Bottoms */
+
+.ptb_10 {
+	padding: 10 0 !important;
+}
+
+/* Padding Lefts */
+
+.pl_0 {
+	padding-left:0 !important;
+}
+.pl_10 {
+	padding-left:10px !important;
+}
+.pl_10_p{
+	padding-left:10% !important;
+}
+.pl_20 {
+	padding-left: 20px !important;
+}
+.pl_25_p{
+	padding-left:25% !important;
+}
+
+/* Padding Rights */
+
+.pr_0{
+	padding-right:0 !important;
+}
+.pr_5{
+	padding-right:5px !important;
+}
+.pr_10{
+	padding-right:10px !important;
+}
+.pr_15{
+	padding-right:15px !important;
+}
+
+/* Padding Left / Rights */
+
+.plr_0 {
+	padding: 0 0 0 0 !important;
+}
+.plr_15 {
+	padding: 0 15px !important;
+}
+.plr_neg_15{
+	padding: 0 -15px !important;
+}
+
+/* All */
+.p__all_10_15 {padding: 10px 15px !important;}
+.p_all_5 {padding:5px !important;}
+.p_all_10 {padding:10px !important;}
+.p_all_20 {padding:20px !important;}
+.no_padding{padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}
+
+/* 3.4 Margins */
+
+/* Margin Top */
+.m_t_5 {
+	margin-top: 5px !important;
+}
+
+/* Margin Left */
+
+.m_l_5 {
+	margin-left: 5px !important;
+}
+
+/* Margin Right */
+
+.m_r_5 {
+	margin-right: 5px !important;
+}
+
+.m_r_2_p{
+	margin-right:2% !important;
+}
+
+/* Margin Bottom */
+
+.m_b_5 {
+	margin-bottom: 5px !important;
+}
+
+/* 3.5 Opacitys */
+
+.op_0 {
+	opacity: 0 !important;
+}
+
+.op_1 {
+	opacity: 0.1 !important;
+}
+
+/* 3.6 Background Colors */
+
+.bg-none{
+	background:none !important;
+}
+
+.bg-white{
+	background-color:#fff !important;
+}
+
+.bg-black{
+	background-color:#000 !important;
+}
+
+.bg-dark{
+	background-color:rgb(41, 48, 61) !important;
+}
+
+.bg-red {
+	background-color: red !important;
+}
+
+.bg-lightgreen {
+	background-color: lightgreen !important;
+}
+
+.bg-green {
+	background-color: green !important;
+}
+
+.bg-lime {
+	background-color: lime !important;
+}
+
+.bg-yellow {
+	background-color: yellow !important;
+}
+
+.bg-gold {
+	background-color: gold !important;
+}
+
+.bg-orange {
+	background-color: orange !important;
+}
+
+.bg-blue {
+	background-color: blue !important;
+}
+
+.bg-dodgerblue {
+	background-color: dodgerblue !important;
+}
+
+.bg-cyan {
+	background-color: cyan !important;
+}
+
+/* 3.7 Colors */
+
+.text-black {
+	color: #000 !important;
+}
+
+.text-red {
+	color: red !important;
+}
+
+.text-green {
+	color: green !important;
+}
+
+.text-white {
+	color: #fff !important;
+}
+
+.text-gray{
+	color:rgb(200, 197, 191) !important;
+}
+
+.text-lime {
+	color: lime !important;
+}
+
+.text-gold{
+	color:rgb(227, 177, 94) !important;
+}
+
+/* 3.8 Text Aligns */
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-justify {
+	text-align: justify !important;
+}
+
+/* 3.9 Text Transforms */
+
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+
+.text-lowercase {
+	text-transform: lowercase !important;
+}
+
+/* 3.10 Font Sizes */
+
+.fs_14 {
+	font-size: 14px !important;
+}
+
+.fs_18 {
+	font-size: 18px !important;
+}
+
+.fs_20 {
+	font-size: 20px !important;
+}
+
+.fs_22 {
+	font-size: 22px !important;
+}
+
+/* 3.11 Font Decoration */
+
+.fw_100 {
+	font-weight: 100 !important;
+}
+
+.fw_bold {
+	font-weight: bold !important;
+}
+
+.i{
+	font-style:italic;
+}
+
+.u{
+	text-decoration:underline;
+}
+
+/* 3.12 Line Heights */
+
+.lh_20 {
+	line-height: 20px !important;
+}
+
+/* 3.13 Borders */
+
+.b_card{
+	border:1px solid rgb(238, 238, 238) !important;
+}
+
+/* 3.14 Border Radius */
+
+/* 3.15 Overflows */
+
+/* 3.16 Heights */
+
+.hauto {
+	height: auto !important;
+}
+
+/* 3.17 Widths */
+
+.wauto {
+	width: auto !important;
+}
+
+/* Sizing in PX*/
+.w_100 {
+	width:100px !important;
+}
+.w_200 {
+	width:200px !important;
+}
+.w_300 {
+	width:300px !important;
+}
+
+/* Sizing in % */
+.w_50_p {
+	width:50% !important;
+}
+.w_100_p {
+	width:100% !important;
+}
+
+/* 3.18 Floats */
+
+.float-left{
+	float:left !important;
+}
+
+.float-right {
+	float: right !important;
+}

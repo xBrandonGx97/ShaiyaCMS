@@ -1,0 +1,132 @@
+/* 
+	Title: custom.css
+	Author: Bradley Sweeten
+	Rel: Custom Stylesheet
+	Date: 03.15.2017
+*/
+
+/* Import Custom Addon Stylesheets */
+@import url('../../Core/Custom/Fonts.css') screen;
+@import url('../../Core/Custom/Footer.css') screen;
+@import url('../../Core/Custom/Forms.css') screen;
+@import url('../../Core/Custom/Images.css') screen;
+@import url('../../Core/Custom/Labels.css') screen;
+@import url('../../Core/Custom/Margins.css') screen;
+@import url('../../Core/Custom/Modal.css') screen;
+@import url('../../Core/Custom/Nav.css') screen;
+@import url('../../Core/Custom/NavbarHover.css') screen;
+@import url('../../Core/Custom/Offsets.css') screen;
+@import url('../../Core/Custom/Padding.css') screen;
+@import url('../../Core/Custom/Pre.css') screen;
+@import url('../../Core/Custom/Separators.css') screen;
+@import url('../../Core/Custom/Sizing.css') screen;
+@import url('../../Core/Custom/Spans.css') screen;
+@import url('../../Core/Custom/Tables.css') screen;
+@import url('login.css') screen;
+
+/* Custom CSS Starts Here */
+body {
+	color:#fff;
+}
+.ap_content {
+	padding:0 15px 15px 15px;
+	background-color:rgba(000,000,000,0.75);
+}
+.ap_content p{
+	padding:5px;
+}
+#title {
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-top:1px solid cyan;
+	color:#000;
+	font-weight:bold;
+	padding:5px;
+	width: 100%;
+	background: url('../images/gradient_button_idle.png')repeat-y;
+	background-size:contain;
+	border-bottom:1px solid #000;
+	z-index:inherit;
+}
+#auth {
+	margin:0 auto;top:100px;
+	float:center;
+	width:50%;
+	background:transparent radial-gradient(#c0c0c0,transparent) no-repeat;
+	border:1px solid #555;
+	border-radius:10px;
+	-moz-border-radius-topright:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	-webkit-border-bottom-right-radius:20px;
+	padding:10px 10px 10px 20px;
+	text-align:center;
+	color:#fff;
+	font-size:18px;
+	font-weight:bold;
+}
+
+/* Login Panel */
+.login_panel {
+	position:fixed;
+	top:30%;
+	left:41%;
+	display:none;
+	background:transparent radial-gradient(#555,transparent) 0% 0% no-repeat;
+	border:1px solid #555;
+	border-radius:15px;
+	-moz-border-radius-topright:15px;
+	-webkit-border-top-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	-webkit-border-bottom-right-radius:15px;
+	width:300px;
+	height:300px;
+	filter:alpha(opacity=75);
+	opacity:.75;
+}
+.login_panel h1 {
+	text-align:center;
+	font-size:18px;
+	padding:0 0 5px 0;
+	color:cyan;
+	margin-top:0 !important;
+	font-weight:bold;
+}
+.login_panel form {
+	padding: 15px;
+}
+.login_panel button {
+	margin-left:30%;
+}
+
+/* Header | Footer Outline */
+#Fixed-Header, #Fixed-Footer {position: fixed;left: 0;width: 100%;text-align: center;color: #CCC;z-index: 9999;}
+#Fixed-Header {top: 0;padding:10px;border-bottom: 2px solid aqua;font-size: 18px;background: transparent linear-gradient(#000,#999) 0% 0% no-repeat;}
+#Fixed-Footer {bottom: 0px;padding: 8px;border-top: 2px solid aqua;background: transparent linear-gradient(#999,#000) 0% 0% no-repeat;}
+
+/* PlUpload */
+#filelist > * {
+	background:transparent -webkit-radial-gradient(#0094ff,transparent) 0% 0% no-repeat;
+	background:transparent radial-gradient(#0094ff,transparent) 0% 0% no-repeat;
+	border:1px solid #0094ff;
+	color:white;
+	border-radius:10px;
+	padding:5px 0 5px 10px !important;
+	margin-bottom:5px;
+	font-size:16px;
+	font-weight:bold;
+}
+.select_hide{
+	display:none;
+}
+.card-header{
+	padding:.5rem !important;
+	border-radius:none !important;
+}
+.card-header.no-radius{
+	border-radius:none !important;
+	border-top-left-radius:none !important;
+	border-top-right-radius:none !important;
+	border-bottom-left-radius:none !important;
+	border-bottom-right-radius:none !important;
+}

@@ -1,0 +1,7 @@
+/* 
+	Footer Bar
+*/
+
+.acp_footer{position:fixed;width:100vw;color:gold;bottom:0;left:0;z-index:1;border-top:1px solid #0094ff;}
+.acp_footer .fl{float:left;padding-left:10px;}
+.acp_footer .fr{float:right;padding-right:10px;}

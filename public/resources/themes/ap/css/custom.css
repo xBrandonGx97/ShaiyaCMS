@@ -1,0 +1,55 @@
+.btn-default{
+	background-color:#f4f4f4;
+	color:#444;
+	border-color:#ddd;
+}
+
+.btn-group-xs > .btn, .btn-xs{
+	padding: 1px 5px !important;
+	font-size: 12px !important;
+	line-height: 1.5 !important;
+	border-radius: 3px !important;
+}
+
+.btn-group-sm > .btn, .btn-sm{
+	padding: .25rem .5rem !important;
+	font-size: .875rem !important;
+	line-height: 1.5 !important;
+	border-radius: .2rem !important;
+}
+
+/* world chat */
+
+.normal{
+	color:#845405;
+}
+
+.whisper{
+	color:#20B2AA;
+}
+
+.area{
+	color:#512E5F;
+}
+
+.yelling{
+	color:#196F3D;
+}
+
+.party{
+	color:#9A7D0A;
+}
+
+.guild{
+	color:#78281F;
+}
+
+.trade{
+	color:#154360 ;
+}
+
+/* Tables */
+
+.table-dark{
+	background-color:#3f4d67 !important;
+}

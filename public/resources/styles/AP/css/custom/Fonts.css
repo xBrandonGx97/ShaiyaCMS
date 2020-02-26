@@ -1,0 +1,62 @@
+/* 
+	Title: ws_Fonts.css
+	Author: Bradley Sweeten
+	Rel: Site-wide Fonts Settings
+	Date: 12.27.2016
+*/
+
+/* Decoration */
+.u {text-decoration:underline;}
+.b {font-weight:bold;}
+
+/* Sizes */
+.f14 {font-size:14px !important;}
+.f16 {font-size:16px !important;}
+.f18 {font-size:18px !important;}
+.f20 {font-size:20px !important;}
+.f22 {font-size:22px !important;}
+.f24 {font-size:24px !important;}
+.f26 {font-size:26px !important;}
+
+/* Text Alignment */
+.tac {text-align:center !important;}
+.tar {text-align:right !important;}
+.tal {text-align:left !important;}
+
+/* Floats */
+.fl {float:left;}
+.fr {float:right;}
+.fn {float:none}
+.clear {clear:both !important;}
+
+/* Positioning */
+.pos_rb {
+	position:absolute;
+	right:45px;
+	bottom:5px;
+}
+.pos_bc {
+	position:absolute;
+	bottom:5px;
+	right:45%;
+}
+.bold {
+	font-weight:bold;
+	font-family:"Times New Roman", Times, serif;
+}
+.italic {
+	font-style:italic;
+}
+.b_i {
+	font-weight:bold !important;
+	font-style:italic !important;
+}
+hr.hr_custom_1 {
+	border:0;
+	height:1px;
+	background:#333;
+	background-image:linear-gradient(to right,#ccc,#333,#ccc);
+}
+.sb_form {
+	border:1px solid lime;
+}

@@ -1,0 +1,43 @@
+/**************************************************************************************************************
+	Title: Borders.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Borders Stylesheet
+	Date: 01.19.2019	1520
+**************************************************************************************************************/
+
+.border{
+	margin:0 2px;
+}
+.border_inverse{
+	background: gold;
+	border: ridge gold;
+	border-radius: 13em/3em;
+}
+.border_concave{
+	background: gold;
+	border: ridge gold;
+	border-radius: 13em/3em;
+}
+.border_rounded_bottom_15{
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+}
+.bordered {
+	border-left:2px solid #0094ff;
+	border-right:2px solid #0094ff;
+	border-radius:15px;
+}
+.bordered_tf_lc_rc_bc {
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-left-radius:0 !important;
+	border-top-right-radius:0 !important;
+	border-top:none !important;
+}
+.border-none{
+	border:none !important;
+	border-top:none !important;
+	border-bottom:none !important;
+	border-left:none !important;
+	border-right:none !important;
+}

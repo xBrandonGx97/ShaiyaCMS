@@ -1,0 +1,83 @@
+/* 
+	Title: Classic Theme Design
+	Author: Ash Artanis
+	Rel: Tables
+	Date: 12.21.2016
+*/
+table {
+	border-spacing:1;
+	line-height: 1.5;
+	display:table;
+	border-collapse:collapse;
+}
+tr {
+	display:table-row;
+}
+table.ts_table {
+	table-layout: fixed;
+	width:100%;
+	font-size: 18px;
+	border:1px dashed red;
+	color:#fff;
+}
+table.ts_table td {
+	border: 1px solid #404040;
+}
+table.ts_table tr:nth-child(even){
+	background: #101010;
+}
+table.ts_table tr:nth-child(odd){
+	background: #202020;
+}
+table.ts_table tr th {
+	text-align:center;
+}
+table.ts_table th,
+table.ts_table tr th,
+table.ts_table > tr > th,
+table.ts_table > * > tr > th {
+	background: transparent linear-gradient(cyan,transparent,cyan) no-repeat;
+	border: 1px solid #61C4E0;
+	border-radius: 1px;
+	padding: 0px 1px;
+	margin: 1px;
+	color: #F5FDFF;
+	font-size: 16px;
+}
+
+/* ACP Table Layout */
+table.table .acp_table {
+	table-layout: fixed;
+	width:100%;
+	font-size: 18px;
+	color:#fff;
+}
+table.acp_table td {
+	border: 1px solid #404040;
+}
+table.acp_table tr:nth-child(even){
+	background: #101010;
+}
+table.acp_table tr:nth-child(odd){
+	background: #202020;
+}
+table.acp_table tr th {
+	text-align:center;
+}
+table.acp_table th,
+table.acp_table tr th,
+table.acp_table > tr > th,
+table.acp_table > * > tr > th {
+	background: transparent linear-gradient(cyan,transparent,cyan) no-repeat;
+	border: 1px solid #61C4E0;
+	border-radius: 1px;
+	padding: 0px 1px;
+	margin: 1px;
+	color: #F5FDFF;
+	font-size: 16px;
+}
+table.acp_table tr:hover {
+	background:linear-gradient(rgba(0,148,255,1),rgba(0,148,255,0.7),rgba(0,148,255,1)) repeat scroll 0% 0% !important;
+	border-top:1px solid #0094ff !important;
+	border-bottom:1px solid #0094ff !important;
+}

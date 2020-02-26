@@ -1,0 +1,121 @@
+/*
+	https://bootsnipp.com/snippets/3XMgX
+*/
+.nav_fixed_m_39{
+	position:fixed;
+	top:39px;
+	left:0;
+	right:0;
+}
+.ndf_side_nav{
+	background-color:rgba(0,0,0,.5);
+	padding: 0px !important;
+	box-shadow: 2px 2px 5px #262a35;
+	z-index: 1000;
+	height: 100%;
+	position: fixed;
+	top:0;
+	left:0;
+}
+.logo_sidemenu{
+	min-height:200px;
+	color:#afb1b5;
+}
+.logo_sidemenu > img{
+	margin:15px 0 15px 32%;
+	padding: 1px;
+	border: 3px solid #F17153;
+	border-radius: 100%;
+	background-color:rgba(0,0,0,.5);
+}
+.btn.Add-friend{
+	background-color:#F17153;
+/*
+	#e65e50
+*/
+	border: 1px solid #50e6df;
+	color:#eee;
+}
+.btn.Add-friend:hover,
+.btn.Add-friend:active,
+.btn.Add-friend:active:focus,
+.btn.Add-friend:active:hover,
+.btn.Add-friend:visited,
+.btn.Add-friend:focus{
+	background-color:#F17153;
+	border: 0.5px solid transparent;
+	color:white;
+	outline:none;
+	font-weight:600;
+}
+.coins{
+	display:inline-block;
+	font-size:20px;
+}
+.list{
+	color: #eee;
+	list-style: none;
+	padding-left: 0px;
+}
+/*
+li:nth-child(odd){
+	background-color:#13171d;
+}
+*/
+li > i{
+	margin-right:15px;
+}
+.list > li{
+	padding: 5px 0px 5px 10px;
+	font-size: 16px;
+	font-weight:lighter;
+}
+.list>li:hover{
+	color: white;
+	box-shadow:1px 1px 10px 1px #50e6df inset;
+	transition: padding-left 0.2s linear;
+/*
+	padding-left: 120px;
+*/
+}
+.list > li > a:hover{
+	text-decoration:none;
+	color:#0094ff;
+}
+
+/* Top Nav */
+.ndf_nav_absolute{
+	position:absolute;
+	top:50px;
+	left:0;
+	width:100%;
+}
+.no_auth{
+	top:30px;
+}
+
+/* ACP Nav */
+nav.sidebar{
+	height:100vh !important;
+	background-color:#000;
+	border-right:1px solid #0094ff;
+	margin-top:-1px !important;
+	z-index:2;
+	min-height:100% !important;
+	height:100% !important;
+	position:fixed;
+	top:50px;
+	left:0;
+}
+nav.nav_top_border{
+	border-bottom:1px solid #0094ff;
+}
+nav.sidebar .cms_version{
+	position:fixed;
+	bottom:0;
+	left:0;
+	min-height:60px;
+	border:1px solid lime;
+	z-index:1;
+}
+nav.sidebar .cms_version .text{text-align:center;}

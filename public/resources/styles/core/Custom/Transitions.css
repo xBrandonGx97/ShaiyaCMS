@@ -1,0 +1,22 @@
+/**************************************************************************************************************
+	Title: Transitions.css
+	Author: Bradley Sweeten
+	Rel: Transitions Stylesheet
+	Date: 01.19.2019	1426
+**************************************************************************************************************/
+
+.pTitle{
+	-webkit-transition:all 0.50s ease-in-out;
+	-webkit-transition:all 0.50s ease-in-out;
+	transition:all 0.50 sease-in-out;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+}
+.pTitle.show{
+	border-top-left-radius:0;
+	border-top-right-radius:0;
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+}

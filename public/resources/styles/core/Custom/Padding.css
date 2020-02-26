@@ -1,0 +1,41 @@
+/* 
+	Title: Padding.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Padding Stylesheet
+	Date: 04.11.2017
+*/
+
+/* Top */
+.p_t_0 {padding-top:0 !important;}
+.p_t_5 {padding-top:5 !important;}
+.p_t_10 {padding-top:10px !important;}
+
+/* Bottom */
+.p_b_5{padding-bottom:5px !important;}
+.p_b_10 {padding-bottom:10px !important;}
+.p_b_15 {padding-bottom:15px !important;}
+
+/* Top - Bottom */
+.p_tb_10 {padding: 10 0 !important;}
+
+/* Left */
+.p_l_0 {padding-left:0 !important;}
+.p_l_10 {padding-left:10px !important;}
+
+/* Right */
+.p_r_0 {padding-right:0 !important;}
+
+/* Left - Right */
+.p_lr_0{padding: 0 0 0 0 !important;}
+.p_lr_15{padding: 0 15px !important;}
+.p_lr_neg_15{
+	padding-left:-15px;
+	padding-right:-15px;
+}
+
+/* All */
+.p_all_10_15 {padding: 10px 15px !important;}
+.p_all_5 {padding:5px !important;}
+.p_all_10 {padding:10px !important;}
+.p_all_20 {padding:20px !important;}
+.no_padding{padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}

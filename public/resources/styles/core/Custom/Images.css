@@ -1,0 +1,12 @@
+/* 
+	Title: Images.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Images Stylesheet
+	Date: 01.11.2019
+*/
+.img-full{
+	background-size:cover !important;
+	background-attachment:fixed !important;
+	background-repeat:no-repeat !important;
+	background-position:center !important;
+}

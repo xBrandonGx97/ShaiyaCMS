@@ -1,0 +1,88 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////
+	Title: custom.css
+	Author: Bradley Sweeten
+	Rel: Site-wide Custom Stylesheet
+	Date: 12.21.2016
+////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*////////////////////////////////////////////////////////////////////////////////////////////
+							CUSTOM CSS (ADD YOUR CSS HERE!)
+////////////////////////////////////////////////////////////////////////////////////////////*/
+body{color:#fff;margin-bottom:30px !important;}
+.inner{background-color:#000;}
+.container_label{
+	background-color:rgba(0,0,0,0.4);
+	border-radius:15px;
+	border:1px solid #000;
+	padding:0 10px 0 10px;
+	width:auto;
+}
+.custom{
+	text-decoration:none;
+	color:#fff;
+	font-weight:bold;
+	font-size:20px;
+	width:10px;
+	margin:0 auto;
+	display:block;
+	-webkit-transition:all 500ms ease-in-out 0s;
+	transition:all 500ms ease-in-out 0s;
+}
+.custom1{
+	text-align:center;
+	font-weight:bold;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	background:#212121;
+}
+.custom2{
+	text-align:center;
+	font-weight:bold;
+	border-top:1px solid transparent;
+	border-bottom:1px solid #ddd;
+	background:#212121;
+}
+
+/* Login Panel */
+.login_panel{
+	position:relative;
+	padding:15px;
+	max-width:300px;
+}
+fieldset{
+	border-radius:10px;
+	border:1px solid #0094ff;
+	background:transparent -webkit-linear-gradient(rgba(148,175,192,.5),rgba(57,75,89,0.5));
+	background:transparent linear-gradient(rgba(148,175,192,.5),rgba(57,75,89,0.5));
+	margin-bottom:10px;
+}
+legend{
+	padding:2px 10px;
+	border:1px solid #0094ff;
+	border-radius:15px;
+	color:#fff;
+	font-size:95%;
+	text-align:center;
+	margin-left:15px;
+	margin-bottom:0 !important;
+	background:url('../images/title_bg.png') repeat-x center;
+	background-size:100% 100%;
+}
+
+/* Min-Max */
+@media(max-width:320px){
+	.g-recaptcha{
+		transform:scale(.50);
+		-webkit-transform:scale(0.50);
+		transform-origin:0 0;
+		-webkit-transform-origin:0 0;
+	}
+}
+@media(max-width:543px){
+	.g-recaptcha{
+		transform:scale(.90);
+		-webkit-transform:scale(0.90);
+		transform-origin:0 0;
+		-webkit-transform-origin:0 0;
+	}
+}
