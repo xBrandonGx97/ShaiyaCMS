@@ -408,8 +408,13 @@
 			$this->MSSQL->query('SELECT TOP 1 * FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID = :topicid AND Closed = :closed');
         	$this->MSSQL->bind(':topicid', $topic);
         	$this->MSSQL->bind(':closed', $closed);
-            $res = $this->MSSQL->single();
-            $this->closed = $res;
+            $res = $this->MSSQL->resultSet();
+            $rowCount	=	count($res);
+            if($rowCount > 0) {
+            	$this->closed = true;
+			} else {
+            	$this->closed = false;
+			}
 		}
 		
 		public function fetchUserRoles($user) {

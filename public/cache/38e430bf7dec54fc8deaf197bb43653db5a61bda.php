@@ -50,11 +50,7 @@
                             <a href="#" class="link-effect-4 ready pin_topic" data-pinned="<?php echo e($data['forum']->pinned ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-r"><span class="pin-text2"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-shade"><span class="pin-text3"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
-                            <?php if($data['forum']->closed): ?>
-                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Open Topic</span></span><span class="link-effect-r"><span>Open Topic</span></span><span class="link-effect-shade"><span>Open Topic</span></span></span></a>
-                            <?php else: ?>
-                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Close Topic</span></span><span class="link-effect-r"><span>Close Topic</span></span><span class="link-effect-shade"><span>Close Topic</span></span></span></a>
-                            <?php endif; ?>
+                            <a href="#" class="link-effect-4 ready close_topic" data-closed="<?php echo e($data['forum']->closed ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-r"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-shade"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
                         </div>
                     </div>
@@ -345,6 +341,47 @@
                         $(".pin-text2").text("Unpin Topic");
                         $(".pin-text3").text("Unpin Topic");
                         $(".alert").text('Topic has been pinned successfully.');
+                    }
+                })
+                .catch(err => {
+                    // Do something for an error here
+                })
+            })
+            $(".close_topic").click(e => {
+                e.preventDefault();
+
+                const curTrgt = $(e.currentTarget);
+                const isClosed = curTrgt.data('closed');
+
+                // Replace ./data.json with your JSON feed
+                fetch('/resources/jquery/addons/ajax/site/forum/topic/close.topic.php', {
+                    method: 'post',
+                    mode: "same-origin",
+                    credentials: "same-origin",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        topicID: curTrgt.data('id'),
+                        action:    isClosed ? "open" : "closed"
+                    })
+                })
+                .then(r => r.json())
+                /*.then(response => {
+                    return response.json()
+                })*/
+                .then(data => {
+                    // Work with JSON data here
+                    console.log(data)
+                    $(".alert").show();
+                    if (data.closed === 'false') {
+                        curTrgt.data("closed", false);
+                        $(".close-text").text("Close Topic");
+                        $(".alert").text('Topic has been opened successfully.');
+                    } else {
+                        curTrgt.data("closed", true);
+                        $(".close-text").text("Open Topic");
+                        $(".alert").text('Topic has been closed successfully.');
                     }
                 })
                 .catch(err => {
