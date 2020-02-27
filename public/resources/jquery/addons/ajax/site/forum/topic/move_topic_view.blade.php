@@ -3,7 +3,7 @@
     use \Classes\DB\MSSQL;
     use \Classes\Utils\User;
     \Classes\Utils\Session::init('Default');
-    list($TopicTitle,) = explode("~",$_POST["id"]);
+    list($TopicTitle,$TopicID,$ForumID) = explode("~",$_POST["id"]);
 ?>
 <form class="move_topic">
     <div class="form-group row">
@@ -19,7 +19,7 @@
         <div class="col-sm-8">
             <div class="input-group">
                 @php
-                    echo \Classes\Utils\Select::getForumDestinations();
+                    echo \Classes\Utils\Select::getForumDestinations($ForumID);
                 @endphp
                 {{--<select class="form-control tac" name="Destination">
                     <option value="1">test</option>
@@ -29,5 +29,25 @@
             </div>
         </div>
     </div>
-    <p class="text-center"><button type="button" class="nk-btn nk-btn-lg link-effect-4" id="new_topic_submit">Move Topic</button></p>
+    <p class="text-center"><button type="button" class="nk-btn nk-btn-lg link-effect-4" id="move_topic_submit">Move Topic</button></p>
+    <input type="hidden" name="TopicID" value="{{$TopicID}}"/>
 </form>
+<script>
+	$(document).ready(function(){
+		$("button#move_topic_submit").click(function(){
+			$.ajax({
+				type: "POST",
+				url:"/resources/jquery/addons/ajax/site/forum/topic/move_topic_submit.php",
+				data: $("form.move_topic").serialize(),
+				success: function(message){
+					$("#move_topic_modal #dynamic-content").html(message);
+					$(".alert").show();
+					$(".alert").text('Topic has been moved successfully.');
+				},
+				error: function(){
+					alert("Error");
+				}
+			});
+		});
+	});
+</script>

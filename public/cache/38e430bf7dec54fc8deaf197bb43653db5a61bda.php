@@ -43,23 +43,28 @@
                 $data['forum']->isTopicClosed($topicID,1);
                 $url = checkUrl();
                 $data['forum']->getTopicTitle($url[3]);
+                $data['forum']->getForumID($topicID);
 
              ?>
-            <div class="row">
-                <div class="col-md-9"></div>
-                <div class="mod-actions col-md-3 order-md-2 text-right">
-                    <div class="dropdown">
-                        <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
-                        <div class="dropdown-content text-center">
-                            <a href="#" class="link-effect-4 ready pin_topic" data-pinned="<?php echo e($data['forum']->pinned ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-r"><span class="pin-text2"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-shade"><span class="pin-text3"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span></span></a>
-                            <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="<?php echo e($data['forum']->topicTitle->PostTitle); ?>" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
-                            <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
-                            <a href="#" class="link-effect-4 ready close_topic" data-closed="<?php echo e($data['forum']->closed ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-r"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-shade"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span></span></a>
-                            <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
+            <?php if($data['User']['LoginStatus']==true): ?>
+                <?php if($data['forum']->isMod($data['User']['UserUID'])): ?>
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="mod-actions col-md-3 order-md-2 text-right">
+                            <div class="dropdown">
+                                <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
+                                <div class="dropdown-content text-center">
+                                    <a href="#" class="link-effect-4 ready pin_topic" data-pinned="<?php echo e($data['forum']->pinned ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-r"><span class="pin-text2"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-shade"><span class="pin-text3"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span></span></a>
+                                    <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="<?php echo e($data['forum']->topicTitle->PostTitle); ?>~<?php echo e($topicID); ?>~<?php echo e($data['forum']->forumID->ForumID); ?>" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
+                                    <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
+                                    <a href="#" class="link-effect-4 ready close_topic" data-closed="<?php echo e($data['forum']->closed ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-r"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-shade"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span></span></a>
+                                    <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                <?php endif; ?>
+            <?php endif; ?>
             <!-- START: Forums List -->
             <?php if(count($data['forum']->data) > 0): ?>
                 <ul class="nk-forum nk-forum-topic">

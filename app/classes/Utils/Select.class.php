@@ -205,12 +205,16 @@
 
 			return $return;
 		}
-		public static function getForumDestinations() {
+		public static function getForumDestinations($forumID) {
 			MSSQL::query('SELECT ForumID,ForumName FROM ShaiyaCMS.dbo.FORUMS');
             $res = MSSQL::resultSet();
-            $return = '<select class="form-control tac" name="SecQuestion">';
+            $return = '<select class="form-control tac" name="Destination">';
             foreach($res as $name) {
-            	$return.='<option value="'.$name->ForumID.'">'.$name->ForumName.'</option>';
+            	if($forumID==$name->ForumID) {
+            		$return.='<option value="'.$name->ForumID.'" selected>'.$name->ForumName.'</option>';
+				} else {
+            		$return.='<option value="'.$name->ForumID.'">'.$name->ForumName.'</option>';
+				}
 			}
             $return.='</select>';
             

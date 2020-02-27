@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d73ac2fc-d219-4a35-b24c-f5aecc646fdd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_submit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/classes/Utils/Select.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Utils/Select.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/forum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/cache/38e430bf7dec54fc8deaf197bb43653db5a61bda.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/38e430bf7dec54fc8deaf197bb43653db5a61bda.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cache/3de8c2d500f524b85745fa3f08a82afbb4da83f4.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/3de8c2d500f524b85745fa3f08a82afbb4da83f4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +28,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/forum.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="171" column="12" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="37" />
+            <state relative-caret-position="468">
+              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding>
                 <element signature="n#__construct#0;n#forum#0;n#!!top" />
                 <element signature="n#getForums#0;n#forum#0;n#!!top" />
+                <element signature="n#getTopics#0;n#forum#0;n#!!top" />
                 <element signature="n#getPinnedTopics#0;n#forum#0;n#!!top" />
                 <element signature="n#getPosts#0;n#forum#0;n#!!top" />
                 <element signature="n#getTopicCount#0;n#forum#0;n#!!top" />
@@ -42,7 +46,7 @@
                 <element signature="n#memberSince#0;n#forum#0;n#!!top" />
                 <element signature="n#userStatus#0;n#forum#0;n#!!top" />
                 <element signature="n#loginStatus#0;n#forum#0;n#!!top" />
-                <element signature="e#6689#7278#0#PHP" />
+                <element signature="n#getUserRoles#0;n#forum#0;n#!!top" />
                 <element signature="n#ifCanCreateForum#0;n#forum#0;n#!!top" />
                 <element signature="n#isMod#0;n#forum#0;n#!!top" />
                 <element signature="n#getUserTitle#0;n#forum#0;n#!!top" />
@@ -69,17 +73,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="55" column="138" selection-start-line="55" selection-start-column="138" selection-end-line="55" selection-end-column="138" />
+            <state relative-caret-position="638">
+              <caret line="58" column="168" lean-forward="true" selection-start-line="58" selection-start-column="168" selection-end-line="58" selection-end-column="168" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/classes/Utils/Select.class.php">
+        <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_submit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="206" column="9" lean-forward="true" selection-start-line="206" selection-start-column="9" selection-end-line="206" selection-end-column="9" />
+            <state relative-caret-position="341">
+              <caret line="31" column="47" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -87,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="648">
+              <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -97,9 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$postAuthor</find>
-      <find>likedUser</find>
-      <find>hidden</find>
       <find>view</find>
       <find>data-uid</find>
       <find>likeduser</find>
@@ -127,6 +128,9 @@
       <find>getTopicTitle</find>
       <find>topicTitle</find>
       <find>forea</find>
+      <find>isMod</find>
+      <find>$url</find>
+      <find>forumid</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -138,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/socials/discord_view.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/user_controller.class.php" />
         <option value="$PROJECT_DIR$/framework/libraries/routes.class.php" />
         <option value="$PROJECT_DIR$/app/views/inc/cms/nav.blade.php" />
@@ -182,12 +185,13 @@
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init.send_ticket.php" />
         <option value="$PROJECT_DIR$/app/config/config.php" />
         <option value="$PROJECT_DIR$/app/bootstrap.php" />
-        <option value="$PROJECT_DIR$/app/models/forum.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/close.topic.php" />
         <option value="$PROJECT_DIR$/app/views/forum/topics.blade.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init_forum_move_topic.php" />
-        <option value="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" />
+        <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_submit.php" />
         <option value="$PROJECT_DIR$/app/classes/Utils/Select.class.php" />
+        <option value="$PROJECT_DIR$/app/models/forum.php" />
+        <option value="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" />
       </list>
     </option>
@@ -209,7 +213,7 @@
       <path value="$PROJECT_DIR$/vendor/illuminate/events" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -230,7 +234,70 @@
             <path>
               <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="topic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,17 +370,18 @@
       <workItem from="1582716237034" duration="7646000" />
       <workItem from="1582746471309" duration="683000" />
       <workItem from="1582747831887" duration="23178000" />
+      <workItem from="1582802545268" duration="1918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244696000" />
+    <option name="totallyTimeSpent" value="247008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34488273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34861407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -359,13 +427,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user/pvprewards.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="38" column="75" lean-forward="true" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/community/rankings/rank.controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="664">
@@ -485,16 +546,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/socials/discord_view.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-          <folding>
-            <element signature="e#142#166#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/post.like.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -645,22 +696,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init_forum_move_topic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="137" selection-start-line="7" selection-start-column="137" selection-end-line="7" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init_forum_move_topic.php" />
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/auth/register.form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-936">
           <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/forum/topics.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -669,20 +711,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_submit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="46" column="25" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="60" />
+        <state relative-caret-position="269">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/forum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="171" column="12" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="37" />
+        <state relative-caret-position="468">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
             <element signature="n#__construct#0;n#forum#0;n#!!top" />
             <element signature="n#getForums#0;n#forum#0;n#!!top" />
+            <element signature="n#getTopics#0;n#forum#0;n#!!top" />
             <element signature="n#getPinnedTopics#0;n#forum#0;n#!!top" />
             <element signature="n#getPosts#0;n#forum#0;n#!!top" />
             <element signature="n#getTopicCount#0;n#forum#0;n#!!top" />
@@ -695,7 +752,7 @@
             <element signature="n#memberSince#0;n#forum#0;n#!!top" />
             <element signature="n#userStatus#0;n#forum#0;n#!!top" />
             <element signature="n#loginStatus#0;n#forum#0;n#!!top" />
-            <element signature="e#6689#7278#0#PHP" />
+            <element signature="n#getUserRoles#0;n#forum#0;n#!!top" />
             <element signature="n#ifCanCreateForum#0;n#forum#0;n#!!top" />
             <element signature="n#isMod#0;n#forum#0;n#!!top" />
             <element signature="n#getUserTitle#0;n#forum#0;n#!!top" />
@@ -720,22 +777,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="55" column="138" selection-start-line="55" selection-start-column="138" selection-end-line="55" selection-end-column="138" />
+        <state relative-caret-position="638">
+          <caret line="58" column="168" lean-forward="true" selection-start-line="58" selection-start-column="168" selection-end-line="58" selection-end-column="168" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/classes/Utils/Select.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="206" column="9" lean-forward="true" selection-start-line="206" selection-start-column="9" selection-end-line="206" selection-end-column="9" />
+        <state relative-caret-position="600">
+          <caret line="213" column="73" selection-start-line="213" selection-start-column="73" selection-end-line="213" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_submit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="648">
+          <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
         </state>
       </provider>
     </entry>

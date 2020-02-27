@@ -30,12 +30,20 @@
 		public $checkPost;
 		public $pinned;
 		public $closed;
+		public $forumID;
 		public $fetArr = [];
         public function __construct() {
             $this->MSSQL   =   new Classes\DB\MSSQL;
             $this->User	   =   new Classes\Utils\User;
             $this->getForums();
         }
+        
+        public function getForumID($topicID) {
+        	$this->MSSQL->query('SELECT ForumID FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID=:topicid');
+        	$this->MSSQL->bind(':topicid', $topicID);
+            $res = $this->MSSQL->single();
+            $this->forumID = $res;
+		}
 
         public function getForums() {
             $this->MSSQL->query('SELECT * FROM '.$this->MSSQL->getTable('FORUM').'');
