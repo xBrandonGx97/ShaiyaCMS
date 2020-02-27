@@ -81,9 +81,9 @@
                         $data['forum']->getPostBody($topic->TopicID);
                         $data['forum']->getPostDate($topic->TopicID);
                      ?>
-                    <li>
+                    <li <?php echo e($topic->Closed==1 ? 'class=nk-forum-locked' : ''); ?>>
                         <div class="nk-forum-icon">
-                            <span class="ion-ios-game-controller-b"></span>
+                            <span class="<?php echo e($topic->Closed==1 ? 'ion-locked' : 'ion-ios-game-controller-b'); ?>"></span>
                         </div>
                         <div class="nk-forum-title">
                             <h3><a href="/forum/topics/view_topic/<?php echo e($topic->TopicID); ?>"><?php echo e($topic->PostTitle); ?></a></h3>
