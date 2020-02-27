@@ -69,6 +69,7 @@
   		MSSQL::bind(':postauthor',$TopicAuthor);
   		MSSQL::bind(':main',1);
         MSSQL::execute();
+        echo 'New Topic successfully created.';
 	}
 	# Check Errors
 	if(count($errors)){

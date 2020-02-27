@@ -37,6 +37,7 @@
 				data: $("form.new_topic").serialize(),
 				success: function(message){
 					$("#new_topic_modal #dynamic-content").html(message);
+					$(".nk-forum").load(location.href + " .nk-forum");
 				},
 				error: function(){
 					alert("Error");

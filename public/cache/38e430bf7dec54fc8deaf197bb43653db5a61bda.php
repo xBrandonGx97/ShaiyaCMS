@@ -14,7 +14,7 @@
         <div class="nk-gap-4"></div>
         <?php 
             Display('discord_modal','<i class="fas fa-user-plus"></i>','0','2','Discord Popup');
-            Display('move_topic_modal','<i class="fas fa-user-plus"></i>','0','2','Move Topic');
+            Display('move_topic_modal','<i class="fas fa-sync"></i>','0','2','Move Topic');
          ?>
 
         <div class="container">

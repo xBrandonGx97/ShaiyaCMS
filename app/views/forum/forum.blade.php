@@ -17,11 +17,12 @@
                         @php
                             $data['forum']->getUserRoles($data['User']['UserUID']);
                             $data['forum']->ifCanCreateForum();
+                            Display('create_forum_modal','<i class="fas fa-folder-plus"></i>','0','2','Create Forum');
                         @endphp
 
                         @if ($data['User']['LoginStatus']==true)
                             @if($data['forum']->isMod($data['User']['UserUID']))
-                                <button class="nk-btn nk-btn-lg link-effect-4 float-right" id="reply_submit">Create New Forum</button>
+                                <button class="nk-btn nk-btn-lg link-effect-4 float-right open_create_forum_modal" data-target="#create_forum_modal" data-toggle="modal" id="reply_submit">Create New Forum</button>
                             @endif
                         @endif
 
@@ -314,4 +315,28 @@
             </div>
     @php Separator(120); @endphp
     </div>
+    <script>
+        $(document).ready(function(){
+          $(document).on('click', '.open_create_forum_modal', function (e) {
+                e.preventDefault();
+
+                $('#create_forum_modal #dynamic-content').html('');
+                $('#create_forum_modal #modal-loader').show();
+                $.ajax({
+                    url: "/resources/jquery/addons/ajax/blade/init.forum_create.php",
+                    type: 'POST',
+                    dataType: 'html'
+                })
+                .done(function (data) {
+                    $('#move_topic_modal #dynamic-content').html('');
+                    $('#create_forum_modal #dynamic-content').html(data);
+                    $('#create_forum_modal #modal-loader').hide();
+                })
+                .fail(function () {
+                    $('#create_forum_modal #dynamic-content').html('<i class="fa fa-exclamation-triangle"></i> Something went wrong, Please try again...');
+                    $('#create_forum_modal #modal-loader').hide();
+                });
+            });
+        })
+    </script>
 @endsection
