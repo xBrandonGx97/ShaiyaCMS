@@ -18,7 +18,7 @@
 		public $roles = [];
 		public $userRoles;
 		public $socials;
-		public $customUserTitle;
+		public $UserTitle;
 		public $likes;
 		public $postLikes;
 		public $posts;
@@ -232,7 +232,7 @@
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
             $res = $this->MSSQL->single();
-            $this->customUserTitle = $res->UserTitle;
+            $this->UserTitle = $res->UserTitle;
 		}
 		
 		public function getUserSocials($user) {
@@ -394,8 +394,14 @@
 			$this->MSSQL->query('SELECT TOP 1 * FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID = :topicid AND Pinned = :pinned');
         	$this->MSSQL->bind(':topicid', $topic);
         	$this->MSSQL->bind(':pinned', $pinned);
-            $res = $this->MSSQL->single();
-            $this->pinned = $res;
+            $res = $this->MSSQL->resultSet();
+            $rowCount	=	count($res);
+            if($rowCount > 0) {
+            	$this->pinned = true;
+			} else {
+            	$this->pinned = false;
+			}
+   
 		}
 		
 		public function isTopicClosed($topic,$closed) {

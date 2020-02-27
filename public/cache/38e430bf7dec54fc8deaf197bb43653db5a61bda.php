@@ -8,6 +8,9 @@
     <?php echo $__env->make('inc.cms.rightNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php echo $__env->make('inc.cms.mobileNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="nk-main">
+        <div class="alert alert-dark text-center" id="pin" style="display:none;font-size:24px;" role="alert">
+            Alert
+        </div>
         <div class="nk-gap-4"></div>
         <?php 
             Display('discord_modal','<i class="fas fa-user-plus"></i>','0','2','Discord Popup');
@@ -44,11 +47,7 @@
                     <div class="dropdown">
                         <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
                         <div class="dropdown-content text-center">
-                            <?php if($data['forum']->pinned): ?>
-                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Unpin Topic</span></span><span class="link-effect-r"><span>Unpin Topic</span></span><span class="link-effect-shade"><span>Unpin Topic</span></span></span></a>
-                            <?php else: ?>
-                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Pin Topic</span></span><span class="link-effect-r"><span>Pin Topic</span></span><span class="link-effect-shade"><span>Pin Topic</span></span></span></a>
-                            <?php endif; ?>
+                            <a href="#" class="link-effect-4 ready pin_topic" data-pinned="<?php echo e($data['forum']->pinned ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-r"><span class="pin-text2"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-shade"><span class="pin-text3"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
                             <?php if($data['forum']->closed): ?>
@@ -96,18 +95,15 @@
                                 <?php endif; ?>
                             </div>
                             
-                            <?php if(!$data['forum']->customUserTitle): ?>
-                                <?php if($data['forum']->fetchUserRoles($post->PostAuthor)): ?>
-                                    <?php $__currentLoopData = $data['forum']->userRoles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <?php if($role->DisplayName == $post->PostAuthor): ?>
-                                            <div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/<?php echo e($role->RoleName); ?>.png" style="width:125px"></div>
-                                        <?php endif; ?>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                <?php endif; ?>
-                                 
-                            <?php else: ?>
-                                <div class="nk-forum-topic-author-role"><span><?php echo e($data['forum']->customUserTitle); ?></span></div>
+                            <?php if($data['forum']->fetchUserRoles($post->PostAuthor)): ?>
+                                <?php $__currentLoopData = $data['forum']->userRoles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php if($role->DisplayName == $post->PostAuthor): ?>
+                                        <div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/<?php echo e($role->RoleName); ?>.png" style="width:125px"></div>
+                                    <?php endif; ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endif; ?>
+                                 
+                            <div class="nk-forum-topic-author-role"><span><?php echo e($data['forum']->UserTitle); ?></span></div>
                             <!-- <span class="username--style3 username--staff username--moderator username--admin">ENXF NET</span> -->
                             <div class="nk-forum-topic-author-since">
                                 Member since <?php echo e(date("F d, Y", strtotime($data['forum']->memberSince->JoinDate))); ?>
@@ -159,14 +155,16 @@
                                     $data['forum']->displayNameToUserUID($post->PostAuthor);
                                     $postUserUID    =   $data['forum']->convertedName->UserUID;
                                  ?>
-                                <span class="nk-forum-action-btn heart like-button like" data-liked="<?php echo e($data['forum']->checkPost ? 'true' : 'false'); ?>" data-id="<?php echo e($post->PostID); ?>" data-uid="<?php echo e($post->PostID); ?>~<?php echo e($data['User']['UserUID']); ?>~<?php echo e($postUserUID); ?>~<?php echo e($post->PostAuthor); ?>">
-                                    <span class="nk-action-heart">
-                                        <span class="num<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->postLikes->Likes); ?></span>
-                                        <span class="<?php echo e($data['forum']->checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline'); ?>"></span>
-                                        <span class="liked-icon ion-android-favorite"></span>
-                                        <text class="like-text<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->checkPost ? 'Unlike' : 'Like'); ?></text>
+                                <?php if($data['User']['UserUID']!==$postUserUID || $postUserUID !== $data['User']['UserUID']): ?>
+                                    <span class="nk-forum-action-btn heart like-button like" data-liked="<?php echo e($data['forum']->checkPost ? 'true' : 'false'); ?>" data-id="<?php echo e($post->PostID); ?>" data-uid="<?php echo e($post->PostID); ?>~<?php echo e($data['User']['UserUID']); ?>~<?php echo e($postUserUID); ?>~<?php echo e($post->PostAuthor); ?>">
+                                        <span class="nk-action-heart">
+                                            <span class="num<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->postLikes->Likes); ?></span>
+                                            <span class="<?php echo e($data['forum']->checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline'); ?>"></span>
+                                            <span class="liked-icon ion-android-favorite"></span>
+                                            <text class="like-text<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->checkPost ? 'Unlike' : 'Like'); ?></text>
+                                        </span>
                                     </span>
-                                </span>
+                                <?php endif; ?>
                             <?php else: ?>
                                 <span class="nk-forum-action-btn">
                                     <span class="nk-action-heart">
@@ -308,6 +306,51 @@
                     $('#discord_modal #modal-loader').hide();
                 });
             });
+            $(".pin_topic").click(e => {
+                e.preventDefault();
+
+                const curTrgt = $(e.currentTarget);
+                const isPinned = curTrgt.data('pinned');
+
+                // Replace ./data.json with your JSON feed
+                fetch('/resources/jquery/addons/ajax/site/forum/topic/pin.topic.php', {
+                    method: 'post',
+                    mode: "same-origin",
+                    credentials: "same-origin",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        topicID: curTrgt.data('id'),
+                        action:    isPinned ? "unpin" : "pin"
+                    })
+                })
+                .then(r => r.json())
+                /*.then(response => {
+                    return response.json()
+                })*/
+                .then(data => {
+                    // Work with JSON data here
+                    console.log(data)
+                    $(".alert").show();
+                    if (data.pinned === 'false') {
+                        curTrgt.data("pinned", false);
+                        $(".pin-text1").text("Pin Topic");
+                        $(".pin-text2").text("Pin Topic");
+                        $(".pin-text3").text("Pin Topic");
+                        $(".alert").text('Topic has been unpinned successfully.');
+                    } else {
+                        curTrgt.data("pinned", true);
+                        $(".pin-text1").text("Unpin Topic");
+                        $(".pin-text2").text("Unpin Topic");
+                        $(".pin-text3").text("Unpin Topic");
+                        $(".alert").text('Topic has been pinned successfully.');
+                    }
+                })
+                .catch(err => {
+                    // Do something for an error here
+                })
+            })
         });
     </script>
 <?php $__env->stopSection(); ?>
