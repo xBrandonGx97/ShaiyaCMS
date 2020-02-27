@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d73ac2fc-d219-4a35-b24c-f5aecc646fdd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/forum/topics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forum/topics.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cache/5433f39e3135326ed98015caa973df476cf6a40f.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/5433f39e3135326ed98015caa973df476cf6a40f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Utils/Select.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Utils/Select.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cache/38e430bf7dec54fc8deaf197bb43653db5a61bda.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/38e430bf7dec54fc8deaf197bb43653db5a61bda.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/forum.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+            <state relative-caret-position="271">
+              <caret line="171" column="12" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="37" />
               <folding>
                 <element signature="n#__construct#0;n#forum#0;n#!!top" />
                 <element signature="n#getForums#0;n#forum#0;n#!!top" />
@@ -40,7 +42,6 @@
                 <element signature="n#memberSince#0;n#forum#0;n#!!top" />
                 <element signature="n#userStatus#0;n#forum#0;n#!!top" />
                 <element signature="n#loginStatus#0;n#forum#0;n#!!top" />
-                <element signature="n#getUserRoles#0;n#forum#0;n#!!top" />
                 <element signature="e#6689#7278#0#PHP" />
                 <element signature="n#ifCanCreateForum#0;n#forum#0;n#!!top" />
                 <element signature="n#isMod#0;n#forum#0;n#!!top" />
@@ -65,20 +66,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/forum/topics.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="83" column="68" lean-forward="true" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+            <state relative-caret-position="631">
+              <caret line="55" column="138" selection-start-line="55" selection-start-column="138" selection-end-line="55" selection-end-column="138" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/classes/Utils/Select.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="50" column="136" selection-start-line="50" selection-start-column="91" selection-end-line="50" selection-end-column="136" />
+            <state relative-caret-position="504">
+              <caret line="206" column="9" lean-forward="true" selection-start-line="206" selection-start-column="9" selection-end-line="206" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -87,15 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>postTitle</find>
-      <find>i want to play</find>
-      <find>FORUM_USER_ROLES</find>
-      <find>rowCount</find>
-      <find>$this.</find>
-      <find>parse.</find>
-      <find>$postID</find>
-      <find>$likedUser</find>
-      <find>$userUID</find>
       <find>$postAuthor</find>
       <find>likedUser</find>
       <find>hidden</find>
@@ -117,6 +118,15 @@
       <find>unpin</find>
       <find>close-text1</find>
       <find>pinned</find>
+      <find>move_topic_modal</find>
+      <find>discord_modal</find>
+      <find>discord</find>
+      <find>open_move_topic_modal</find>
+      <find>data-id</find>
+      <find>data['foru</find>
+      <find>getTopicTitle</find>
+      <find>topicTitle</find>
+      <find>forea</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -128,9 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/resources/themes/godlike/vendor/bower_components/summernote/dist/summernote.min.js" />
-        <option value="$PROJECT_DIR$/app/classes/Utils/User.class.php" />
-        <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/socials/discord.view.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/socials/discord_view.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/user_controller.class.php" />
         <option value="$PROJECT_DIR$/framework/libraries/routes.class.php" />
@@ -176,9 +183,12 @@
         <option value="$PROJECT_DIR$/app/config/config.php" />
         <option value="$PROJECT_DIR$/app/bootstrap.php" />
         <option value="$PROJECT_DIR$/app/models/forum.php" />
-        <option value="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/close.topic.php" />
         <option value="$PROJECT_DIR$/app/views/forum/topics.blade.php" />
+        <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init_forum_move_topic.php" />
+        <option value="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" />
+        <option value="$PROJECT_DIR$/app/classes/Utils/Select.class.php" />
+        <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" />
       </list>
     </option>
   </component>
@@ -221,19 +231,6 @@
               <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242924000" />
+    <option name="totallyTimeSpent" value="244696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -362,61 +359,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/laragon/www/my_own_router/app/views/forum/view_topic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="303" column="18" lean-forward="true" selection-start-line="303" selection-start-column="18" selection-end-line="303" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/Utils/Data.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding>
-            <element signature="e#217#752#0#PHP" />
-            <element signature="e#776#936#0#PHP" />
-            <element signature="e#2238#3364#0#PHP" />
-            <element signature="e#3367#3732#0#PHP" />
-            <element signature="e#3735#4023#0#PHP" />
-            <element signature="e#4026#4458#0#PHP" />
-            <element signature="e#4461#4647#0#PHP" />
-            <element signature="e#4650#5252#0#PHP" />
-            <element signature="e#5255#5432#0#PHP" />
-            <element signature="e#5435#5671#0#PHP" />
-            <element signature="e#5674#6242#0#PHP" />
-            <element signature="e#6245#6508#0#PHP" />
-            <element signature="e#6511#6932#0#PHP" />
-            <element signature="e#6935#7288#0#PHP" />
-            <element signature="e#7291#7565#0#PHP" />
-            <element signature="e#7568#7754#0#PHP" />
-            <element signature="e#7757#8025#0#PHP" />
-            <element signature="e#8028#8186#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/themes/core/js/Nv2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1608">
-          <caret line="2" column="71" lean-forward="true" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/Utils/Session.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="16" column="39" lean-forward="true" selection-end-line="36" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/pvprewards.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
@@ -640,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/auth/register.form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/auth/register.submit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -655,13 +590,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init.edit_ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init.forum_new_topic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
@@ -710,17 +638,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init.forum_new_topic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="50" column="136" selection-start-line="50" selection-start-column="91" selection-end-line="50" selection-end-column="136" />
+        <state relative-caret-position="72">
+          <caret line="3" column="45" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/blade/init_forum_move_topic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="137" selection-start-line="7" selection-start-column="137" selection-end-line="7" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/auth/register.form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/forum/topics.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/forum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="271">
+          <caret line="171" column="12" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="37" />
           <folding>
             <element signature="n#__construct#0;n#forum#0;n#!!top" />
             <element signature="n#getForums#0;n#forum#0;n#!!top" />
@@ -736,7 +695,6 @@
             <element signature="n#memberSince#0;n#forum#0;n#!!top" />
             <element signature="n#userStatus#0;n#forum#0;n#!!top" />
             <element signature="n#loginStatus#0;n#forum#0;n#!!top" />
-            <element signature="n#getUserRoles#0;n#forum#0;n#!!top" />
             <element signature="e#6689#7278#0#PHP" />
             <element signature="n#ifCanCreateForum#0;n#forum#0;n#!!top" />
             <element signature="n#isMod#0;n#forum#0;n#!!top" />
@@ -760,10 +718,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/forum/topics.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="83" column="68" lean-forward="true" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+        <state relative-caret-position="631">
+          <caret line="55" column="138" selection-start-line="55" selection-start-column="138" selection-end-line="55" selection-end-column="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/Utils/Select.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="206" column="9" lean-forward="true" selection-start-line="206" selection-start-column="9" selection-end-line="206" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>

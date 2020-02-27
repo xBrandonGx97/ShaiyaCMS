@@ -1,5 +1,8 @@
 <?php
 	namespace Classes\Utils;
+	
+	use Classes\DB\MSSQL;
+	
 	class Select{
 		public static function dobm(){
 			echo '<select class="form-control" name="DOB_M">';
@@ -201,6 +204,17 @@
 			$return.='</select>';
 
 			return $return;
+		}
+		public static function getForumDestinations() {
+			MSSQL::query('SELECT ForumID,ForumName FROM ShaiyaCMS.dbo.FORUMS');
+            $res = MSSQL::resultSet();
+            $return = '<select class="form-control tac" name="SecQuestion">';
+            foreach($res as $name) {
+            	$return.='<option value="'.$name->ForumID.'">'.$name->ForumName.'</option>';
+			}
+            $return.='</select>';
+            
+            return $return;
 		}
 		public static function gender(){
 			echo '<select class="form-control tac" name="Gender">';

@@ -15,6 +15,7 @@
         <div class="nk-gap-4"></div>
         @php
             Display('discord_modal','<i class="fas fa-user-plus"></i>','0','2','Discord Popup');
+            Display('move_topic_modal','<i class="fas fa-user-plus"></i>','0','2','Move Topic');
         @endphp
 
         <div class="container">
@@ -41,6 +42,9 @@
                 $data['forum']->getPosts($topicID);
                 $data['forum']->isTopicPinned($topicID,1);
                 $data['forum']->isTopicClosed($topicID,1);
+                $url = checkUrl();
+                $data['forum']->getTopicTitle($url[3]);
+
             @endphp
             <div class="row">
                 <div class="col-md-9"></div>
@@ -49,7 +53,7 @@
                         <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
                         <div class="dropdown-content text-center">
                             <a href="#" class="link-effect-4 ready pin_topic" data-pinned="{{$data['forum']->pinned ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-r"><span class="pin-text2">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-shade"><span class="pin-text3">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span></span></a>
-                            <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
+                            <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="{{$data['forum']->topicTitle->PostTitle}}" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
                             <a href="#" class="link-effect-4 ready close_topic" data-closed="{{$data['forum']->closed ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-r"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-shade"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span></span></a>
                             <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
@@ -305,6 +309,29 @@
                 .fail(function () {
                     $('#discord_modal #dynamic-content').html('<i class="fa fa-exclamation-triangle"></i> Something went wrong, Please try again...');
                     $('#discord_modal #modal-loader').hide();
+                });
+            });
+            $(document).on('click', '.open_move_topic_modal', function (e) {
+                e.preventDefault();
+
+                var uid = $(this).data("id");
+
+                $('#move_topic_modal #dynamic-content').html('');
+                $('#move_topic_modal #modal-loader').show();
+                $.ajax({
+                    url: "/resources/jquery/addons/ajax/blade/init.forum_move_topic.php",
+                    type: 'POST',
+                    data: "id="+uid,
+                    dataType: 'html'
+                })
+                .done(function (data) {
+                    $('#move_topic_modal #dynamic-content').html('');
+                    $('#move_topic_modal #dynamic-content').html(data);
+                    $('#move_topic_modal #modal-loader').hide();
+                })
+                .fail(function () {
+                    $('#move_topic_modal #dynamic-content').html('<i class="fa fa-exclamation-triangle"></i> Something went wrong, Please try again...');
+                    $('#move_topic_modal #modal-loader').hide();
                 });
             });
             $(".pin_topic").click(e => {
