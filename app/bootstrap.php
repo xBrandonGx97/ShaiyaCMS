@@ -22,7 +22,7 @@
 			else{
 				define("ROOT_PATH",getcwd().DS);
 			}
-			define("APP_PATH",ROOT_PATH."../app".DS);
+			define("APP_PATH",ROOT_PATH."/../app".DS);
 			define("CLASSES_PATH",APP_PATH."classes".DS);
 			define("FRAMEWORK_PATH",ROOT_PATH."../framework".DS);
 			define("PUBLIC_PATH","Public".DS);

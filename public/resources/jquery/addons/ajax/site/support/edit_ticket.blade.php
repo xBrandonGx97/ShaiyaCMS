@@ -3,7 +3,7 @@
     use \Classes\DB\MSSQL;
     use \Classes\Utils\User;
     \Classes\Utils\Session::init('Default');
-    require_once($_SERVER['DOCUMENT_ROOT'].'../app/models/Support.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/../app/models/Support.php');
     $Support	=	new Support();
     list($UserUID,$TicketID,$Category,$Subject,$Message,$Status,$Date) = explode("~",$_POST["id"]);
 ?>

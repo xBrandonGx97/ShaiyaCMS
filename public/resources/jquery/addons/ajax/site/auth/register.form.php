@@ -7,7 +7,7 @@
 	setcookie("Default",session_id(),0,"/",null,null,true);
 
     # Autoloader
-	require_once($_SERVER['DOCUMENT_ROOT']."../app/bootstrap.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/../app/bootstrap.php");
 	Bootstrap::_is_ajax();
 	
 	use \Classes\Utils\Select;

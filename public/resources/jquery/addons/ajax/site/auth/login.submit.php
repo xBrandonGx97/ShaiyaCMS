@@ -1,7 +1,7 @@
 <?php
     define('AJAX_CALL',true);
     # Autoloader
-	require_once($_SERVER['DOCUMENT_ROOT']."../app/bootstrap.php");
+	require_once($_SERVER['DOCUMENT_ROOT']."/../app/bootstrap.php");
 	Bootstrap::_is_ajax();
 
     use \Classes\Utils\Data;

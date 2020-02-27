@@ -12,9 +12,9 @@
 	// Base Dir
     define( 'BASEDIR', '/' );
     // Framework Root
-	define('FWROOT', $_SERVER['DOCUMENT_ROOT'].'../framework/');
+	define('FWROOT', $_SERVER['DOCUMENT_ROOT'].'/../framework/');
 	// Public Root
-	define('PUBROOT', $_SERVER['DOCUMENT_ROOT'].'../public/');
+	define('PUBROOT', $_SERVER['DOCUMENT_ROOT'].'/../public/');
 
     // Defaut language English
 	$getLang	= (isset($_GET['lang']) ) ? $_SESSION['lang']	=	$_GET['lang'] : '';
