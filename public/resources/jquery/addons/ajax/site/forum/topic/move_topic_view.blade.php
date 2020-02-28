@@ -42,7 +42,7 @@
 				success: function(message){
 					$("#move_topic_modal #dynamic-content").html(message);
 					$(".alert").show();
-					$(".alert").text('Topic has been moved successfully.');
+					$(".alert-text").text('Topic has been moved successfully.');
 				},
 				error: function(){
 					alert("Error");

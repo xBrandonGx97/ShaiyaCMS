@@ -18,10 +18,16 @@
                             $data['forum']->getUserRoles($data['User']['UserUID']);
                             $data['forum']->ifCanCreateForum();
                             Display('create_forum_modal','<i class="fas fa-folder-plus"></i>','0','2','Create Forum');
+
+                            $isLoggedIn     =   $data['User']['LoginStatus'];
+
+                            $isMod          =   $isLoggedIn ? $data['forum']->isMod($data['User']['UserUID']) : '';
+                            $onlineStaff    =   $data['forum']->getOnlineStaff();
+                            $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
                         @endphp
 
-                        @if ($data['User']['LoginStatus']==true)
-                            @if($data['forum']->isMod($data['User']['UserUID']))
+                        @if ($isLoggedIn==true)
+                            @if($isMod)
                                 <button class="nk-btn nk-btn-lg link-effect-4 float-right open_create_forum_modal" data-target="#create_forum_modal" data-toggle="modal" id="reply_submit">Create New Forum</button>
                             @endif
                         @endif
@@ -35,42 +41,40 @@
                             <ul class="nk-forum">
                             @foreach($data['forum']->fet as $forum)
                                 @php
-                                    $data['forum']->getTopicCount($forum->ForumID);
-                                    $data['forum']->getTopicTitle($forum->ForumID);
-                                    $data['forum']->getTopicDate($forum->ForumID);
                                     $data['forum']->getOnlineStaff();
+                                    $ForumID        =   $forum->ForumID;
+                                    $ForumName      =   $forum->ForumName;
+                                    $SubText        =   $forum->SubText;
+                                    $Locked         =   $forum->Locked;
+                                    $topicCount     =   $data['forum']->getTopicCount($forum->ForumID);
+                                    $topicTitle     =   $data['forum']->getTopicTitle($forum->ForumID);
+                                    $topicDate      =   $data['forum']->getTopicDate($forum->ForumID);
+
+                                    $checkTopicCount =  $topicCount==1 ? $topicCount.' topic' : $topicCount.' topics';
+                                    $checkTopicTitle =  $topicTitle ? '<a href="forum-single-topic.html">'.$topicTitle.'</a>' : '—';
+                                    $checkTopicDate  =  $topicDate ? date("M d, Y", strtotime($topicDate)) : '';
                                 @endphp
-                                @if($forum->Locked == 0)
+                                @if($Locked == 0)
                                     <li>
                                         <div class="nk-forum-icon">
                                             <span class="ion-ios-game-controller-b"></span>
                                         </div>
                                         <div class="nk-forum-title">
-                                            <h3><a href="/forum/topics/{{$forum->ForumID}}">{{$forum->ForumName}}</a></h3>
-                                            <div class="nk-forum-title-sub">{{$forum->SubText}}</div>
+                                            <h3><a href="/forum/topics/{{$ForumID}}">{{$ForumName}}</a></h3>
+                                            <div class="nk-forum-title-sub">{{$SubText}}</div>
                                         </div>
                                         <div class="nk-forum-count">
-                                            @if($data['forum']->topicCount->Topics == 1)
-                                                {{$data['forum']->topicCount->Topics}} topic
-                                            @else
-                                                {{$data['forum']->topicCount->Topics}} topics
-                                            @endif
+                                            {{$checkTopicCount}}
                                          </div>
                                         <div class="nk-forum-activity-avatar">
                                             <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
                                         </div>
                                         <div class="nk-forum-activity">
                                             <div class="nk-forum-activity-title" title="GodLike the only game that I want to play!">
-                                                @if($data['forum']->topicTitle)
-                                                    <a href="forum-single-topic.html">{{$data['forum']->topicTitle->PostTitle}}</a>
-                                                @else
-                                                    —
-                                                @endif
+                                                {!!$checkTopicTitle!!}
                                             </div>
                                             <div class="nk-forum-activity-date">
-                                                @if($data['forum']->topicDate)
-                                                    {{date("M d, Y", strtotime($data['forum']->topicDate->TopicDate))}}
-                                                @endif
+                                                {{$checkTopicDate}}
                                             </div>
                                         </div>
                                     </li>
@@ -80,31 +84,21 @@
                                             <span class="ion-help-buoy"></span>
                                         </div>
                                         <div class="nk-forum-title">
-                                            <h3><a href="#">{{$forum->ForumName}}</a></h3>
-                                            <div class="nk-forum-title-sub">{{$forum->SubText}}</div>
+                                             <h3><a href="/forum/topics/{{$ForumID}}">{{$ForumName}}</a></h3>
+                                            <div class="nk-forum-title-sub">{{$SubText}}</div>
                                         </div>
                                         <div class="nk-forum-count">
-                                            @if($data['forum']->topicCount->Topics == 1)
-                                                {{$data['forum']->topicCount->Topics}} topic
-                                            @else
-                                                {{$data['forum']->topicCount->Topics}} topics
-                                            @endif
+                                            {{$checkTopicCount}}
                                         </div>
                                         <div class="nk-forum-activity-avatar">
                                             <img src="/resources/themes/godlike/images/avatar-2-sm.jpg" alt="Kurt Tucker">
                                         </div>
                                         <div class="nk-forum-activity">
                                             <div class="nk-forum-activity-title" title="Install on Windows 95">
-                                                @if(!empty($data['forum']->topicTitle))
-                                                    <a href="forum-single-topic.html">{{$data['forum']->topicTitle->PostTitle}}</a>
-                                                @else
-                                                    —
-                                                @endif
+                                                {!!$checkTopicTitle!!}
                                             </div>
                                             <div class="nk-forum-activity-date">
-                                                @if(!empty($data['forum']->topicDate))
-                                                    {{date("M d, Y", strtotime($data['forum']->topicDate->PostDate))}}
-                                                @endif
+                                                {{$checkTopicDate}}
                                             </div>
                                         </div>
                                     </li>
@@ -117,20 +111,26 @@
                         <div class="nk-gap-2"></div>
                         <div class="online-staff text-center">
                             <h6>Current online staff: </h6>
-                            @if(count($data['forum']->onlineStaff) > 0)
-                                @foreach ($data['forum']->onlineStaff as $staff)
-                                    @php
-                                        $data['forum']->convertDisplayName($staff->DisplayName);
-                                    @endphp
-                                    @if ($data['forum']->newDisplayName)
-                                        <span>{!!$data['forum']->newDisplayName->DisplayName!!}</span>
+                            @if($onlineStaff!==false)
+                                @if ($cDisplayName)
+                                    <span>{!!$cDisplayName!!}</span>
+                                @else
+                                    <span>{!!$onlineStaff!!}</span>
+                                @endif
+                            @else
+                                <span>There are currently no online staff.</span>
+                            @endif
+                            {{--@if(count($data['forum']->onlineStaff) > 0)
+                                @foreach ($onlineStaff as $staff)
+                                    @if ($data['forum']->convertDisplayName($staff->DisplayName))
+                                        <span>{!!$data['forum']->convertDisplayName($staff->DisplayName)!!}</span>
                                     @else
                                         <span>{!!$staff->DisplayName!!}</span>
                                     @endif
                                 @endforeach
                             @else
                                 <span>There are currently no online staff.</span>
-                            @endif
+                            @endif--}}
                         </div>
                         {{--<ul class="nk-forum">
                             <li>

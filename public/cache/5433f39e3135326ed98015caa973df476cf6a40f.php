@@ -13,56 +13,62 @@
             <?php 
                 Display('new_topic_modal','<i class="fas fa-plus"></i>','0','2','Create New Topic');
                 $url = checkUrl();
-             ?>
-            <?php if($data['User']['LoginStatus']==true): ?>
-                <button class="nk-btn nk-btn-lg link-effect-4 float-right open_new_topic_modal" id="reply_submit" data-id="<?php echo e($url[2]); ?>~<?php echo e($data['User']['DisplayName']); ?>" data-target="#new_topic_modal" data-toggle="modal">Create New Topic</button>
-            <?php endif; ?>
-            <div class="nk-gap-4"></div>
-            <?php 
+
+                $isLoggedIn     =   $data['User']['LoginStatus'];
+
                 $topicID  =   $data['topicID'];
                 $data['forum']->getTopics($topicID);
                 $data['forum']->getPinnedTopics($topicID);
              ?>
+            <?php if($isLoggedIn==true): ?>
+                <button class="nk-btn nk-btn-lg link-effect-4 float-right open_new_topic_modal" id="reply_submit" data-id="<?php echo e($url[2]); ?>~<?php echo e($data['User']['DisplayName']); ?>" data-target="#new_topic_modal" data-toggle="modal">Create New Topic</button>
+            <?php endif; ?>
+            <div class="nk-gap-4"></div>
             <!-- START: Forums List -->
             <?php if(count($data['forum']->fetch) > 0): ?>
                 <ul class="nk-forum">
                     <?php $__currentLoopData = $data['forum']->fetch; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $topic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php 
-                            $data['forum']->getPostCount($topic->TopicID);
-                            $data['forum']->getPostTitle($topic->TopicID);
-                            $data['forum']->getPostBody($topic->TopicID);
-                            $data['forum']->getPostDate($topic->TopicID);
+                            $postCount  =   $data['forum']->getPostCount($topic->TopicID);
+                            $postTitle  =   $data['forum']->getPostTitle($topic->TopicID);
+                            $postBody   =   $data['forum']->getPostBody($topic->TopicID);
+                            $postDate   =   $data['forum']->getPostDate($topic->TopicID);
+
+                            $topicID        =   $topic->TopicID;
+                            $postTitle      =   $topic->PostTitle;
+                            $topicAuthor    =   $topic->PostAuthor;
+                            $topicDate      =   $topic->PostDate;
                          ?>
                         <li>
                             <div class="nk-forum-icon">
                                 <span class="ion-pin"></span>
                             </div>
                             <div class="nk-forum-title">
-                                <h3><a href="/forum/topics/view_topic/<?php echo e($topic->TopicID); ?>"><?php echo e($topic->PostTitle); ?></a></h3>
-                                <div class="nk-forum-title-sub">Started by <a href="#"><?php echo e($topic->PostAuthor); ?></a> on <?php echo e(date("M d, Y", strtotime($topic->PostDate))); ?></div>
+                                <h3><a href="/forum/topics/view_topic/<?php echo e($topicID); ?>"><?php echo e($postTitle); ?></a></h3>
+                                <div class="nk-forum-title-sub">Started by <a href="#"><?php echo e($topicAuthor); ?></a> on <?php echo e(date("M d, Y", strtotime($topicDate))); ?></div>
                             </div>
                             <div class="nk-forum-count">
-                                <?php if($data['forum']->postCount->Posts == 1): ?>
-                                    <?php echo e($data['forum']->postCount->Posts); ?> post
+                                <?php if($postCount == 1): ?>
+                                    <?php echo e($postCount); ?> post
                                 <?php else: ?>
-                                    <?php echo e($data['forum']->postCount->Posts); ?> posts
+                                    <?php echo e($postCount); ?> posts
                                 <?php endif; ?>
                             </div>
                             <div class="nk-forum-activity-avatar">
                                 <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
                             </div>
                             <div class="nk-forum-activity">
-                                <div class="nk-forum-activity-title" title="<?php echo e($data['forum']->postTitle->PostTitle); ?>">
-                                    <?php if(!empty($data['forum']->postTitle)): ?>
-                                        <a href="forum-single-topic.html"><?php echo e($data['forum']->postBody->PostBody); ?></a>
+                                <div class="nk-forum-activity-title" title="<?php echo e($postTitle); ?>">
+                                    <?php if(!empty($postTitle)): ?>
+                                        <a href="forum-single-topic.html"><?php echo e($postBody); ?></a>
                                     <?php else: ?>
                                         —
 
                                     <?php endif; ?>
                                 </div>
                                 <div class="nk-forum-activity-date">
-                                    <?php if(!empty($data['forum']->postDate)): ?>
-                                        <?php echo e(date("M d, Y", strtotime($data['forum']->postDate->PostDate))); ?>
+                                    <?php if(!empty($postDate)): ?>
+                                        <?php echo e(date("M d, Y", strtotime($postDate))); ?>
 
                                     <?php endif; ?>
                                 </div>
@@ -76,41 +82,49 @@
                 <ul class="nk-forum">
                 <?php $__currentLoopData = $data['forum']->row; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $topic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php 
-                        $data['forum']->getPostCount($topic->TopicID);
-                        $data['forum']->getPostTitle($topic->TopicID);
-                        $data['forum']->getPostBody($topic->TopicID);
-                        $data['forum']->getPostDate($topic->TopicID);
+                        $postCount  =   $data['forum']->getPostCount($topic->TopicID);
+                        $postTitle  =   $data['forum']->getPostTitle($topic->TopicID);
+                        $postBody   =   $data['forum']->getPostBody($topic->TopicID);
+                        $postDate   =   $data['forum']->getPostDate($topic->TopicID);
+
+                        $Closed         =   $topic->Closed==1;
+                        $closedCheck    =   $Closed? 'class=nk-forum-locked' : '';
+                        $closedAction   =   $Closed ? 'ion-locked' : 'ion-ios-game-controller-b';
+                        $topicID        =   $topic->TopicID;
+                        $postTitle      =   $topic->PostTitle;
+                        $topicAuthor    =   $topic->TopicAuthor;
+                        $topicDate      =   $topic->TopicDate;
                      ?>
-                    <li <?php echo e($topic->Closed==1 ? 'class=nk-forum-locked' : ''); ?>>
+                    <li <?php echo e($closedCheck); ?>>
                         <div class="nk-forum-icon">
-                            <span class="<?php echo e($topic->Closed==1 ? 'ion-locked' : 'ion-ios-game-controller-b'); ?>"></span>
+                            <span class="<?php echo e($closedAction); ?>"></span>
                         </div>
                         <div class="nk-forum-title">
-                            <h3><a href="/forum/topics/view_topic/<?php echo e($topic->TopicID); ?>"><?php echo e($topic->PostTitle); ?></a></h3>
-                            <div class="nk-forum-title-sub">Started by <a href="#"><?php echo e($topic->TopicAuthor); ?></a> on <?php echo e(date("M d, Y", strtotime($topic->TopicDate))); ?></div>
+                            <h3><a href="/forum/topics/view_topic/<?php echo e($topicID); ?>"><?php echo e($postTitle); ?></a></h3>
+                            <div class="nk-forum-title-sub">Started by <a href="#"><?php echo e($topicAuthor); ?></a> on <?php echo e(date("M d, Y", strtotime($topicDate))); ?></div>
                         </div>
                         <div class="nk-forum-count">
-                            <?php if($data['forum']->postCount->Posts == 1): ?>
-                                <?php echo e($data['forum']->postCount->Posts); ?> post
+                            <?php if($postCount == 1): ?>
+                                <?php echo e($postCount); ?> post
                             <?php else: ?>
-                                <?php echo e($data['forum']->postCount->Posts); ?> posts
+                                <?php echo e($postCount); ?> posts
                             <?php endif; ?>
                         </div>
                         <div class="nk-forum-activity-avatar">
                             <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
                         </div>
                         <div class="nk-forum-activity">
-                            <div class="nk-forum-activity-title" title="<?php echo e($data['forum']->postTitle->PostTitle); ?>">
-                                <?php if(!empty($data['forum']->postTitle)): ?>
-                                    <a href="forum-single-topic.html"><?php echo e($data['forum']->postBody->PostBody); ?></a>
+                            <div class="nk-forum-activity-title" title="<?php echo e($postTitle); ?>">
+                                <?php if(!empty($postTitle)): ?>
+                                    <a href="forum-single-topic.html"><?php echo e($postBody); ?></a>
                                 <?php else: ?>
                                     —
 
                                 <?php endif; ?>
                             </div>
                             <div class="nk-forum-activity-date">
-                                <?php if(!empty($data['forum']->postDate)): ?>
-                                    <?php echo e(date("M d, Y", strtotime($data['forum']->postDate->PostDate))); ?>
+                                <?php if(!empty($postDate)): ?>
+                                    <?php echo e(date("M d, Y", strtotime($postDate))); ?>
 
                                 <?php endif; ?>
                             </div>

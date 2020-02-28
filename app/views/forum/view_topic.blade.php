@@ -9,8 +9,11 @@
     @include('inc.cms.rightNav')
     @include('inc.cms.mobileNav')
     <div class="nk-main">
-        <div class="alert alert-dark text-center" id="pin" style="display:none;font-size:24px;" role="alert">
-            Alert
+        <div class="nk-info-box bg-main-1 alert text-center" id="pin" style="display:none;font-size:24px;">
+            <div class="nk-info-box-icon" style="display:inline-block !important;">
+                <i class="ion-information-circled"></i>
+            </div>
+            <span class="alert-text">Alert</span>
         </div>
         <div class="nk-gap-4"></div>
         @php
@@ -43,100 +46,124 @@
                 $data['forum']->isTopicPinned($topicID,1);
                 $data['forum']->isTopicClosed($topicID,1);
                 $url = checkUrl();
-                $data['forum']->getTopicTitle($url[3]);
-                $data['forum']->getForumID($topicID);
+                $topicTitle =   $data['forum']->getTopicTitle($topicID);
+                $forumID    =   $data['forum']->getForumID($topicID);
+
+                $isLoggedIn     =   $data['User']['LoginStatus'];
+
+                $isMod          =   $isLoggedIn ? $data['forum']->isMod($data['User']['UserUID']) : '';
+
+                $closed         =   $data['forum']->closed;
 
             @endphp
-            @if ($data['User']['LoginStatus']==true)
-                @if($data['forum']->isMod($data['User']['UserUID']))
-                    <div class="row">
-                        <div class="col-md-9"></div>
-                        <div class="mod-actions col-md-3 order-md-2 text-right">
-                            <div class="dropdown">
-                                <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
-                                <div class="dropdown-content text-center">
-                                    <a href="#" class="link-effect-4 ready pin_topic" data-pinned="{{$data['forum']->pinned ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-r"><span class="pin-text2">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-shade"><span class="pin-text3">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="{{$data['forum']->topicTitle->PostTitle}}~{{$topicID}}~{{$data['forum']->forumID->ForumID}}" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready close_topic" data-closed="{{$data['forum']->closed ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-r"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-shade"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
-                                </div>
+            @if($isMod)
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <div class="mod-actions col-md-3 order-md-2 text-right">
+                        <div class="dropdown">
+                            <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
+                            <div class="dropdown-content text-center">
+                                <a href="#" class="link-effect-4 ready pin_topic" data-pinned="{{$data['forum']->pinned ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-r"><span class="pin-text2">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-shade"><span class="pin-text3">{{$data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span></span></a>
+                                <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="{{$topicTitle}}~{{$topicID}}~{{$forumID}}" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
+                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
+                                <a href="#" class="link-effect-4 ready close_topic" data-closed="{{$data['forum']->closed ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-r"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-shade"><span class="close-text">{{$data['forum']->closed ? 'Open Topic' : 'Close Topic'}}</span></span></span></a>
+                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
                             </div>
                         </div>
                     </div>
-                @endif
+                </div>
             @endif
             <!-- START: Forums List -->
             @if(count($data['forum']->data) > 0)
                 <ul class="nk-forum nk-forum-topic">
                 @foreach($data['forum']->data as $post)
                     @php
-                        $data['forum']->memberSince($post->PostAuthor);
+                        $postID =   $post->PostID;
+                        $postAuthor =   $post->PostAuthor;
+                        $postBody   =   $post->PostBody;
+                        $postDate   =   $post->PostDate;
+
+                        $memberSince    =   $data['forum']->memberSince($post->PostAuthor);
                         $data['forum']->userStatus($post->PostAuthor);
-                        $data['forum']->loginStatus($post->PostAuthor);
-                        $data['forum']->getUserRoles($post->PostAuthor);
-                        $data['forum']->getUserTitle($post->PostAuthor);
-                        $data['forum']->getUserSocials($post->PostAuthor);
-                        $data['forum']->getUserLikes($post->PostAuthor);
-                        $data['forum']->getPostLikes($post->PostID);
-                        $data['forum']->getUserPosts($post->PostAuthor);
-                        $data['forum']->getUserSignature($post->PostAuthor);
-                        $data['forum']->getDisplayName($post->PostAuthor);
-                        $data['forum']->didUserLikePost($data['User']['UserUID'],$post->PostID);
+                        $loginStatus    =   $data['forum']->loginStatus($post->PostAuthor);
+                        $userRoles  =   $data['forum']->getUserRoles($post->PostAuthor);
+                        $userTitle  =   $data['forum']->getUserTitle($post->PostAuthor);
+                        $userSocials    =   $data['forum']->getUserSocials($post->PostAuthor);
+                        $postLikes  =   $data['forum']->getPostLikes($postID);;
+                        $userLikes  =   $data['forum']->getUserLikes($post->PostAuthor);
+                        $userPosts   =   $data['forum']->getUserPosts($post->PostAuthor);
+                        $Signature  =   $data['forum']->getUserSignature($post->PostAuthor);
+                        $displayName    =   $data['forum']->getDisplayName($post->PostAuthor);
+                        $checkPost  =   $data['forum']->didUserLikePost($data['User']['UserUID'],$postID);
+
+                        $checkDisplayName   =   $displayName ? '<a href="">'.$displayName.'</a>' : '<a href="">'.$post->PostAuthor.'</a>';
+                        $checkLoginStatus   =   $loginStatus==1 ? '<i class="fa fa-circle text-success" aria-hidden="true" title="Online"></i>' : '<i class="fa fa-circle text-danger" aria-hidden="true" title="Offline"></i>';
+
+                        $postUserUID    =   $data['forum']->displayNameToUserUID($post->PostAuthor);
+
+                        $isUserAuthor   =   $data['User']['UserUID']!==$postUserUID || $postUserUID !== $data['User']['UserUID'];
+
+                        // Data liked
+                        $dataLiked      =   $checkPost ? 'true' : 'false';
+                        $likesAmount    =   $postLikes;
+                        $likeAction     =   $checkPost ? 'Unlike' : 'Like';
+
+                        // Icon Classes
+                        $iconClasses    =   $checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline';
+
+                        // ID & author batch
+                        $userID         =   $data['User']['UserUID'];
+                        $dataBatch      =   implode("~",[$postID, $userID, $postUserUID, $postAuthor]);
+
+                        $fetchUserRoles =   $data['forum']->fetchUserRoles($postAuthor);
                     @endphp
-                    <li class="{{$post->PostID}}">
+                    <li class="{{$postID}}">
                         <div class="nk-forum-topic-author" style="width:150px !important;">
                             <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
-                            <div class="nk-forum-topic-author-name" title="{{$post->PostAuthor}}">
+                            <div class="nk-forum-topic-author-name" title="{{$postAuthor}}">
                                 {{--<a href="#">{{$post->PostAuthor}} <i class="fa fa-circle text-success" aria-hidden="true"></i></a>--}}
-                                @if ($data['forum']->displayName)
-                                    <a href="">{!!$data['forum']->displayName->DisplayName!!}</a>
-                                @else
-                                    <a href="">{{$post->PostAuthor}}</a>
-                                @endif
-                                @if($data['forum']->loginStatus == 1)
-                                    <i class="fa fa-circle text-success" aria-hidden="true" title="Online"></i>
-                                @else
-                                    <i class="fa fa-circle text-danger" aria-hidden="true" title="Offline"></i>
-                                @endif
+                                {!! $checkDisplayName !!}
+                                {!! $checkLoginStatus !!}
                             </div>
                             {{--<div class="nk-forum-topic-author-role"><span>{{$data['forum']->userStatus}}</span></div>--}}
-                            @if($data['forum']->fetchUserRoles($post->PostAuthor))
-                                @foreach ($data['forum']->userRoles as $role)
-                                    @if($role->DisplayName == $post->PostAuthor)
+                            @if($fetchUserRoles)
+                                @foreach ($userRoles as $role)
+                                    @if($role->DisplayName == $postAuthor)
                                         <div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/{{$role->RoleName}}.png" style="width:125px"></div>
                                     @endif
                                 @endforeach
                             @endif
                                  {{--<div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/{{$data['forum']->roles[0]}}.png" style="width:100px"></div>--}}
-                            <div class="nk-forum-topic-author-role"><span>{{$data['forum']->UserTitle}}</span></div>
+                            <div class="nk-forum-topic-author-role"><span>{{$userTitle}}</span></div>
                             <!-- <span class="username--style3 username--staff username--moderator username--admin">ENXF NET</span> -->
                             <div class="nk-forum-topic-author-since">
-                                Member since {{date("F d, Y", strtotime($data['forum']->memberSince->JoinDate))}}
+                                Member since {{date("F d, Y", strtotime($memberSince))}}
                             </div>
                             <div class="nk-forum-topic-author-posts">
-                                Posts: {{$data['forum']->posts->Posts}}
+                                Posts: {{$userPosts}}
                             </div>
-                            <div class="nk-forum-topic-author-likes{{$post->PostID}} author_likes">
-                                Likes: {{$data['forum']->likes->Likes}}
+                            <div class="nk-forum-topic-author-likes{{$postID}} author_likes">
+                                Likes: {{$userLikes}}
                             </div>
                             <div class="nk-forum-topic-author-social">
-                                @foreach($data['forum']->socials as $social)
-                                    @if ($social->Social == 'Discord')
-                                        <a href="#" class="open_discord_modal" title="{{$social->SocialValue}}"  data-id="{{$social->SocialValue}}~{{$post->PostAuthor}}" data-target="#discord_modal" data-toggle="modal"><i class="fab fa-discord"></i></a>
-                                    @elseif ($social->Social == 'Skype')
-                                        <a href="skype:{{$social->SocialValue}}?chat" title="{{$social->SocialValue}}"><i class="fab fa-skype"></i></a>
-                                    @elseif ($social->Social == 'Steam')
-                                        <a href="" title="{{$social->SocialValue}}"><i class="fab fa-steam"></i></a>
-                                    @endif
-                                @endforeach
+                                @if($userSocials)
+                                    @foreach($userSocials as $social)
+                                        @if ($social->Social == 'Discord')
+                                            <a href="#" class="open_discord_modal" title="{{$social->SocialValue}}"  data-id="{{$social->SocialValue}}~{{$postAuthor}}" data-target="#discord_modal" data-toggle="modal"><i class="fab fa-discord"></i></a>
+                                        @elseif ($social->Social == 'Skype')
+                                            <a href="skype:{{$social->SocialValue}}?chat" title="{{$social->SocialValue}}"><i class="fab fa-skype"></i></a>
+                                        @elseif ($social->Social == 'Steam')
+                                            <a href="" title="{{$social->SocialValue}}"><i class="fab fa-steam"></i></a>
+                                        @endif
+                                    @endforeach
+                                @endif
                                 {{--<a href=""><i class="fab fa-discord"></i></a>
                                 <a href=""><i class="fab fa-skype"></i></a>
                                 <a href=""><i class="fab fa-steam"></i></i></a>--}}
                             </div>
                         </div>
                         <div class="nk-forum-topic-content">
-                            <p>{!!$post->PostBody!!}</p>
+                            <p>{!!$postBody!!}</p>
 
                             {{--<div class="nk-forum-topic-attachments">
                                 <h4 class="h5">Attachments</h4>
@@ -146,43 +173,39 @@
                             </div>--}}
                         </div>
                         <div class="nk-forum-topic-footer">
-                            <span class="nk-forum-topic-date">{{date("M d, Y", strtotime($post->PostDate))}}</span>
-                            @if (!$data['forum']->signature)
+                            <span class="nk-forum-topic-date">{{date("M d, Y", strtotime($postDate))}}</span>
+                            @if (!$Signature)
                             @else
                                 <div class="text-center">
-                                    <span class="nk-forum-topic-sig">{!!$data['forum']->signature->Signature!!}</span>
+                                    <span class="nk-forum-topic-sig">{!!$Signature!!}</span>
                                 </div>
                             @endif
 
-                            @if ($data['User']['LoginStatus']==true)
-                                <span class="nk-forum-action-btn">
-                                    <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                                </span>
-                                <span class="nk-forum-action-btn">
-                                    <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                                </span>
-                                @php
-                                    $data['forum']->displayNameToUserUID($post->PostAuthor);
-                                    $postUserUID    =   $data['forum']->convertedName->UserUID;
-                                @endphp
-                                @if($data['User']['UserUID']!==$postUserUID || $postUserUID !== $data['User']['UserUID'])
-                                    <span class="nk-forum-action-btn heart like-button like" data-liked="{{$data['forum']->checkPost ? 'true' : 'false'}}" data-id="{{$post->PostID}}" data-uid="{{$post->PostID}}~{{$data['User']['UserUID']}}~{{$postUserUID}}~{{$post->PostAuthor}}">
+                            @if ($isLoggedIn==true)
+                                @if($isUserAuthor)
+                                    <span class="nk-forum-action-btn">
+                                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
+                                    </span>
+                                    <span class="nk-forum-action-btn">
+                                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
+                                    </span>
+                                    <span class="nk-forum-action-btn heart like-button like" data-liked="{{$dataLiked}}" data-id="{{$postID}}" data-uid="{{$dataBatch}}">
                                         <span class="nk-action-heart">
-                                            <span class="num{{$post->PostID}}">{{$data['forum']->postLikes->Likes}}</span>
-                                            <span class="{{$data['forum']->checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline'}}"></span>
+                                            <span class="num{{$postID}}">{{$likesAmount}}</span>
+                                            <span class="{{$iconClasses}}"></span>
                                             <span class="liked-icon ion-android-favorite"></span>
-                                            <text class="like-text{{$post->PostID}}">{{$data['forum']->checkPost ? 'Unlike' : 'Like'}}</text>
+                                            <text class="like-text{{$postID}}">{{$likeAction}}</text>
                                         </span>
                                     </span>
                                 @endif
                             @else
-                                <span class="nk-forum-action-btn">
+                                {{--<span class="nk-forum-action-btn">
                                     <span class="nk-action-heart">
-                                        <span class="num">{{$data['forum']->postLikes->Likes}}</span>
+                                        <span class="num">{{$postLikes}}</span>
                                         <span class="like-icon ion-android-favorite-outline"></span>
                                         <span class="liked-icon ion-android-favorite"></span>
                                     </span>
-                                </span>
+                                </span>--}}
                             @endif
                         </div>
                     </li>
@@ -197,8 +220,8 @@
             @if(count($data['forum']->data) > 0)
                 <div id="forum-reply"></div>
                 <div class="nk-gap-4"></div>
-                @if ($data['User']['LoginStatus']==true)
-                    @if($data['forum']->closed==false)
+                @if ($isLoggedIn==true)
+                    @if($closed==false)
                         <!-- START: Reply -->
                         <h3 class="h4">Reply</h3>
                         <p id="response"></p>
@@ -371,13 +394,13 @@
                         $(".pin-text1").text("Pin Topic");
                         $(".pin-text2").text("Pin Topic");
                         $(".pin-text3").text("Pin Topic");
-                        $(".alert").text('Topic has been unpinned successfully.');
+                        $(".alert-text").text('Topic has been unpinned successfully.');
                     } else {
                         curTrgt.data("pinned", true);
                         $(".pin-text1").text("Unpin Topic");
                         $(".pin-text2").text("Unpin Topic");
                         $(".pin-text3").text("Unpin Topic");
-                        $(".alert").text('Topic has been pinned successfully.');
+                        $(".alert-text").text('Topic has been pinned successfully.');
                     }
                 })
                 .catch(err => {
@@ -414,11 +437,11 @@
                     if (data.closed === 'false') {
                         curTrgt.data("closed", false);
                         $(".close-text").text("Close Topic");
-                        $(".alert").text('Topic has been opened successfully.');
+                        $(".alert-text").text('Topic has been opened successfully.');
                     } else {
                         curTrgt.data("closed", true);
                         $(".close-text").text("Open Topic");
-                        $(".alert").text('Topic has been closed successfully.');
+                        $(".alert-text").text('Topic has been closed successfully.');
                     }
                 })
                 .catch(err => {

@@ -14,56 +14,62 @@
             @php
                 Display('new_topic_modal','<i class="fas fa-plus"></i>','0','2','Create New Topic');
                 $url = checkUrl();
-            @endphp
-            @if ($data['User']['LoginStatus']==true)
-                <button class="nk-btn nk-btn-lg link-effect-4 float-right open_new_topic_modal" id="reply_submit" data-id="{{$url[2]}}~{{$data['User']['DisplayName']}}" data-target="#new_topic_modal" data-toggle="modal">Create New Topic</button>
-            @endif
-            <div class="nk-gap-4"></div>
-            @php
+
+                $isLoggedIn     =   $data['User']['LoginStatus'];
+
                 $topicID  =   $data['topicID'];
                 $data['forum']->getTopics($topicID);
                 $data['forum']->getPinnedTopics($topicID);
             @endphp
+            @if ($isLoggedIn==true)
+                <button class="nk-btn nk-btn-lg link-effect-4 float-right open_new_topic_modal" id="reply_submit" data-id="{{$url[2]}}~{{$data['User']['DisplayName']}}" data-target="#new_topic_modal" data-toggle="modal">Create New Topic</button>
+            @endif
+            <div class="nk-gap-4"></div>
             <!-- START: Forums List -->
             @if(count($data['forum']->fetch) > 0)
                 <ul class="nk-forum">
                     @foreach($data['forum']->fetch as $topic)
                         @php
-                            $data['forum']->getPostCount($topic->TopicID);
-                            $data['forum']->getPostTitle($topic->TopicID);
-                            $data['forum']->getPostBody($topic->TopicID);
-                            $data['forum']->getPostDate($topic->TopicID);
+                            $postCount  =   $data['forum']->getPostCount($topic->TopicID);
+                            $postTitle  =   $data['forum']->getPostTitle($topic->TopicID);
+                            $postBody   =   $data['forum']->getPostBody($topic->TopicID);
+                            $postDate   =   $data['forum']->getPostDate($topic->TopicID);
+
+                            $topicID        =   $topic->TopicID;
+                            $postTitle      =   $topic->PostTitle;
+                            $topicAuthor    =   $topic->PostAuthor;
+                            $topicDate      =   $topic->PostDate;
                         @endphp
                         <li>
                             <div class="nk-forum-icon">
                                 <span class="ion-pin"></span>
                             </div>
                             <div class="nk-forum-title">
-                                <h3><a href="/forum/topics/view_topic/{{$topic->TopicID}}">{{$topic->PostTitle}}</a></h3>
-                                <div class="nk-forum-title-sub">Started by <a href="#">{{$topic->PostAuthor}}</a> on {{date("M d, Y", strtotime($topic->PostDate))}}</div>
+                                <h3><a href="/forum/topics/view_topic/{{$topicID}}">{{$postTitle}}</a></h3>
+                                <div class="nk-forum-title-sub">Started by <a href="#">{{$topicAuthor}}</a> on {{date("M d, Y", strtotime($topicDate))}}</div>
                             </div>
                             <div class="nk-forum-count">
-                                @if($data['forum']->postCount->Posts == 1)
-                                    {{$data['forum']->postCount->Posts}} post
+                                @if($postCount == 1)
+                                    {{$postCount}} post
                                 @else
-                                    {{$data['forum']->postCount->Posts}} posts
+                                    {{$postCount}} posts
                                 @endif
                             </div>
                             <div class="nk-forum-activity-avatar">
                                 <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
                             </div>
                             <div class="nk-forum-activity">
-                                <div class="nk-forum-activity-title" title="{{$data['forum']->postTitle->PostTitle}}">
-                                    @if(!empty($data['forum']->postTitle))
-                                        <a href="forum-single-topic.html">{{$data['forum']->postBody->PostBody}}</a>
+                                <div class="nk-forum-activity-title" title="{{$postTitle}}">
+                                    @if(!empty($postTitle))
+                                        <a href="forum-single-topic.html">{{$postBody}}</a>
                                     @else
                                         —
 
                                     @endif
                                 </div>
                                 <div class="nk-forum-activity-date">
-                                    @if(!empty($data['forum']->postDate))
-                                        {{date("M d, Y", strtotime($data['forum']->postDate->PostDate))}}
+                                    @if(!empty($postDate))
+                                        {{date("M d, Y", strtotime($postDate))}}
                                     @endif
                                 </div>
                             </div>
@@ -76,41 +82,49 @@
                 <ul class="nk-forum">
                 @foreach($data['forum']->row as $topic)
                     @php
-                        $data['forum']->getPostCount($topic->TopicID);
-                        $data['forum']->getPostTitle($topic->TopicID);
-                        $data['forum']->getPostBody($topic->TopicID);
-                        $data['forum']->getPostDate($topic->TopicID);
+                        $postCount  =   $data['forum']->getPostCount($topic->TopicID);
+                        $postTitle  =   $data['forum']->getPostTitle($topic->TopicID);
+                        $postBody   =   $data['forum']->getPostBody($topic->TopicID);
+                        $postDate   =   $data['forum']->getPostDate($topic->TopicID);
+
+                        $Closed         =   $topic->Closed==1;
+                        $closedCheck    =   $Closed? 'class=nk-forum-locked' : '';
+                        $closedAction   =   $Closed ? 'ion-locked' : 'ion-ios-game-controller-b';
+                        $topicID        =   $topic->TopicID;
+                        $postTitle      =   $topic->PostTitle;
+                        $topicAuthor    =   $topic->TopicAuthor;
+                        $topicDate      =   $topic->TopicDate;
                     @endphp
-                    <li {{$topic->Closed==1 ? 'class=nk-forum-locked' : ''}}>
+                    <li {{$closedCheck}}>
                         <div class="nk-forum-icon">
-                            <span class="{{$topic->Closed==1 ? 'ion-locked' : 'ion-ios-game-controller-b'}}"></span>
+                            <span class="{{$closedAction}}"></span>
                         </div>
                         <div class="nk-forum-title">
-                            <h3><a href="/forum/topics/view_topic/{{$topic->TopicID}}">{{$topic->PostTitle}}</a></h3>
-                            <div class="nk-forum-title-sub">Started by <a href="#">{{$topic->TopicAuthor}}</a> on {{date("M d, Y", strtotime($topic->TopicDate))}}</div>
+                            <h3><a href="/forum/topics/view_topic/{{$topicID}}">{{$postTitle}}</a></h3>
+                            <div class="nk-forum-title-sub">Started by <a href="#">{{$topicAuthor}}</a> on {{date("M d, Y", strtotime($topicDate))}}</div>
                         </div>
                         <div class="nk-forum-count">
-                            @if($data['forum']->postCount->Posts == 1)
-                                {{$data['forum']->postCount->Posts}} post
+                            @if($postCount == 1)
+                                {{$postCount}} post
                             @else
-                                {{$data['forum']->postCount->Posts}} posts
+                                {{$postCount}} posts
                             @endif
                         </div>
                         <div class="nk-forum-activity-avatar">
                             <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
                         </div>
                         <div class="nk-forum-activity">
-                            <div class="nk-forum-activity-title" title="{{$data['forum']->postTitle->PostTitle}}">
-                                @if(!empty($data['forum']->postTitle))
-                                    <a href="forum-single-topic.html">{{$data['forum']->postBody->PostBody}}</a>
+                            <div class="nk-forum-activity-title" title="{{$postTitle}}">
+                                @if(!empty($postTitle))
+                                    <a href="forum-single-topic.html">{{$postBody}}</a>
                                 @else
                                     —
 
                                 @endif
                             </div>
                             <div class="nk-forum-activity-date">
-                                @if(!empty($data['forum']->postDate))
-                                    {{date("M d, Y", strtotime($data['forum']->postDate->PostDate))}}
+                                @if(!empty($postDate))
+                                    {{date("M d, Y", strtotime($postDate))}}
                                 @endif
                             </div>
                         </div>

@@ -8,8 +8,11 @@
     <?php echo $__env->make('inc.cms.rightNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php echo $__env->make('inc.cms.mobileNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="nk-main">
-        <div class="alert alert-dark text-center" id="pin" style="display:none;font-size:24px;" role="alert">
-            Alert
+        <div class="nk-info-box bg-main-1 alert text-center" id="pin" style="display:none;font-size:24px;">
+            <div class="nk-info-box-icon" style="display:inline-block !important;">
+                <i class="ion-information-circled"></i>
+            </div>
+            <span class="alert-text">Alert</span>
         </div>
         <div class="nk-gap-4"></div>
         <?php 
@@ -42,142 +45,158 @@
                 $data['forum']->isTopicPinned($topicID,1);
                 $data['forum']->isTopicClosed($topicID,1);
                 $url = checkUrl();
-                $data['forum']->getTopicTitle($url[3]);
-                $data['forum']->getForumID($topicID);
+                $topicTitle =   $data['forum']->getTopicTitle($topicID);
+                $forumID    =   $data['forum']->getForumID($topicID);
+
+                $isLoggedIn     =   $data['User']['LoginStatus'];
+
+                $isMod          =   $isLoggedIn ? $data['forum']->isMod($data['User']['UserUID']) : '';
+
+                $closed         =   $data['forum']->closed;
 
              ?>
-            <?php if($data['User']['LoginStatus']==true): ?>
-                <?php if($data['forum']->isMod($data['User']['UserUID'])): ?>
-                    <div class="row">
-                        <div class="col-md-9"></div>
-                        <div class="mod-actions col-md-3 order-md-2 text-right">
-                            <div class="dropdown">
-                                <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
-                                <div class="dropdown-content text-center">
-                                    <a href="#" class="link-effect-4 ready pin_topic" data-pinned="<?php echo e($data['forum']->pinned ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-r"><span class="pin-text2"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-shade"><span class="pin-text3"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="<?php echo e($data['forum']->topicTitle->PostTitle); ?>~<?php echo e($topicID); ?>~<?php echo e($data['forum']->forumID->ForumID); ?>" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready close_topic" data-closed="<?php echo e($data['forum']->closed ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-r"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-shade"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span></span></a>
-                                    <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
-                                </div>
+            <?php if($isMod): ?>
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <div class="mod-actions col-md-3 order-md-2 text-right">
+                        <div class="dropdown">
+                            <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
+                            <div class="dropdown-content text-center">
+                                <a href="#" class="link-effect-4 ready pin_topic" data-pinned="<?php echo e($data['forum']->pinned ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-r"><span class="pin-text2"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span><span class="link-effect-shade"><span class="pin-text3"><?php echo e($data['forum']->pinned ? 'Unpin Topic' : 'Pin Topic'); ?></span></span></span></a>
+                                <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="<?php echo e($topicTitle); ?>~<?php echo e($topicID); ?>~<?php echo e($forumID); ?>" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
+                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
+                                <a href="#" class="link-effect-4 ready close_topic" data-closed="<?php echo e($data['forum']->closed ? 'true' : 'false'); ?>" data-id="<?php echo e($topicID); ?>"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-r"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span><span class="link-effect-shade"><span class="close-text"><?php echo e($data['forum']->closed ? 'Open Topic' : 'Close Topic'); ?></span></span></span></a>
+                                <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
+                </div>
             <?php endif; ?>
             <!-- START: Forums List -->
             <?php if(count($data['forum']->data) > 0): ?>
                 <ul class="nk-forum nk-forum-topic">
                 <?php $__currentLoopData = $data['forum']->data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php 
-                        $data['forum']->memberSince($post->PostAuthor);
+                        $postID =   $post->PostID;
+                        $postAuthor =   $post->PostAuthor;
+                        $postBody   =   $post->PostBody;
+                        $postDate   =   $post->PostDate;
+
+                        $memberSince    =   $data['forum']->memberSince($post->PostAuthor);
                         $data['forum']->userStatus($post->PostAuthor);
-                        $data['forum']->loginStatus($post->PostAuthor);
-                        $data['forum']->getUserRoles($post->PostAuthor);
-                        $data['forum']->getUserTitle($post->PostAuthor);
-                        $data['forum']->getUserSocials($post->PostAuthor);
-                        $data['forum']->getUserLikes($post->PostAuthor);
-                        $data['forum']->getPostLikes($post->PostID);
-                        $data['forum']->getUserPosts($post->PostAuthor);
-                        $data['forum']->getUserSignature($post->PostAuthor);
-                        $data['forum']->getDisplayName($post->PostAuthor);
-                        $data['forum']->didUserLikePost($data['User']['UserUID'],$post->PostID);
+                        $loginStatus    =   $data['forum']->loginStatus($post->PostAuthor);
+                        $userRoles  =   $data['forum']->getUserRoles($post->PostAuthor);
+                        $userTitle  =   $data['forum']->getUserTitle($post->PostAuthor);
+                        $userSocials    =   $data['forum']->getUserSocials($post->PostAuthor);
+                        $postLikes  =   $data['forum']->getPostLikes($postID);;
+                        $userLikes  =   $data['forum']->getUserLikes($post->PostAuthor);
+                        $userPosts   =   $data['forum']->getUserPosts($post->PostAuthor);
+                        $Signature  =   $data['forum']->getUserSignature($post->PostAuthor);
+                        $displayName    =   $data['forum']->getDisplayName($post->PostAuthor);
+                        $checkPost  =   $data['forum']->didUserLikePost($data['User']['UserUID'],$postID);
+
+                        $checkDisplayName   =   $displayName ? '<a href="">'.$displayName.'</a>' : '<a href="">'.$post->PostAuthor.'</a>';
+                        $checkLoginStatus   =   $loginStatus==1 ? '<i class="fa fa-circle text-success" aria-hidden="true" title="Online"></i>' : '<i class="fa fa-circle text-danger" aria-hidden="true" title="Offline"></i>';
+
+                        $postUserUID    =   $data['forum']->displayNameToUserUID($post->PostAuthor);
+
+                        $isUserAuthor   =   $data['User']['UserUID']!==$postUserUID || $postUserUID !== $data['User']['UserUID'];
+
+                        // Data liked
+                        $dataLiked      =   $checkPost ? 'true' : 'false';
+                        $likesAmount    =   $postLikes;
+                        $likeAction     =   $checkPost ? 'Unlike' : 'Like';
+
+                        // Icon Classes
+                        $iconClasses    =   $checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline';
+
+                        // ID & author batch
+                        $userID         =   $data['User']['UserUID'];
+                        $dataBatch      =   implode("~",[$postID, $userID, $postUserUID, $postAuthor]);
+
+                        $fetchUserRoles =   $data['forum']->fetchUserRoles($postAuthor);
                      ?>
-                    <li class="<?php echo e($post->PostID); ?>">
+                    <li class="<?php echo e($postID); ?>">
                         <div class="nk-forum-topic-author" style="width:150px !important;">
                             <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
-                            <div class="nk-forum-topic-author-name" title="<?php echo e($post->PostAuthor); ?>">
+                            <div class="nk-forum-topic-author-name" title="<?php echo e($postAuthor); ?>">
                                 
-                                <?php if($data['forum']->displayName): ?>
-                                    <a href=""><?php echo $data['forum']->displayName->DisplayName; ?></a>
-                                <?php else: ?>
-                                    <a href=""><?php echo e($post->PostAuthor); ?></a>
-                                <?php endif; ?>
-                                <?php if($data['forum']->loginStatus == 1): ?>
-                                    <i class="fa fa-circle text-success" aria-hidden="true" title="Online"></i>
-                                <?php else: ?>
-                                    <i class="fa fa-circle text-danger" aria-hidden="true" title="Offline"></i>
-                                <?php endif; ?>
+                                <?php echo $checkDisplayName; ?>
+
+                                <?php echo $checkLoginStatus; ?>
+
                             </div>
                             
-                            <?php if($data['forum']->fetchUserRoles($post->PostAuthor)): ?>
-                                <?php $__currentLoopData = $data['forum']->userRoles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php if($role->DisplayName == $post->PostAuthor): ?>
+                            <?php if($fetchUserRoles): ?>
+                                <?php $__currentLoopData = $userRoles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php if($role->DisplayName == $postAuthor): ?>
                                         <div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/<?php echo e($role->RoleName); ?>.png" style="width:125px"></div>
                                     <?php endif; ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endif; ?>
                                  
-                            <div class="nk-forum-topic-author-role"><span><?php echo e($data['forum']->UserTitle); ?></span></div>
+                            <div class="nk-forum-topic-author-role"><span><?php echo e($userTitle); ?></span></div>
                             <!-- <span class="username--style3 username--staff username--moderator username--admin">ENXF NET</span> -->
                             <div class="nk-forum-topic-author-since">
-                                Member since <?php echo e(date("F d, Y", strtotime($data['forum']->memberSince->JoinDate))); ?>
+                                Member since <?php echo e(date("F d, Y", strtotime($memberSince))); ?>
 
                             </div>
                             <div class="nk-forum-topic-author-posts">
-                                Posts: <?php echo e($data['forum']->posts->Posts); ?>
+                                Posts: <?php echo e($userPosts); ?>
 
                             </div>
-                            <div class="nk-forum-topic-author-likes<?php echo e($post->PostID); ?> author_likes">
-                                Likes: <?php echo e($data['forum']->likes->Likes); ?>
+                            <div class="nk-forum-topic-author-likes<?php echo e($postID); ?> author_likes">
+                                Likes: <?php echo e($userLikes); ?>
 
                             </div>
                             <div class="nk-forum-topic-author-social">
-                                <?php $__currentLoopData = $data['forum']->socials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $social): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php if($social->Social == 'Discord'): ?>
-                                        <a href="#" class="open_discord_modal" title="<?php echo e($social->SocialValue); ?>"  data-id="<?php echo e($social->SocialValue); ?>~<?php echo e($post->PostAuthor); ?>" data-target="#discord_modal" data-toggle="modal"><i class="fab fa-discord"></i></a>
-                                    <?php elseif($social->Social == 'Skype'): ?>
-                                        <a href="skype:<?php echo e($social->SocialValue); ?>?chat" title="<?php echo e($social->SocialValue); ?>"><i class="fab fa-skype"></i></a>
-                                    <?php elseif($social->Social == 'Steam'): ?>
-                                        <a href="" title="<?php echo e($social->SocialValue); ?>"><i class="fab fa-steam"></i></a>
-                                    <?php endif; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php if($userSocials): ?>
+                                    <?php $__currentLoopData = $userSocials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $social): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($social->Social == 'Discord'): ?>
+                                            <a href="#" class="open_discord_modal" title="<?php echo e($social->SocialValue); ?>"  data-id="<?php echo e($social->SocialValue); ?>~<?php echo e($postAuthor); ?>" data-target="#discord_modal" data-toggle="modal"><i class="fab fa-discord"></i></a>
+                                        <?php elseif($social->Social == 'Skype'): ?>
+                                            <a href="skype:<?php echo e($social->SocialValue); ?>?chat" title="<?php echo e($social->SocialValue); ?>"><i class="fab fa-skype"></i></a>
+                                        <?php elseif($social->Social == 'Steam'): ?>
+                                            <a href="" title="<?php echo e($social->SocialValue); ?>"><i class="fab fa-steam"></i></a>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endif; ?>
                                 
                             </div>
                         </div>
                         <div class="nk-forum-topic-content">
-                            <p><?php echo $post->PostBody; ?></p>
+                            <p><?php echo $postBody; ?></p>
 
                             
                         </div>
                         <div class="nk-forum-topic-footer">
-                            <span class="nk-forum-topic-date"><?php echo e(date("M d, Y", strtotime($post->PostDate))); ?></span>
-                            <?php if(!$data['forum']->signature): ?>
+                            <span class="nk-forum-topic-date"><?php echo e(date("M d, Y", strtotime($postDate))); ?></span>
+                            <?php if(!$Signature): ?>
                             <?php else: ?>
                                 <div class="text-center">
-                                    <span class="nk-forum-topic-sig"><?php echo $data['forum']->signature->Signature; ?></span>
+                                    <span class="nk-forum-topic-sig"><?php echo $Signature; ?></span>
                                 </div>
                             <?php endif; ?>
 
-                            <?php if($data['User']['LoginStatus']==true): ?>
-                                <span class="nk-forum-action-btn">
-                                    <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-                                </span>
-                                <span class="nk-forum-action-btn">
-                                    <a href="#"><span class="fa fa-flag"></span> Spam</a>
-                                </span>
-                                <?php 
-                                    $data['forum']->displayNameToUserUID($post->PostAuthor);
-                                    $postUserUID    =   $data['forum']->convertedName->UserUID;
-                                 ?>
-                                <?php if($data['User']['UserUID']!==$postUserUID || $postUserUID !== $data['User']['UserUID']): ?>
-                                    <span class="nk-forum-action-btn heart like-button like" data-liked="<?php echo e($data['forum']->checkPost ? 'true' : 'false'); ?>" data-id="<?php echo e($post->PostID); ?>" data-uid="<?php echo e($post->PostID); ?>~<?php echo e($data['User']['UserUID']); ?>~<?php echo e($postUserUID); ?>~<?php echo e($post->PostAuthor); ?>">
+                            <?php if($isLoggedIn==true): ?>
+                                <?php if($isUserAuthor): ?>
+                                    <span class="nk-forum-action-btn">
+                                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
+                                    </span>
+                                    <span class="nk-forum-action-btn">
+                                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
+                                    </span>
+                                    <span class="nk-forum-action-btn heart like-button like" data-liked="<?php echo e($dataLiked); ?>" data-id="<?php echo e($postID); ?>" data-uid="<?php echo e($dataBatch); ?>">
                                         <span class="nk-action-heart">
-                                            <span class="num<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->postLikes->Likes); ?></span>
-                                            <span class="<?php echo e($data['forum']->checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline'); ?>"></span>
+                                            <span class="num<?php echo e($postID); ?>"><?php echo e($likesAmount); ?></span>
+                                            <span class="<?php echo e($iconClasses); ?>"></span>
                                             <span class="liked-icon ion-android-favorite"></span>
-                                            <text class="like-text<?php echo e($post->PostID); ?>"><?php echo e($data['forum']->checkPost ? 'Unlike' : 'Like'); ?></text>
+                                            <text class="like-text<?php echo e($postID); ?>"><?php echo e($likeAction); ?></text>
                                         </span>
                                     </span>
                                 <?php endif; ?>
                             <?php else: ?>
-                                <span class="nk-forum-action-btn">
-                                    <span class="nk-action-heart">
-                                        <span class="num"><?php echo e($data['forum']->postLikes->Likes); ?></span>
-                                        <span class="like-icon ion-android-favorite-outline"></span>
-                                        <span class="liked-icon ion-android-favorite"></span>
-                                    </span>
-                                </span>
+                                
                             <?php endif; ?>
                         </div>
                     </li>
@@ -192,8 +211,8 @@
             <?php if(count($data['forum']->data) > 0): ?>
                 <div id="forum-reply"></div>
                 <div class="nk-gap-4"></div>
-                <?php if($data['User']['LoginStatus']==true): ?>
-                    <?php if($data['forum']->closed==false): ?>
+                <?php if($isLoggedIn==true): ?>
+                    <?php if($closed==false): ?>
                         <!-- START: Reply -->
                         <h3 class="h4">Reply</h3>
                         <p id="response"></p>
@@ -366,13 +385,13 @@
                         $(".pin-text1").text("Pin Topic");
                         $(".pin-text2").text("Pin Topic");
                         $(".pin-text3").text("Pin Topic");
-                        $(".alert").text('Topic has been unpinned successfully.');
+                        $(".alert-text").text('Topic has been unpinned successfully.');
                     } else {
                         curTrgt.data("pinned", true);
                         $(".pin-text1").text("Unpin Topic");
                         $(".pin-text2").text("Unpin Topic");
                         $(".pin-text3").text("Unpin Topic");
-                        $(".alert").text('Topic has been pinned successfully.');
+                        $(".alert-text").text('Topic has been pinned successfully.');
                     }
                 })
                 .catch(err => {
@@ -409,11 +428,11 @@
                     if (data.closed === 'false') {
                         curTrgt.data("closed", false);
                         $(".close-text").text("Close Topic");
-                        $(".alert").text('Topic has been opened successfully.');
+                        $(".alert-text").text('Topic has been opened successfully.');
                     } else {
                         curTrgt.data("closed", true);
                         $(".close-text").text("Open Topic");
-                        $(".alert").text('Topic has been closed successfully.');
+                        $(".alert-text").text('Topic has been closed successfully.');
                     }
                 })
                 .catch(err => {

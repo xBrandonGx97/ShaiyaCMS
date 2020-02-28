@@ -41,8 +41,11 @@
         public function getForumID($topicID) {
         	$this->MSSQL->query('SELECT ForumID FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID=:topicid');
         	$this->MSSQL->bind(':topicid', $topicID);
-            $res = $this->MSSQL->single();
-            $this->forumID = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->forumID = $res;
+			foreach($res as $action) {
+				return $action->ForumID;
+			}
 		}
 
         public function getForums() {
@@ -91,44 +94,68 @@
 		public function getTopicCount($ForumID) {
         	$this->MSSQL->query('SELECT COUNT(*) AS Topics FROM '.$this->MSSQL->getTable('TOPICS').' WHERE ForumID='.$ForumID.'');
             $res = $this->MSSQL->single();
-            $this->topicCount = $res;
+            #$this->topicCount = $res;
+			return $res->Topics;
 		}
 		
-		public function getTopicTitle($ForumID) {
-        	$this->MSSQL->query('SELECT TOP 1 PostTitle FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE ForumID='.$ForumID.' AND Main=:main ORDER BY PostDate DESC');
+		public function getTopicTitle($TopicID) {
+        	$sql = ('
+        				SELECT TOP 1 PostTitle FROM ShaiyaCMS.dbo.FORUM_POSTS
+        				WHERE TopicID='.$TopicID.'
+        				AND Main=:main ORDER BY PostDate DESC
+        	');
+        	$this->MSSQL->query($sql);
         	$this->MSSQL->bind(':main', 1);
-            $res = $this->MSSQL->single();
-            $this->topicTitle = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->topicTitle = $res;
+            foreach($res as $action) {
+            	return $action->PostTitle;
+			}
 		}
 		
 		public function getTopicDate($ForumID) {
   			$this->MSSQL->query('SELECT TOP 1 TopicDate FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE ForumID='.$ForumID.'');
-            $res = $this->MSSQL->single();
-            $this->topicDate = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->topicDate = $res;
+			foreach($res as $action) {
+				return $action->TopicDate;
+			}
 		}
 		
 		public function getPostCount($TopicID) {
         	$this->MSSQL->query('SELECT COUNT(*) AS Posts FROM '.$this->MSSQL->getTable('POSTS').' WHERE TopicID='.$TopicID.'');
-            $res = $this->MSSQL->single();
-            $this->postCount = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->postCount = $res;
+			foreach($res as $post) {
+				return $post->Posts;
+			}
 		}
 		
 		public function getPostTitle($TopicID) {
-        	$this->MSSQL->query('SELECT TOP 1 PostTitle FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.' ORDER BY PostDate DESC');
-            $res = $this->MSSQL->single();
-            $this->postTitle = $res;
+        	$this->MSSQL->query('SELECT TOP 1 PostTitle FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.' AND Main=1 ORDER BY PostDate DESC');
+            $res = $this->MSSQL->resultSet();
+            #$this->postTitle = $res;
+            foreach($res as $post) {
+            	return $post->PostTitle;
+			}
 		}
 		
 		public function getPostBody($TopicID) {
         	$this->MSSQL->query('SELECT TOP 1 PostBody FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.' ORDER BY PostDate DESC');
-            $res = $this->MSSQL->single();
-            $this->postBody = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->postBody = $res;
+			foreach($res as $post) {
+				return $post->PostBody;
+			}
 		}
 		
 		public function getPostDate($TopicID) {
   			$this->MSSQL->query('SELECT TOP 1 PostDate FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.'');
-            $res = $this->MSSQL->single();
-            $this->postDate = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->postDate = $res;
+			foreach($res as $post) {
+				return $post->PostDate;
+			}
 		}
 		
 		public function memberSince($user) {
@@ -139,8 +166,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':name', $user);
-            $res = $this->MSSQL->single();
-            $this->memberSince = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->memberSince = $res;
+			foreach($res as $action) {
+				return $action->JoinDate;
+			}
 		}
 		
 		public function userStatus($user) {
@@ -162,8 +192,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':name', $user);
-            $res = $this->MSSQL->single();
-            $this->loginStatus = $res->LoginStatus;
+            $res = $this->MSSQL->resultSet();
+            #$this->loginStatus = $res->LoginStatus;
+			foreach($res as $action) {
+				return $action->LoginStatus;
+			}
 		}
 		
 		public function getUserRoles($user) {
@@ -178,8 +211,9 @@
   			$this->MSSQL->bind(':dname', $user);
             $res = $this->MSSQL->resultSet();
             foreach($res as $roles) {
-            	$this->userRoles = $res;
+            	#$this->userRoles = $res;
             	#echo $roles->RoleName;
+				return $res;
 			}
 		}
 		
@@ -239,8 +273,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
-            $res = $this->MSSQL->single();
-            $this->UserTitle = $res->UserTitle;
+            $res = $this->MSSQL->resultSet();
+            #$this->UserTitle = $res->UserTitle;
+			foreach($res as $action) {
+				return $action->UserTitle;
+			}
 		}
 		
 		public function getUserSocials($user) {
@@ -253,7 +290,10 @@
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
             $res = $this->MSSQL->resultSet();
-            $this->socials = $res;
+            #$this->socials = $res;
+			foreach($res as $action) {
+				return $res;
+			}
 		}
 		
 		public function getUserLikes($user) {
@@ -265,8 +305,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
-            $res = $this->MSSQL->single();
-            $this->likes = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->likes = $res;
+			foreach($res as $action) {
+				return $action->Likes;
+			}
 		}
 		
 		public function getPostLikes($post) {
@@ -276,8 +319,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':post',$post);
-            $res = $this->MSSQL->single();
-            $this->postLikes = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->postLikes = $res;
+			foreach($res as $action) {
+				return $action->Likes;
+			}
 		}
 		
 		public function getUserPosts($user) {
@@ -287,8 +333,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':author',$user);
-            $res = $this->MSSQL->single();
-            $this->posts = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->posts = $res;
+			foreach($res as $action) {
+				return $action->Posts;
+			}
 		}
 		
 		public function getUserSignature($user) {
@@ -300,8 +349,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
-            $res = $this->MSSQL->single();
-            $this->signature = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->signature = $res;
+			foreach($res as $action) {
+				return $action->Signature;
+			}
 		}
 		
 		public function getOnlineStaff() {
@@ -320,7 +372,15 @@
 			");
   			$this->MSSQL->query($sql);
             $res = $this->MSSQL->resultSet();
-            $this->onlineStaff = $res;
+            $rowCount	=	count($res);
+            #$this->onlineStaff = $res;
+			if($rowCount > 0) {
+				foreach($res as $staff) {
+					return $staff->DisplayName;
+				}
+			} else {
+				return false;
+			}
 		}
 		
 		public function getDisplayName($user) {
@@ -332,8 +392,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
-            $res = $this->MSSQL->single();
-            $this->displayName = $res;
+            $res = $this->MSSQL->resultSet();
+            #$this->displayName = $res;
+			foreach($res as $action) {
+				return $action->DisplayName;
+			}
 		}
 		
 		public function convertDisplayName($name) {
@@ -346,8 +409,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$name);
-            $res = $this->MSSQL->single();
-            $this->newDisplayName	=	$res;
+            $res = $this->MSSQL->resultSet();
+            #$this->newDisplayName	=	$res;
+			foreach($res as $name) {
+				return $name->DisplayName;
+			}
 		}
 		
 		public function displayNameToUserUID($name) {
@@ -360,8 +426,11 @@
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$name);
-            $res = $this->MSSQL->single();
-            $this->convertedName	=	$res;
+            $res = $this->MSSQL->resultSet();
+            #$this->convertedName	=	$res;
+			foreach($res as $action) {
+				return $action->UserUID;
+			}
 		}
 		
 		public function likePost($postID,$likedUser,$UserUID) {
@@ -388,9 +457,11 @@
             $res = $this->MSSQL->resultSet();
             $rowCount	=	count($res);
             if($rowCount > 0) {
-            	$this->checkPost = true;
+            	#$this->checkPost = true;
+				return true;
 			} else {
-            	$this->checkPost = false;
+            	#$this->checkPost = false;
+				return false;
 			}
 		}
 		
@@ -440,5 +511,9 @@
             	return true;
 			}
             return false;
+		}
+		
+		public function addModLog() {
+		
 		}
     }
