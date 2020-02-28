@@ -4,33 +4,12 @@
 		public $row;
 		public $fetch;
 		public $data;
-		public $get;
-		public $topicCount;
-		public $topicTitle;
-		public $topicDate;
-		public $postCount;
-		public $postTitle;
-		public $postBody;
-		public $postDate;
-		public $memberSince;
 		public $userStatus;
-		public $loginStatus;
 		public $roles = [];
-		public $userRoles;
 		public $socials;
-		public $UserTitle;
-		public $likes;
-		public $postLikes;
-		public $posts;
-		public $signature;
 		public $onlineStaff;
-		public $displayName;
-		public $newDisplayName;
-		public $convertedName;
-		public $checkPost;
 		public $pinned;
 		public $closed;
-		public $forumID;
 		public $fetArr = [];
         public function __construct() {
             $this->MSSQL   =   new Classes\DB\MSSQL;
@@ -39,7 +18,7 @@
         }
         
         public function getForumID($topicID) {
-        	$this->MSSQL->query('SELECT ForumID FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID=:topicid');
+        	$this->MSSQL->query('SELECT ForumID FROM '.$this->MSSQL->getTable("TOPICS").' WHERE TopicID=:topicid');
         	$this->MSSQL->bind(':topicid', $topicID);
             $res = $this->MSSQL->resultSet();
             #$this->forumID = $res;
@@ -51,13 +30,13 @@
 		public function getForumName($forumID,$type = false) {
         	if($type) {
         		$sql	=	('
-								SELECT MIN([F].[ForumName]) AS ForumName FROM ShaiyaCMS.dbo.FORUMS AS [F]
-								INNER JOIN ShaiyaCMS.dbo.FORUM_POSTS AS [FP] ON [F].[ForumID] = [FP].[ForumID]
+								SELECT MIN([F].[ForumName]) AS ForumName FROM '.$this->MSSQL->getTable("FORUMS").' AS [F]
+								INNER JOIN '.$this->MSSQL->getTable("POSTS").' AS [FP] ON [F].[ForumID] = [FP].[ForumID]
 								WHERE [FP].[PostID]=:forumid
 				');
 			} else {
         		$sql	=	('
-								SELECT ForumName FROM ShaiyaCMS.dbo.FORUMS
+								SELECT ForumName FROM '.$this->MSSQL->getTable("FORUMS").'
 								WHERE ForumID=:forumid
 				');
 			}
@@ -71,15 +50,15 @@
 		}
 
         public function getForums() {
-            $this->MSSQL->query('SELECT * FROM '.$this->MSSQL->getTable('FORUM').'');
+            $this->MSSQL->query('SELECT * FROM '.$this->MSSQL->getTable('FORUMS').'');
             $res = $this->MSSQL->resultSet();
             $this->fet = $res;
         }
         
         public function getTopics($id) {
         	$sql	=	('
-        					SELECT [FT].[TopicID],[FT].[ForumID],[FT].[TopicAuthor],[FT].[TopicDate],[FT].[Pinned],[FT].[Closed],[FP].[PostTitle],[FP].[Main] FROM ShaiyaCMS.dbo.FORUM_TOPICS AS [FT]
-							INNER JOIN ShaiyaCMS.dbo.FORUM_POSTS AS [FP] ON [FT].[TopicID] = [FP].[TopicID]
+        					SELECT [FT].[TopicID],[FT].[ForumID],[FT].[TopicAuthor],[FT].[TopicDate],[FT].[Pinned],[FT].[Closed],[FP].[PostTitle],[FP].[Main] FROM '.$this->MSSQL->getTable("TOPICS").' AS [FT]
+							INNER JOIN '.$this->MSSQL->getTable("POSTS").' AS [FP] ON [FT].[TopicID] = [FP].[TopicID]
 							WHERE [FT].[ForumID]='.$id.' AND [FT].[Pinned]=:pinned AND [FP].[Main]=:main
         	');
         	$this->MSSQL->query($sql);
@@ -91,8 +70,8 @@
 		
 		public function getPinnedTopics($id) {
         	$sql=('
-					SELECT [FP].[PostID],[FP].[ForumID],[FP].[TopicID],[FP].[PostTitle],[FP].[PostBody],[FP].[PostAuthor],[FT].[TopicAuthor],[FP].[PostDate],[FP].[Main],[FT].[Pinned],[FT].[Closed] FROM ShaiyaCMS.dbo.FORUM_POSTS AS [FP]
-					INNER JOIN ShaiyaCMS.dbo.FORUM_TOPICS AS [FT] ON [FP].[TopicID] = [FT].[TopicID]
+					SELECT [FP].[PostID],[FP].[ForumID],[FP].[TopicID],[FP].[PostTitle],[FP].[PostBody],[FP].[PostAuthor],[FT].[TopicAuthor],[FP].[PostDate],[FP].[Main],[FT].[Pinned],[FT].[Closed] FROM '.$this->MSSQL->getTable("POSTS").' AS [FP]
+					INNER JOIN '.$this->MSSQL->getTable("TOPICS").' AS [FT] ON [FP].[TopicID] = [FT].[TopicID]
 					WHERE [FT].[ForumID]='.$id.' AND [FT].[Pinned]=:pinned AND [FP].[PostTitle] IS NOT NULL AND [FP].[Main]=:main
         	');
         	$this->MSSQL->query($sql);
@@ -104,8 +83,8 @@
 		
 		public function getPosts($id) {
         	$sql=('
-        			SELECT [FP].[PostID],[FP].[ForumID],[FP].[TopicID],[FP].[PostTitle],[FP].[PostBody],[FP].[PostAuthor],[FT].[TopicAuthor],[FP].[PostDate],[FP].[Main],[FT].[Pinned],[FT].[Closed] FROM ShaiyaCMS.dbo.FORUM_POSTS AS [FP]
-					INNER JOIN ShaiyaCMS.dbo.FORUM_TOPICS AS [FT] ON [FP].[TopicID] = [FT].[TopicID]
+        			SELECT [FP].[PostID],[FP].[ForumID],[FP].[TopicID],[FP].[PostTitle],[FP].[PostBody],[FP].[PostAuthor],[FT].[TopicAuthor],[FP].[PostDate],[FP].[Main],[FT].[Pinned],[FT].[Closed] FROM '.$this->MSSQL->getTable("POSTS").' AS [FP]
+					INNER JOIN '.$this->MSSQL->getTable("TOPICS").' AS [FT] ON [FP].[TopicID] = [FT].[TopicID]
 					WHERE [FP].[TopicID]='.$id.'
         	');
   			$this->MSSQL->query($sql);
@@ -122,7 +101,7 @@
 		
 		public function getTopicTitle($TopicID) {
         	$sql = ('
-        				SELECT TOP 1 PostTitle FROM ShaiyaCMS.dbo.FORUM_POSTS
+        				SELECT TOP 1 PostTitle FROM '.$this->MSSQL->getTable("POSTS").'
         				WHERE TopicID='.$TopicID.'
         				AND Main=:main ORDER BY PostDate DESC
         	');
@@ -136,7 +115,7 @@
 		}
 		
 		public function getTopicDate($ForumID) {
-  			$this->MSSQL->query('SELECT TOP 1 TopicDate FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE ForumID='.$ForumID.'');
+  			$this->MSSQL->query('SELECT TOP 1 TopicDate FROM '.$this->MSSQL->getTable("TOPICS").' WHERE ForumID='.$ForumID.'');
             $res = $this->MSSQL->resultSet();
             #$this->topicDate = $res;
 			foreach($res as $action) {
@@ -154,7 +133,7 @@
 		}
 		
 		public function getPostTitle($TopicID) {
-        	$this->MSSQL->query('SELECT TOP 1 PostTitle FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.' AND Main=1 ORDER BY PostDate DESC');
+        	$this->MSSQL->query('SELECT TOP 1 PostTitle FROM '.$this->MSSQL->getTable("POSTS").' WHERE TopicID='.$TopicID.' AND Main=1 ORDER BY PostDate DESC');
             $res = $this->MSSQL->resultSet();
             #$this->postTitle = $res;
             foreach($res as $post) {
@@ -163,7 +142,7 @@
 		}
 		
 		public function getPostBody($TopicID) {
-        	$this->MSSQL->query('SELECT TOP 1 PostBody FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.' ORDER BY PostDate DESC');
+        	$this->MSSQL->query('SELECT TOP 1 PostBody FROM '.$this->MSSQL->getTable("POSTS").' WHERE TopicID='.$TopicID.' ORDER BY PostDate DESC');
             $res = $this->MSSQL->resultSet();
             #$this->postBody = $res;
 			foreach($res as $post) {
@@ -172,7 +151,7 @@
 		}
 		
 		public function getPostDate($TopicID) {
-  			$this->MSSQL->query('SELECT TOP 1 PostDate FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID='.$TopicID.'');
+  			$this->MSSQL->query('SELECT TOP 1 PostDate FROM '.$this->MSSQL->getTable("POSTS").' WHERE TopicID='.$TopicID.'');
             $res = $this->MSSQL->resultSet();
             #$this->postDate = $res;
 			foreach($res as $post) {
@@ -182,8 +161,8 @@
 		
 		public function memberSince($user) {
         	$sql=("
-					SELECT [UM].[JoinDate] FROM ShaiyaCMS.dbo.WEB_PRESENCE AS [WP]
-					INNER JOIN PS_UserData.dbo.Users_Master	AS [UM] ON [WP].[UserID]=[UM].[UserID]
+					SELECT [UM].[JoinDate] FROM ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')."	AS [UM] ON [WP].[UserID]=[UM].[UserID]
 					WHERE [WP].[DisplayName] = :name
 			");
   			$this->MSSQL->query($sql);
@@ -197,8 +176,8 @@
 		
 		public function userStatus($user) {
   			$sql=("
-					SELECT [UM].[Status] FROM ShaiyaCMS.dbo.WEB_PRESENCE AS [WP]
-					INNER JOIN PS_UserData.dbo.Users_Master	AS [UM] ON [WP].[UserID]=[UM].[UserID]
+					SELECT [UM].[Status] FROM ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')."	AS [UM] ON [WP].[UserID]=[UM].[UserID]
 					WHERE [WP].[DisplayName] = :name
 			");
   			$this->MSSQL->query($sql);
@@ -209,7 +188,7 @@
 		
 		public function loginStatus($user) {
         	$sql=("
-					SELECT LoginStatus FROM ShaiyaCMS.dbo.WEB_PRESENCE
+					SELECT LoginStatus FROM ".$this->MSSQL->getTable('WEB_PRESENCE')."
 					WHERE DisplayName = :name
 			");
   			$this->MSSQL->query($sql);
@@ -223,10 +202,10 @@
 		
 		public function getUserRoles($user) {
   			$sql=("
-					SELECT [FR].[RoleName],[UR].[RoleID],[UR].[UserUID],[UM].[UserID],[WP].[DisplayName] FROM ShaiyaCMS.dbo.FORUM_ROLES AS [FR]
-					INNER JOIN ShaiyaCMS.dbo.FORUM_USER_ROLES AS [UR] ON [FR].[ID] = [UR].[RoleID]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [UR].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [UM].[UserID] = [WP].[UserID]
+					SELECT [FR].[RoleName],[UR].[RoleID],[UR].[UserUID],[UM].[UserID],[WP].[DisplayName] FROM ".$this->MSSQL->getTable('FORUM_ROLES')." AS [FR]
+					INNER JOIN ".$this->MSSQL->getTable('FORUM_USER_ROLES')." AS [UR] ON [FR].[ID] = [UR].[RoleID]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [UR].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [UM].[UserID] = [WP].[UserID]
 					WHERE [WP].[DisplayName] = :dname
 			");
   			$this->MSSQL->query($sql);
@@ -269,8 +248,8 @@
 		
 		public function isMod($user) {
         	$sql=("
-					SELECT [UR].[RoleID],[UR].[UserUID],[UM].[UserID] FROM ShaiyaCMS.dbo.FORUM_USER_ROLES AS [UR]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [UR].[UserUID] = [UM].[UserUID]
+					SELECT [UR].[RoleID],[UR].[UserUID],[UM].[UserID] FROM ".$this->MSSQL->getTable('FORUM_USER_ROLES')." AS [UR]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [UR].[UserUID] = [UM].[UserUID]
 					WHERE [UM].[UserUID] = $user AND [UR].[RoleID] = 1
 					OR [UM].[UserUID] = $user AND [UR].[RoleID] = 2
 					OR [UM].[UserUID] = $user AND [UR].[RoleID] = 3
@@ -291,7 +270,7 @@
 		
 		public function getUserTitle($user) {
         	$sql=("
-					SELECT UserTitle FROM ShaiyaCMS.dbo.WEB_PRESENCE WHERE DisplayName = :dname
+					SELECT UserTitle FROM ".$this->MSSQL->getTable('WEB_PRESENCE')." WHERE DisplayName = :dname
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
@@ -304,9 +283,9 @@
 		
 		public function getUserSocials($user) {
 			$sql=("
-					SELECT Social,SocialValue FROM ShaiyaCMS.dbo.FORUM_USER_SOCIALS AS [US]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [US].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [UM].[UserID] = [WP].[UserID]
+					SELECT Social,SocialValue FROM ".$this->MSSQL->getTable('FORUM_USER_SOCIALS')." AS [US]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [US].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [UM].[UserID] = [WP].[UserID]
 					WHERE [WP].[DisplayName]=:dname
 			");
   			$this->MSSQL->query($sql);
@@ -320,9 +299,9 @@
 		
 		public function getUserLikes($user) {
 			$sql=("
-					SELECT COUNT(*) AS Likes FROM ShaiyaCMS.dbo.FORUM_POST_LIKES AS [PL]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [PL].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [UM].[UserID] = [WP].[UserID]
+					SELECT COUNT(*) AS Likes FROM ".$this->MSSQL->getTable('FORUM_LIKES')." AS [PL]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [PL].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [UM].[UserID] = [WP].[UserID]
 					WHERE [WP].[DisplayName]=:dname
 			");
   			$this->MSSQL->query($sql);
@@ -336,7 +315,7 @@
 		
 		public function getPostLikes($post) {
 			$sql=("
-					SELECT COUNT(*) AS Likes FROM ShaiyaCMS.dbo.FORUM_POST_LIKES
+					SELECT COUNT(*) AS Likes FROM ".$this->MSSQL->getTable('FORUM_LIKES')."
 					WHERE PostID = :post
 			");
   			$this->MSSQL->query($sql);
@@ -350,7 +329,7 @@
 		
 		public function getUserPosts($user) {
 			$sql=("
-					SELECT COUNT(*) AS Posts FROM ShaiyaCMS.dbo.FORUM_POSTS
+					SELECT COUNT(*) AS Posts FROM ".$this->MSSQL->getTable('POSTS')."
 					WHERE PostAuthor=:author
 			");
   			$this->MSSQL->query($sql);
@@ -364,9 +343,9 @@
 		
 		public function getUserSignature($user) {
 			$sql=("
-					SELECT [US].[Signature] FROM ShaiyaCMS.dbo.FORUM_USER_SIGNATURES AS [US]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [US].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [UM].[UserID] = [WP].[UserID]
+					SELECT [US].[Signature] FROM ".$this->MSSQL->getTable('FORUM_USER_SIGNATURES')." AS [US]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [US].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [UM].[UserID] = [WP].[UserID]
 					WHERE [WP].[DisplayName]=:dname
 			");
   			$this->MSSQL->query($sql);
@@ -380,9 +359,9 @@
 		
 		public function getOnlineStaff() {
 			$sql=("
-					SELECT MIN([WP].[UserUID]) AS UserUID,[WP].[DisplayName] FROM ShaiyaCMS.dbo.WEB_PRESENCE AS [WP]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [WP].[UserID] = [UM].[UserID]
-					INNER JOIN ShaiyaCMS.dbo.FORUM_USER_ROLES AS [UR] ON [UM].[UserUID] = [UR].[UserUID]
+					SELECT MIN([WP].[UserUID]) AS UserUID,[WP].[DisplayName] FROM ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [WP].[UserID] = [UM].[UserID]
+					INNER JOIN ".$this->MSSQL->getTable('FORUM_USER_ROLES')." AS [UR] ON [UM].[UserUID] = [UR].[UserUID]
 					WHERE [UR].[RoleID] = 1 AND [WP].[LoginStatus] = 1
 					OR [UR].[RoleID] = 2 AND [WP].[LoginStatus] = 1
 					OR [UR].[RoleID] = 3 AND [WP].[LoginStatus] = 1
@@ -394,22 +373,22 @@
 			");
   			$this->MSSQL->query($sql);
             $res = $this->MSSQL->resultSet();
-            $rowCount	=	count($res);
-            #$this->onlineStaff = $res;
-			if($rowCount > 0) {
+            #$rowCount	=	count($res);
+            $this->onlineStaff = $res;
+			/*if($rowCount > 0) {
 				foreach($res as $action) {
 					return $action->DisplayName;
 				}
 			} else {
 				return false;
-			}
+			}*/
 		}
 		
 		public function getDisplayName($user) {
 			$sql=("
-					SELECT [FUM].[UserUID],[FUM].[DisplayName] FROM ShaiyaCMS.dbo.FORUM_USER_NAMES AS [FUM]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [FUM].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [WP].[UserID] = [UM].[UserID]
+					SELECT [FUM].[UserUID],[FUM].[DisplayName] FROM ".$this->MSSQL->getTable('FORUM_USER_NAMES')." AS [FUM]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [FUM].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [WP].[UserID] = [UM].[UserID]
 					WHERE [WP].[DisplayName] = :dname
 			");
   			$this->MSSQL->query($sql);
@@ -423,9 +402,9 @@
 		
 		public function convertDisplayName($name) {
 			$sql=("
-					SELECT MIN([WP].[UserUID]) AS UserUID, [FUM].[DisplayName] FROM ShaiyaCMS.dbo.FORUM_USER_NAMES AS [FUM]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [FUM].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [WP].[UserID] = [UM].[UserID]
+					SELECT MIN([WP].[UserUID]) AS UserUID, [FUM].[DisplayName] FROM ".$this->MSSQL->getTable('FORUM_USER_NAMES')." AS [FUM]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [FUM].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [WP].[UserID] = [UM].[UserID]
 					WHERE [WP].[DisplayName] = :dname
 					GROUP BY [FUM].[DisplayName]
 			");
@@ -440,9 +419,9 @@
 		
 		public function displayNameToUserUID($name) {
 			$sql=("
-					SELECT MIN([UM].[UserUID]) AS UserUID,[FP].[PostAuthor] FROM ShaiyaCMS.dbo.FORUM_POSTS AS [FP]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [FP].[PostAuthor] = [WP].[DisplayName]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [WP].[UserID] = [UM].[UserID]
+					SELECT MIN([UM].[UserUID]) AS UserUID,[FP].[PostAuthor] FROM ".$this->MSSQL->getTable('POSTS')." AS [FP]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [FP].[PostAuthor] = [WP].[DisplayName]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [WP].[UserID] = [UM].[UserID]
 					WHERE PostAuthor=:dname
 					GROUP BY PostAuthor
 			");
@@ -457,7 +436,7 @@
 		
 		public function likePost($postID,$likedUser,$UserUID) {
 			$sql=("
-					INSERT INTO ShaiyaCMS.dbo.FORUM_POST_LIKES
+					INSERT INTO ".$this->MSSQL->getTable('FORUM_LIKES')."
 					(PostID,LikedUser,UserUID)
 					VALUES(:postid,:likeduser,:useruid)
 			");
@@ -470,7 +449,7 @@
 		
 		public function didUserLikePost($user,$post) {
 			$sql=("
-					SELECT * FROM ShaiyaCMS.dbo.FORUM_POST_LIKES
+					SELECT * FROM ".$this->MSSQL->getTable('FORUM_LIKES')."
 					WHERE LikedUser=:user AND PostID=:post
 			");
   			$this->MSSQL->query($sql);
@@ -492,7 +471,7 @@
 		}
 		
 		public function isTopicPinned($topic,$pinned) {
-			$this->MSSQL->query('SELECT TOP 1 * FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID = :topicid AND Pinned = :pinned');
+			$this->MSSQL->query('SELECT TOP 1 * FROM '.$this->MSSQL->getTable("TOPICS").' WHERE TopicID = :topicid AND Pinned = :pinned');
         	$this->MSSQL->bind(':topicid', $topic);
         	$this->MSSQL->bind(':pinned', $pinned);
             $res = $this->MSSQL->resultSet();
@@ -506,7 +485,7 @@
 		}
 		
 		public function isTopicClosed($topic,$closed) {
-			$this->MSSQL->query('SELECT TOP 1 * FROM ShaiyaCMS.dbo.FORUM_TOPICS WHERE TopicID = :topicid AND Closed = :closed');
+			$this->MSSQL->query('SELECT TOP 1 * FROM '.$this->MSSQL->getTable("TOPICS").' WHERE TopicID = :topicid AND Closed = :closed');
         	$this->MSSQL->bind(':topicid', $topic);
         	$this->MSSQL->bind(':closed', $closed);
             $res = $this->MSSQL->resultSet();
@@ -520,9 +499,9 @@
 		
 		public function fetchUserRoles($user) {
 			$sql=("
-					SELECT [UR].[UserUID],[UR].[RoleID],[WP].[DisplayName] FROM ShaiyaCMS.dbo.FORUM_USER_ROLES AS [UR]
-					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [UR].[UserUID] = [UM].[UserUID]
-					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [UM].[UserID] = [WP].[UserID]
+					SELECT [UR].[UserUID],[UR].[RoleID],[WP].[DisplayName] FROM ".$this->MSSQL->getTable('FORUM_USER_ROLES')." AS [UR]
+					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [UR].[UserUID] = [UM].[UserUID]
+					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [UM].[UserID] = [WP].[UserID]
 					WHERE [WP].[DisplayName] = :dname
 			");
   			$this->MSSQL->query($sql);
@@ -540,6 +519,34 @@
 		}
 		
 		public function insertModLog() {
+		
+		}
+		
+		public function ifCanCreatePost() {
+		
+		}
+		
+		public function ifCanEditPost() {
+		
+		}
+		
+		public function ifCanDeletePost() {
+		
+		}
+		
+		public function ifCanMovePost() {
+		
+		}
+		
+		public function getMembersOnline() {
+		
+		}
+		
+		public function getLatestPosts() {
+		
+		}
+		
+		public function getForumStatistics() {
 		
 		}
     }

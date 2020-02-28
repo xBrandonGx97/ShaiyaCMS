@@ -48,11 +48,11 @@
 										echo '</tr>';
 										echo '<tr>';
 											echo '<td class="col-2">CMS CodeName:</td>';
-											echo '<td>'.$this->codename.'</td>';
+											echo '<td>'.$_SESSION['Settings']['SITE_TITLE'].'</td>';
 										echo '</tr>';
 										echo '<tr>';
 											echo '<td class="col-2">CMS Version:</td>';
-											echo '<td>'.$this->version.'</td>';
+											echo '<td>'.$_SESSION['Settings']['VERSION'].'</td>';
 										echo '</tr>';
 									echo '</table>';
 								echo '</div>';

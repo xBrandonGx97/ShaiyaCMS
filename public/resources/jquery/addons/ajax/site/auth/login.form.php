@@ -33,5 +33,21 @@
 				}
 			});
 		});
+		$("form.login").keypress(function(e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "/resources/jquery/addons/ajax/site/auth/login.submit.php",
+                    data: $('form.login').serialize(),
+                    success: function(message){
+                        $('#login_form_modal #dynamic-content').html(message);
+                    },
+                    error: function(){
+                        alert("Error");
+                    }
+                });
+            }
+        });
 	});
 </script>

@@ -28,8 +28,8 @@
                             $isLoggedIn     =   $data['User']['LoginStatus'];
 
                             $isMod          =   $isLoggedIn ? $data['forum']->isMod($data['User']['UserUID']) : '';
-                            $onlineStaff    =   $data['forum']->getOnlineStaff();
-                            $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
+                            $data['forum']->getOnlineStaff();
+                            $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($data['forum']->getOnlineStaff()) : '';
                          ?>
 
                         <?php if($isLoggedIn==true): ?>
@@ -138,15 +138,18 @@
                                 <h4 class="nk-widget-title">Staff Online</h4>
                                 <div>
                                     <!-- content -->
-                                    <?php if($onlineStaff!==false): ?>
-                                        <?php if($cDisplayName): ?>
-                                            <p><?php echo $cDisplayName; ?></p>
-                                        <?php else: ?>
-                                            <p><?php echo $onlineStaff; ?></p>
-                                        <?php endif; ?>
+                                    <?php if(count($data['forum']->onlineStaff) > 0): ?>
+                                        <?php $__currentLoopData = $data['forum']->onlineStaff; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $staff): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php if($data['forum']->convertDisplayName($staff->DisplayName)): ?>
+                                                <span><?php echo $data['forum']->convertDisplayName($staff->DisplayName); ?></span><br>
+                                            <?php else: ?>
+                                                <span><?php echo $staff->DisplayName; ?></span><br>
+                                            <?php endif; ?>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     <?php else: ?>
-                                        <p>There are currently no online staff.</p>
+                                        <span>There are currently no online staff.</span>
                                     <?php endif; ?>
+                                    
                                 </div>
                             </div>
                             <div class="nk-widget nk-box-1 bg-dark-1">

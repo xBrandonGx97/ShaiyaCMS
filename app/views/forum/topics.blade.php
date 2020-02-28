@@ -96,10 +96,13 @@
                 <ul class="nk-forum">
                 @foreach($data['forum']->row as $topic)
                     @php
+                        // Fetch Data
                         $postCount  =   $data['forum']->getPostCount($topic->TopicID);
                         $postTitle  =   $data['forum']->getPostTitle($topic->TopicID);
                         $postBody   =   $data['forum']->getPostBody($topic->TopicID);
                         $postDate   =   $data['forum']->getPostDate($topic->TopicID);
+
+                        // Display Data
                         $newTitle   =   \Classes\Utils\Data::$purifier->purify($postTitle);
 
                         $Closed         =   $topic->Closed==1;

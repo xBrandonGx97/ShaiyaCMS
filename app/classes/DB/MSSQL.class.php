@@ -56,9 +56,18 @@
 				case "HOMEPAGE"					    :	return "[ShaiyaCMS].[dbo].[HOMEPAGE]";						break;
 				case "NEWS"						    :	return "[ShaiyaCMS].[dbo].[NEWS]";							break;
 				case "PATCHNOTES"				    :	return "[ShaiyaCMS].[dbo].[PATCH_NOTES]";					break;
-				case "FORUM"				    	:	return "[ShaiyaCMS].[dbo].[FORUMS]";						break;
+				# Forum
+				case "FORUMS"				    	:	return "[ShaiyaCMS].[dbo].[FORUMS]";						break;
 				case "TOPICS"				    	:	return "[ShaiyaCMS].[dbo].[FORUM_TOPICS]";					break;
 				case "POSTS"				    	:	return "[ShaiyaCMS].[dbo].[FORUM_POSTS]";					break;
+				case "FORUM_LIKES"				    :	return "[ShaiyaCMS].[dbo].[FORUM_POST_LIKES]";				break;
+				case "FORUM_PERMS"				    :	return "[ShaiyaCMS].[dbo].[FORUM_PERMS]";					break;
+				case "FORUM_PERMS"				    :	return "[ShaiyaCMS].[dbo].[FORUM_PERMS]";					break;
+				case "FORUM_ROLES"				    :	return "[ShaiyaCMS].[dbo].[FORUM_ROLES]";					break;
+				case "FORUM_USER_NAMES"				:	return "[ShaiyaCMS].[dbo].[FORUM_USER_NAMES]";				break;
+				case "FORUM_USER_ROLES"				:	return "[ShaiyaCMS].[dbo].[FORUM_USER_ROLES]";				break;
+				case "FORUM_USER_SIGNATURES"		:	return "[ShaiyaCMS].[dbo].[FORUM_USER_SIGNATURES]";			break;
+				case "FORUM_USER_SOCIALS"			:	return "[ShaiyaCMS].[dbo].[FORUM_USER_SOCIALS]";			break;
 				# Account Tools
 				case "SH_BANNED"				    :	return "[ShaiyaCMS].[dbo].[BANNED]";						break;
 				case "SH_BANNED_PLAYERS"		    :	return "[ShaiyaCMS].[dbo].[BANNED_PLAYERS]";			    break;

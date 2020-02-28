@@ -52,7 +52,8 @@
 		public static $MapID;
 
 		public static function run(){
-			if(isset($_SESSION) && isset($_SESSION["User"]["UserUID"])){
+			if(isset($_SESSION) && isset($_SESSION["User"]["UserUID"]) || isset($_COOKIE['stayLoggedIn'])) {
+				$SessionCookieCheck	= isset($_COOKIE['stayLoggedIn']) ? $_COOKIE['UserUID'] : $_SESSION['User']['UserUID'];
 				if($_SESSION['Settings']["SITE_TYPE"] == 'SH'){
 					self::$sql=("SELECT TOP 1
 									[UM].[UserUID],[UM].[UserID],[UM].[Pw],[UM].[Point],[UM].[Status],[UM].[JoinDate],[UM].[LeaveDate],
@@ -62,7 +63,7 @@
 								WHERE [UM].[UserUID] = :uid
 					");
 					MSSQL::query(self::$sql);
-					MSSQL::bind(':uid', $_SESSION['User']['UserUID']);
+					MSSQL::bind(':uid', $SessionCookieCheck);
 				    self::$fet    =   MSSQL::single(1);
 				}
 
@@ -180,13 +181,20 @@
 		}
 		public static function _is_Logged_In(){
 			if(!empty(self::$UserUID) && !empty(self::$UserID) && is_numeric(self::$UserUID)){
+				self::$LoginStatus	=	true;
+				return true;
+			} else {
+				self::$LoginStatus	=	false;
+				return false;
+			}
+			/*if(!empty(self::$UserUID) && !empty(self::$UserID) && is_numeric(self::$UserUID)){
 				self::$LoginStatus	=	1;
 				return true;
 			}
 			else{
 				self::$LoginStatus	=	0;
 				return false;
-			}
+			}*/
 		}
 		function get_isCharExist() {
 			# Char Existence Check

@@ -29,8 +29,8 @@
                             $isLoggedIn     =   $data['User']['LoginStatus'];
 
                             $isMod          =   $isLoggedIn ? $data['forum']->isMod($data['User']['UserUID']) : '';
-                            $onlineStaff    =   $data['forum']->getOnlineStaff();
-                            $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
+                            $data['forum']->getOnlineStaff();
+                            $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($data['forum']->getOnlineStaff()) : '';
                         @endphp
 
                         @if ($isLoggedIn==true)
@@ -296,7 +296,18 @@
                                 <h4 class="nk-widget-title">Staff Online</h4>
                                 <div>
                                     <!-- content -->
-                                    @if($onlineStaff!==false)
+                                    @if(count($data['forum']->onlineStaff) > 0)
+                                        @foreach ($data['forum']->onlineStaff as $staff)
+                                            @if ($data['forum']->convertDisplayName($staff->DisplayName))
+                                                <span>{!!$data['forum']->convertDisplayName($staff->DisplayName)!!}</span><br>
+                                            @else
+                                                <span>{!!$staff->DisplayName!!}</span><br>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <span>There are currently no online staff.</span>
+                                    @endif
+                                    {{--if($onlineStaff!==false)
                                         @if ($cDisplayName)
                                             <p>{!!$cDisplayName!!}</p>
                                         @else
@@ -304,7 +315,7 @@
                                         @endif
                                     @else
                                         <p>There are currently no online staff.</p>
-                                    @endif
+                                    @endif--}}
                                 </div>
                             </div>
                             <div class="nk-widget nk-box-1 bg-dark-1">

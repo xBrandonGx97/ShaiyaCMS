@@ -41,12 +41,20 @@
             MSSQL::execute();
             if($userInfo = MSSQL::$stmt->fetch()){
                 if($userInfo["Status"] == 0 || $userInfo["Status"] == 16 || $userInfo["Status"] == 32 || $userInfo["Status"] == 48 || $userInfo["Status"] == 64 || $userInfo["Status"] == 80 || $userInfo["Status"] == 128 ){
-                    $_SESSION['User']['UserUID']=$userInfo['UserUID'];
+                    /*$hour = time() + 3600*24*30*12*10;
+					setcookie("stayLoggedIn",1,$hour,"/",null,null,true);
+					setcookie("UserUID",$userInfo['UserUID'],$hour,"/",null,null,true);*/
+                	$_SESSION['User']['UserUID']=$userInfo['UserUID'];
                     $_SESSION['User']['UserID']=$userInfo['UserID'];
                     $_SESSION['User']['Status']=$userInfo['Status'];
                     Session::updateLoginStatus(1);
                     $errors[]  .=  'L-0x08';
-                    echo '<script>location.href="/";</script>' ;
+                    $LastPage   =   $_SERVER['HTTP_REFERER'];
+                    echo '<script>window.setTimeout(function(){
+
+                    window.location.href = "'.$LastPage.'"
+
+                    }, 2000);</script>';
                 }else{
                     $errors[]  .=  'L-0x07';
                 }
