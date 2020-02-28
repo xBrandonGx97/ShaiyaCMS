@@ -20,9 +20,10 @@
             Display('move_topic_modal','<i class="fas fa-sync"></i>','0','2','Move Topic');
             $isLoggedIn     =   $data['User']['LoginStatus'];
             $url = checkUrl();
+            $forumID    =   $data['forum']->getForumID($url[3]);
             $forumName  =   $data['forum']->getForumName($url[3],1);
             $topicTitle =   $data['forum']->getTopicTitle($url[3]);
-            
+
             $onlineStaff    =   $data['forum']->getOnlineStaff();
             $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
          ?>
@@ -30,7 +31,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/forum">Forum</a></li>
-                <li><a href="/forum/"><?php echo e($forumName); ?></a></li>
+                <li><a href="/forum/topics/<?php echo e($forumID); ?>"><?php echo e($forumName); ?></a></li>
                 <li><span><?php echo e($topicTitle); ?></span></li>
             </ul>
         </div>

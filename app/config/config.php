@@ -31,7 +31,6 @@
 		$lang=$langs[1];
 		define('LANG', $lang);
 	}
-
 	function getLang($lang){
 		switch($lang){
 			case 'en': echo 'English'; break;
@@ -45,3 +44,4 @@
 			case 'fil': echo 'Filipino';
 		}
 	}
+	require_once APPROOT.'/libraries/HTMLPurifier/HTMLPurifier.auto.php';

@@ -6,6 +6,7 @@
 #	$Settings   =   new Settings();
 #	$Settings->run();
 	Classes\Settings\Settings::run();
+	Classes\Utils\Data::_do('load_purifier');
 	#Classes\Base\Langs::LoadLangs();
 #	\Classes\Utils\Browser::run();
 #	\Classes\Utils\User::run();

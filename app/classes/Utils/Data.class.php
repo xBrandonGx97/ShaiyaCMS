@@ -1,14 +1,13 @@
 <?php
 	namespace Classes\Utils;
-	if(!defined('IN_CMS')){
-		echo '<b>'.__NAMESPACE__.'</b>: unauthorized access detected, exiting...';
-		exit;
-	}
+	if(!defined('IN_CMS')){die('<b>'.__NAMESPACE__.'\Data</b>: unauthorized access detected, exiting...');}
 
 	class Data{
 
 		private $output;
 		private $cnt;
+		public static $config;
+		public static $purifier;
 
 		# Public Methods
 		public static function _do($method_name,$data=NULL,$page=NULL,$line=NULL){
@@ -39,6 +38,10 @@
 		# Private Methods
 		private static function _is_ajax(){
 			return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+		}
+		private static function _load_purifier(){
+			self::$config = \HTMLPurifier_Config::createDefault();
+			self::$purifier = new \HTMLPurifier(self::$config);
 		}
 		private static function _escData($data){
 			if(!isset($data) or empty($data)){

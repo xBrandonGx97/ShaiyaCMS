@@ -100,6 +100,7 @@
                         $postTitle  =   $data['forum']->getPostTitle($topic->TopicID);
                         $postBody   =   $data['forum']->getPostBody($topic->TopicID);
                         $postDate   =   $data['forum']->getPostDate($topic->TopicID);
+                        $newTitle   =   \Classes\Utils\Data::$purifier->purify($postTitle);
 
                         $Closed         =   $topic->Closed==1;
                         $closedCheck    =   $Closed? 'class=nk-forum-locked' : '';
@@ -114,7 +115,7 @@
                             <span class="{{$closedAction}}"></span>
                         </div>
                         <div class="nk-forum-title">
-                            <h3><a href="/forum/topics/view_topic/{{$topicID}}">{{$postTitle}}</a></h3>
+                            <h3><a href="/forum/topics/view_topic/{{$topicID}}">{!!$newTitle!!}</a></h3>
                             <div class="nk-forum-title-sub">Started by <a href="#">{{$topicAuthor}}</a> on {{date("M d, Y", strtotime($topicDate))}}</div>
                         </div>
                         <div class="nk-forum-count">
