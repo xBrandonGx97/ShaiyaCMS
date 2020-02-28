@@ -180,7 +180,10 @@
                             </div>
                         </div>
                         <div class="nk-forum-topic-content">
-                            <p><?php echo $postBody; ?></p>
+                            <p class="body-text bdy<?php echo e($postID); ?>"><?php echo $postBody; ?></p>
+                            <div class="hidden-textbox txt<?php echo e($postID); ?>">
+
+                            </div>
 
                             
                         </div>
@@ -208,6 +211,13 @@
                                             <span class="liked-icon ion-android-favorite"></span>
                                             <text class="like-text<?php echo e($postID); ?>"><?php echo e($likeAction); ?></text>
                                         </span>
+                                    </span>
+                                <?php else: ?>
+                                    <span class="nk-forum-action-btn edit-btn" data-id="<?php echo e($postID); ?>">
+                                        <a href="#"><span class="fa fa-edit edit_icon" data-clicked="true"></span> <span class="edit-txt">Edit</span></a>
+                                    </span>
+                                    <span class="nk-forum-action-btn action_save" style="display:none;" data-id="<?php echo e($postID); ?>">
+                                        <a href="#"><span class="fa fa-save" data-clicked="true"></span> <span class="">Save</span></a>
                                     </span>
                                 <?php endif; ?>
                             <?php else: ?>
@@ -465,6 +475,39 @@
                 .catch(err => {
                     // Do something for an error here
                 })
+            })
+            $(".edit-btn").click(e => {
+                e.preventDefault();
+
+                const curTrgt = $(e.currentTarget);
+                const isClicked = $('.fa-edit').data('clicked');
+                let postID  =   curTrgt.data('id');
+                if(isClicked===true){
+                    $('.fa-edit').data("clicked", false);
+                    $(".bdy" + postID).hide();
+                    var scriptTag = "<script src='/resources/themes/Godlike/js/godlike-init.js'></" + "script>";
+                    $(".txt" + postID).show();
+                    $(".txt" + postID).html(scriptTag + '<textarea class="nk-summernote" name="content" id="content"></textarea>');
+                    $(".edit_icon").replaceWith("<span class=\"fa fa-times edit_icon\" data-clicked=\"true\"></span>");
+                    $(".edit-txt").text("Close");
+                    $(".action_save").show();
+                } else {
+                    $('.fa-edit').data("clicked", true);
+                    $(".bdy" + postID).show();
+                    $(".txt" + postID).hide();
+                    $(".edit_icon").replaceWith("<span class=\"fa fa-edit edit_icon\" data-clicked=\"true\"></span>");
+                    $(".edit-txt").text("Edit");
+                    $(".action_save").hide();
+                }
+                console.log(isClicked);
+                //$(".body-text").show();
+            })
+            $(".action_save").click(e => {
+                e.preventDefault();
+
+                alert("woo");
+
+                const curTrgt = $(e.currentTarget);
             })
         });
     </script>

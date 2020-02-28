@@ -45,7 +45,7 @@
                             <ul class="nk-forum">
                             <?php $__currentLoopData = $data['forum']->fet; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $forum): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <?php 
-                                    $data['forum']->getOnlineStaff();
+                                    //$data['forum']->getOnlineStaff();
                                     $ForumID        =   $forum->ForumID;
                                     $ForumName      =   $forum->ForumName;
                                     $SubText        =   $forum->SubText;

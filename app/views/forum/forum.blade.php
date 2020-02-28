@@ -48,7 +48,7 @@
                             <ul class="nk-forum">
                             @foreach($data['forum']->fet as $forum)
                                 @php
-                                    $data['forum']->getOnlineStaff();
+                                    //$data['forum']->getOnlineStaff();
                                     $ForumID        =   $forum->ForumID;
                                     $ForumName      =   $forum->ForumName;
                                     $SubText        =   $forum->SubText;

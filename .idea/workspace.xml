@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d73ac2fc-d219-4a35-b24c-f5aecc646fdd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Utils/Data.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Utils/Data.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/forum/topics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forum/topics.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/forum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/forum/forum.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forum/forum.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/cache/38e430bf7dec54fc8deaf197bb43653db5a61bda.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/38e430bf7dec54fc8deaf197bb43653db5a61bda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cache/5433f39e3135326ed98015caa973df476cf6a40f.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/5433f39e3135326ed98015caa973df476cf6a40f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cache/ec56c9c145b70d3e9ef94571e65da14b476bb8fc.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/cache/ec56c9c145b70d3e9ef94571e65da14b476bb8fc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/forum.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="589">
+              <caret line="400" column="47" selection-start-line="400" selection-start-column="47" selection-end-line="400" selection-end-column="47" />
               <folding>
                 <element signature="n#__construct#0;n#forum#0;n#!!top" />
                 <element signature="n#getForumID#0;n#forum#0;n#!!top" />
@@ -58,7 +56,6 @@
                 <element signature="n#getPostLikes#0;n#forum#0;n#!!top" />
                 <element signature="n#getUserPosts#0;n#forum#0;n#!!top" />
                 <element signature="n#getUserSignature#0;n#forum#0;n#!!top" />
-                <element signature="n#getOnlineStaff#0;n#forum#0;n#!!top" />
                 <element signature="n#getDisplayName#0;n#forum#0;n#!!top" />
                 <element signature="n#convertDisplayName#0;n#forum#0;n#!!top" />
                 <element signature="n#displayNameToUserUID#0;n#forum#0;n#!!top" />
@@ -76,17 +73,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/forum/topics.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2472">
-              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+            <state relative-caret-position="496">
+              <caret line="508" column="42" selection-start-line="508" selection-start-column="42" selection-end-line="508" selection-end-column="42" />
+              <folding>
+                <element signature="e#15305#15326#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,17 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PostID</find>
-      <find>getUserSignature</find>
-      <find>['LoginStatus</find>
-      <find>likes</find>
-      <find>-&gt;posts</find>
-      <find>getUserPosts</find>
-      <find>$data['forum']-&gt;socials</find>
-      <find>$postUserUID</find>
-      <find>Likes</find>
-      <find>postLikes</find>
-      <find>-&gt;postLikes</find>
       <find>-&gt;UserTitle</find>
       <find>-&gt;userRoles</find>
       <find>getUserTitle</find>
@@ -118,13 +98,24 @@
       <find>post-&gt;PostAuthor</find>
       <find>-&gt;checkPost</find>
       <find>getUserSocials</find>
-      <find>checkPost</find>
       <find>didUserLikePost</find>
       <find>forumName</find>
       <find>$url</find>
       <find>topicTitle</find>
       <find>cDisplayName</find>
       <find>self::$</find>
+      <find>getOnlineStaff</find>
+      <find>body</find>
+      <find>body-te</find>
+      <find>.edit-b</find>
+      <find>edit-bt</find>
+      <find>post{{</find>
+      <find>body-</find>
+      <find>$dataliked</find>
+      <find>checkPost</find>
+      <find>liked</find>
+      <find>fa-edit</find>
+      <find>edit-txt</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -178,14 +169,14 @@
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_view.blade.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_view.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/forum_controller.class.php" />
-        <option value="$PROJECT_DIR$/app/models/forum.php" />
         <option value="$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/topic/move_topic_submit.php" />
-        <option value="$PROJECT_DIR$/app/views/forum/forum.blade.php" />
         <option value="$PROJECT_DIR$/app/classes/Utils/Browser.class.php" />
         <option value="$PROJECT_DIR$/app/config/config.php" />
         <option value="$PROJECT_DIR$/app/init.php" />
         <option value="$PROJECT_DIR$/app/classes/Utils/Data.class.php" />
         <option value="$PROJECT_DIR$/app/views/forum/topics.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/forum.php" />
+        <option value="$PROJECT_DIR$/app/views/forum/forum.blade.php" />
         <option value="$PROJECT_DIR$/app/views/forum/view_topic.blade.php" />
       </list>
     </option>
@@ -228,19 +219,57 @@
             <path>
               <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shaiya-Project-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shaiya-Project-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
               <item name="forum" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -272,12 +301,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.view_topic.blade.php">
     <configuration name="topics.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Shaiya-Project-v3/app/views/forum/topics.blade.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="view_topic.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Shaiya-Project-v3/app/views/forum/view_topic.blade.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.view_topic.blade.php" />
         <item itemvalue="JavaScript Debug.topics.blade.php" />
       </list>
     </recent_temporary>
@@ -325,12 +358,12 @@
       <workItem from="1582746471309" duration="683000" />
       <workItem from="1582747831887" duration="23178000" />
       <workItem from="1582802545268" duration="1918000" />
-      <workItem from="1582839196671" duration="16528000" />
+      <workItem from="1582839196671" duration="23860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263536000" />
+    <option name="totallyTimeSpent" value="270868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -580,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/create_forum_view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/classes/DB/MSSQL.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -612,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="39" column="67" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/forum_controller.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -630,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -715,15 +727,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/forum/topics.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2472">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+        <state relative-caret-position="2256">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/forum/forum.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/forum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="589">
+          <caret line="400" column="47" selection-start-line="400" selection-start-column="47" selection-end-line="400" selection-end-column="47" />
           <folding>
             <element signature="n#__construct#0;n#forum#0;n#!!top" />
             <element signature="n#getForumID#0;n#forum#0;n#!!top" />
@@ -752,7 +771,6 @@
             <element signature="n#getPostLikes#0;n#forum#0;n#!!top" />
             <element signature="n#getUserPosts#0;n#forum#0;n#!!top" />
             <element signature="n#getUserSignature#0;n#forum#0;n#!!top" />
-            <element signature="n#getOnlineStaff#0;n#forum#0;n#!!top" />
             <element signature="n#getDisplayName#0;n#forum#0;n#!!top" />
             <element signature="n#convertDisplayName#0;n#forum#0;n#!!top" />
             <element signature="n#displayNameToUserUID#0;n#forum#0;n#!!top" />
@@ -766,10 +784,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/create_forum_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/jquery/addons/ajax/site/forum/new_topic_view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/forum/view_topic.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        <state relative-caret-position="496">
+          <caret line="508" column="42" selection-start-line="508" selection-start-column="42" selection-end-line="508" selection-end-column="42" />
+          <folding>
+            <element signature="e#15305#15326#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

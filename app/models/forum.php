@@ -397,8 +397,8 @@
             $rowCount	=	count($res);
             #$this->onlineStaff = $res;
 			if($rowCount > 0) {
-				foreach($res as $staff) {
-					return $staff->DisplayName;
+				foreach($res as $action) {
+					return $action->DisplayName;
 				}
 			} else {
 				return false;
