@@ -47,6 +47,28 @@
 				return $action->ForumID;
 			}
 		}
+		
+		public function getForumName($forumID,$type = false) {
+        	if($type) {
+        		$sql	=	('
+								SELECT MIN([F].[ForumName]) AS ForumName FROM ShaiyaCMS.dbo.FORUMS AS [F]
+								INNER JOIN ShaiyaCMS.dbo.FORUM_POSTS AS [FP] ON [F].[ForumID] = [FP].[ForumID]
+								WHERE [FP].[PostID]=:forumid
+				');
+			} else {
+        		$sql	=	('
+								SELECT ForumName FROM ShaiyaCMS.dbo.FORUMS
+								WHERE ForumID=:forumid
+				');
+			}
+  			$this->MSSQL->query($sql);
+        	$this->MSSQL->bind(':forumid', $forumID);
+            $res = $this->MSSQL->resultSet();
+            #$this->forumID = $res;
+			foreach($res as $action) {
+				return $action->ForumName;
+			}
+		}
 
         public function getForums() {
             $this->MSSQL->query('SELECT * FROM '.$this->MSSQL->getTable('FORUM').'');
@@ -514,6 +536,10 @@
 		}
 		
 		public function addModLog() {
+		
+		}
+		
+		public function insertModLog() {
 		
 		}
     }

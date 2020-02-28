@@ -10,6 +10,13 @@
     @include('inc.cms.mobileNav')
     <div class="nk-main">
         <div class="nk-gap-4"></div>
+        <div class="nk-breadcrumbs text-center" style="opacity:0.9 !important;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><span>Forum</span></li>
+            </ul>
+        </div>
+        <div class="nk-gap-2"></div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-9">
@@ -109,7 +116,7 @@
                             <p>No Forums found. Please check back later.</p>
                         @endif
                         <div class="nk-gap-2"></div>
-                        <div class="online-staff text-center">
+                        {{--<div class="online-staff text-center">
                             <h6>Current online staff: </h6>
                             @if($onlineStaff!==false)
                                 @if ($cDisplayName)
@@ -120,7 +127,7 @@
                             @else
                                 <span>There are currently no online staff.</span>
                             @endif
-                            {{--@if(count($data['forum']->onlineStaff) > 0)
+                            --}}{{--@if(count($data['forum']->onlineStaff) > 0)
                                 @foreach ($onlineStaff as $staff)
                                     @if ($data['forum']->convertDisplayName($staff->DisplayName))
                                         <span>{!!$data['forum']->convertDisplayName($staff->DisplayName)!!}</span>
@@ -130,8 +137,8 @@
                                 @endforeach
                             @else
                                 <span>There are currently no online staff.</span>
-                            @endif--}}
-                        </div>
+                            @endif--}}{{--
+                        </div>--}}
                         {{--<ul class="nk-forum">
                             <li>
                                 <div class="nk-forum-icon">
@@ -289,6 +296,15 @@
                                 <h4 class="nk-widget-title">Staff Online</h4>
                                 <div>
                                     <!-- content -->
+                                    @if($onlineStaff!==false)
+                                        @if ($cDisplayName)
+                                            <p>{!!$cDisplayName!!}</p>
+                                        @else
+                                            <p>{!!$onlineStaff!!}</p>
+                                        @endif
+                                    @else
+                                        <p>There are currently no online staff.</p>
+                                    @endif
                                 </div>
                             </div>
                             <div class="nk-widget nk-box-1 bg-dark-1">

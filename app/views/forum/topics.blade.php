@@ -10,16 +10,30 @@
     @include('inc.cms.mobileNav')
     <div class="nk-main">
         <div class="nk-gap-4"></div>
+        @php
+            $url = checkUrl();
+            $forumName  =   $data['forum']->getForumName($url[2]);
+        @endphp
+        <div class="nk-breadcrumbs text-center" style="opacity:0.9 !important;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/forum">Forum</a></li>
+                <li><span>{{$forumName}}</span></li>
+            </ul>
+        </div>
+        <div class="nk-gap-2"></div>
         <div class="container">
             @php
                 Display('new_topic_modal','<i class="fas fa-plus"></i>','0','2','Create New Topic');
-                $url = checkUrl();
 
                 $isLoggedIn     =   $data['User']['LoginStatus'];
 
                 $topicID  =   $data['topicID'];
                 $data['forum']->getTopics($topicID);
                 $data['forum']->getPinnedTopics($topicID);
+
+                $onlineStaff    =   $data['forum']->getOnlineStaff();
+                $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
             @endphp
             @if ($isLoggedIn==true)
                 <button class="nk-btn nk-btn-lg link-effect-4 float-right open_new_topic_modal" id="reply_submit" data-id="{{$url[2]}}~{{$data['User']['DisplayName']}}" data-target="#new_topic_modal" data-toggle="modal">Create New Topic</button>
@@ -137,6 +151,19 @@
             @if(!count($data['forum']->row) > 0 && !count($data['forum']->fetch) > 0)
                 <p>No Topics found. Please check back later.</p>
             @endif
+            <div class="nk-gap-2"></div>
+            <div class="online-staff text-center">
+                <h6>Current online staff: </h6>
+                @if($onlineStaff!==false)
+                    @if ($cDisplayName)
+                        <span>{!!$cDisplayName!!}</span>
+                    @else
+                        <span>{!!$onlineStaff!!}</span>
+                    @endif
+                @else
+                    <span>There are currently no online staff.</span>
+                @endif
+            </div>
             {{--<ul class="nk-forum">
                 <li>
                     <div class="nk-forum-icon">

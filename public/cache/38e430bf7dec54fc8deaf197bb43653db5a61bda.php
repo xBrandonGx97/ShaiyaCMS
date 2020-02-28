@@ -18,13 +18,30 @@
         <?php 
             Display('discord_modal','<i class="fas fa-user-plus"></i>','0','2','Discord Popup');
             Display('move_topic_modal','<i class="fas fa-sync"></i>','0','2','Move Topic');
+            $isLoggedIn     =   $data['User']['LoginStatus'];
+            $url = checkUrl();
+            $forumName  =   $data['forum']->getForumName($url[3],1);
+            $topicTitle =   $data['forum']->getTopicTitle($url[3]);
+            
+            $onlineStaff    =   $data['forum']->getOnlineStaff();
+            $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
          ?>
-
+        <div class="nk-breadcrumbs text-center" style="opacity:0.9 !important;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/forum">Forum</a></li>
+                <li><a href="/forum/"><?php echo e($forumName); ?></a></li>
+                <li><span><?php echo e($topicTitle); ?></span></li>
+            </ul>
+        </div>
+        <div class="nk-gap-2"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 order-md-2 text-right">
-                    <a href="#forum-reply" class="nk-btn nk-btn-lg link-effect-4 nk-anchor">Reply</a>
-                </div>
+                <?php if($isLoggedIn): ?>
+                    <div class="col-md-3 order-md-2 text-right">
+                        <a href="#forum-reply" class="nk-btn nk-btn-lg link-effect-4 nk-anchor">Reply</a>
+                    </div>
+                <?php endif; ?>
                 <div class="col-md-9 ">
                     <div class="nk-pagination nk-pagination-left">
                         <a href="#" class="nk-pagination-prev disabled">
@@ -44,11 +61,8 @@
                 $data['forum']->getPosts($topicID);
                 $data['forum']->isTopicPinned($topicID,1);
                 $data['forum']->isTopicClosed($topicID,1);
-                $url = checkUrl();
                 $topicTitle =   $data['forum']->getTopicTitle($topicID);
                 $forumID    =   $data['forum']->getForumID($topicID);
-
-                $isLoggedIn     =   $data['User']['LoginStatus'];
 
                 $isMod          =   $isLoggedIn ? $data['forum']->isMod($data['User']['UserUID']) : '';
 
@@ -232,6 +246,18 @@
                 <?php endif; ?>
                 <!-- END: Reply -->
             <?php endif; ?>
+            <div class="online-staff text-center">
+                <h6>Current online staff: </h6>
+                <?php if($onlineStaff!==false): ?>
+                    <?php if($cDisplayName): ?>
+                        <span><?php echo $cDisplayName; ?></span>
+                    <?php else: ?>
+                        <span><?php echo $onlineStaff; ?></span>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <span>There are currently no online staff.</span>
+                <?php endif; ?>
+            </div>
         </div>
     <?php  Separator(120);  ?>
     </div>

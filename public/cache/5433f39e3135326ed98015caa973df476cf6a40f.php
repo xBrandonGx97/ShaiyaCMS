@@ -9,16 +9,30 @@
     <?php echo $__env->make('inc.cms.mobileNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="nk-main">
         <div class="nk-gap-4"></div>
+        <?php 
+            $url = checkUrl();
+            $forumName  =   $data['forum']->getForumName($url[2]);
+         ?>
+        <div class="nk-breadcrumbs text-center" style="opacity:0.9 !important;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/forum">Forum</a></li>
+                <li><span><?php echo e($forumName); ?></span></li>
+            </ul>
+        </div>
+        <div class="nk-gap-2"></div>
         <div class="container">
             <?php 
                 Display('new_topic_modal','<i class="fas fa-plus"></i>','0','2','Create New Topic');
-                $url = checkUrl();
 
                 $isLoggedIn     =   $data['User']['LoginStatus'];
 
                 $topicID  =   $data['topicID'];
                 $data['forum']->getTopics($topicID);
                 $data['forum']->getPinnedTopics($topicID);
+
+                $onlineStaff    =   $data['forum']->getOnlineStaff();
+                $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
              ?>
             <?php if($isLoggedIn==true): ?>
                 <button class="nk-btn nk-btn-lg link-effect-4 float-right open_new_topic_modal" id="reply_submit" data-id="<?php echo e($url[2]); ?>~<?php echo e($data['User']['DisplayName']); ?>" data-target="#new_topic_modal" data-toggle="modal">Create New Topic</button>
@@ -138,6 +152,19 @@
             <?php if(!count($data['forum']->row) > 0 && !count($data['forum']->fetch) > 0): ?>
                 <p>No Topics found. Please check back later.</p>
             <?php endif; ?>
+            <div class="nk-gap-2"></div>
+            <div class="online-staff text-center">
+                <h6>Current online staff: </h6>
+                <?php if($onlineStaff!==false): ?>
+                    <?php if($cDisplayName): ?>
+                        <span><?php echo $cDisplayName; ?></span>
+                    <?php else: ?>
+                        <span><?php echo $onlineStaff; ?></span>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <span>There are currently no online staff.</span>
+                <?php endif; ?>
+            </div>
             
             <!-- END: Forums List -->
         </div>

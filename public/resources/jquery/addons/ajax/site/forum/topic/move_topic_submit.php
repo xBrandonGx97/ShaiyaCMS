@@ -35,14 +35,16 @@
         
         $sql=("
 				UPDATE ShaiyaCMS.dbo.FORUM_POSTS
-				SET PostTitle = :title
+				SET PostTitle = :title,ForumID = :destination
 				WHERE TopicID = :topicid AND Main=:main
 		");
   		MSSQL::query($sql);
   		MSSQL::bind(':title',$TopicTitle);
+  		MSSQL::bind(':destination',$Destination);
   		MSSQL::bind(':topicid',$TopicID);
   		MSSQL::bind(':main',1);
         MSSQL::execute();
+        echo 'Topic has been successfully moved.';
 	}
 	# Check Errors
 	if(count($errors)){

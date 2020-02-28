@@ -9,6 +9,13 @@
     <?php echo $__env->make('inc.cms.mobileNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="nk-main">
         <div class="nk-gap-4"></div>
+        <div class="nk-breadcrumbs text-center" style="opacity:0.9 !important;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><span>Forum</span></li>
+            </ul>
+        </div>
+        <div class="nk-gap-2"></div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-9">
@@ -112,19 +119,7 @@
                             <p>No Forums found. Please check back later.</p>
                         <?php endif; ?>
                         <div class="nk-gap-2"></div>
-                        <div class="online-staff text-center">
-                            <h6>Current online staff: </h6>
-                            <?php if($onlineStaff!==false): ?>
-                                <?php if($cDisplayName): ?>
-                                    <span><?php echo $cDisplayName; ?></span>
-                                <?php else: ?>
-                                    <span><?php echo $onlineStaff; ?></span>
-                                <?php endif; ?>
-                            <?php else: ?>
-                                <span>There are currently no online staff.</span>
-                            <?php endif; ?>
-                            
-                        </div>
+                        
                         
                         <!-- END: Forums List -->
                     </div>
@@ -143,6 +138,15 @@
                                 <h4 class="nk-widget-title">Staff Online</h4>
                                 <div>
                                     <!-- content -->
+                                    <?php if($onlineStaff!==false): ?>
+                                        <?php if($cDisplayName): ?>
+                                            <p><?php echo $cDisplayName; ?></p>
+                                        <?php else: ?>
+                                            <p><?php echo $onlineStaff; ?></p>
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <p>There are currently no online staff.</p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="nk-widget nk-box-1 bg-dark-1">
