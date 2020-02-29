@@ -566,20 +566,4 @@
 		public function getForumStatistics() {
 		
 		}
-		
-		public function fetchAjax() {
-			$sql = ("
-						SELECT TOP 2 * FROM ShaiyaCMS.dbo.FORUM_POSTS
-						ORDER BY PostDate DESC
-			");
-			$stmt   =   $this->MSSQL->connect()->prepare($sql);
-			$stmt->execute();
-			while($data=$stmt->fetch()){
-				$ID = $data['PostID'];
-				echo $data['PostBody'].'<br>';
-			}
-			echo '<div class="show_more_main" id="show_more_main'.$ID.'">';
-                echo '<button id="'.$ID.'" class="show_more btn" title="Load more news">Show more</button>';
-            echo '</div>';
-		}
     }

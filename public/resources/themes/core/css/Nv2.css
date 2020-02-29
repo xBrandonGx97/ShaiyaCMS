@@ -956,3 +956,12 @@ table.drops{
 	vertical-align: baseline;
 
 }
+
+.pagination_link:hover {
+	cursor:pointer;
+	color:inherit;
+}
+
+.nk-pagination-current-white:hover {
+	color: #0e0e0e !important;
+}

@@ -7,10 +7,73 @@
 	Session::init('Default');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/../app/models/forum.php');
     $Forum	=	new Forum();
+    list($topicID) = explode("~",$_POST["id"]);
     User::run();
     $User	=	User::_fetch_User();
+
+    function showPages($perPage,$prevPage,$nextPage,$page) {
+        	$sql=("
+                    SELECT * FROM ShaiyaCMS.dbo.FORUM_POSTS ORDER BY PostID DESC
+            ");
+            $stmt   =   MSSQL::connect()->prepare($sql);
+            $stmt->execute();
+            $result = 	$stmt->fetchAll();
+            $total_records	=	count($result);
+            // build array containing all pages
+            $tmp = [];
+            for($p=1, $i=0; $i < $total_records; $p++, $i += $perPage) {
+                if($page == $p) {
+                    // assign current page to specific class
+                    $tmp[] = '<a class="nk-pagination-current-white pagination_link" id="'.$p.'">'.$p.'</a>';
+                } else {
+                    $tmp[] = '<a class="pagination_link" id="'.$p.'">'.$p.'</a>';
+                }
+            }
+            // thin out the pages
+            for($i = count($tmp) - 3; $i > 1; $i--) {
+                if(abs($page - $i - 1) > 2) {
+                    unset($tmp[$i]);
+                }
+            }
+            // display page navigation if data covers more than one page
+            echo '<div class="nk-pagination nk-pagination-left">';
+            if(count($tmp) > 1) {
+        	    if($page > 1) {
+                    // display 'Prev' page
+                    echo '<a class="nk-pagination-prev pagination_link" id="'.$prevPage.'">
+                        <span class="nk-icon-arrow-left"></span>
+                    </a>';
+                } else {
+                    echo '<a class="nk-pagination-prev disabled pagination_link">
+                        <span class="nk-icon-arrow-left"></span>
+                    </a>';
+                }
+                $lastPage = 0;
+        	    echo '<nav>';
+                foreach($tmp as $i => $link) {
+                    if($i > $lastPage + 1) {
+                        echo " ... "; // where one or more page have been omitted
+                    }
+                    echo $link;
+                    $lastPage = $i;
+                }
+                echo '</nav>';
+
+                if($page <= $lastPage) {
+                    // display 'Next' page
+                    echo '<a class="nk-pagination-next pagination_link" id="'.$nextPage.'">
+                        <span class="nk-icon-arrow-right"></span>
+                    </a>';
+                } else {
+                	echo '<a class="nk-pagination-next disabled pagination_link">
+                        <span class="nk-icon-arrow-right"></span>
+                    </a>';
+                }
+		    }
+            echo '</div>';
+        }
 	
-	$records_per_page	=	5;
+	$records_per_page	=	10;
 	$page	=	'';
 	$output = 	'';
 	
@@ -19,12 +82,27 @@
 	} else {
 		$page	=	1;
 	}
+
+	$prevPage   =   $page-1;
+	$nextPage   =   $page+1;
 	
 	$start_from	=	($page	-	1)*$records_per_page;
 
 	//var_dump($_POST);
-
+    Display('discord_modal','<i class="fas fa-user-plus"></i>','0','2','Discord Popup');
+    Display('move_topic_modal','<i class="fas fa-sync"></i>','0','2','Move Topic');
 	$isLoggedIn     =   $User['LoginStatus'];
+
+	$Forum->getPosts($topicID);
+	$Forum->isTopicPinned($topicID,1);
+    $Forum->isTopicClosed($topicID,1);
+
+	$topicTitle =   $Forum->getTopicTitle($topicID);
+    $forumID    =   $Forum->getForumID($topicID);
+
+	$isMod          =   $isLoggedIn ? $Forum->isMod($User['UserUID']) : '';
+
+	$closed         =   $Forum->closed;
 	
 	#echo 'start from: '.$start_from;
 	
@@ -35,144 +113,192 @@
     if ($stmt->execute()) {
     	#echo 'yes';
 	?>
-	<ul class="nk-forum nk-forum-topic">
-		@while($data=$stmt->fetch())
-			@php
-				$postID 	=   $data['PostID'];
-				$postAuthor =   $data['PostAuthor'];
-				$postDate   =   $data['PostDate'];
+    <script src="/resources/themes/Godlike/js/godlike-init.js"></script>
+    <div class="container">
+        <div class="row">
+            @if($isLoggedIn)
+                <div class="col-md-3 order-md-2 text-right">
+                    <a href="#forum-reply" class="nk-btn nk-btn-lg link-effect-4 nk-anchor">Reply</a>
+                </div>
+            @endif
+            <div class="table-responsive" id="pagination_data" data-id="1">
 
-				$memberSince    =   $Forum->memberSince($postAuthor);
-				$loginStatus    =   $Forum->loginStatus($postAuthor);
-				$userRoles  	=   $Forum->getUserRoles($postAuthor);
-				$userTitle 	 	=   $Forum->getUserTitle($postAuthor);
-				$userSocials    =   $Forum->getUserSocials($postAuthor);
-				$postLikes  	=   $Forum->getPostLikes($postID);;
-				$userLikes  	=   $Forum->getUserLikes($postAuthor);
-				$userPosts   	=   $Forum->getUserPosts($postAuthor);
-				$Signature  	=   $Forum->getUserSignature($postAuthor);
-				$displayName    =   $Forum->getDisplayName($postAuthor);
-				$checkPost  	=   $Forum->didUserLikePost($User['UserUID'],$postID);
+            </div>
+            <div class="col-md-9 ">
+                {{showPages($records_per_page,$prevPage,$nextPage,$page)}}
+            </div>
+        </div>
+        @if($isMod)
+            <div class="row">
+                <div class="col-md-9"></div>
+                <div class="mod-actions col-md-3 order-md-2 text-right">
+                    <div class="dropdown">
+                        <i class="fa fa-ellipsis-v dropbtn" aria-hidden="true"></i>
+                        <div class="dropdown-content text-center">
+                            <a href="#" class="link-effect-4 ready pin_topic" data-pinned="{{$Forum->pinned ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="pin-text1">{{$Forum->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-r"><span class="pin-text2">{{$Forum->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span><span class="link-effect-shade"><span class="pin-text3">{{$Forum->pinned ? 'Unpin Topic' : 'Pin Topic'}}</span></span></span></a>
+                            <a href="#" class="link-effect-4 ready open_move_topic_modal" data-id="{{$topicTitle}}~{{$topicID}}~{{$forumID}}" data-target="#move_topic_modal" data-toggle="modal"><span class="link-effect-inner"><span class="link-effect-l"><span>Move Topic</span></span><span class="link-effect-r"><span>Move Topic</span></span><span class="link-effect-shade"><span>Move Topic</span></span></span></a>
+                            <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Edit Topic</span></span><span class="link-effect-r"><span>Edit Topic</span></span><span class="link-effect-shade"><span>Edit Topic</span></span></span></a>
+                            <a href="#" class="link-effect-4 ready close_topic" data-closed="{{$Forum->closed ? 'true' : 'false'}}" data-id="{{$topicID}}"><span class="link-effect-inner"><span class="link-effect-l"><span class="close-text">{{$Forum->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-r"><span class="close-text">{{$Forum->closed ? 'Open Topic' : 'Close Topic'}}</span></span><span class="link-effect-shade"><span class="close-text">{{$Forum->closed ? 'Open Topic' : 'Close Topic'}}</span></span></span></a>
+                            <a href="#" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>Delete Topic</span></span><span class="link-effect-r"><span>Delete Topic</span></span><span class="link-effect-shade"><span>Delete Topic</span></span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+        @if(count($Forum->data) > 0)
+            <ul class="nk-forum nk-forum-topic">
+                @while($data=$stmt->fetch())
+                    @php
+                        $postID 	=   $data['PostID'];
+                        $postAuthor =   $data['PostAuthor'];
+                        $postDate   =   $data['PostDate'];
 
-				$checkDisplayName   =   $displayName ? '<a href="">'.$displayName.'</a>' : '<a href="">'.$postAuthor.'</a>';
-				$checkLoginStatus   =   $loginStatus==1 ? '<i class="fa fa-circle text-success" aria-hidden="true" title="Online"></i>' : '<i class="fa fa-circle text-danger" aria-hidden="true" title="Offline"></i>';
+                        $memberSince    =   $Forum->memberSince($postAuthor);
+                        $loginStatus    =   $Forum->loginStatus($postAuthor);
+                        $userRoles  	=   $Forum->getUserRoles($postAuthor);
+                        $userTitle 	 	=   $Forum->getUserTitle($postAuthor);
+                        $userSocials    =   $Forum->getUserSocials($postAuthor);
+                        $postLikes  	=   $Forum->getPostLikes($postID);;
+                        $userLikes  	=   $Forum->getUserLikes($postAuthor);
+                        $userPosts   	=   $Forum->getUserPosts($postAuthor);
+                        $Signature  	=   $Forum->getUserSignature($postAuthor);
+                        $displayName    =   $Forum->getDisplayName($postAuthor);
+                        $checkPost  	=   $Forum->didUserLikePost($User['UserUID'],$postID);
 
-				$postUserUID    =   $Forum->displayNameToUserUID($postAuthor);
-                $isUserAuthor   =   $User['UserUID']!==$postUserUID || $postUserUID !== $User['UserUID'];
+                        $checkDisplayName   =   $displayName ? '<a href="">'.$displayName.'</a>' : '<a href="">'.$postAuthor.'</a>';
+                        $checkLoginStatus   =   $loginStatus==1 ? '<i class="fa fa-circle text-success" aria-hidden="true" title="Online"></i>' : '<i class="fa fa-circle text-danger" aria-hidden="true" title="Offline"></i>';
 
-                // Data liked
-                $dataLiked      =   $checkPost ? 'true' : 'false';
-                $likesAmount    =   $postLikes;
-                $likeAction     =   $checkPost ? 'Unlike' : 'Like';
+                        $postUserUID    =   $Forum->displayNameToUserUID($postAuthor);
+                        $isUserAuthor   =   $User['UserUID']!==$postUserUID || $postUserUID !== $User['UserUID'];
 
-                // Icon Classes
-                $iconClasses    =   $checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline';
+                        // Data liked
+                        $dataLiked      =   $checkPost ? 'true' : 'false';
+                        $likesAmount    =   $postLikes;
+                        $likeAction     =   $checkPost ? 'Unlike' : 'Like';
 
-                // ID & author batch
-                $userID         =   $User['UserUID'];
-                $dataBatch      =   implode("~",[$postID, $userID, $postUserUID, $postAuthor]);
+                        // Icon Classes
+                        $iconClasses    =   $checkPost ? 'like-icon ion-android-favorite' : 'like-icon ion-android-favorite-outline';
 
-				$fetchUserRoles =   $Forum->fetchUserRoles($postAuthor);
-			@endphp
-			<li>
-				<div class="nk-forum-topic-author" style="width:150px !important;">
-					<img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
-					 <div class="nk-forum-topic-author-name" title="{{$postAuthor}}">
-						{!! $checkDisplayName !!}
-						 {!! $checkLoginStatus !!}
-					 </div>
-					@if($fetchUserRoles)
-						@foreach ($userRoles as $role)
-							@if($role->DisplayName == $postAuthor)
-								<div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/{{$role->RoleName}}.png" style="width:125px"></div>
-							@endif
-						@endforeach
-					@endif
-					<div class="nk-forum-topic-author-role"><span>{{$userTitle}}</span></div>
-					<div class="nk-forum-topic-author-since">
-						Member since {{date("F d, Y", strtotime($memberSince))}}
-					</div>
-					<div class="nk-forum-topic-author-posts">
-						 Posts: {{$userPosts}}
-					</div>
-					<div class="nk-forum-topic-author-likes{{$postID}} author_likes">
-						Likes: {{$userLikes}}
-					</div>
-					<div class="nk-forum-topic-author-social">
-						@if($userSocials)
-							@foreach($userSocials as $social)
-								@if ($social->Social == 'Discord')
-									<a href="#" class="open_discord_modal" title="{{$social->SocialValue}}"  data-id="{{$social->SocialValue}}~{{$postAuthor}}" data-target="#discord_modal" data-toggle="modal"><i class="fab fa-discord"></i></a>
-								@elseif ($social->Social == 'Skype')
-									<a href="skype:{{$social->SocialValue}}?chat" title="{{$social->SocialValue}}"><i class="fab fa-skype"></i></a>
-								@elseif ($social->Social == 'Steam')
-									<a href="" title="{{$social->SocialValue}}"><i class="fab fa-steam"></i></a>
-								@endif
-							@endforeach
-						@endif
-					</div>
-				</div>
-				<div class="nk-forum-topic-content">
-					<p class="body-text bdy{{$postID}}">{{$data['PostBody']}}</p>
-					<div class="hidden-textbox txt{{$postID}}">
+                        // ID & author batch
+                        $userID         =   $User['UserUID'];
+                        $dataBatch      =   implode("~",[$postID, $userID, $postUserUID, $postAuthor]);
 
-					</div>
-				</div>
-				<div class="nk-forum-topic-footer">
-					<span class="nk-forum-topic-date">{{date("M d, Y", strtotime($postDate))}}</span>
-					<div class="text-center">
-						@if (!$Signature)
-						@else
-							<span class="nk-forum-topic-sig">{!!$Signature!!}</span>
-						@endif
-					</div>
-					@if ($isLoggedIn==true)
-						@if($isUserAuthor)
-							<span class="nk-forum-action-btn">
-								<a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
-							</span>
-							<span class="nk-forum-action-btn">
-								<a href="#"><span class="fa fa-flag"></span> Spam</a>
-							</span>
-							<span class="nk-forum-action-btn heart like-button like" data-liked="{{$dataLiked}}" data-id="{{$postID}}" data-uid="{{$dataBatch}}">
-								<span class="nk-action-heart">
-									<span class="num{{$postID}}">{{$likesAmount}}</span>
-									<span class="{{$iconClasses}}"></span>
-									<span class="liked-icon ion-android-favorite"></span>
-									<text class="like-text{{$postID}}">{{$likeAction}}</text>
-								</span>
-							</span>
-						@else
-							<span class="nk-forum-action-btn edit-btn" data-id="{{$postID}}">
-								<a href="#"><span class="fa fa-edit edit_icon" data-clicked="true"></span> <span class="edit-txt">Edit</span></a>
-							</span>
-							<span class="nk-forum-action-btn action_save" style="display:none;" data-id="{{$postID}}">
-								<a href="#"><span class="fa fa-save" data-clicked="true"></span> <span class="">Save</span></a>
-							</span>
-						@endif
-					@endif
-				</div>
-			</li>
-		@endwhile
-	</ul>
-	<?php
-		$sql=("
-				SELECT * FROM ShaiyaCMS.dbo.FORUM_POSTS ORDER BY PostID DESC
-		");
-  		$stmt   =   MSSQL::connect()->prepare($sql);
-  		$stmt->execute();
-  		$result = 	$stmt->fetchAll();
-  		$total_records	=	count($result);
-  		$total_pages	=	ceil($total_records/$records_per_page);
-  		for ($i=1; $i<=$total_pages; $i++) {
-  			$prevPage	=	$i-1;
-  			$nextPage	=	$i+1;
-  			$output.= '<a class="pagination_link" id="'.$i.'">'.$i.'</a>';
-		}
-	}
+                        $fetchUserRoles =   $Forum->fetchUserRoles($postAuthor);
+                    @endphp
+                    <li>
+                        <div class="nk-forum-topic-author" style="width:150px !important;">
+                            <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
+                             <div class="nk-forum-topic-author-name" title="{{$postAuthor}}">
+                                {!! $checkDisplayName !!}
+                                 {!! $checkLoginStatus !!}
+                             </div>
+                            @if($fetchUserRoles)
+                                @foreach ($userRoles as $role)
+                                    @if($role->DisplayName == $postAuthor)
+                                        <div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/{{$role->RoleName}}.png" style="width:125px"></div>
+                                    @endif
+                                @endforeach
+                            @endif
+                            <div class="nk-forum-topic-author-role"><span>{{$userTitle}}</span></div>
+                            <div class="nk-forum-topic-author-since">
+                                Member since {{date("F d, Y", strtotime($memberSince))}}
+                            </div>
+                            <div class="nk-forum-topic-author-posts">
+                                 Posts: {{$userPosts}}
+                            </div>
+                            <div class="nk-forum-topic-author-likes{{$postID}} author_likes">
+                                Likes: {{$userLikes}}
+                            </div>
+                            <div class="nk-forum-topic-author-social">
+                                @if($userSocials)
+                                    @foreach($userSocials as $social)
+                                        @if ($social->Social == 'Discord')
+                                            <a href="#" class="open_discord_modal" title="{{$social->SocialValue}}"  data-id="{{$social->SocialValue}}~{{$postAuthor}}" data-target="#discord_modal" data-toggle="modal"><i class="fab fa-discord"></i></a>
+                                        @elseif ($social->Social == 'Skype')
+                                            <a href="skype:{{$social->SocialValue}}?chat" title="{{$social->SocialValue}}"><i class="fab fa-skype"></i></a>
+                                        @elseif ($social->Social == 'Steam')
+                                            <a href="" title="{{$social->SocialValue}}"><i class="fab fa-steam"></i></a>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <div class="nk-forum-topic-content">
+                            <p class="body-text bdy{{$postID}}">{{$data['PostBody']}}</p>
+                            <div class="hidden-textbox txt{{$postID}}">
 
-    echo $output;
-?>
+                            </div>
+                        </div>
+                        <div class="nk-forum-topic-footer">
+                            <span class="nk-forum-topic-date">{{date("M d, Y", strtotime($postDate))}}</span>
+                            <div class="text-center">
+                                @if (!$Signature)
+                                @else
+                                    <span class="nk-forum-topic-sig">{!!$Signature!!}</span>
+                                @endif
+                            </div>
+                            @if ($isLoggedIn==true)
+                                @if($isUserAuthor)
+                                    <span class="nk-forum-action-btn">
+                                        <a href="#forum-reply" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
+                                    </span>
+                                    <span class="nk-forum-action-btn">
+                                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
+                                    </span>
+                                    <span class="nk-forum-action-btn heart like-button like" data-liked="{{$dataLiked}}" data-id="{{$postID}}" data-uid="{{$dataBatch}}">
+                                        <span class="nk-action-heart">
+                                            <span class="num{{$postID}}">{{$likesAmount}}</span>
+                                            <span class="{{$iconClasses}}"></span>
+                                            <span class="liked-icon ion-android-favorite"></span>
+                                            <text class="like-text{{$postID}}">{{$likeAction}}</text>
+                                        </span>
+                                    </span>
+                                @else
+                                    <span class="nk-forum-action-btn edit-btn" data-id="{{$postID}}">
+                                        <a href="#"><span class="fa fa-edit edit_icon" data-clicked="true"></span> <span class="edit-txt">Edit</span></a>
+                                    </span>
+                                    <span class="nk-forum-action-btn action_save" style="display:none;" data-id="{{$postID}}">
+                                        <a href="#"><span class="fa fa-save" data-clicked="true"></span> <span class="">Save</span></a>
+                                    </span>
+                                @endif
+                            @endif
+                        </div>
+                    </li>
+                @endwhile
+            </ul>
+        @else
+            <p>Topic not found. Please check back later.</p>
+        @endif
+        <!-- END: Forums List -->
+        @if(count($Forum->data) > 0)
+            <div id="forum-reply"></div>
+            <div class="nk-gap-4"></div>
+            @if ($isLoggedIn==true)
+                @if($closed==false)
+                    <!-- START: Reply -->
+                    <h3 class="h4">Reply</h3>
+                    <p id="response"></p>
+                    <form method="post">
+                        <div class="nk-gap-1"></div>
+                        <textarea class="nk-summernote" name="content" id="content"></textarea>
+                        <div class="nk-gap-1"></div>
+                        <button class="nk-btn nk-btn-lg link-effect-4" id="reply_submit">Reply</button>
+                        <input type="hidden" name="topicid" id="topicid" value="{{$topicID}}"/>
+                        <input type="hidden" name="postauthor" id="postauthor" value="{{$User['DisplayName']}}"/>
+                    </form>
+                @else
+                    Sorry! Topic is closed and isn't up for more responses.
+                @endif
+            @else
+                <h4 class="text-center">You must be logged in to reply.</h4>
+            @endif
+            <!-- END: Reply -->
+            @endif
+        <?php
+            showPages($records_per_page,$prevPage,$nextPage,$page);
+        }
+        echo $output;
+        ?>
 <script>
 	$(".pagination_link").click(function () {
 		const page = $(this).attr("id");
