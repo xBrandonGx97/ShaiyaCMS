@@ -522,8 +522,25 @@
 		
 		}
 		
-		public function ifCanCreatePost() {
-		
+		public function ifCanCreateTopic($user) {
+			$sql=("
+					SELECT [R].[RoleName],[RF].[Name],[RF].[Description] FROM ".$this->MSSQL->getTable('FORUM_USER_ROLES')." AS [UR]
+					INNER JOIN ".$this->MSSQL->getTable('FORUM_ROLES')." AS [R] ON [UR].[RoleID] = [R].[ID]
+					INNER JOIN ".$this->MSSQL->getTable('FORUM_ROLE_FLAGS')." AS [RF] ON [R].[ID] = [RF].[Flag]
+					WHERE [UR].[UserUID]=:dname
+			");
+  			$this->MSSQL->query($sql);
+  			$this->MSSQL->bind(':dname', $user);
+            $res = $this->MSSQL->resultSet();
+            $results = [];
+            foreach($res as $action) {
+            	if($action->Name=='CRT_TPC') {
+            		$results[] = 'true';
+				} else{
+            		$results[] = 'false';
+				}
+			}
+            return $results;
 		}
 		
 		public function ifCanEditPost() {
@@ -548,5 +565,21 @@
 		
 		public function getForumStatistics() {
 		
+		}
+		
+		public function fetchAjax() {
+			$sql = ("
+						SELECT TOP 2 * FROM ShaiyaCMS.dbo.FORUM_POSTS
+						ORDER BY PostDate DESC
+			");
+			$stmt   =   $this->MSSQL->connect()->prepare($sql);
+			$stmt->execute();
+			while($data=$stmt->fetch()){
+				$ID = $data['PostID'];
+				echo $data['PostBody'].'<br>';
+			}
+			echo '<div class="show_more_main" id="show_more_main'.$ID.'">';
+                echo '<button id="'.$ID.'" class="show_more btn" title="Load more news">Show more</button>';
+            echo '</div>';
 		}
     }

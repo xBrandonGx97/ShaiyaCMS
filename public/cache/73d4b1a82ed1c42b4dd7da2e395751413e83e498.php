@@ -32,4 +32,5 @@
 <link rel="stylesheet" type="text/css" href="/resources/themes/core/css/pvp.css">
 <!-- jQuery v1.12.4 -->
 <script src="/resources/jquery/core/v1.12.4/jquery-v1.12.4.js"></script>
+<script src="/resources/themes/core/js/functions.js"></script>
 <title><?php echo e($_SESSION['Settings']['SITE_TITLE']); ?> | <?php echo e($data['pageData']['title']); ?></title>

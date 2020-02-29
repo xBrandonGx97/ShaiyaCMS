@@ -40,6 +40,10 @@
 
                         
 
+                        
+
+                        
+
                         <div class="nk-gap-4"></div>
                         <?php if(count($data['forum']->fet) > 0): ?>
                             <ul class="nk-forum">

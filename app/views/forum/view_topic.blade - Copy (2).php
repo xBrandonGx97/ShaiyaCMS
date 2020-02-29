@@ -95,7 +95,7 @@
                 </div>
             @endif
             <!-- START: Forums List -->
-            {{--@if(count($data['forum']->data) > 0)
+            @if(count($data['forum']->data) > 0)
                 <ul class="nk-forum nk-forum-topic">
                 @foreach($data['forum']->data as $post)
                     @php
@@ -142,11 +142,11 @@
                         <div class="nk-forum-topic-author" style="width:150px !important;">
                             <img src="/resources/themes/godlike/images/avatar-1-sm.jpg" alt="Lesa Cruz">
                             <div class="nk-forum-topic-author-name" title="{{$postAuthor}}">
-                                --}}{{--<a href="#">{{$post->PostAuthor}} <i class="fa fa-circle text-success" aria-hidden="true"></i></a>--}}{{--
+                                {{--<a href="#">{{$post->PostAuthor}} <i class="fa fa-circle text-success" aria-hidden="true"></i></a>--}}
                                 {!! $checkDisplayName !!}
                                 {!! $checkLoginStatus !!}
                             </div>
-                            --}}{{--<div class="nk-forum-topic-author-role"><span>{{$data['forum']->userStatus}}</span></div>--}}{{--
+                            {{--<div class="nk-forum-topic-author-role"><span>{{$data['forum']->userStatus}}</span></div>--}}
                             @if($fetchUserRoles)
                                 @foreach ($userRoles as $role)
                                     @if($role->DisplayName == $postAuthor)
@@ -154,7 +154,7 @@
                                     @endif
                                 @endforeach
                             @endif
-                                 --}}{{--<div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/{{$data['forum']->roles[0]}}.png" style="width:100px"></div>--}}{{--
+                                 {{--<div class="nk-forum-topic-author-role"><img src="/resources/themes/core/images/forum/ranks/{{$data['forum']->roles[0]}}.png" style="width:100px"></div>--}}
                             <div class="nk-forum-topic-author-role"><span>{{$userTitle}}</span></div>
                             <!-- <span class="username--style3 username--staff username--moderator username--admin">ENXF NET</span> -->
                             <div class="nk-forum-topic-author-since">
@@ -164,7 +164,7 @@
                                 Posts: {{$userPosts}}
                             </div>
                             <div class="nk-forum-topic-author-likes{{$postID}} author_likes">
-                                Likes: {{$userLikes}}*
+                                Likes: {{$userLikes}}
                             </div>
                             <div class="nk-forum-topic-author-social">
                                 @if($userSocials)
@@ -178,9 +178,9 @@
                                         @endif
                                     @endforeach
                                 @endif
-                                --}}{{--<a href=""><i class="fab fa-discord"></i></a>
+                                {{--<a href=""><i class="fab fa-discord"></i></a>
                                 <a href=""><i class="fab fa-skype"></i></a>
-                                <a href=""><i class="fab fa-steam"></i></i></a>--}}{{--
+                                <a href=""><i class="fab fa-steam"></i></i></a>--}}
                             </div>
                         </div>
                         <div class="nk-forum-topic-content">
@@ -189,12 +189,12 @@
 
                             </div>
 
-                            --}}{{--<div class="nk-forum-topic-attachments">
+                            {{--<div class="nk-forum-topic-attachments">
                                 <h4 class="h5">Attachments</h4>
                                 <a href="#">godlike-free.zip</a>
                                 <br>
                                 (14.86 MiB) Downloaded 185 times
-                            </div>--}}{{--
+                            </div>--}}
                         </div>
                         <div class="nk-forum-topic-footer">
                             <span class="nk-forum-topic-date">{{date("M d, Y", strtotime($postDate))}}</span>
@@ -230,23 +230,23 @@
                                     </span>
                                 @endif
                             @else
-                                --}}{{--<span class="nk-forum-action-btn">
+                                {{--<span class="nk-forum-action-btn">
                                     <span class="nk-action-heart">
                                         <span class="num">{{$postLikes}}</span>
                                         <span class="like-icon ion-android-favorite-outline"></span>
                                         <span class="liked-icon ion-android-favorite"></span>
                                     </span>
-                                </span>--}}{{--
+                                </span>--}}
                             @endif
                         </div>
                     </li>
-                    --}}{{--<div style="border-top: 1px solid #181818;display: block;"></div>--}}{{--
+                    {{--<div style="border-top: 1px solid #181818;display: block;"></div>--}}
                 @endforeach
                 </ul>
                 @else
-                    --}}{{--<p>No Posts found. Please check back later.</p>--}}{{--
+                    {{--<p>No Posts found. Please check back later.</p>--}}
                     <p>Topic not found. Please check back later.</p>
-            @endif--}}
+            @endif
             <!-- END: Forums List -->
             @if(count($data['forum']->data) > 0)
                 <div id="forum-reply"></div>

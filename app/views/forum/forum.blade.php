@@ -39,6 +39,18 @@
                             @endif
                         @endif
 
+                        {{--@php
+                            if (in_array('true', $data['forum']->ifCanCreateTopic($data['User']['UserUID']))) {
+                                echo 'can create topic..';
+                            }
+                        @endphp--}}
+
+                        {{--@foreach($data['forum']->ifCanCreateTopic($data['User']['UserUID']) as $action)
+                            @if($action->Name=='CRT_TPC')
+                                yer
+                            @endif
+                        @endforeach--}}
+
                         {{--@if($data['forum']->ifCanCreateForum())
                             <button class="nk-btn nk-btn-lg link-effect-4 float-right" id="reply_submit">Create New Forum</button>
                         @endif--}}

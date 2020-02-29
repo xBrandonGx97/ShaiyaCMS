@@ -64,6 +64,7 @@
 				case "FORUM_PERMS"				    :	return "[ShaiyaCMS].[dbo].[FORUM_PERMS]";					break;
 				case "FORUM_PERMS"				    :	return "[ShaiyaCMS].[dbo].[FORUM_PERMS]";					break;
 				case "FORUM_ROLES"				    :	return "[ShaiyaCMS].[dbo].[FORUM_ROLES]";					break;
+				case "FORUM_ROLE_FLAGS"				:	return "[ShaiyaCMS].[dbo].[FORUM_ROLE_FLAGS]";				break;
 				case "FORUM_USER_NAMES"				:	return "[ShaiyaCMS].[dbo].[FORUM_USER_NAMES]";				break;
 				case "FORUM_USER_ROLES"				:	return "[ShaiyaCMS].[dbo].[FORUM_USER_ROLES]";				break;
 				case "FORUM_USER_SIGNATURES"		:	return "[ShaiyaCMS].[dbo].[FORUM_USER_SIGNATURES]";			break;
