@@ -17,7 +17,7 @@
   		
   		$decoded = json_decode($content, true);
   		
-  		//If json_decode failed, the JSON is invalid.
+  		//If json_decode succeeded, the JSON is valid.
 	  	if(is_array($decoded)) {
 			if(isset($decoded['postID'])){
 				list($postID,$likedUser,$userUID,$postAuthor) = explode("~",$decoded['uid']);
