@@ -32,7 +32,7 @@
         		$sql	=	('
 								SELECT MIN([F].[ForumName]) AS ForumName FROM '.$this->MSSQL->getTable("FORUMS").' AS [F]
 								INNER JOIN '.$this->MSSQL->getTable("POSTS").' AS [FP] ON [F].[ForumID] = [FP].[ForumID]
-								WHERE [FP].[PostID]=:forumid
+								WHERE [FP].[TopicID]=:forumid
 				');
 			} else {
         		$sql	=	('
