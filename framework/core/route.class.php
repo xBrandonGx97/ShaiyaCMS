@@ -37,9 +37,14 @@
 			$matches = self::_match_wild_cards($route);
 			
 			if (!isset($_GET['url'])){
-				if($_SERVER['REQUEST_URI']=='/'){
-					$url	=	explode('/',filter_var(rtrim($_SERVER['REQUEST_URI'],'/'),FILTER_SANITIZE_URL));
-					if (is_array($matches) && $url) {
+				$server = $_SERVER['REQUEST_URI'];
+				if( ($pos = strpos($server, '?')) !== false) {
+					$server = substr($server, 0, $pos);
+				}
+				if($server=='/'){
+					#$url	=	explode('/',filter_var(rtrim($_SERVER['REQUEST_URI'],'/'),FILTER_SANITIZE_URL));
+					$url = explode('?', $_SERVER['REQUEST_URI'], 2);
+					if (is_array($matches) && $url[0]) {
 						// Routes match and request method matches
 						self::$Routes[] = $route;
 						call_user_func_array($callable, $matches);
@@ -90,9 +95,36 @@
 			return false;  // Catch anything else
 		}
 		
+		public static function get_query_string(){
+			echo '1';
+    		$arr = explode("?",$_SERVER['REQUEST_URI']);
+    		if (count($arr) == 2){
+        		echo  "?".end($arr)."<br>";
+    		}
+		}
+		
 		public static function checkRoute(){
 			$uri = $_SERVER['REQUEST_URI'];
 			$uri = rtrim($uri, '/');
+			/*for($i = 0; $i < count($url); $i++) {
+				if (strpos($url[$i], '?') !== false) {
+			   		// you found your item, use the $i index and break the loop
+				 	echo 'yes i found';
+				}
+			}*/
+			#$query = parse_url($uri, PHP_URL_QUERY);
+			/*parse_str($query, $params);
+			$test = $params['test'];
+			echo $query;*/
+			#self::get_query_string();
+			/*if( ($pos = strpos($uri, '?')) !== false) {
+				$uri = substr($uri, 0, $pos);
+				echo 'uri: '.$uri;
+			}*/
+			#$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+			#var_dump($uri_parts);
+			#echo 'Routes:';
+			#var_dump(self::$Routes);
 			if(self::$Params){
 				$url	=	explode('/',filter_var(rtrim($_SERVER['REQUEST_URI'],'/'),FILTER_SANITIZE_URL));
 				$keys = array_search(self::$Params['id'], $url);
@@ -122,6 +154,16 @@
 		
 		public static function checkStructure($url1, $url2){
         	list($a, $b) = self::urlToArray($url1, $url2);
+		}
+		
+		public static function getUrlQuery($key) {
+			$uri = $_SERVER['REQUEST_URI'];
+			$query = parse_url($uri, PHP_URL_QUERY);
+			if(isset($query)) {
+				parse_str($query, $params);
+				return $params[$key];
+			}
+			return null;
 		}
 		
 		public static function _Props($file=false,$line=false){

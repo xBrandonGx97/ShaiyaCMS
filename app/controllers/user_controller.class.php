@@ -2,6 +2,7 @@
 	use Classes\Utils\Browser;
 	use Classes\Utils\User;
 	use Classes\Utils\Data;
+	use Classes\DB\SQL;
 	
     Class User_Controller Extends CoreController {
     	public static function profile(){
@@ -154,6 +155,19 @@
         public static function user($id){
         	echo 'id: ' .$id.'<br>';
             echo 'user';
+        }
+        public static function users(){
+    		User::run();
+			$User			=	User::_fetch_User();
+            $data=['pageData'=>[
+                'index' =>  'index',
+                'title' =>  'Home',
+                'zone' =>  'CMS',
+                'nav' =>  true
+              ],
+				'User' => $User,
+            ];
+            self::view('user/users', $data);
         }
         public static function vote(){
     		$vote		=	self::model('Vote');

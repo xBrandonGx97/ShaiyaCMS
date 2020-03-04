@@ -5,9 +5,9 @@
 	use Classes\DB\MSSQL;
 	
 	class Pagination{
-		public static function showPages($perPage,$prevPage,$nextPage,$page) {
+		public static function showPages($perPage,$prevPage,$nextPage,$page,$topicID) {
         	$sql=("
-                    SELECT * FROM ShaiyaCMS.dbo.FORUM_POSTS ORDER BY PostID DESC
+                    SELECT * FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID=$topicID ORDER BY PostID DESC
             ");
             $stmt   =   MSSQL::connect()->prepare($sql);
             $stmt->execute();
@@ -34,11 +34,11 @@
             if(count($tmp) > 1) {
         	    if($page > 1) {
                     // display 'Prev' page
-                    echo '<a class="nk-pagination-prev pagination_link" id="'.$prevPage.'">
-                        <span class="nk-icon-arrow-left"></span>
+                    echo '<a class="nk-pagination-prev pagination_link pag-pn" id="'.$prevPage.'">
+                        <span class="nk-icon-arrow-left" id="'.$prevPage.'"></span>
                     </a>';
                 } else {
-                    echo '<a class="nk-pagination-prev disabled pagination_link">
+                    echo '<a class="nk-pagination-prev disabled">
                         <span class="nk-icon-arrow-left"></span>
                     </a>';
                 }
@@ -55,11 +55,11 @@
 
                 if($page <= $lastPage) {
                     // display 'Next' page
-                    echo '<a class="nk-pagination-next pagination_link" id="'.$nextPage.'">
-                        <span class="nk-icon-arrow-right"></span>
+                    echo '<a class="nk-pagination-next pagination_link pag-pn" id="'.$nextPage.'">
+                        <span class="nk-icon-arrow-right" id="'.$nextPage.'"></span>
                     </a>';
                 } else {
-                	echo '<a class="nk-pagination-next disabled pagination_link">
+                	echo '<a class="nk-pagination-next disabled">
                         <span class="nk-icon-arrow-right"></span>
                     </a>';
                 }

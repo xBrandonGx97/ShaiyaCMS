@@ -3,7 +3,13 @@
     use \Classes\DB\MSSQL;
     use \Classes\Utils\User;
     \Classes\Utils\Session::init('Default');
-    list($TopicTitle,$TopicID,$ForumID) = explode("~",$_POST["id"]);
+    $content = trim(file_get_contents("php://input"));
+	$decoded = json_decode($content, true);
+	if(is_array($decoded)) {
+	    if(isset($decoded['id'])){
+		    list($TopicTitle,$TopicID,$ForumID) = explode("~",$decoded["id"]);
+		}
+	}
 ?>
 <form class="move_topic">
     <div class="form-group row">

@@ -29,8 +29,11 @@
 	Route::respond('/user/pvprewards', function() {User_Controller::pvprewards();});
 	Route::respond('/user/referers', function() {User_Controller::referers();});
 	Route::respond('/user/settings', function() {User_Controller::settings();});
+	Route::respond('/user/settings/privacy', function() {User_Controller::settings();});
+	Route::respond('/user/settings/signature', function() {User_Controller::settings();});
 	Route::respond('/user/support', function() {User_Controller::support();});
 	Route::respond('/user/vote', function() {User_Controller::vote();});
+	Route::respond('/user/users', function() {User_Controller::users();});
 	# Forum
 	Route::respond('/forum', function() {Forum_Controller::forum();});
 	Route::respond('/forum/topics/(any:id)', function($id) {Forum_Controller::topics($id);});

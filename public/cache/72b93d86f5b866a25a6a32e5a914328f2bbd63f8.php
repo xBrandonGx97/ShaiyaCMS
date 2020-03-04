@@ -79,7 +79,7 @@
         <!-- Key Master -->
         <script src="/resources/themes/Godlike/vendor/bower_components/keymaster/keymaster.js"></script>
         <!-- Summer Note -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/summernote/dist/summernote.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/bower_components/summernote/dist/summernote.min.js" type=module></script>
         <!-- Prism -->
         <script src="/resources/themes/Godlike/vendor/bower_components/prism/prism.js"></script>
         <!-- Godlike JS -->

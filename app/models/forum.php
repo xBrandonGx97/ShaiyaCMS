@@ -57,9 +57,11 @@
         
         public function getTopics($id) {
         	$sql	=	('
-        					SELECT [FT].[TopicID],[FT].[ForumID],[FT].[TopicAuthor],[FT].[TopicDate],[FT].[Pinned],[FT].[Closed],[FP].[PostTitle],[FP].[Main] FROM '.$this->MSSQL->getTable("TOPICS").' AS [FT]
+        					SELECT [FT].[TopicID],[FT].[ForumID],[FT].[TopicAuthor],[FT].[TopicDate],[FT].[Pinned],[FT].[Closed],[FP].[PostTitle],[FP].[Main],[FT].[Bumped],[FT].[BumpedDate]
+        					FROM '.$this->MSSQL->getTable("TOPICS").' AS [FT]
 							INNER JOIN '.$this->MSSQL->getTable("POSTS").' AS [FP] ON [FT].[TopicID] = [FP].[TopicID]
 							WHERE [FT].[ForumID]='.$id.' AND [FT].[Pinned]=:pinned AND [FP].[Main]=:main
+							ORDER BY [FT].[BumpedDate] DESC
         	');
         	$this->MSSQL->query($sql);
         	$this->MSSQL->bind(':pinned', 0);
@@ -85,9 +87,10 @@
         	$sql=('
         			SELECT [FP].[PostID],[FP].[ForumID],[FP].[TopicID],[FP].[PostTitle],[FP].[PostBody],[FP].[PostAuthor],[FT].[TopicAuthor],[FP].[PostDate],[FP].[Main],[FT].[Pinned],[FT].[Closed] FROM '.$this->MSSQL->getTable("POSTS").' AS [FP]
 					INNER JOIN '.$this->MSSQL->getTable("TOPICS").' AS [FT] ON [FP].[TopicID] = [FT].[TopicID]
-					WHERE [FP].[TopicID]='.$id.'
+					WHERE [FP].[TopicID]=:id
         	');
   			$this->MSSQL->query($sql);
+  			$this->MSSQL->bind(':id', $id);
             $res = $this->MSSQL->resultSet();
             $this->data = $res;
 		}
@@ -102,10 +105,11 @@
 		public function getTopicTitle($TopicID) {
         	$sql = ('
         				SELECT TOP 1 PostTitle FROM '.$this->MSSQL->getTable("POSTS").'
-        				WHERE TopicID='.$TopicID.'
+        				WHERE TopicID=:topicid
         				AND Main=:main ORDER BY PostDate DESC
         	');
         	$this->MSSQL->query($sql);
+        	$this->MSSQL->bind(':topicid', $TopicID);
         	$this->MSSQL->bind(':main', 1);
             $res = $this->MSSQL->resultSet();
             #$this->topicTitle = $res;
@@ -283,18 +287,16 @@
 		
 		public function getUserSocials($user) {
 			$sql=("
-					SELECT Social,SocialValue FROM ".$this->MSSQL->getTable('FORUM_USER_SOCIALS')." AS [US]
-					INNER JOIN ".$this->MSSQL->getTable('SH_USERDATA')." AS [UM] ON [US].[UserUID] = [UM].[UserUID]
-					INNER JOIN ".$this->MSSQL->getTable('WEB_PRESENCE')." AS [WP] ON [UM].[UserID] = [WP].[UserID]
+					SELECT Discord,Skype,Steam FROM ShaiyaCMS.dbo.USER_SOCIALS AS [US]
+					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [US].[UserUID] = [UM].[UserUID]
+					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [UM].[UserID] = [WP].[UserID]
 					WHERE [WP].[DisplayName]=:dname
 			");
   			$this->MSSQL->query($sql);
   			$this->MSSQL->bind(':dname',$user);
             $res = $this->MSSQL->resultSet();
             #$this->socials = $res;
-			foreach($res as $action) {
-				return $res;
-			}
+			return $res;
 		}
 		
 		public function getUserLikes($user) {
@@ -522,6 +524,8 @@
 		
 		}
 		
+		/* Forum Permissions */
+		
 		public function ifCanCreateTopic($user) {
 			$sql=("
 					SELECT [R].[RoleName],[RF].[Name],[RF].[Description] FROM ".$this->MSSQL->getTable('FORUM_USER_ROLES')." AS [UR]
@@ -555,6 +559,17 @@
 		
 		}
 		
+		public function ifCanBumpPost() {
+			/*
+			 * If user who created topic/post,
+			 * if topic/post isnt stickied/pinned
+			 * if moderator
+			 * can bump post.. else can not.
+			 */
+		}
+		
+		/* */
+		
 		public function getMembersOnline() {
 		
 		}
@@ -565,5 +580,18 @@
 		
 		public function getForumStatistics() {
 		
+		}
+		
+		public function isSocialsPrivate($user) {
+			$sql=("
+					SELECT [WP].[DisplayName],[UP].[UserUID],[DisplayProfile],[UP].[DisplaySocials] FROM ShaiyaCMS.dbo.USER_PRIVACY AS [UP]
+					INNER JOIN PS_UserData.dbo.Users_Master AS [UM] ON [UP].[UserUID] = [UM].[UserUID]
+					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [WP].[UserID] = [UM].[UserID]
+					WHERE [WP].[DisplayName] = :dname
+			");
+  			$this->MSSQL->query($sql);
+  			$this->MSSQL->bind(':dname',$user);
+            $res = $this->MSSQL->resultSet();
+            return $res;
 		}
     }

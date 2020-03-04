@@ -57,8 +57,8 @@
 			$User			=	User::_fetch_User();
 			$UserStatus			=	User::get_Status($User['Status']);
             $data=['pageData'=>[
-                'index' =>  'posts',
-                'title' =>  'Post',
+                'index' =>  'view_topic',
+                'title' =>  'Topic',
                 'zone' =>  'CMS',
                 'nav' =>  true
               ],

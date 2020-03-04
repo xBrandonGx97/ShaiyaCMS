@@ -965,3 +965,35 @@ table.drops{
 .nk-pagination-current-white:hover {
 	color: #0e0e0e !important;
 }
+
+.tab-content {
+  display: none
+}
+.tab-content:target {
+  display: block;
+}
+
+a:target {
+	color:#e08821 !important;
+}
+
+/* Forces  event to be on button its self */
+i {
+  pointer-events: none
+}
+
+#dataViewer {
+	padding: 32px;
+	list-style: none;
+	background: #0e0e0e !important;
+	width: auto;
+	color: #fff;
+	height: auto;
+	display: none;
+}
+
+#dataViewer li {
+	padding: 8px 0;
+	border-left: 1px solid #635f5f;
+	padding-left: 24px;
+}

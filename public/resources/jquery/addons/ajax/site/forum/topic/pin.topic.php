@@ -24,7 +24,8 @@
 			$errors = [];
 			$arr	=	[
 				'done' => '',
-				'pinned' => ''
+				'pinned' => '',
+				'action' => $action
 			];
 			if(isset($topicID)) {
 				if(empty($topicID || $topicID === '')) {

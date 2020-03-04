@@ -68,6 +68,11 @@
               </li>
             </ul>
           </li>
+          @if($data['User']['LoginStatus']===true)
+            <li class="  ">
+            <a href="/user/users">Users</a>
+          </li>
+          @endif
         </ul>
         <ul class="nk-nav nk-nav-right nk-nav-icons">
           <li class="single-icon hidden-lg-up">
@@ -142,7 +147,7 @@
                   <li class="  ">
                     <a href="/user/support">Support</a>
                   <li class="  ">
-                    <a href="/user/settings">Settings</a>
+                    <a href="/user/settings#general">Settings</a>
                   <li class="  ">
                     <a href="/user/promotions">Promotions</a>
                   <li class="  ">

@@ -44,6 +44,18 @@
 		private static $GM;
 		private static $GS;
 		private static $Member;
+		
+		# Socials
+		public static $Discord;
+		public static $Skype;
+		public static $Steam;
+		
+		# Privacy
+		public static $DisplayProfile;
+		public static $DisplaySocials;
+		
+		# Forum
+		public static $userTitle;
 
 		# Session
 		public static $LoginGuest;
@@ -57,9 +69,12 @@
 				if($_SESSION['Settings']["SITE_TYPE"] == 'SH'){
 					self::$sql=("SELECT TOP 1
 									[UM].[UserUID],[UM].[UserID],[UM].[Pw],[UM].[Point],[UM].[Status],[UM].[JoinDate],[UM].[LeaveDate],
-									[WP].[DisplayName],[WP].[PIN],[WP].[Email],[WP].[ActivationKey],[WP].[UserIP],[WP].[LoginStatus]
+									[WP].[DisplayName],[WP].[PIN],[WP].[Email],[WP].[ActivationKey],[WP].[UserIP],[WP].[LoginStatus], [WP].[UserTitle],
+									[US].[Discord],[US].[Skype],[US].[Steam],[UP].[DisplayProfile],[UP].[DisplaySocials]
 								FROM ".MSSQL::getTable("SH_USERDATA")."			AS [UM]
 								INNER JOIN ".MSSQL::getTable("WEB_PRESENCE")."	AS [WP] ON [UM].[UserID]=[WP].[UserID]
+								INNER JOIN ".MSSQL::getTable("USER_SOCIALS")."	AS [US] ON [UM].[UserUID]=[US].[UserUID]
+								INNER JOIN ".MSSQL::getTable("USER_PRIVACY")."	AS [UP] ON [UM].[UserUID]=[UP].[UserUID]
 								WHERE [UM].[UserUID] = :uid
 					");
 					MSSQL::query(self::$sql);
@@ -83,6 +98,15 @@
 				self::$UserID		=	self::$fet["UserID"];
 				self::$UserIP		=	self::$fet["UserIP"];
 				self::$UserUID		=	self::$fet["UserUID"];
+				
+				self::$Discord		=	self::$fet["Discord"];
+				self::$Skype		=	self::$fet["Skype"];
+				self::$Steam		=	self::$fet["Steam"];
+				
+				self::$userTitle		=	self::$fet["UserTitle"];
+				
+				self::$DisplayProfile		=	self::$fet["DisplayProfile"];
+				self::$DisplaySocials		=	self::$fet["DisplaySocials"];
 
 			#	self::_is_staff(self::$AdminLevel);
 

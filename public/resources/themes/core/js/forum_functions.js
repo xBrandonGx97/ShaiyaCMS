@@ -1,0 +1,18 @@
+import { discord_modal } from "./forum/discord_modal.js";
+import { pin_topic } from "./forum/pin_topic.js";
+import { close_topic } from "./forum/close_topic.js";
+import { like_button } from "./forum/like_button.js";
+import { reply_submit } from "./forum/reply_submit.js";
+import { move_topic } from "./forum/move_topic.js";
+import { move_topic_submit } from "./forum/move_topic.js";
+import { edit_btn } from "./forum/edit_btn.js";
+import { action_save } from "./forum/action_save.js";
+discord_modal();
+pin_topic();
+close_topic();
+like_button();
+reply_submit();
+move_topic();
+move_topic_submit();
+edit_btn();
+action_save();

@@ -51,6 +51,8 @@
 				case "SH_USERDATA"				    :	return "[PS_UserData].[dbo].[Users_Master]";				break;
 				case "SH_USERLOGIN"				    :	return "[PS_UserData].[dbo].[UserLoginStatus]";				break;
 				case "PROFILE"					    :	return "[ShaiyaCMS].[dbo].[Profile]";					    break;
+				case "USER_SOCIALS"					:	return "[ShaiyaCMS].[dbo].[USER_SOCIALS]";			break;
+				case "USER_PRIVACY"					:	return "[ShaiyaCMS].[dbo].[USER_PRIVACY]";			break;
 				# ACP
 				# Main
 				case "HOMEPAGE"					    :	return "[ShaiyaCMS].[dbo].[HOMEPAGE]";						break;
@@ -140,9 +142,11 @@
         // Get result set as array of objects
         public static function resultSet($type=false){
             self::execute();
-            if($type){
+            if($type==1){
                 return self::$stmt->fetchAll();
-            }else{
+            }elseif($type==2) {
+            	return self::$stmt->fetchAll(PDO::FETCH_ASSOC);
+			}else {
                 return self::$stmt->fetchAll(PDO::FETCH_OBJ);
             }
 

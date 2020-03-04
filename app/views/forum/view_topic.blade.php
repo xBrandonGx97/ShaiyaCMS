@@ -25,17 +25,22 @@
 
             $onlineStaff    =   $data['forum']->getOnlineStaff();
             $cDisplayName   =   $isLoggedIn ? $data['forum']->convertDisplayName($onlineStaff) : '';
+
+            $topicID  =   $data['topicID'];
         @endphp
         <div class="nk-breadcrumbs text-center" style="opacity:0.9 !important;">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/forum">Forum</a></li>
                 <li><a href="/forum/topics/{{$forumID}}">{{$forumName}}</a></li>
-                <li><span>{{$topicTitle}}</span></li>
+                <li><span>{{\Classes\Utils\Data::$purifier->purify($topicTitle)}}</span></li>
             </ul>
         </div>
         <div class="nk-gap-2"></div>
-        <div class="table-responsive" id="pagination_data" data-id="{{$data['topicID']}}">
+        @php
+            // leave here
+        @endphp
+        <div class="table-responsive" id="pagination_data" data-id="{{$topicID}}">
 
         </div>
             {{--<div class="online-staff text-center">
@@ -52,10 +57,10 @@
             </div>--}}
         </div>
     @php Separator(120); @endphp
-    <script>
+    {{--<script>
         $(document).ready(function(){
             let page = 1;
             load_data(page);
         });
-    </script>
+    </script>--}}
 @endsection

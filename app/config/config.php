@@ -17,20 +17,19 @@
 	define('PUBROOT', $_SERVER['DOCUMENT_ROOT'].'/../public/');
 
     // Defaut language English
-	$getLang	= (isset($_GET['lang']) ) ? $_SESSION['lang']	=	$_GET['lang'] : '';
-	$headerLang	=	(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ) ? $parts=explode(';',$_SERVER['HTTP_ACCEPT_LANGUAGE']) : '';
-	$lang = 'en';
+	$getLang    = (isset($_GET['lang']) ) ? $_SESSION['lang']    =    $_GET['lang'] : '';
+	$lang    =    (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : '';
 
 	if($getLang){
-		$lang=$getLang;
-		define('LANG', $lang);
-	}elseif(isset($_SESSION['lang'])){
-		define('LANG', $_SESSION['lang']);
-	}else{
-		$langs=explode(',',$headerLang[0]);
-		$lang=$langs[1];
-		define('LANG', $lang);
-	}
+        define('LANG', $getLang);
+    }elseif(isset($_SESSION['lang'])){
+        define('LANG', $_SESSION['lang']);
+    }elseif($lang){
+        define('LANG', $lang);
+    }else{
+        $lang = 'en';
+        define('LANG', $lang);
+    }
 	function getLang($lang){
 		switch($lang){
 			case 'en': echo 'English'; break;

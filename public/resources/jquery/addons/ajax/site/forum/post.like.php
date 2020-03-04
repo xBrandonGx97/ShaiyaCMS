@@ -19,17 +19,17 @@
   		
   		//If json_decode succeeded, the JSON is valid.
 	  	if(is_array($decoded)) {
-			if(isset($decoded['postID'])){
-				list($postID,$likedUser,$userUID,$postAuthor) = explode("~",$decoded['uid']);
-				$postID	=	$decoded['postID'];
-				$action	=	$decoded['action'];
-				# Error Checking
-				$arr	=	[
-					'errors' => [],
-					'newCount' => '',
-					'liked' => '',
-					'action' => $action
-				];
+	  		list($postID,$likedUser,$userUID,$postAuthor) = explode("~",$decoded['uid']);
+			$postID	=	$decoded['postID'];
+			$action	=	$decoded['action'];
+			# Error Checking
+			$arr	=	[
+				'errors' => [],
+				'newCount' => '',
+				'liked' => '',
+				'action' => $action
+			];
+			if(isset($postID)){
 				if($likedUser==$userUID || $userUID==$likedUser) {
 					$arr['errors'][]  .=  'You cannot like your own post!';
 				}
