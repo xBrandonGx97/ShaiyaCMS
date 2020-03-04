@@ -33,7 +33,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/forum">Forum</a></li>
                 <li><a href="/forum/topics/{{$forumID}}">{{$forumName}}</a></li>
-                <li><span>{{\Classes\Utils\Data::$purifier->purify($topicTitle)}}</span></li>
+                <li><span>{!! \Classes\Utils\Data::$purifier->purify($topicTitle)!!}</span></li>
             </ul>
         </div>
         <div class="nk-gap-2"></div>
