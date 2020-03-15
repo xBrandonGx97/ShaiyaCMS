@@ -153,7 +153,7 @@
 		}
 		private static function _format_phone_us($data){
 			# note: making sure we have something
-			if(!isset($data{3})){
+			if(!isset($data[3])){
 				return '';
 			}
 			# note: strip out everything but numbers

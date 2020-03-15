@@ -46,20 +46,6 @@
             self::view('community/guildrankings', $data);
         }
 
-        public static function guilds(){
-        	User::run();
-        	$User			=	User::_fetch_User();
-            $data=['pageData'=>[
-                'index' =>  'index',
-                'title' =>  'Home',
-                'zone' =>  'CMS',
-                'nav' =>  true
-              ],
-              	'User' => $User,
-            ];
-            self::view('community/guilds', $data);
-        }
-
         public static function news(){
             $newsModel            =   self::model('news');
             User::run();
@@ -93,15 +79,17 @@
         }
 
         public static function pvprankings(){
+        	$rankings      =   self::model('rankings');
         	User::run();
         	$User			=	User::_fetch_User();
             $data=['pageData'=>[
-                'index' =>  'index',
-                'title' =>  'Home',
+                'index' =>  'rankings',
+                'title' =>  'Rankings',
                 'zone' =>  'CMS',
                 'nav' =>  true
               ],
               	'User' => $User,
+				'Rankings' => $rankings
             ];
             self::view('community/pvprankings', $data);
         }

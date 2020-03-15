@@ -68,6 +68,16 @@
                 <div class="col-md-3 order-md-2 text-right">
                     <a href="#forum-reply" class="nk-btn nk-btn-lg link-effect-4 nk-anchor">Reply</a>
                 </div>
+                <?php if($Forum->getTopicAuthor($topicID) === $User['DisplayName']): ?>
+                    <?php 
+                        $bumpedTime =   $Forum->checkBumpedTime($topicID);
+                        $dateToCheck = new \Datetime($bumpedTime);
+                        $twelveHoursAgo = (new \Datetime("now"))->modify("-12 hour");
+                        if($dateToCheck < $twelveHoursAgo) {
+                            echo 'can bump topic';
+                        }
+                     ?>
+                <?php endif; ?>
             <?php endif; ?>
             
             <div class="col-md-9 ">
@@ -192,7 +202,7 @@
                             <span class="nk-forum-action-btn postNum float-right" data-id="<?php echo e($postID); ?>">
                                 <a href="#post<?php echo e($postID); ?>">#<?php echo e($postNum); ?></a>
                             </span>
-                            <p class="body-text bdy<?php echo e($postID); ?>"><?php echo e($data['PostBody']); ?></p>
+                            <p class="body-text bdy<?php echo e($postID); ?>"><?php echo $data['PostBody']; ?></p>
                             <div class="hidden-textbox txt<?php echo e($postID); ?>">
 
                             </div>
@@ -212,7 +222,7 @@
                                         <a href="#forum-reply2" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
                                     </span>
                                     <span class="nk-forum-action-btn">
-                                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
+                                        <a href="#"><span class="fa fa-flag"></span> Report</a>
                                     </span>
                                     <span class="nk-forum-action-btn heart like-button like" data-liked="<?php echo e($checkPost ? 'true' : 'false'); ?>" data-id="<?php echo e($postID); ?>" data-uid="<?php echo e($dataBatch); ?>">
                                         <span class="nk-action-heart">

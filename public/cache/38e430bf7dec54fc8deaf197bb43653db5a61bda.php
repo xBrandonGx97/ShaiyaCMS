@@ -8,6 +8,7 @@
     <?php echo $__env->make('inc.cms.rightNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php echo $__env->make('inc.cms.mobileNav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <div class="nk-main">
+        <?php echo $__env->make('inc.cms.signForms', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <div class="nk-info-box bg-main-1 alert text-center" id="pin" style="display:none;font-size:24px;">
             <div class="nk-info-box-icon" style="display:inline-block !important;">
                 <i class="ion-information-circled"></i>

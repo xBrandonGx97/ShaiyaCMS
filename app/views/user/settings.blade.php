@@ -9,6 +9,7 @@
     @include('inc.cms.rightNav')
     @include('inc.cms.mobileNav')
     <div class="nk-main">
+        @include('inc.cms.signForms')
         <div class="nk-gap-6"></div>
         <div class="container">
                 <div class="nk-social-profile nk-social-profile-container-offset">

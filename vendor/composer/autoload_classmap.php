@@ -10,5 +10,7 @@ return array(
     'FileReader' => $vendorDir . '/smmoosavi/php-gettext-core/src/streams.php',
     'StreamReader' => $vendorDir . '/smmoosavi/php-gettext-core/src/streams.php',
     'StringReader' => $vendorDir . '/smmoosavi/php-gettext-core/src/streams.php',
+    'TinyRedisClient' => $vendorDir . '/ptrofimov/tinyredisclient/src/TinyRedisClient.php',
+    'TinyRedisClient_Exception' => $vendorDir . '/ptrofimov/tinyredisclient/src/TinyRedisClient.php',
     'gettext_reader' => $vendorDir . '/smmoosavi/php-gettext-core/src/gettext.php',
 );

@@ -1,6 +1,7 @@
 <?php
 	
 	namespace Core;
+	use \Classes\Utils\User;
 	class Route {
 	   	protected static $base_path;
 	   	protected static $request_uri;
@@ -26,7 +27,6 @@
 	   }
 	
 	   	public static function respond($route, $callable) {
-	
 			if ($route == '/'){
 				$route = self::$base_path;
 			}
@@ -130,12 +130,14 @@
 				$keys = array_search(self::$Params['id'], $url);
 				if(self::$Params['id'] !== $url[$keys]){
 					// id not found
-					die("Invalid route.");
+					self::throwError();
+					#die("Invalid route.");
 				}
 			}else{
 				if(!in_array(explode('?',$uri)[0],self::$Routes)){
 					#var_dump($_GET);
-					die("Invalid route.");
+					self::throwError();
+					#die("Invalid route.");
 				}
 			}
 		}
@@ -164,6 +166,20 @@
 				return $params[$key];
 			}
 			return null;
+		}
+		
+		public static function throwError() {
+			User::run();
+			$User			=	User::_fetch_User();
+            $data=['pageData'=>[
+                'index' =>  'index',
+                'title' =>  'Home',
+                'zone' =>  'CMS',
+                'nav' =>  true
+              ],
+				'User' => $User,
+            ];
+            \Core_Controller::view('errors/404', $data);
 		}
 		
 		public static function _Props($file=false,$line=false){

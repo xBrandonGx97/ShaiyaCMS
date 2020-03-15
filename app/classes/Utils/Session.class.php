@@ -15,11 +15,15 @@ class Session {
 	}
 	
 	public static function doLogout() {
-		self::updateLoginStatus(0);
 		if (isset($_SESSION['User'])) {
+			self::updateLoginStatus(0);
 			session_regenerate_id(true);
 			unset($_SESSION['User']);
-			header('location: /');
+			$referrer = $_SERVER["HTTP_REFERER"];
+			#header('location: '.$referrer);
+			echo '<script>
+				socket.emit("logout", "");
+			</script>';
 		}
 	}
 	

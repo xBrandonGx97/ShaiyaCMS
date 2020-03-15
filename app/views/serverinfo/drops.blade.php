@@ -9,6 +9,7 @@
     @include('inc.cms.rightNav')
     @include('inc.cms.mobileNav')
     <div class="nk-main">
+		@include('inc.cms.signForms')
     	<div class="nk-box bg-dark-1 text-white">
 			<div class="nk-gap-4"></div>
 			<div class="container">

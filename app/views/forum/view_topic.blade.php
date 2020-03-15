@@ -9,6 +9,7 @@
     @include('inc.cms.rightNav')
     @include('inc.cms.mobileNav')
     <div class="nk-main">
+        @include('inc.cms.signForms')
         <div class="nk-info-box bg-main-1 alert text-center" id="pin" style="display:none;font-size:24px;">
             <div class="nk-info-box-icon" style="display:inline-block !important;">
                 <i class="ion-information-circled"></i>

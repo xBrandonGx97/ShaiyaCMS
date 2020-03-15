@@ -9,6 +9,7 @@
     @include('inc.cms.rightNav')
     @include('inc.cms.mobileNav')
     <div class="nk-main">
+        @include('inc.cms.signForms')
         <div class="nk-gap-4"></div>
         @php
             $url = checkUrl();

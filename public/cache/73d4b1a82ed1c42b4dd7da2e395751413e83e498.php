@@ -32,7 +32,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/themes/core/css/pvp.css">
 <!-- jQuery v1.12.4 -->
 <script src="/resources/jquery/core/v1.12.4/jquery-v1.12.4.js"></script>
-<script src="/resources/themes/core/js/search_users.js" type=module></script>
+
 <script src="/resources/themes/core/js/functions.js" type=module></script>
 <?php if($data['pageData']['index']==='view_topic'): ?>
     <script src="/resources/themes/core/js/forum_functions.js" type=module></script>
@@ -40,4 +40,10 @@
     <script src="/resources/themes/core/js/forum/pagination/load_topics_data.js" type=module></script>
     <script src="/resources/themes/core/js/forum/pagination/load_next_topics_data.js" type=module></script>
 <?php endif; ?>
-<title><?php echo e($_SESSION['Settings']['SITE_TITLE']); ?> | <?php echo e($data['pageData']['title']); ?></title>
+<?php if($data['pageData']['index']==='rankings'): ?>
+    <script src="/resources/themes/core/js/rankings/pagination/load_data.js" type=module></script>
+    <script src="/resources/themes/core/js/rankings/pagination/load_rankings_data.js" type=module></script>
+    <script src="/resources/themes/core/js/rankings/pagination/load_next_rankings_data.js" type=module></script>
+    <script src="/resources/themes/core/js/rankings/pagination/load_search_rankings_data.js" type=module></script>
+<?php endif; ?>
+<title><?php echo e($data['pageData']['title']); ?> - <?php echo e($_SESSION['Settings']['SITE_TITLE']); ?></title>

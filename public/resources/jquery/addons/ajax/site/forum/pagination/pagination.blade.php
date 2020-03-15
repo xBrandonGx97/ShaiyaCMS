@@ -68,6 +68,16 @@
                 <div class="col-md-3 order-md-2 text-right">
                     <a href="#forum-reply" class="nk-btn nk-btn-lg link-effect-4 nk-anchor">Reply</a>
                 </div>
+                @if($Forum->getTopicAuthor($topicID) === $User['DisplayName'])
+                    @php
+                        $bumpedTime =   $Forum->checkBumpedTime($topicID);
+                        $dateToCheck = new \Datetime($bumpedTime);
+                        $twelveHoursAgo = (new \Datetime("now"))->modify("-12 hour");
+                        if($dateToCheck < $twelveHoursAgo) {
+                            echo 'can bump topic';
+                        }
+                    @endphp
+                @endif
             @endif
             {{--<div class="table-responsive" id="pagination_data" data-id="1">
 
@@ -196,7 +206,7 @@
                             <span class="nk-forum-action-btn postNum float-right" data-id="{{$postID}}">
                                 <a href="#post{{$postID}}">#{{$postNum}}</a>
                             </span>
-                            <p class="body-text bdy{{$postID}}">{{$data['PostBody']}}</p>
+                            <p class="body-text bdy{{$postID}}">{!!$data['PostBody']!!}</p>
                             <div class="hidden-textbox txt{{$postID}}">
 
                             </div>
@@ -218,7 +228,7 @@
                                         <a href="#forum-reply2" class="nk-anchor"><span class="fa fa-reply"></span> Reply</a>
                                     </span>
                                     <span class="nk-forum-action-btn">
-                                        <a href="#"><span class="fa fa-flag"></span> Spam</a>
+                                        <a href="#"><span class="fa fa-flag"></span> Report</a>
                                     </span>
                                     <span class="nk-forum-action-btn heart like-button like" data-liked="{{$checkPost ? 'true' : 'false'}}" data-id="{{$postID}}" data-uid="{{$dataBatch}}">
                                         <span class="nk-action-heart">

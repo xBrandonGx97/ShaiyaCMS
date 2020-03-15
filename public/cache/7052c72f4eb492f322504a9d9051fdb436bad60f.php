@@ -13,7 +13,7 @@
                     </a>
                     <?php if(!isset($_SESSION['UserUID'])): ?>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="#" class="nk-btn nk-btn-lg link-effect-4 open_register_form_modal" data-id="" data-target="#register_form_modal" data-toggle="modal">
+                        <a href="#" class="nk-btn nk-btn-lg link-effect-4 open_register">
                             <span>Register</span>
                         </a>
                     <?php endif; ?>

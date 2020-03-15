@@ -11,12 +11,17 @@
         <label for="Input-Value" class="col-sm-4 col-form-label tar">Password</label>
         <div class="col-sm-8">
             <div class="input-group">
-                <input class="form-control" name="Password" placeholder="Password" type="password"/>
+                <input class="form-control" id="password3" name="Password" placeholder="Password" type="password"/>
+                <span class="input-group-append">
+                    <span class="input-group-text bg-transparent border-0">
+                        <a href="#" class="password_visibility"><i class="far fa-eye-slash" id="password_icon3"></i></a>
+                    </span>
+                </span>
             </div>
         </div>
     </div>
     <input type="hidden" name="doLogin" value="true"/>
-    <p class="text-center"><button type="button" class="btn btn-sm btn-dark" id="login" name="doLogin">Authenticate</button></p>
+    <p class="text-center"><button type="button" class="nk-btn nk-btn-xs nk-btn-rounded nk-btn-outline nk-btn-color-main-1" id="login" name="doLogin">Authenticate</button></p>
 </form>
 <script>
 	$(document).ready(function(){

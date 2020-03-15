@@ -1,0 +1,20 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^3.21.2",
+    "mssql": "^6.1.0",
+    "node-sass": "^4.13.1",
+    "pm2": "^4.2.3",
+    "socket.io": "^0.9.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch resources/sass -o public/resources/themes/core/css"
+  },
+  "author": "",
+  "license": "ISC"
+}

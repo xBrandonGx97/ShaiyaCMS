@@ -16,6 +16,7 @@ class ComposerStaticInit56a12371c65d3de86a3e2d9bc3d633d3
         array (
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Debug\\' => 24,
+            'SocketIO\\' => 9,
         ),
         'P' => 
         array (
@@ -34,6 +35,10 @@ class ComposerStaticInit56a12371c65d3de86a3e2d9bc3d633d3
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'E' => 
+        array (
+            'ElephantIO\\' => 11,
+        ),
         'C' => 
         array (
             'Compiler\\' => 9,
@@ -48,6 +53,10 @@ class ComposerStaticInit56a12371c65d3de86a3e2d9bc3d633d3
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'SocketIO\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rase/socket.io-emitter/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -81,9 +90,14 @@ class ComposerStaticInit56a12371c65d3de86a3e2d9bc3d633d3
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'ElephantIO\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wisembly/elephant.io/src',
+            1 => __DIR__ . '/..' . '/wisembly/elephant.io/test',
+        ),
         'Compiler\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/libraries/Compiler',
+            0 => __DIR__ . '/../..' . '/app/libraries/compiler',
         ),
     );
 
@@ -93,6 +107,13 @@ class ComposerStaticInit56a12371c65d3de86a3e2d9bc3d633d3
             'smmoosavi' => 
             array (
                 0 => __DIR__ . '/..' . '/smmoosavi/php-gettext/src',
+            ),
+        ),
+        'E' => 
+        array (
+            'Ephp' => 
+            array (
+                0 => __DIR__ . '/..' . '/ephp/socketio/lib',
             ),
         ),
         'D' => 
@@ -109,6 +130,8 @@ class ComposerStaticInit56a12371c65d3de86a3e2d9bc3d633d3
         'FileReader' => __DIR__ . '/..' . '/smmoosavi/php-gettext-core/src/streams.php',
         'StreamReader' => __DIR__ . '/..' . '/smmoosavi/php-gettext-core/src/streams.php',
         'StringReader' => __DIR__ . '/..' . '/smmoosavi/php-gettext-core/src/streams.php',
+        'TinyRedisClient' => __DIR__ . '/..' . '/ptrofimov/tinyredisclient/src/TinyRedisClient.php',
+        'TinyRedisClient_Exception' => __DIR__ . '/..' . '/ptrofimov/tinyredisclient/src/TinyRedisClient.php',
         'gettext_reader' => __DIR__ . '/..' . '/smmoosavi/php-gettext-core/src/gettext.php',
     );
 

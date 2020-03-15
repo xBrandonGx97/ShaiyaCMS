@@ -997,3 +997,17 @@ i {
 	border-left: 1px solid #635f5f;
 	padding-left: 24px;
 }
+
+div.nk-success {
+    padding: 0;
+    margin: 5px 0;
+    font-weight: 400;
+    color: #87d96b;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.form-control.nk-success,
+.nk-form-style-1 .form-control.nk-success {
+    border-bottom: 1px solid #87d96b;
+}

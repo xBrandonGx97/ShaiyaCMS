@@ -89,5 +89,7 @@
         <script src="/resources/themes/core/js/Nv2.js"></script>
         <!-- WZ ToolTip -->
         <script src="/resources/themes/core/js/wz_tooltip.js"></script>
+        <script src="/resources/themes/core/js/socket.io-client/dist/socket.io.js"></script>
+        <script src="/resources/themes/core/js/client.js"></script>
     </body>
 </html>

@@ -56,12 +56,24 @@
         }
         
         public function getTopics($id) {
-        	$sql	=	('
+        	/*$sql	=	('
         					SELECT [FT].[TopicID],[FT].[ForumID],[FT].[TopicAuthor],[FT].[TopicDate],[FT].[Pinned],[FT].[Closed],[FP].[PostTitle],[FP].[Main],[FT].[Bumped],[FT].[BumpedDate]
         					FROM '.$this->MSSQL->getTable("TOPICS").' AS [FT]
 							INNER JOIN '.$this->MSSQL->getTable("POSTS").' AS [FP] ON [FT].[TopicID] = [FP].[TopicID]
 							WHERE [FT].[ForumID]='.$id.' AND [FT].[Pinned]=:pinned AND [FP].[Main]=:main
-							ORDER BY [FT].[BumpedDate] DESC
+							ORDER BY [FT].[TopicDate]
+        	');*/
+        	$sql	=	('
+        					SELECT [FT].[TopicID],[FT].[ForumID],[FT].[TopicAuthor],[FT].[TopicDate],[FT].[Pinned],[FT].[Closed],[FP].[PostTitle],[FP].[Main],[FT].[Bumped],[FT].[BumpedDate],
+        					CASE WHEN TopicDate > BumpedDate
+								THEN
+									(CASE WHEN TopicDate > BumpedDate THEN TopicDate ELSE BumpedDate END)
+								ELSE
+									(CASE WHEN BumpedDate > TopicDate THEN BumpedDate ELSE TopicDate END) END AS lastActivity
+        					FROM '.$this->MSSQL->getTable("TOPICS").' AS [FT]
+							INNER JOIN '.$this->MSSQL->getTable("POSTS").' AS [FP] ON [FT].[TopicID] = [FP].[TopicID]
+							WHERE [FT].[ForumID]='.$id.' AND [FT].[Pinned]=:pinned AND [FP].[Main]=:main
+							ORDER BY lastActivity DESC
         	');
         	$this->MSSQL->query($sql);
         	$this->MSSQL->bind(':pinned', 0);
@@ -593,5 +605,27 @@
   			$this->MSSQL->bind(':dname',$user);
             $res = $this->MSSQL->resultSet();
             return $res;
+		}
+		
+		public function checkBumpedTime($topic) {
+			$sql=("
+					SELECT * FROM ShaiyaCMS.dbo.FORUM_TOPICS
+					WHERE TopicID = :topic
+			");
+  			$this->MSSQL->query($sql);
+  			$this->MSSQL->bind(':topic', $topic);
+            $res = $this->MSSQL->single();
+            return $res->BumpedDate;
+		}
+		
+		public function getTopicAuthor($topic) {
+			$sql=("
+					SELECT TopicAuthor FROM ShaiyaCMS.dbo.FORUM_TOPICS
+					WHERE TopicID=:topic
+			");
+  			$this->MSSQL->query($sql);
+  			$this->MSSQL->bind(':topic', $topic);
+            $res = $this->MSSQL->single();
+            return $res->TopicAuthor;
 		}
     }

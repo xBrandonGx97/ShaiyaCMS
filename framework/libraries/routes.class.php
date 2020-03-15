@@ -18,7 +18,6 @@
 	Route::respond('/serverinfo/bossrecords', function() {ServerInfo_Controller::bossrecords();});
 	Route::respond('/serverinfo/terms', function() {ServerInfo_Controller::terms();});
 	# User
-	Route::respond( '/user/show/(any:id)', function($id) {echo 'You found user ' . $id;});
 	Route::respond('/user/profile', function() {User_Controller::profile();});
 	Route::respond('/user/donate', function() {User_Controller::donate();});
 	Route::respond('/user/donate_complete', function() {User_Controller::donate_complete();});
@@ -34,6 +33,9 @@
 	Route::respond('/user/support', function() {User_Controller::support();});
 	Route::respond('/user/vote', function() {User_Controller::vote();});
 	Route::respond('/user/users', function() {User_Controller::users();});
+	Route::respond('/user/friends', function() {User_Controller::friends();});
+	// Must be loaded after all other user routes
+	Route::respond( '/user/(int:id)', function($id) {User_Controller::user($id);});
 	# Forum
 	Route::respond('/forum', function() {Forum_Controller::forum();});
 	Route::respond('/forum/topics/(any:id)', function($id) {Forum_Controller::topics($id);});

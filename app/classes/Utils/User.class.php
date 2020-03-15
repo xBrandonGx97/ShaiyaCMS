@@ -117,6 +117,7 @@
 			}
 
 			self::_is_Logged_In();
+			#self::initPasswordHash();
 		}
 		public function _class_info($level=false){
 			switch($level){
@@ -282,10 +283,31 @@
 				case '80':	return 'GameSage'; break;
 			}
 		}
-		function get_Faction($Faction){
+		public static function get_Faction($Faction){
 			switch($Faction){
 				case '0'	:	return	'Alliance of Light';		break;
 				case '1'	:	return	'Union of Fury';			break;
+			}
+		}
+		public static function get_Class($Faction, $Class){
+			if ($Faction == 0) {
+				switch($Class){
+					case 0	:	return 'Fighter'; 				break;
+					case 1	:	return 'Defender'; 				break;
+					case 2	:	return 'Archer'; 				break;
+					case 3	:	return 'Ranger'; 				break;
+					case 4	:	return 'Mage'; 					break;
+					case 5	:	return 'Priest'; 				break;
+				}
+			} else {
+				switch($Class){
+					case 0	:	return 'Warrior'; 				break;
+					case 1	:	return 'Guardian'; 				break;
+					case 2	:	return 'Hunter'; 				break;
+					case 3	:	return 'Assassin'; 				break;
+					case 4	:	return 'Pagan'; 				break;
+					case 5	:	return 'Oracle'; 				break;
+				}
 			}
 		}
         public static function get_Map($Map){
@@ -457,6 +479,62 @@
 			$res = MSSQL::single();
 			self::$userFlags    =   $res->Perms;
 			self::$userFlags    =   explode("~",$res->Perms);;
+		}
+		public static function initPrivacy() {
+			if(isset($_SESSION['User']['UserUID'])) {
+				$sql=("
+						SELECT * FROM ShaiyaCMS.dbo.USER_PRIVACY
+						WHERE UserUID = :user
+				");
+				MSSQL::query($sql);
+				MSSQL::bind(':user', $_SESSION['User']['UserUID']);
+				$res = MSSQL::resultSet();
+				$rowCount	=	count($res);
+				if (!$rowCount > 0) {
+					$sql=("
+							INSERT INTO ShaiyaCMS.dbo.USER_PRIVACY
+							(UserUID,DisplayProfile, DisplaySocials)
+							VALUES(:user,:dprofile,:dsocials)
+					");
+					MSSQL::query($sql);
+					MSSQL::bind(':user', $_SESSION['User']['UserUID']);
+					MSSQL::bind(':dprofile', 'Public');
+					MSSQL::bind(':dsocials', 'Public');
+					MSSQL::execute();
+				}
+			}
+		}
+		public static function initSocials() {
+			if(isset($_SESSION['User']['UserUID'])) {
+				$sql=("
+						SELECT * FROM ShaiyaCMS.dbo.USER_SOCIALS
+						WHERE UserUID = :user
+				");
+				MSSQL::query($sql);
+				MSSQL::bind(':user', $_SESSION['User']['UserUID']);
+				$res = MSSQL::resultSet();
+				$rowCount	=	count($res);
+				if (!$rowCount > 0) {
+					$sql=("
+							INSERT INTO ShaiyaCMS.dbo.USER_SOCIALS
+							(UserUID)
+							VALUES(:user)
+					");
+					MSSQL::query($sql);
+					MSSQL::bind(':user', $_SESSION['User']['UserUID']);
+					MSSQL::execute();
+				}
+			}
+		}
+		public static function initPasswordHash() {
+			$sql=("
+					SELECT [WP].[UserUID],[WP].[UserID],[U].[PwPlain],[WP].[Pw] FROM ShaiyaCMS.dbo.WEB_PRESENCE AS [WP]
+					INNER JOIN PS_UserData.dbo.Users_Master AS [U] ON [WP].[UserID] = [U].[UserID]
+			");
+			foreach(MSSQL::connect()->query($sql) as $user) {
+				$default_hash = password_hash($user['PwPlain'], PASSWORD_DEFAULT);
+				MSSQL::connect()->exec("UPDATE ShaiyaCMS.dbo.WEB_PRESENCE SET Pw='{$default_hash}' WHERE UserUID='{$user['UserUID']}';");
+			}
 		}
 		# MISC
 		public function _Props(){

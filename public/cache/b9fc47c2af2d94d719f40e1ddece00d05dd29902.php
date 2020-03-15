@@ -63,15 +63,20 @@
               <li class="  ">
                 <a href="/community/staffteam"><?php echo e(__("stff_tm")); ?></a>
               </li>
-              <li class="  ">
-                <a href="/community/guilds"><?php echo e(__("glds")); ?></a>
-              </li>
             </ul>
           </li>
           <?php if($data['User']['LoginStatus']===true): ?>
             <li class="  ">
-            <a href="/user/users">Users</a>
-          </li>
+              <a href="/user/users">Users</a>
+            </li>
+            <li class="  nk-drop-item">
+              <a href="/user/friends">
+                <i class="fas fa-bell"></i>
+              </a>
+              <ul class="dropdown">
+                friend 1: <button>add</button>
+              </ul>
+            </li>
           <?php endif; ?>
         </ul>
         <ul class="nk-nav nk-nav-right nk-nav-icons">
@@ -85,80 +90,55 @@
             </a>
           </li>
           <?php if(!isset($_SESSION['User']['UserUID'])): ?>
-            <?php if($_SESSION['Settings']['LOGIN_TYPE']=='Modal'): ?>
-              <li class="  nk-drop-item">
-                <a href="#">
-                  <i class="fas fa-user"></i>
-                </a>
-                <ul class="dropdown">
-                  <li class="  ">
-                    <a href="#" class="open_login_form_modal" title="Login" data-id="" data-target="#login_form_modal" data-toggle="modal">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </a>
-                  </li>
-                  <li class="  ">
-                    <a href="#" class="open_register_form_modal" title="Register" data-id="" data-target="#register_form_modal" data-toggle="modal">
-                        <i class="fas fa-user-plus"></i> Register
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            <?php endif; ?>
-            <?php if($_SESSION['Settings']['LOGIN_TYPE']=='Default'): ?>
-              <li class="single-icon">
-                <a href="#" class="nk-sign-toggle no-link-effect">
-                  <span class="nk-icon-toggle">
-                    <span class="nk-icon-toggle-front">
-                      <span class="fas fa-user"></span>
-                    </span>
-                    <span class="nk-icon-toggle-back">
-                      <span class="nk-icon-close"></span>
-                    </span>
+            <li class="single-icon">
+              <a href="#" class="nk-sign-toggle no-link-effect">
+                <span class="nk-icon-toggle">
+                  <span class="nk-icon-toggle-front">
+                    <span class="far fa-user"></span>
                   </span>
-                </a>
-              </li>
-            <?php endif; ?>
-            <?php else: ?>
-              <?php if($_SESSION['Settings']['LOGIN_TYPE']=='Modal'): ?>
-                <li class="  nk-drop-item">
-                <a href="#">
-                  <i class="fas fa-user"></i>
-                </a>
-                <ul class="dropdown">
-                  <?php if($data['User']['LoginStatus']==true): ?>
-                    <?php 
-                      $DisplayName  = $data['User']['DisplayName'];
-                     ?>
+                  <span class="nk-icon-toggle-back">
+                    <span class="nk-icon-close"></span>
+                  </span>
+                </span>
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php if($data['User']['LoginStatus']==true): ?>
+            <li class="  nk-drop-item">
+              <a href="#">
+                <i class="fas fa-user"></i>
+              </a>
+              <ul class="dropdown">
+                  <?php 
+                    $DisplayName  = $data['User']['DisplayName'];
+                    $UserUID  = $data['User']['UserUID'];
+                   ?>
+                <li class="  ">
+                  <a href="/user/<?php echo e($UserUID); ?>"><?php echo e($DisplayName); ?></a>
+                <div style="border-bottom: 1px solid white;"</div>
+                <?php if(in_array($data['User']['Status'], $data['User']['is_staff'])): ?>
                   <li class="  ">
-                    <a href="/user/account"><?php echo e($DisplayName); ?></a>
-                  <div style="border-bottom: 1px solid white;"</div>
-                  <?php if(in_array($data['User']['Status'], $data['User']['is_staff'])): ?>
-                   <li class="  ">
-                    <a href="/user/account">Staff Panel</a>
-                  <?php endif; ?>
-                  <li class="  ">
-                    <a href="/user/profile">Profile</a>
-                  <li class="  ">
-                    <a href="/user/donate">Donate</a>
-                  <li class="  ">
-                    <a href="/user/vote">Vote for DP</a>
-                  <li class="  ">
-                    <a href="/user/pvprewards">PvP Rewards</a>
-                  <li class="  ">
-                    <a href="/user/support">Support</a>
-                  <li class="  ">
-                    <a href="/user/settings#general">Settings</a>
-                  <li class="  ">
-                    <a href="/user/promotions">Promotions</a>
-                  <li class="  ">
-                    <a href="/user/logout">Logout</a>
-                  </li>
-                  <?php endif; ?>
-                </ul>
-              </li>
-              <?php endif; ?>
-              <?php if($_SESSION['Settings']['LOGIN_TYPE']=='Default'): ?>
-              <?php endif; ?>
+                  <a href="/user/account">Staff Panel</a>
+                <?php endif; ?>
+                <li class="  ">
+                  <a href="/user/profile">Profile</a>
+                <li class="  ">
+                  <a href="/user/donate">Donate</a>
+                <li class="  ">
+                  <a href="/user/vote">Vote for DP</a>
+                <li class="  ">
+                  <a href="/user/pvprewards">PvP Rewards</a>
+                <li class="  ">
+                  <a href="/user/support">Support</a>
+                <li class="  ">
+                  <a href="/user/settings#general">Settings</a>
+                <li class="  ">
+                  <a href="/user/promotions">Promotions</a>
+                <li class="logout">
+                  <a href="/user/logout">Logout</a>
+                </li>
+              </ul>
+            </li>
           <?php endif; ?>
         </ul>
       </div>
@@ -166,5 +146,5 @@
   </nav>
 
 <?php elseif($data['pageData']['nav'] === false): ?>
-  <h2>nav is false :)</h2>
+  <!-- Nav is disabled -->
 <?php endif; ?>

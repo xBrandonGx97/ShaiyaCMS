@@ -20,6 +20,7 @@
 			self::_IP();
 		#	$this->_ipv4_ipv6($this->IP);   
 		}
+		
 		public static function _get_browser_info($data){
 			return self::$data;
 		}

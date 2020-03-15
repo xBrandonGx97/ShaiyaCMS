@@ -1,6 +1,7 @@
 <?php
 	use smmoosavi\util\gettext\L10n;
 	use Compiler\Compiler;
+	use \Classes\Utils\User;
 	class Bootstrap{
 		protected static $debug=false;
 
@@ -142,6 +143,7 @@
 			# Load Routes
 			require_once(LIB_PATH.'routes.class.php');
 			Core\Route::checkRoute();
+			self::load_defaults();
 		}
 		public static function _is_ajax(){
 			if(defined('AJAX_CALL')){
@@ -151,6 +153,8 @@
 				
 				// Load Config
 				require_once 'config/config.php';
+				
+				Classes\Utils\Data::_do('load_purifier');
 
 				// Load Helpers
 				foreach(scandir(FWROOT.'/Helpers/') as $filename){
@@ -165,6 +169,13 @@
 			$compiler = new Compiler();
 			$compiler->compile(dirname(__DIR__).'/app/locale/'.LANG.'/LC_MESSAGES/messages.po');
 			require_once("libraries/translate.php");
+		}
+		public static function load_defaults() {
+			User::initPrivacy();
+			User::initSocials();
+		}
+		public static function load_helpers() {
+		
 		}
 	}
 ?>

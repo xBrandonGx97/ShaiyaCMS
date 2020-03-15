@@ -57,6 +57,21 @@
             ];
             self::view('user/donate_process', $data);
         }
+        public static function friends(){
+    		$Friends		=	self::model('Friends');
+    		User::run();
+			$User			=	User::_fetch_User();
+            $data=['pageData'=>[
+                'index' =>  'friends',
+                'title' =>  'Friends',
+                'zone' =>  'CMS',
+                'nav' =>  true
+              ],
+				'User' => $User,
+				'Friends' => $Friends
+            ];
+            self::view('user/friends', $data);
+        }
         public static function logout(){
             $data=['pageData'=>[
                 'index' =>  'index',
@@ -153,8 +168,21 @@
             self::view('user/support', $data);
         }
         public static function user($id){
-        	echo 'id: ' .$id.'<br>';
-            echo 'user';
+    		$userModel		=	self::model('User');
+    		$Friends		=	self::model('Friends');
+    		$User			=	User::_fetch_User();
+            $data=['pageData'=>[
+                'index' =>  'index',
+                'title' =>  'Home',
+                'zone' =>  'CMS',
+                'nav' =>  true
+              ],
+				'User' => $User,
+				'userModel' => $userModel,
+				'userID' => $id,
+				'Friends' => $Friends
+            ];
+        	self::view('user/user', $data);
         }
         public static function users(){
     		User::run();
