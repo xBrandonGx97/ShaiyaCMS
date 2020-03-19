@@ -37,7 +37,8 @@ class Bootstrap
         define('VIEWS_PATH', APP_PATH . 'views' . DS);
         define('CORE_PATH', FRAMEWORK_PATH . 'Core' . DS);
         define('DB_PATH', FRAMEWORK_PATH . 'database' . DS);
-        define('LIB_PATH', FRAMEWORK_PATH . 'Libraries' . DS);
+        define('LIB_PATH', FRAMEWORK_PATH . 'libraries' . DS);
+        define('ROUTES_PATH', FRAMEWORK_PATH . 'routes' . DS);
         define('HELPER_PATH', FRAMEWORK_PATH . 'Helpers' . DS);
         define('UPLOAD_PATH', PUBLIC_PATH . 'uploads' . DS);
         if (!defined('AJAX_CALL')) {
@@ -48,7 +49,7 @@ class Bootstrap
             // Load configuration file
             $GLOBALS['config'] = require CONFIG_PATH . 'config.php';
             // Load HTMLPurifier
-            require_once $GLOBALS['config']['APPROOT'] . '/libraries/HTMLPurifier/HTMLPurifier.auto.php';
+            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
         }
         // Start session
         //	session_start();
@@ -171,7 +172,7 @@ class Bootstrap
         require_once CORE_PATH . 'route.class.php';
         Core\Route::run();
         // Load Routes
-        require_once LIB_PATH . 'routes.class.php';
+        require_once ROUTES_PATH . 'routes.class.php';
         Core\Route::checkRoute();
         self::load_defaults();
     }
@@ -187,7 +188,7 @@ class Bootstrap
             $GLOBALS['config'] = require CONFIG_PATH . 'config.php';
 
             // Load HTMLPurifier
-            require_once $GLOBALS['config']['APPROOT'] . '/libraries/HTMLPurifier/HTMLPurifier.auto.php';
+            require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Load Purifier Method
             Classes\Utils\Data::_do('load_purifier');
 
@@ -246,7 +247,7 @@ class Bootstrap
     {
         $compiler = new Compiler();
         $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
-        require_once 'libraries/translate.php';
+        require_once LIB_PATH . 'translate.php';
     }
 
     public static function load_defaults()

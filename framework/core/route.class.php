@@ -141,13 +141,15 @@
                 $keys = array_search(self::$Params['id'], $url);
                 if (self::$Params['id'] !== $url[$keys]) {
                     // id not found
-                    self::throwError();
+                    //self::throwError();
+                    abort(404);
                     //die("Invalid route.");
                 }
             } else {
                 if (!in_array(explode('?', $uri)[0], self::$Routes)) {
                     //var_dump($_GET);
-                    self::throwError();
+                    //self::throwError();
+                    abort(404);
                     //die("Invalid route.");
                 }
             }

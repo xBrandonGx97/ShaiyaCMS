@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 408 Request Time-out'); @endphp
 @extends('layouts.app')
+@section('title', 'ERROR 408')
 @section('content')
     @include('pages.cms.home.inc.page_bg')
     @include('pages.cms.home.inc.page_border')

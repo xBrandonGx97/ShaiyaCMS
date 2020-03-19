@@ -1,5 +1,6 @@
 @php header('HTTP/1.0 404 Not Found'); @endphp
 @extends('layouts.app')
+@section('title', 'ERROR 404')
 @section('content')
     @include('pages.cms.home.inc.page_bg')
     @include('pages.cms.home.inc.page_border')

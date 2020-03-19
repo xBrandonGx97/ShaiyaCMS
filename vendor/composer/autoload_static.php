@@ -162,7 +162,7 @@ class ComposerStaticInitb82913b69ffd32b6b4d47ade5a923c81
         ),
         'Compiler\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/libraries/compiler',
+            0 => __DIR__ . '/../..' . '/framework/libraries/compiler',
         ),
         'Carbon\\' => 
         array (

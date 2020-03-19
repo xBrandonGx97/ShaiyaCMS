@@ -53,16 +53,16 @@
     });
 
     //Errors
-    Route::respond('get', '/errors/301', function () {CoreController::view('errors/301');});
-    Route::respond('get', '/errors/307', function () {CoreController::view('errors/307');});
-    Route::respond('get', '/errors/400', function () {CoreController::view('errors/400');});
-    Route::respond('get', '/errors/401', function () {CoreController::view('errors/401');});
-    Route::respond('get', '/errors/403', function () {CoreController::view('errors/403');});
-    Route::respond('get', '/errors/404', function () {CoreController::view('errors/404');});
-    Route::respond('get', '/errors/405', function () {CoreController::view('errors/405');});
-    Route::respond('get', '/errors/408', function () {CoreController::view('errors/408');});
-    Route::respond('get', '/errors/500', function () {CoreController::view('errors/500');});
-    Route::respond('get', '/errors/502', function () {CoreController::view('errors/502');});
+    Route::respond('get', '/errors/301', function () {Errors_Controller::error301();});
+    Route::respond('get', '/errors/307', function () {Errors_Controller::error307();});
+    Route::respond('get', '/errors/400', function () {Errors_Controller::error400();});
+    Route::respond('get', '/errors/401', function () {Errors_Controller::error401();});
+    Route::respond('get', '/errors/403', function () {Errors_Controller::error403();});
+    Route::respond('get', '/errors/404', function () {Errors_Controller::error404();});
+    Route::respond('get', '/errors/405', function () {Errors_Controller::error405();});
+    Route::respond('get', '/errors/408', function () {Errors_Controller::error408();});
+    Route::respond('get', '/errors/500', function () {Errors_Controller::error500();});
+    Route::respond('get', '/errors/502', function () {Errors_Controller::error502();});
 
     //Posts
     Route::respond('post', '/user/logoutPost', function () {User_Controller::logoutPost();});

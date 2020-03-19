@@ -9,7 +9,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Compiler\\": "app/libraries/compiler"
+      "Compiler\\": "framework/libraries/compiler"
     }
   }
 }

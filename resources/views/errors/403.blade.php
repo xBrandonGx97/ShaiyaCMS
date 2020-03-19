@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 403 Forbidden'); @endphp
 @extends('layouts.app')
+@section('title', 'ERROR 403')
 @section('content')
     @include('pages.cms.home.inc.page_bg')
     @include('pages.cms.home.inc.page_border')

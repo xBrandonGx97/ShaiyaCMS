@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 502 Bad Gateway'); @endphp
 @extends('layouts.app')
+@section('title', 'ERROR 502')
 @section('content')
     @include('pages.cms.home.inc.page_bg')
     @include('pages.cms.home.inc.page_border')
