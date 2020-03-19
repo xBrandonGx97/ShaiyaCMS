@@ -4,8 +4,8 @@ namespace Illuminate\Events;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Queue\Job;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 class CallQueuedListener implements ShouldQueue
 {
@@ -38,6 +38,20 @@ class CallQueuedListener implements ShouldQueue
      * @var int
      */
     public $tries;
+
+    /**
+     * The number of seconds to wait before retrying the job.
+     *
+     * @var int
+     */
+    public $retryAfter;
+
+    /**
+     * The timestamp indicating when the job should timeout.
+     *
+     * @var int
+     */
+    public $timeoutAt;
 
     /**
      * The number of seconds the job can run before timing out.
@@ -89,7 +103,7 @@ class CallQueuedListener implements ShouldQueue
      */
     protected function setJobInstanceIfNecessary(Job $job, $instance)
     {
-        if (in_array(InteractsWithQueue::class, class_uses_recursive(get_class($instance)))) {
+        if (in_array(InteractsWithQueue::class, class_uses_recursive($instance))) {
             $instance->setJob($job);
         }
 
@@ -101,7 +115,7 @@ class CallQueuedListener implements ShouldQueue
      *
      * The event instance and the exception will be passed.
      *
-     * @param  \Exception  $e
+     * @param  \Throwable  $e
      * @return void
      */
     public function failed($e)
@@ -137,5 +151,17 @@ class CallQueuedListener implements ShouldQueue
     public function displayName()
     {
         return $this->class;
+    }
+
+    /**
+     * Prepare the instance for cloning.
+     *
+     * @return void
+     */
+    public function __clone()
+    {
+        $this->data = array_map(function ($data) {
+            return is_object($data) ? clone $data : $data;
+        }, $this->data);
     }
 }

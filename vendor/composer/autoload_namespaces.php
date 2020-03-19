@@ -6,7 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'smmoosavi' => array($vendorDir . '/smmoosavi/php-gettext/src'),
     'Ephp' => array($vendorDir . '/ephp/socketio/lib'),
-    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
 );

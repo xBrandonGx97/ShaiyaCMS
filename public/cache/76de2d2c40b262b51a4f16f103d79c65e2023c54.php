@@ -16,6 +16,13 @@
                 <h2 class="nk-title h1 text-center">PvP Rankings</h2>
                 <div class="container">
                     <div class="table-responsive" id="pagination_data">
+                        <div class="container">
+                            <div class="row paginationData">
+                                <div class="col-md-3 order-md-2 text-right">
+                                    <input type="search" class="form-control form-control-sm" name="search" id="searchBox" placeholder="Search..">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

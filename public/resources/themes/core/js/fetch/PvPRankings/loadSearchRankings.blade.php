@@ -52,16 +52,11 @@
         	$res    =   $stmt->fetchAll();
     	    $rowCount   =   count($res);
     	    @endphp
-    	    <div class="container">
-                <div class="row">
-                    <div class="col-md-3 order-md-2 text-right">
-                        <input type="search" class="form-control form-control-sm" name="search" id="searchBox" placeholder="Search..">
-                    </div>
+                    
                     <div class="col-md-9 ">
                         {{Pagination::showPages_Rankings($records_per_page,$prevPage,$nextPage,$page)}}
                     </div>
-                </div>
-            </div>
+
             @if(count($Rankings->data) > 0)
                 <div class="table-responsive">
                     <table class="table table-sm table-dark table-striped tac">

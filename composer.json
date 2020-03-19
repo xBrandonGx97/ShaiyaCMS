@@ -1,9 +1,10 @@
 {
   "require": {
-    "jenssegers/blade": "^1.1",
-    "wisembly/elephant.io": "^3.3",
+    "jenssegers/blade": "dev-master",
+    "illuminate/database": "^7.2",
     "ephp/socketio": "dev-master",
-    "rase/socket.io-emitter": "dev-master"
+    "rase/socket.io-emitter": "dev-master",
+    "vlucas/phpdotenv": "^4.1@dev"
   },
   "minimum-stability": "dev",
   "autoload": {

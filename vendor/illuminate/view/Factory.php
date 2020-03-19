@@ -2,18 +2,20 @@
 
 namespace Illuminate\View;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use InvalidArgumentException;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\View\Engines\EngineResolver;
-use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\View\Factory as FactoryContract;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+use Illuminate\View\Engines\EngineResolver;
+use InvalidArgumentException;
 
 class Factory implements FactoryContract
 {
-    use Concerns\ManagesComponents,
+    use Macroable,
+        Concerns\ManagesComponents,
         Concerns\ManagesEvents,
         Concerns\ManagesLayouts,
         Concerns\ManagesLoops,
@@ -64,6 +66,7 @@ class Factory implements FactoryContract
         'blade.php' => 'blade',
         'php' => 'php',
         'css' => 'file',
+        'html' => 'file',
     ];
 
     /**
@@ -101,8 +104,8 @@ class Factory implements FactoryContract
      * Get the evaluated view contents for the given view.
      *
      * @param  string  $path
-     * @param  array   $data
-     * @param  array   $mergeData
+     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  array  $mergeData
      * @return \Illuminate\Contracts\View\View
      */
     public function file($path, $data = [], $mergeData = [])
@@ -118,8 +121,8 @@ class Factory implements FactoryContract
      * Get the evaluated view contents for the given view.
      *
      * @param  string  $view
-     * @param  array   $data
-     * @param  array   $mergeData
+     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  array  $mergeData
      * @return \Illuminate\Contracts\View\View
      */
     public function make($view, $data = [], $mergeData = [])
@@ -139,12 +142,35 @@ class Factory implements FactoryContract
     }
 
     /**
+     * Get the first view that actually exists from the given list.
+     *
+     * @param  array  $views
+     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  array  $mergeData
+     * @return \Illuminate\Contracts\View\View
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function first(array $views, $data = [], $mergeData = [])
+    {
+        $view = Arr::first($views, function ($view) {
+            return $this->exists($view);
+        });
+
+        if (! $view) {
+            throw new InvalidArgumentException('None of the views in the given array exist.');
+        }
+
+        return $this->make($view, $data, $mergeData);
+    }
+
+    /**
      * Get the rendered content of the view based on a given condition.
      *
      * @param  bool  $condition
      * @param  string  $view
-     * @param  array   $data
-     * @param  array   $mergeData
+     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  array  $mergeData
      * @return string
      */
     public function renderWhen($condition, $view, $data = [], $mergeData = [])
@@ -160,7 +186,7 @@ class Factory implements FactoryContract
      * Get the rendered contents of a partial from a loop.
      *
      * @param  string  $view
-     * @param  array   $data
+     * @param  array  $data
      * @param  string  $iterator
      * @param  string  $empty
      * @return string
@@ -195,7 +221,7 @@ class Factory implements FactoryContract
     /**
      * Normalize a view name.
      *
-     * @param  string $name
+     * @param  string  $name
      * @return string
      */
     protected function normalizeName($name)
@@ -219,7 +245,7 @@ class Factory implements FactoryContract
      *
      * @param  string  $view
      * @param  string  $path
-     * @param  array  $data
+     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
      * @return \Illuminate\Contracts\View\View
      */
     protected function viewInstance($view, $path, $data)
@@ -248,14 +274,14 @@ class Factory implements FactoryContract
      * Get the appropriate view engine for the given path.
      *
      * @param  string  $path
-     * @return \Illuminate\View\Engines\EngineInterface
+     * @return \Illuminate\Contracts\View\Engine
      *
      * @throws \InvalidArgumentException
      */
     public function getEngineFromPath($path)
     {
         if (! $extension = $this->getExtension($path)) {
-            throw new InvalidArgumentException("Unrecognized extension in file: $path");
+            throw new InvalidArgumentException("Unrecognized extension in file: {$path}");
         }
 
         $engine = $this->extensions[$extension];
@@ -282,7 +308,7 @@ class Factory implements FactoryContract
      * Add a piece of shared data to the environment.
      *
      * @param  array|string  $key
-     * @param  mixed  $value
+     * @param  mixed|null  $value
      * @return mixed
      */
     public function share($key, $value = null)
@@ -382,9 +408,9 @@ class Factory implements FactoryContract
     /**
      * Register a valid view extension and its engine.
      *
-     * @param  string    $extension
-     * @param  string    $engine
-     * @param  \Closure  $resolver
+     * @param  string  $extension
+     * @param  string  $engine
+     * @param  \Closure|null  $resolver
      * @return void
      */
     public function addExtension($extension, $engine, $resolver = null)
@@ -522,7 +548,7 @@ class Factory implements FactoryContract
      * Get an item from the shared data.
      *
      * @param  string  $key
-     * @param  mixed   $default
+     * @param  mixed  $default
      * @return mixed
      */
     public function shared($key, $default = null)

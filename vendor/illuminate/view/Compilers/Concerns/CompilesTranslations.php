@@ -7,7 +7,7 @@ trait CompilesTranslations
     /**
      * Compile the lang statements into valid PHP.
      *
-     * @param  string  $expression
+     * @param  string|null  $expression
      * @return string
      */
     protected function compileLang($expression)
@@ -16,9 +16,9 @@ trait CompilesTranslations
             return '<?php $__env->startTranslation(); ?>';
         } elseif ($expression[1] === '[') {
             return "<?php \$__env->startTranslation{$expression}; ?>";
-        } else {
-            return "<?php echo app('translator')->getFromJson{$expression}; ?>";
         }
+
+        return "<?php echo app('translator')->get{$expression}; ?>";
     }
 
     /**

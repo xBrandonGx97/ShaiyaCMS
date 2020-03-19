@@ -30,10 +30,10 @@ document.body.addEventListener('click', e => {
     registerToggle.click();
     userToggle.click();
   }
-  if (e.target.closest('.logout')) {
+  /* if (e.target.closest('.logout')) {
     e.preventDefault();
 
     console.log('okkk');
     socket.emit('logout', '');
-  }
+  } */
 });
