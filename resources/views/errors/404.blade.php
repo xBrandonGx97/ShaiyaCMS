@@ -1,7 +1,8 @@
+@php header('HTTP/1.0 404 Not Found'); @endphp
 @extends('layouts.app')
 @section('content')
-    @include('home.inc.page_bg')
-    @include('home.inc.page_border')
+    @include('pages.cms.home.inc.page_bg')
+    @include('pages.cms.home.inc.page_border')
     <header class="nk-header nk-header-opaque">
         @include('inc.cms.topNav')
         @include('inc.cms.nav')

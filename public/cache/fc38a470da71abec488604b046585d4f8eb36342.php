@@ -9,7 +9,7 @@
         </div>
         <div class="nk-gap"></div>
         <p>
-            <?php echo e($_SESSION['Settings']['SITE_FOOTER']); ?><br>
+            <?php echo $_SESSION['Settings']['SITE_FOOTER']; ?><br>
             Developed By <?php echo e($_SESSION['Settings']['AUTHOR']); ?>.
         </p>
         <div class="nk-footer-links">

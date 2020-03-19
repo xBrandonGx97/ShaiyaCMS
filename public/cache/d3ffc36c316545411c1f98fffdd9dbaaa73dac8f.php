@@ -116,7 +116,7 @@
             const errorDivPass = document.querySelector(".error-login-password");
             const successLogin = document.querySelector(".success-login");
 
-            fetch('/resources/jquery/addons/ajax/site/auth/login.submit.php', {
+            fetch('/user/logoutPost', {
                 method: 'post',
                 mode: "same-origin",
                 credentials: "same-origin",

@@ -11,13 +11,12 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
-            'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
             'User' => $User,
         ];
-        self::view('community/discord', $data);
+        self::view('pages/cms/community/discord', $data);
     }
 
     public static function downloads()
@@ -26,13 +25,12 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
-            'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
             'User' => $User,
         ];
-        self::view('community/downloads', $data);
+        self::view('pages/cms/community/downloads', $data);
     }
 
     public static function guildrankings()
@@ -42,14 +40,13 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
-            'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
             'guildrankings' => $guildRankingsModel->getGuildRankings(),
             'User' => $User,
         ];
-        self::view('community/guildrankings', $data);
+        self::view('pages/cms/community/guildrankings', $data);
     }
 
     public static function news()
@@ -99,14 +96,13 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
-            'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
             'news' => $newsModel->getNews(),
             'User' => $User,
         ];
-        self::view('community/news', $data);
+        self::view('pages/cms/community/news', $data);
     }
 
     public static function patchnotes()
@@ -116,14 +112,13 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
-            'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
             'patchnotes' => $patchNotesModel->getPatchNotes(),
             'User' => $User,
         ];
-        self::view('community/patchnotes', $data);
+        self::view('pages/cms/community/patchnotes', $data);
     }
 
     public static function pvprankings()
@@ -133,14 +128,13 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'rankings',
-            'title' => 'Rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
             'User' => $User,
             'Rankings' => $rankings
         ];
-        self::view('community/pvprankings', $data);
+        self::view('pages/cms/community/pvprankings', $data);
     }
 
     public static function staffteam()
@@ -149,12 +143,11 @@ class Community_Controller extends CoreController
         $User = User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
-            'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
             'User' => $User,
         ];
-        self::view('community/staffteam', $data);
+        self::view('pages/cms/community/staffteam', $data);
     }
 }

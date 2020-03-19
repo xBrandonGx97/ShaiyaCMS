@@ -3,7 +3,7 @@ import { addFriend } from './user/friends/add_friend.js';
 import { acceptFriend } from './user/friends/accept_friend.js';
 import { removeFriend } from './user/friends/remove_friend.js';
 import { cancelRequest } from './user/friends/cancel_request.js';
-import { servertime } from './core/servertime.js';
+import { serverTime } from './core/servertime.js';
 import { password_visibility } from './core/password_visibility.js';
 import { check_display } from './user/auth/name_checks.js';
 save_settings();
@@ -11,7 +11,7 @@ addFriend();
 acceptFriend();
 removeFriend();
 cancelRequest();
-servertime();
+serverTime();
 password_visibility();
 check_display();
 

@@ -24,9 +24,6 @@
             <div class="nk-navbar">
                 <div class="row">
                     <ul class="nk-nav">
-                        <?php
-                            require('resources/themes/core/js/ServerTime.php');
-                        ?>
                         <li id="server_time_m"></li>
                         <li id="server_time_d"></li>
                         <li id="server_time_y"></li>

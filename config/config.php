@@ -15,7 +15,7 @@
         // App Root
         'APPROOT' => dirname(dirname(__FILE__)) . '\app',
         // URL Root
-        'URLROOT' => 'http://mvc_base.local',
+        'URLROOT' => 'http://my_own_router.local',
         // Base Dir
         'BASEDIR' => '/',
         // Framework Root

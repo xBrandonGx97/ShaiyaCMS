@@ -26,7 +26,7 @@
 
             //	$User=new User();
             //	$User->_Props();
-            self::view('home/index', $data);
+            self::view('pages/cms/home/index', $data);
             //Browser::run();
         }
     }

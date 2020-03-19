@@ -52,5 +52,17 @@
         echo 'core settings: id: ' . $id;
     });
 
+    //Errors
+    Route::respond('get', '/errors/301', function () {CoreController::view('errors/301');});
+    Route::respond('get', '/errors/307', function () {CoreController::view('errors/307');});
+    Route::respond('get', '/errors/400', function () {CoreController::view('errors/400');});
+    Route::respond('get', '/errors/401', function () {CoreController::view('errors/401');});
+    Route::respond('get', '/errors/403', function () {CoreController::view('errors/403');});
+    Route::respond('get', '/errors/404', function () {CoreController::view('errors/404');});
+    Route::respond('get', '/errors/405', function () {CoreController::view('errors/405');});
+    Route::respond('get', '/errors/408', function () {CoreController::view('errors/408');});
+    Route::respond('get', '/errors/500', function () {CoreController::view('errors/500');});
+    Route::respond('get', '/errors/502', function () {CoreController::view('errors/502');});
+
     //Posts
     Route::respond('post', '/user/logoutPost', function () {User_Controller::logoutPost();});

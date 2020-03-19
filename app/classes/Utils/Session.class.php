@@ -39,24 +39,37 @@ class Session
 
     public static function updateLoginStatus($status)
     {
-        $sql = ('
-				UPDATE ShaiyaCMS.dbo.WEB_PRESENCE
-				SET LoginStatus = :status
-				WHERE UserID = :id
-		');
+        $loginStatus = MSSQL::query()
+            ->table('WEB_PRESENCE')
+            ->update('LoginStatus', ':status')
+            ->bind(':status', $status)
+            ->bind(':id', Session::get('User', 'UserID'))
+            ->where('UserID', ':id');
+
+        /* $sql = ('
+                UPDATE ShaiyaCMS.dbo.WEB_PRESENCE
+                SET LoginStatus = :status
+                WHERE UserID = :id
+        ');
         MSSQL::query($sql);
         MSSQL::bind(':status', $status, \PDO::PARAM_INT);
         MSSQL::bind(':id', $_SESSION['User']['UserID'], \PDO::PARAM_STR);
-        MSSQL::execute();
+        MSSQL::execute(); */
     }
 
-    public static function put($key, $value)
+    public static function put($key, $key2 = false, $value)
     {
         // check if session started on each function
         if (isset($_SESSION)) {
             if (session_name() === self::$sessionName) {
-                if (!isset($_SESSION[$key])) {
-                    $_SESSION[$key] = $value;
+                if ($key2 || !empty($key2)) {
+                    if (!isset($_SESSION[$key][$key2])) {
+                        $_SESSION[$key][$key2] = $value;
+                    }
+                } else {
+                    if (isset($_SESSION[$key])) {
+                        $_SESSION[$key] = $value;
+                    }
                 }
             }
         }

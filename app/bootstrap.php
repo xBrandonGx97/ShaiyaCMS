@@ -158,6 +158,8 @@ class Bootstrap
         Core\Loader::helper('modal');
         Core\Loader::helper('template');
         Core\Loader::helper('url');
+        Core\Loader::helper('abort');
+        Core\Loader::helper('redirect');
         // Init DotEnv
         //self::initDotEnv();
         // Init
@@ -182,13 +184,16 @@ class Bootstrap
             self::run();
 
             // Load Config
-            require_once '../config/config.php';
+            $GLOBALS['config'] = require CONFIG_PATH . 'config.php';
 
+            // Load HTMLPurifier
+            require_once $GLOBALS['config']['APPROOT'] . '/libraries/HTMLPurifier/HTMLPurifier.auto.php';
+            // Load Purifier Method
             Classes\Utils\Data::_do('load_purifier');
 
             // Load Helpers
-            foreach (scandir(FWROOT . '/Helpers/') as $filename) {
-                $path = FWROOT . '/Helpers/' . $filename;
+            foreach (scandir($GLOBALS['config']['FWROOT'] . '/Helpers/') as $filename) {
+                $path = $GLOBALS['config']['FWROOT'] . '/Helpers/' . $filename;
                 if (is_file($path)) {
                     require_once $path;
                 }

@@ -9,7 +9,7 @@
         </div>
         <div class="nk-gap"></div>
         <p>
-            {{$_SESSION['Settings']['SITE_FOOTER']}}<br>
+            {!!$_SESSION['Settings']['SITE_FOOTER']!!}<br>
             Developed By {{$_SESSION['Settings']['AUTHOR']}}.
         </p>
         <div class="nk-footer-links">

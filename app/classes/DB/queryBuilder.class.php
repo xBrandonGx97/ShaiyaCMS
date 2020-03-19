@@ -127,7 +127,8 @@
 
             // $this->update = "SET " . $key . " = " . $value";
             if (!$logic) {
-                $this->update = 'SET ' . $key . " = '" . $value . "'";
+                $this->update = 'SET ' . $key . ' = ' . $value;
+            //$this->update = 'SET ' . $key . " = '" . $value . "'";
             } else {
                 $this->update = $this->update . ', ' . $key . " = '" . $value . "'";
             }
@@ -288,6 +289,8 @@
                         $value = explode(', ', $value);
 
                         $value = implode("', '", $value);
+
+                        echo 'value: ' . $value;
                     } else {
                         $value = explode(', ', $value);
 
@@ -320,8 +323,13 @@
 
             if ($this->queryType === 'UPDATE') {
                 $this->stmt = $this->connection->prepare($this->buildQuery());
-                /* var_dump($this->stmt);
-                echo 'update: ' . $this->update; */
+                var_dump($this->stmt);
+                echo 'update: ' . $this->update;
+                if ($this->binds) {
+                    foreach ($this->binds as $key => $bind) {
+                        $this->stmt->bindValue($key, $bind['value'], $bind['type']);
+                    }
+                }
 
                 $this->ret = $this->stmt->execute();
                 return $this->ret;
@@ -438,7 +446,7 @@
                 echo $this->values;
             }
 
-            $query = $this->queryType . $this->delete . ' ' . $this->params . ' ' . $this->from . ' ' . $this->table . ' ' . $this->as . ' ' . $this->update . ' ' . $this->where . ' ' . $this->columns . $this->values . ' ' . $this->join . ' ' . $this->joinQuery . ' ' . $this->groupBy . ' ' . $this->order;
+            $query = $this->queryType . $this->delete . ' ' . $this->params . ' ' . $this->from . ' ' . $this->table . ' ' . $this->as . ' ' . $this->update . ' ' . $this->columns . $this->values . ' ' . $this->join . ' ' . $this->joinQuery . ' ' . $this->where . ' ' . $this->groupBy . ' ' . $this->order;
 
             return $query;
         }
