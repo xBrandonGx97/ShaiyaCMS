@@ -1,6 +1,5 @@
 <?php
   use Classes\Base\Langs;
-  use Classes\Utils\Auth;
 ?>
 @if ($data['pageData']['nav'] === true)
   @php

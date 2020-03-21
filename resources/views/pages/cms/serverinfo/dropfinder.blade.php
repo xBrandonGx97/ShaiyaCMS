@@ -1,6 +1,7 @@
 @extends('layouts.cms.app')
 @section('title', 'Drop Finder')
 @section('zone', 'CMS')
+@section('headerTitle', 'Drop Finder')
 @section('content')
     {{-- @include('pages.cms.home.inc.page_bg') --}}
     @include('partials.cms.pageBorder')
@@ -14,9 +15,7 @@
 				@include('partials.cms.pageHeader')
 				@include('partials.cms.signForms')
     	<div class="container text-xs-center">
-    		<div class="nk-gap-6"></div>
-    		<div class="nk-gap-2"></div>
-    		<div class="container">
+    		<div class="nk-gap-4"></div>
     			@if (isset($_POST['SC']))
     				@if(count($data['dropfinder']->fet) > 0)
     					<form method="POST">
@@ -99,10 +98,10 @@
 								</div>
 							</div>
 						</form>
-						@php Separator(10); @endphp
-    			@endif
-			</div>
+					@endif
 		</div>
-		@php Separator(120); @endphp
+		<div class="nk-gap-2"></div>
+    <div class="nk-gap-4"></div>
+		@include('layouts.cms.footer')
     </div>
 @endsection

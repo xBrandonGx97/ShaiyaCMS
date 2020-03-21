@@ -1,6 +1,7 @@
 @extends('layouts.cms.app')
 @section('title', 'Patch Notes')
 @section('zone', 'CMS')
+@section('headerTitle', 'Patch Notes')
 @section('content')
     {{-- @include('pages.cms.home.inc.page_bg') --}}
     @include('partials.cms.pageBorder')
@@ -27,12 +28,13 @@
                             </div>
                         </div>
                     </div>
-                    @php Separator(40); @endphp
                 @endforeach
             @else
                 <p>No Patch Notes found. Please check back later.</p>
             @endif
         </div>
-        @php Separator(120); @endphp
+        <div class="nk-gap-2"></div>
+        <div class="nk-gap-4"></div>
+        @include('layouts.cms.footer')
     </div>
 @endsection

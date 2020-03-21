@@ -1,6 +1,7 @@
 @extends('layouts.cms.app')
 @section('title', 'User')
 @section('zone', 'CMS')
+@section('headerTitle', 'User')
 @section('content')
     {{-- @include('pages.cms.home.inc.page_bg') --}}
     @include('partials.cms.pageBorder')

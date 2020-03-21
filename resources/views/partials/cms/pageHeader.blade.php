@@ -17,7 +17,7 @@
     <div class="nk-header-table">
         <div class="nk-header-table-cell">
             <div class="container">
-                <h1 class="nk-title">Download</h1>
+                <h1 class="nk-title">@yield('headerTitle')</h1>
             </div>
         </div>
     </div>

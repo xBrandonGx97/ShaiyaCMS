@@ -1,6 +1,7 @@
 @extends('layouts.cms.app')
 @section('title', 'News')
 @section('zone', 'CMS')
+@section('headerTitle', 'News')
 @section('content')
     {{-- @include('pages.cms.home.inc.page_bg') --}}
     @include('partials.cms.pageBorder')
@@ -34,6 +35,8 @@
                 <p>No News found. Please check back later.</p>
             @endif
         </div>
-        @php Separator(120); @endphp
+        <div class="nk-gap-2"></div>
+        <div class="nk-gap-4"></div>
+        @include('layouts.cms.footer')
     </div>
 @endsection

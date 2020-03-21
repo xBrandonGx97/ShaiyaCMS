@@ -1,6 +1,7 @@
 @extends('layouts.cms.app')
 @section('title', 'Drops')
 @section('zone', 'CMS')
+@section('headerTitle', 'Drops')
 @section('content')
     {{-- @include('pages.cms.home.inc.page_bg') --}}
     @include('partials.cms.pageBorder')
@@ -13,7 +14,6 @@
     <div class="nk-main">
 			@include('partials.cms.pageHeader')
 			@include('partials.cms.signForms')
-    	<div class="nk-box bg-dark-1 text-white">
 			<div class="nk-gap-4"></div>
 			<div class="container">
 			<h2 class="display-4 text-center">Shaiya Notorious Drop List</h2>
@@ -55,8 +55,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="nk-gap-4"></div>
-    		<div class="nk-gap-4"></div>
-		</div>
+			<div class="nk-gap-2"></div>
+      <div class="nk-gap-4"></div>
+      @include('layouts.cms.footer')
     </div>
 @endsection

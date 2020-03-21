@@ -1,5 +1,6 @@
 <?php $__env->startSection('title', 'Downloads'); ?>
 <?php $__env->startSection('zone', 'CMS'); ?>
+<?php $__env->startSection('headerTitle', 'Downloads'); ?>
 <?php $__env->startSection('content'); ?>
     
     <?php echo $__env->make('partials.cms.pageBorder', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
