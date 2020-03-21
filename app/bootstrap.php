@@ -35,6 +35,7 @@ class Bootstrap
         define('CONTROLLER_PATH', APP_PATH . 'controllers' . DS);
         define('MODELS_PATH', APP_PATH . 'models' . DS);
         define('VIEWS_PATH', APP_PATH . 'views' . DS);
+        define('BLADE_PATH', FRAMEWORK_PATH . 'Blade' . DS);
         define('CORE_PATH', FRAMEWORK_PATH . 'Core' . DS);
         define('DB_PATH', FRAMEWORK_PATH . 'database' . DS);
         define('LIB_PATH', FRAMEWORK_PATH . 'libraries' . DS);
@@ -80,6 +81,11 @@ class Bootstrap
                     echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
                 }
                 $classPath = CORE_PATH;
+            } elseif (is_file(BLADE_PATH . $classFile)) {
+                if (self::$debug) {
+                    echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
+                }
+                $classPath = BLADE_PATH;
             }
         } elseif (substr($classname, -5) == 'Model') {
             if (is_file(MODEL_PATH . $classFile)) {
@@ -153,6 +159,8 @@ class Bootstrap
 
     public static function dispatch()
     {
+        // Init Capsule
+        Classes\DB\MSSQL::initCapsule();
         // Init Session
         Classes\Utils\Session::init('Default');
         // Load Helpers
@@ -161,6 +169,7 @@ class Bootstrap
         Core\Loader::helper('url');
         Core\Loader::helper('abort');
         Core\Loader::helper('redirect');
+        Core\Loader::helper('table');
         // Init DotEnv
         //self::initDotEnv();
         // Init

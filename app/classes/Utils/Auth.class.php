@@ -1,34 +1,60 @@
 <?php
-  class Auth
-  {
-      // similar to laravels auth class
-      public function check()
-      {
-          // Check if user is logged in
-      }
 
-      public function attempt($credentials)
-      {
-          // Authentication passed
-      }
+namespace Classes\Utils;
 
-      public function login($user, $remember = false)
-      {
-          // Log user in
-      }
+class Auth
+{
+    // similar to laravels auth class
+    public static function check()
+    {
+        // Check if user is logged in
+        if (Session::has('User')) {
+            return true;
+        }
+    }
 
-      public function loginUsingId($user, $remember = false)
-      {
-          // Log user in using their primary id
-      }
+    public static function guest()
+    {
+        // Check if user is not logged in
+        if (!Session::has('User')) {
+            return true;
+        }
+    }
 
-      public function logout()
-      {
-          // Log user out
-      }
+    public static function attempt($credentials)
+    {
+        // Authentication passed
+    }
 
-      public function viaRemember()
-      {
-          // was authenticated from remember me cookie
-      }
-  }
+    public static function login($user, $remember = false)
+    {
+        // Log user in
+    }
+
+    public static function loginUsingId($user, $remember = false)
+    {
+        // Log user in using their primary id
+    }
+
+    public static function logout()
+    {
+        // Log user out
+        if (Session::has('User')) {
+            User::updateLoginStatus(0);
+            Session::regenerate();
+            Session::forget('User');
+            $referrer = $_SERVER['HTTP_REFERER'];
+            redirect($referrer);
+        }
+    }
+
+    public static function viaRemember()
+    {
+        // was authenticated from remember me cookie
+    }
+
+    public static function _get()
+    {
+        return get_class_methods(get_called_class());
+    }
+}

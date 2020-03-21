@@ -2,6 +2,7 @@
     return [
         // DB Params
         'database' => [
+            'driver' => env('DB_DRIVER'),
             'host' => env('DB_HOST'),
             'user' => env('DB_USER'),
             'pass' => env('DB_PASS'),

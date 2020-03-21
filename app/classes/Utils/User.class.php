@@ -7,6 +7,7 @@
     }
 
     use Classes\DB\MSSQL;
+    use Illuminate\Database\Capsule\Manager as Eloquent;
 
     class User
     {
@@ -70,26 +71,60 @@
 
         public static function run()
         {
+            //Session::flush();
             if (isset($_SESSION) && isset($_SESSION['User']['UserUID']) || isset($_COOKIE['stayLoggedIn'])) {
                 $SessionCookieCheck = isset($_COOKIE['stayLoggedIn']) ? $_COOKIE['UserUID'] : $_SESSION['User']['UserUID'];
                 if ($_SESSION['Settings']['SITE_TYPE'] == 'SH') {
-                    self::$sql = ('SELECT TOP 1
-									[UM].[UserUID],[UM].[UserID],[UM].[Pw],[UM].[Point],[UM].[Status],[UM].[JoinDate],[UM].[LeaveDate],
-									[WP].[DisplayName],[WP].[PIN],[WP].[Email],[WP].[ActivationKey],[WP].[UserIP],[WP].[LoginStatus], [WP].[UserTitle],
-									[US].[Discord],[US].[Skype],[US].[Steam],[UP].[DisplayProfile],[UP].[DisplaySocials]
-								FROM ' . MSSQL::getTable('SH_USERDATA') . '			AS [UM]
-								INNER JOIN ' . MSSQL::getTable('WEB_PRESENCE') . '	AS [WP] ON [UM].[UserID]=[WP].[UserID]
-								INNER JOIN ' . MSSQL::getTable('USER_SOCIALS') . '	AS [US] ON [UM].[UserUID]=[US].[UserUID]
-								INNER JOIN ' . MSSQL::getTable('USER_PRIVACY') . '	AS [UP] ON [UM].[UserUID]=[UP].[UserUID]
-								WHERE [UM].[UserUID] = :uid
-					');
+                    $query = Eloquent::table(table('SH_USERDATA') . ' as [UM]')
+                            ->select(['[UM].UserUID', '[UM].UserID', '[UM].Pw', '[UM].Point', '[UM].Status', '[UM].JoinDate', '[UM].LeaveDate', '[WP].DisplayName', '[WP].PIN', '[WP].Email', '[WP].ActivationKey', '[WP].UserIP', '[WP].LoginStatus', '[WP].UserTitle', '[US].Discord', '[US].Skype', '[US].Steam', '[UP].DisplayProfile', '[UP].DisplaySocials'])
+                            ->join(table('WEB_PRESENCE') . ' as  [WP]', '[UM].UserID', '=', '[WP].UserID')
+                            ->join(table('USER_SOCIALS') . ' as  [US]', '[UM].UserUID', '=', '[US].UserUID')
+                            ->join(table('USER_PRIVACY') . ' as  [UP]', '[UM].UserUID', '=', '[UP].UserUID')
+                            ->where('[UM].UserUID', $SessionCookieCheck)
+                            ->get();
+
+                    foreach ($query as $fet) {
+                        // Shaiya Data
+                        self::$JoinDate = $fet->JoinDate;
+                        self::$LeaveDate = $fet->LeaveDate;
+                        self::$Point = $fet->Point;
+                        self::$LoginStatus = $fet->LoginStatus;
+
+                        // Web Presence
+                        self::$DisplayName = $fet->DisplayName;
+                        self::$Email = $fet->Email;
+                        self::$Status = $fet->Status;
+                        self::$UserID = $fet->UserID;
+                        self::$UserIP = $fet->UserIP;
+                        self::$UserUID = $fet->UserUID;
+
+                        self::$Discord = $fet->Discord;
+                        self::$Skype = $fet->Skype;
+                        self::$Steam = $fet->Steam;
+
+                        self::$userTitle = $fet->UserTitle;
+
+                        self::$DisplayProfile = $fet->DisplayProfile;
+                        self::$DisplaySocials = $fet->DisplaySocials;
+                    }
+
+                    /* self::$sql = ('SELECT TOP 1
+                                    [UM].[UserUID],[UM].[UserID],[UM].[Pw],[UM].[Point],[UM].[Status],[UM].[JoinDate],[UM].[LeaveDate],
+                                    [WP].[DisplayName],[WP].[PIN],[WP].[Email],[WP].[ActivationKey],[WP].[UserIP],[WP].[LoginStatus], [WP].[UserTitle],
+                                    [US].[Discord],[US].[Skype],[US].[Steam],[UP].[DisplayProfile],[UP].[DisplaySocials]
+                                FROM ' . MSSQL::getTable('SH_USERDATA') . '			AS [UM]
+                                INNER JOIN ' . MSSQL::getTable('WEB_PRESENCE') . '	AS [WP] ON [UM].[UserID]=[WP].[UserID]
+                                INNER JOIN ' . MSSQL::getTable('USER_SOCIALS') . '	AS [US] ON [UM].[UserUID]=[US].[UserUID]
+                                INNER JOIN ' . MSSQL::getTable('USER_PRIVACY') . '	AS [UP] ON [UM].[UserUID]=[UP].[UserUID]
+                                WHERE [UM].[UserUID] = :uid
+                    ');
                     MSSQL::query(self::$sql);
                     MSSQL::bind(':uid', $SessionCookieCheck);
-                    self::$fet = MSSQL::single(1);
+                    self::$fet = MSSQL::single(1); */
                 }
 
                 // Shaiya Data
-                self::$JoinDate = self::$fet['JoinDate'];
+                /* self::$JoinDate = self::$fet['JoinDate'];
                 self::$LeaveDate = self::$fet['LeaveDate'];
                 self::$Point = self::$fet['Point'];
                 self::$LoginStatus = self::$fet['LoginStatus'];
@@ -112,7 +147,7 @@
                 self::$userTitle = self::$fet['UserTitle'];
 
                 self::$DisplayProfile = self::$fet['DisplayProfile'];
-                self::$DisplaySocials = self::$fet['DisplaySocials'];
+                self::$DisplaySocials = self::$fet['DisplaySocials']; */
 
                 //	self::_is_staff(self::$AdminLevel);
 
@@ -528,50 +563,83 @@
         public static function initPrivacy()
         {
             if (isset($_SESSION['User']['UserUID'])) {
-                $sql = ('
-						SELECT * FROM ShaiyaCMS.dbo.USER_PRIVACY
-						WHERE UserUID = :user
-				');
+                $privacy = Eloquent::table(table('USER_PRIVACY'))
+                            ->select()
+                            ->where('UserUID', Session::get('User', 'UserUID'))
+                            ->first();
+                if (!is_null($privacy)) {
+                    try {
+                        $privacyIns = Eloquent::table(table('USER_PRIVACY'))
+                            ->insert([
+                                'UserUID' => Session::get('User', 'UserUID'),
+                                'DisplayProfile' => 'Public',
+                                'DisplaySocials' => 'Public'
+                            ]);
+                    } catch (\Exception $e) {
+                        echo 'problem inserting.';
+                    }
+                }
+                //var_dump($privacy);
+
+                /* $sql = ('
+                        SELECT * FROM ShaiyaCMS.dbo.USER_PRIVACY
+                        WHERE UserUID = :user
+                ');
                 MSSQL::query($sql);
                 MSSQL::bind(':user', $_SESSION['User']['UserUID']);
                 $res = MSSQL::resultSet();
                 $rowCount = count($res);
                 if (!$rowCount > 0) {
                     $sql = ('
-							INSERT INTO ShaiyaCMS.dbo.USER_PRIVACY
-							(UserUID,DisplayProfile, DisplaySocials)
-							VALUES(:user,:dprofile,:dsocials)
-					');
+                            INSERT INTO ShaiyaCMS.dbo.USER_PRIVACY
+                            (UserUID,DisplayProfile, DisplaySocials)
+                            VALUES(:user,:dprofile,:dsocials)
+                    ');
                     MSSQL::query($sql);
                     MSSQL::bind(':user', $_SESSION['User']['UserUID']);
                     MSSQL::bind(':dprofile', 'Public');
                     MSSQL::bind(':dsocials', 'Public');
                     MSSQL::execute();
-                }
+                } */
             }
         }
 
         public static function initSocials()
         {
             if (isset($_SESSION['User']['UserUID'])) {
-                $sql = ('
-						SELECT * FROM ShaiyaCMS.dbo.USER_SOCIALS
-						WHERE UserUID = :user
-				');
+                $socials = Eloquent::table(table('USER_SOCIALS'))
+                            ->select()
+                            ->where('UserUID', Session::get('User', 'UserUID'))
+                            ->first();
+                if (!is_null($socials)) {
+                    try {
+                        $socialsIns = Eloquent::table(table('USER_SOCIALS'))
+                            ->insert([
+                                'UserUID' => Session::get('User', 'UserUID')
+                            ]);
+                    } catch (\Exception $e) {
+                        echo 'problem inserting.';
+                    }
+                }
+
+                /* $sql = ('
+                        SELECT * FROM ShaiyaCMS.dbo.USER_SOCIALS
+                        WHERE UserUID = :user
+                ');
                 MSSQL::query($sql);
                 MSSQL::bind(':user', $_SESSION['User']['UserUID']);
                 $res = MSSQL::resultSet();
                 $rowCount = count($res);
                 if (!$rowCount > 0) {
                     $sql = ('
-							INSERT INTO ShaiyaCMS.dbo.USER_SOCIALS
-							(UserUID)
-							VALUES(:user)
-					');
+                            INSERT INTO ShaiyaCMS.dbo.USER_SOCIALS
+                            (UserUID)
+                            VALUES(:user)
+                    ');
                     MSSQL::query($sql);
                     MSSQL::bind(':user', $_SESSION['User']['UserUID']);
                     MSSQL::execute();
-                }
+                } */
             }
         }
 
@@ -584,6 +652,20 @@
             foreach (MSSQL::connect()->query($sql) as $user) {
                 $default_hash = password_hash($user['PwPlain'], PASSWORD_DEFAULT);
                 MSSQL::connect()->exec("UPDATE ShaiyaCMS.dbo.WEB_PRESENCE SET Pw='{$default_hash}' WHERE UserUID='{$user['UserUID']}';");
+            }
+        }
+
+        public static function updateLoginStatus($status)
+        {
+            $data = [
+                'LoginStatus' => $status
+            ];
+            try {
+                $loginStatus = Eloquent::table(table('WEB_PRESENCE'))
+                    ->where('UserID', Session::get('User', 'UserID'))
+                    ->update($data);
+            } catch (\Exception $e) {
+                echo 'problem inserting.';
             }
         }
 

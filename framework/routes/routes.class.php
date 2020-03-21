@@ -17,12 +17,14 @@
     Route::respond('get', '/serverinfo/dropfinder', function () {ServerInfo_Controller::dropfinder();});
     Route::respond('get', '/serverinfo/bossrecords', function () {ServerInfo_Controller::bossrecords();});
     Route::respond('get', '/serverinfo/terms', function () {ServerInfo_Controller::terms();});
+    // Auth
+    Route::respond('get', '/auth/logout', function () {Auth_Controller::logout();});
     // User
     Route::respond('get', '/user/profile', function () {User_Controller::profile();});
     Route::respond('get', '/user/donate', function () {User_Controller::donate();});
     Route::respond('get', '/user/donate_complete', function () {User_Controller::donate_complete();});
     Route::respond('get', '/user/donate_process', function () {User_Controller::donate_process();});
-    Route::respond('get', '/user/logout', function () {User_Controller::logout();});
+    //Route::respond('get', '/user/logout', function () {User_Controller::logout();});
     Route::respond('get', '/user/messages', function () {User_Controller::messages();});
     Route::respond('get', '/user/promotions', function () {User_Controller::promotions();});
     Route::respond('get', '/user/pvprewards', function () {User_Controller::pvprewards();});
@@ -64,5 +66,6 @@
     Route::respond('get', '/errors/500', function () {Errors_Controller::error500();});
     Route::respond('get', '/errors/502', function () {Errors_Controller::error502();});
 
-    //Posts
-    Route::respond('post', '/user/logoutPost', function () {User_Controller::logoutPost();});
+    // Post Responses
+    // Auth
+    Route::respond('post', '/auth/login', function () {Auth_Controller::login();});

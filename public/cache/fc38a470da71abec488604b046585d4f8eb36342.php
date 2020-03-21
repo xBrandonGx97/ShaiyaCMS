@@ -1,6 +1,6 @@
 <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
     <img class="nk-footer-top-corner" src="/resources/themes/godlike/images/footer-corner.png" alt="">
-    <div class="container">
+    <div class="container text-center">
         <div class="nk-gap-2"></div>
         <div class="nk-footer-logos">
             <a href="https://elitepvpers.com/forum/" target="_blank">
@@ -18,8 +18,7 @@
         <div class="nk-gap-4"></div>
     </div>
 </footer>
-<?php echo $__env->make('inc.cms.shareButtons', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('inc.cms.bottomButtons', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('partials.cms.bottomButtons', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- jQueryUI -->
         <script src="/resources/jquery/ui/v1.12.1/js/jquery-v1.12.1.ui.js"></script>
         <!-- Data Tables -->

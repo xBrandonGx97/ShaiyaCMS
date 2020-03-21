@@ -1,6 +1,6 @@
 <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
     <img class="nk-footer-top-corner" src="/resources/themes/godlike/images/footer-corner.png" alt="">
-    <div class="container">
+    <div class="container text-center">
         <div class="nk-gap-2"></div>
         <div class="nk-footer-logos">
             <a href="https://elitepvpers.com/forum/" target="_blank">
@@ -9,8 +9,8 @@
         </div>
         <div class="nk-gap"></div>
         <p>
-            {!!$_SESSION['Settings']['SITE_FOOTER']!!}<br>
-            Developed By {{$_SESSION['Settings']['AUTHOR']}}.
+            <?php echo $_SESSION['Settings']['SITE_FOOTER']; ?><br>
+            Developed By <?php echo e($_SESSION['Settings']['AUTHOR']); ?>.
         </p>
         <div class="nk-footer-links">
             <a href="/serverinfo/terms" class="link-effect">Terms of Service</a>
@@ -18,8 +18,7 @@
         <div class="nk-gap-4"></div>
     </div>
 </footer>
-@include('inc.cms.shareButtons')
-@include('inc.cms.bottomButtons')
+<?php echo $__env->make('partials.cms.bottomButtons', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- jQueryUI -->
         <script src="/resources/jquery/ui/v1.12.1/js/jquery-v1.12.1.ui.js"></script>
         <!-- Data Tables -->
@@ -92,4 +91,4 @@
         <script src="/resources/themes/core/js/socket.io-client/dist/socket.io.js"></script>
         <script src="/resources/themes/core/js/client.js"></script>
     </body>
-</html>
+</html><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/footer.blade.php ENDPATH**/ ?>

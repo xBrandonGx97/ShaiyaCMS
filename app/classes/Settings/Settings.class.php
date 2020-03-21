@@ -3,28 +3,20 @@
    namespace Classes\Settings;
 
     use Classes\DB\MSSQL;
+    use Illuminate\Database\Capsule\Manager as Eloquent;
 
     class Settings
     {
         public static function run()
         {
             $settings = [];
-            $datas = MSSQL::query()
-                ->select('*')
-                ->from('CMS_MAIN')
-                ->get('object');
+            $datas = Eloquent::table(MSSQL::getTable('CMS_MAIN'))
+             ->select()
+             ->get();
             foreach ($datas as $data) {
                 $settings[$data->SETTING] = $data->VALUE;
             }
             $_SESSION['Settings'] = $settings;
-
-            /* $settings = [];
-            MSSQL::query1('SELECT * FROM ShaiyaCMS.dbo.CMS_MAIN');
-            $datas = MSSQL::resultSet();
-            foreach ($datas as $data) {
-                $settings[$data->SETTING] = $data->VALUE;
-            }
-            $_SESSION['Settings'] = $settings; */
         }
 
         public static function _Props()

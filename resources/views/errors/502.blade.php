@@ -1,15 +1,16 @@
 @php header('HTTP/1.1 502 Bad Gateway'); @endphp
-@extends('layouts.app')
+@extends('layouts.cms.app')
 @section('title', 'ERROR 502')
+@section('zone', 'CMS')
 @section('content')
-    @include('pages.cms.home.inc.page_bg')
-    @include('pages.cms.home.inc.page_border')
+    {{-- @include('pages.cms.home.inc.page_bg') --}}
+    @include('partials.cms.pageBorder')
     <header class="nk-header nk-header-opaque">
-        @include('inc.cms.topNav')
-        @include('inc.cms.nav')
+        @include('partials.cms.topNav')
+        @include('partials.cms.nav')
     </header>
-    @include('inc.cms.rightNav')
-    @include('inc.cms.mobileNav')
+    @include('partials.cms.rightNav')
+	@include('partials.cms.mobileNav')
     <div class="nk-main">
         <div class="nk-header-title nk-header-title-full nk-header-title-parallax nk-header-title-parallax-opacity">
             <div class="bg-image op-8">

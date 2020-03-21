@@ -116,7 +116,7 @@
             const errorDivPass = document.querySelector(".error-login-password");
             const successLogin = document.querySelector(".success-login");
 
-            fetch('/user/logoutPost', {
+            fetch('/auth/login', {
                 method: 'post',
                 mode: "same-origin",
                 credentials: "same-origin",

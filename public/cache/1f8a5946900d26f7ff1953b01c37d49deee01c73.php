@@ -1,11 +1,12 @@
 <?php
-	use Classes\Base\Langs;
+  use Classes\Base\Langs;
+  use Classes\Utils\Auth;
 ?>
-@if ($data['pageData']['nav'] === true)
-  @php
+<?php if($data['pageData']['nav'] === true): ?>
+  <?php
     Display('register_form_modal','<i class="fas fa-user-plus"></i>','0','2','Registration Form');
     Display('login_form_modal','<i class="fas fa-sign-in-alt"></i>','0','2','Login Form');
-  @endphp
+  ?>
   <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-autohide">
     <div class="container">
       <div class="nk-nav-table">
@@ -14,58 +15,58 @@
         </a>
         <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
           <li class="active  ">
-            <a href="/">{{__("home")}}</a>
+            <a href="/"><?php echo e(__("home")); ?></a>
 		  </li>
           <li class="  ">
             <a href="/forum">Forum</a>
           </li>
           <li class="  ">
-            <a href="/community/downloads">{{__("dwnl")}}</a>
+            <a href="/community/downloads"><?php echo e(__("dwnl")); ?></a>
           </li>
           <li class="  nk-drop-item">
-            <a href="#">{{__("srvinfo")}}</a>
+            <a href="#"><?php echo e(__("srvinfo")); ?></a>
             <ul class="dropdown">
               <li class="  ">
-                <a href="/serverinfo/about">{{__("about")}}</a>
+                <a href="/serverinfo/about"><?php echo e(__("about")); ?></a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/drops">{{__("drp_lst")}}</a>
+                <a href="/serverinfo/drops"><?php echo e(__("drp_lst")); ?></a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/dropfinder">{{__("drp_finder")}}</a>
+                <a href="/serverinfo/dropfinder"><?php echo e(__("drp_finder")); ?></a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/bossrecords">{{__("boss_rcrds")}}</a>
+                <a href="/serverinfo/bossrecords"><?php echo e(__("boss_rcrds")); ?></a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/terms">{{__("trms")}}</a>
+                <a href="/serverinfo/terms"><?php echo e(__("trms")); ?></a>
               </li>
             </ul>
           </li>
           <li class="  nk-drop-item">
-            <a href="#">{{__("community")}}</a>
+            <a href="#"><?php echo e(__("community")); ?></a>
             <ul class="dropdown">
               <li class="  ">
-                <a href="/community/discord">{{__("dscord")}}</a>
+                <a href="/community/discord"><?php echo e(__("dscord")); ?></a>
               </li>
               <li class="  ">
-                <a href="/community/news">{{__("news")}}</a>
+                <a href="/community/news"><?php echo e(__("news")); ?></a>
               </li>
               <li class="  ">
-                <a href="/community/patchnotes">{{__("ptch_nts")}}</a>
+                <a href="/community/patchnotes"><?php echo e(__("ptch_nts")); ?></a>
               </li>
               <li class="  ">
-                <a href="/community/pvprankings">{{__("pvp_rnkings")}}</a>
+                <a href="/community/pvprankings"><?php echo e(__("pvp_rnkings")); ?></a>
               </li>
               <li class="  ">
-                <a href="/community/guildrankings">{{__("gld_rnkigns")}}</a>
+                <a href="/community/guildrankings"><?php echo e(__("gld_rnkigns")); ?></a>
               </li>
               <li class="  ">
-                <a href="/community/staffteam">{{__("stff_tm")}}</a>
+                <a href="/community/staffteam"><?php echo e(__("stff_tm")); ?></a>
               </li>
             </ul>
           </li>
-          @if($data['User']['LoginStatus']===true)
+          <?php if($data['User']['LoginStatus']===true): ?>
             <li class="  ">
               <a href="/user/users">Users</a>
             </li>
@@ -77,7 +78,7 @@
                 friend 1: <button>add</button>
               </ul>
             </li>
-          @endif
+          <?php endif; ?>
         </ul>
         <ul class="nk-nav nk-nav-right nk-nav-icons">
           <li class="single-icon hidden-lg-up">
@@ -89,7 +90,7 @@
               </span>
             </a>
           </li>
-          @if (!isset($_SESSION['User']['UserUID']))
+          <?php if (\Illuminate\Support\Facades\Blade::check('guest')): ?>
             <li class="single-icon">
               <a href="#" class="nk-sign-toggle no-link-effect">
                 <span class="nk-icon-toggle">
@@ -102,24 +103,23 @@
                 </span>
               </a>
             </li>
-          @endif
-          @if ($data['User']['LoginStatus']==true)
+          <?php else: ?>
             <li class="  nk-drop-item">
               <a href="#">
                 <i class="fas fa-user"></i>
               </a>
               <ul class="dropdown">
-                  @php
+                  <?php
                     $DisplayName  = $data['User']['DisplayName'];
                     $UserUID  = $data['User']['UserUID'];
-                  @endphp
+                  ?>
                 <li class="  ">
-                  <a href="/user/{{$UserUID}}">{{$DisplayName}}</a>
+                  <a href="/user/<?php echo e($UserUID); ?>"><?php echo e($DisplayName); ?></a>
                 <div style="border-bottom: 1px solid white;"</div>
-                @if (in_array($data['User']['Status'], $data['User']['is_staff']))
+                <?php if(in_array($data['User']['Status'], $data['User']['is_staff'])): ?>
                   <li class="  ">
                   <a href="/user/account">Staff Panel</a>
-                @endif
+                <?php endif; ?>
                 <li class="  ">
                   <a href="/user/profile">Profile</a>
                 <li class="  ">
@@ -135,16 +135,17 @@
                 <li class="  ">
                   <a href="/user/promotions">Promotions</a>
                 <li class="logout">
-                  <a href="/user/logout">Logout</a>
+                  <a href="/auth/logout">Logout</a>
                 </li>
               </ul>
             </li>
-          @endif
+          <?php endif; ?>
         </ul>
       </div>
     </div>
   </nav>
 
-@elseif ($data['pageData']['nav'] === false)
+<?php elseif($data['pageData']['nav'] === false): ?>
   <!-- Nav is disabled -->
-@endif
+<?php endif; ?>
+<?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/partials/cms/nav.blade.php ENDPATH**/ ?>

@@ -1,5 +1,4 @@
 <?php
-    use Jenssegers\Blade\Blade;
 
 class CoreController
 {
@@ -16,15 +15,10 @@ class CoreController
     // Load view
     public static function view($view, $data = [])
     {
-        // Create Blade Instance
-        $blade = new Blade('../resources/views', 'cache');
-        // Check for view file
-        if (file_exists('../resources/views/' . $view . '.blade.php')) {
-            echo $blade->make($view, ['data' => $data])->render();
-        //require_once '../app/views/' . $view . '.php';
-        } else {
-            // View does not exist
-            die('View doesn\'t exist');
-        }
+        $blade = new BladeController();
+        // Load Directives
+        $blade->loadDirectives();
+        // Load View
+        $blade->loadView($view, $data);
     }
 }

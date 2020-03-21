@@ -1,5 +1,6 @@
 <?php
 //	use Classes\Utils\Browser;
+    use Classes\Utils\Auth;
     use Classes\Utils\User;
 
     class Home_Controller extends CoreController
@@ -11,6 +12,9 @@
 
             User::run();
             //$User			=	User::_fetch_User(User::$UserID);
+            $Auth = [
+                'check' => Auth::check(),
+            ];
             $User = User::_fetch_User();
 
             $data = ['pageData' => [
@@ -19,6 +23,7 @@
                 'zone' => 'CMS',
                 'nav' => true,
             ],
+                'Auth' => $Auth,
                 'User' => $User,
                 'news' => $newsModel->getNews(),
                 'serverinfo' => $serverInfo

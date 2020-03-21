@@ -57,12 +57,12 @@
                 case 'LOG_PAYMENTS':	return '[ShaiyaCMS].[dbo].[LOG_PAYMENTS]';					break;
                 case 'LOG_SESSION':	return '[ShaiyaCMS].[dbo].[LOG_SESSION]';					break;
                 // Settings
-                case 'CMS_MAIN':	return '[ShaiyaCMS].[dbo].[CMS_MAIN]';					    break;
+                case 'CMS_MAIN':	return 'ShaiyaCMS.dbo.CMS_MAIN';					    break;
                 case 'CMS_STYLE':	return '[ShaiyaCMS].[dbo].[CMS_STYLE]';					    break;
                 case 'CMS_THEME':	return '[ShaiyaCMS].[dbo].[CMS_THEME]';					    break;
                 // Users
-                case 'WEB_PRESENCE':	return '[ShaiyaCMS].[dbo].[WEB_PRESENCE]';					break;
-                case 'SH_USERDATA':	return '[PS_UserData].[dbo].[Users_Master]';				break;
+                case 'WEB_PRESENCE':	return 'ShaiyaCMS.dbo.WEB_PRESENCE';					break;
+                case 'SH_USERDATA':	return 'PS_UserData.dbo.Users_Master';				break;
                 case 'SH_USERLOGIN':	return '[PS_UserData].[dbo].[UserLoginStatus]';				break;
                 case 'PROFILE':	return '[ShaiyaCMS].[dbo].[Profile]';					    break;
                 case 'USER_SOCIALS':	return '[ShaiyaCMS].[dbo].[USER_SOCIALS]';			break;
@@ -70,7 +70,7 @@
                 // ACP
                 // Main
                 case 'HOMEPAGE':	return '[ShaiyaCMS].[dbo].[HOMEPAGE]';						break;
-                case 'NEWS':	return '[ShaiyaCMS].[dbo].[NEWS]';							break;
+                case 'NEWS':	return 'ShaiyaCMS.dbo.NEWS';							break;
                 case 'PATCHNOTES':	return '[ShaiyaCMS].[dbo].[PATCH_NOTES]';					break;
                 // Forum
                 case 'FORUMS':	return '[ShaiyaCMS].[dbo].[FORUMS]';						break;
@@ -96,7 +96,7 @@
                 // Misc Tools
                 case 'SH_ACTIONLOG':	return '[PS_GameLog].[dbo].[Actionlog]';				    break;
                 case 'SH_CHATLOG':	return '[PS_ChatLog].[dbo].[Chatlog]';						break;
-                case 'SH_CHARDATA':	return '[PS_GameData].[dbo].[Chars]'; 						break;
+                case 'SH_CHARDATA':	return 'PS_GameData.dbo.Chars'; 						break;
                 case 'SH_CHARSKILLS':	return '[PS_GameData].[dbo].[CharSkills]'; 				    break;
                 case 'SH_CHARAPPSKILLS':	return '[PS_GameData].[dbo].[CharApplySkills]';			    break;
                 case 'SH_CHARITEMS':	return '[PS_GameData].[dbo].[CharItems]'; 					break;
@@ -206,17 +206,16 @@
 
         public static function initCapsule()
         {
+            $config = $GLOBALS['config']['database'];
+
             $capsule = new Capsule;
 
             $capsule->addConnection([
-                'driver' => 'sqlsrv',
-                'host' => 'localhost',
-                'database' => 'ShaiyaCMS',
-                'username' => 'Velo001',
-                'password' => 'RQIZGv7HyOgN09A3',
-                'charset' => 'utf8',
-                'collation' => 'utf8_unicode_ci',
-                'prefix' => '',
+                'driver' => $config['driver'],
+                'host' => $config['host'],
+                'database' => $config['name'],
+                'username' => $config['user'],
+                'password' => $config['pass']
             ]);
 
             // Make this Capsule instance available globally via static methods

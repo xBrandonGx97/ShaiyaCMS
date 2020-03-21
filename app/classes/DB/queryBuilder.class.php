@@ -15,6 +15,8 @@
         private $joinQuery;
         private $from;
         private $params;
+        private $queryTypeMulti;
+        private $paramsMulti;
         private $table;
         private $ret;
         private $columns;
@@ -43,10 +45,15 @@
           - Select columns from a table
         */
 
-        public function select($params = [])
+        public function select($params = [], $logic = false)
         {
-            $this->queryType = 'SELECT';
-            $this->params = $params;
+            if (!$logic) {
+                $this->queryType = 'SELECT';
+                $this->params = $params;
+            } else {
+                $this->queryTypeMulti = 'SELECT';
+                $this->paramsMulti = $params;
+            }
             return $this;
         }
 
@@ -104,9 +111,15 @@
            - Defines table as a specific name
         */
 
-        public function as($as)
+        public function as($as, $logic = null)
         {
-            $this->as = 'AS' . ' ' . $as;
+            if (!$logic) {
+                $this->as = 'AS' . ' ' . $as;
+            } elseif ($logic === 1) {
+                $this->asMulti = 'AS' . ' ' . $as;
+            } elseif ($logic === 2) {
+                $this->asMulti2 = 'AS' . ' ' . $as;
+            }
             return $this;
         }
 
@@ -290,7 +303,7 @@
 
                         $value = implode("', '", $value);
 
-                        echo 'value: ' . $value;
+                    //echo 'value: ' . $value;
                     } else {
                         $value = explode(', ', $value);
 
@@ -323,8 +336,8 @@
 
             if ($this->queryType === 'UPDATE') {
                 $this->stmt = $this->connection->prepare($this->buildQuery());
-                var_dump($this->stmt);
-                echo 'update: ' . $this->update;
+                //var_dump($this->stmt);
+                //echo 'update: ' . $this->update;
                 if ($this->binds) {
                     foreach ($this->binds as $key => $bind) {
                         $this->stmt->bindValue($key, $bind['value'], $bind['type']);
@@ -336,7 +349,7 @@
             } elseif ($this->queryType === 'DELETE') {
                 $this->stmt = $this->connection->prepare($this->buildQuery());
                 //var_dump($this->stmt);
-                echo 'update: ' . $this->update;
+                //echo 'update: ' . $this->update;
 
                 $this->ret = $this->stmt->execute();
                 return $this->ret;
@@ -435,7 +448,7 @@
 
                 $this->columns = ' ' . '(' . $columns . ')';
 
-                echo $this->columns;
+                //echo $this->columns;
             }
 
             if ($this->values) {
@@ -443,10 +456,23 @@
 
                 $this->values = ' ' . 'VALUES(' . $values . ')';
 
-                echo $this->values;
+                //echo $this->values;
             }
 
-            $query = $this->queryType . $this->delete . ' ' . $this->params . ' ' . $this->from . ' ' . $this->table . ' ' . $this->as . ' ' . $this->update . ' ' . $this->columns . $this->values . ' ' . $this->join . ' ' . $this->joinQuery . ' ' . $this->where . ' ' . $this->groupBy . ' ' . $this->order;
+            $queryTypeMulti = null;
+            if ($this->queryTypeMulti) {
+                $queryTypeMulti = '(' . $this->queryTypeMulti;
+            }
+            $paramsMulti = null;
+            if ($this->paramsMulti) {
+                $paramsMulti = $this->paramsMulti;
+            }
+
+            if ($this->queryTypeMulti) {
+                $query = $this->queryType . ' ' . $this->params . ' ' . $this->as . ', ' . $queryTypeMulti . ' ' . $this->paramsMulti . ' ' . $this->from . ' ' . $this->table . ' ' . $this->where . ') ' . ' ' . $this->asMulti . ', ' . $queryTypeMulti . ' ' . $this->paramsMulti . ' ' . $this->from . ' ' . $this->table . ' ' . ' ' . $this->where . ') ' . ' ' . $this->asMulti2 . ' ' . $this->groupBy . ' ' . $this->order;
+            } else {
+                $query = $this->queryType . $this->delete . ' ' . $this->params . ' ' . $this->from . ' ' . $this->table . ' ' . $this->as . ' ' . $queryTypeMulti . ' ' . $this->paramsMulti . ' ' . $this->update . ' ' . $this->columns . $this->values . ' ' . $this->join . ' ' . $this->joinQuery . ' ' . $this->where . ' ' . $this->groupBy . ' ' . $this->order;
+            }
 
             return $query;
         }
@@ -469,7 +495,7 @@
                     }
                 }
                 //var_dump($this->stmt);
-                $this->stmt->execute();
+                //$this->stmt->execute();
                 if ($type === 'single') {
                     $fetch = $this->stmt->fetch();
                 } elseif ($type === 'singleObject') {

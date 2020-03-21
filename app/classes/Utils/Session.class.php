@@ -2,8 +2,6 @@
 
 namespace Classes\Utils;
 
-use Classes\DB\MSSQL;
-
 class Session
 {
     public static $sessionName;
@@ -17,44 +15,6 @@ class Session
             setcookie($name, session_id(), 0, '/', null, null, true);
             self::$sessionName = $name;
         }
-    }
-
-    public static function doLogin()
-    {
-    }
-
-    public static function doLogout()
-    {
-        if (isset($_SESSION['User'])) {
-            self::updateLoginStatus(0);
-            session_regenerate_id(true);
-            unset($_SESSION['User']);
-            $referrer = $_SERVER['HTTP_REFERER'];
-            //header('location: '.$referrer);
-            echo '<script>
-				socket.emit("logout", "");
-			</script>';
-        }
-    }
-
-    public static function updateLoginStatus($status)
-    {
-        $loginStatus = MSSQL::query()
-            ->table('WEB_PRESENCE')
-            ->update('LoginStatus', ':status')
-            ->bind(':status', $status)
-            ->bind(':id', Session::get('User', 'UserID'))
-            ->where('UserID', ':id');
-
-        /* $sql = ('
-                UPDATE ShaiyaCMS.dbo.WEB_PRESENCE
-                SET LoginStatus = :status
-                WHERE UserID = :id
-        ');
-        MSSQL::query($sql);
-        MSSQL::bind(':status', $status, \PDO::PARAM_INT);
-        MSSQL::bind(':id', $_SESSION['User']['UserID'], \PDO::PARAM_STR);
-        MSSQL::execute(); */
     }
 
     public static function put($key, $key2 = false, $value)
@@ -91,6 +51,7 @@ class Session
                 if (isset($_SESSION[$key])) {
                     return true;
                 }
+                return false;
             }
         }
     }

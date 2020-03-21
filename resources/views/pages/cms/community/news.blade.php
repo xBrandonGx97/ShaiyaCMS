@@ -1,18 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.cms.app')
 @section('title', 'News')
+@section('zone', 'CMS')
 @section('content')
-    @include('pages.cms.home.inc.page_bg')
-    @include('pages.cms.home.inc.page_border')
+    {{-- @include('pages.cms.home.inc.page_bg') --}}
+    @include('partials.cms.pageBorder')
     <header class="nk-header nk-header-opaque">
-        @include('inc.cms.topNav')
-        @include('inc.cms.nav')
+        @include('partials.cms.topNav')
+        @include('partials.cms.nav')
     </header>
-    @include('inc.cms.rightNav')
-    @include('inc.cms.mobileNav')
+    @include('partials.cms.rightNav')
+	@include('partials.cms.mobileNav')
     <div class="nk-main">
-        @include('inc.cms.signForms')
+        @include('partials.cms.pageHeader')
+		@include('partials.cms.signForms')
         <div class="nk-gap-4"></div>
-        <div class="container">'
+        <div class="container">
             <h2 class="display-4 text-center">News</h2>
             @if(count($data['news']) > 0)
                 @foreach($data['news'] as $news)

@@ -1,22 +1,24 @@
 <?php
-    class news
+use Illuminate\Database\Capsule\Manager as Eloquent;
+use Illuminate\Database\Eloquent\Model;
+
+class news extends Model
+{
+    protected $table = 'NEWS';
+
+    public function __construct()
     {
-        public function __construct()
-        {
-            $this->MSSQL = new Classes\DB\MSSQL;
-        }
-
-        public function getNews()
-        {
-            $news = $this->MSSQL->query()
-                ->select('*')
-                ->from('NEWS')
-                ->orderBy('Date', 'DESC')
-                ->get('object');
-            return $news;
-
-            /* $this->MSSQL->query('SELECT * FROM ' . $this->MSSQL->getTable('NEWS') . ' ORDER BY Date DESC');
-            $res = $this->MSSQL->resultSet();
-            return $res; */
-        }
+        $this->MSSQL = new Classes\DB\MSSQL;
     }
+
+    public function getNews()
+    {
+        //$test = news::first();
+        //var_dump($test);
+        $news = Eloquent::table(table('NEWS'))
+             ->select()
+             ->orderBy('Date', 'DESC')
+             ->get();
+        return $news;
+    }
+}
