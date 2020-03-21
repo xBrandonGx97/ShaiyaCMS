@@ -15,7 +15,6 @@
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="container text-xs-center">
             <div class="nk-gap-4"></div>
-            <h2 class="display-4">About | Server Info</h2>
             <ul>
                 <li>Episode 6.4</li>
                 <li>Max Level 80</li>

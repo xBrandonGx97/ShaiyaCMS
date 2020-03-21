@@ -29,13 +29,13 @@
                 <a href="/serverinfo/about"><?php echo e(__("about")); ?></a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/drops"><?php echo e(__("drp_lst")); ?></a>
+                <a href="/serverinfo/bossrecords"><?php echo e(__("boss_rcrds")); ?></a>
               </li>
               <li class="  ">
                 <a href="/serverinfo/dropfinder"><?php echo e(__("drp_finder")); ?></a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/bossrecords"><?php echo e(__("boss_rcrds")); ?></a>
+                <a href="/serverinfo/drops"><?php echo e(__("drp_lst")); ?></a>
               </li>
               <li class="  ">
                 <a href="/serverinfo/terms"><?php echo e(__("trms")); ?></a>
@@ -49,6 +49,9 @@
                 <a href="/community/discord"><?php echo e(__("dscord")); ?></a>
               </li>
               <li class="  ">
+                <a href="/community/guildrankings"><?php echo e(__("gld_rnkigns")); ?></a>
+              </li>
+              <li class="  ">
                 <a href="/community/news"><?php echo e(__("news")); ?></a>
               </li>
               <li class="  ">
@@ -56,9 +59,6 @@
               </li>
               <li class="  ">
                 <a href="/community/pvprankings"><?php echo e(__("pvp_rnkings")); ?></a>
-              </li>
-              <li class="  ">
-                <a href="/community/guildrankings"><?php echo e(__("gld_rnkigns")); ?></a>
               </li>
               <li class="  ">
                 <a href="/community/staffteam"><?php echo e(__("stff_tm")); ?></a>

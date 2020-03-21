@@ -30,6 +30,10 @@ class BladeController
             return '<?php endif; ?>';
         });
 
+        $this->blade->directive('Separator', function ($height) {
+            return "<?php Separator($height) ?>";
+        });
+
         $this->blade->directive('hellox', function ($expression) {
             return "<?php echo 'Hello x ' . {$expression}; ?>";
         });

@@ -16,7 +16,7 @@
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
             <div class="nk-gap-4"></div>
-            <h2 class="display-4">About | Server Info</h2>
+            {{-- @Separator(120) --}}
             <ul>
                 <li>Episode 6.4</li>
                 <li>Max Level 80</li>

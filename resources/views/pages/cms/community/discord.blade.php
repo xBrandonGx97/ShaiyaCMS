@@ -16,7 +16,6 @@
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
             <div class="nk-gap-4"></div>
-            <h2 class="display-4">Discord</h2>
             <p>We want to stay in touch with our community, to do this it is important that we use discord. Doing this will bring everybody closer together and make it really easy to get updates,communicate with the players,staff and so on.</p>
             <p><a href="https://discord.gg/BYdTkgN" target="_blank">This</a> is our official Discord link.</p>
             <p><a href="https://discord.gg/BYdTkgN" target="_blank" class="nk-btn nk-btn-color-main-1">Click here to join</a></p>

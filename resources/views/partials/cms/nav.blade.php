@@ -29,13 +29,13 @@
                 <a href="/serverinfo/about">{{__("about")}}</a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/drops">{{__("drp_lst")}}</a>
+                <a href="/serverinfo/bossrecords">{{__("boss_rcrds")}}</a>
               </li>
               <li class="  ">
                 <a href="/serverinfo/dropfinder">{{__("drp_finder")}}</a>
               </li>
               <li class="  ">
-                <a href="/serverinfo/bossrecords">{{__("boss_rcrds")}}</a>
+                <a href="/serverinfo/drops">{{__("drp_lst")}}</a>
               </li>
               <li class="  ">
                 <a href="/serverinfo/terms">{{__("trms")}}</a>
@@ -49,6 +49,9 @@
                 <a href="/community/discord">{{__("dscord")}}</a>
               </li>
               <li class="  ">
+                <a href="/community/guildrankings">{{__("gld_rnkigns")}}</a>
+              </li>
+              <li class="  ">
                 <a href="/community/news">{{__("news")}}</a>
               </li>
               <li class="  ">
@@ -56,9 +59,6 @@
               </li>
               <li class="  ">
                 <a href="/community/pvprankings">{{__("pvp_rnkings")}}</a>
-              </li>
-              <li class="  ">
-                <a href="/community/guildrankings">{{__("gld_rnkigns")}}</a>
               </li>
               <li class="  ">
                 <a href="/community/staffteam">{{__("stff_tm")}}</a>

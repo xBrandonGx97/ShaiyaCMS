@@ -1,7 +1,7 @@
 @extends('layouts.cms.app')
 @section('title', 'Drops')
 @section('zone', 'CMS')
-@section('headerTitle', 'Drops')
+@section('headerTitle', 'Drop List')
 @section('content')
     {{-- @include('pages.cms.home.inc.page_bg') --}}
     @include('partials.cms.pageBorder')
@@ -16,7 +16,6 @@
 			@include('partials.cms.signForms')
 			<div class="nk-gap-4"></div>
 			<div class="container">
-			<h2 class="display-4 text-center">Shaiya Notorious Drop List</h2>
 			<p class="text-center">Last Updated: March 13,2019.</p>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">

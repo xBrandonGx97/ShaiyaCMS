@@ -15,7 +15,6 @@
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="container text-xs-center">
             <div class="nk-gap-4"></div>
-            <h2 class="nk-title h1 text-center">PvP Rankings</h2>
             <div class="table-responsive" id="pagination_data">
                 <div class="container">
                     <div class="row paginationData">

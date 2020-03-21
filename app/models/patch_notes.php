@@ -1,13 +1,19 @@
 <?php
-    class patch_notes {
+use Illuminate\Database\Capsule\Manager as Eloquent;
 
-        public function __construct(){
-            $this->MSSQL   =   new Classes\DB\MSSQL;
-        }
-
-        public function getPatchNotes(){
-            $this->MSSQL->query('SELECT * FROM '.$this->MSSQL->getTable('PATCHNOTES').' ORDER BY Date DESC');
-            $res = $this->MSSQL->resultSet();
-            return $res;
-        }
+class patch_notes
+{
+    public function __construct()
+    {
+        $this->MSSQL = new Classes\DB\MSSQL;
     }
+
+    public function getPatchNotes()
+    {
+        $patchnotes = Eloquent::table(table('PATCHNOTES'))
+             ->select()
+             ->orderBy('Date', 'DESC')
+             ->get();
+        return $patchnotes;
+    }
+}

@@ -1,6 +1,6 @@
 <?php $__env->startSection('title', 'Drops'); ?>
 <?php $__env->startSection('zone', 'CMS'); ?>
-<?php $__env->startSection('headerTitle', 'Drops'); ?>
+<?php $__env->startSection('headerTitle', 'Drop List'); ?>
 <?php $__env->startSection('content'); ?>
     
     <?php echo $__env->make('partials.cms.pageBorder', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -15,7 +15,6 @@
 			<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 			<div class="nk-gap-4"></div>
 			<div class="container">
-			<h2 class="display-4 text-center">Shaiya Notorious Drop List</h2>
 			<p class="text-center">Last Updated: March 13,2019.</p>
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
