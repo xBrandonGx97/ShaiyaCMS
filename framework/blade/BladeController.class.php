@@ -26,7 +26,7 @@ class BladeController
             return '<?php endif; ?>';
         });
 
-        $this->blade->directive('endguest2', function ($expression) {
+        $this->blade->directive('endguest', function ($expression) {
             return '<?php endif; ?>';
         });
 
