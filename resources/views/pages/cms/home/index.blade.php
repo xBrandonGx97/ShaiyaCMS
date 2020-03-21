@@ -14,13 +14,13 @@
 		@include('partials.cms.mainHeader')
 		@include('partials.cms.signForms')
 		<div class="container">
-        <div class="nk-gap-4"></div>
+        @Separator(80)
         <div class="row">
             @include('partials.cms.news')
             @include('partials.cms.widgets')
         </div>
-        <div class="nk-gap-4"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(80)
+        @Separator(80)
 		</div>
 		@include('layouts.cms.footer')
 </div>

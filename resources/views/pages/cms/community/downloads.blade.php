@@ -15,7 +15,7 @@
         @include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
+            @Separator(80)
             <p class="lead">By downloading ServerName You agree to Our <a href="">Terms of Service and Conditions</a>. If you Violate these terms you can be banned without any warnings and permenantly.</p>
                 <div class="row vertical-gap align-items-center">
                     <div class="col-md-3"></div>
@@ -48,8 +48,8 @@
                         </div>
                     </div>
                 </div>
-            <div class="nk-gap-2"></div>
-            <div class="nk-gap-6"></div>
+            @Separator(40)
+            @Separator(80)
         </div>
         @include('layouts.cms.footer')
     </div>

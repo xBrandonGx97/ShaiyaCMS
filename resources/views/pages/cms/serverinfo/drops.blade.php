@@ -14,7 +14,7 @@
     <div class="nk-main">
 			@include('partials.cms.pageHeader')
 			@include('partials.cms.signForms')
-			<div class="nk-gap-4"></div>
+			@Separator(80)
 			<div class="container">
 			<p class="text-center">Last Updated: March 13,2019.</p>
 				<div class="row">
@@ -54,8 +54,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="nk-gap-2"></div>
-      <div class="nk-gap-4"></div>
+			@Separator(40)
+      @Separator(80)
       @include('layouts.cms.footer')
     </div>
 @endsection

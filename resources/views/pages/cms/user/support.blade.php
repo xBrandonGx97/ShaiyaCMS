@@ -15,7 +15,7 @@
         @include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
+            @Separator(80)
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     @if (!$data['User']['LoginStatus']==true)
@@ -65,8 +65,8 @@
                 </div>
             </div>
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(40)
+        @Separator(80)
         @include('layouts.cms.footer')
         @php
             Display('get_ticket_modal','<i class="fa fa-send"></i>','0','2','Send Ticket');

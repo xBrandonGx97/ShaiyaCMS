@@ -27,7 +27,7 @@
 <!-- Load Godlike Theme -->
 <link rel="stylesheet" type="text/css" href="/resources/themes/Godlike/css/godlike.css">
 <!-- Load Core Stylesheet -->
-<link rel="stylesheet" type="text/css" href="/resources/themes/core/css/Nv2.css">
+<link rel="stylesheet" type="text/css" href="/resources/themes/core/css/luneth.css">
 <!-- PvP Rankings -->
 <link rel="stylesheet" type="text/css" href="/resources/themes/core/css/pvp.css">
 <!-- jQuery v1.12.4 -->

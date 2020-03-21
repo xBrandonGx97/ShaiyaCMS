@@ -15,7 +15,7 @@
         @include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
+            @Separator(80)
             <h2 class="display-4">Friend Requests</h2>
             @php
                 $UserUID    =   $data['User']['UserUID'];
@@ -36,8 +36,8 @@
                 @endforeach
             @endif
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(40)
+        @Separator(80)
         @include('layouts.cms.footer')
     </div>
 @endsection

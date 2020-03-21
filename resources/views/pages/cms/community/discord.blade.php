@@ -15,7 +15,7 @@
         @include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
+            @Separator(80)
             <p>We want to stay in touch with our community, to do this it is important that we use discord. Doing this will bring everybody closer together and make it really easy to get updates,communicate with the players,staff and so on.</p>
             <p><a href="https://discord.gg/BYdTkgN" target="_blank">This</a> is our official Discord link.</p>
             <p><a href="https://discord.gg/BYdTkgN" target="_blank" class="nk-btn nk-btn-color-main-1">Click here to join</a></p>
@@ -29,8 +29,8 @@
             <p><a href="https://support.discordapp.com/hc/en-us/articles/219470277-Getting-Started" target="_blank">Getting Started on Discord</a></p>
             <p><a href="https://discord.gg/BYdTkgN" target="_blank">Notorious Discord Server</a></p>
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(40)
+        @Separator(80)
         @include('layouts.cms.footer')
     </div>
 @endsection

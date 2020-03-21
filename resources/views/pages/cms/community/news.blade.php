@@ -14,7 +14,7 @@
     <div class="nk-main">
         @include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
-        <div class="nk-gap-4"></div>
+        @Separator(80)
         <div class="container">
             @if(count($data['news']) > 0)
                 @foreach($data['news'] as $news)
@@ -34,8 +34,8 @@
                 <p>No News found. Please check back later.</p>
             @endif
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(40)
+        @Separator(80)
         @include('layouts.cms.footer')
     </div>
 @endsection

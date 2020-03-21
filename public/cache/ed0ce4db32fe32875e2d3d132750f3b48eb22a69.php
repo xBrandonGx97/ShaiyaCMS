@@ -14,7 +14,7 @@
         <?php echo $__env->make('partials.cms.pageHeader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
+            <?php Separator(80) ?>
             <p class="lead">By downloading ServerName You agree to Our <a href="">Terms of Service and Conditions</a>. If you Violate these terms you can be banned without any warnings and permenantly.</p>
                 <div class="row vertical-gap align-items-center">
                     <div class="col-md-3"></div>
@@ -47,8 +47,8 @@
                         </div>
                     </div>
                 </div>
-            <div class="nk-gap-2"></div>
-            <div class="nk-gap-6"></div>
+            <?php Separator(40) ?>
+            <?php Separator(80) ?>
         </div>
         <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>

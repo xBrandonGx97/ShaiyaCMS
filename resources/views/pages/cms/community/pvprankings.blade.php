@@ -15,7 +15,7 @@
 		@include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
+            @Separator(80)
             <div class="table-responsive" id="pagination_data">
                 <div class="container">
                     <div class="row paginationData">
@@ -26,8 +26,8 @@
                 </div>
             </div>
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(40)
+        @Separator(80)
         @include('layouts.cms.footer')
     </div>
 @endsection

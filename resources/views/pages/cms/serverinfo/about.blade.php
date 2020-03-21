@@ -15,8 +15,7 @@
         @include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
-            <div class="nk-gap-4"></div>
-            {{-- @Separator(120) --}}
+            @Separator(80)
             <ul>
                 <li>Episode 6.4</li>
                 <li>Max Level 80</li>
@@ -27,8 +26,8 @@
                 <li>x20 ExpRate (Double on weekends)</li>
             </ul>
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        @Separator(40)
+        @Separator(80)
         @include('layouts.cms.footer')
     </div>
 @endsection

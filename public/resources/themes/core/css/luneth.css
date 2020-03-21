@@ -1,0 +1,1123 @@
+/*--------------------------------------------------------------
+	Theme Name:	Luneth
+	Author: [Dev]Velocity
+	Version: 2.0
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+	[Table of Contents]
+	1. Global Styles
+	2. Bootstrap
+	3. Helpers
+		3.1 Displays
+		3.2 Separators
+		3.3 Paddings
+		3.4 Margins
+		3.5 Opacitys
+		3.6 Background Colors
+		3.7 Colors
+		3.8 Text-Aligns
+		3.9 Text-Transforms
+		3.10 Font-Sizes
+		3.11 Font-Decoration
+		3.12 Line-Heights
+		3.13 Borders
+		3.14 Border-Radiuses
+		3.15 Overflows
+		3.16 Heights
+		3.17 Widths
+		3.18 Floats
+	4. Theme
+		4.1 Sections
+		4.2 Godlike Custom Edits
+		4.3 Data Tables
+		4.4 Modals
+		4.5 Terms of Service
+		4.6 Tables
+		4.7 Drops
+		4.8 Profiles
+		4.9 PvP Rewards
+	5. Custom Godlike Edits
+--------------------------------------------------------------*/
+
+/* Global Styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0e0e0e;
+  color: #fff;
+}
+
+.skel-main {
+  overflow: hidden;
+}
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Marcellus SC', serif;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  font-family: 'Marcellus SC', serif;
+  font-weight: bold;
+}
+
+.display-1 {
+  font-size: 4.7rem;
+}
+
+.display-2 {
+  font-size: 4.2rem;
+}
+
+.display-3 {
+  font-size: 3.7rem;
+}
+
+.display-4 {
+  font-size: 3.2rem;
+}
+
+/* Paragraphs */
+
+p {
+}
+
+/* Pre */
+
+pre {
+  position: relative;
+  color: #fff;
+  background-color: #222222;
+  max-height: 500px;
+  padding: 25px;
+  line-height: 1.3;
+}
+
+/* Code */
+
+code {
+  padding: 4px 8px;
+  color: #f0c491;
+  background-color: #000;
+}
+
+/* 2. Bootstrap */
+
+.text-xs-center {
+  text-align: center !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+a.badge:focus,
+a.badge:hover {
+  text-decoration: none;
+}
+.badge:empty {
+  display: none;
+}
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.badge-primary {
+  color: #fff;
+  background-color: #007bff;
+}
+a.badge-primary:focus,
+a.badge-primary:hover {
+  color: #fff;
+  background-color: #0062cc;
+}
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+a.badge-secondary:focus,
+a.badge-secondary:hover {
+  color: #fff;
+  background-color: #545b62;
+}
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+a.badge-success:focus,
+a.badge-success:hover {
+  color: #fff;
+  background-color: #1e7e34;
+}
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+a.badge-info:focus,
+a.badge-info:hover {
+  color: #fff;
+  background-color: #117a8b;
+}
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+a.badge-warning:focus,
+a.badge-warning:hover {
+  color: #212529;
+  background-color: #d39e00;
+}
+.badge-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+a.badge-danger:focus,
+a.badge-danger:hover {
+  color: #fff;
+  background-color: #bd2130;
+}
+.badge-light {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+a.badge-light:focus,
+a.badge-light:hover {
+  color: #212529;
+  background-color: #dae0e5;
+}
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
+}
+a.badge-dark:focus,
+a.badge-dark:hover {
+  color: #fff;
+  background-color: #1d2124;
+}
+/*.badge{border:1px solid #000}*/
+
+/* 3. Helpers */
+
+/* 3.1 Displays */
+
+.display_block {
+  display: block !important;
+}
+
+.display_inlineblock {
+  display: inline-block !important;
+}
+
+/* 3.2 Separators */
+
+.l-gap-5 {
+  height: 5px !important;
+}
+
+.l-gap-10 {
+  height: 10px !important;
+}
+
+.l-gap-15 {
+  height: 15px !important;
+}
+
+.l-gap-20 {
+  height: 20px !important;
+}
+
+.l-gap-30 {
+  height: 30px !important;
+}
+
+.l-gap-40 {
+  height: 40px !important;
+}
+
+.l-gap-50 {
+  height: 50px !important;
+}
+
+.l-gap-60 {
+  height: 60px !important;
+}
+
+.l-gap-70 {
+  height: 70px !important;
+}
+
+.l-gap-80 {
+  height: 80px !important;
+}
+
+.l-gap-90 {
+  height: 50px !important;
+}
+
+.l-gap-100 {
+  height: 100px !important;
+}
+
+.l-gap-120 {
+  height: 120px !important;
+}
+
+.l-gap-150 {
+  height: 150px !important;
+}
+
+/* 3.3 Paddings */
+
+/* Padding Tops */
+
+.pt_0 {
+  padding-top: 0 !important;
+}
+.pt_5 {
+  padding-top: 5 !important;
+}
+.pt_10 {
+  padding-top: 10px !important;
+}
+
+/* Padding Bottoms */
+
+.pb_5 {
+  padding-bottom: 5px !important;
+}
+.pb_10 {
+  padding-bottom: 10px !important;
+}
+.pb_15 {
+  padding-bottom: 15px !important;
+}
+
+/* Padding Top/Bottoms */
+
+.ptb_10 {
+  padding: 10 0 !important;
+}
+
+/* Padding Lefts */
+
+.pl_0 {
+  padding-left: 0 !important;
+}
+.pl_10 {
+  padding-left: 10px !important;
+}
+.pl_10_p {
+  padding-left: 10% !important;
+}
+.pl_20 {
+  padding-left: 20px !important;
+}
+.pl_25_p {
+  padding-left: 25% !important;
+}
+
+/* Padding Rights */
+
+.pr_0 {
+  padding-right: 0 !important;
+}
+.pr_5 {
+  padding-right: 5px !important;
+}
+.pr_10 {
+  padding-right: 10px !important;
+}
+.pr_15 {
+  padding-right: 15px !important;
+}
+
+/* Padding Left / Rights */
+
+.plr_0 {
+  padding: 0 0 0 0 !important;
+}
+.plr_15 {
+  padding: 0 15px !important;
+}
+.plr_neg_15 {
+  padding: 0 -15px !important;
+}
+
+/* All */
+.p__all_10_15 {
+  padding: 10px 15px !important;
+}
+.p_all_5 {
+  padding: 5px !important;
+}
+.p_all_10 {
+  padding: 10px !important;
+}
+.p_all_20 {
+  padding: 20px !important;
+}
+.no_padding {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 3.4 Margins */
+
+/* Margin Top */
+.m_t_5 {
+  margin-top: 5px !important;
+}
+
+/* Margin Left */
+
+.m_l_5 {
+  margin-left: 5px !important;
+}
+
+/* Margin Right */
+
+.m_r_5 {
+  margin-right: 5px !important;
+}
+
+.m_r_2_p {
+  margin-right: 2% !important;
+}
+
+/* Margin Bottom */
+
+.m_b_5 {
+  margin-bottom: 5px !important;
+}
+
+/* 3.5 Opacitys */
+
+.op_0 {
+  opacity: 0 !important;
+}
+
+.op_1 {
+  opacity: 0.1 !important;
+}
+
+/* 3.6 Background Colors */
+
+.bg-none {
+  background: none !important;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+
+.bg-dark {
+  background-color: rgb(41, 48, 61) !important;
+}
+
+.bg-red {
+  background-color: red !important;
+}
+
+.bg-lightgreen {
+  background-color: lightgreen !important;
+}
+
+.bg-green {
+  background-color: green !important;
+}
+
+.bg-lime {
+  background-color: lime !important;
+}
+
+.bg-yellow {
+  background-color: yellow !important;
+}
+
+.bg-gold {
+  background-color: gold !important;
+}
+
+.bg-orange {
+  background-color: orange !important;
+}
+
+.bg-blue {
+  background-color: blue !important;
+}
+
+.bg-dodgerblue {
+  background-color: dodgerblue !important;
+}
+
+.bg-cyan {
+  background-color: cyan !important;
+}
+
+/* 3.7 Colors */
+
+.text-black {
+  color: #000 !important;
+}
+
+.text-red {
+  color: red !important;
+}
+
+.text-green {
+  color: green !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-gray {
+  color: rgb(200, 197, 191) !important;
+}
+
+.text-lime {
+  color: lime !important;
+}
+
+.text-gold {
+  color: rgb(227, 177, 94) !important;
+}
+
+/* 3.8 Text Aligns */
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+/* 3.9 Text Transforms */
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+/* 3.10 Font Sizes */
+
+.fs_14 {
+  font-size: 14px !important;
+}
+
+.fs_18 {
+  font-size: 18px !important;
+}
+
+.fs_20 {
+  font-size: 20px !important;
+}
+
+.fs_22 {
+  font-size: 22px !important;
+}
+
+/* 3.11 Font Decoration */
+
+.fw_100 {
+  font-weight: 100 !important;
+}
+
+.fw_bold {
+  font-weight: bold !important;
+}
+
+.i {
+  font-style: italic;
+}
+
+.u {
+  text-decoration: underline;
+}
+
+/* 3.12 Line Heights */
+
+.lh_20 {
+  line-height: 20px !important;
+}
+
+/* 3.13 Borders */
+
+.b_card {
+  border: 1px solid rgb(238, 238, 238) !important;
+}
+
+/* 3.14 Border Radius */
+
+/* 3.15 Overflows */
+
+/* 3.16 Heights */
+
+.hauto {
+  height: auto !important;
+}
+
+/* 3.17 Widths */
+
+.wauto {
+  width: auto !important;
+}
+
+/* Sizing in PX*/
+.w_100 {
+  width: 100px !important;
+}
+.w_200 {
+  width: 200px !important;
+}
+.w_300 {
+  width: 300px !important;
+}
+
+/* Sizing in % */
+.w_50_p {
+  width: 50% !important;
+}
+.w_100_p {
+  width: 100% !important;
+}
+
+/* 3.18 Floats */
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+/* 4. Theme */
+
+.skel-title {
+  position: relative;
+  z-index: 1;
+}
+
+.skel-subtitle {
+  position: relative;
+  font-weight: normal;
+  font-style: italic;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+/* 4.1 Sections */
+
+.header {
+  height: 50vh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 7%;
+  display: table;
+  background-image: url('http://shaiyadomination.com/assets/Themes/Godlike/images/headers/background.jpg');
+  background-size: cover;
+  background-size: 100%;
+}
+
+.main {
+  height: 20vh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 7%;
+  display: table;
+  background: #0e0e0e;
+}
+
+.footer {
+  height: 20vh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 7%;
+  display: table;
+  background: black;
+  /*position:absolute;
+	bottom:0;*/
+}
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* 4.2 Godlike Custom Edits */
+
+.Servertime {
+  float: left;
+}
+
+.Servertime li {
+  margin: 0 auto;
+  position: Absolute;
+  left: 100%;
+  right: 100%;
+}
+
+/* 4.3 Data Tables */
+
+.custom_pagination {
+  border: none !important;
+  background: none !important;
+}
+
+.page-link {
+  border: none !important;
+  background: none !important;
+}
+
+.dataTables_filter {
+  position: absolute !important;
+  right: 10% !important;
+}
+
+.dataTables_length {
+  margin-left: 10% !important;
+}
+
+/* 4.4 Modals */
+
+.modal-backdrop.show {
+  opacity: 0.9 !important;
+}
+
+.modal-footer {
+  border: none !important;
+}
+
+.ui-dialog-titlebar {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.ui-dialog {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  animation: pulse 2s infinite;
+  -moz-animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+  border-radius: 15px !important;
+}
+
+.modal-backdrop {
+  z-index: -1;
+}
+
+/* 4.5 Terms of Service */
+
+.terms_ol {
+  counter-reset: item;
+}
+.terms_li {
+  display: block;
+}
+.terms_li:before {
+  content: counters(item, '.') '. ';
+  counter-increment: item;
+}
+
+/* 4.6 Tables */
+
+table.drops {
+  width: 100%;
+}
+
+table.drops th {
+  width: 33%;
+  padding: 10px 0;
+}
+
+table.drops tr td {
+  width: 33%;
+  padding: 10px 0;
+}
+
+table.drops tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+table.drops {
+  text-align: center;
+}
+
+.table-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.table-dark2 {
+  background-color: #0e0e0e !important;
+  color: #fff;
+}
+
+/* 4.7 Drops */
+
+[data-toggle='collapse'] .fa:before {
+  content: '\f068';
+}
+
+[data-toggle='collapse'].collapsed .fa:before {
+  content: '\f067';
+}
+
+/* 4.8 Profiles */
+
+.image_outer_container {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image_inner_container {
+  border-radius: 50%;
+  padding: 5px;
+  /*background: #833ab4;
+    background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);*/
+}
+.image_inner_container img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.image_outer_container .green_icon {
+  background-color: #4cd137;
+  position: absolute;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.image_outer_container .red_icon {
+  background-color: #d13300;
+  position: absolute;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.a_profile {
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+
+.a_profile:hover {
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  text-decoration: underline;
+}
+
+/* 4.9 PvP Rewards */
+
+.RankIcon {
+  width: 28px !important;
+  height: 16px !important;
+}
+.RankIcon1 {
+  background: url('../images/pvprewards/ranks.png') 0 0px !important;
+}
+.RankIcon2 {
+  background: url('../images/pvprewards/ranks.png') 0 -16px !important;
+}
+.RankIcon3 {
+  background: url('../images/pvprewards/ranks.png') 0 -32px !important;
+}
+.RankIcon4 {
+  background: url('../images/pvprewards/ranks.png') 0 -48px !important;
+}
+.RankIcon5 {
+  background: url('../images/pvprewards/ranks.png') 0 -64px !important;
+}
+.RankIcon6 {
+  background: url('../images/pvprewards/ranks.png') 0 -80px !important;
+}
+.RankIcon7 {
+  background: url('../images/pvprewards/ranks.png') 0 -96px !important;
+}
+.RankIcon8 {
+  background: url('../images/pvprewards/ranks.png') 0 -112px !important;
+}
+.RankIcon9 {
+  background: url('../images/pvprewards/ranks.png') 0 -128px !important;
+}
+.RankIcon10 {
+  background: url('../images/pvprewards/ranks.png') 0 -144px !important;
+}
+.RankIcon11 {
+  background: url('../images/pvprewards/ranks.png') 0 -160px !important;
+}
+.RankIcon12 {
+  background: url('../images/pvprewards/ranks.png') 0 -176px !important;
+}
+.RankIcon13 {
+  background: url('../images/pvprewards/ranks.png') 0 -192px !important;
+}
+.RankIcon14 {
+  background: url('../images/pvprewards/ranks.png') 0 -208px !important;
+}
+.RankIcon15 {
+  background: url('../images/pvprewards/ranks.png') 0 -224px !important;
+}
+.RankIcon16 {
+  background: url('../images/pvprewards/ranks.png') 0 -240px !important;
+}
+.RankIcon17 {
+  background: url('../images/pvprewards/ranks.png') 0 -256px !important;
+}
+.RankIcon18 {
+  background: url('../images/pvprewards/ranks.png') 0 -272px !important;
+}
+.RankIcon19 {
+  background: url('../images/pvprewards/ranks.png') 0 -288px !important;
+}
+.RankIcon20 {
+  background: url('../images/pvprewards/ranks.png') 0 -304px !important;
+}
+.RankIcon21 {
+  background: url('../images/pvprewards/ranks.png') 0 -320px !important;
+}
+.RankIcon22 {
+  background: url('../images/pvprewards/ranks.png') 0 -336px !important;
+}
+.RankIcon23 {
+  background: url('../images/pvprewards/ranks.png') 0 -352px !important;
+}
+.RankIcon24 {
+  background: url('../images/pvprewards/ranks.png') 0 -368px !important;
+}
+.RankIcon25 {
+  background: url('../images/pvprewards/ranks.png') 0 -384px !important;
+}
+.RankIcon26 {
+  background: url('../images/pvprewards/ranks.png') 0 -400px !important;
+}
+.RankIcon27 {
+  background: url('../images/pvprewards/ranks.png') 0 -416px !important;
+}
+.RankIcon28 {
+  background: url('../images/pvprewards/ranks.png') 0 -432px !important;
+}
+.RankIcon29 {
+  background: url('../images/pvprewards/ranks.png') 0 -448px !important;
+}
+.RankIcon30 {
+  background: url('../images/pvprewards/ranks.png') 0 -464px !important;
+}
+.RankIcon31 {
+  background: url('../images/pvprewards/ranks.png') 0 -480px !important;
+}
+
+.fa-icon-btn {
+  background: none !important;
+  border: none !important;
+  color: #e08821 !important;
+}
+
+/* 5. Custom Godlike edits */
+
+.nk-store .nk-product > div:hover,
+.nk-store .nk-product > div.hover {
+  opacity: 0.8;
+}
+
+.nk-widget-categories li.active {
+  color: #e08821;
+}
+
+.user1 {
+  color: #ff0000;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff, 0 0 5px #f00, 1px 1px 0 #f00;
+}
+
+.nk-forum-topic > li .nk-forum-topic-author-posts {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.nk-forum-topic > li .author_likes {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.nk-forum-topic > li .nk-forum-topic-author-social {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.discord_popup i {
+  color: #e08821;
+}
+
+.discord_popup span:hover {
+  color: #e08821;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  padding: 16px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0e0e0e;
+  min-width: 160px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.like-text {
+  font-size: 0.9rem;
+  vertical-align: baseline;
+}
+
+.pagination_link:hover {
+  cursor: pointer;
+  color: inherit;
+}
+
+.nk-pagination-current-white:hover {
+  color: #0e0e0e !important;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content:target {
+  display: block;
+}
+
+a:target {
+  color: #e08821 !important;
+}
+
+/* Forces  event to be on button its self */
+i {
+  pointer-events: none;
+}
+
+#dataViewer {
+  padding: 32px;
+  list-style: none;
+  background: #0e0e0e !important;
+  width: auto;
+  color: #fff;
+  height: auto;
+  display: none;
+}
+
+#dataViewer li {
+  padding: 8px 0;
+  border-left: 1px solid #635f5f;
+  padding-left: 24px;
+}
+
+div.nk-success {
+  padding: 0;
+  margin: 5px 0;
+  font-weight: 400;
+  color: #87d96b;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.form-control.nk-success,
+.nk-form-style-1 .form-control.nk-success {
+  border-bottom: 1px solid #87d96b;
+}
