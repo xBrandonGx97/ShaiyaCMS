@@ -4,7 +4,8 @@
     "illuminate/database": "^7.2",
     "ephp/socketio": "dev-master",
     "rase/socket.io-emitter": "dev-master",
-    "vlucas/phpdotenv": "^4.1@dev"
+    "vlucas/phpdotenv": "^4.1@dev",
+    "phpmailer/phpmailer": "dev-master"
   },
   "minimum-stability": "dev",
   "autoload": {

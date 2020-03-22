@@ -20,69 +20,64 @@
 </footer>
 <?php echo $__env->make('partials.cms.bottomButtons', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- jQueryUI -->
-        <script src="/resources/jquery/ui/v1.12.1/js/jquery-v1.12.1.ui.js"></script>
+        
         <!-- Data Tables -->
-        <script src="/resources/jquery/addons/datatables/datatables.js"></script>
+        
         <!-- Tiny MCE -->
-        <script src="/resources/jquery/addons/tinymce/v4.9.0/js/tinymce.min.js"></script>
-        <script src="/resources/jquery/addons/tinymce/v4.9.0/js/init.tinymce.js"></script>
+        
         <!-- Tabs -->
-        <script src="/resources/jquery/addons/tabs/tabs.js"></script>
+        
+        <!-- Object Fit Polyfill -->
+        <script src="/resources/themes/Godlike/vendor/object-fit-images/dist/ofi.min.js"></script>
         <!-- GSAP -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/gsap/src/minified/TweenMax.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/bower_components/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/gsap/src/minified/TweenMax.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
         <!-- Popper -->
-        <script src="/resources/jquery/addons/popperjs/v1.14.3/popper.min.js"></script>
-        <!-- Tether -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/tether/dist/js/tether.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/popper.js/dist/umd/popper.min.js"></script>
         <!-- Bootstrap JS -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- Sticky Kit -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/sticky-kit/dist/sticky-kit.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
         <!-- Jarallax -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/jarallax/dist/jarallax.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/bower_components/jarallax/dist/jarallax-video.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/jarallax/dist/jarallax.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/jarallax/dist/jarallax-video.min.js"></script>
+        <!-- imagesLoaded -->
+        <script src="/resources/themes/Godlike/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
         <!-- Flickity -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/flickity/dist/flickity.pkgd.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/flickity/dist/flickity.pkgd.min.js"></script>
         <!-- Iso Tope -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/isotope/dist/isotope.pkgd.min.js"></script>
-        <!-- Photo Swipe -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/photoswipe/dist/photoswipe.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/bower_components/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/isotope-layout/dist/isotope.pkgd.min.js"></script>
+        <!-- Photoswipe -->
+        <script src="/resources/themes/Godlike/vendor/photoswipe/dist/photoswipe.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
         <!-- Typed.js -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/typed.js/dist/typed.min.js"></script>
-        <!-- jQueryForm -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/jquery-form/jquery.form.js"></script>
-        <!-- jQueryValidation -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
-        <!-- jQuery Countdown/Moment -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/jquery.countdown/dist/jquery.countdown.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/bower_components/moment/min/moment.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/bower_components/moment-timezone/builds/moment-timezone-with-data.js"></script>
+        <script src="/resources/themes/Godlike/vendor/typed.js/lib/typed.min.js"></script>
+        <!-- Jquery Validation -->
+        <script src="/resources/themes/Godlike/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+        <!-- Jquery Countdown + Moment -->
+        <script src="/resources/themes/Godlike/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/moment/min/moment.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
         <!-- Hammer.js -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/hammer.js/hammer.min.js"></script>
-        <!-- nKShare -->
-        <script src="/resources/themes/Godlike/vendor/plugins/nk-share/nk-share.js"></script>
-        <!-- NanoScroller -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/nanoscroller/dist/javascripts/jquery.nanoscroller.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/hammerjs/hammer.min.js"></script>
+        <!-- NanoSroller -->
+        <script src="/resources/themes/Godlike/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
         <!-- Sound Manager 2 -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/SoundManager2/script/soundmanager2-nodebug-jsmin.js"></script>
+        <script src="/resources/themes/Godlike/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
         <!-- Datetime Picker -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
         <!-- Revolution Slider -->
-        <script src="/resources/themes/Godlike/vendor/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-        <script src="/resources/themes/Godlike/vendor/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/resources/themes/Godlike/vendor/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
         <!-- Key Master -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/keymaster/keymaster.js"></script>
+        <script src="/resources/themes/Godlike/vendor/keymaster/keymaster.js"></script>
         <!-- Summer Note -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/summernote/dist/summernote.min.js" type=module></script>
-        <!-- Prism -->
-        <script src="/resources/themes/Godlike/vendor/bower_components/prism/prism.js"></script>
+        <script src="/resources/themes/Godlike/vendor/summernote/dist/summernote-bs4.min.js" type=module></script>
         <!-- Godlike JS -->
-        <script src="/resources/themes/Godlike/js/godlike.js"></script>
+        <script src="/resources/themes/Godlike/js/godlike.min.js"></script>
         <script src="/resources/themes/Godlike/js/godlike-init.js"></script>
         <!-- Core JS -->
         <script src="/resources/themes/core/js/Nv2.js"></script>

@@ -18,7 +18,7 @@
             @Separator(80)
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    @if (!$data['User']['LoginStatus']==true)
+                    @guest
                         <p>Please login to continue.</p>
                     @else
                         <div class="nk-tabs">
@@ -45,7 +45,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($data['support']->fet as $fet)
+                                                @foreach($data['support']->getTickets() as $fet)
                                                     <tr>
                                                         <td class="tac">{{$fet['TicketID']}}</td>
                                                         <td class="tac">{{$fet['Subject']}}</td>
@@ -57,11 +57,11 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="nk-gap-2"></div>'
+                                    <div class="nk-gap-2"></div>
                                 </div>
                             </div>
                         </div>
-                    @endif
+                    @endguest
                 </div>
             </div>
         </div>

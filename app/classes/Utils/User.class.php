@@ -81,6 +81,7 @@
                             ->join(table('USER_SOCIALS') . ' as  [US]', '[UM].UserUID', '=', '[US].UserUID')
                             ->join(table('USER_PRIVACY') . ' as  [UP]', '[UM].UserUID', '=', '[UP].UserUID')
                             ->where('[UM].UserUID', $SessionCookieCheck)
+                            ->limit(1)
                             ->get();
 
                     foreach ($query as $fet) {

@@ -7,9 +7,13 @@ class BladeController
 {
     public $blade;
 
-    public function __construct()
+    public function __construct($type, $view = false)
     {
-        $this->blade = new Blade('../resources/views', 'cache');
+        if ($type === 'view') {
+            $this->blade = new Blade('../resources/views', config['PUBROOT'] . 'cache');
+        } elseif ($type === 'widget') {
+            $this->blade = new Blade(config['WIDGETDIR'] . '/' . $view . '/php', 'cache');
+        }
     }
 
     public function loadDirectives()
@@ -52,6 +56,16 @@ class BladeController
         } else {
             // View does not exist
             die('View doesn\'t exist');
+        }
+    }
+
+    public function loadWidget($view, $data = false)
+    {
+        // Check for view file
+        if (file_exists('../app/widgets/' . $view . '/php/script.blade.php')) {
+            echo $this->blade->make('script', ['data' => $data])->render();
+        } else {
+            echo 'no';
         }
     }
 }

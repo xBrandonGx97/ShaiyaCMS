@@ -7,7 +7,10 @@
                             <?php $__currentLoopData = $data['widget']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $widget): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <h4><?php echo e($widget->Title); ?></h4>
                                 <div>
-                                    <?php require($GLOBALS['config']['WIDGETDIR'].$widget->Name.'/php/script.blade.php') ?>
+                                    
+                                    <?php
+                                        CoreController::widget($widget->Name);
+                                    ?>
                                 </div>
                                 <div class="nk-gap-2"></div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

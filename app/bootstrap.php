@@ -47,7 +47,9 @@ class Bootstrap
             require CORE_PATH . 'loader.class.php';
             // Load Dotenv
             self::initDotEnv();
+
             // Load configuration file
+            define('config', require CONFIG_PATH . 'config.php');
             $GLOBALS['config'] = require CONFIG_PATH . 'config.php';
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';

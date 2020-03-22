@@ -36,6 +36,7 @@ class ComposerStaticInitb82913b69ffd32b6b4d47ade5a923c81
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Container\\' => 14,
             'PhpOption\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'J' => 
         array (
@@ -119,6 +120,10 @@ class ComposerStaticInitb82913b69ffd32b6b4d47ade5a923c81
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Jenssegers\\Blade\\' => 
         array (

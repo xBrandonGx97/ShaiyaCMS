@@ -1076,12 +1076,12 @@ table.drops {
   color: #0e0e0e !important;
 }
 
-.tab-content {
+/* .tab-content {
   display: none;
 }
 .tab-content:target {
   display: block;
-}
+} */
 
 a:target {
   color: #e08821 !important;

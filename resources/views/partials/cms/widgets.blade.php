@@ -7,7 +7,10 @@
                             @foreach($data['widget'] as $widget)
                                 <h4>{{$widget->Title}}</h4>
                                 <div>
-                                    @require($GLOBALS['config']['WIDGETDIR'].$widget->Name.'/php/script.blade.php')
+                                    {{-- @require($GLOBALS['config']['WIDGETDIR'].$widget->Name.'/php/script.blade.php') --}}
+                                    @php
+                                        CoreController::widget($widget->Name);
+                                    @endphp
                                 </div>
                                 <div class="nk-gap-2"></div>
                             @endforeach

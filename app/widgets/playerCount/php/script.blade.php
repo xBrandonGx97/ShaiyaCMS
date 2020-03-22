@@ -14,8 +14,9 @@
         $AoL = $fet->AoL;
         $UoF = $fet->UoF;
     }
-    echo '<div>';
-        echo '<p>Players Online: ' . '<span>'.$pOnline.'</span></p>';
-        echo '<p>AoL: ' . '<span>'.$AoL.'</span></p>';
-        echo '<p>UoF: ' . '<span>'.$UoF.'</span></p>';
-    echo '</div>';
+?>
+<div>
+    <p>Players Online: <span>{{$pOnline}}</span></p>
+    <p>AoL: <span>{{$AoL}}</span></p>
+    <p>UoF: <span>{{$UoF}}</span></p>
+</div>

@@ -32,16 +32,18 @@
                     </button>
                 </form>
                 @if (isset($_POST['Promo']))
-                    @if(empty($data['promotions']->fet))
+                    @if(count($data['promotions']->getPromotions()) === 0)
                         Code not found.
                     @else
-                        @if($data['promotions']->NumOfUses==$data['promotions']->MaxUses || $data['promotions']->NumOfUses>$data['promotions']->MaxUses)
-                            Code has reached maximum number of uses.
-                        @else
-                            @php $data['promotions']->validations(); @endphp
-                            Successfully redeemed code: {{$data['promotions']->Code}}
-                            for {{$data['promotions']->Points}} Donation Points.
-                        @endif
+                        @foreach($data['promotions']->getPromotions() as $promotions)
+                            @if($promotions->NumOfUses==$promotions->MaxUses || $promotions->NumOfUses>$promotions->MaxUses)
+                                Code has reached maximum number of uses.
+                            @else
+                                @php $data['promotions']->validations($promotions->NumOfUses,$_POST['code']); @endphp
+                                Successfully redeemed code: {{$promotions->Code}}
+                                for {{$promotions->Points}} Donation Points.
+                            @endif
+                        @endforeach
                     @endif
                 @endif
             @endif

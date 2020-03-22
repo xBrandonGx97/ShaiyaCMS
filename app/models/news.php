@@ -4,10 +4,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class news extends Model
 {
-    protected $table = 'NEWS';
+    protected $table;
 
     public function __construct()
     {
+        //$this->table = table('NEWS');
+
         $this->MSSQL = new Classes\DB\MSSQL;
     }
 
@@ -15,10 +17,19 @@ class news extends Model
     {
         //$test = news::first();
         //var_dump($test);
-        $news = Eloquent::table(table('NEWS'))
+
+        $news = self::select('UserID', 'Title', 'Detail')
+            ->orderBy('Date', 'DESC')
+            ->get();
+        return $news;
+
+        /* $news = self::all();
+        return $news; */
+
+        /* $news = Eloquent::table(table('NEWS'))
              ->select()
              ->orderBy('Date', 'DESC')
              ->get();
-        return $news;
+        return $news; */
     }
 }

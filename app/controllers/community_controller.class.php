@@ -16,6 +16,7 @@ class Community_Controller extends CoreController
         ],
             'User' => $User,
         ];
+
         self::view('pages/cms/community/discord', $data);
     }
 
