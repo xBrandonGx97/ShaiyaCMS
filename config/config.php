@@ -1,5 +1,9 @@
 <?php
     return [
+        // App
+        'app' => [
+            'title' => env('APP_TITLE')
+        ],
         // DB Params
         'database' => [
             'driver' => env('DB_DRIVER'),
@@ -14,7 +18,7 @@
         // Root Dir
         'ROOT' => dirname(dirname(__FILE__)),
         // App Root
-        'APPROOT' => dirname(dirname(__FILE__)) . '\app',
+        'APPROOT' => dirname(dirname(__FILE__)) . '/app',
         // URL Root
         'URLROOT' => 'http://my_own_router.local',
         // Base Dir
@@ -23,4 +27,6 @@
         'FWROOT' => $_SERVER['DOCUMENT_ROOT'] . '/../framework/',
         // Public Root
         'PUBROOT' => $_SERVER['DOCUMENT_ROOT'] . '/../public/',
+        // Widget Dir
+        'WIDGETDIR' => dirname(dirname(__FILE__)) . '/app/widgets/',
     ];

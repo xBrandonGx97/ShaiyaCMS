@@ -46,4 +46,4 @@
     <script src="/resources/themes/core/js/rankings/pagination/load_next_rankings_data.js" type=module></script>
     <script src="/resources/themes/core/js/rankings/pagination/load_search_rankings_data.js" type=module></script>
 <?php endif; ?>
-<title><?php echo $__env->yieldContent('title', 'undefined'); ?> - <?php echo e($_SESSION['Settings']['SITE_TITLE']); ?></title><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/head.blade.php ENDPATH**/ ?>
+<title><?php echo $__env->yieldContent('title', 'undefined'); ?> - <?php echo e($GLOBALS['config']['app']['title']); ?></title><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/head.blade.php ENDPATH**/ ?>

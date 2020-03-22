@@ -14,11 +14,11 @@
         <?php echo $__env->make('partials.cms.pageHeader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="container text-xs-center" id="team">
-            <div class="nk-gap-4"></div>
+            <?php Separator(80) ?>
             
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        <?php Separator(40) ?>
+        <?php Separator(80) ?>
         <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 <?php $__env->stopSection(); ?>

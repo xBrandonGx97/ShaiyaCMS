@@ -12,7 +12,7 @@ const inProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
-    app: ['./resources/js/main.js', './resources/sass/main.scss']
+    app: ['./resources/js/luneth.js', './resources/sass/luneth.scss']
   },
 
   output: {
@@ -39,7 +39,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('css/[name].css'),
+    new ExtractTextPlugin('css/luneth.css'),
 
     new PurifyCSSPlugin({
       // Give paths to parse for rules. These should be absolute!

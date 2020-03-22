@@ -13,7 +13,7 @@
     <div class="nk-main">
         <?php echo $__env->make('partials.cms.pageHeader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <div class="nk-gap-4"></div>
+        <?php Separator(80) ?>
         <div class="container">
             <?php if(count($data['patchnotes']) > 0): ?>
                 <?php $__currentLoopData = $data['patchnotes']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $patchnotes): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -32,8 +32,8 @@
                 <p>No Patch Notes found. Please check back later.</p>
             <?php endif; ?>
         </div>
-        <div class="nk-gap-2"></div>
-        <div class="nk-gap-4"></div>
+        <?php Separator(40) ?>
+        <?php Separator(80) ?>
         <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 <?php $__env->stopSection(); ?>

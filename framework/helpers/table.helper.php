@@ -17,6 +17,7 @@ function table($table)
       case 'CMS_MAIN':	                return 'ShaiyaCMS.dbo.CMS_MAIN';					      break;
       case 'CMS_STYLE':	                return 'ShaiyaCMS.dbo.CMS_STYLE';					      break;
       case 'CMS_THEME':	                return 'ShaiyaCMS.dbo.CMS_THEME';					      break;
+      case 'CMS_WIDGETS':	              return 'ShaiyaCMS.dbo.CMS_WIDGETS';					    break;
       // Users
       case 'WEB_PRESENCE':	            return 'ShaiyaCMS.dbo.WEB_PRESENCE';					  break;
       case 'SH_USERDATA':	              return 'PS_UserData.dbo.Users_Master';				  break;

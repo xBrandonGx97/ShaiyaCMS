@@ -2,6 +2,7 @@
 //	use Classes\Utils\Browser;
     use Classes\Utils\Auth;
     use Classes\Utils\User;
+    use Classes\Utils\Widget;
 
     class Home_Controller extends CoreController
     {
@@ -13,8 +14,9 @@
             User::run();
             //$User			=	User::_fetch_User(User::$UserID);
             $Auth = [
-                'check' => Auth::check(),
+                'check' => Auth::check()
             ];
+
             $User = User::_fetch_User();
 
             $data = ['pageData' => [
@@ -26,7 +28,8 @@
                 'Auth' => $Auth,
                 'User' => $User,
                 'news' => $newsModel->getNews(),
-                'serverinfo' => $serverInfo
+                'serverinfo' => $serverInfo,
+                'widget' => Widget::display(),
             ];
 
             //	$User=new User();

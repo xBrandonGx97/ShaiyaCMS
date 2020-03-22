@@ -1,7 +1,6 @@
 <?php
 use Classes\Utils\Auth;
 use Classes\Utils\Data;
-use Classes\DB\MSSQL;
 use Classes\Utils\Session;
 use Classes\Utils\User;
 use Illuminate\Database\Capsule\Manager as Eloquent;
@@ -59,7 +58,6 @@ class Auth_Controller extends CoreController
                     }
                     // If No Errors Continue
                     if (count($arr['errors']) == 0) {
-                        // sql query
                         $fet = Eloquent::table(table('WEB_PRESENCE') . ' as Web')
                             ->select(['[User].UserUID', 'Web.UserID', 'Web.Pw', 'Web.Email', '[User].Status'])
                             ->join(table('SH_USERDATA') . ' as  [User]', '[User].UserID', '=', 'Web.UserID')
@@ -87,44 +85,6 @@ class Auth_Controller extends CoreController
                         } else {
                             $arr['errors'][] .= '5';
                         }
-
-                        /*$userInfo = MSSQL::query()
-                            ->select('[User].UserUID,Web.UserID,Web.Pw,Web.Email,[User].Status')
-                            ->from('WEB_PRESENCE')
-                            ->as('Web')
-                            ->join('SH_USERDATA', '[User].UserID', 'Web.UserID', '[User]')
-                            ->where('Web.UserID', ':userid')
-                            ->where('Web.Email', ':email', 'OR')
-                            ->bind(':userid', $UserName)
-                            ->bind(':email', $UserName)
-                            ->get('single');*/
-                        /* if ($userInfo) {
-                            if (password_verify($Password, $userInfo['Pw'])) {
-                                if ($userInfo['Status'] == 0 || $userInfo['Status'] == 16 || $userInfo['Status'] == 32 || $userInfo['Status'] == 48 || $userInfo['Status'] == 64 || $userInfo['Status'] == 80 || $userInfo['Status'] == 128) {
-                                    Session::put('User', 'UserUID', $userInfo['UserUID']);
-                                    Session::put('User', 'UserID', $userInfo['UserID']);
-                                    Session::put('User', 'Status', $userInfo['Status']);
-                                    Session::updateLoginStatus(1);
-                                    $arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
-                                    $LastPage = $_SERVER['HTTP_REFERER'];
-                                    $arr['finished'] .= 'true';
-                                } else {
-                                    $arr['errors'][] .= '6';
-                                }
-                            } else {
-                                $arr['errors'][] .= '4';
-                            }
-                        } else {
-                            $arr['errors'][] .= '5';
-                        } */
-                    }
-                    // Check Errors
-                    if (count($arr['errors'])) {
-                        //echo '<ul>';
-                        foreach ($arr['errors'] as $error) {
-                            //echo '<li>'.Data::_do('MessagesArr', $error).'</li><br>';
-                        }
-                        //echo '</ul>';
                     }
                     echo json_encode($arr);
                 }
