@@ -1,0 +1,45 @@
+/* 
+	Title:	Buttons.css
+	Author:	Bradley Sweeten
+	Rel:	Bootstrap Buttons
+	Date:	05.13.2017
+*/
+
+.btn {
+	padding:2px 12px !important;
+}
+.btn_center {
+	position:relative;
+	left:50%;
+	bottom:10px;
+}
+.btn_center2{
+	position:relative;
+	left:50%;
+	top:10px;
+	margin-bottom:10px;
+}
+.btn_donate{
+	position:relative;
+	left:45%;
+	top:10px;
+	margin-bottom:10px;
+}
+/* For use with col-xl-3 col-lg-6 cards */
+.btn_cards{
+	position:relative;
+	left:35%;
+	font-weight:bold;
+}
+/* For use with col-lg-12 */
+.btn_cards_2{
+	position:relative;
+	left:45%;
+	font-weight:bold;
+}
+/* For use with col-xl-6 col-lg-12 */
+.btn_cards_3{
+	position:relative;
+	left:40%;
+	font-weight:bold;
+}

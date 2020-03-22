@@ -1,0 +1,12 @@
+/* 
+	Title: ws_Pre.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Pre Stylesheet
+	Date: 04.11.2017
+*/
+
+/* Pre */
+pre {
+	background-color:#313131;
+	color:rgb(136,136,136);
+}

@@ -1,0 +1,49 @@
+/* 
+	Title: Plugins.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Stylesheet For Plugins
+	Date: 11.18.2018
+*/
+
+/* Pods || Filesystem Module */
+.bar-outer{
+	padding:10px;
+	position:relative;
+	width:100%;
+	height:20px;
+	border-radius:20px;
+	border:1px solid cyan;
+	background:transparent linear-gradient(black,grey,black) 50% 50% no-repeat;
+	color:inherit;
+}
+.bar-label{
+	position:absolute;
+	height:20px;
+	top:4px;
+	left:0px;
+	font-size:12px;
+	width:100%;
+	text-align:center;
+	display:block;
+	text-shadow:1px 0px 0px rgb(0,0,0),-1px 0px 0px rgb(0,0,0),0px 1px 0px rgb(0,0,0),0px -1px 0px rgb(0,0,0);
+	color:white;
+	font-weight:bold;
+}
+.bar-inner1{
+	position:absolute;
+	height:20px;
+	top:0px;
+	left:0px;
+	background:transparent linear-gradient(#ff4040,black,#ff4040) repeat-x;
+	color:white;
+	border-radius: 10px;
+}
+.bar-inner2{
+	position:absolute;
+	height:20px;
+	top:0px;
+	left:0px;
+	background: transparent linear-gradient(lime,black,lime) repeat-x;
+	color:white;
+	border-radius: 10px;
+}

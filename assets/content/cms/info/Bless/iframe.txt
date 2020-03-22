@@ -1,0 +1,1 @@
+<center><iframe  name="BLESS" src="http://yoursite.com" scrolling="no" width="870" frameborder="0" height="64"></iframe></center>
