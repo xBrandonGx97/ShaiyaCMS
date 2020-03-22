@@ -1,0 +1,37 @@
+/* 
+	Title: Pulse.css
+	Author: Bradley Sweeten
+	Rel: Site-wide Pulse Stylesheet
+	Date: 04/08/2018
+*/
+
+/* Keyframes */
+/* Blue 0094FF */
+.pulse_blue{
+	animation: pulse 2s infinite;
+}
+@keyframes pulse_blue{
+	0%{box-shadow:0 0 0 0 rgba(0,148,255,0.5);}
+	70%{box-shadow: 0 0 0 10px rgba(0,148,255,0);}
+	100%{box-shadow:0 0 0 20px rgba(0,148,255,0);}
+}
+@-webkit-keyframes pulse_blue{
+	0%{-webkit-box-shadow:0 0 0 0 rgba(0,148,255,0.5);}
+	70%{-webkit-box-shadow:0 0 0 10px rgba(0,148,255,0);}
+	100%{-webkit-box-shadow:0 0 0 20px rgba(0,148,255,0);}
+}
+
+/* Pulse - Red FF0000 */
+.pulse_red{
+	animation: pulse_red 2s infinite;
+}
+@keyframes pulse_red{
+	0%{box-shadow:0 0 0 0 rgba(255,0,0,0.5);}
+	70%{box-shadow: 0 0 0 10px rgba(255,0,0,0);}
+	100%{box-shadow:0 0 0 20px rgba(255,0,0,0);}
+}
+@-webkit-keyframes pulse_red{
+	0%{-webkit-box-shadow:0 0 0 0 rgba(255,0,0,0.5);}
+	70%{-webkit-box-shadow:0 0 0 10px rgba(255,0,0,0);}
+	100%{-webkit-box-shadow:0 0 0 20px rgba(255,0,0,0);}
+}

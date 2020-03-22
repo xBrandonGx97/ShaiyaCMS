@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /AJAX/
+Disallow: /assets/
+Disallow: /dBase/

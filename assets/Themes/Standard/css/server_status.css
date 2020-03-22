@@ -1,0 +1,37 @@
+/*/// Server Online Status ///////
+///////    Stylesheet    /////////
+///// Created By [DEV]Lube /////*/
+.online, .offline{
+	color:rgba(0,0,0,1);
+	margin:1px 1px;
+}
+.online{
+	text-shadow:0 0 4px rgba(0,153,0,0.9),0 0 2px rgba(0,255,0,0.8);
+}
+.offline{
+	text-shadow:0 0 4px rgba(204,0,0,0.9), 0 0 2px rgba(255,0,0,0.8);
+}
+.onlineWrap, .offlineWrap{
+	background:rgba(0,0,0,0.7);
+	background-size:100% 100%;
+	box-shadow:inset 2px 2px 3px rgba(255,255,255,0.8), 3px 3px 4px rgba(0,0,0,0.9), 2px 2px 3px rgba(0,0,0,1);
+	padding:3px 6px;
+	color:rgba(255,255,255,1);
+	text-shadow:0 0 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.8);
+	font-weight:bolder;
+	font-size:18px;
+	margin:2px 0;
+	border-radius:5px;
+}
+.onlineWrap{
+	
+}
+.offlineWrap{
+	
+}
+.portName{
+	color:#fff;
+	text-shadow:0 0 4px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.8);
+	font-weight:bolder;
+	font-size:18px;
+}

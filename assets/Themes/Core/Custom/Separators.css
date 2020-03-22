@@ -1,0 +1,28 @@
+/* 
+	Title: ws_Separators.css
+	Author: Bradley Sweeten - Nexus Development Foundation
+	Rel: Custom Separators Stylesheet
+	Date: 04.11.2017
+*/
+
+/* Separators */
+.separator_5 {height:5px !important;}
+.separator_10 {height:10px !important;}
+.separator_15 {height:15px !important;}
+.separator_20 {height:20px !important;}
+.separator_30 {height:30px !important;}
+.separator_40 {height:40px !important;}
+.separator_50 {height:50px !important;}
+.separator_60 {height:60px !important;}
+.separator_70 {height:70px !important;}
+.separator_80 {height:80px !important;}
+.separator_90 {height:90px !important;}
+.separator_100 {height:100px !important;}
+.separator_105 {height:105px !important;}
+.separator_110 {height:110px !important;}
+
+/* Separators After Floats */
+.separator_10_c {height:10px !important;clear:both !important;}
+.separator_15_c {height:15px !important;clear:both !important;}
+.separator_20_c {height:20px !important;clear:both !important;}
+.separator_30_c {height:30px !important;clear:both !important;}

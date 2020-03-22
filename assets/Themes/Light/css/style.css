@@ -1,0 +1,102 @@
+body.light-mode {
+  background-color: #eee;
+  color: #111;
+}
+body.light-mode a {
+  color: #111;
+}
+body.light-mode #footer{
+    background-color:#eee;
+    color:#000;
+}
+body.light-mode .jumbotron{
+  color: #fff;
+  text-shadow:2px 2px #000;
+}
+body.light-mode .jumbotron .btn{
+  text-shadow: none !important;
+  color:#000;
+}
+body.light-mode .jumbotron .btn:hover{
+  text-decoration:underline;
+}
+body.light-mode main {
+  background:lightgray;
+}
+body.light-mode .fa-github {
+  color:#000;
+}
+body.light-mode .fa-github:hover {
+  color:#454545;
+}
+body.light-mode .bg-dark{
+  background:#f8f9fa!important;
+}
+body.light-mode .nav-link{
+  color:#000 !important;
+}
+body.light-mode .nav-item:hover{
+  border-bottom:3px solid #000;
+}
+body.light-mode .card-s{
+  background-color:lightgray !important;
+  color:#000 !important;
+}
+body.light-mode .side-head{
+  color:#000 !important;
+}
+body.light-mode .navbar-expand-lg .navbar-nav .dropdown-menu{
+  background:lightgray;
+}
+body.light-mode .dropdown-item-cms{
+  color:#000 !important;
+}
+body.light-mode .table-dark{
+  background:#f8f9fa;
+}
+body.light-mode .table-dark th{
+  color:#000;
+}
+body.light-mode .table-dark td{
+  color:#000;
+}
+body.light-mode .breadcrumb-item.active{
+  color:#000;
+}
+body.light-mode .card-news{
+  background-color:#f8f9fa;
+  color:#000
+}
+body.light-mode .card-header{
+  color:#000;
+}
+body.light-mode .card-cms{
+  background-color:#f8f9fa;
+  color:#000
+}
+body.light-mode .btn-dark{
+  background-color:lightgray;
+  color:#000;
+}
+body.light-mode .btn-dark:hover{
+  text-decoration:underline;
+}
+body.light-mode .scroll_top{
+  background-color:lightgray;
+}
+body.light-mode .scroll_top:hover{
+  background-color:#f8f9fa;
+  color:#000;
+}
+body.light-mode .title{
+  color:#000 !important;
+}
+body.light-mode .sorting a{
+  color:#fff;
+}
+body.light-mode table.acp_table tr:nth-child(even){
+  background:lightgray;
+}
+body.light-mode table.acp_table tr:nth-child(odd){
+  background:#C5C7C7;
+}

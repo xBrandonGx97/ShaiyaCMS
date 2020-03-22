@@ -1,0 +1,590 @@
+/*------------------------------------------------------------------
+Theme Name: ShaiyaCMS
+Version:	1.4
+Author: [Dev]Velocity
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+
+  1. Imports
+    2. Global Styles
+    3. Bootstrap Custom CSS
+    4. Theme CSS
+    5. Media Queries
+
+-------------------------------------------------------------------*/
+
+/* 1. Imports */
+@import url('../../Core/Custom/Borders.css') screen;
+@import url('../../Core/Custom/Cards.css') screen;
+@import url('../../Core/Custom/Colors.css') screen;
+@import url('../../Core/Custom/Fonts.css') screen;
+@import url('../../Core/Custom/Footer.css') screen;
+@import url('../../Core/Custom/Forms.css') screen;
+@import url('../../Core/Custom/Labels.css') screen;
+@import url('../../Core/Custom/Margins.css') screen;
+@import url('../../Core/Custom/Modal.css') screen;
+@import url('../../Core/Custom/Offsets.css') screen;
+@import url('../../Core/Custom/Padding.css') screen;
+@import url('../../Core/Custom/Plugins.css') screen;
+@import url('../../Core/Custom/Pre.css') screen;
+@import url('../../Core/Custom/Pulse.css') screen;
+@import url('../../Core/Custom/Separators.css') screen;
+@import url('../../Core/Custom/Sizing.css') screen;
+@import url('../../Core/Custom/Spans.css') screen;
+@import url('../../Core/Custom/Tables.css') screen;
+@import url('../../Core/Custom/TicketSys.css') screen;
+@import url('../../Core/Custom/Modular.css') screen;
+@import url('players_online.css') screen;
+@import url('toggleTheme.css') screen;
+
+/* 2. Global Styles */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	margin:0;
+	padding:0;
+	color: #fff;
+	font-family:calibri;
+  margin-bottom:40px;
+  padding-top: 5rem;
+}
+
+.container {
+  width: auto;
+  max-width: auto;
+  padding: 0 15px;
+}
+
+main{
+    background-color:#343a40;
+}
+
+#footer{
+    background-color:#111;
+}
+
+.scroll_top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background: rgba(52, 58, 64, 0.5);
+  line-height: 46px;
+  border-radius:8px;
+}
+
+.scroll_top:focus, .scroll_top:hover {
+  color: white;
+}
+
+.scroll_top:hover {
+  background: #343a40;
+}
+
+.scroll_top i {
+  font-weight: 800;
+}
+
+.py-5 {
+  padding-top: 3rem !important; 
+}
+
+.alert-lightgray{
+    background-color:lightgray;
+    color:#000;
+}
+
+/* Icons */
+
+.fa-icons{
+	display:inline-block;
+    font-size: 18px;
+    line-height: 45px;
+    color:white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+/* 3. Bootstrap Custom Styles */
+
+/* Navbar */
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    background-color:#343a40;
+}
+
+.dropdown-item-cms {
+    color: #fff;
+}
+
+.nav-item:hover{
+    border-bottom:3px solid white;
+}
+
+.dropdown-item-cms:hover {
+   background: none;
+   border-radius: 15px;
+   text-decoration:underline;
+}
+
+/* Headers */
+.display-5{
+    font-size:3rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+.display-6{
+    font-size:2.5rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+.display-7{
+    font-size:2rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+.display-8{
+    font-size:1.5rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+    background:#1D1D1D !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb-item.active {
+    color: #fff;
+}
+
+.breadcrumb a {
+    color: #6c757d;
+}
+
+/* Dropdown hover*/
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+/* Forms */
+
+.form-custom{
+    background-color: #101010 !important;
+    color: #fff;
+}
+
+.form-custom:disabled, .form-custom[readonly]{
+    color: #495057;
+    cursor: not-allowed;
+}
+
+.form-custom::placeholder{
+    color: #fff;
+}
+
+/* Labels */
+
+.label{
+    background:rgba(255,255,255,.1);
+    margin-left:20px; 
+}
+
+/* Popovers */
+
+.popover-header{
+    color:#000;
+}
+
+/*a {
+    color: #fff;
+}*/
+
+/*a:hover{
+    color:#fff;
+}*/
+
+/* Cards */
+
+.card-cms{
+	background-color:#495057;
+    border-radius:7px;
+    color:#fff;
+	margin: 0 auto;
+}
+
+.card-news{
+    background-color:#495057;
+    border-radius:7px;
+    width:750px;
+    color:#fff;
+	margin: 0 auto;
+}
+
+.card-link {
+    color: lightblue;
+}
+
+/* Dark BG */
+
+.bg-dark-side{
+    background-color:#1D1D1D !important;
+    color: #fff !important;
+}
+
+.bg-dark-side:hover{
+    background-color:#1D1D1D !important;
+    border-radius:15px;
+    color: #fff !important;
+    text-shadow: 0px 0px 7px cyan, 0px 0px 7px aqua !important;
+}
+
+/* Modals */
+
+.modal-content{
+	color:#fff;
+}
+
+/* Alerts */
+
+.alert-msg{
+	background-color: #101010;
+	border:1px solid #000;
+	color: #fff;
+}
+
+/* 4. Theme CSS /*
+
+/* Preloader */
+
+@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+}
+.loading-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  line-height: 50px;
+}
+.loading-text span {
+  display: inline-block;
+  margin: 0 5px;
+  color: #fff;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+.loading-text-server{
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+    font-family: 'Quattrocento Sans', sans-serif;
+    animation: blur-text 1.5s 1.2s infinite linear alternate;
+    font-size:22px;
+
+}
+.loading-text span:nth-child(1) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0s infinite linear alternate;
+}
+.loading-text span:nth-child(2) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.2s infinite linear alternate;
+}
+.loading-text span:nth-child(3) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.4s infinite linear alternate;
+}
+.loading-text span:nth-child(4) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.6s infinite linear alternate;
+}
+.loading-text span:nth-child(5) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.8s infinite linear alternate;
+}
+.loading-text span:nth-child(6) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1s infinite linear alternate;
+}
+.loading-text span:nth-child(7) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1.2s infinite linear alternate;
+}
+@keyframes blur-text {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(4px);
+  }
+}
+
+/* Jumbotron */
+
+.jumbotron{
+    background-image:url('../images/carousel/background.jpg');
+}
+
+/* Sidebar */
+
+.left-sidebar {
+    position: absolute;
+    left:20px;
+    width: 260px;
+    text-align:left;
+    margin-top:20px;
+}
+
+.right-sidebar {
+    position: absolute;
+    right:20px;
+    width: 260px;
+    text-align:left;
+    margin-top:20px;
+}
+
+.card-s {
+    position: relative;
+    display: ms flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border box;
+    border-radius: .25rem;
+    color: #fff;
+    margin: 0 auto;
+    width:auto;
+    margin-bottom:5%;
+}
+
+.side-head{
+    
+}
+
+.side-block{
+    
+}
+
+.card-body-s {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title-s {
+    margin-bottom: .75rem;
+    font-weight:bold;
+}
+
+.card-subtitle-s {
+    margin-top: -.375rem;
+    margin-bottom: 0;
+}
+
+.card-link-s {
+    margin-left:1.25rem;
+}
+
+/* Plugins */
+
+/* Server Info */
+
+.s-Online{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: lime;
+}
+
+.s-Offline{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: red;
+}
+
+.s-pOnline{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: #FF9300;
+}
+
+.s-AoL{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: #0080FF;
+}
+
+.s-UoF{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: red;
+}
+
+/* Buttons */
+
+.btn-dl {
+    background-color: #101010;
+    border-color: #000;
+    color: #fff;
+}
+
+.btn-dl:hover {
+    color: #fff; 
+    background-color: #1F1F1F;
+}
+
+.btn-dl a {
+    color: #fff;
+    text-decoration:none;
+}
+
+/* Terms of Service */
+
+.terms {
+    color: dodgerblue;
+}
+
+.terms:hover {
+    color: #1D1C56;
+}
+
+.tos{
+	text-align:left !important;
+}
+
+/* Event Calender */
+
+.event-cal{
+  color: #000 !important;;
+}
+
+.event:hover{
+    cursor:pointer !important;
+}
+
+.event-cur{
+    background-color:#fff;
+    color:#000;
+}
+
+/* Bless */
+
+.bless-table{
+    background:url('../images/bless/bless.png') no-repeat center;
+}
+
+/* Tables */
+
+td, th {
+    color: #fff;
+}
+
+/* Login */
+
+.login-links a{
+    color: #fff;
+}
+
+/* Image Gallery */
+
+#image-gallery .modal-footer{
+  display: block;
+}
+
+.thumb{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* PvP Rankings */
+
+.page-link{
+    color:#000 !important;
+}
+
+/* 5. Media Queries */
+
+/* ------------------------------------------
+ *  Responsive Grid Media Queries - 1280, 1024, 768, 480
+ *   1280-1024   - desktop (default grid)
+ *   1024-768    - tablet landscape
+ *   768-480     - tablet 
+ *   480-less    - phone landscape & smaller
+ * --------------------------------------------
+ */
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+    
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+
+@media all and (min-width: 480px) and (max-width: 768px) { }
+
+@media all and (max-width: 480px) { }
+
+
+/* Portrait */
+@media screen and (orientation:portrait) { /* Portrait styles here */ }
+/* Landscape */
+@media screen and (orientation:landscape) { /* Landscape styles here */ }
+
+
+/* CSS for iPhone, iPad, and Retina Displays */
+
+/* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {
+}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+} 
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation:portrait) {
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation:landscape) {
+}
