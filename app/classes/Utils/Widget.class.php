@@ -14,6 +14,7 @@
         {
             $widgets = Eloquent::table(table('CMS_WIDGETS'))
              ->select()
+             ->where('Enabled', 1)
              ->orderBy('Priority', 'ASC')
              ->get();
             return $widgets;

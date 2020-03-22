@@ -5,13 +5,11 @@
                 <div class="nk-box-1 bg-dark-2">
                         @if(count($data['widget']) > 0)
                             @foreach($data['widget'] as $widget)
-                                @if($widget->Enabled==='1')
-                                    <h4>{{$widget->Title}}</h4>
-                                    <div>
-                                        @require($GLOBALS['config']['WIDGETDIR'].$widget->Name.'/php/script.blade.php')
-                                    </div>
-                                    <div class="nk-gap-2"></div>
-                                @endif
+                                <h4>{{$widget->Title}}</h4>
+                                <div>
+                                    @require($GLOBALS['config']['WIDGETDIR'].$widget->Name.'/php/script.blade.php')
+                                </div>
+                                <div class="nk-gap-2"></div>
                             @endforeach
                         @endif
                     </div>
