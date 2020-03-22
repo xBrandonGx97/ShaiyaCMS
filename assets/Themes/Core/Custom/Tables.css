@@ -1,0 +1,118 @@
+/* 
+	Title: Classic Theme Design
+	Author: Ash Artanis
+	Rel: Tables
+	Date: 12.21.2016
+*/
+table {
+	border-spacing:1;
+	line-height: 1.5;
+	display:table;
+	border-collapse:collapse;
+}
+tr {
+	display:table-row;
+}
+
+/* Teamspeak3 Table */
+table.ts_table {
+	table-layout: fixed;
+	width:100%;
+	font-size: 18px;
+	border:1px dashed red;
+	color:#fff;
+}
+table.ts_table td {
+	border: 1px solid #404040;
+}
+table.ts_table tr:nth-child(even){
+	background: #101010;
+}
+table.ts_table tr:nth-child(odd){
+	background: #202020;
+}
+table.ts_table tr th {
+	text-align:center;
+}
+table.ts_table th,
+table.ts_table tr th,
+table.ts_table > tr > th,
+table.ts_table > * > tr > th {
+	background: transparent linear-gradient(cyan,transparent,cyan) no-repeat;
+	border: 1px solid #61C4E0;
+	border-radius: 1px;
+	padding: 0px 1px;
+	margin: 1px;
+	color: #F5FDFF;
+	font-size: 16px;
+}
+
+/* ACP Table Layout */
+table.table .acp_table {
+	table-layout: fixed;
+	width:100%;
+	font-size: 18px;
+	color:#fff;
+}
+table.acp_table td {
+	border: 1px solid #404040;
+}
+table.acp_table tr:nth-child(even){
+	background: #101010;
+}
+table.acp_table tr:nth-child(odd){
+	background: #202020;
+}
+table.acp_table tr th {
+	text-align:center;
+}
+table.acp_table th,
+table.acp_table tr th,
+table.acp_table > tr > th,
+table.acp_table > * > tr > th {
+
+	border:1px solid #404040;
+	border-radius: 1px;
+	padding: 0px 1px;
+	margin: 1px;
+	color: #F5FDFF;
+	font-size: 16px;
+}
+table.acp_table tr:hover {
+	border:1px solid #0094ff !important;
+}
+tr.db_data td{
+	overflow:hidden !important;
+}
+
+/* Global Chat Config */
+.currentDate { color : #fff; font-size: 15px;}
+/*
+.ChatData th {
+	border: 1px solid cyan;
+	background: transparent linear-gradient( blue, transparent, blue) repeat scroll 0% 0%; border: 1px solid #09283D; border-radius: 5px;
+	font-size: 22px;
+	color: white;
+}
+*/
+table.ChatData { table-layout: fixed; width: 100%; font-size: 18px;}
+table.ChatData td { border: 1px solid #404040; width= 100%; text-align: left; padding: 5px 10px;}
+table.ChatData tr:nth-child(even){ background: #101010;}
+table.ChatData tr:nth-child(odd){ background: #202020;}
+table.ChatData th, table.ChatData tr th, table.ChatData > tr > th, table.ChatData > * > tr > th { background: #212529; border: 1px solid #101010; border-radius: 1px; padding: 0px 1px; margin: 1px; color: #F5FDFF; text-align: center; font-size: 16px;}
+table.ChatData td a {color: dodgerblue;}
+.ChatTime { color: #fff; text-align: center;}
+/* Column Widths */
+.column-light { width: 40%;}
+.column-dark { width: 40%;}
+.column-date { width: 20%;}
+.column-map { width: 25%;}
+.column-char { width: 30%;}
+/* Chat Colors */
+.normal { color: white; font-family: 'sans-serif'; padding-left: 10px;}
+.whisper { color: #FF00DC; font-family: 'sans-serif'; padding-left: 10px;}
+.guild { color: #CF6171; font-family: 'sans-serif'; padding-left: 10px;}
+.party { color: #00FF00; font-family: 'sans-serif'; padding-left: 10px;}
+.trade { color: gold; font-family: 'sans-serif'; padding-left: 10px;}
+.yelling { color: #EE9A00; font-family: 'sans-serif'; padding-left: 10px;}
+.area { color: #7EA7DF; font-family: 'Tsans-serif'; padding-left: 10px;}

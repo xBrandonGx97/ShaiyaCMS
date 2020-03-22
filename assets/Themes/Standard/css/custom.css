@@ -1,0 +1,321 @@
+/*-------------------------------------------------------------------
+[Custom Stylesheet]
+
+Author:		Bradley Sweeten
+Profile:    http://ndf-innovations.net/
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+
+	1. Imports
+    2. Bootstrap Styles
+    3. Custom CSS
+
+-------------------------------------------------------------------*/
+
+/* 1. Imports */
+
+@import url('../../Core/Custom/Borders.css') screen;
+@import url('../../Core/Custom/Cards.css') screen;
+@import url('../../Core/Custom/Colors.css') screen;
+@import url('../../Core/Custom/Fonts.css') screen;
+@import url('../../Core/Custom/Footer.css') screen;
+@import url('../../Core/Custom/Forms.css') screen;
+@import url('../../Core/Custom/Labels.css') screen;
+@import url('../../Core/Custom/Margins.css') screen;
+@import url('../../Core/Custom/Modal.css') screen;
+@import url('../../Core/Custom/Offsets.css') screen;
+@import url('../../Core/Custom/Padding.css') screen;
+@import url('../../Core/Custom/Plugins.css') screen;
+@import url('../../Core/Custom/Pre.css') screen;
+@import url('../../Core/Custom/Pulse.css') screen;
+@import url('../../Core/Custom/Separators.css') screen;
+@import url('../../Core/Custom/Sizing.css') screen;
+@import url('../../Core/Custom/Spans.css') screen;
+@import url('../../Core/Custom/Tables.css') screen;
+@import url('../../Core/Custom/TicketSys.css') screen;
+@import url('../../Core/Custom/Modular.css') screen;
+@import url('players_online.css') screen;
+
+/* 2. Bootstrap CSS */
+
+.bg-dark{
+	background-color:#101010 !important;
+}
+
+.display-5{
+    font-size:3rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+.display-6{
+    font-size:2.5rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+.display-7{
+    font-size:2rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+.display-8{
+    font-size:1.5rem;
+    font-weight:300;
+    line-height:1.2;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+    width:20%;
+    background:#1D1D1D !important;
+    margin: 15px auto;
+    align-items:center;
+}
+
+.breadcrumb-item.active {
+    color: #fff;
+}
+
+.breadcrumb a {
+    color: #6c757d;
+}
+
+.container {
+  width: auto;
+  max-width: auto;
+  padding: 0 15px;
+}
+
+.card-cms{
+	background:#1D1D1D !important;
+	/*width:750px;*/
+	color:#fff;
+	margin: 0 auto;
+}
+
+.card-news{
+    background:#1D1D1D !important;
+    width:750px;
+    color:#fff;
+	margin: 0 auto;
+}
+
+/* Forms */
+
+.form-custom{
+    background-color: #101010 !important;
+    color: #fff;
+}
+
+.form-custom:disabled, .form-custom[readonly]{
+    color: #495057;
+    cursor: not-allowed;
+}
+
+.form-custom::placeholder{
+    color: #fff;
+}
+
+/* 3. Custom CSS */
+
+.bg-dark-side{
+    background-color:#1D1D1D !important;
+    color: #fff !important;
+}
+
+/* Server Info */
+
+.s-Online{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: lime;
+}
+
+.s-Offline{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: red;
+}
+
+.s-pOnline{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: #FF9300;
+}
+
+.s-AoL{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: #0080FF;
+}
+
+.s-UoF{
+    font-weight:bold;
+    text-shadow:2px 2px #000;
+    color: red;
+}
+
+.bg-dark-side:hover{
+    background-color:#1D1D1D !important;
+    border-radius:15px;
+    color: #fff !important;
+    text-shadow: 0px 0px 7px cyan, 0px 0px 7px aqua !important;
+}
+
+.modal-content{
+	color:#fff !important;
+}
+
+.alert-msg{
+	background-color: #101010;
+	border:1px solid #000;
+	color: #fff;
+}
+
+.card-link {
+    color: lightblue !important;
+}
+
+.text-muted {
+    color: #000;
+}
+
+td, th {
+    color: #fff;
+}
+
+/* Sidebar */
+
+.main-sidebar {
+    position: absolute;
+    right:20px !important;
+    width: 260px;
+    text-align:left;
+    margin-top:20px !important;
+}
+
+.card-s {
+    position: relative;
+    display: ms flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #1D1D1D;
+    background-clip: border box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    color: #fff;
+    margin: 0 auto;
+    width:auto;
+    margin-bottom:5%;
+}
+
+.card-body-s {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title-s {
+    margin-bottom: .75rem;
+    font-weight:bold;
+}
+
+.card-subtitle-s {
+    margin-top: -.375rem;
+    margin-bottom: 0;
+}
+
+.card-link-s {
+    margin-left:1.25rem;
+}
+
+/* Navbar */
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    background: #1D1D1D !important;
+}
+
+.dropdown-item-cms {
+    color: #fff !important;
+}
+
+.dropdown-item-cms:hover {
+   background: #2D2D2D !important;
+   border-radius: 15px;
+}
+
+/* Buttons */
+
+.btn-dl {
+    background-color: #101010 !important;
+    border-color: #000 !important;
+    color: #fff;
+}
+
+.btn-dl:hover {
+    color: #fff; 
+    background-color: #1F1F1F !important;
+}
+
+.btn-dl a {
+    color: #fff;
+    text-decoration:none;
+}
+
+/* Terms */
+
+.terms {
+    color: dodgerblue;
+}
+
+.terms:hover {
+    color: #1D1C56;
+}
+
+.tos{
+	text-align:left !important;
+}
+
+/* Icons */
+
+.fa-icons{
+	display:inline-block;
+    font-size: 18px;
+    line-height: 45px;
+    color:white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+/* Scroll to top button */
+.scroll-to-top{
+	position:fixed;
+	right:15px;
+	bottom:15px;
+	display:none;
+	width:50px;
+	height:50px;
+	text-align:center;
+	color:#fff;
+	background:rgba(52, 58, 64, 0.5);
+	line-height:46px;
+}
+.scroll-to-top:focus,.scroll-to-top:hover{
+	color:white;
+}
+.scroll-to-top:hover{
+	background:#343a40;
+}
+.scroll-to-top i{
+	font-weight:800;
+}

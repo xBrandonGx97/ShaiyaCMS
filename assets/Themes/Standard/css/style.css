@@ -1,0 +1,292 @@
+/*------------------------------------------------------------------
+Theme Name: SCULVANIA
+Version:	1.0
+Author: [Dev]Velocity
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+
+	1. Global Styles
+    2. Theme CSS
+
+-------------------------------------------------------------------*/
+
+/* 1. Global Styles */
+
+.cms-html {
+  position: relative;
+  min-height: 100%;
+}
+
+.cms-body {
+    background: rgba(16,16,16,1) !important;
+	margin:0;
+	padding:0;
+	color: #fff;
+	font-family:calibri;
+    margin-bottom:40px;
+    padding-top: 5rem;
+}
+
+/* 2. Theme CSS */
+
+@font-face{
+    font-family: "Audiowide-Regular";
+    src:url(../fonts/Audiowide-Regular.ttf);
+    }
+@font-face{
+    font-family: "Asap-Regular";
+    src:url(../fonts/Asap-Regular.ttf);
+}
+
+.padding-all{
+    padding:100px;
+    }
+    
+    .header {
+    text-align: center;
+    }
+    .header h1 img{
+    width:7%;
+    }
+    
+    .header h1 {
+    font-size:50px;
+    color: #fff;
+    font-family: "Audiowide-Regular";
+    letter-spacing:3px;
+    margin:0 auto;
+    }
+    .design-w3l{
+    width:36%;
+    margin:0 auto;
+    }
+    
+    .mail-form-agile {
+        padding: 50px 40px;
+        text-align: center;
+        margin:0px;
+        background: rgba(23, 218, 218, 0.18);
+        color: #000;
+        margin:0 auto;
+    }
+    
+    .padding {
+    margin: 20px 0 30px;
+    }
+    .mail-form-agile input[type="text"], .mail-form-agile input[type="password"] {
+    padding: 13px 10px;
+    width: 92.5%;
+    font-size: 16px;
+    outline: none;
+    background:transparent;
+    border:0px;
+    border-bottom: 1px solid #fff;
+    border-radius: 0px;
+    font-family: "Asap-Regular";
+    letter-spacing:1.6px;
+    color:#fff;
+    }
+    ::-webkit-input-placeholder{
+       color:#b4b0b0 !important;
+       font-weight:400;
+    }
+    .mail-form-agile input[type="submit"]{
+    font-size: 18px;
+    padding: 10px 20px;
+    letter-spacing:1.2px;
+    border: none;
+    text-transform: capitalize;
+    outline: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    background: #D65B88;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    font-family: "Asap-Regular";
+    -webkit-transition-duration: 0.9s;
+    transition-duration: 0.9s;
+    }
+    .mail-form-agile input[type="submit"]:hover {
+     -webkit-transition-duration: 0.9s;
+     transition-duration: 0.9s;
+     background:rgba(91, 157, 214, 0.76);
+    }
+    
+    .footer{
+    position: absolute;
+    text-align: center;
+    letter-spacing:1.6px;
+    line-height:22px;
+    bottom: 0;
+    width: 100%;
+    }
+    .footer p {
+    font-size: 16px;
+    color: #fff;
+    margin: 0px;
+    letter-spacing:1.4px;
+    }
+    .footer p a {
+    color:#D65B88;
+    font-weight:blod;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    }
+    .footer p a:hover {
+    color: #51cbe1;
+     -webkit-transition-duration: 0.8s;
+     transition-duration: 0.8s;
+    }
+    
+    /*-- responsive media queries --*/
+    
+    @media screen and (max-width:1440px){
+    .design-w3l {
+        width: 40%;
+    }
+    .header h1 img{
+    width:8.5%;
+    }
+    
+    }
+    
+    @media screen and (max-width:1366px){
+    
+    }
+    
+    @media screen and (max-width:1280px){
+    .design-w3l {
+        width: 46%;
+    }
+    .mail-form-agile {
+        padding: 40px;
+    }
+    }
+    
+    @media screen and (max-width:1080px){
+    .padding-all{
+    padding:80px 50px;
+    }
+    .header h1 img{
+    width:8%;
+    }
+    .header h1 {
+        font-size: 44px;
+    }
+    }
+    
+    @media screen and (max-width:991px){
+    .design-w3l {
+        width: 54%;
+    }
+    
+    }
+    
+    @media screen and (max-width:800px){
+    .padding-all{
+    padding:75px 30px;
+    }
+    .design-w3l {
+        width: 60%;
+    }
+    .header h1 {
+        font-size: 40px;
+    }
+    .header {
+        padding-bottom: 50px;
+    }
+    .footer {
+        padding-top: 50px;
+    }
+    
+    }
+    
+    @media screen and (max-width:667px){
+    .design-w3l {
+        width: 75%;
+    }
+    
+    }
+    
+    @media screen and (max-width:640px){
+    .header h1 img {
+        width: 10%;
+    }
+    .header h1 {
+        font-size: 36px;
+    }
+    .mail-form-agile {
+        padding: 35px 30px;
+    }
+    .mail-form-agile input[type="text"], .mail-form-agile input[type="password"] {
+        font-size: 14px;
+    }
+    .mail-form-agile input[type="submit"] {
+        font-size: 16px;
+    }
+    .footer p {
+        font-size: 14px;
+    }
+    
+    }
+    
+    @media screen and (max-width:568px){
+    .padding-all {
+        padding: 60px 20px;
+    }
+    
+    .header h1 {
+        font-size: 32px;
+    }
+    
+    }
+    
+    @media screen and (max-width:480px){
+    .header h1 {
+        font-size: 28px;
+    }
+    .design-w3l {
+        width: 92%;
+    }
+    .mail-form-agile input[type="submit"] {
+        font-size: 14px;
+    }
+    .footer p {
+        font-size: 13px;
+    }
+    
+    }
+    
+    @media screen and (max-width:414px){
+    .padding-all {
+        padding:50px 10px;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    }
+    
+    @media screen and (max-width:384px){
+    .header {
+        padding-bottom: 30px;
+    }
+    .header h1 {
+        font-size: 22px;
+    }
+    .design-w3l {
+        width: 100%;
+    }
+    
+    }
+    
+    @media screen and (max-width:320px){
+    .header h1 {
+        font-size: 18px;
+    }
+    
+    }

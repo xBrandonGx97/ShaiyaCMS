@@ -1,0 +1,275 @@
+/*-------------------------------------------------------------------
+[Custom Stylesheet]
+
+Author:		[Dev]Velocity
+-------------------------------------------------------------------*/
+
+@import url('../../Core/Custom/Borders.css') screen;
+/*
+@import url('../../Core/Custom/Buttons.css') screen;
+*/
+@import url('../../Core/Custom/Cards.css') screen;
+@import url('../../Core/Custom/Colors.css') screen;
+@import url('../../Core/Custom/Fonts.css') screen;
+
+@import url('../../Core/Custom/Forms.css') screen;
+@import url('../../Core/Custom/Labels.css') screen;
+@import url('../../Core/Custom/Margins.css') screen;
+/*
+@import url('../../Core/Custom/Nav.css') screen;
+*/
+@import url('../../Core/Custom/Modal.css') screen;
+@import url('../../Core/Custom/Offsets.css') screen;
+@import url('../../Core/Custom/Padding.css') screen;
+@import url('../../Core/Custom/Plugins.css') screen;
+@import url('../../Core/Custom/Pre.css') screen;
+/*
+@import url('../../Core/Custom/Preloader.css') screen;
+*/
+@import url('../../Core/Custom/Pulse.css') screen;
+/*
+@import url('PvP.css') screen;
+*/
+@import url('../../Core/Custom/Separators.css') screen;
+@import url('../../Core/Custom/Sizing.css') screen;
+@import url('../../Core/Custom/Spans.css') screen;
+@import url('../../Core/Custom/Tables.css') screen;
+@import url('../../Core/Custom/TicketSys.css') screen;
+@import url('../../Core/Custom/Modular.css') screen;
+@import url('Buttons.css') screen;
+@import url('Forms.css') screen;
+@import url('Panels.css') screen;
+
+.acp-bg{
+	background-color: #343a40 !important;
+}
+
+.acp-body{
+	background-color: #2f353a !important;
+	margin-top:3.8%;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 15px;
+	color: #fff;
+	height: 100%;
+}
+
+.acp-breadcrumb{
+	width:100% !important;
+	margin-top:1%;
+}
+
+.acp-breadcrumb a{
+	color: #6c757d;
+}
+
+.breadcrumb-item.active{
+	color: #fff;
+}
+
+.acp-bg-danger{
+	color: #fff !important;
+}
+
+.acp-card{
+	
+}
+
+.textLeft {
+	float: left;
+}
+.textRight {
+	float: right;
+}
+
+.display-5{
+	font-size: 2.5rem;
+	font-weight:300;
+	line-height:1.2;
+}
+
+.display-6{
+	font-size: 1.5rem;
+	font-weight:300;
+	line-height:1.2;
+}
+
+.jumbotron {
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image_outer_container{
+	margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+   	position: relative;
+}
+
+.image_inner_container{
+    border-radius: 50%;
+    padding: 5px;
+    background: #833ab4; 
+    background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
+    background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+}
+.image_inner_container img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.image_outer_container .green_icon{
+    background-color: #4cd137;
+    position: absolute;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    border:5px solid white;
+    border-radius: 50%;
+}
+
+#wrapper .sidebar {
+	background-color: #2B333E !important;
+}
+
+.avatar img {
+    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+    background-image: url('http://i.stack.imgur.com/Dj7eP.jpg');
+    
+    /* make a square container */
+    width: 150px;
+    height: 150px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}
+
+.avatar-circle{
+	line-height: 0;
+	display: inline-block;
+	margin: 5px;
+	border: 1px solid;
+	border-radius: 50%;
+	transition: linear 0.25s;
+	height: 32px;
+	width: 32px;
+	background:linear-gradient(to bottom, rgba(252,176,69,0.4), rgba(253,29,29,0.4), rgba(131,58,180,0.4));
+	padding:1px;
+}
+
+.avatar-circle img{
+	border-radius: 50%;
+}
+
+.avatar-circle:hover {transition: ease-out 0.2s;
+	background:linear-gradient(to bottom, rgba(252,176,69,0.8), rgba(253,29,29,0.8), rgba(131,58,180,0.8));
+	-webkit-transition: ease-out 0.2s;
+}
+a.avatar-circle {
+  color: transparent;
+}
+
+.custom-card{
+	border:1px solid rgba(0,0,0,.200) !important;
+	background:#343a40 !important;
+}
+.cstm-card-head{
+	background: #343a40 !important;
+}
+.content-form-table{
+	max-width: 100px;
+}
+
+.card-text{
+	color: #fff !important;
+}
+
+.drop-acp-menu{
+	background:rgba(0, 0, 0, .25);
+}
+
+.drop-acp-itm{
+	color: #fff;
+}
+
+.drop-acp-itm:hover {
+	color: rgba(255, 255, 255, 1) !important;
+    background: rgba(0, 0, 0, .25) !important;
+	border-left:3px solid cyan !important;
+}
+
+.modal-content{
+	color:#fff !important;
+}
+
+.form-acp{
+	background-color: #323f4d !important;
+}
+
+.form-acp:disabled, .form-acp[readonly]{
+	background-color: #1f2b37 !important
+}
+
+/* BS Table Dark Theme */
+.table tbody + tbody{
+	border-color: #32383e !important;
+}
+
+footer.sticky-footer{
+	background: none !important;
+}
+
+.pagination > li > a, .pagination > li > span{
+	background:transparent !important; 
+	border: none !important;
+	color: #fff;
+}
+
+.pagination > li > a:hover{
+	color: dodgerblue;
+}
+
+.blur-header {
+   /* */ /* -webkit-transition: all 2s ease;
+	   -moz-transition: all 2s ease;
+		 -o-transition: all 2s ease;
+		-ms-transition: all 2s ease;
+			transition: all 2s ease;
+	  
+		  filter: blur(5px);
+	  -webkit-filter: blur(5px);
+	  -moz-filter: blur(5px);
+	  -o-filter: blur(5px);
+	  -ms-filter: blur(5px);  
+	  -ms-filter: blur(5px);
+  */
+  /*filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0'); */
+  }
+   
+  .blur-header:hover {   
+  
+/*	-webkit-transform: translate(1em,0);
+    -moz-transform: translate(1em,0);
+    -o-transform: translate(1em,0);
+    -ms-transform: translate(1em,0);
+    transform: translate(1em,0);
+*/	  
+/*	  filter: blur(0px);
+	  -webkit-filter: blur(0px);
+	  -moz-filter: blur(0px);
+	  -o-filter: blur(0px);
+	  -ms-filter: blur(0px);
+	  filter: url(#blur1);
+  
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5'); 
+	*/  
+  }
