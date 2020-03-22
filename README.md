@@ -1,3 +1,3 @@
 # Shaiya Project v2
 
-Shaiya Project v22
+Shaiya Project v2

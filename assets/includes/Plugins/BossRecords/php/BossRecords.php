@@ -1,0 +1,10 @@
+<?php
+	echo '<div id="plugin_card" class="card-s bg-dark">';
+		echo '<div class="card-header side-head card_border text-center title pTitle show no_radius">Boss Records</div>';
+		echo '<div class="card-block side-block card_border content_bg content no_radius pContent">';
+			echo '<div class="card-text">';
+			echo BossRecord::get_Record_Plugin();
+			echo '</div>';
+		echo '</div>';
+	echo '</div>';
+?>
