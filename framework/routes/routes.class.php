@@ -69,5 +69,7 @@
     // Post Responses
     // Auth
     Route::respond('post', '/auth/login', function () {Auth_Controller::login();});
+    Route::respond('post', '/auth/logout', function () {Auth_Controller::logout();});
+
     // Promotions
     Route::respond('post', '/user/promotions', function () {User_Controller::promotions();});

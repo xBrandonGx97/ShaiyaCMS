@@ -65,11 +65,11 @@
               </li>
             </ul>
           </li>
-          <?php if($data['User']['LoginStatus']===true): ?>
-            <li class="  ">
+          <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
+            <li class="logUsers">
               <a href="/user/users">Users</a>
             </li>
-            <li class="  nk-drop-item">
+            <li class="  nk-drop-item logBell">
               <a href="/user/friends">
                 <i class="fas fa-bell"></i>
               </a>
@@ -103,7 +103,7 @@
               </a>
             </li>
           <?php else: ?>
-            <li class="  nk-drop-item">
+            <li class="  nk-drop-item logNav">
               <a href="#">
                 <i class="fas fa-user"></i>
               </a>

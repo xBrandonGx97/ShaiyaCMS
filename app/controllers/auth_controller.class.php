@@ -11,7 +11,7 @@ class Auth_Controller extends CoreController
 
     public static function logout()
     {
-        $data = [
+        /* $data = [
             'pageData' => [
                 'index' => 'index',
                 'title' => 'Home',
@@ -19,7 +19,25 @@ class Auth_Controller extends CoreController
                 'nav' => true
             ],
         ];
-        Auth::logout();
+        Auth::logout(); */
+
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+        if ($contentType === 'application/json') {
+            //Receive the RAW post data.
+            $content = trim(file_get_contents('php://input'));
+
+            $decoded = json_decode($content, true);
+
+            //If json_decode succeeded, the JSON is valid.
+            if (is_array($decoded)) {
+                $arr = [
+                    'loggedOut' => true
+                ];
+
+                Auth::logout();
+            }
+            echo json_encode($arr);
+        }
     }
 
     /* Post Methods */

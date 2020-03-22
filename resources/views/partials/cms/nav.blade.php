@@ -65,11 +65,11 @@
               </li>
             </ul>
           </li>
-          @if($data['User']['LoginStatus']===true)
-            <li class="  ">
+          @auth
+            <li class="logUsers">
               <a href="/user/users">Users</a>
             </li>
-            <li class="  nk-drop-item">
+            <li class="  nk-drop-item logBell">
               <a href="/user/friends">
                 <i class="fas fa-bell"></i>
               </a>
@@ -77,7 +77,7 @@
                 friend 1: <button>add</button>
               </ul>
             </li>
-          @endif
+          @endauth
         </ul>
         <ul class="nk-nav nk-nav-right nk-nav-icons">
           <li class="single-icon hidden-lg-up">
@@ -103,7 +103,7 @@
               </a>
             </li>
           @else
-            <li class="  nk-drop-item">
+            <li class="  nk-drop-item logNav">
               <a href="#">
                 <i class="fas fa-user"></i>
               </a>
