@@ -7,7 +7,7 @@
     use Classes\Utils\User;
     use Classes\Utils\Widget;
 
-    class Home_Controller extends \Framework\Core\CoreController
+    class Home extends \Framework\Core\CoreController
     {
         public static function index()
         {

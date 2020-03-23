@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Classes\Utils\User;
 
-class Forum_Controller extends \Framework\Core\CoreController
+class Forum extends \Framework\Core\CoreController
 {
     public static function forum()
     {

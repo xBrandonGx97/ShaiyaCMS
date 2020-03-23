@@ -3,7 +3,7 @@
 
 // Default Route
     Route::respond('get', '/', function () {
-        App\Controllers\Home_Controller::index();
+        App\Controllers\Home::index();
     });
     // Community
     Route::respond('get', '/community/downloads', function () {Community_Controller::downloads();});

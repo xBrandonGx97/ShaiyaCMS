@@ -5,7 +5,7 @@
 //	use Classes\Utils\Browser;
     use Classes\Utils\User;
 
-    class Admin_Controller extends \Framework\Core\CoreController
+    class Admin extends \Framework\Core\CoreController
     {
         public static function index()
         {

@@ -8,7 +8,7 @@ use Classes\Utils\Session;
 use Classes\Utils\User;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class Auth_Controller extends \Framework\Core\CoreController
+class Auth extends \Framework\Core\CoreController
 {
     /* Get Methods */
 

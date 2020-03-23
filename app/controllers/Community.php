@@ -6,7 +6,7 @@ namespace App\Controllers;
     use Classes\DB\MSSQL;
     use Classes\Utils\Session;
 
-    class Community_Controller extends \Framework\Core\CoreController
+    class Community extends \Framework\Core\CoreController
     {
         public static function discord()
         {

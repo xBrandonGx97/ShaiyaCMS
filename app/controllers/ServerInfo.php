@@ -4,7 +4,7 @@ namespace App\Controllers;
 
     use Classes\Utils\User;
 
-    class ServerInfo_Controller extends \Framework\Core\CoreController
+    class ServerInfo extends \Framework\Core\CoreController
     {
         public static function about()
         {
