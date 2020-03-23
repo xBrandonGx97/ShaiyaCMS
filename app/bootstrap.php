@@ -169,12 +169,12 @@ class Bootstrap
         // Init Session
         \Classes\Utils\Session::init('Default');
         // Load Helpers
-        \Core\Loader::helper('modal');
-        \Core\Loader::helper('template');
-        \Core\Loader::helper('url');
-        \Core\Loader::helper('abort');
-        \Core\Loader::helper('redirect');
-        \Core\Loader::helper('table');
+        \Framework\Core\Loader::helper('modal');
+        \Framework\Core\Loader::helper('template');
+        \Framework\Core\Loader::helper('url');
+        \Framework\Core\Loader::helper('abort');
+        \Framework\Core\Loader::helper('redirect');
+        \Framework\Core\Loader::helper('table');
         // Init DotEnv
         //self::initDotEnv();
         // Init
@@ -184,10 +184,10 @@ class Bootstrap
         self::load_langs();
         // Load Route
         require_once CORE_PATH . 'route.php';
-        \Core\Route::run();
+        \Framework\Core\Route::run();
         // Load Routes
         require_once ROUTES_PATH . 'routes.php';
-        \Core\Route::checkRoute();
+        \Framework\Core\Route::checkRoute();
         self::load_defaults();
     }
 

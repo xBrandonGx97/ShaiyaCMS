@@ -1,5 +1,5 @@
 <?php
-    use Core\Route;
+    use Framework\Core\Route;
 
 // Default Route
     Route::respond('get', '/', function () {Home_Controller::index();});

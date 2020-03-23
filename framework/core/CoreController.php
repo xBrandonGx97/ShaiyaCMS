@@ -1,5 +1,7 @@
 <?php
 
+//namespace Framework\Core;
+
 class CoreController
 {
     // Load model
