@@ -5,7 +5,8 @@
     "ephp/socketio": "dev-master",
     "rase/socket.io-emitter": "dev-master",
     "vlucas/phpdotenv": "^4.1@dev",
-    "phpmailer/phpmailer": "dev-master"
+    "phpmailer/phpmailer": "dev-master",
+    "nikic/fast-route": "^2.0@dev"
   },
   "minimum-stability": "dev",
   "autoload": {

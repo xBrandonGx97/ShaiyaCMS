@@ -2,147 +2,162 @@
 
 namespace App\Controllers;
 
-use Classes\Utils\User;
+use Classes\Utils as Utils;
 
 class Errors extends \Framework\Core\CoreController
 {
-    public static function error301()
+    public function __construct(Utils\User $user)
     {
-        User::run();
-        $User = User::_fetch_User();
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
-            'User' => $User
-        ];
-        self::view('errors/301', $data);
+        $this->user = $user;
     }
 
-    public static function error307()
+    public function error301()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/307', $data);
+        $this->view('errors/301', $data);
     }
 
-    public static function error400()
+    public function error307()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/400', $data);
+        $this->view('errors/307', $data);
     }
 
-    public static function error401()
+    public function error400()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/401', $data);
+        $this->view('errors/400', $data);
     }
 
-    public static function error403()
+    public function error401()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/403', $data);
+        $this->view('errors/401', $data);
     }
 
-    public static function error404()
+    public function error403()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/404', $data);
+        $this->view('errors/403', $data);
     }
 
-    public static function error405()
+    public function error404()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/405', $data);
+        $this->view('errors/404', $data);
     }
 
-    public static function error408()
+    public function error405()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/408', $data);
+        $this->view('errors/405', $data);
     }
 
-    public static function error500()
+    public function error408()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/500', $data);
+        $this->view('errors/408', $data);
     }
 
-    public static function error502()
+    public function error500()
     {
-        User::run();
-        $User = User::_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'rankings',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User
+            'User' => $this->user
         ];
-        self::view('errors/502', $data);
+        $this->view('errors/500', $data);
+    }
+
+    public function error502()
+    {
+        $this->user->run();
+        $this->user->_fetch_User();
+
+        $data = ['pageData' => [
+            'index' => 'rankings',
+            'zone' => 'CMS',
+            'nav' => true
+        ],
+            'User' => $this->user
+        ];
+        $this->view('errors/502', $data);
     }
 }

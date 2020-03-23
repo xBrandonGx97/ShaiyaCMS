@@ -1,267 +1,103 @@
 <?php
     use Framework\Core\Route;
 
-$route = new Route;
-    $route->run();
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+    $userClass = new Classes\Utils\User;
+    $home = new App\Controllers\Home($userClass);
+
     // Default Route
-    $route->respond('get', '/', function () {
-        $user = new Classes\Utils\User;
-        $home = new App\Controllers\Home($user);
-        $home->index();
-    });
+    $r->addRoute('GET', '/', [($home), 'index']);
+
     // Community
-    $route->respond('get', '/community/downloads', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->downloads();
-    });
-    $route->respond('get', '/community/discord', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->discord();
-    });
-    $route->respond('get', '/community/news', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->news();
-    });
-    $route->respond('get', '/community/patchnotes', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->patchnotes();
-    });
-    $route->respond('get', '/community/pvprankings', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->pvprankings();
-    });
-    $route->respond('get', '/community/guildrankings', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->guildrankings();
-    });
-    $route->respond('get', '/community/staffteam', function () {
-        $user = new Classes\Utils\User;
-        $community = new App\Controllers\Community($user);
-        $community->staffteam();
+    $r->addGroup('/community', function (FastRoute\RouteCollector $r) {
+        $userClass = new Classes\Utils\User;
+        $community = new App\Controllers\Community($userClass);
+
+        $r->addRoute('GET', '/downloads', [($community), 'downloads']);
+        $r->addRoute('GET', '/discord', [($community), 'discord']);
+        $r->addRoute('GET', '/news', [($community), 'news']);
+        $r->addRoute('GET', '/patchnotes', [($community), 'patchnotes']);
+        $r->addRoute('GET', '/pvprankings', [($community), 'pvprankings']);
+        $r->addRoute('GET', '/guildrankings', [($community), 'guildrankings']);
+        $r->addRoute('GET', '/staffteam', [($community), 'staffteam']);
     });
     // Server Info
-    $route->respond('get', '/serverinfo/about', function () {
-        $user = new Classes\Utils\User;
-        $serverInfo = new App\Controllers\ServerInfo($user);
-        $serverInfo->about();
-    });
-    $route->respond('get', '/serverinfo/drops', function () {
-        $user = new Classes\Utils\User;
-        $serverInfo = new App\Controllers\ServerInfo($user);
-        $serverInfo->drops();
-    });
-    $route->respond('get', '/serverinfo/dropfinder', function () {
-        $user = new Classes\Utils\User;
-        $serverInfo = new App\Controllers\ServerInfo($user);
-        $serverInfo->dropfinder();
-    });
-    $route->respond('get', '/serverinfo/bossrecords', function () {
-        $user = new Classes\Utils\User;
-        $serverInfo = new App\Controllers\ServerInfo($user);
-        $serverInfo->bossrecords();
-    });
-    $route->respond('get', '/serverinfo/terms', function () {
-        $user = new Classes\Utils\User;
-        $serverInfo = new App\Controllers\ServerInfo($user);
-        $serverInfo->terms();
+    $r->addGroup('/serverinfo', function (FastRoute\RouteCollector $r) {
+        $userClass = new Classes\Utils\User;
+        $serverInfo = new App\Controllers\ServerInfo($userClass);
+
+        $r->addRoute('GET', '/about', [($serverInfo), 'about']);
+        $r->addRoute('GET', '/drops', [($serverInfo), 'drops']);
+        $r->addRoute('GET', '/dropfinder', [($serverInfo), 'dropfinder']);
+        $r->addRoute('GET', '/bossrecords', [($serverInfo), 'bossrecords']);
+        $r->addRoute('GET', '/terms', [($serverInfo), 'terms']);
     });
     // Auth
-    /* $route->respond('get', '/auth/logout', function () {
-        $user = new Classes\Utils\User;
-        $auth = new App\Controllers\Auth($user);
-        $auth->logout();
-    }); */
+    $r->addGroup('/auth', function (FastRoute\RouteCollector $r) {
+        $userClass = new Classes\Utils\User;
+        $auth = new App\Controllers\Auth($userClass);
+
+        $r->addRoute('POST', '/login', [($auth), 'login']);
+        $r->addRoute('POST', '/logout', [($auth), 'logout']);
+    });
     // User
-    $route->respond('get', '/user/profile', function () {
+    $r->addGroup('/user', function (FastRoute\RouteCollector $r) {
         $userClass = new Classes\Utils\User;
         $user = new App\Controllers\User($userClass);
-        $user->profile();
-    });
-    $route->respond('get', '/user/donate', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->donate();
-    });
-    $route->respond('get', '/user/donate_complete', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->donate_complete();
-    });
-    $route->respond('get', '/user/donate_process', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->donate_process();
-    });
-    //$route->respond('get', '/user/logout', function () {User::logout();});
-    $route->respond('get', '/user/messages', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->messages();
-    });
-    $route->respond('get', '/user/promotions', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->promotions();
-    });
-    $route->respond('get', '/user/pvprewards', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->pvprewards();
-    });
-    $route->respond('get', '/user/referers', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->referers();
-    });
-    $route->respond('get', '/user/settings', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->settings();
-    });
-    $route->respond('get', '/user/settings/privacy', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->settings();
-    });
-    $route->respond('get', '/user/settings/signature', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->settings();
-    });
-    $route->respond('get', '/user/support', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->support();
-    });
-    $route->respond('get', '/user/vote', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->vote();
-    });
-    $route->respond('get', '/user/users', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->users();
-    });
-    $route->respond('get', '/user/friends', function () {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->friends();
-    });
-    // Must be loaded after all other user routes
-    $route->respond('get', '/user/(int:id)', function ($id) {
-        $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->user($id);
+
+        $r->addRoute('GET', '/profile', [($user), 'profile']);
+        $r->addRoute('GET', '/donate', [($user), 'donate']);
+        $r->addRoute('GET', '/donate_complete', [($user), 'donate_complete']);
+        $r->addRoute('GET', '/donate_process', [($user), 'donate_process']);
+        $r->addRoute('GET', '/messages', [($user), 'messages']);
+        $r->addRoute('GET', '/promotions', [($user), 'promotions']);
+        $r->addRoute('GET', '/pvprewards', [($user), 'pvprewards']);
+        $r->addRoute('GET', '/referers', [($user), 'referers']);
+        $r->addRoute('GET', '/settings', [($user), 'settings']);
+        $r->addRoute('GET', '/settings/privacy', [($user), 'settings']);
+        $r->addRoute('GET', '/settings/signature', [($user), 'settings']);
+        $r->addRoute('GET', '/support', [($user), 'support']);
+        $r->addRoute('GET', '/vote', [($user), 'vote']);
+        $r->addRoute('GET', '/users', [($user), 'users']);
+        $r->addRoute('GET', '/friends', [($user), 'friends']);
+        $r->addRoute('GET', '/{id:\d+}', [($user), 'user']);
+
+        // Post
+        $r->addRoute('POST', '/promotions', [($user), 'promotions']);
     });
     // Forum
-    $route->respond('get', '/forum', function () {
-        $user = new Classes\Utils\User;
+    $r->addGroup('/forum', function (FastRoute\RouteCollector $r) {
+        $userClass = new Classes\Utils\User;
         $forum = new App\Controllers\Forum();
-        $forum->forum();
-    });
-    $route->respond('get', '/forum/topics/(any:id)', function ($id) {
-        $user = new Classes\Utils\User;
-        $forum = new App\Controllers\Forum();
-        $forum->topics($id);
-    });
-    $route->respond('get', '/forum/post/(any:id)', function ($id) {
-        $user = new Classes\Utils\User;
-        $forum = new App\Controllers\Forum();
-        $forum->posts($id);
-    });
-    $route->respond('get', '/forum/topics/view_topic/(any:id)', function ($id) {
-        $user = new Classes\Utils\User;
-        $forum = new App\Controllers\Forum();
-        $forum->view_topic($id);
+
+        $r->addRoute('GET', '', [($forum), 'forum']);
+        $r->addRoute('GET', '/topics/{id:\d+}', [($forum), 'topics']);
+        $r->addRoute('GET', '/post/{id:\d+}', [($forum), 'posts']);
+        $r->addRoute('GET', '/topics/view_topic/{id:\d+}', [($forum), 'view_topic']);
     });
     // Admin
-    $route->respond('get', '/admin', function () {
-        $user = new Classes\Utils\User;
-        $admin = new App\Controllers\Admin();
-        $admin->index();
-    });
-    $route->respond('get', '/admin/core/settings', function () {
-        echo 'core settings';
-    });
-    $route->respond('get', '/admin/core/user/(any:id)', function ($id) {
-        echo 'core settings: id: ' . $id;
-    });
-
-    //Errors
-    $route->respond('get', '/errors/301', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error301();
-    });
-    $route->respond('get', '/errors/307', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error307();
-    });
-    $route->respond('get', '/errors/400', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error400();
-    });
-    $route->respond('get', '/errors/401', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error401();
-    });
-    $route->respond('get', '/errors/403', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error403();
-    });
-    $route->respond('get', '/errors/404', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error404();
-    });
-    $route->respond('get', '/errors/405', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error405();
-    });
-    $route->respond('get', '/errors/408', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error408();
-    });
-    $route->respond('get', '/errors/500', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error500();
-    });
-    $route->respond('get', '/errors/502', function () {
-        $user = new Classes\Utils\User;
-        $errors = new App\Controllers\Errors();
-        $errors->error502();
-    });
-
-    // Post Responses
-    // Auth
-    $route->respond('post', '/auth/login', function () {
-        $user = new Classes\Utils\User;
-        $auth = new App\Controllers\Auth($user);
-        $auth->login();
-    });
-    $route->respond('post', '/auth/logout', function () {
-        $user = new Classes\Utils\User;
-        $auth = new App\Controllers\Auth($user);
-        $auth->logout();
-    });
-
-    // Promotions
-    $route->respond('post', '/user/promotions', function () {
+    $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {
         $userClass = new Classes\Utils\User;
-        $user = new App\Controllers\User($userClass);
-        $user->promotions();
+        $admin = new App\Controllers\Admin();
+
+        $r->addRoute('GET', '', [($admin), 'index']);
+        $r->addRoute('GET', '/core/settings', [($admin), 'index']);
+        $r->addRoute('GET', '/core/user/{id:\d+}', [($admin), 'index']);
     });
+    // Errors
+    $r->addGroup('/errors', function (FastRoute\RouteCollector $r) {
+        $userClass = new Classes\Utils\User;
+        $errors = new App\Controllers\Errors($userClass);
+
+        $r->addRoute('GET', '/301', [($errors), 'error301']);
+        $r->addRoute('GET', '/307', [($errors), 'error307']);
+        $r->addRoute('GET', '/400', [($errors), 'error400']);
+        $r->addRoute('GET', '/401', [($errors), 'error401']);
+        $r->addRoute('GET', '/403', [($errors), 'error403']);
+        $r->addRoute('GET', '/404', [($errors), 'error404']);
+        $r->addRoute('GET', '/405', [($errors), 'error405']);
+        $r->addRoute('GET', '/408', [($errors), 'error408']);
+        $r->addRoute('GET', '/500', [($errors), 'error500']);
+        $r->addRoute('GET', '/502', [($errors), 'error502']);
+    });
+});
