@@ -2,8 +2,7 @@
 
 namespace App\Controllers;
 
-use Classes\Utils\Browser;
-use Classes\Utils\User;
+use Classes\Utils as Utils;
 
 class User extends \Framework\Core\CoreController
 {
@@ -11,8 +10,8 @@ class User extends \Framework\Core\CoreController
 
     public static function donate()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -26,8 +25,8 @@ class User extends \Framework\Core\CoreController
 
     public static function donate_complete()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -41,8 +40,8 @@ class User extends \Framework\Core\CoreController
 
     public static function donate_process()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -57,8 +56,8 @@ class User extends \Framework\Core\CoreController
     public static function friends()
     {
         $Friends = self::model('Friends');
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'friends',
             'title' => 'Friends',
@@ -73,8 +72,8 @@ class User extends \Framework\Core\CoreController
 
     public static function messages()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -88,8 +87,8 @@ class User extends \Framework\Core\CoreController
 
     public static function profile()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -104,8 +103,8 @@ class User extends \Framework\Core\CoreController
     public static function promotions()
     {
         $promotions = self::model('Promotions');
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -121,8 +120,8 @@ class User extends \Framework\Core\CoreController
     public static function pvprewards()
     {
         $rewards = self::model('PvPRewards');
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -138,8 +137,8 @@ class User extends \Framework\Core\CoreController
 
     public static function referers()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -153,8 +152,8 @@ class User extends \Framework\Core\CoreController
 
     public static function settings()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -169,8 +168,8 @@ class User extends \Framework\Core\CoreController
     public static function support()
     {
         $support = self::model('Support');
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -187,7 +186,7 @@ class User extends \Framework\Core\CoreController
     {
         $userModel = self::model('User');
         $Friends = self::model('Friends');
-        $User = User::_fetch_User();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -204,8 +203,8 @@ class User extends \Framework\Core\CoreController
 
     public static function users()
     {
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
@@ -220,8 +219,8 @@ class User extends \Framework\Core\CoreController
     public static function vote()
     {
         $vote = self::model('Vote');
-        User::run();
-        $User = User::_fetch_User();
+        Utils\User::run();
+        $User = Utils\User::_fetch_User();
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',

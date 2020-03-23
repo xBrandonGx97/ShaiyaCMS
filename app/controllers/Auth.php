@@ -2,10 +2,7 @@
 
 namespace App\Controllers;
 
-use Classes\Utils\Auth;
-use Classes\Utils\Data;
-use Classes\Utils\Session;
-use Classes\Utils\User;
+use Classes\Utils as Utils;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class Auth extends \Framework\Core\CoreController
@@ -37,7 +34,7 @@ class Auth extends \Framework\Core\CoreController
                     'loggedOut' => true
                 ];
 
-                Auth::logout();
+                Utils\Auth::logout();
             }
             echo json_encode($arr);
         }
@@ -58,8 +55,8 @@ class Auth extends \Framework\Core\CoreController
             //If json_decode succeeded, the JSON is valid.
             if (is_array($decoded)) {
                 // Declare Required Variables
-                $UserName = isset($decoded['user']) ? Data::_do('escData', trim($decoded['user'])) : false;
-                $Password = isset($decoded['pw']) ? Data::_do('escData', trim($decoded['pw'])) : false;
+                $UserName = isset($decoded['user']) ? Utils\Data::_do('escData', trim($decoded['user'])) : false;
+                $Password = isset($decoded['pw']) ? Utils\Data::_do('escData', trim($decoded['pw'])) : false;
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 // Error Checking
                 $arr = [
@@ -89,10 +86,10 @@ class Auth extends \Framework\Core\CoreController
                             foreach ($fet as $userInfo) {
                                 if (password_verify($Password, $userInfo->Pw)) {
                                     if ($userInfo->Status == 0 || $userInfo->Status == 16 || $userInfo->Status == 32 || $userInfo->Status == 48 || $userInfo->Status == 64 || $userInfo->Status == 80 || $userInfo->Status == 128) {
-                                        Session::put('User', 'UserUID', $userInfo->UserUID);
-                                        Session::put('User', 'UserID', $userInfo->UserID);
-                                        Session::put('User', 'Status', $userInfo->Status);
-                                        User::updateLoginStatus(1);
+                                        Utils\Session::put('User', 'UserUID', $userInfo->UserUID);
+                                        Utils\Session::put('User', 'UserID', $userInfo->UserID);
+                                        Utils\Session::put('User', 'Status', $userInfo->Status);
+                                        Utils\User::updateLoginStatus(1);
                                         $arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
                                         $LastPage = $_SERVER['HTTP_REFERER'];
                                         $arr['finished'] .= 'true';
