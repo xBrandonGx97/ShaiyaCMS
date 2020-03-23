@@ -1,11 +1,14 @@
 <?php
+
+namespace App\Controllers;
+
 use Classes\Utils\Auth;
 use Classes\Utils\Data;
 use Classes\Utils\Session;
 use Classes\Utils\User;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class Auth_Controller extends CoreController
+class Auth_Controller extends \Framework\Core\CoreController
 {
     /* Get Methods */
 

@@ -1,15 +1,12 @@
 <?php
 
-//namespace Framework\Core;
+namespace Framework\Core;
 
 class CoreController
 {
     // Load model
     public static function model($model)
     {
-        // Require model file
-        require_once config['APPROOT'] . '/models/' . $model . '.php';
-
         // Instantiate model
         return new $model();
     }
@@ -17,7 +14,7 @@ class CoreController
     // Load view
     public static function view($view, $data = [])
     {
-        $blade = new BladeController('view');
+        $blade = new \Framework\Blade\BladeController('view');
         // Load Directives
         $blade->loadDirectives();
         // Load View
@@ -26,7 +23,7 @@ class CoreController
 
     public static function widget($view, $data = [])
     {
-        $blade = new BladeController('widget', $view);
+        $blade = new \Framework\Blade\BladeController('widget', $view);
         // Load Directives
         $blade->loadDirectives();
         // Load View

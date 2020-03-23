@@ -10,7 +10,12 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Compiler\\": "framework/libraries/compiler"
+      "Compiler\\": "framework/libraries/compiler",
+      "Classes\\": "app/classes",
+      "App\\Controllers\\": "app/controllers",
+      "App\\Models\\": "app/models",
+      "Framework\\Core\\": "framework/core",
+      "Framework\\Blade\\": "framework/blade"
     }
   }
 }

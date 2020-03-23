@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Models;
+
 use Illuminate\Database\Capsule\Manager as Eloquent;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +13,7 @@ class news extends Model
     {
         //$this->table = table('NEWS');
 
-        $this->MSSQL = new Classes\DB\MSSQL;
+        $this->MSSQL = new \Classes\DB\MSSQL;
     }
 
     public function getNews()

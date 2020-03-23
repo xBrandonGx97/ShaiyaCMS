@@ -2,7 +2,9 @@
     use Framework\Core\Route;
 
 // Default Route
-    Route::respond('get', '/', function () {Home_Controller::index();});
+    Route::respond('get', '/', function () {
+        App\Controllers\Home_Controller::index();
+    });
     // Community
     Route::respond('get', '/community/downloads', function () {Community_Controller::downloads();});
     Route::respond('get', '/community/discord', function () {Community_Controller::discord();});

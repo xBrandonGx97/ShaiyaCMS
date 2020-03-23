@@ -9,7 +9,7 @@
                                 <div>
                                     
                                     <?php
-                                        CoreController::widget($widget->Name);
+                                        Framework\Core\CoreController::widget($widget->Name);
                                     ?>
                                 </div>
                                 <div class="nk-gap-2"></div>

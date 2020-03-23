@@ -1,11 +1,14 @@
 <?php
+
+namespace App\Models;
+
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class patch_notes
 {
     public function __construct()
     {
-        $this->MSSQL = new Classes\DB\MSSQL;
+        $this->MSSQL = new \Classes\DB\MSSQL;
     }
 
     public function getPatchNotes()

@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Promotions extends Model
@@ -14,9 +17,9 @@ class Promotions extends Model
 
     public function __construct()
     {
-        $this->MSSQL = new Classes\DB\MSSQL;
-        $this->Data = new Classes\Utils\Data;
-        $this->User = new Classes\Utils\User;
+        $this->MSSQL = new \Classes\DB\MSSQL;
+        $this->Data = new \Classes\Utils\Data;
+        $this->User = new \Classes\Utils\User;
         $this->User->run();
         $this->User = $this->User->_fetch_User();
         //$this->getPromotions();

@@ -9,7 +9,7 @@
                                 <div>
                                     {{-- @require($GLOBALS['config']['WIDGETDIR'].$widget->Name.'/php/script.blade.php') --}}
                                     @php
-                                        CoreController::widget($widget->Name);
+                                        Framework\Core\CoreController::widget($widget->Name);
                                     @endphp
                                 </div>
                                 <div class="nk-gap-2"></div>

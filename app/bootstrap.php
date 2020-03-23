@@ -15,7 +15,6 @@ class Bootstrap
         require_once dirname(__DIR__) . '/vendor/autoload.php';
 
         self::init();
-        self::autoload();
     }
 
     private static function init()
@@ -57,107 +56,6 @@ class Bootstrap
         }
         // Start session
         //	session_start();
-    }
-
-    private static function autoload()
-    {
-        spl_autoload_register([__CLASS__, 'load']);
-    }
-
-    private static function load($classname)
-    {
-        $classFile = $classname . '.php';
-        $classPath = '';
-
-        if (self::$debug) {
-            echo '===> ' . __METHOD__ . ': classname(' . $classname . ') (Line: ' . __LINE__ . ')<br>';
-        }
-        if (substr($classname, -10) == 'Controller') {
-            if (is_file(CONTROLLER_PATH . $classFile)) {
-                if (self::$debug) {
-                    echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
-                } else {
-                }
-                $classPath = CONTROLLER_PATH;
-            } elseif (is_file(CORE_PATH . $classFile)) {
-                if (self::$debug) {
-                    echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
-                }
-                $classPath = CORE_PATH;
-            } elseif (is_file(BLADE_PATH . $classFile)) {
-                if (self::$debug) {
-                    echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
-                }
-                $classPath = BLADE_PATH;
-            }
-        } elseif (substr($classname, -5) == 'Model') {
-            if (is_file(MODELS_PATH . $classFile)) {
-                if (self::$debug) {
-                    echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
-                }
-                $classPath = MODELS_PATH;
-            }
-        } else {
-            $classDir = self::getNamespace($classname);
-            $classFile = self::getClassname($classname) . '.php';
-            if (self::$debug) {
-                echo 'classDir: ' . $classDir . '<br>';
-                echo 'classFile: ' . $classFile . '<br>';
-                echo 'Class Path: ' . APP_PATH . $classDir . DS . $classFile . ' (Line: ' . __LINE__ . ')<br>';
-            }
-
-            if (is_file(APP_PATH . $classDir . DS . $classFile)) {
-                if (self::$debug) {
-                    echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
-                }
-                $classPath = APP_PATH . $classDir . DS;
-            }
-        }
-
-        if (!$classPath == '') {
-            //	echo 'ClassPath: '.$classPath.'<br>';
-            //	echo 'ClassFile: '.$classFile.'<br>';
-
-            require_once $classPath . $classFile;
-            if (self::$debug) {
-                echo 'Class ' . $classFile . ' loaded.. (Line: ' . __LINE__ . ')<br><br>';
-            }
-        } else {
-            echo $classFile . ' does not exist.. (Line: ' . __LINE__ . ')<br>';
-        }
-        /*
-                    if(self::$debug){
-                        $namespaces=array();
-
-                        foreach(get_declared_classes() as $name) {
-                            if(preg_match_all("@[^\\\]+(?=\\\)@iU", $name, $matches)) {
-                                $matches = $matches[0];
-                                $parent =&$namespaces;
-                                while(count($matches)) {
-                                    $match = array_shift($matches);
-                                    if(!isset($parent[$match]) && count($matches))
-                                        $parent[$match] = array();
-                                    $parent =&$parent[$match];
-                                }
-                            }
-                        }
-
-                        print_r($namespaces);
-                    }
-        */
-    }
-
-    private static function getNamespace($path)
-    {
-        $parts = explode(SEPARATOR, $path);
-        array_pop($parts);
-        return implode(SEPARATOR, $parts);
-    }
-
-    private static function getClassname($path)
-    {
-        $parts = explode(SEPARATOR, $path);
-        return array_pop($parts);
     }
 
     public static function dispatch()

@@ -1,15 +1,18 @@
 <?php
-//	use Classes\Utils\Browser;
+
+    namespace App\Controllers;
+
+    //	use Classes\Utils\Browser;
     use Classes\Utils\Auth;
     use Classes\Utils\User;
     use Classes\Utils\Widget;
 
-    class Home_Controller extends CoreController
+    class Home_Controller extends \Framework\Core\CoreController
     {
         public static function index()
         {
-            $newsModel = self::model('news');
-            $serverInfo = self::model('server_info');
+            $newsModel = self::model('App\Models\news');
+            $serverInfo = self::model('App\Models\server_info');
 
             User::run();
             //$User			=	User::_fetch_User(User::$UserID);

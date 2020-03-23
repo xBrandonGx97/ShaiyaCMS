@@ -1,11 +1,14 @@
 <?php
+
+namespace App\Models;
+
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class guild_rankings
 {
     public function __construct()
     {
-        $this->MSSQL = new Classes\DB\MSSQL;
+        $this->MSSQL = new \Classes\DB\MSSQL;
     }
 
     public function getGuildRankings()

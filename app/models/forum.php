@@ -1,4 +1,7 @@
 <?php
+
+    namespace App\Models;
+
     class forum
     {
         public $fet;
@@ -15,8 +18,8 @@
 
         public function __construct()
         {
-            $this->MSSQL = new Classes\DB\MSSQL;
-            $this->User = new Classes\Utils\User;
+            $this->MSSQL = new \Classes\DB\MSSQL;
+            $this->User = new \Classes\Utils\User;
             $this->getForums();
         }
 

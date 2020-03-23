@@ -1,7 +1,10 @@
 <?php
+
+namespace App\Controllers;
+
 use Classes\Utils\User;
 
-class Errors_Controller extends CoreController
+class Errors_Controller extends \Framework\Core\CoreController
 {
     public static function error301()
     {

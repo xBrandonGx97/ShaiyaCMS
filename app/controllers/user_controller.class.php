@@ -1,8 +1,11 @@
 <?php
+
+namespace App\Controllers;
+
 use Classes\Utils\Browser;
 use Classes\Utils\User;
 
-class User_Controller extends CoreController
+class User_Controller extends \Framework\Core\CoreController
 {
     /* Get Methods */
 

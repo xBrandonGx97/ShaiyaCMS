@@ -1,5 +1,7 @@
 <?php
 
+namespace Framework\Blade;
+
 use Jenssegers\Blade\Blade;
 use \Classes\Utils\Auth;
 

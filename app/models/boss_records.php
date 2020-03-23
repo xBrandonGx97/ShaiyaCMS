@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Models;
+
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class boss_records
@@ -10,7 +13,7 @@ class boss_records
 
     public function __construct()
     {
-        $this->MSSQL = new Classes\DB\MSSQL;
+        $this->MSSQL = new \Classes\DB\MSSQL;
     }
 
     public function getBossRecords($time, $value)

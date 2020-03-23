@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Support extends Model
@@ -13,9 +16,9 @@ class Support extends Model
     {
         $this->table = table('SH_TICKETS');
 
-        $this->MSSQL = new Classes\DB\MSSQL;
-        $this->Data = new Classes\Utils\Data;
-        $this->User = new Classes\Utils\User;
+        $this->MSSQL = new \Classes\DB\MSSQL;
+        $this->Data = new \Classes\Utils\Data;
+        $this->User = new \Classes\Utils\User;
         $this->User->run();
         $this->User = $this->User->_fetch_User();
         //$this->getTickets();
