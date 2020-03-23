@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class guild_rankings
+class GuildRankings
 {
     public function __construct()
     {

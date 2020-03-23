@@ -2,7 +2,7 @@
 
     namespace App\Models;
 
-    class forum
+    class Forum
     {
         public $fet;
         public $row;

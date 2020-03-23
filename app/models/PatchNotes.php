@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class patch_notes
+class PatchNotes
 {
     public function __construct()
     {

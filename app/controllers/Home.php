@@ -13,8 +13,8 @@
 
         public function index()
         {
-            $newsModel = $this->model('App\Models\news');
-            $serverInfo = $this->model('App\Models\server_info');
+            $newsModel = $this->model('App\Models\News');
+            $serverInfo = $this->model('App\Models\ServerInfo');
 
             $this->user->run();
             $this->user->_fetch_User();

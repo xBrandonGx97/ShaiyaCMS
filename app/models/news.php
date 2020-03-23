@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 use Illuminate\Database\Eloquent\Model;
 
-class news extends Model
+class News extends Model
 {
     protected $table;
 

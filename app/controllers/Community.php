@@ -44,7 +44,7 @@ namespace App\Controllers;
 
         public function guildrankings()
         {
-            $guildRankingsModel = $this->model('App\Models\guild_rankings');
+            $guildRankingsModel = $this->model('App\Models\GuildRankings');
 
             $this->user->run();
             $this->user->_fetch_User();
@@ -102,7 +102,7 @@ namespace App\Controllers;
             $users = MSSQL::query()->table('NEWS')->insert($arr);
             var_dump($users); */
 
-            $newsModel = $this->model('App\Models\news');
+            $newsModel = $this->model('App\Models\News');
 
             $this->user->run();
             $this->user->_fetch_User();
@@ -120,7 +120,7 @@ namespace App\Controllers;
 
         public function patchnotes()
         {
-            $patchNotesModel = $this->model('App\Models\patch_notes');
+            $patchNotesModel = $this->model('App\Models\PatchNotes');
 
             $this->user->run();
             $this->user->_fetch_User();
@@ -138,7 +138,7 @@ namespace App\Controllers;
 
         public function pvprankings()
         {
-            $rankings = $this->model('App\Models\rankings');
+            $rankings = $this->model('App\Models\Rankings');
 
             $this->user->run();
             $this->user->_fetch_User();

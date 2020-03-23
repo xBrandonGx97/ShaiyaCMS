@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class server_info
+class ServerInfo
 {
     protected $ServerIP = '127.0.0.1';
     protected $ServerPorts = [6249, 6264];

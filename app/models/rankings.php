@@ -2,7 +2,7 @@
 
     namespace App\Models;
 
-    class rankings
+    class Rankings
     {
         public $data;
 

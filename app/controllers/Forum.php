@@ -8,7 +8,7 @@ class Forum extends \Framework\Core\CoreController
 {
     public static function forum()
     {
-        $forum = self::model('forum');
+        $forum = self::model('App\Models\Forum');
         User::run();
         $User = User::_fetch_User();
         $data = ['pageData' => [
@@ -25,7 +25,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function topics($id)
     {
-        $forum = self::model('forum');
+        $forum = self::model('App\Models\Forum');
         User::run();
         $User = User::_fetch_User();
         $data = ['pageData' => [
@@ -43,7 +43,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function posts($id)
     {
-        $forum = self::model('forum');
+        $forum = self::model('App\Models\Forum');
         User::run();
         $User = User::_fetch_User();
         $data = ['pageData' => [
@@ -61,7 +61,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function view_topic($id)
     {
-        $forum = self::model('forum');
+        $forum = self::model('App\Models\Forum');
         User::run();
         $User = User::_fetch_User();
         $UserStatus = User::get_Status($User['Status']);

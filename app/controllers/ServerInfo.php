@@ -28,7 +28,7 @@ namespace App\Controllers;
 
         public function bossrecords()
         {
-            $bossRecords = $this->model('App\Models\boss_records');
+            $bossRecords = $this->model('App\Models\BossRecords');
 
             $this->user->run();
             $this->user->_fetch_User();
@@ -46,7 +46,7 @@ namespace App\Controllers;
 
         public function dropfinder()
         {
-            $dropFinder = $this->model('App\Models\drop_finder');
+            $dropFinder = $this->model('App\Models\DropFinder');
 
             $this->user->run();
             $this->user->_fetch_User();

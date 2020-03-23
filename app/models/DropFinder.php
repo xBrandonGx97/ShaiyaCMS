@@ -5,7 +5,7 @@
     use Classes\Utils\Data;
     use Classes\Utils\User;
 
-    class drop_finder
+    class DropFinder
     {
         public $fet;
 

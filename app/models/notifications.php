@@ -2,7 +2,7 @@
 
     namespace App\Models;
 
-    class notifications
+    class Notifications
     {
         public function __construct()
         {
