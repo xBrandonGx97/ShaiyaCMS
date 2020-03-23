@@ -17,7 +17,7 @@
         <div class="container text-xs-center">
             @Separator(80)
             <h2 class="display-4">Promotions</h2>
-            @if (!$data['User']['LoginStatus']==true)
+            @guest
                 <p>Please login to continue.</p>
             @else
                 <form method="post">
@@ -46,7 +46,7 @@
                         @endforeach
                     @endif
                 @endif
-            @endif
+            @endguest
         </div>
         @Separator(40)
         @Separator(80)

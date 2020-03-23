@@ -16,7 +16,7 @@
         <div class="container text-xs-center">
             <?php Separator(80) ?>
             <h2 class="display-4">Promotions</h2>
-            <?php if(!$data['User']['LoginStatus']==true): ?>
+            <?php if (\Illuminate\Support\Facades\Blade::check('guest')): ?>
                 <p>Please login to continue.</p>
             <?php else: ?>
                 <form method="post">

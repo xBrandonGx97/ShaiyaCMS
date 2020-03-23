@@ -17,11 +17,11 @@
         <div class="container text-xs-center">
             @Separator(80)
             <h2 class="display-4">Donate</h2>
-            @if (!$data['User']['LoginStatus']==true)
+            @guest
                 <p>Please login to continue.</p>
                 @else
                 <div class="text-center mb-50">For billing inquiries, you may send an email to <a href = "mailto:7mano1320@gmail.com">7mano1320@gmail.com</a>.</div>
-            @endif
+            @endguest
         </div>
         @Separator(40)
         @Separator(80)

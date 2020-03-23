@@ -6,14 +6,18 @@
 
     class Home extends \Framework\Core\CoreController
     {
+        public function __construct(Utils\User $user)
+        {
+            $this->user = $user;
+        }
+
         public function index()
         {
             $newsModel = $this->model('App\Models\news');
             $serverInfo = $this->model('App\Models\server_info');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $widget = new Utils\Widget();
             $widget = $widget->display();
@@ -24,7 +28,7 @@
                 'zone' => 'CMS',
                 'nav' => true,
             ],
-                'User' => $user,
+                'User' => $this->user,
                 'news' => $newsModel->getNews(),
                 'serverinfo' => $serverInfo,
                 'widget' => $widget,

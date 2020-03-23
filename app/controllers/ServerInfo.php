@@ -6,18 +6,22 @@ namespace App\Controllers;
 
     class ServerInfo extends \Framework\Core\CoreController
     {
+        public function __construct(Utils\User $user)
+        {
+            $this->user = $user;
+        }
+
         public function about()
         {
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/serverinfo/about', $data);
         }
@@ -26,9 +30,8 @@ namespace App\Controllers;
         {
             $bossRecords = $this->model('App\Models\boss_records');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -36,7 +39,7 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'bossrecords' => $bossRecords,
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/serverinfo/bossrecords', $data);
         }
@@ -45,9 +48,8 @@ namespace App\Controllers;
         {
             $dropFinder = $this->model('App\Models\drop_finder');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -55,39 +57,37 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'dropfinder' => $dropFinder,
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/serverinfo/dropfinder', $data);
         }
 
         public function drops()
         {
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/serverinfo/drops', $data);
         }
 
         public function terms()
         {
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/serverinfo/terms', $data);
         }

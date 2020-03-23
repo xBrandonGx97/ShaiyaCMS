@@ -7,6 +7,11 @@ use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class Auth extends \Framework\Core\CoreController
 {
+    public function __construct(Utils\User $user)
+    {
+        $this->user = $user;
+    }
+
     /* Get Methods */
 
     public function logout()
@@ -89,8 +94,7 @@ class Auth extends \Framework\Core\CoreController
                                         Utils\Session::put('User', 'UserUID', $userInfo->UserUID);
                                         Utils\Session::put('User', 'UserID', $userInfo->UserID);
                                         Utils\Session::put('User', 'Status', $userInfo->Status);
-                                        $user = new Utils\User;
-                                        $user->updateLoginStatus(1);
+                                        $this->user->updateLoginStatus(1);
                                         $arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
                                         $LastPage = $_SERVER['HTTP_REFERER'];
                                         $arr['finished'] .= 'true';

@@ -1,19 +1,18 @@
-@extends('layouts.cms.app')
-@section('title', 'User Settings')
-@section('zone', 'CMS')
-@section('headerTitle', 'User Settings')
-@section('content')
-    {{-- @include('pages.cms.home.inc.page_bg') --}}
-    @include('partials.cms.pageBorder')
+<?php $__env->startSection('title', 'User Settings'); ?>
+<?php $__env->startSection('zone', 'CMS'); ?>
+<?php $__env->startSection('headerTitle', 'User Settings'); ?>
+<?php $__env->startSection('content'); ?>
+    
+    <?php echo $__env->make('partials.cms.pageBorder', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <header class="nk-header nk-header-opaque">
-        @include('partials.cms.topNav')
-        @include('partials.cms.nav')
+        <?php echo $__env->make('partials.cms.topNav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('partials.cms.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </header>
-    @include('partials.cms.rightNav')
-	@include('partials.cms.mobileNav')
+    <?php echo $__env->make('partials.cms.rightNav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+	<?php echo $__env->make('partials.cms.mobileNav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="nk-main">
-        @include('partials.cms.pageHeader')
-		@include('partials.cms.signForms')
+        <?php echo $__env->make('partials.cms.pageHeader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="nk-gap-6"></div>
         <div class="container">
                 <div class="nk-social-profile nk-social-profile-container-offset">
@@ -118,7 +117,7 @@
                         </aside>
                         <!-- END: Sidebar -->
                     </div>
-                    @php
+                    <?php
                         $url = checkUrl();
                         if(isset($url[2])) {
                             $handler    =   $url[2];
@@ -128,7 +127,7 @@
                             $privacy    =   NULL;
                             $signature  =   NULL;
                         }
-                    @endphp
+                    ?>
                     <div class="col-lg-9">
                         <div class="nk-gap-2 d-none d-lg-block"></div>
                         <div class="nk-social-menu-inline">
@@ -171,16 +170,16 @@
                                                 <h4 class="text-center">Social Information</h4>
                                                 <h6 class="text-center">This information will be displayed publicly.</h6>
                                                 <em>Your current user title is: <strong>You don't have a user title set.</strong></em>
-                                                <input type="text" class="form-control" name="password2" id="usertitle" value="{{$data['User']->userTitle}}" placeholder="Custom User Title">
+                                                <input type="text" class="form-control" name="password2" id="usertitle" value="<?php echo e($data['User']->userTitle); ?>" placeholder="Custom User Title">
                                                 <div class="nk-gap-2"></div>
                                                 <em>Enter your complete Discord handle here. Ex: Fox#0123.</em>
-                                                <input type="text" class="form-control" name="discord" id="discord" value="{{$data['User']->Discord}}" placeholder="Discord">
+                                                <input type="text" class="form-control" name="discord" id="discord" value="<?php echo e($data['User']->Discord); ?>" placeholder="Discord">
                                                 <div class="nk-gap-2"></div>
                                                 <em>Enter your Skype name.</em>
-                                                <input type="text" class="form-control" name="skype" id="skype" value="{{$data['User']->Skype}}" placeholder="Skype">
+                                                <input type="text" class="form-control" name="skype" id="skype" value="<?php echo e($data['User']->Skype); ?>" placeholder="Skype">
                                                 <div class="nk-gap-2"></div>
                                                 <em>Enter your Steam ID.</em>
-                                                <input type="text" class="form-control" name="steam" id="steam" value="{{$data['User']->Steam}}" placeholder="Steam">
+                                                <input type="text" class="form-control" name="steam" id="steam" value="<?php echo e($data['User']->Steam); ?>" placeholder="Steam">
                                                 <div class="nk-gap-2"></div>
                                                 <button class="nk-btn link-effect-4 float-right" id="save_changes_settings">Save Changes</button>
                                             </div>
@@ -206,12 +205,12 @@
                                                             <td class="nk-social-settings-table-title">Display profile publicly</td>
                                                             <td class="nk-social-settings-table-check">
                                                                 <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="notification1" value="public" {{$data['User']->DisplayProfile === 'Public' ? 'checked' : ''}}>
+                                                                    <input type="radio" class="form-check-input" name="notification1" value="public" <?php echo e($data['User']->DisplayProfile === 'Public' ? 'checked' : ''); ?>>
                                                                 </label>
                                                             </td>
                                                             <td class="nk-social-settings-table-check">
                                                                 <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="notification1" value="private" {{$data['User']->DisplayProfile === 'Public' ? '' : 'checked'}}>
+                                                                    <input type="radio" class="form-check-input" name="notification1" value="private" <?php echo e($data['User']->DisplayProfile === 'Public' ? '' : 'checked'); ?>>
                                                                 </label>
                                                             </td>
                                                         </tr>
@@ -219,12 +218,12 @@
                                                             <td class="nk-social-settings-table-title">Display Social handles publicly</td>
                                                             <td class="nk-social-settings-table-check">
                                                                 <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="notification2" value="public" {{$data['User']->DisplaySocials === 'Public' ? 'checked' : ''}}>
+                                                                    <input type="radio" class="form-check-input" name="notification2" value="public" <?php echo e($data['User']->DisplaySocials === 'Public' ? 'checked' : ''); ?>>
                                                                 </label>
                                                             </td>
                                                             <td class="nk-social-settings-table-check">
                                                                 <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="notification2" value="private" {{$data['User']->DisplaySocials === 'Public' ? '' : 'checked'}}>
+                                                                    <input type="radio" class="form-check-input" name="notification2" value="private" <?php echo e($data['User']->DisplaySocials === 'Public' ? '' : 'checked'); ?>>
                                                                 </label>
                                                             </td>
                                                         </tr>
@@ -300,193 +299,8 @@
                                         </form>
                                      </div>
                                 </div>
-                                {{--<ul class="nav" role="tablist">
-                                    <li class="{{($privacy) ? '' : (($signature) ? '' : 'active')}}">
-                                        <a class="nav-link{{$privacy ? '' : (($signature) ? '' : ' active show')}}" href="#tabs-2-1" role="tab" data-toggle="tab" aria-selected="true">General</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#tabs-2-2" role="tab" data-toggle="tab" aria-selected="false">Email</a>
-                                    </li>
-                                    <li class="{{$signature ? 'active' : ''}}">
-                                        <a class="nav-link {{$signature ? 'active show' : ''}}" href="#tabs-2-3" role="tab" data-toggle="tab">Signature</a>
-                                    </li>
-                                    <li class="{{$privacy ? 'active' : ''}}">
-                                        <a class="nav-link {{$privacy ? 'active show' : ''}}" href="#tabs-2-4" role="tab" data-toggle="tab">Privacy</a>
-                                    </li>
-                                </ul>--}}
-                                {{--<div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade {{$privacy ? '' : (($signature) ? '' : 'active show')}}" id="tabs-2-1">
-                                        <div class="nk-gap-1"></div>
-                                        <div class="nk-social-container">
-                                            <!-- START: Settings -->
-                                            <form action="#" method="post">
-                                                <input type="email" class="form-control" name="email" placeholder="Account Email" value="mymail@gmail.com">
-                                                <div class="nk-gap-2"></div>
-                                                <input type="password" class="form-control" name="password" placeholder="Change Password">
-                                                <div class="nk-gap-2"></div>
-                                                <input type="password" class="form-control" name="password2" placeholder="New Password">
-                                                <div class="mt-10">
-                                                    <em>Repeat New Password</em>
-                                                </div>
-                                                <div class="nk-gap-2"></div>
-                                                <div style="border-bottom: 1px solid white;"></div>
-                                                <div class="nk-gap-2"></div>
-                                                <div class="social-tab">
-                                                    <p id="response"></p>
-                                                    <h4 class="text-center">Social Information</h4>
-                                                    <h6 class="text-center">This information will be displayed publicly.</h6>
-                                                    <em>Your current user title is: <strong>You don't have a user title set.</strong></em>
-                                                    <input type="text" class="form-control" name="password2" id="usertitle" value="{{$data['User']['userTitle']}}" placeholder="Custom User Title">
-                                                    <div class="nk-gap-2"></div>
-                                                    <em>Enter your complete Discord handle here. Ex: Fox#0123.</em>
-                                                    <input type="text" class="form-control" name="discord" id="discord" value="{{$data['User']['Discord']}}" placeholder="Discord">
-                                                    <div class="nk-gap-2"></div>
-                                                     <em>Enter your Skype name.</em>
-                                                    <input type="text" class="form-control" name="skype" id="skype" value="{{$data['User']['Skype']}}" placeholder="Skype">
-                                                    <div class="nk-gap-2"></div>
-                                                     <em>Enter your Steam ID.</em>
-                                                    <input type="text" class="form-control" name="steam" id="steam" placeholder="Steam">
-                                                    <div class="nk-gap-2"></div>
-                                                    <button class="nk-btn link-effect-4 float-right" id="save_changes_settings">Save Changes</button>
-                                                </div>
-                                            </form>
-                                            <!-- END: Settings -->
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tabs-2-2">
-                                        <div class="nk-gap-1"></div>
-                                        test1
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade {{$signature ? 'active show' : ''}}" id="tabs-2-3">
-                                        <div class="nk-gap-1"></div>
-                                        signature
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade {{$privacy ? 'active show' : ''}}" id="tabs-2-4">
-                                        <div class="nk-gap-1"></div>
-                                        <div class="nk-social-container">
-                                            <form action="#" method="post">
-                                                <div class="table-responsive nk-social-settings-table">
-                                                    <table class="table table-bordered">
-                                                        <thead class="thead-default">
-                                                            <tr>
-                                                                <th class="nk-social-settings-table-title">General</th>
-                                                                <th class="nk-social-settings-table-check">Public</th>
-                                                                <th class="nk-social-settings-table-check">Private</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="nk-social-settings-table-title">Display profile publicly</td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="public" checked="checked">
-                                                                    </label>
-                                                                </td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="private">
-                                                                    </label>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="nk-social-settings-table-title">Display Social handles publicly</td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="public" checked="checked">
-                                                                    </label>
-                                                                </td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="private">
-                                                                    </label>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <div class="nk-gap"></div>
-                                                <div class="table-responsive nk-social-settings-table">
-                                                    <table class="table table-bordered">
-                                                        <thead class="thead-default">
-                                                            <tr>
-                                                                <th class="nk-social-settings-table-title">Email</th>
-                                                                <th class="nk-social-settings-table-check">Yes</th>
-                                                                <th class="nk-social-settings-table-check">No</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="nk-social-settings-table-title">A user sends you a new message</td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="public" checked="checked">
-                                                                    </label>
-                                                                </td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="private">
-                                                                    </label>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="nk-social-settings-table-title">A user replies to a comment you posted</td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="public" checked="checked">
-                                                                    </label>
-                                                                </td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="private">
-                                                                    </label>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="nk-social-settings-table-title">A user sends you a friend request</td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="public" checked="checked">
-                                                                    </label>
-                                                                </td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="private">
-                                                                    </label>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="nk-social-settings-table-title">A user accepts your friend request</td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="public" checked="checked">
-                                                                    </label>
-                                                                </td>
-                                                                <td class="nk-social-settings-table-check">
-                                                                    <label class="form-check-label">
-                                                                        <input type="radio" class="form-check-input" name="notification1" value="private">
-                                                                    </label>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                --}}{{--<em>Display profile publicly:</em>
-                                                <input type="radio" id="public" name="public" value="public">
-                                                <label for="public">Public</label>
-                                                <input type="radio" id="private" name="private" value="private">
-                                                <label for="private">Private</label>
-
-                                                <div class="nk-gap-1"></div>
-
-                                                <em>Display Social handles publicly:</em>
-                                                <input type="radio" id="public" name="public" value="public">
-                                                <label for="public">Public</label>
-                                                <input type="radio" id="private" name="private" value="private">
-                                                <label for="private">Private</label>--}}{{--
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>--}}
+                                
+                                
                         </div>
                         <div class="nk-gap-4"></div>
                     </div>
@@ -495,4 +309,5 @@
                 <div class="nk-gap-3"></div>
             </div>
         </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/cms/user/settings.blade.php ENDPATH**/ ?>

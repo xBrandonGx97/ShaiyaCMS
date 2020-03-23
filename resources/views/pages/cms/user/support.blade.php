@@ -27,7 +27,7 @@
                                     <a class="nav-link active" href="#tabs-3-1" role="tab" data-toggle="tab">My Tickets</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link open_send_ticket_modal" data-id="{{$data['User']['UserUID']}}" data-toggle="modal" data-target="#get_ticket_modal" href="#">New Ticket</a>
+                                    <a class="nav-link open_send_ticket_modal" data-id="{{$data['User']->UserUID}}" data-toggle="modal" data-target="#get_ticket_modal" href="#">New Ticket</a>
                                 </li>
                             </ul>
                             <div class="tab-content">

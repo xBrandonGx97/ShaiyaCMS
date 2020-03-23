@@ -16,7 +16,7 @@
         <div class="container text-xs-center">
             <?php Separator(80) ?>
             <h2 class="display-4">Donate</h2>
-            <?php if(!$data['User']['LoginStatus']==true): ?>
+            <?php if (\Illuminate\Support\Facades\Blade::check('guest')): ?>
                 <p>Please login to continue.</p>
                 <?php else: ?>
                 <div class="text-center mb-50">For billing inquiries, you may send an email to <a href = "mailto:7mano1320@gmail.com">7mano1320@gmail.com</a>.</div>

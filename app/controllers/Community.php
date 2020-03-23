@@ -6,18 +6,22 @@ namespace App\Controllers;
 
     class Community extends \Framework\Core\CoreController
     {
+        public function __construct(Utils\User $user)
+        {
+            $this->user = $user;
+        }
+
         public function discord()
         {
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
             ];
 
             $this->view('pages/cms/community/discord', $data);
@@ -25,16 +29,15 @@ namespace App\Controllers;
 
         public function downloads()
         {
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/community/downloads', $data);
         }
@@ -43,9 +46,8 @@ namespace App\Controllers;
         {
             $guildRankingsModel = $this->model('App\Models\guild_rankings');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -53,7 +55,7 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'guildrankings' => $guildRankingsModel->getGuildRankings(),
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/community/guildrankings', $data);
         }
@@ -102,9 +104,8 @@ namespace App\Controllers;
 
             $newsModel = $this->model('App\Models\news');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -112,7 +113,7 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'news' => $newsModel->getNews(),
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/community/news', $data);
         }
@@ -121,9 +122,8 @@ namespace App\Controllers;
         {
             $patchNotesModel = $this->model('App\Models\patch_notes');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -131,7 +131,7 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'patchnotes' => $patchNotesModel->getPatchNotes(),
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/community/patchnotes', $data);
         }
@@ -140,16 +140,15 @@ namespace App\Controllers;
         {
             $rankings = $this->model('App\Models\rankings');
 
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'rankings',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
                 'Rankings' => $rankings
             ];
             $this->view('pages/cms/community/pvprankings', $data);
@@ -157,16 +156,15 @@ namespace App\Controllers;
 
         public function staffteam()
         {
-            $user = new Utils\User();
-            $user->run();
-            $user->_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $user,
+                'User' => $this->user,
             ];
             $this->view('pages/cms/community/staffteam', $data);
         }

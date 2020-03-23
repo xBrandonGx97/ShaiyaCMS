@@ -6,13 +6,17 @@ use Classes\Utils as Utils;
 
 class User extends \Framework\Core\CoreController
 {
+    public function __construct(Utils\User $user)
+    {
+        $this->user = $user;
+    }
+
     /* Get Methods */
 
     public function donate()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -20,16 +24,15 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/donate', $data);
     }
 
     public function donate_complete()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -37,16 +40,15 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/donate_complete', $data);
     }
 
     public function donate_process()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -54,7 +56,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/donate_process', $data);
     }
@@ -63,9 +65,8 @@ class User extends \Framework\Core\CoreController
     {
         $Friends = $this->model('App\Models\Friends');
 
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'friends',
@@ -73,7 +74,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
             'Friends' => $Friends
         ];
         $this->view('pages/cms/user/friends', $data);
@@ -81,9 +82,8 @@ class User extends \Framework\Core\CoreController
 
     public function messages()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -91,16 +91,15 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/messages', $data);
     }
 
     public function profile()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -108,7 +107,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/profile', $data);
     }
@@ -117,9 +116,8 @@ class User extends \Framework\Core\CoreController
     {
         $promotions = $this->model('App\Models\Promotions');
 
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -127,7 +125,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
             'promotions' => $promotions,
         ];
         $this->view('pages/cms/user/promotions', $data);
@@ -137,9 +135,8 @@ class User extends \Framework\Core\CoreController
     {
         $rewards = $this->model('App\Models\PvPRewards');
 
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $Browser = new Utils\Browser;
         $Browser = $Browser->run();
@@ -150,7 +147,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
             'Browser' => $Browser,
             'rewards' => $rewards,
         ];
@@ -159,9 +156,8 @@ class User extends \Framework\Core\CoreController
 
     public function referers()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -169,16 +165,15 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/referers', $data);
     }
 
     public function settings()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -186,7 +181,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/settings', $data);
     }
@@ -195,9 +190,8 @@ class User extends \Framework\Core\CoreController
     {
         $support = $this->model('App\Models\Support');
 
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -205,7 +199,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
             'support' => $support,
         ];
         $this->view('pages/cms/user/support', $data);
@@ -216,9 +210,8 @@ class User extends \Framework\Core\CoreController
         $userModel = $this->model('App\Models\User');
         $Friends = $this->model('App\Models\Friends');
 
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -226,7 +219,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
             'userModel' => $userModel,
             'userID' => $id,
             'Friends' => $Friends
@@ -236,9 +229,8 @@ class User extends \Framework\Core\CoreController
 
     public function users()
     {
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -246,7 +238,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
         ];
         $this->view('pages/cms/user/users', $data);
     }
@@ -255,9 +247,8 @@ class User extends \Framework\Core\CoreController
     {
         $vote = $this->model('App\Models\Vote');
 
-        $user = new Utils\User();
-        $user->run();
-        $user->_fetch_User();
+        $this->user->run();
+        $this->user->_fetch_User();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -265,7 +256,7 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $user,
+            'User' => $this->user,
             'vote' => $vote
         ];
         $this->view('pages/cms/user/vote', $data);
