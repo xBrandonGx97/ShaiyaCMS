@@ -1,1 +1,0 @@
-<?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\views/inc/cms/shareButtons.blade.php ENDPATH**/ ?>

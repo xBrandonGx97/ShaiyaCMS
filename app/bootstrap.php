@@ -1,7 +1,9 @@
 <?php
 use Compiler\Compiler;
-use \Classes\Utils\User;
+use Classes\Utils\User;
 use Dotenv\Dotenv;
+
+namespace App;
 
 class Bootstrap
 {
@@ -10,7 +12,7 @@ class Bootstrap
     public static function run()
     {
         // Load Vendor autoloader for Vendor resources
-        require dirname(__DIR__) . '/vendor/autoload.php';
+        require_once dirname(__DIR__) . '/vendor/autoload.php';
 
         self::init();
         self::autoload();
@@ -44,13 +46,12 @@ class Bootstrap
         define('UPLOAD_PATH', PUBLIC_PATH . 'uploads' . DS);
         if (!defined('AJAX_CALL')) {
             // Load core classes
-            require CORE_PATH . 'loader.class.php';
+            require_once CORE_PATH . 'loader.php';
             // Load Dotenv
             self::initDotEnv();
 
             // Load configuration file
-            define('config', require CONFIG_PATH . 'config.php');
-            $GLOBALS['config'] = require CONFIG_PATH . 'config.php';
+            define('config', require_once CONFIG_PATH . 'config.php');
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
         }
@@ -65,7 +66,7 @@ class Bootstrap
 
     private static function load($classname)
     {
-        $classFile = $classname . '.class.php';
+        $classFile = $classname . '.php';
         $classPath = '';
 
         if (self::$debug) {
@@ -98,7 +99,7 @@ class Bootstrap
             }
         } else {
             $classDir = self::getNamespace($classname);
-            $classFile = self::getClassname($classname) . '.class.php';
+            $classFile = self::getClassname($classname) . '.php';
             if (self::$debug) {
                 echo 'classDir: ' . $classDir . '<br>';
                 echo 'classFile: ' . $classFile . '<br>';
@@ -161,18 +162,19 @@ class Bootstrap
 
     public static function dispatch()
     {
-        $Helpers = new Classes\Utils\Helpers();
+        $modal = new \Classes\Utils\Modal();
+        $helpers = new \Classes\Utils\Helpers($modal);
         // Init Capsule
-        Classes\DB\MSSQL::initCapsule();
+        \Classes\DB\MSSQL::initCapsule();
         // Init Session
-        Classes\Utils\Session::init('Default');
+        \Classes\Utils\Session::init('Default');
         // Load Helpers
-        Core\Loader::helper('modal');
-        Core\Loader::helper('template');
-        Core\Loader::helper('url');
-        Core\Loader::helper('abort');
-        Core\Loader::helper('redirect');
-        Core\Loader::helper('table');
+        \Core\Loader::helper('modal');
+        \Core\Loader::helper('template');
+        \Core\Loader::helper('url');
+        \Core\Loader::helper('abort');
+        \Core\Loader::helper('redirect');
+        \Core\Loader::helper('table');
         // Init DotEnv
         //self::initDotEnv();
         // Init
@@ -181,11 +183,11 @@ class Bootstrap
         self::getLang();
         self::load_langs();
         // Load Route
-        require_once CORE_PATH . 'route.class.php';
-        Core\Route::run();
+        require_once CORE_PATH . 'route.php';
+        \Core\Route::run();
         // Load Routes
-        require_once ROUTES_PATH . 'routes.class.php';
-        Core\Route::checkRoute();
+        require_once ROUTES_PATH . 'routes.php';
+        \Core\Route::checkRoute();
         self::load_defaults();
     }
 
@@ -195,16 +197,16 @@ class Bootstrap
             self::run();
 
             // Load Config
-            $GLOBALS['config'] = require CONFIG_PATH . 'config.php';
+            define('config', require_once CONFIG_PATH . 'config.php');
 
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Load Purifier Method
-            Classes\Utils\Data::_do('load_purifier');
+            \Classes\Utils\Data::_do('load_purifier');
 
             // Load Helpers
-            foreach (scandir($GLOBALS['config']['FWROOT'] . '/Helpers/') as $filename) {
-                $path = $GLOBALS['config']['FWROOT'] . '/Helpers/' . $filename;
+            foreach (scandir(config['FWROOT'] . '/Helpers/') as $filename) {
+                $path = config['FWROOT'] . '/Helpers/' . $filename;
                 if (is_file($path)) {
                     require_once $path;
                 }
@@ -255,15 +257,15 @@ class Bootstrap
 
     public static function load_langs()
     {
-        $compiler = new Compiler();
+        $compiler = new \Compiler\Compiler();
         $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
         require_once LIB_PATH . 'translate.php';
     }
 
     public static function load_defaults()
     {
-        User::initPrivacy();
-        User::initSocials();
+        \Classes\Utils\User::initPrivacy();
+        \Classes\Utils\User::initSocials();
     }
 
     public static function load_helpers()
@@ -274,7 +276,7 @@ class Bootstrap
     {
         $rootDir = dirname(dirname(__FILE__));
         //echo 'dirname: ' . $rootDir;
-        $dotenv = Dotenv::createImmutable($rootDir);
+        $dotenv = \Dotenv\Dotenv::createImmutable($rootDir);
         $dotenv->load();
     }
 }

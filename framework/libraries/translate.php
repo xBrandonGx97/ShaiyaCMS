@@ -9,7 +9,7 @@
     $locale_lang = CURRENT_LANG;
     //echo 'locale lang: '.CURRENT_LANG;
     global $locale_file;
-    $locale_file = new FileReader($GLOBALS['config']['ROOT'] . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.mo');
+    $locale_file = new FileReader(config['ROOT'] . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.mo');
     global $locale_fetch;
     $locale_fetch = new gettext_reader($locale_file);
 
