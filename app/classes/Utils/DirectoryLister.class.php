@@ -1,6 +1,5 @@
 <?php
 	namespace Classes\Utils;
-	if(!defined('IN_CMS')){die('<b>'.__NAMESPACE__.'\DiectoryLister</b>: unauthorized access detected, exiting...');}
 
 	class DirectoryLister {
 		const VERSION = '2.7.0';

@@ -90,11 +90,11 @@ class Bootstrap
                 $classPath = BLADE_PATH;
             }
         } elseif (substr($classname, -5) == 'Model') {
-            if (is_file(MODEL_PATH . $classFile)) {
+            if (is_file(MODELS_PATH . $classFile)) {
                 if (self::$debug) {
                     echo $classFile . ' exists.. (Line: ' . __LINE__ . ')<br>';
                 }
-                $classPath = MODEL_PATH;
+                $classPath = MODELS_PATH;
             }
         } else {
             $classDir = self::getNamespace($classname);
@@ -161,6 +161,7 @@ class Bootstrap
 
     public static function dispatch()
     {
+        $Helpers = new Classes\Utils\Helpers();
         // Init Capsule
         Classes\DB\MSSQL::initCapsule();
         // Init Session
@@ -191,8 +192,6 @@ class Bootstrap
     public static function _is_ajax()
     {
         if (defined('AJAX_CALL')) {
-            // Define Security
-            define('IN_CMS', true);
             self::run();
 
             // Load Config

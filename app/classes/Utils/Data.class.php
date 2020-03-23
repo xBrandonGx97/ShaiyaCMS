@@ -1,6 +1,5 @@
 <?php
 	namespace Classes\Utils;
-	if(!defined('IN_CMS')){die('<b>'.__NAMESPACE__.'\Data</b>: unauthorized access detected, exiting...');}
 
 	class Data{
 

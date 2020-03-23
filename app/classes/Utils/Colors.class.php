@@ -2,10 +2,6 @@
 
    namespace Classes\Utils;
 
-    if (!defined('IN_CMS')) {
-        die('<b>' . __NAMESPACE__ . '\Colors</b>: unauthorized access detected, exiting...');
-    }
-
     class Colors
     {
         private $Alpha = false;

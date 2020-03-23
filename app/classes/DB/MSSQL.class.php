@@ -5,10 +5,6 @@
     use \PDO;
     use Illuminate\Database\Capsule\Manager as Capsule;
 
-    if (!defined('IN_CMS')) {
-        die('<b>' . __NAMESPACE__ . '\MSSQL</b>: unauthorized access detected, exiting...');
-    }
-
     class MSSQL
     {
         private static $dbh;

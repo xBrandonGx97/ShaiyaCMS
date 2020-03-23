@@ -2,10 +2,6 @@
 
    namespace Classes\Utils;
 
-    if (!defined('IN_CMS')) {
-        die('<b>' . __NAMESPACE__ . '\User</b>: unauthorized access detected, exiting...');
-    }
-
     use Classes\DB\MSSQL;
     use Illuminate\Database\Capsule\Manager as Eloquent;
 

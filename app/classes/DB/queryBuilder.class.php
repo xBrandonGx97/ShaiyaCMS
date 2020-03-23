@@ -2,10 +2,6 @@
 
    namespace Classes\DB;
 
-   if (!defined('IN_CMS')) {
-       die('<b>' . __NAMESPACE__ . '\queryBuilder</b>: unauthorized access detected, exiting...');
-   }
-
     class queryBuilder
     {
         private $connection;
