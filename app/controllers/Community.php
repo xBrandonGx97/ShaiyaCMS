@@ -2,58 +2,63 @@
 
 namespace App\Controllers;
 
-    use Classes\Utils\User;
-    use Classes\DB\MSSQL;
-    use Classes\Utils\Session;
+    use Classes\Utils as Utils;
 
     class Community extends \Framework\Core\CoreController
     {
-        public static function discord()
+        public function discord()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
             ];
 
-            self::view('pages/cms/community/discord', $data);
+            $this->view('pages/cms/community/discord', $data);
         }
 
-        public static function downloads()
+        public function downloads()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/community/downloads', $data);
+            $this->view('pages/cms/community/downloads', $data);
         }
 
-        public static function guildrankings()
+        public function guildrankings()
         {
-            $guildRankingsModel = self::model('guild_rankings');
-            User::run();
-            $User = User::_fetch_User();
+            $guildRankingsModel = $this->model('App\Models\guild_rankings');
+
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
                 'guildrankings' => $guildRankingsModel->getGuildRankings(),
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/community/guildrankings', $data);
+            $this->view('pages/cms/community/guildrankings', $data);
         }
 
-        public static function news()
+        public function news()
         {
             //Session::put('color2', 'red');
             //Session::forget('color2');
@@ -95,63 +100,74 @@ namespace App\Controllers;
             $users = MSSQL::query()->table('NEWS')->insert($arr);
             var_dump($users); */
 
-            $newsModel = self::model('news');
-            User::run();
-            $User = User::_fetch_User();
+            $newsModel = $this->model('App\Models\news');
+
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
                 'news' => $newsModel->getNews(),
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/community/news', $data);
+            $this->view('pages/cms/community/news', $data);
         }
 
-        public static function patchnotes()
+        public function patchnotes()
         {
-            $patchNotesModel = self::model('patch_notes');
-            User::run();
-            $User = User::_fetch_User();
+            $patchNotesModel = $this->model('App\Models\patch_notes');
+
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
                 'patchnotes' => $patchNotesModel->getPatchNotes(),
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/community/patchnotes', $data);
+            $this->view('pages/cms/community/patchnotes', $data);
         }
 
-        public static function pvprankings()
+        public function pvprankings()
         {
-            $rankings = self::model('rankings');
-            User::run();
-            $User = User::_fetch_User();
+            $rankings = $this->model('App\Models\rankings');
+
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'rankings',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
                 'Rankings' => $rankings
             ];
-            self::view('pages/cms/community/pvprankings', $data);
+            $this->view('pages/cms/community/pvprankings', $data);
         }
 
-        public static function staffteam()
+        public function staffteam()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/community/staffteam', $data);
+            $this->view('pages/cms/community/staffteam', $data);
         }
     }

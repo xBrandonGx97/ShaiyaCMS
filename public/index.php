@@ -1,4 +1,5 @@
 <?php
         require_once '../app/bootstrap.php';
-        App\Bootstrap::run();
-        App\Bootstrap::dispatch();
+        $bootstrap = new  App\Bootstrap();
+        $bootstrap->run();
+        $bootstrap->dispatch();

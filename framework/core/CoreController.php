@@ -5,14 +5,14 @@ namespace Framework\Core;
 class CoreController
 {
     // Load model
-    public static function model($model)
+    public function model($model)
     {
         // Instantiate model
         return new $model();
     }
 
     // Load view
-    public static function view($view, $data = [])
+    public function view($view, $data = [])
     {
         $blade = new \Framework\Blade\BladeController('view');
         // Load Directives
@@ -21,7 +21,7 @@ class CoreController
         $blade->loadView($view, $data);
     }
 
-    public static function widget($view, $data = [])
+    public function widget($view, $data = [])
     {
         $blade = new \Framework\Blade\BladeController('widget', $view);
         // Load Directives

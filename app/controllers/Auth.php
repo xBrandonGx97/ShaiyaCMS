@@ -9,7 +9,7 @@ class Auth extends \Framework\Core\CoreController
 {
     /* Get Methods */
 
-    public static function logout()
+    public function logout()
     {
         /* $data = [
             'pageData' => [
@@ -42,7 +42,7 @@ class Auth extends \Framework\Core\CoreController
 
     /* Post Methods */
 
-    public static function login()
+    public function login()
     {
         //post to logout
         $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
@@ -55,7 +55,7 @@ class Auth extends \Framework\Core\CoreController
             //If json_decode succeeded, the JSON is valid.
             if (is_array($decoded)) {
                 // Declare Required Variables
-                $UserName = isset($decoded['user']) ? Utils\Data::_do('escData', trim($decoded['user'])) : false;
+                $userName = isset($decoded['user']) ? Utils\Data::_do('escData', trim($decoded['user'])) : false;
                 $Password = isset($decoded['pw']) ? Utils\Data::_do('escData', trim($decoded['pw'])) : false;
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 // Error Checking
@@ -65,7 +65,7 @@ class Auth extends \Framework\Core\CoreController
                 ];
                 if (isset($decoded['login'])) {
                     // Validate Username
-                    if (empty($UserName)) {
+                    if (empty($userName)) {
                         $arr['errors'][] .= '1';
                     }
                     // Validate Password
@@ -79,8 +79,8 @@ class Auth extends \Framework\Core\CoreController
                         $fet = Eloquent::table(table('WEB_PRESENCE') . ' as Web')
                             ->select(['[User].UserUID', 'Web.UserID', 'Web.Pw', 'Web.Email', '[User].Status'])
                             ->join(table('SH_USERDATA') . ' as  [User]', '[User].UserID', '=', 'Web.UserID')
-                            ->where('Web.UserID', $UserName)
-                            ->orWhere('Web.Email', $UserName)
+                            ->where('Web.UserID', $userName)
+                            ->orWhere('Web.Email', $userName)
                             ->get();
                         if ($fet) {
                             foreach ($fet as $userInfo) {
@@ -89,7 +89,8 @@ class Auth extends \Framework\Core\CoreController
                                         Utils\Session::put('User', 'UserUID', $userInfo->UserUID);
                                         Utils\Session::put('User', 'UserID', $userInfo->UserID);
                                         Utils\Session::put('User', 'Status', $userInfo->Status);
-                                        Utils\User::updateLoginStatus(1);
+                                        $user = new Utils\User;
+                                        $user->updateLoginStatus(1);
                                         $arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
                                         $LastPage = $_SERVER['HTTP_REFERER'];
                                         $arr['finished'] .= 'true';

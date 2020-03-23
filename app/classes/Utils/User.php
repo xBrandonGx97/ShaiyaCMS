@@ -8,27 +8,27 @@
     class User
     {
         // SQL
-        private static $sql;
-        private static $stmt;
-        private static $res;
-        private static $fet;
+        private $sql;
+        private $stmt;
+        private $res;
+        private $fet;
         // Account Info - Shared
-        public static $AdminLevel;
-        public static $Country;
-        public static $DisplayName;
-        public static $DOB;
-        public static $Email;
-        public static $JoinDate;
-        public static $LeaveDate;
-        public static $LoginStatus;
-        public static $Point;
-        public static $RegDate;
-        public static $Status;
-        public static $UseQueue;
-        public static $UserUID;
-        public static $UserID;
-        public static $UserIP;
-        public static $is_staff = [
+        public $AdminLevel;
+        public $Country;
+        public $DisplayName;
+        public $DOB;
+        public $Email;
+        public $JoinDate;
+        public $LeaveDate;
+        public $LoginStatus;
+        public $Point;
+        public $RegDate;
+        public $Status;
+        public $UseQueue;
+        public $UserUID;
+        public $UserID;
+        public $UserIP;
+        public $is_staff = [
             '16',
             '32',
             '48',
@@ -36,36 +36,36 @@
             '80',
             '128'
         ];
-        public static $userFlags = [];
-        public static $flags = [
+        public $userFlags = [];
+        public $flags = [
             'CREATE'
         ];
 
         // Status
-        private static $ADM;
-        private static $GM;
-        private static $GS;
-        private static $Member;
+        private $ADM;
+        private $GM;
+        private $GS;
+        private $Member;
 
         // Socials
-        public static $Discord;
-        public static $Skype;
-        public static $Steam;
+        public $Discord;
+        public $Skype;
+        public $Steam;
 
         // Privacy
-        public static $DisplayProfile;
-        public static $DisplaySocials;
+        public $DisplayProfile;
+        public $DisplaySocials;
 
         // Forum
-        public static $userTitle;
+        public $userTitle;
 
         // Session
-        public static $LoginGuest;
+        public $LoginGuest;
 
         // Other
-        public static $MapID;
+        public $MapID;
 
-        public static function run()
+        public function run()
         {
             //Session::flush();
             if (isset($_SESSION) && isset($_SESSION['User']['UserUID']) || isset($_COOKIE['stayLoggedIn'])) {
@@ -82,27 +82,27 @@
 
                     foreach ($query as $fet) {
                         // Shaiya Data
-                        self::$JoinDate = $fet->JoinDate;
-                        self::$LeaveDate = $fet->LeaveDate;
-                        self::$Point = $fet->Point;
-                        self::$LoginStatus = $fet->LoginStatus;
+                        $this->JoinDate = $fet->JoinDate;
+                        $this->LeaveDate = $fet->LeaveDate;
+                        $this->Point = $fet->Point;
+                        $this->LoginStatus = $fet->LoginStatus;
 
                         // Web Presence
-                        self::$DisplayName = $fet->DisplayName;
-                        self::$Email = $fet->Email;
-                        self::$Status = $fet->Status;
-                        self::$UserID = $fet->UserID;
-                        self::$UserIP = $fet->UserIP;
-                        self::$UserUID = $fet->UserUID;
+                        $this->DisplayName = $fet->DisplayName;
+                        $this->Email = $fet->Email;
+                        $this->Status = $fet->Status;
+                        $this->UserID = $fet->UserID;
+                        $this->UserIP = $fet->UserIP;
+                        $this->UserUID = $fet->UserUID;
 
-                        self::$Discord = $fet->Discord;
-                        self::$Skype = $fet->Skype;
-                        self::$Steam = $fet->Steam;
+                        $this->Discord = $fet->Discord;
+                        $this->Skype = $fet->Skype;
+                        $this->Steam = $fet->Steam;
 
-                        self::$userTitle = $fet->UserTitle;
+                        $this->userTitle = $fet->UserTitle;
 
-                        self::$DisplayProfile = $fet->DisplayProfile;
-                        self::$DisplaySocials = $fet->DisplaySocials;
+                        $this->DisplayProfile = $fet->DisplayProfile;
+                        $this->DisplaySocials = $fet->DisplaySocials;
                     }
 
                     /* self::$sql = ('SELECT TOP 1
@@ -149,12 +149,12 @@
                 //	self::_is_staff(self::$AdminLevel);
 
                 // Cleanup
-                self::$sql = null;
-                self::$fet = null;
-                self::$res = null;
+                $this->sql = null;
+                $this->fet = null;
+                $this->res = null;
             }
 
-            self::_is_Logged_In();
+            $this->_is_Logged_In();
             //self::initPasswordHash();
         }
 
@@ -194,32 +194,32 @@
             }
         }
 
-        public static function _is_staff()
+        public function _is_staff()
         {
             if (isset($_SESSION['User'])) {
                 switch ($_SESSION['User']['Status']) {
                     case	'16':
-                        self::$ADM = true;
+                        $this->ADM = true;
                         return true;
                     break;
                     case	'32':
-                        self::$GM = true;
+                        $this->GM = true;
                         return true;
                     break;
                     case	'48':
-                        self::$GM = true;
+                        $this->GM = true;
                         return true;
                     break;
                     case	'64':
-                        self::$GM = true;
+                        $this->GM = true;
                         return true;
                     break;
                     case	'80':
-                        self::$GM = true;
+                        $this->GM = true;
                         return true;
                     break;
                     case	'128':
-                        self::$GS = true;
+                        $this->GS = true;
                         return true;
                     break;
                 }
@@ -256,13 +256,13 @@
             return false;
         }
 
-        public static function _is_Logged_In()
+        public function _is_Logged_In()
         {
-            if (!empty(self::$UserUID) && !empty(self::$UserID) && is_numeric(self::$UserUID)) {
-                self::$LoginStatus = true;
+            if (!empty($this->UserUID) && !empty($this->UserID) && is_numeric($this->UserUID)) {
+                $this->LoginStatus = true;
                 return true;
             } else {
-                self::$LoginStatus = false;
+                $this->LoginStatus = false;
                 return false;
             }
             /*if(!empty(self::$UserUID) && !empty(self::$UserID) && is_numeric(self::$UserUID)){
@@ -338,7 +338,7 @@
             }
         }
 
-        public static function get_Status($Status)
+        public function get_Status($Status)
         {
             switch ($Status) {
                 case '0':	return 'Player'; break;
@@ -351,7 +351,7 @@
             }
         }
 
-        public static function get_Faction($Faction)
+        public function get_Faction($Faction)
         {
             switch ($Faction) {
                 case '0':	return	'Alliance of Light';		break;
@@ -359,7 +359,7 @@
             }
         }
 
-        public static function get_Class($Faction, $Class)
+        public function get_Class($Faction, $Class)
         {
             if ($Faction == 0) {
                 switch ($Class) {
@@ -382,7 +382,7 @@
             }
         }
 
-        public static function get_Map($Map)
+        public function get_Map($Map)
         {
             switch ($Map) {
                 case 0:	return 'D-Water'; 						break;
@@ -475,7 +475,7 @@
             }
         }
 
-        public static function _fetch_UserGameInfo($UserUID, $col = false)
+        public function _fetch_UserGameInfo($UserUID, $col = false)
         {
             $return = false;
 
@@ -507,7 +507,7 @@
             return $return;
         }
 
-        public static function _fetch_UserWebInfo($UserUID, $col = false)
+        public function _fetch_UserWebInfo($UserUID, $col = false)
         {
             $return = false;
 
@@ -539,12 +539,12 @@
             return $return;
         }
 
-        public static function _fetch_User()
+        public function _fetch_User()
         {
             return get_class_vars(get_called_class());
         }
 
-        public static function checkUserFlags()
+        public function checkUserFlags()
         {
             $sql = ('
 					SELECT TOP 1 * FROM ShaiyaCMS.dbo.FORUM_USER_PERMS WHERE [User] = :user
@@ -552,12 +552,12 @@
             MSSQL::query($sql);
             MSSQL::bind(':user', $_SESSION['User']['UserID']);
             $res = MSSQL::single();
-            self::$userFlags = $res->Perms;
-            self::$userFlags = explode('~', $res->Perms);
+            $this->userFlags = $res->Perms;
+            $this->userFlags = explode('~', $res->Perms);
             ;
         }
 
-        public static function initPrivacy()
+        public function initPrivacy()
         {
             if (isset($_SESSION['User']['UserUID'])) {
                 $privacy = Eloquent::table(table('USER_PRIVACY'))
@@ -601,7 +601,7 @@
             }
         }
 
-        public static function initSocials()
+        public function initSocials()
         {
             if (isset($_SESSION['User']['UserUID'])) {
                 $socials = Eloquent::table(table('USER_SOCIALS'))
@@ -640,7 +640,7 @@
             }
         }
 
-        public static function initPasswordHash()
+        public function initPasswordHash()
         {
             $sql = ('
 					SELECT [WP].[UserUID],[WP].[UserID],[U].[PwPlain],[WP].[Pw] FROM ShaiyaCMS.dbo.WEB_PRESENCE AS [WP]
@@ -652,7 +652,7 @@
             }
         }
 
-        public static function updateLoginStatus($status)
+        public function updateLoginStatus($status)
         {
             $data = [
                 'LoginStatus' => $status

@@ -4,7 +4,7 @@
             <div class="nk-navbar">
                 <ul class="nk-nav">
                 	<li class="nk-drop-item">
-                        <a href="/?lang=en" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>{{App\Bootstrap::getLangSwitch(LANG)}}</span></span><span class="link-effect-r"><span>{{App\Bootstrap::getLangSwitch(LANG)}}</span></span><span class="link-effect-shade"><span>{{App\Bootstrap::getLangSwitch(LANG)}}</span></span></span></a>
+                        <a href="/?lang=en" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>{{lang(LANG)}}</span></span><span class="link-effect-r"><span>{{lang(LANG)}}</span></span><span class="link-effect-shade"><span>{{lang(LANG)}}</span></span></span></a>
                         <ul class="dropdown" style="display: none; margin-top: 17px; opacity: 0; transform: translate3d(0px, 0px, 0px);">
                             <li><a href="/?lang=en" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>English</span></span><span class="link-effect-r"><span>English</span></span><span class="link-effect-shade"><span>English</span></span></span></a></li>
                             <li><a href="/?lang=fr" class="link-effect-4 ready"><span class="link-effect-inner"><span class="link-effect-l"><span>French</span></span><span class="link-effect-r"><span>French</span></span><span class="link-effect-shade"><span>French</span></span></span></a></li>

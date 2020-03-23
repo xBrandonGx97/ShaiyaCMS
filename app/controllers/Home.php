@@ -2,25 +2,21 @@
 
     namespace App\Controllers;
 
-    //	use Classes\Utils\Browser;
-    use Classes\Utils\Auth;
-    use Classes\Utils\User;
-    use Classes\Utils\Widget;
+    use Classes\Utils as Utils;
 
     class Home extends \Framework\Core\CoreController
     {
-        public static function index()
+        public function index()
         {
-            $newsModel = self::model('App\Models\news');
-            $serverInfo = self::model('App\Models\server_info');
+            $newsModel = $this->model('App\Models\news');
+            $serverInfo = $this->model('App\Models\server_info');
 
-            User::run();
-            //$User			=	User::_fetch_User(User::$UserID);
-            $Auth = [
-                'check' => Auth::check()
-            ];
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
 
-            $User = User::_fetch_User();
+            $widget = new Utils\Widget();
+            $widget = $widget->display();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -28,16 +24,15 @@
                 'zone' => 'CMS',
                 'nav' => true,
             ],
-                'Auth' => $Auth,
-                'User' => $User,
+                'User' => $user,
                 'news' => $newsModel->getNews(),
                 'serverinfo' => $serverInfo,
-                'widget' => Widget::display(),
+                'widget' => $widget,
             ];
 
             //	$User=new User();
             //	$User->_Props();
-            self::view('pages/cms/home/index', $data);
+            $this->view('pages/cms/home/index', $data);
             //Browser::run();
         }
     }

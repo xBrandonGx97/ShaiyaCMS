@@ -1,75 +1,219 @@
 <?php
     use Framework\Core\Route;
 
-// Default Route
-    Route::respond('get', '/', function () {App\Controllers\Home::index();});
-    // Community
-    Route::respond('get', '/community/downloads', function () {App\Controllers\Community::downloads();});
-    Route::respond('get', '/community/discord', function () {App\Controllers\Community::discord();});
-    Route::respond('get', '/community/news', function () {App\Controllers\Community::news();});
-    Route::respond('get', '/community/patchnotes', function () {App\Controllers\Community::patchnotes();});
-    Route::respond('get', '/community/pvprankings', function () {App\Controllers\Community::pvprankings();});
-    Route::respond('get', '/community/guildrankings', function () {App\Controllers\Community::guildrankings();});
-    Route::respond('get', '/community/staffteam', function () {App\Controllers\Community::staffteam();});
-    // Server Info
-    Route::respond('get', '/serverinfo/about', function () {App\Controllers\ServerInfo::about();});
-    Route::respond('get', '/serverinfo/drops', function () {App\Controllers\ServerInfo::drops();});
-    Route::respond('get', '/serverinfo/dropfinder', function () {App\Controllers\ServerInfo::dropfinder();});
-    Route::respond('get', '/serverinfo/bossrecords', function () {App\Controllers\ServerInfo::bossrecords();});
-    Route::respond('get', '/serverinfo/terms', function () {App\Controllers\ServerInfo::terms();});
-    // Auth
-    Route::respond('get', '/auth/logout', function () {App\Controllers\Auth::logout();});
-    // User
-    Route::respond('get', '/user/profile', function () {App\Controllers\User::profile();});
-    Route::respond('get', '/user/donate', function () {App\Controllers\User::donate();});
-    Route::respond('get', '/user/donate_complete', function () {App\Controllers\User::donate_complete();});
-    Route::respond('get', '/user/donate_process', function () {App\Controllers\User::donate_process();});
-    //Route::respond('get', '/user/logout', function () {User::logout();});
-    Route::respond('get', '/user/messages', function () {App\Controllers\User::messages();});
-    Route::respond('get', '/user/promotions', function () {App\Controllers\User::promotions();});
-    Route::respond('get', '/user/pvprewards', function () {App\Controllers\User::pvprewards();});
-    Route::respond('get', '/user/referers', function () {App\Controllers\User::referers();});
-    Route::respond('get', '/user/settings', function () {App\Controllers\User::settings();});
-    Route::respond('get', '/user/settings/privacy', function () {App\Controllers\User::settings();});
-    Route::respond('get', '/user/settings/signature', function () {App\Controllers\User::settings();});
-    Route::respond('get', '/user/support', function () {App\Controllers\User::support();});
-    Route::respond('get', '/user/vote', function () {App\Controllers\User::vote();});
-    Route::respond('get', '/user/users', function () {App\Controllers\User::users();});
-    Route::respond('get', '/user/friends', function () {App\Controllers\User::friends();});
-    // Must be loaded after all other user routes
-    Route::respond('get', '/user/(int:id)', function ($id) {App\Controllers\User::user($id);});
-    // Forum
-    Route::respond('get', '/forum', function () {App\Controllers\Forum::forum();});
-    Route::respond('get', '/forum/topics/(any:id)', function ($id) {App\Controllers\Forum::topics($id);});
-    Route::respond('get', '/forum/post/(any:id)', function ($id) {App\Controllers\Forum::posts($id);});
-    Route::respond('get', '/forum/topics/view_topic/(any:id)', function ($id) {App\Controllers\Forum::view_topic($id);});
-    // Admin
-    Route::respond('get', '/admin', function () {
-        Admin::index();
+$route = new Route;
+    $route->run();
+    // Default Route
+    $route->respond('get', '/', function () {
+        $Home = new App\Controllers\Home();
+        $Home->index();
     });
-    Route::respond('get', '/admin/core/settings', function () {
+    // Community
+    $route->respond('get', '/community/downloads', function () {
+        $Community = new App\Controllers\Community();
+        $Community->downloads();
+    });
+    $route->respond('get', '/community/discord', function () {
+        $Community = new App\Controllers\Community();
+        $Community->discord();
+    });
+    $route->respond('get', '/community/news', function () {
+        $Community = new App\Controllers\Community();
+        $Community->news();
+    });
+    $route->respond('get', '/community/patchnotes', function () {
+        $Community = new App\Controllers\Community();
+        $Community->patchnotes();
+    });
+    $route->respond('get', '/community/pvprankings', function () {
+        $Community = new App\Controllers\Community();
+        $Community->pvprankings();
+    });
+    $route->respond('get', '/community/guildrankings', function () {
+        $Community = new App\Controllers\Community();
+        $Community->guildrankings();
+    });
+    $route->respond('get', '/community/staffteam', function () {
+        $Community = new App\Controllers\Community();
+        $Community->staffteam();
+    });
+    // Server Info
+    $route->respond('get', '/serverinfo/about', function () {
+        $ServerInfo = new App\Controllers\ServerInfo();
+        $ServerInfo->about();
+    });
+    $route->respond('get', '/serverinfo/drops', function () {
+        $ServerInfo = new App\Controllers\ServerInfo();
+        $ServerInfo->drops();
+    });
+    $route->respond('get', '/serverinfo/dropfinder', function () {
+        $ServerInfo = new App\Controllers\ServerInfo();
+        $ServerInfo->dropfinder();
+    });
+    $route->respond('get', '/serverinfo/bossrecords', function () {
+        $ServerInfo = new App\Controllers\ServerInfo();
+        $ServerInfo->bossrecords();
+    });
+    $route->respond('get', '/serverinfo/terms', function () {
+        $ServerInfo = new App\Controllers\ServerInfo();
+        $ServerInfo->terms();
+    });
+    // Auth
+    $route->respond('get', '/auth/logout', function () {
+        $Auth = new App\Controllers\Auth();
+        $Auth->logout();
+    });
+    // User
+    $route->respond('get', '/user/profile', function () {
+        $User = new App\Controllers\User();
+        $User->profile();
+    });
+    $route->respond('get', '/user/donate', function () {
+        $User = new App\Controllers\User();
+        $User->donate();
+    });
+    $route->respond('get', '/user/donate_complete', function () {
+        $User = new App\Controllers\User();
+        $User->donate_complete();
+    });
+    $route->respond('get', '/user/donate_process', function () {
+        $User = new App\Controllers\User();
+        $User->donate_process();
+    });
+    //$route->respond('get', '/user/logout', function () {User::logout();});
+    $route->respond('get', '/user/messages', function () {
+        $User = new App\Controllers\User();
+        $User->messages();
+    });
+    $route->respond('get', '/user/promotions', function () {
+        $User = new App\Controllers\User();
+        $User->promotions();
+    });
+    $route->respond('get', '/user/pvprewards', function () {
+        $User = new App\Controllers\User();
+        $User->pvprewards();
+    });
+    $route->respond('get', '/user/referers', function () {
+        $User = new App\Controllers\User();
+        $User->referers();
+    });
+    $route->respond('get', '/user/settings', function () {
+        $User = new App\Controllers\User();
+        $User->settings();
+    });
+    $route->respond('get', '/user/settings/privacy', function () {
+        $User = new App\Controllers\User();
+        $User->settings();
+    });
+    $route->respond('get', '/user/settings/signature', function () {
+        $User = new App\Controllers\User();
+        $User->settings();
+    });
+    $route->respond('get', '/user/support', function () {
+        $User = new App\Controllers\User();
+        $User->support();
+    });
+    $route->respond('get', '/user/vote', function () {
+        $User = new App\Controllers\User();
+        $User->vote();
+    });
+    $route->respond('get', '/user/users', function () {
+        $User = new App\Controllers\User();
+        $User->users();
+    });
+    $route->respond('get', '/user/friends', function () {
+        $User = new App\Controllers\User();
+        $User->friends();
+    });
+    // Must be loaded after all other user routes
+    $route->respond('get', '/user/(int:id)', function ($id) {
+        $User = new App\Controllers\User();
+        $User->user($id);
+    });
+    // Forum
+    $route->respond('get', '/forum', function () {
+        $Forum = new App\Controllers\Forum();
+        $Forum->forum();
+    });
+    $route->respond('get', '/forum/topics/(any:id)', function ($id) {
+        $Forum = new App\Controllers\Forum();
+        $Forum->topics($id);
+    });
+    $route->respond('get', '/forum/post/(any:id)', function ($id) {
+        $Forum = new App\Controllers\Forum();
+        $Forum->posts($id);
+    });
+    $route->respond('get', '/forum/topics/view_topic/(any:id)', function ($id) {
+        $Forum = new App\Controllers\Forum();
+        $Forum->view_topic($id);
+    });
+    // Admin
+    $route->respond('get', '/admin', function () {
+        $Admin = new App\Controllers\Admin();
+        $Admin->index();
+    });
+    $route->respond('get', '/admin/core/settings', function () {
         echo 'core settings';
     });
-    Route::respond('get', '/admin/core/user/(any:id)', function ($id) {
+    $route->respond('get', '/admin/core/user/(any:id)', function ($id) {
         echo 'core settings: id: ' . $id;
     });
 
     //Errors
-    Route::respond('get', '/errors/301', function () {App\Controllers\Errors::error301();});
-    Route::respond('get', '/errors/307', function () {App\Controllers\Errors::error307();});
-    Route::respond('get', '/errors/400', function () {App\Controllers\Errors::error400();});
-    Route::respond('get', '/errors/401', function () {App\Controllers\Errors::error401();});
-    Route::respond('get', '/errors/403', function () {App\Controllers\Errors::error403();});
-    Route::respond('get', '/errors/404', function () {App\Controllers\Errors::error404();});
-    Route::respond('get', '/errors/405', function () {App\Controllers\Errors::error405();});
-    Route::respond('get', '/errors/408', function () {App\Controllers\Errors::error408();});
-    Route::respond('get', '/errors/500', function () {App\Controllers\Errors::error500();});
-    Route::respond('get', '/errors/502', function () {App\Controllers\Errors::error502();});
+    $route->respond('get', '/errors/301', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error301();
+    });
+    $route->respond('get', '/errors/307', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error307();
+    });
+    $route->respond('get', '/errors/400', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error400();
+    });
+    $route->respond('get', '/errors/401', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error401();
+    });
+    $route->respond('get', '/errors/403', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error403();
+    });
+    $route->respond('get', '/errors/404', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error404();
+    });
+    $route->respond('get', '/errors/405', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error405();
+    });
+    $route->respond('get', '/errors/408', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error408();
+    });
+    $route->respond('get', '/errors/500', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error500();
+    });
+    $route->respond('get', '/errors/502', function () {
+        $Errors = new App\Controllers\Errors();
+        $Errors->error502();
+    });
 
     // Post Responses
     // Auth
-    Route::respond('post', '/auth/login', function () {App\Controllers\Auth::login();});
-    Route::respond('post', '/auth/logout', function () {App\Controllers\Auth::logout();});
+    $route->respond('post', '/auth/login', function () {
+        $Auth = new App\Controllers\Auth();
+        $Auth->login();
+    });
+    $route->respond('post', '/auth/logout', function () {
+        $Auth = new App\Controllers\Auth();
+        $Auth->logout();
+    });
 
     // Promotions
-    Route::respond('post', '/user/promotions', function () {App\Controllers\User::promotions();});
+    $route->respond('post', '/user/promotions', function () {
+        $User = new App\Controllers\User();
+        $User->promotions();
+    });

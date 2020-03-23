@@ -2,81 +2,93 @@
 
 namespace App\Controllers;
 
-    use Classes\Utils\User;
+    use Classes\Utils as Utils;
 
     class ServerInfo extends \Framework\Core\CoreController
     {
-        public static function about()
+        public function about()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/serverinfo/about', $data);
+            $this->view('pages/cms/serverinfo/about', $data);
         }
 
-        public static function bossrecords()
+        public function bossrecords()
         {
-            $bossRecords = self::model('boss_records');
-            User::run();
-            $User = User::_fetch_User();
+            $bossRecords = $this->model('App\Models\boss_records');
+
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
                 'bossrecords' => $bossRecords,
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/serverinfo/bossrecords', $data);
+            $this->view('pages/cms/serverinfo/bossrecords', $data);
         }
 
-        public static function dropfinder()
+        public function dropfinder()
         {
-            $dropFinder = self::model('drop_finder');
-            User::run();
-            $User = User::_fetch_User();
+            $dropFinder = $this->model('App\Models\drop_finder');
+
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
                 'dropfinder' => $dropFinder,
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/serverinfo/dropfinder', $data);
+            $this->view('pages/cms/serverinfo/dropfinder', $data);
         }
 
-        public static function drops()
+        public function drops()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/serverinfo/drops', $data);
+            $this->view('pages/cms/serverinfo/drops', $data);
         }
 
-        public static function terms()
+        public function terms()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $user = new Utils\User();
+            $user->run();
+            $user->_fetch_User();
+
             $data = ['pageData' => [
                 'index' => 'index',
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $User,
+                'User' => $user,
             ];
-            self::view('pages/cms/serverinfo/terms', $data);
+            $this->view('pages/cms/serverinfo/terms', $data);
         }
     }

@@ -2,48 +2,46 @@
 
 namespace Framework\Core;
 
-    use \Classes\Utils\User;
-
     class Route
     {
-        protected static $base_path;
-        protected static $request_uri;
-        protected static $request_method;
-        protected static $http_methods = ['get', 'post', 'put', 'patch', 'delete'];
-        protected static $wild_cards = ['int' => '/^[0-9]+$/', 'any' => '/^[0-9A-Za-z]+$/'];
-        public static $Routes = [];
-        public static $Params = [];
+        protected $base_path;
+        protected $request_uri;
+        protected $request_method;
+        protected $http_methods = ['get', 'post', 'put', 'patch', 'delete'];
+        protected $wild_cards = ['int' => '/^[0-9]+$/', 'any' => '/^[0-9A-Za-z]+$/'];
+        public $Routes = [];
+        public $Params = [];
 
-        public static function run($base_path = '')
+        public function run($base_path = '')
         {
-            self::$base_path = $base_path;
+            $this->base_path = $base_path;
 
             // Remove query string and trim trailing slash
-            self::$request_uri = rtrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-            self::$request_method = self::_determine_http_method();
+            $this->request_uri = rtrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
+            $this->request_method = $this->_determine_http_method();
         }
 
-        private static function _determine_http_method()
+        private function _determine_http_method()
         {
             $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-            if (in_array($method, self::$http_methods)) {
+            if (in_array($method, $this->http_methods)) {
                 return $method;
             }
             return 'get';
         }
 
-        public static function respond($method, $route, $callable)
+        public function respond($method, $route, $callable)
         {
             $method = strtolower($method);
 
             if ($route == '/') {
-                $route = self::$base_path;
+                $route = $this->base_path;
             } else {
-                $route = self::$base_path . $route;
+                $route = $this->base_path . $route;
             }
 
-            $matches = self::_match_wild_cards($route);
+            $matches = $this->_match_wild_cards($route);
 
             if (!isset($_GET['url'])) {
                 $server = $_SERVER['REQUEST_URI'];
@@ -53,28 +51,28 @@ namespace Framework\Core;
                 if ($server == '/') {
                     //$url	=	explode('/',filter_var(rtrim($_SERVER['REQUEST_URI'],'/'),FILTER_SANITIZE_URL));
                     $url = explode('?', $_SERVER['REQUEST_URI'], 2);
-                    if (is_array($matches) && $method == self::$request_method) {
+                    if (is_array($matches) && $method == $this->request_method) {
                         // Routes match and request method matches
-                        self::$Routes[] = $route;
+                        $this->Routes[] = $route;
                         call_user_func_array($callable, $matches);
                     }
                 }
             } else {
                 $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
-                if (is_array($matches) && $method == self::$request_method) {
+                if (is_array($matches) && $method == $this->request_method) {
                     //var_dump(self::$Params);
                     // Routes match and request method matches
-                    self::$Routes[] = $route;
+                    $this->Routes[] = $route;
                     call_user_func_array($callable, $matches);
                 }
             }
         }
 
-        private static function _match_wild_cards($route)
+        private function _match_wild_cards($route)
         {
             $variables = [];
 
-            $exp_request = explode('/', self::$request_uri);
+            $exp_request = explode('/', $this->request_uri);
             $exp_route = explode('/', $route);
 
             if (count($exp_request) == count($exp_route)) {
@@ -85,8 +83,8 @@ namespace Framework\Core;
                         $strip = str_replace(['(', ')'], '', $value);
                         $exp = explode(':', $strip);
 
-                        if (array_key_exists($exp[0], self::$wild_cards)) {
-                            $pattern = self::$wild_cards[$exp[0]];
+                        if (array_key_exists($exp[0], $this->wild_cards)) {
+                            $pattern = $this->wild_cards[$exp[0]];
 
                             if (preg_match($pattern, $exp_request[$key])) {
                                 if (isset($exp[1])) {
@@ -98,13 +96,13 @@ namespace Framework\Core;
                     }
                     return false;  // There is a mis-match
                 }
-                self::$Params = $variables;
+                $this->Params = $variables;
                 return $variables;   // All segments match
             }
             return false;  // Catch anything else
         }
 
-        public static function get_query_string()
+        public function get_query_string()
         {
             echo '1';
             $arr = explode('?', $_SERVER['REQUEST_URI']);
@@ -113,7 +111,7 @@ namespace Framework\Core;
             }
         }
 
-        public static function checkRoute()
+        public function checkRoute()
         {
             $uri = $_SERVER['REQUEST_URI'];
             $uri = rtrim($uri, '/');
@@ -136,26 +134,24 @@ namespace Framework\Core;
             //var_dump($uri_parts);
             //echo 'Routes:';
             //var_dump(self::$Routes);
-            if (self::$Params) {
+            if ($this->Params) {
                 $url = explode('/', filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
-                $keys = array_search(self::$Params['id'], $url);
-                if (self::$Params['id'] !== $url[$keys]) {
+                $keys = array_search($this->Params['id'], $url);
+                if ($this->Params['id'] !== $url[$keys]) {
                     // id not found
-                    //self::throwError();
-                    abort(404);
+                    //abort(404);
                     //die("Invalid route.");
                 }
             } else {
-                if (!in_array(explode('?', $uri)[0], self::$Routes)) {
+                if (!in_array(explode('?', $uri)[0], $this->Routes)) {
                     //var_dump($_GET);
-                    //self::throwError();
-                    abort(404);
+                    //abort(404);
                     //die("Invalid route.");
                 }
             }
         }
 
-        public static function urlToArray($url1, $url2)
+        public function urlToArray($url1, $url2)
         {
             //convert route and requested url to an array
             //remove empty values caused by slashes
@@ -168,12 +164,12 @@ namespace Framework\Core;
             }));
         }
 
-        public static function checkStructure($url1, $url2)
+        public function checkStructure($url1, $url2)
         {
-            list($a, $b) = self::urlToArray($url1, $url2);
+            list($a, $b) = $this->urlToArray($url1, $url2);
         }
 
-        public static function getUrlQuery($key)
+        public function getUrlQuery($key)
         {
             $uri = $_SERVER['REQUEST_URI'];
             $query = parse_url($uri, PHP_URL_QUERY);
@@ -184,22 +180,7 @@ namespace Framework\Core;
             return null;
         }
 
-        public static function throwError()
-        {
-            User::run();
-            $User = User::_fetch_User();
-            $data = ['pageData' => [
-                'index' => 'index',
-                'title' => 'Home',
-                'zone' => 'CMS',
-                'nav' => true
-            ],
-                'User' => $User,
-            ];
-            \Core_Controller::view('errors/404', $data);
-        }
-
-        public static function _Props($file = false, $line = false)
+        public function _Props($file = false, $line = false)
         {
             echo '<!DOCTYPE html>';
             echo '<html lang="en">';

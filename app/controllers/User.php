@@ -8,229 +8,267 @@ class User extends \Framework\Core\CoreController
 {
     /* Get Methods */
 
-    public static function donate()
+    public function donate()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/donate', $data);
+        $this->view('pages/cms/user/donate', $data);
     }
 
-    public static function donate_complete()
+    public function donate_complete()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/donate_complete', $data);
+        $this->view('pages/cms/user/donate_complete', $data);
     }
 
-    public static function donate_process()
+    public function donate_process()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/donate_process', $data);
+        $this->view('pages/cms/user/donate_process', $data);
     }
 
-    public static function friends()
+    public function friends()
     {
-        $Friends = self::model('Friends');
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $Friends = $this->model('App\Models\Friends');
+
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'friends',
             'title' => 'Friends',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
             'Friends' => $Friends
         ];
-        self::view('pages/cms/user/friends', $data);
+        $this->view('pages/cms/user/friends', $data);
     }
 
-    public static function messages()
+    public function messages()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/messages', $data);
+        $this->view('pages/cms/user/messages', $data);
     }
 
-    public static function profile()
+    public function profile()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/profile', $data);
+        $this->view('pages/cms/user/profile', $data);
     }
 
-    public static function promotions()
+    public function promotions()
     {
-        $promotions = self::model('Promotions');
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $promotions = $this->model('App\Models\Promotions');
+
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
             'promotions' => $promotions,
         ];
-        self::view('pages/cms/user/promotions', $data);
+        $this->view('pages/cms/user/promotions', $data);
     }
 
-    public static function pvprewards()
+    public function pvprewards()
     {
-        $rewards = self::model('PvPRewards');
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $rewards = $this->model('App\Models\PvPRewards');
+
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
+        $Browser = new Utils\Browser;
+        $Browser = $Browser->run();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
-            'Browser' => Browser::run(),
+            'User' => $user,
+            'Browser' => $Browser,
             'rewards' => $rewards,
         ];
-        self::view('pages/cms/user/pvprewards', $data);
+        $this->view('pages/cms/user/pvprewards', $data);
     }
 
-    public static function referers()
+    public function referers()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/referers', $data);
+        $this->view('pages/cms/user/referers', $data);
     }
 
-    public static function settings()
+    public function settings()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/settings', $data);
+        $this->view('pages/cms/user/settings', $data);
     }
 
-    public static function support()
+    public function support()
     {
-        $support = self::model('Support');
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $support = $this->model('App\Models\Support');
+
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
             'support' => $support,
         ];
-        self::view('pages/cms/user/support', $data);
+        $this->view('pages/cms/user/support', $data);
     }
 
-    public static function user($id)
+    public function user($id)
     {
-        $userModel = self::model('User');
-        $Friends = self::model('Friends');
-        $User = Utils\User::_fetch_User();
+        $userModel = $this->model('App\Models\User');
+        $Friends = $this->model('App\Models\Friends');
+
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
             'userModel' => $userModel,
             'userID' => $id,
             'Friends' => $Friends
         ];
-        self::view('pages/cms/user/user', $data);
+        $this->view('pages/cms/user/user', $data);
     }
 
-    public static function users()
+    public function users()
     {
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
         ];
-        self::view('pages/cms/user/users', $data);
+        $this->view('pages/cms/user/users', $data);
     }
 
-    public static function vote()
+    public function vote()
     {
-        $vote = self::model('Vote');
-        Utils\User::run();
-        $User = Utils\User::_fetch_User();
+        $vote = $this->model('App\Models\Vote');
+
+        $user = new Utils\User();
+        $user->run();
+        $user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'index',
             'title' => 'Home',
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $User,
+            'User' => $user,
             'vote' => $vote
         ];
-        self::view('pages/cms/user/vote', $data);
+        $this->view('pages/cms/user/vote', $data);
     }
 
     /* Post Methods */

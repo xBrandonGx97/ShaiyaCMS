@@ -109,13 +109,13 @@
               </a>
               <ul class="dropdown">
                   @php
-                    $DisplayName  = $data['User']['DisplayName'];
-                    $UserUID  = $data['User']['UserUID'];
+                    $DisplayName  = $data['User']->DisplayName;
+                    $UserUID  = $data['User']->UserUID;
                   @endphp
                 <li class="  ">
                   <a href="/user/{{$UserUID}}">{{$DisplayName}}</a>
                 <div style="border-bottom: 1px solid white;"</div>
-                @if (in_array($data['User']['Status'], $data['User']['is_staff']))
+                @if (in_array($data['User']->Status, $data['User']->is_staff))
                   <li class="  ">
                   <a href="/user/account">Staff Panel</a>
                 @endif

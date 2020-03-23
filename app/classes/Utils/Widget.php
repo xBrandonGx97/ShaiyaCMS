@@ -6,7 +6,7 @@
 
    class Widget
    {
-       public static function display($mode = 'right')
+       public function display($mode = 'right')
        {
            $widgets = Eloquent::table(table('CMS_WIDGETS'))
              ->select()
@@ -16,7 +16,7 @@
            return $widgets;
        }
 
-       public static function displayVanilla($mode = 'right')
+       public function displayVanilla($mode = 'right')
        {
            // Widget Name => Enabled - true/false
            $widgets = [

@@ -7,17 +7,17 @@ namespace App;
 
 class Bootstrap
 {
-    protected static $debug = false;
+    protected $debug = false;
 
-    public static function run()
+    public function run()
     {
         // Load Vendor autoloader for Vendor resources
         require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-        self::init();
+        $this->init();
     }
 
-    private static function init()
+    private function init()
     {
         // Define misc helpers
         define('DS', DIRECTORY_SEPARATOR);
@@ -47,7 +47,7 @@ class Bootstrap
             // Load core classes
             require_once CORE_PATH . 'loader.php';
             // Load Dotenv
-            self::initDotEnv();
+            $this->initDotEnv();
 
             // Load configuration file
             define('config', require_once CONFIG_PATH . 'config.php');
@@ -58,7 +58,7 @@ class Bootstrap
         //	session_start();
     }
 
-    public static function dispatch()
+    public function dispatch()
     {
         $modal = new \Classes\Utils\Modal();
         $helpers = new \Classes\Utils\Helpers($modal);
@@ -67,32 +67,28 @@ class Bootstrap
         // Init Session
         \Classes\Utils\Session::init('Default');
         // Load Helpers
-        \Framework\Core\Loader::helper('modal');
-        \Framework\Core\Loader::helper('template');
-        \Framework\Core\Loader::helper('url');
-        \Framework\Core\Loader::helper('abort');
-        \Framework\Core\Loader::helper('redirect');
-        \Framework\Core\Loader::helper('table');
+        $this->load_helpers();
         // Init DotEnv
         //self::initDotEnv();
         // Init
         require_once 'init.php';
         // Load Langs
-        self::getLang();
-        self::load_langs();
+        $this->getLang();
+        $this->load_langs();
         // Load Route
         require_once CORE_PATH . 'route.php';
-        \Framework\Core\Route::run();
+        $route = new \Framework\Core\Route();
+        $route->run();
         // Load Routes
         require_once ROUTES_PATH . 'routes.php';
-        \Framework\Core\Route::checkRoute();
-        self::load_defaults();
+        $route->checkRoute();
+        $this->load_defaults();
     }
 
-    public static function _is_ajax()
+    public function _is_ajax()
     {
         if (defined('AJAX_CALL')) {
-            self::run();
+            $this->run();
 
             // Load Config
             define('config', require_once CONFIG_PATH . 'config.php');
@@ -112,7 +108,7 @@ class Bootstrap
         }
     }
 
-    public static function getLang()
+    public function getLang()
     {
         // Defaut language English
         $getLang = (isset($_GET['lang'])) ? $_SESSION['lang'] = $_GET['lang'] : '';
@@ -138,39 +134,33 @@ class Bootstrap
         }
     }
 
-    public static function getLangSwitch($lang)
-    {
-        switch ($lang) {
-            case 'en': echo 'English'; break;
-            case 'es': echo 'Spanish'; break;
-            case 'pt': echo 'Portugese'; break;
-            case 'fr': echo 'French'; break;
-            case 'tr': echo 'Turkish'; break;
-            case 'nl': echo 'Dutch'; break;
-            case 'de': echo 'German'; break;
-            case 'it': echo 'Italian'; break;
-            case 'fil': echo 'Filipino';
-        }
-    }
-
-    public static function load_langs()
+    public function load_langs()
     {
         $compiler = new \Compiler\Compiler();
         $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
         require_once LIB_PATH . 'translate.php';
     }
 
-    public static function load_defaults()
+    public function load_defaults()
     {
-        \Classes\Utils\User::initPrivacy();
-        \Classes\Utils\User::initSocials();
+        $user = new \Classes\Utils\User();
+        $user->initPrivacy();
+        $user->initSocials();
     }
 
-    public static function load_helpers()
+    public function load_helpers()
     {
+        $loader = new \Framework\Core\Loader();
+        $loader->helper('modal');
+        $loader->helper('template');
+        $loader->helper('url');
+        $loader->helper('abort');
+        $loader->helper('redirect');
+        $loader->helper('table');
+        $loader->helper('lang');
     }
 
-    public static function initDotEnv()
+    public function initDotEnv()
     {
         $rootDir = dirname(dirname(__FILE__));
         //echo 'dirname: ' . $rootDir;
