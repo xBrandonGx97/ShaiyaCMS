@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Classes\Utils as Utils;
 
 class Promotions extends Model
 {
@@ -18,9 +19,9 @@ class Promotions extends Model
     public function __construct()
     {
         $this->MSSQL = new \Classes\DB\MSSQL;
-        $this->Data = new \Classes\Utils\Data;
-        $this->User = new \Classes\Utils\User;
-        $this->User->run();
+        $this->Data = new Utils\Data;
+        $this->session = new Utils\Session;
+        $this->User = new Utils\User($this->session);
         $this->User = $this->User->_fetch_User();
         //$this->getPromotions();
     }

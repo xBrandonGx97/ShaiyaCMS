@@ -68,6 +68,7 @@
         public function __construct(Session $session)
         {
             $this->session = $session;
+            $this->run();
         }
 
         public function run()

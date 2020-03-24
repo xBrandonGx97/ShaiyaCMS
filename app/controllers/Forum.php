@@ -8,7 +8,6 @@ class Forum extends \Framework\Core\CoreController
 {
     public function __construct(Utils\User $user)
     {
-        $this->user = $user;
         $this->select = new Utils\Select;
     }
 
@@ -16,7 +15,6 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model('App\Models\Forum');
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -36,7 +34,6 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model('App\Models\Forum');
 
-        $this->user->run();
         $this->user->_fetch_User();
         $data = ['pageData' => [
             'index' => 'topics',
@@ -56,7 +53,6 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model('App\Models\Forum');
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -77,7 +73,6 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model('App\Models\Forum');
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $UserStatus = $this->user->get_Status($this->user->Status);

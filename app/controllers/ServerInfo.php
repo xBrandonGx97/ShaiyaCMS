@@ -14,7 +14,6 @@ namespace App\Controllers;
 
         public function about()
         {
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -32,7 +31,6 @@ namespace App\Controllers;
         {
             $bossRecords = $this->model('App\Models\BossRecords');
 
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -51,7 +49,6 @@ namespace App\Controllers;
         {
             $dropFinder = $this->model('App\Models\DropFinder');
 
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -68,7 +65,6 @@ namespace App\Controllers;
 
         public function drops()
         {
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -84,7 +80,6 @@ namespace App\Controllers;
 
         public function terms()
         {
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [

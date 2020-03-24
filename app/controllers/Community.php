@@ -14,7 +14,6 @@ namespace App\Controllers;
 
         public function discord()
         {
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -31,7 +30,6 @@ namespace App\Controllers;
 
         public function downloads()
         {
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -49,7 +47,6 @@ namespace App\Controllers;
         {
             $guildRankingsModel = $this->model('App\Models\GuildRankings');
 
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -108,7 +105,6 @@ namespace App\Controllers;
 
             $newsModel = $this->model('App\Models\News');
 
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -127,7 +123,6 @@ namespace App\Controllers;
         {
             $patchNotesModel = $this->model('App\Models\PatchNotes');
 
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -146,7 +141,6 @@ namespace App\Controllers;
         {
             $rankings = $this->model('App\Models\Rankings');
 
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
@@ -163,7 +157,6 @@ namespace App\Controllers;
 
         public function staffteam()
         {
-            $this->user->run();
             $this->user->_fetch_User();
 
             $data = ['pageData' => [

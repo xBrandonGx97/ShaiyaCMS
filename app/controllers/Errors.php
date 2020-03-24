@@ -14,7 +14,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error301()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -30,7 +29,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error307()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -46,7 +44,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error400()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -62,7 +59,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error401()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -78,7 +74,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error403()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -94,7 +89,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error404()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -110,7 +104,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error405()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -126,7 +119,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error408()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -142,7 +134,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error500()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -158,7 +149,6 @@ class Errors extends \Framework\Core\CoreController
 
     public function error502()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
