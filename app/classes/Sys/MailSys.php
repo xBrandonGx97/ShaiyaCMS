@@ -33,12 +33,6 @@
            self::$mail->addAddress('userNametoSendTo@gmail.com');
            self::$mail->Subject = self::$msgSubject;
            self::$mail->Body = self::$msgContent;
-
-           if (self::$mail->send()) {
-               echo 'email sent';
-           } else {
-               echo 'error: ' . self::$mail->ErrorInfo;
-           }
        }
 
        public function mail_gmail()
