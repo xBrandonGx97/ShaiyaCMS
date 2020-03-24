@@ -10,12 +10,12 @@ class MailSys
     private $msgSubject;
     private $msgContent;
 
-    public function __construct(string $host)
+    public function __construct(string $host): void
     {
         $this->getMailer($host);
     }
 
-    public function getMailer(string $host)
+    public function getMailer(string $host): void
     {
         $this->mail = new PHPMailer();
         if ($host === 'local') {
@@ -24,7 +24,7 @@ class MailSys
         return $this->mailGmail();
     }
 
-    public function mailLocal()
+    public function mailLocal(): string
     {
         $this->mail->isSMTP();
         $this->mail->Host = config['mail']['host'];
@@ -33,9 +33,11 @@ class MailSys
         $this->mail->isHTML(true);
         $this->mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
         $this->mail->addAddress('userNametoSendTo@gmail.com');
+
+        return 'mailerFound';
     }
 
-    public function mailGmail()
+    public function mailGmail(): string
     {
         $this->mail->isSMTP();
         $this->mail->Host = config['mail']['host'];
@@ -48,6 +50,8 @@ class MailSys
         $this->mail->isHTML(true);
         $this->mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
         $this->mail->addAddress('brandonjm033@gmail.com');
+
+        return 'mailerFound';
     }
 
     public function sendMail(string $mail_for, string $data): string
