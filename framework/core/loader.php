@@ -11,10 +11,10 @@ namespace Framework\Core;
             include LIB_PATH . $lib . 'class.php';
         }
 
-        // loader helper functions. Naming conversion is xxx_helper.php;
+        // loader helper functions. Naming conversion is xxx.php;
         public function helper($helper)
         {
             //	echo 'Loading helper ('.$helper.')..<br>';
-            include HELPER_PATH . $helper . '.helper.php';
+            include HELPER_PATH . $helper . '.php';
         }
     }
