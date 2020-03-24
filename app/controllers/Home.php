@@ -24,9 +24,6 @@ class Home extends Controller
         // remove run and make it run on construct
         $this->user->fetchUser();
 
-        $mail = new \Classes\Sys\MailSys('gmail');
-        $mail->sendMail('testEmail', 'brandon');
-
         $widget = new Utils\Widget();
         $widget = $widget->display();
 
