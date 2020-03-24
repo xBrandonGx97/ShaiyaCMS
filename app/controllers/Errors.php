@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use Classes\Utils as Utils;
 
-class Errors extends \Framework\Core\CoreController
+class Errors extends Controller
 {
     public function __construct(Utils\User $user)
     {
@@ -14,7 +15,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error301()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -29,7 +30,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error307()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -44,7 +45,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error400()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -59,7 +60,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error401()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -74,7 +75,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error403()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -89,7 +90,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error404()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -104,7 +105,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error405()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -119,7 +120,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error408()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -134,7 +135,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error500()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -149,7 +150,7 @@ class Errors extends \Framework\Core\CoreController
 
     public function error502()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',

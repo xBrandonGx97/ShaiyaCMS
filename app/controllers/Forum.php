@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use App\Models as Models;
 use Classes\Utils as Utils;
 
-class Forum extends \Framework\Core\CoreController
+class Forum extends Controller
 {
     public function __construct(Utils\User $user)
     {
@@ -16,7 +17,7 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model(Models\Forum::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'forum',
@@ -35,7 +36,7 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model(Models\Forum::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
         $data = ['pageData' => [
             'index' => 'topics',
             'title' => 'Topics',
@@ -54,7 +55,7 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model(Models\Forum::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'posts',
@@ -74,7 +75,7 @@ class Forum extends \Framework\Core\CoreController
     {
         $forum = self::model(Models\Forum::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $UserStatus = $this->user->get_Status($this->user->Status);
         $data = ['pageData' => [

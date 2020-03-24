@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use App\Models as Models;
 use Classes\Utils as Utils;
 
-class ServerInfo extends \Framework\Core\CoreController
+class ServerInfo extends Controller
 {
     public function __construct(Utils\User $user)
     {
@@ -15,7 +16,7 @@ class ServerInfo extends \Framework\Core\CoreController
 
     public function about()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = [
             'pageData' => [
@@ -33,7 +34,7 @@ class ServerInfo extends \Framework\Core\CoreController
     {
         $bossRecords = $this->model(Models\BossRecords::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = [
             'pageData' => [
@@ -52,7 +53,7 @@ class ServerInfo extends \Framework\Core\CoreController
     {
         $dropFinder = $this->model(Models\DropFinder::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = [
             'pageData' => [
@@ -69,7 +70,7 @@ class ServerInfo extends \Framework\Core\CoreController
 
     public function drops()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = [
             'pageData' => [
@@ -85,7 +86,7 @@ class ServerInfo extends \Framework\Core\CoreController
 
     public function terms()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = [
             'pageData' => [

@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use Classes\Utils as Utils;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class Auth extends \Framework\Core\CoreController
+class Auth extends Controller
 {
     private $arr = [];
 

@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use Classes\Utils as Utils;
 
-class Admin extends \Framework\Core\CoreController
+class Admin extends Controller
 {
     public function __construct(Utils\User $user)
     {
@@ -14,7 +15,7 @@ class Admin extends \Framework\Core\CoreController
     public static function index()
     {
         $this->user->run();
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',

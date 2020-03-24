@@ -2,11 +2,12 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use App\Models as Models;
 use Classes\Utils as Utils;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class Community extends \Framework\Core\CoreController
+class Community extends Controller
 {
     public function __construct(Utils\User $user)
     {
@@ -17,7 +18,7 @@ class Community extends \Framework\Core\CoreController
 
     public function discord()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -33,7 +34,7 @@ class Community extends \Framework\Core\CoreController
 
     public function downloads()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -50,7 +51,7 @@ class Community extends \Framework\Core\CoreController
     {
         $guildRankingsModel = $this->model(Models\GuildRankings::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -68,7 +69,7 @@ class Community extends \Framework\Core\CoreController
     {
         $newsModel = $this->model(Models\News::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'news',
@@ -86,7 +87,7 @@ class Community extends \Framework\Core\CoreController
     {
         $patchNotesModel = $this->model(Models\PatchNotes::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'patchNotes',
@@ -104,7 +105,7 @@ class Community extends \Framework\Core\CoreController
     {
         $rankings = $this->model(Models\Rankings::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'rankings',
@@ -120,7 +121,7 @@ class Community extends \Framework\Core\CoreController
 
     public function staffteam()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',

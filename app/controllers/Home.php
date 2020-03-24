@@ -2,11 +2,12 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use App\Models as Models;
 use Classes\Utils as Utils;
 use Illuminate\Database\Capsule\Manager as Eloquent;
 
-class Home extends \Framework\Core\CoreController
+class Home extends Controller
 {
     public function __construct(Utils\User $user)
     {

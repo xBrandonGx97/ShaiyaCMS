@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
+use Framework\Core\CoreController as Controller;
 use App\Models as Models;
 use Classes\Utils as Utils;
 
-class User extends \Framework\Core\CoreController
+class User extends Controller
 {
     public function __construct(Utils\User $user)
     {
@@ -17,7 +18,7 @@ class User extends \Framework\Core\CoreController
 
     public function donate()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -33,7 +34,7 @@ class User extends \Framework\Core\CoreController
 
     public function donateComplete()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -49,7 +50,7 @@ class User extends \Framework\Core\CoreController
 
     public function donateProcess()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -67,7 +68,7 @@ class User extends \Framework\Core\CoreController
     {
         $Friends = $this->model(Models\Friends::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'friends',
@@ -84,7 +85,7 @@ class User extends \Framework\Core\CoreController
 
     public function messages()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -100,7 +101,7 @@ class User extends \Framework\Core\CoreController
 
     public function profile()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -118,7 +119,7 @@ class User extends \Framework\Core\CoreController
     {
         $promotions = $this->model(Models\Promotions::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -137,7 +138,7 @@ class User extends \Framework\Core\CoreController
     {
         $rewards = $this->model(Models\PvPRewards::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $Browser = new Utils\Browser;
 
@@ -157,7 +158,7 @@ class User extends \Framework\Core\CoreController
 
     public function referers()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -173,7 +174,7 @@ class User extends \Framework\Core\CoreController
 
     public function settings()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -191,7 +192,7 @@ class User extends \Framework\Core\CoreController
     {
         $support = $this->model(Models\Support::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -211,7 +212,7 @@ class User extends \Framework\Core\CoreController
         $userModel = $this->model(Models\User::class);
         $Friends = $this->model(Models\Friends::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -230,7 +231,7 @@ class User extends \Framework\Core\CoreController
 
     public function users()
     {
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',
@@ -248,7 +249,7 @@ class User extends \Framework\Core\CoreController
     {
         $vote = $this->model(Models\Vote::class);
 
-        $this->user->_fetch_User();
+        $this->user->fetchUser();
 
         $data = ['pageData' => [
             'index' => 'index',

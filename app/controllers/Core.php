@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-class Core extends \Framework\Core\CoreController
+use Framework\Core\CoreController as Controller;
+class Core extends Controller
 {
     public static function settings($id)
     {
