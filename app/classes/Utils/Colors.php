@@ -12,6 +12,1116 @@ class Colors
     private $RGB = false;
     private $Type = false;
 
+    private $alpha = [
+        '0.1' => '0.1',
+        '0.2' => '0.2',
+        '0.25' => '0.25',
+        '0.3' => '0.3',
+        '0.4' => '0.4',
+        '0.5' => '0.5',
+        '0.6' => '0.6',
+        '0.7' => '0.7',
+        '0.8' => '0.8',
+        '0.9' => '0.9',
+        '1' => '1'
+    ];
+    private $hexColors = [
+        'AliceBlue' => '#F0F8FF',
+        'AntiqueWhite' => '#FAEBD7',
+        'AntiqueWhite1' => '#FFEFDB',
+        'AntiqueWhite2' => '#EEDFCC',
+        'AntiqueWhite3' => '#CDC0B0',
+        'AntiqueWhite4' => '#8B8378',
+        'Aquamarine' => '#7FFFD4',
+        'Aquamarine1' => '#7FFFD4',
+        'Aquamarine2' => '#76EEC6',
+        'Aquamarine3' => '#66CDAA',
+        'Aquamarine4' => '#458B74',
+        'Azure' => '#F0FFFF',
+        'Azure1' => '#F0FFFF',
+        'Azure2' => '#E0EEEE',
+        'Azure3' => '#C1CDCD',
+        'Azure4' => '#838B8B',
+        'Beige' => '#F5F5DC',
+        'Bisque' => '#FFE4C4',
+        'Bisque1' => '#FFE4C4',
+        'Bisque2' => '#EED5B7',
+        'Bisque3' => '#CDB79E',
+        'Bisque4' => '#8B7D6B',
+        'Black' => '#000000',
+        'BlanchedAlmond' => '#FFEBCD',
+        'Blue' => '#0000FF',
+        'Blue1' => '#0000FF',
+        'Blue2' => '#0000EE',
+        'Blue3' => '#0000CD',
+        'Blue4' => '#00008B',
+        'BlueViolet' => '#8A2BE2',
+        'Brown' => '#A52A2A',
+        'Brown1' => '#FF4040',
+        'Brown2' => '#EE3B3B',
+        'Brown3' => '#CD3333',
+        'Brown4' => '#8B2323',
+        'Burlywood' => '#DEB887',
+        'Burlywood1' => '#FFD39B',
+        'Burlywood2' => '#EEC591',
+        'Burlywood3' => '#CDAA7D',
+        'Burlywood4' => '#8B7355',
+        'CadetBlue' => '#5F9EA0',
+        'CadetBlue1' => '#98F5FF',
+        'CadetBlue2' => '#8EE5EE',
+        'CadetBlue3' => '#7AC5CD',
+        'CadetBlue4' => '#53868B',
+        'Chartreuse' => '#7FFF00',
+        'Chartreuse1' => '#7FFF00',
+        'Chartreuse2' => '#76EE00',
+        'Chartreuse3' => '#66CD00',
+        'Chartreuse4' => '#458B00',
+        'Chocolate' => '#D2691E',
+        'Chocolate1' => '#FF7F24',
+        'Chocolate2' => '#EE7621',
+        'Chocolate3' => '#CD661D',
+        'Chocolate4' => '#8B4513',
+        'Coral' => '#FF7F50',
+        'Coral1' => '#FF7256',
+        'Coral2' => '#EE6A50',
+        'Coral3' => '#CD5B45',
+        'Coral4' => '#8B3E2F',
+        'CornflowerBlue' => '#6495ED',
+        'Cornsilk' => '#FFF8DC',
+        'Cornsilk1' => '#FFF8DC',
+        'Cornsilk2' => '#EEE8CD',
+        'Cornsilk3' => '#CDC8B1',
+        'Cornsilk4' => '#8B8878',
+        'Cyan' => '#00FFFF',
+        'Cyan1' => '#00FFFF',
+        'Cyan2' => '#00EEEE',
+        'Cyan3' => '#00CDCD',
+        'Cyan4' => '#008B8B',
+        'DarkBlue' => '#00008B',
+        'DarkCyan' => '#008B8B',
+        'DarkGoldenrod' => '#B8860B',
+        'DarkGoldenrod1' => '#FFB90F',
+        'DarkGoldenrod2' => '#EEAD0E',
+        'DarkGoldenrod3' => '#CD950C',
+        'DarkGoldenrod4' => '#8B6508',
+        'DarkGray' => '#A9A9A9',
+        'DarkGreen' => '#006400',
+        'DarkKhaki' => '#BDB76B',
+        'DarkMagenta' => '#8B008B',
+        'DarkOliveGreen' => '#556B2F',
+        'DarkOliveGreen1' => '#CAFF70',
+        'DarkOliveGreen2' => '#BCEE68',
+        'DarkOliveGreen3' => '#A2CD5A',
+        'DarkOliveGreen4' => '#6E8B3D',
+        'DarkOrange' => '#FF8C00',
+        'DarkOrange1' => '#FF7F00',
+        'DarkOrange2' => '#EE7600',
+        'DarkOrange3' => '#CD6600',
+        'DarkOrange4' => '#8B4500',
+        'DarkOrchid' => '#9932CC',
+        'DarkOrchid1' => '#BF3EFF',
+        'DarkOrchid2' => '#B23AEE',
+        'DarkOrchid3' => '#9A32CD',
+        'DarkOrchid4' => '#68228B',
+        'DarkRed' => '#8B0000',
+        'DarkSalmon' => '#E9967A',
+        'DarkSeaGreen' => '#8FBC8F',
+        'DarkSeaGreen1' => '#C1FFC1',
+        'DarkSeaGreen2' => '#B4EEB4',
+        'DarkSeaGreen3' => '#9BCD9B',
+        'DarkSeaGreen4' => '#698B69',
+        'DarkSlateBlue' => '#483D8B',
+        'DarkSlateGray' => '#2F4F4F',
+        'DarkSlateGray1' => '#97FFFF',
+        'DarkSlateGray2' => '#8DEEEE',
+        'DarkSlateGray3' => '#79CDCD',
+        'DarkSlateGray4' => '#528B8B',
+        'DarkTurquoise' => '#00CED1',
+        'DarkViolet' => '#9400D3',
+        'DeepPink' => '#FF1493',
+        'DeepPink1' => '#FF1493',
+        'DeepPink2' => '#EE1289',
+        'DeepPink3' => '#CD1076',
+        'DeepPink4' => '#8B0A50',
+        'DeepSkyBlue' => '#00BFFF',
+        'DeepSkyBlue1' => '#00BFFF',
+        'DeepSkyBlue2' => '#00B2EE',
+        'DeepSkyBlue3' => '#009ACD',
+        'DeepSkyBlue4' => '#00688B',
+        'DimGray' => '#696969',
+        'DodgerBlue' => '#1E90FF',
+        'DodgerBlue1' => '#1E90FF',
+        'DodgerBlue2' => '#1C86EE',
+        'DodgerBlue3' => '#1874CD',
+        'DodgerBlue4' => '#104E8B',
+        'Firebrick' => '#B22222',
+        'Firebrick1' => '#FF3030',
+        'Firebrick2' => '#EE2C2C',
+        'Firebrick3' => '#CD2626',
+        'Firebrick4' => '#8B1A1A',
+        'FloralWhite' => '#FFFAF0',
+        'ForestGreen' => '#228B22',
+        'Gainsboro' => '#DCDCDC',
+        'GhostWhite' => '#F8F8FF',
+        'Gold' => '#FFD700',
+        'Gold1' => '#FFD700',
+        'Gold2' => '#EEC900',
+        'Gold3' => '#CDAD00',
+        'Gold4' => '#8B7500',
+        'Goldenrod' => '#DAA520',
+        'Goldenrod1' => '#FFC125',
+        'Goldenrod2' => '#EEB422',
+        'Goldenrod3' => '#CD9B1D',
+        'Goldenrod4' => '#8B6914',
+        'Gray' => '#BEBEBE',
+        'Gray0' => '#000000',
+        'Gray1' => '#030303',
+        'Gray10' => '#1A1A1A',
+        'Gray100' => '#FFFFFF',
+        'Gray11' => '#1C1C1C',
+        'Gray12' => '#1F1F1F',
+        'Gray13' => '#212121',
+        'Gray14' => '#242424',
+        'Gray15' => '#262626',
+        'Gray16' => '#292929',
+        'Gray17' => '#2B2B2B',
+        'Gray18' => '#2E2E2E',
+        'Gray19' => '#303030',
+        'Gray2' => '#050505',
+        'Gray20' => '#333333',
+        'Gray21' => '#363636',
+        'Gray22' => '#383838',
+        'Gray23' => '#3B3B3B',
+        'Gray24' => '#3D3D3D',
+        'Gray25' => '#404040',
+        'Gray26' => '#424242',
+        'Gray27' => '#454545',
+        'Gray28' => '#474747',
+        'Gray29' => '#4A4A4A',
+        'Gray3' => '#080808',
+        'Gray30' => '#4D4D4D',
+        'Gray31' => '#4F4F4F',
+        'Gray32' => '#525252',
+        'Gray33' => '#545454',
+        'Gray34' => '#575757',
+        'Gray35' => '#595959',
+        'Gray36' => '#5C5C5C',
+        'Gray37' => '#5E5E5E',
+        'Gray38' => '#616161',
+        'Gray39' => '#636363',
+        'Gray4' => '#0A0A0A',
+        'Gray40' => '#666666',
+        'Gray41' => '#696969',
+        'Gray42' => '#6B6B6B',
+        'Gray43' => '#6E6E6E',
+        'Gray44' => '#707070',
+        'Gray45' => '#737373',
+        'Gray46' => '#757575',
+        'Gray47' => '#787878',
+        'Gray48' => '#7A7A7A',
+        'Gray49' => '#7D7D7D',
+        'Gray5' => '#0D0D0D',
+        'Gray50' => '#7F7F7F',
+        'Gray51' => '#828282',
+        'Gray52' => '#858585',
+        'Gray53' => '#878787',
+        'Gray54' => '#8A8A8A',
+        'Gray55' => '#8C8C8C',
+        'Gray56' => '#8F8F8F',
+        'Gray57' => '#919191',
+        'Gray58' => '#949494',
+        'Gray59' => '#969696',
+        'Gray6' => '#0F0F0F',
+        'Gray60' => '#999999',
+        'Gray61' => '#9C9C9C',
+        'Gray62' => '#9E9E9E',
+        'Gray63' => '#A1A1A1',
+        'Gray64' => '#A3A3A3',
+        'Gray65' => '#A6A6A6',
+        'Gray66' => '#A8A8A8',
+        'Gray67' => '#ABABAB',
+        'Gray68' => '#ADADAD',
+        'Gray69' => '#B0B0B0',
+        'Gray7' => '#121212',
+        'Gray70' => '#B3B3B3',
+        'Gray71' => '#B5B5B5',
+        'Gray72' => '#B8B8B8',
+        'Gray73' => '#BABABA',
+        'Gray74' => '#BDBDBD',
+        'Gray75' => '#BFBFBF',
+        'Gray76' => '#C2C2C2',
+        'Gray77' => '#C4C4C4',
+        'Gray78' => '#C7C7C7',
+        'Gray79' => '#C9C9C9',
+        'Gray8' => '#141414',
+        'Gray80' => '#CCCCCC',
+        'Gray81' => '#CFCFCF',
+        'Gray82' => '#D1D1D1',
+        'Gray83' => '#D4D4D4',
+        'Gray84' => '#D6D6D6',
+        'Gray85' => '#D9D9D9',
+        'Gray86' => '#DBDBDB',
+        'Gray87' => '#DEDEDE',
+        'Gray88' => '#E0E0E0',
+        'Gray89' => '#E3E3E3',
+        'Gray9' => '#171717',
+        'Gray90' => '#E5E5E5',
+        'Gray91' => '#E8E8E8',
+        'Gray92' => '#EBEBEB',
+        'Gray93' => '#EDEDED',
+        'Gray94' => '#F0F0F0',
+        'Gray95' => '#F2F2F2',
+        'Gray96' => '#F5F5F5',
+        'Gray97' => '#F7F7F7',
+        'Gray98' => '#FAFAFA',
+        'Gray99' => '#FCFCFC',
+        'Green' => '#00FF00',
+        'Green1' => '#00FF00',
+        'Green2' => '#00EE00',
+        'Green3' => '#00CD00',
+        'Green4' => '#008B00',
+        'GreenYellow' => '#ADFF2F',
+        'Honeydew' => '#F0FFF0',
+        'Honeydew1' => '#F0FFF0',
+        'Honeydew2' => '#E0EEE0',
+        'Honeydew3' => '#C1CDC1',
+        'Honeydew4' => '#838B83',
+        'HotPink' => '#FF69B4',
+        'HotPink1' => '#FF6EB4',
+        'HotPink2' => '#EE6AA7',
+        'HotPink3' => '#CD6090',
+        'HotPink4' => '#8B3A62',
+        'IndianRed1' => '#FF6A6A',
+        'IndianRed2' => '#EE6363',
+        'IndianRed3' => '#CD5555',
+        'IndianRed4' => '#8B3A3A',
+        'Ivory' => '#FFFFF0',
+        'Ivory1' => '#FFFFF0',
+        'Ivory2' => '#EEEEE0',
+        'Ivory3' => '#CDCDC1',
+        'Ivory4' => '#8B8B83',
+        'Khaki' => '#F0E68C',
+        'Khaki1' => '#FFF68F',
+        'Khaki2' => '#EEE685',
+        'Khaki3' => '#CDC673',
+        'Khaki4' => '#8B864E',
+        'Lavender' => '#E6E6FA',
+        'LavenderBlush' => '#FFF0F5',
+        'LavenderBlush1' => '#FFF0F5',
+        'LavenderBlush2' => '#EEE0E5',
+        'LavenderBlush3' => '#CDC1C5',
+        'LavenderBlush4' => '#8B8386',
+        'LawnGreen' => '#7CFC00',
+        'LemonChiffon' => '#FFFACD',
+        'LemonChiffon1' => '#FFFACD',
+        'LemonChiffon2' => '#EEE9BF',
+        'LemonChiffon3' => '#CDC9A5',
+        'LemonChiffon4' => '#8B8970',
+        'LightBlue' => '#ADD8E6',
+        'LightBlue1' => '#BFEFFF',
+        'LightBlue2' => '#B2DFEE',
+        'LightBlue3' => '#9AC0CD',
+        'LightBlue4' => '#68838B',
+        'LightCoral' => '#F08080',
+        'LightCyan' => '#E0FFFF',
+        'LightCyan1' => '#E0FFFF',
+        'LightCyan2' => '#D1EEEE',
+        'LightCyan3' => '#B4CDCD',
+        'LightCyan4' => '#7A8B8B',
+        'LightGoldenrod' => '#EEDD82',
+        'LightGoldenrod1' => '#FFEC8B',
+        'LightGoldenrod2' => '#EEDC82',
+        'LightGoldenrod3' => '#CDBE70',
+        'LightGoldenrod4' => '#8B814C',
+        'LightGoldenrodYellow' => '#FAFAD2',
+        'LightGray' => '#D3D3D3',
+        'LightGreen' => '#90EE90',
+        'LightPink' => '#FFB6C1',
+        'LightPink1' => '#FFAEB9',
+        'LightPink2' => '#EEA2AD',
+        'LightPink3' => '#CD8C95',
+        'LightPink4' => '#8B5F65',
+        'LightSalmon' => '#FFA07A',
+        'LightSalmon1' => '#FFA07A',
+        'LightSalmon2' => '#EE9572',
+        'LightSalmon3' => '#CD8162',
+        'LightSalmon4' => '#8B5742',
+        'LightSeaGreen' => '#20B2AA',
+        'LightSkyBlue' => '#87CEFA',
+        'LightSkyBlue1' => '#B0E2FF',
+        'LightSkyBlue2' => '#A4D3EE',
+        'LightSkyBlue3' => '#8DB6CD',
+        'LightSkyBlue4' => '#607B8B',
+        'LightSlateBlue' => '#8470FF',
+        'LightSlateGray' => '#778899',
+        'LightSteelBlue' => '#B0C4DE',
+        'LightSteelBlue1' => '#CAE1FF',
+        'LightSteelBlue2' => '#BCD2EE',
+        'LightSteelBlue3' => '#A2B5CD',
+        'LightSteelBlue4' => '#6E7B8B',
+        'LightYellow' => '#FFFFE0',
+        'LightYellow1' => '#FFFFE0',
+        'LightYellow2' => '#EEEED1',
+        'LightYellow3' => '#CDCDB4',
+        'LightYellow4' => '#8B8B7A',
+        'LimeGreen' => '#32CD32',
+        'Linen' => '#FAF0E6',
+        'Magenta' => '#FF00FF',
+        'Magenta1' => '#FF00FF',
+        'Magenta2' => '#EE00EE',
+        'Magenta3' => '#CD00CD',
+        'Magenta4' => '#8B008B',
+        'Maroon' => '#B03060',
+        'Maroon1' => '#FF34B3',
+        'Maroon2' => '#EE30A7',
+        'Maroon3' => '#CD2990',
+        'Maroon4' => '#8B1C62',
+        'MediumAquamarine' => '#66CDAA',
+        'MediumBlue' => '#0000CD',
+        'MediumOrchid' => '#BA55D3',
+        'MediumOrchid1' => '#E066FF',
+        'MediumOrchid2' => '#D15FEE',
+        'MediumOrchid3' => '#B452CD',
+        'MediumOrchid4' => '#7A378B',
+        'MediumPurple' => '#9370DB',
+        'MediumPurple1' => '#AB82FF',
+        'MediumPurple2' => '#9F79EE',
+        'MediumPurple3' => '#8968CD',
+        'MediumPurple4' => '#5D478B',
+        'MediumSeaGreen' => '#3CB371',
+        'MediumSlateBlue' => '#7B68EE',
+        'MediumSpringGreen' => '#00FA9A',
+        'MediumTurquoise' => '#48D1CC',
+        'MediumVioletRed' => '#C71585',
+        'MidnightBlue' => '#191970',
+        'MintCream' => '#F5FFFA',
+        'MistyRose' => '#FFE4E1',
+        'MistyRose1' => '#FFE4E1',
+        'MistyRose2' => '#EED5D2',
+        'MistyRose3' => '#CDB7B5',
+        'MistyRose4' => '#8B7D7B',
+        'Moccasin' => '#FFE4B5',
+        'NavajoWhite' => '#FFDEAD',
+        'NavajoWhite1' => '#FFDEAD',
+        'NavajoWhite2' => '#EECFA1',
+        'NavajoWhite3' => '#CDB38B',
+        'NavajoWhite4' => '#8B795E',
+        'NavyBlue' => '#000080',
+        'OldLace' => '#FDF5E6',
+        'OliveDrab' => '#6B8E23',
+        'OliveDrab1' => '#C0FF3E',
+        'OliveDrab2' => '#B3EE3A',
+        'OliveDrab3' => '#9ACD32',
+        'OliveDrab4' => '#698B22',
+        'Orange' => '#FFA500',
+        'Orange1' => '#FFA500',
+        'Orange2' => '#EE9A00',
+        'Orange3' => '#CD8500',
+        'Orange4' => '#8B5A00',
+        'OrangeRed' => '#FF4500',
+        'OrangeRed1' => '#FF4500',
+        'OrangeRed2' => '#EE4000',
+        'OrangeRed3' => '#CD3700',
+        'OrangeRed4' => '#8B2500',
+        'Orchid' => '#DA70D6',
+        'Orchid1' => '#FF83FA',
+        'Orchid2' => '#EE7AE9',
+        'Orchid3' => '#CD69C9',
+        'Orchid4' => '#8B4789',
+        'PaleGoldenrod' => '#EEE8AA',
+        'PaleGreen' => '#98FB98',
+        'PaleGreen1' => '#9AFF9A',
+        'PaleGreen2' => '#90EE90',
+        'PaleGreen3' => '#7CCD7C',
+        'PaleGreen4' => '#548B54',
+        'PaleTurquoise' => '#AFEEEE',
+        'PaleTurquoise1' => '#BBFFFF',
+        'PaleTurquoise2' => '#AEEEEE',
+        'PaleTurquoise3' => '#96CDCD',
+        'PaleTurquoise4' => '#668B8B',
+        'PaleVioletRed' => '#DB7093',
+        'PaleVioletRed1' => '#FF82AB',
+        'PaleVioletRed2' => '#EE799F',
+        'PaleVioletRed3' => '#CD6889',
+        'PaleVioletRed4' => '#8B475D',
+        'PapayaWhip' => '#FFEFD5',
+        'PeachPuff' => '#FFDAB9',
+        'PeachPuff1' => '#FFDAB9',
+        'PeachPuff2' => '#EECBAD',
+        'PeachPuff3' => '#CDAF95',
+        'PeachPuff4' => '#8B7765',
+        'Peru' => '#CD853F',
+        'Pink' => '#FFC0CB',
+        'Pink1' => '#FFB5C5',
+        'Pink2' => '#EEA9B8',
+        'Pink3' => '#CD919E',
+        'Pink4' => '#8B636C',
+        'Plum' => '#DDA0DD',
+        'Plum1' => '#FFBBFF',
+        'Plum2' => '#EEAEEE',
+        'Plum3' => '#CD96CD',
+        'Plum4' => '#8B668B',
+        'PowderBlue' => '#B0E0E6',
+        'Purple' => '#A020F0',
+        'Purple1' => '#9B30FF',
+        'Purple2' => '#912CEE',
+        'Purple3' => '#7D26CD',
+        'Purple4' => '#551A8B',
+        'Red' => '#FF0000',
+        'Red1' => '#FF0000',
+        'Red2' => '#EE0000',
+        'Red3' => '#CD0000',
+        'Red4' => '#8B0000',
+        'RosyBrown' => '#BC8F8F',
+        'RosyBrown1' => '#FFC1C1',
+        'RosyBrown2' => '#EEB4B4',
+        'RosyBrown3' => '#CD9B9B',
+        'RosyBrown4' => '#8B6969',
+        'RoyalBlue' => '#4169E1',
+        'RoyalBlue1' => '#4876FF',
+        'RoyalBlue2' => '#436EEE',
+        'RoyalBlue3' => '#3A5FCD',
+        'RoyalBlue4' => '#27408B',
+        'SaddleBrown' => '#8B4513',
+        'Salmon' => '#FA8072',
+        'Salmon1' => '#FF8C69',
+        'Salmon2' => '#EE8262',
+        'Salmon3' => '#CD7054',
+        'Salmon4' => '#8B4C39',
+        'SandyBrown' => '#F4A460',
+        'SeaGreen' => '#2E8B57',
+        'SeaGreen1' => '#54FF9F',
+        'SeaGreen2' => '#4EEE94',
+        'SeaGreen3' => '#43CD80',
+        'SeaGreen4' => '#2E8B57',
+        'Seashell' => '#FFF5EE',
+        'Seashell1' => '#FFF5EE',
+        'Seashell2' => '#EEE5DE',
+        'Seashell3' => '#CDC5BF',
+        'Seashell4' => '#8B8682',
+        'Sienna' => '#A0522D',
+        'Sienna1' => '#FF8247',
+        'Sienna2' => '#EE7942',
+        'Sienna3' => '#CD6839',
+        'Sienna4' => '#8B4726',
+        'SkyBlue' => '#87CEEB',
+        'SkyBlue1' => '#87CEFF',
+        'SkyBlue2' => '#7EC0EE',
+        'SkyBlue3' => '#6CA6CD',
+        'SkyBlue4' => '#4A708B',
+        'SlateBlue' => '#6A5ACD',
+        'SlateBlue1' => '#836FFF',
+        'SlateBlue2' => '#7A67EE',
+        'SlateBlue3' => '#6959CD',
+        'SlateBlue4' => '#473C8B',
+        'SlateGray' => '#708090',
+        'SlateGray1' => '#C6E2FF',
+        'SlateGray2' => '#B9D3EE',
+        'SlateGray3' => '#9FB6CD',
+        'SlateGray4' => '#6C7B8B',
+        'Snow' => '#FFFAFA',
+        'Snow1' => '#FFFAFA',
+        'Snow2' => '#EEE9E9',
+        'Snow3' => '#CDC9C9',
+        'Snow4' => '#8B8989',
+        'SpringGreen' => '#00FF7F',
+        'SpringGreen1' => '#00FF7F',
+        'SpringGreen2' => '#00EE76',
+        'SpringGreen3' => '#00CD66',
+        'SpringGreen4' => '#008B45',
+        'SteelBlue' => '#4682B4',
+        'SteelBlue1' => '#63B8FF',
+        'SteelBlue2' => '#5CACEE',
+        'SteelBlue3' => '#4F94CD',
+        'SteelBlue4' => '#36648B',
+        'Tan' => '#D2B48C',
+        'Tan1' => '#FFA54F',
+        'Tan2' => '#EE9A49',
+        'Tan3' => '#CD853F',
+        'Tan4' => '#8B5A2B',
+        'Thistle' => '#D8BFD8',
+        'Thistle1' => '#FFE1FF',
+        'Thistle2' => '#EED2EE',
+        'Thistle3' => '#CDB5CD',
+        'Thistle4' => '#8B7B8B',
+        'Tomato' => '#FF6347',
+        'Tomato1' => '#FF6347',
+        'Tomato2' => '#EE5C42',
+        'Tomato3' => '#CD4F39',
+        'Tomato4' => '#8B3626',
+        'Turquoise' => '#40E0D0',
+        'Turquoise1' => '#00F5FF',
+        'Turquoise2' => '#00E5EE',
+        'Turquoise3' => '#00C5CD',
+        'Turquoise4' => '#00868B',
+        'Violet' => '#EE82EE',
+        'VioletRed' => '#D02090',
+        'VioletRed1' => '#FF3E96',
+        'VioletRed2' => '#EE3A8C',
+        'VioletRed3' => '#CD3278',
+        'VioletRed4' => '#8B2252',
+        'Wheat' => '#F5DEB3',
+        'Wheat1' => '#FFE7BA',
+        'Wheat2' => '#EED8AE',
+        'Wheat3' => '#CDBA96',
+        'Wheat4' => '#8B7E66',
+        'White' => '#FFFFFF',
+        'WhiteSmoke' => '#F5F5F5',
+        'Yellow1' => '#FFFF00',
+        'Yellow2' => '#EEEE00',
+        'Yellow3' => '#CDCD00',
+        'Yellow4' => '#8B8B00',
+        'YellowGreen' => '#9ACD32'
+    ];
+    private $rgbColors = [
+        'AliceBlue' => '240,248,255',
+        'AntiqueWhite' => '250,235,215',
+        'AntiqueWhite1' => '255,239,219',
+        'AntiqueWhite2' => '238,223,204',
+        'AntiqueWhite3' => '205,192,176',
+        'AntiqueWhite4' => '139,131,120',
+        'Aquamarine' => '127,255,212',
+        'Aquamarine1' => '127,255,212',
+        'Aquamarine2' => '118,238,198',
+        'Aquamarine3' => '102,205,170',
+        'Aquamarine4' => '069,139,116',
+        'Azure' => '240,255,255',
+        'Azure1' => '240,255,255',
+        'Azure2' => '224,238,238',
+        'Azure3' => '193,205,205',
+        'Azure4' => '131,139,139',
+        'Beige' => '245,245,220',
+        'Bisque' => '255,228,196',
+        'Bisque1' => '255,228,196',
+        'Bisque2' => '238,213,183',
+        'Bisque3' => '205,183,158',
+        'Bisque4' => '139,125,107',
+        'Black' => '000,000,000',
+        'BlanchedAlmond' => '255,228,196',
+        'Blue' => '000,000,255',
+        'Blue1' => '000,000,255',
+        'Blue2' => '000,000,238',
+        'Blue3' => '000,000,205',
+        'Blue4' => '000,000,139',
+        'BlueViolet' => '138,043,226',
+        'Brown' => '165,042,042',
+        'Brown1' => '255,064,064',
+        'Brown2' => '238,059,059',
+        'Brown3' => '205,051,051',
+        'Brown4' => '139,035,035',
+        'Burlywood' => '222,184,135',
+        'Burlywood1' => '255,211,155',
+        'Burlywood2' => '238,197,145',
+        'Burlywood3' => '205,170,125',
+        'Burlywood4' => '139,115,085',
+        'CadetBlue' => '095,158,160',
+        'CadetBlue1' => '152,245,255',
+        'CadetBlue2' => '142,229,238',
+        'CadetBlue3' => '122,197,205',
+        'CadetBlue4' => '083,134,139',
+        'Chartreuse' => '127,255,000',
+        'Chartreuse1' => '127,255,000',
+        'Chartreuse2' => '118,238,000',
+        'Chartreuse3' => '102,205,000',
+        'Chartreuse4' => '069,139,000',
+        'Chocolate' => '210,105,030',
+        'Chocolate1' => '255,127,036',
+        'Chocolate2' => '238,118,033',
+        'Chocolate3' => '205,102,029',
+        'Chocolate4' => '139,069,019',
+        'Coral' => '255,127,080',
+        'Coral1' => '255,114,086',
+        'Coral2' => '238,106,080',
+        'Coral3' => '205,091,069',
+        'Coral4' => '139,062,047',
+        'CornflowerBlue' => '100,149,237',
+        'Cornsilk' => '255,248,220',
+        'Cornsilk1' => '255,248,220',
+        'Cornsilk2' => '238,232,205',
+        'Cornsilk3' => '205,200,177',
+        'Cornsilk4' => '139,136,120',
+        'Cyan' => '000,255,255',
+        'Cyan1' => '000,255,255',
+        'Cyan2' => '000,238,238',
+        'Cyan3' => '000,205,205',
+        'Cyan4' => '000,139,139',
+        'DarkBlue' => '000,000,139',
+        'DarkCyan' => '000,139,139',
+        'DarkGoldenrod' => '184,134,011',
+        'DarkGoldenrod1' => '255,185,015',
+        'DarkGoldenrod2' => '238,173,014',
+        'DarkGoldenrod3' => '205,149,012',
+        'DarkGoldenrod4' => '139,101,008',
+        'DarkGray' => '169,169,169',
+        'DarkGreen' => '000,100,000',
+        'DarkKhaki' => '189,183,107',
+        'DarkMagenta' => '139,000,139',
+        'DarkOliveGreen' => '085,107,047',
+        'DarkOliveGreen1' => '202,255,112',
+        'DarkOliveGreen2' => '188,238,104',
+        'DarkOliveGreen3' => '162,205,090',
+        'DarkOliveGreen4' => '110,139,061',
+        'DarkOrange' => '255,140,000',
+        'DarkOrange1' => '255,127,000',
+        'DarkOrange2' => '238,118,000',
+        'DarkOrange3' => '205,102,000',
+        'DarkOrange4' => '139,069,000',
+        'DarkOrchid' => '153,050,204',
+        'DarkOrchid1' => '191,062,255',
+        'DarkOrchid2' => '178,058,238',
+        'DarkOrchid3' => '154,050,205',
+        'DarkOrchid4' => '104,034,139',
+        'DarkRed' => '139,000,000',
+        'DarkSalmon' => '233,150,122',
+        'DarkSeaGreen' => '143,188,143',
+        'DarkSeaGreen1' => '193,255,193',
+        'DarkSeaGreen2' => '180,238,180',
+        'DarkSeaGreen3' => '155,205,155',
+        'DarkSeaGreen4' => '105,139,105',
+        'DarkSlateBlue' => '072,061,139',
+        'DarkSlateGray' => '047,079,079',
+        'DarkSlateGray1' => '151,255,255',
+        'DarkSlateGray2' => '141,238,238',
+        'DarkSlateGray3' => '121,205,205',
+        'DarkSlateGray4' => '082,139,139',
+        'DarkTurquoise' => '000,206,209',
+        'DarkViolet' => '148,000,211',
+        'DeepPink' => '255,020,147',
+        'DeepPink1' => '255,020,147',
+        'DeepPink2' => '238,018,137',
+        'DeepPink3' => '205,016,118',
+        'DeepPink4' => '139,010,080',
+        'DeepSkyBlue' => '000,191,255',
+        'DeepSkyBlue1' => '000,191,255',
+        'DeepSkyBlue2' => '000,178,238',
+        'DeepSkyBlue3' => '000,154,205',
+        'DeepSkyBlue4' => '000,104,139',
+        'DimGray' => '105,105,105',
+        'DodgerBlue' => '030,144,255',
+        'DodgerBlue1' => '030,144,255',
+        'DodgerBlue2' => '028,134,238',
+        'DodgerBlue3' => '024,116,205',
+        'DodgerBlue4' => '016,078,139',
+        'Firebrick' => '178,034,034',
+        'Firebrick1' => '255,048,048',
+        'Firebrick2' => '238,044,044',
+        'Firebrick3' => '205,038,038',
+        'Firebrick4' => '139,026,026',
+        'FloralWhite' => '255,250,240',
+        'ForestGreen' => '034,139,034',
+        'Gainsboro' => '220,220,220',
+        'GhostWhite' => '248,248,255',
+        'Gold' => '255,215,000',
+        'Gold1' => '255,215,000',
+        'Gold2' => '238,201,000',
+        'Gold3' => '205,173,000',
+        'Gold4' => '139,117,000',
+        'Goldenrod' => '218,165,032',
+        'Goldenrod1' => '255,193,037',
+        'Goldenrod2' => '238,180,034',
+        'Goldenrod3' => '205,155,029',
+        'Goldenrod4' => '139,105,020',
+        'Gray' => '190,190,190',
+        'Gray0' => '000,000,000',
+        'Gray1' => '003,003,003',
+        'Gray10' => '026,026,026',
+        'Gray100' => '255,255,255',
+        'Gray11' => '028,028,028',
+        'Gray12' => '031,031,031',
+        'Gray13' => '033,033,033',
+        'Gray14' => '036,036,036',
+        'Gray15' => '038,038,038',
+        'Gray16' => '041,041,041',
+        'Gray17' => '043,043,043',
+        'Gray18' => '046,046,046',
+        'Gray19' => '048,048,048',
+        'Gray2' => '005,005,005',
+        'Gray20' => '051,051,051',
+        'Gray21' => '054,054,054',
+        'Gray22' => '056,056,056',
+        'Gray23' => '059,059,059',
+        'Gray24' => '061,061,061',
+        'Gray25' => '064,064,064',
+        'Gray26' => '066,066,066',
+        'Gray27' => '069,069,069',
+        'Gray28' => '071,071,071',
+        'Gray29' => '074,074,074',
+        'Gray3' => '008,008,008',
+        'Gray30' => '077,077,077',
+        'Gray31' => '079,079,079',
+        'Gray32' => '082,082,082',
+        'Gray33' => '084,084,084',
+        'Gray34' => '087,087,087',
+        'Gray35' => '089,089,089',
+        'Gray36' => '092,092,092',
+        'Gray37' => '094,094,094',
+        'Gray38' => '097,097,097',
+        'Gray39' => '099,099,099',
+        'Gray4' => '010,010,010',
+        'Gray40' => '102,102,102',
+        'Gray41' => '105,105,105',
+        'Gray42' => '107,107,107',
+        'Gray43' => '110,110,110',
+        'Gray44' => '112,112,112',
+        'Gray45' => '115,115,115',
+        'Gray46' => '117,117,117',
+        'Gray47' => '120,120,120',
+        'Gray48' => '122,122,122',
+        'Gray49' => '125,125,125',
+        'Gray5' => '013,013,013',
+        'Gray50' => '127,127,127',
+        'Gray51' => '130,130,130',
+        'Gray52' => '133,133,133',
+        'Gray53' => '135,135,135',
+        'Gray54' => '138,138,138',
+        'Gray55' => '140,140,140',
+        'Gray56' => '143,143,143',
+        'Gray57' => '145,145,145',
+        'Gray58' => '148,148,148',
+        'Gray59' => '150,150,150',
+        'Gray6' => '015,015,015',
+        'Gray60' => '153,153,153',
+        'Gray61' => '156,156,156',
+        'Gray62' => '158,158,158',
+        'Gray63' => '161,161,161',
+        'Gray64' => '163,163,163',
+        'Gray65' => '166,166,166',
+        'Gray66' => '168,168,168',
+        'Gray67' => '171,171,171',
+        'Gray68' => '173,173,173',
+        'Gray69' => '176,176,176',
+        'Gray7' => '018,018,018',
+        'Gray70' => '179,179,179',
+        'Gray71' => '181,181,181',
+        'Gray72' => '184,184,184',
+        'Gray73' => '186,186,186',
+        'Gray74' => '189,189,189',
+        'Gray75' => '191,191,191',
+        'Gray76' => '194,194,194',
+        'Gray77' => '196,196,196',
+        'Gray78' => '199,199,199',
+        'Gray79' => '201,201,201',
+        'Gray8' => '020,020,020',
+        'Gray80' => '204,204,204',
+        'Gray81' => '207,207,207',
+        'Gray82' => '209,209,209',
+        'Gray83' => '212,212,212',
+        'Gray84' => '214,214,214',
+        'Gray85' => '217,217,217',
+        'Gray86' => '219,219,219',
+        'Gray87' => '222,222,222',
+        'Gray88' => '224,224,224',
+        'Gray89' => '227,227,227',
+        'Gray9' => '023,023,023',
+        'Gray90' => '229,229,229',
+        'Gray91' => '232,232,232',
+        'Gray92' => '235,235,235',
+        'Gray93' => '237,237,237',
+        'Gray94' => '240,240,240',
+        'Gray95' => '242,242,242',
+        'Gray96' => '245,245,245',
+        'Gray97' => '247,247,247',
+        'Gray98' => '250,250,250',
+        'Gray99' => '252,252,252',
+        'Green' => '000,255,000',
+        'Green1' => '000,255,000',
+        'Green2' => '000,238,000',
+        'Green3' => '000,205,000',
+        'Green4' => '000,139,000',
+        'GreenYellow' => '173,255,047',
+        'Honeydew' => '240,255,240',
+        'Honeydew1' => '240,255,240',
+        'Honeydew2' => '224,238,224',
+        'Honeydew3' => '193,205,193',
+        'Honeydew4' => '131,139,131',
+        'HotPink' => '255,105,180',
+        'HotPink1' => '255,110,180',
+        'HotPink2' => '238,106,167',
+        'HotPink3' => '205,096,144',
+        'HotPink4' => '139,058,098',
+        'IndianRed1' => '255,106,106',
+        'IndianRed2' => '238,099,099',
+        'IndianRed3' => '205,085,085',
+        'IndianRed4' => '139,058,058',
+        'Ivory' => '255,255,240',
+        'Ivory1' => '255,255,240',
+        'Ivory2' => '238,238,224',
+        'Ivory3' => '205,205,193',
+        'Ivory4' => '139,139,131',
+        'Khaki' => '240,230,140',
+        'Khaki1' => '255,246,143',
+        'Khaki2' => '238,230,133',
+        'Khaki3' => '205,198,115',
+        'Khaki4' => '139,134,078',
+        'Lavender' => '230,230,250',
+        'LavenderBlush' => '255,240,245',
+        'LavenderBlush1' => '255,240,245',
+        'LavenderBlush2' => '238,224,229',
+        'LavenderBlush3' => '205,193,197',
+        'LavenderBlush4' => '139,131,134',
+        'LawnGreen' => '124,252,000',
+        'LemonChiffon' => '255,250,205',
+        'LemonChiffon1' => '255,250,205',
+        'LemonChiffon2' => '238,233,191',
+        'LemonChiffon3' => '205,201,165',
+        'LemonChiffon4' => '139,137,112',
+        'LightBlue' => '173,216,230',
+        'LightBlue1' => '191,239,255',
+        'LightBlue2' => '178,223,238',
+        'LightBlue3' => '154,192,205',
+        'LightBlue4' => '104,131,139',
+        'LightCoral' => '240,128,128',
+        'LightCyan' => '224,255,255',
+        'LightCyan1' => '224,255,255',
+        'LightCyan2' => '209,238,238',
+        'LightCyan3' => '180,205,205',
+        'LightCyan4' => '122,139,139',
+        'LightGoldenrod' => '238,221,130',
+        'LightGoldenrod1' => '255,236,139',
+        'LightGoldenrod2' => '238,220,130',
+        'LightGoldenrod3' => '205,190,112',
+        'LightGoldenrod4' => '139,129,076',
+        'LightGoldenrodYellow' => '250,250,210',
+        'LightGray' => '211,211,211',
+        'LightGreen' => '144,238,144',
+        'LightPink' => '255,182,193',
+        'LightPink1' => '255,174,185',
+        'LightPink2' => '238,162,173',
+        'LightPink3' => '205,140,149',
+        'LightPink4' => '139,095,101',
+        'LightSalmon' => '255,160,122',
+        'LightSalmon1' => '255,160,122',
+        'LightSalmon2' => '238,149,114',
+        'LightSalmon3' => '205,129,098',
+        'LightSalmon4' => '139,087,066',
+        'LightSeaGreen' => '032,178,170',
+        'LightSkyBlue' => '135,206,250',
+        'LightSkyBlue1' => '176,226,255',
+        'LightSkyBlue2' => '164,211,238',
+        'LightSkyBlue3' => '141,182,205',
+        'LightSkyBlue4' => '096,123,139',
+        'LightSlateBlue' => '132,112,255',
+        'LightSlateGray' => '119,136,153',
+        'LightSteelBlue' => '176,196,222',
+        'LightSteelBlue1' => '202,225,255',
+        'LightSteelBlue2' => '188,210,238',
+        'LightSteelBlue3' => '162,181,205',
+        'LightSteelBlue4' => '110,123,139',
+        'LightYellow' => '255,255,224',
+        'LightYellow1' => '255,255,224',
+        'LightYellow2' => '238,238,209',
+        'LightYellow3' => '205,205,180',
+        'LightYellow4' => '139,139,122',
+        'LimeGreen' => '050,205,050',
+        'Linen' => '250,240,230',
+        'Magenta' => '255,000,255',
+        'Magenta1' => '255,000,255',
+        'Magenta2' => '238,000,238',
+        'Magenta3' => '205,000,205',
+        'Magenta4' => '139,000,139',
+        'Maroon' => '176,048,096',
+        'Maroon1' => '255,052,179',
+        'Maroon2' => '238,048,167',
+        'Maroon3' => '205,041,144',
+        'Maroon4' => '139,028,098',
+        'MediumAquamarine' => '102,205,170',
+        'MediumBlue' => '000,000,205',
+        'MediumOrchid' => '186,085,211',
+        'MediumOrchid1' => '224,102,255',
+        'MediumOrchid2' => '209,095,238',
+        'MediumOrchid3' => '180,082,205',
+        'MediumOrchid4' => '122,055,139',
+        'MediumPurple' => '147,112,219',
+        'MediumPurple1' => '171,130,255',
+        'MediumPurple2' => '159,121,238',
+        'MediumPurple3' => '137,104,205',
+        'MediumPurple4' => '093,071,139',
+        'MediumSeaGreen' => '060,179,113',
+        'MediumSlateBlue' => '123,104,238',
+        'MediumSpringGreen' => '000,250,154',
+        'MediumTurquoise' => '072,209,204',
+        'MediumVioletRed' => '199,021,133',
+        'MidnightBlue' => '025,025,112',
+        'MintCream' => '245,255,250',
+        'MistyRose' => '255,228,225',
+        'MistyRose1' => '255,228,225',
+        'MistyRose2' => '238,213,210',
+        'MistyRose3' => '205,183,181',
+        'MistyRose4' => '139,125,123',
+        'Moccasin' => '255,228,181',
+        'NavajoWhite' => '255,222,173',
+        'NavajoWhite1' => '255,222,173',
+        'NavajoWhite2' => '238,207,161',
+        'NavajoWhite3' => '205,179,139',
+        'NavajoWhite4' => '139,121,094',
+        'NavyBlue' => '000,000,128',
+        'OldLace' => '253,245,230',
+        'OliveDrab' => '107,142,035',
+        'OliveDrab1' => '192,255,062',
+        'OliveDrab2' => '179,238,058',
+        'OliveDrab3' => '154,205,050',
+        'OliveDrab4' => '105,139,034',
+        'Orange' => '255,165,000',
+        'Orange1' => '255,165,000',
+        'Orange2' => '238,154,000',
+        'Orange3' => '205,133,000',
+        'Orange4' => '139,090,000',
+        'OrangeRed' => '255,069,000',
+        'OrangeRed1' => '255,069,000',
+        'OrangeRed2' => '238,064,000',
+        'OrangeRed3' => '205,055,000',
+        'OrangeRed4' => '139,037,000',
+        'Orchid' => '218,112,214',
+        'Orchid1' => '255,131,250',
+        'Orchid2' => '238,122,233',
+        'Orchid3' => '205,105,201',
+        'Orchid4' => '139,071,137',
+        'PaleGoldenrod' => '238,232,170',
+        'PaleGreen' => '152,251,152',
+        'PaleGreen1' => '154,255,154',
+        'PaleGreen2' => '144,238,144',
+        'PaleGreen3' => '124,205,124',
+        'PaleGreen4' => '084,139,084',
+        'PaleTurquoise' => '175,238,238',
+        'PaleTurquoise1' => '187,255,255',
+        'PaleTurquoise2' => '174,238,238',
+        'PaleTurquoise3' => '150,205,205',
+        'PaleTurquoise4' => '102,139,139',
+        'PaleVioletRed' => '219,112,147',
+        'PaleVioletRed1' => '255,130,171',
+        'PaleVioletRed2' => '238,121,159',
+        'PaleVioletRed3' => '205,104,137',
+        'PaleVioletRed4' => '139,071,093',
+        'PapayaWhip' => '255,239,213',
+        'PeachPuff' => '255,218,185',
+        'PeachPuff1' => '255,218,185',
+        'PeachPuff2' => '238,203,173',
+        'PeachPuff3' => '205,175,149',
+        'PeachPuff4' => '139,119,101',
+        'Peru' => '205,133,063',
+        'Pink' => '255,192,203',
+        'Pink1' => '255,181,197',
+        'Pink2' => '238,169,184',
+        'Pink3' => '205,145,158',
+        'Pink4' => '139,099,108',
+        'Plum' => '221,160,221',
+        'Plum1' => '255,187,255',
+        'Plum2' => '238,174,238',
+        'Plum3' => '205,150,205',
+        'Plum4' => '139,102,139',
+        'PowderBlue' => '176,224,230',
+        'Purple' => '160,032,240',
+        'Purple1' => '155,048,255',
+        'Purple2' => '145,044,238',
+        'Purple3' => '125,038,205',
+        'Purple4' => '085,026,139',
+        'Red' => '255,000,000',
+        'Red1' => '255,000,000',
+        'Red2' => '238,000,000',
+        'Red3' => '205,000,000',
+        'Red4' => '139,000,000',
+        'RosyBrown' => '188,143,143',
+        'RosyBrown1' => '255,193,193',
+        'RosyBrown2' => '238,180,180',
+        'RosyBrown3' => '205,155,155',
+        'RosyBrown4' => '139,105,105',
+        'RoyalBlue' => '065,105,225',
+        'RoyalBlue1' => '072,118,255',
+        'RoyalBlue2' => '067,110,238',
+        'RoyalBlue3' => '058,095,205',
+        'RoyalBlue4' => '039,064,139',
+        'SaddleBrown' => '139,069,019',
+        'Salmon' => '250,128,114',
+        'Salmon1' => '255,140,105',
+        'Salmon2' => '238,130,098',
+        'Salmon3' => '205,112,084',
+        'Salmon4' => '139,076,057',
+        'SandyBrown' => '244,164,096',
+        'SeaGreen' => '046,139,087',
+        'SeaGreen1' => '084,255,159',
+        'SeaGreen2' => '078,238,148',
+        'SeaGreen3' => '067,205,128',
+        'SeaGreen4' => '046,139,087',
+        'Seashell' => '255,245,238',
+        'Seashell1' => '255,245,238',
+        'Seashell2' => '238,229,222',
+        'Seashell3' => '205,197,191',
+        'Seashell4' => '139,134,130',
+        'Sienna' => '160,082,045',
+        'Sienna1' => '255,130,071',
+        'Sienna2' => '238,121,066',
+        'Sienna3' => '205,104,057',
+        'Sienna4' => '139,071,038',
+        'SkyBlue' => '135,206,235',
+        'SkyBlue1' => '135,206,255',
+        'SkyBlue2' => '126,192,238',
+        'SkyBlue3' => '108,166,205',
+        'SkyBlue4' => '074,112,139',
+        'SlateBlue' => '106,090,205',
+        'SlateBlue1' => '131,111,255',
+        'SlateBlue2' => '122,103,238',
+        'SlateBlue3' => '105,089,205',
+        'SlateBlue4' => '071,060,139',
+        'SlateGray' => '112,128,144',
+        'SlateGray1' => '198,226,255',
+        'SlateGray2' => '185,211,238',
+        'SlateGray3' => '159,182,205',
+        'SlateGray4' => '108,123,139',
+        'Snow' => '255,250,250',
+        'Snow1' => '255,250,250',
+        'Snow2' => '238,233,233',
+        'Snow3' => '205,201,201',
+        'Snow4' => '139,137,137',
+        'SpringGreen' => '000,255,127',
+        'SpringGreen1' => '000,255,127',
+        'SpringGreen2' => '000,238,118',
+        'SpringGreen3' => '000,205,102',
+        'SpringGreen4' => '000,139,069',
+        'SteelBlue' => '070,130,180',
+        'SteelBlue1' => '099,184,255',
+        'SteelBlue2' => '092,172,238',
+        'SteelBlue3' => '079,148,205',
+        'SteelBlue4' => '054,100,139',
+        'Tan' => '210,180,140',
+        'Tan1' => '255,165,079',
+        'Tan2' => '238,154,073',
+        'Tan3' => '205,133,063',
+        'Tan4' => '139,090,043',
+        'Thistle' => '216,191,216',
+        'Thistle1' => '255,225,255',
+        'Thistle2' => '238,210,238',
+        'Thistle3' => '205,181,205',
+        'Thistle4' => '139,123,139',
+        'Tomato' => '255,099,071',
+        'Tomato1' => '255,099,071',
+        'Tomato2' => '238,092,066',
+        'Tomato3' => '205,079,057',
+        'Tomato4' => '139,054,038',
+        'Turquoise' => '064,224,208',
+        'Turquoise1' => '000,245,255',
+        'Turquoise2' => '000,229,238',
+        'Turquoise3' => '000,197,205',
+        'Turquoise4' => '000,134,139',
+        'Violet' => '238,130,238',
+        'VioletRed' => '208,032,144',
+        'VioletRed1' => '255,062,150',
+        'VioletRed2' => '238,058,140',
+        'VioletRed3' => '205,050,120',
+        'VioletRed4' => '139,034,082',
+        'Wheat' => '245,222,179',
+        'Wheat1' => '255,231,186',
+        'Wheat2' => '238,216,174',
+        'Wheat3' => '205,186,150',
+        'Wheat4' => '139,126,102',
+        'White' => '255,255,255',
+        'WhiteSmoke' => '245,245,245',
+        'Yellow1' => '255,255,000',
+        'Yellow2' => '238,238,000',
+        'Yellow3' => '205,205,000',
+        'Yellow4' => '139,139,000',
+        'YellowGreen' => '154,205,050'
+    ];
+
     // Public Methods
     public function do($method_name, $data = null, $page = null, $line = null)
     {
@@ -36,1126 +1146,30 @@ class Colors
         }
     }
 
-    // Private Methods
-    private function _do_Alpha($data)
+    private function alpha($alpha)
     {
-        switch ($data) {
-            case '0.1':return '0.1';break;
-            case '0.2':return '0.2';break;
-            case '0.25':return '0.25';break;
-            case '0.3':return '0.3';break;
-            case '0.4':return '0.4';break;
-            case '0.5':return '0.5';break;
-            case '0.6':return '0.6';break;
-            case '0.7':return '0.7';break;
-            case '0.8':return '0.8';break;
-            case '0.9':return '0.9';break;
-            case '1':return '1';break;
-            default:return $data;break;
+        foreach ($this->alpha as $key => $value) {
+            if ($key === $alpha) {
+                return $value;
+            }
         }
     }
 
-    private function HEX($data)
+    private function hex($color)
     {
-        switch ($data) {
-                case 'AliceBlue':	return 'F0F8FF';	break;
-                case 'AntiqueWhite':	return 'FAEBD7';	break;
-                case 'AntiqueWhite1':	return 'FFEFDB';	break;
-                case 'AntiqueWhite2':	return 'EEDFCC';	break;
-                case 'AntiqueWhite3':	return 'CDC0B0';	break;
-                case 'AntiqueWhite4':	return '8B8378';	break;
-                case 'Aquamarine':	return '7FFFD4';	break;
-                case 'Aquamarine1':	return '7FFFD4';	break;
-                case 'Aquamarine2':	return '76EEC6';	break;
-                case 'Aquamarine3':	return '66CDAA';	break;
-                case 'Aquamarine4':	return '458B74';	break;
-                case 'Azure':	return 'F0FFFF';	break;
-                case 'Azure1':	return 'F0FFFF';	break;
-                case 'Azure2':	return 'E0EEEE';	break;
-                case 'Azure3':	return 'C1CDCD';	break;
-                case 'Azure4':	return '838B8B';	break;
-                case 'Beige':	return 'F5F5DC';	break;
-                case 'Bisque':	return 'FFE4C4';	break;
-                case 'Bisque1':	return 'FFE4C4';	break;
-                case 'Bisque2':	return 'EED5B7';	break;
-                case 'Bisque3':	return 'CDB79E';	break;
-                case 'Bisque4':	return '8B7D6B';	break;
-                case 'Black':	return '000000';	break;
-                case 'BlanchedAlmond':	return 'FFEBCD';	break;
-                case 'Blue':	return '0000FF';	break;
-                case 'Blue1':	return '0000FF';	break;
-                case 'Blue2':	return '0000EE';	break;
-                case 'Blue3':	return '0000CD';	break;
-                case 'Blue4':	return '00008B';	break;
-                case 'BlueViolet':	return '8A2BE2';	break;
-                case 'Brown':	return 'A52A2A';	break;
-                case 'Brown1':	return 'FF4040';	break;
-                case 'Brown2':	return 'EE3B3B';	break;
-                case 'Brown3':	return 'CD3333';	break;
-                case 'Brown4':	return '8B2323';	break;
-                case 'Burlywood':	return 'DEB887';	break;
-                case 'Burlywood1':	return 'FFD39B';	break;
-                case 'Burlywood2':	return 'EEC591';	break;
-                case 'Burlywood3':	return 'CDAA7D';	break;
-                case 'Burlywood4':	return '8B7355';	break;
-                case 'CadetBlue':	return '5F9EA0';	break;
-                case 'CadetBlue1':	return '98F5FF';	break;
-                case 'CadetBlue2':	return '8EE5EE';	break;
-                case 'CadetBlue3':	return '7AC5CD';	break;
-                case 'CadetBlue4':	return '53868B';	break;
-                case 'Chartreuse':	return '7FFF00';	break;
-                case 'Chartreuse1':	return '7FFF00';	break;
-                case 'Chartreuse2':	return '76EE00';	break;
-                case 'Chartreuse3':	return '66CD00';	break;
-                case 'Chartreuse4':	return '458B00';	break;
-                case 'Chocolate':	return 'D2691E';	break;
-                case 'Chocolate1':	return 'FF7F24';	break;
-                case 'Chocolate2':	return 'EE7621';	break;
-                case 'Chocolate3':	return 'CD661D';	break;
-                case 'Chocolate4':	return '8B4513';	break;
-                case 'Coral':	return 'FF7F50';	break;
-                case 'Coral1':	return 'FF7256';	break;
-                case 'Coral2':	return 'EE6A50';	break;
-                case 'Coral3':	return 'CD5B45';	break;
-                case 'Coral4':	return '8B3E2F';	break;
-                case 'CornflowerBlue':	return '6495ED';	break;
-                case 'Cornsilk':	return 'FFF8DC';	break;
-                case 'Cornsilk1':	return 'FFF8DC';	break;
-                case 'Cornsilk2':	return 'EEE8CD';	break;
-                case 'Cornsilk3':	return 'CDC8B1';	break;
-                case 'Cornsilk4':	return '8B8878';	break;
-                case 'Cyan':	return '00FFFF';	break;
-                case 'Cyan1':	return '00FFFF';	break;
-                case 'Cyan2':	return '00EEEE';	break;
-                case 'Cyan3':	return '00CDCD';	break;
-                case 'Cyan4':	return '008B8B';	break;
-                case 'DarkBlue':	return '00008B';	break;
-                case 'DarkCyan':	return '008B8B';	break;
-                case 'DarkGoldenrod':	return 'B8860B';	break;
-                case 'DarkGoldenrod1':	return 'FFB90F';	break;
-                case 'DarkGoldenrod2':	return 'EEAD0E';	break;
-                case 'DarkGoldenrod3':	return 'CD950C';	break;
-                case 'DarkGoldenrod4':	return '8B6508';	break;
-                case 'DarkGray':	return 'A9A9A9';	break;
-                case 'DarkGreen':	return '006400';	break;
-                case 'DarkKhaki':	return 'BDB76B';	break;
-                case 'DarkMagenta':	return '8B008B';	break;
-                case 'DarkOliveGreen':	return '556B2F';	break;
-                case 'DarkOliveGreen1':	return 'CAFF70';	break;
-                case 'DarkOliveGreen2':	return 'BCEE68';	break;
-                case 'DarkOliveGreen3':	return 'A2CD5A';	break;
-                case 'DarkOliveGreen4':	return '6E8B3D';	break;
-                case 'DarkOrange':	return 'FF8C00';	break;
-                case 'DarkOrange1':	return 'FF7F00';	break;
-                case 'DarkOrange2':	return 'EE7600';	break;
-                case 'DarkOrange3':	return 'CD6600';	break;
-                case 'DarkOrange4':	return '8B4500';	break;
-                case 'DarkOrchid':	return '9932CC';	break;
-                case 'DarkOrchid1':	return 'BF3EFF';	break;
-                case 'DarkOrchid2':	return 'B23AEE';	break;
-                case 'DarkOrchid3':	return '9A32CD';	break;
-                case 'DarkOrchid4':	return '68228B';	break;
-                case 'DarkRed':	return '8B0000';	break;
-                case 'DarkSalmon':	return 'E9967A';	break;
-                case 'DarkSeaGreen':	return '8FBC8F';	break;
-                case 'DarkSeaGreen1':	return 'C1FFC1';	break;
-                case 'DarkSeaGreen2':	return 'B4EEB4';	break;
-                case 'DarkSeaGreen3':	return '9BCD9B';	break;
-                case 'DarkSeaGreen4':	return '698B69';	break;
-                case 'DarkSlateBlue':	return '483D8B';	break;
-                case 'DarkSlateGray':	return '2F4F4F';	break;
-                case 'DarkSlateGray1':	return '97FFFF';	break;
-                case 'DarkSlateGray2':	return '8DEEEE';	break;
-                case 'DarkSlateGray3':	return '79CDCD';	break;
-                case 'DarkSlateGray4':	return '528B8B';	break;
-                case 'DarkTurquoise':	return '00CED1';	break;
-                case 'DarkViolet':	return '9400D3';	break;
-                case 'DeepPink':	return 'FF1493';	break;
-                case 'DeepPink1':	return 'FF1493';	break;
-                case 'DeepPink2':	return 'EE1289';	break;
-                case 'DeepPink3':	return 'CD1076';	break;
-                case 'DeepPink4':	return '8B0A50';	break;
-                case 'DeepSkyBlue':	return '00BFFF';	break;
-                case 'DeepSkyBlue1':	return '00BFFF';	break;
-                case 'DeepSkyBlue2':	return '00B2EE';	break;
-                case 'DeepSkyBlue3':	return '009ACD';	break;
-                case 'DeepSkyBlue4':	return '00688B';	break;
-                case 'DimGray':	return '696969';	break;
-                case 'DodgerBlue':	return '1E90FF';	break;
-                case 'DodgerBlue1':	return '1E90FF';	break;
-                case 'DodgerBlue2':	return '1C86EE';	break;
-                case 'DodgerBlue3':	return '1874CD';	break;
-                case 'DodgerBlue4':	return '104E8B';	break;
-                case 'Firebrick':	return 'B22222';	break;
-                case 'Firebrick1':	return 'FF3030';	break;
-                case 'Firebrick2':	return 'EE2C2C';	break;
-                case 'Firebrick3':	return 'CD2626';	break;
-                case 'Firebrick4':	return '8B1A1A';	break;
-                case 'FloralWhite':	return 'FFFAF0';	break;
-                case 'ForestGreen':	return '228B22';	break;
-                case 'Gainsboro':	return 'DCDCDC';	break;
-                case 'GhostWhite':	return 'F8F8FF';	break;
-                case 'Gold':	return 'FFD700';	break;
-                case 'Gold1':	return 'FFD700';	break;
-                case 'Gold2':	return 'EEC900';	break;
-                case 'Gold3':	return 'CDAD00';	break;
-                case 'Gold4':	return '8B7500';	break;
-                case 'Goldenrod':	return 'DAA520';	break;
-                case 'Goldenrod1':	return 'FFC125';	break;
-                case 'Goldenrod2':	return 'EEB422';	break;
-                case 'Goldenrod3':	return 'CD9B1D';	break;
-                case 'Goldenrod4':	return '8B6914';	break;
-                case 'Gray':	return 'BEBEBE';	break;
-                case 'Gray0':	return '000000';	break;
-                case 'Gray1':	return '030303';	break;
-                case 'Gray10':	return '1A1A1A';	break;
-                case 'Gray100':	return 'FFFFFF';	break;
-                case 'Gray11':	return '1C1C1C';	break;
-                case 'Gray12':	return '1F1F1F';	break;
-                case 'Gray13':	return '212121';	break;
-                case 'Gray14':	return '242424';	break;
-                case 'Gray15':	return '262626';	break;
-                case 'Gray16':	return '292929';	break;
-                case 'Gray17':	return '2B2B2B';	break;
-                case 'Gray18':	return '2E2E2E';	break;
-                case 'Gray19':	return '303030';	break;
-                case 'Gray2':	return '050505';	break;
-                case 'Gray20':	return '333333';	break;
-                case 'Gray21':	return '363636';	break;
-                case 'Gray22':	return '383838';	break;
-                case 'Gray23':	return '3B3B3B';	break;
-                case 'Gray24':	return '3D3D3D';	break;
-                case 'Gray25':	return '404040';	break;
-                case 'Gray26':	return '424242';	break;
-                case 'Gray27':	return '454545';	break;
-                case 'Gray28':	return '474747';	break;
-                case 'Gray29':	return '4A4A4A';	break;
-                case 'Gray3':	return '080808';	break;
-                case 'Gray30':	return '4D4D4D';	break;
-                case 'Gray31':	return '4F4F4F';	break;
-                case 'Gray32':	return '525252';	break;
-                case 'Gray33':	return '545454';	break;
-                case 'Gray34':	return '575757';	break;
-                case 'Gray35':	return '595959';	break;
-                case 'Gray36':	return '5C5C5C';	break;
-                case 'Gray37':	return '5E5E5E';	break;
-                case 'Gray38':	return '616161';	break;
-                case 'Gray39':	return '636363';	break;
-                case 'Gray4':	return '0A0A0A';	break;
-                case 'Gray40':	return '666666';	break;
-                case 'Gray41':	return '696969';	break;
-                case 'Gray42':	return '6B6B6B';	break;
-                case 'Gray43':	return '6E6E6E';	break;
-                case 'Gray44':	return '707070';	break;
-                case 'Gray45':	return '737373';	break;
-                case 'Gray46':	return '757575';	break;
-                case 'Gray47':	return '787878';	break;
-                case 'Gray48':	return '7A7A7A';	break;
-                case 'Gray49':	return '7D7D7D';	break;
-                case 'Gray5':	return '0D0D0D';	break;
-                case 'Gray50':	return '7F7F7F';	break;
-                case 'Gray51':	return '828282';	break;
-                case 'Gray52':	return '858585';	break;
-                case 'Gray53':	return '878787';	break;
-                case 'Gray54':	return '8A8A8A';	break;
-                case 'Gray55':	return '8C8C8C';	break;
-                case 'Gray56':	return '8F8F8F';	break;
-                case 'Gray57':	return '919191';	break;
-                case 'Gray58':	return '949494';	break;
-                case 'Gray59':	return '969696';	break;
-                case 'Gray6':	return '0F0F0F';	break;
-                case 'Gray60':	return '999999';	break;
-                case 'Gray61':	return '9C9C9C';	break;
-                case 'Gray62':	return '9E9E9E';	break;
-                case 'Gray63':	return 'A1A1A1';	break;
-                case 'Gray64':	return 'A3A3A3';	break;
-                case 'Gray65':	return 'A6A6A6';	break;
-                case 'Gray66':	return 'A8A8A8';	break;
-                case 'Gray67':	return 'ABABAB';	break;
-                case 'Gray68':	return 'ADADAD';	break;
-                case 'Gray69':	return 'B0B0B0';	break;
-                case 'Gray7':	return '121212';	break;
-                case 'Gray70':	return 'B3B3B3';	break;
-                case 'Gray71':	return 'B5B5B5';	break;
-                case 'Gray72':	return 'B8B8B8';	break;
-                case 'Gray73':	return 'BABABA';	break;
-                case 'Gray74':	return 'BDBDBD';	break;
-                case 'Gray75':	return 'BFBFBF';	break;
-                case 'Gray76':	return 'C2C2C2';	break;
-                case 'Gray77':	return 'C4C4C4';	break;
-                case 'Gray78':	return 'C7C7C7';	break;
-                case 'Gray79':	return 'C9C9C9';	break;
-                case 'Gray8':	return '141414';	break;
-                case 'Gray80':	return 'CCCCCC';	break;
-                case 'Gray81':	return 'CFCFCF';	break;
-                case 'Gray82':	return 'D1D1D1';	break;
-                case 'Gray83':	return 'D4D4D4';	break;
-                case 'Gray84':	return 'D6D6D6';	break;
-                case 'Gray85':	return 'D9D9D9';	break;
-                case 'Gray86':	return 'DBDBDB';	break;
-                case 'Gray87':	return 'DEDEDE';	break;
-                case 'Gray88':	return 'E0E0E0';	break;
-                case 'Gray89':	return 'E3E3E3';	break;
-                case 'Gray9':	return '171717';	break;
-                case 'Gray90':	return 'E5E5E5';	break;
-                case 'Gray91':	return 'E8E8E8';	break;
-                case 'Gray92':	return 'EBEBEB';	break;
-                case 'Gray93':	return 'EDEDED';	break;
-                case 'Gray94':	return 'F0F0F0';	break;
-                case 'Gray95':	return 'F2F2F2';	break;
-                case 'Gray96':	return 'F5F5F5';	break;
-                case 'Gray97':	return 'F7F7F7';	break;
-                case 'Gray98':	return 'FAFAFA';	break;
-                case 'Gray99':	return 'FCFCFC';	break;
-                case 'Green':	return '00FF00';	break;
-                case 'Green1':	return '00FF00';	break;
-                case 'Green2':	return '00EE00';	break;
-                case 'Green3':	return '00CD00';	break;
-                case 'Green4':	return '008B00';	break;
-                case 'GreenYellow':	return 'ADFF2F';	break;
-                case 'Honeydew':	return 'F0FFF0';	break;
-                case 'Honeydew1':	return 'F0FFF0';	break;
-                case 'Honeydew2':	return 'E0EEE0';	break;
-                case 'Honeydew3':	return 'C1CDC1';	break;
-                case 'Honeydew4':	return '838B83';	break;
-                case 'HotPink':	return 'FF69B4';	break;
-                case 'HotPink1':	return 'FF6EB4';	break;
-                case 'HotPink2':	return 'EE6AA7';	break;
-                case 'HotPink3':	return 'CD6090';	break;
-                case 'HotPink4':	return '8B3A62';	break;
-                case 'IndianRed1':	return 'FF6A6A';	break;
-                case 'IndianRed2':	return 'EE6363';	break;
-                case 'IndianRed3':	return 'CD5555';	break;
-                case 'IndianRed4':	return '8B3A3A';	break;
-                case 'Ivory':	return 'FFFFF0';	break;
-                case 'Ivory1':	return 'FFFFF0';	break;
-                case 'Ivory2':	return 'EEEEE0';	break;
-                case 'Ivory3':	return 'CDCDC1';	break;
-                case 'Ivory4':	return '8B8B83';	break;
-                case 'Khaki':	return 'F0E68C';	break;
-                case 'Khaki1':	return 'FFF68F';	break;
-                case 'Khaki2':	return 'EEE685';	break;
-                case 'Khaki3':	return 'CDC673';	break;
-                case 'Khaki4':	return '8B864E';	break;
-                case 'Lavender':	return 'E6E6FA';	break;
-                case 'LavenderBlush':	return 'FFF0F5';	break;
-                case 'LavenderBlush1':	return 'FFF0F5';	break;
-                case 'LavenderBlush2':	return 'EEE0E5';	break;
-                case 'LavenderBlush3':	return 'CDC1C5';	break;
-                case 'LavenderBlush4':	return '8B8386';	break;
-                case 'LawnGreen':	return '7CFC00';	break;
-                case 'LemonChiffon':	return 'FFFACD';	break;
-                case 'LemonChiffon1':	return 'FFFACD';	break;
-                case 'LemonChiffon2':	return 'EEE9BF';	break;
-                case 'LemonChiffon3':	return 'CDC9A5';	break;
-                case 'LemonChiffon4':	return '8B8970';	break;
-                case 'LightBlue':	return 'ADD8E6';	break;
-                case 'LightBlue1':	return 'BFEFFF';	break;
-                case 'LightBlue2':	return 'B2DFEE';	break;
-                case 'LightBlue3':	return '9AC0CD';	break;
-                case 'LightBlue4':	return '68838B';	break;
-                case 'LightCoral':	return 'F08080';	break;
-                case 'LightCyan':	return 'E0FFFF';	break;
-                case 'LightCyan1':	return 'E0FFFF';	break;
-                case 'LightCyan2':	return 'D1EEEE';	break;
-                case 'LightCyan3':	return 'B4CDCD';	break;
-                case 'LightCyan4':	return '7A8B8B';	break;
-                case 'LightGoldenrod':	return 'EEDD82';	break;
-                case 'LightGoldenrod1':	return 'FFEC8B';	break;
-                case 'LightGoldenrod2':	return 'EEDC82';	break;
-                case 'LightGoldenrod3':	return 'CDBE70';	break;
-                case 'LightGoldenrod4':	return '8B814C';	break;
-                case 'LightGoldenrodYellow':	return 'FAFAD2';	break;
-                case 'LightGray':	return 'D3D3D3';	break;
-                case 'LightGreen':	return '90EE90';	break;
-                case 'LightPink':	return 'FFB6C1';	break;
-                case 'LightPink1':	return 'FFAEB9';	break;
-                case 'LightPink2':	return 'EEA2AD';	break;
-                case 'LightPink3':	return 'CD8C95';	break;
-                case 'LightPink4':	return '8B5F65';	break;
-                case 'LightSalmon':	return 'FFA07A';	break;
-                case 'LightSalmon1':	return 'FFA07A';	break;
-                case 'LightSalmon2':	return 'EE9572';	break;
-                case 'LightSalmon3':	return 'CD8162';	break;
-                case 'LightSalmon4':	return '8B5742';	break;
-                case 'LightSeaGreen':	return '20B2AA';	break;
-                case 'LightSkyBlue':	return '87CEFA';	break;
-                case 'LightSkyBlue1':	return 'B0E2FF';	break;
-                case 'LightSkyBlue2':	return 'A4D3EE';	break;
-                case 'LightSkyBlue3':	return '8DB6CD';	break;
-                case 'LightSkyBlue4':	return '607B8B';	break;
-                case 'LightSlateBlue':	return '8470FF';	break;
-                case 'LightSlateGray':	return '778899';	break;
-                case 'LightSteelBlue':	return 'B0C4DE';	break;
-                case 'LightSteelBlue1':	return 'CAE1FF';	break;
-                case 'LightSteelBlue2':	return 'BCD2EE';	break;
-                case 'LightSteelBlue3':	return 'A2B5CD';	break;
-                case 'LightSteelBlue4':	return '6E7B8B';	break;
-                case 'LightYellow':	return 'FFFFE0';	break;
-                case 'LightYellow1':	return 'FFFFE0';	break;
-                case 'LightYellow2':	return 'EEEED1';	break;
-                case 'LightYellow3':	return 'CDCDB4';	break;
-                case 'LightYellow4':	return '8B8B7A';	break;
-                case 'LimeGreen':	return '32CD32';	break;
-                case 'Linen':	return 'FAF0E6';	break;
-                case 'Magenta':	return 'FF00FF';	break;
-                case 'Magenta1':	return 'FF00FF';	break;
-                case 'Magenta2':	return 'EE00EE';	break;
-                case 'Magenta3':	return 'CD00CD';	break;
-                case 'Magenta4':	return '8B008B';	break;
-                case 'Maroon':	return 'B03060';	break;
-                case 'Maroon1':	return 'FF34B3';	break;
-                case 'Maroon2':	return 'EE30A7';	break;
-                case 'Maroon3':	return 'CD2990';	break;
-                case 'Maroon4':	return '8B1C62';	break;
-                case 'MediumAquamarine':	return '66CDAA';	break;
-                case 'MediumBlue':	return '0000CD';	break;
-                case 'MediumOrchid':	return 'BA55D3';	break;
-                case 'MediumOrchid1':	return 'E066FF';	break;
-                case 'MediumOrchid2':	return 'D15FEE';	break;
-                case 'MediumOrchid3':	return 'B452CD';	break;
-                case 'MediumOrchid4':	return '7A378B';	break;
-                case 'MediumPurple':	return '9370DB';	break;
-                case 'MediumPurple1':	return 'AB82FF';	break;
-                case 'MediumPurple2':	return '9F79EE';	break;
-                case 'MediumPurple3':	return '8968CD';	break;
-                case 'MediumPurple4':	return '5D478B';	break;
-                case 'MediumSeaGreen':	return '3CB371';	break;
-                case 'MediumSlateBlue':	return '7B68EE';	break;
-                case 'MediumSpringGreen':	return '00FA9A';	break;
-                case 'MediumTurquoise':	return '48D1CC';	break;
-                case 'MediumVioletRed':	return 'C71585';	break;
-                case 'MidnightBlue':	return '191970';	break;
-                case 'MintCream':	return 'F5FFFA';	break;
-                case 'MistyRose':	return 'FFE4E1';	break;
-                case 'MistyRose1':	return 'FFE4E1';	break;
-                case 'MistyRose2':	return 'EED5D2';	break;
-                case 'MistyRose3':	return 'CDB7B5';	break;
-                case 'MistyRose4':	return '8B7D7B';	break;
-                case 'Moccasin':	return 'FFE4B5';	break;
-                case 'NavajoWhite':	return 'FFDEAD';	break;
-                case 'NavajoWhite1':	return 'FFDEAD';	break;
-                case 'NavajoWhite2':	return 'EECFA1';	break;
-                case 'NavajoWhite3':	return 'CDB38B';	break;
-                case 'NavajoWhite4':	return '8B795E';	break;
-                case 'NavyBlue':	return '000080';	break;
-                case 'OldLace':	return 'FDF5E6';	break;
-                case 'OliveDrab':	return '6B8E23';	break;
-                case 'OliveDrab1':	return 'C0FF3E';	break;
-                case 'OliveDrab2':	return 'B3EE3A';	break;
-                case 'OliveDrab3':	return '9ACD32';	break;
-                case 'OliveDrab4':	return '698B22';	break;
-                case 'Orange':	return 'FFA500';	break;
-                case 'Orange1':	return 'FFA500';	break;
-                case 'Orange2':	return 'EE9A00';	break;
-                case 'Orange3':	return 'CD8500';	break;
-                case 'Orange4':	return '8B5A00';	break;
-                case 'OrangeRed':	return 'FF4500';	break;
-                case 'OrangeRed1':	return 'FF4500';	break;
-                case 'OrangeRed2':	return 'EE4000';	break;
-                case 'OrangeRed3':	return 'CD3700';	break;
-                case 'OrangeRed4':	return '8B2500';	break;
-                case 'Orchid':	return 'DA70D6';	break;
-                case 'Orchid1':	return 'FF83FA';	break;
-                case 'Orchid2':	return 'EE7AE9';	break;
-                case 'Orchid3':	return 'CD69C9';	break;
-                case 'Orchid4':	return '8B4789';	break;
-                case 'PaleGoldenrod':	return 'EEE8AA';	break;
-                case 'PaleGreen':	return '98FB98';	break;
-                case 'PaleGreen1':	return '9AFF9A';	break;
-                case 'PaleGreen2':	return '90EE90';	break;
-                case 'PaleGreen3':	return '7CCD7C';	break;
-                case 'PaleGreen4':	return '548B54';	break;
-                case 'PaleTurquoise':	return 'AFEEEE';	break;
-                case 'PaleTurquoise1':	return 'BBFFFF';	break;
-                case 'PaleTurquoise2':	return 'AEEEEE';	break;
-                case 'PaleTurquoise3':	return '96CDCD';	break;
-                case 'PaleTurquoise4':	return '668B8B';	break;
-                case 'PaleVioletRed':	return 'DB7093';	break;
-                case 'PaleVioletRed1':	return 'FF82AB';	break;
-                case 'PaleVioletRed2':	return 'EE799F';	break;
-                case 'PaleVioletRed3':	return 'CD6889';	break;
-                case 'PaleVioletRed4':	return '8B475D';	break;
-                case 'PapayaWhip':	return 'FFEFD5';	break;
-                case 'PeachPuff':	return 'FFDAB9';	break;
-                case 'PeachPuff1':	return 'FFDAB9';	break;
-                case 'PeachPuff2':	return 'EECBAD';	break;
-                case 'PeachPuff3':	return 'CDAF95';	break;
-                case 'PeachPuff4':	return '8B7765';	break;
-                case 'Peru':	return 'CD853F';	break;
-                case 'Pink':	return 'FFC0CB';	break;
-                case 'Pink1':	return 'FFB5C5';	break;
-                case 'Pink2':	return 'EEA9B8';	break;
-                case 'Pink3':	return 'CD919E';	break;
-                case 'Pink4':	return '8B636C';	break;
-                case 'Plum':	return 'DDA0DD';	break;
-                case 'Plum1':	return 'FFBBFF';	break;
-                case 'Plum2':	return 'EEAEEE';	break;
-                case 'Plum3':	return 'CD96CD';	break;
-                case 'Plum4':	return '8B668B';	break;
-                case 'PowderBlue':	return 'B0E0E6';	break;
-                case 'Purple':	return 'A020F0';	break;
-                case 'Purple1':	return '9B30FF';	break;
-                case 'Purple2':	return '912CEE';	break;
-                case 'Purple3':	return '7D26CD';	break;
-                case 'Purple4':	return '551A8B';	break;
-                case 'Red':	return 'FF0000';	break;
-                case 'Red1':	return 'FF0000';	break;
-                case 'Red2':	return 'EE0000';	break;
-                case 'Red3':	return 'CD0000';	break;
-                case 'Red4':	return '8B0000';	break;
-                case 'RosyBrown':	return 'BC8F8F';	break;
-                case 'RosyBrown1':	return 'FFC1C1';	break;
-                case 'RosyBrown2':	return 'EEB4B4';	break;
-                case 'RosyBrown3':	return 'CD9B9B';	break;
-                case 'RosyBrown4':	return '8B6969';	break;
-                case 'RoyalBlue':	return '4169E1';	break;
-                case 'RoyalBlue1':	return '4876FF';	break;
-                case 'RoyalBlue2':	return '436EEE';	break;
-                case 'RoyalBlue3':	return '3A5FCD';	break;
-                case 'RoyalBlue4':	return '27408B';	break;
-                case 'SaddleBrown':	return '8B4513';	break;
-                case 'Salmon':	return 'FA8072';	break;
-                case 'Salmon1':	return 'FF8C69';	break;
-                case 'Salmon2':	return 'EE8262';	break;
-                case 'Salmon3':	return 'CD7054';	break;
-                case 'Salmon4':	return '8B4C39';	break;
-                case 'SandyBrown':	return 'F4A460';	break;
-                case 'SeaGreen':	return '2E8B57';	break;
-                case 'SeaGreen1':	return '54FF9F';	break;
-                case 'SeaGreen2':	return '4EEE94';	break;
-                case 'SeaGreen3':	return '43CD80';	break;
-                case 'SeaGreen4':	return '2E8B57';	break;
-                case 'Seashell':	return 'FFF5EE';	break;
-                case 'Seashell1':	return 'FFF5EE';	break;
-                case 'Seashell2':	return 'EEE5DE';	break;
-                case 'Seashell3':	return 'CDC5BF';	break;
-                case 'Seashell4':	return '8B8682';	break;
-                case 'Sienna':	return 'A0522D';	break;
-                case 'Sienna1':	return 'FF8247';	break;
-                case 'Sienna2':	return 'EE7942';	break;
-                case 'Sienna3':	return 'CD6839';	break;
-                case 'Sienna4':	return '8B4726';	break;
-                case 'SkyBlue':	return '87CEEB';	break;
-                case 'SkyBlue1':	return '87CEFF';	break;
-                case 'SkyBlue2':	return '7EC0EE';	break;
-                case 'SkyBlue3':	return '6CA6CD';	break;
-                case 'SkyBlue4':	return '4A708B';	break;
-                case 'SlateBlue':	return '6A5ACD';	break;
-                case 'SlateBlue1':	return '836FFF';	break;
-                case 'SlateBlue2':	return '7A67EE';	break;
-                case 'SlateBlue3':	return '6959CD';	break;
-                case 'SlateBlue4':	return '473C8B';	break;
-                case 'SlateGray':	return '708090';	break;
-                case 'SlateGray1':	return 'C6E2FF';	break;
-                case 'SlateGray2':	return 'B9D3EE';	break;
-                case 'SlateGray3':	return '9FB6CD';	break;
-                case 'SlateGray4':	return '6C7B8B';	break;
-                case 'Snow':	return 'FFFAFA';	break;
-                case 'Snow1':	return 'FFFAFA';	break;
-                case 'Snow2':	return 'EEE9E9';	break;
-                case 'Snow3':	return 'CDC9C9';	break;
-                case 'Snow4':	return '8B8989';	break;
-                case 'SpringGreen':	return '00FF7F';	break;
-                case 'SpringGreen1':	return '00FF7F';	break;
-                case 'SpringGreen2':	return '00EE76';	break;
-                case 'SpringGreen3':	return '00CD66';	break;
-                case 'SpringGreen4':	return '008B45';	break;
-                case 'SteelBlue':	return '4682B4';	break;
-                case 'SteelBlue1':	return '63B8FF';	break;
-                case 'SteelBlue2':	return '5CACEE';	break;
-                case 'SteelBlue3':	return '4F94CD';	break;
-                case 'SteelBlue4':	return '36648B';	break;
-                case 'Tan':	return 'D2B48C';	break;
-                case 'Tan1':	return 'FFA54F';	break;
-                case 'Tan2':	return 'EE9A49';	break;
-                case 'Tan3':	return 'CD853F';	break;
-                case 'Tan4':	return '8B5A2B';	break;
-                case 'Thistle':	return 'D8BFD8';	break;
-                case 'Thistle1':	return 'FFE1FF';	break;
-                case 'Thistle2':	return 'EED2EE';	break;
-                case 'Thistle3':	return 'CDB5CD';	break;
-                case 'Thistle4':	return '8B7B8B';	break;
-                case 'Tomato':	return 'FF6347';	break;
-                case 'Tomato1':	return 'FF6347';	break;
-                case 'Tomato2':	return 'EE5C42';	break;
-                case 'Tomato3':	return 'CD4F39';	break;
-                case 'Tomato4':	return '8B3626';	break;
-                case 'Turquoise':	return '40E0D0';	break;
-                case 'Turquoise1':	return '00F5FF';	break;
-                case 'Turquoise2':	return '00E5EE';	break;
-                case 'Turquoise3':	return '00C5CD';	break;
-                case 'Turquoise4':	return '00868B';	break;
-                case 'Violet':	return 'EE82EE';	break;
-                case 'VioletRed':	return 'D02090';	break;
-                case 'VioletRed1':	return 'FF3E96';	break;
-                case 'VioletRed2':	return 'EE3A8C';	break;
-                case 'VioletRed3':	return 'CD3278';	break;
-                case 'VioletRed4':	return '8B2252';	break;
-                case 'Wheat':	return 'F5DEB3';	break;
-                case 'Wheat1':	return 'FFE7BA';	break;
-                case 'Wheat2':	return 'EED8AE';	break;
-                case 'Wheat3':	return 'CDBA96';	break;
-                case 'Wheat4':	return '8B7E66';	break;
-                case 'White':	return 'FFFFFF';	break;
-                case 'WhiteSmoke':	return 'F5F5F5';	break;
-                case 'Yellow1':	return 'FFFF00';	break;
-                case 'Yellow2':	return 'EEEE00';	break;
-                case 'Yellow3':	return 'CDCD00';	break;
-                case 'Yellow4':	return '8B8B00';	break;
-                case 'YellowGreen':	return '9ACD32';	break;
+        foreach ($this->hexColors as $key => $value) {
+            if ($key === $color) {
+                return $value;
             }
+        }
     }
 
-    private function RGB($data)
+    private function rgb($color)
     {
-        switch ($data) {
-                case 'AliceBlue':	return '240,248,255';	break;
-                case 'AntiqueWhite':	return '250,235,215';	break;
-                case 'AntiqueWhite1':	return '255,239,219';	break;
-                case 'AntiqueWhite2':	return '238,223,204';	break;
-                case 'AntiqueWhite3':	return '205,192,176';	break;
-                case 'AntiqueWhite4':	return '139,131,120';	break;
-                case 'Aquamarine':	return '127,255,212';	break;
-                case 'Aquamarine1':	return '127,255,212';	break;
-                case 'Aquamarine2':	return '118,238,198';	break;
-                case 'Aquamarine3':	return '102,205,170';	break;
-                case 'Aquamarine4':	return '069,139,116';	break;
-                case 'Azure':	return '240,255,255';	break;
-                case 'Azure1':	return '240,255,255';	break;
-                case 'Azure2':	return '224,238,238';	break;
-                case 'Azure3':	return '193,205,205';	break;
-                case 'Azure4':	return '131,139,139';	break;
-                case 'Beige':	return '245,245,220';	break;
-                case 'Bisque':	return '255,228,196';	break;
-                case 'Bisque1':	return '255,228,196';	break;
-                case 'Bisque2':	return '238,213,183';	break;
-                case 'Bisque3':	return '205,183,158';	break;
-                case 'Bisque4':	return '139,125,107';	break;
-                case 'Black':	return '000,000,000';	break;
-                case 'BlanchedAlmond':	return '255,228,196';	break;
-                case 'Blue':	return '000,000,255';	break;
-                case 'Blue1':	return '000,000,255';	break;
-                case 'Blue2':	return '000,000,238';	break;
-                case 'Blue3':	return '000,000,205';	break;
-                case 'Blue4':	return '000,000,139';	break;
-                case 'BlueViolet':	return '138,043,226';	break;
-                case 'Brown':	return '165,042,042';	break;
-                case 'Brown1':	return '255,064,064';	break;
-                case 'Brown2':	return '238,059,059';	break;
-                case 'Brown3':	return '205,051,051';	break;
-                case 'Brown4':	return '139,035,035';	break;
-                case 'Burlywood':	return '222,184,135';	break;
-                case 'Burlywood1':	return '255,211,155';	break;
-                case 'Burlywood2':	return '238,197,145';	break;
-                case 'Burlywood3':	return '205,170,125';	break;
-                case 'Burlywood4':	return '139,115,085';	break;
-                case 'CadetBlue':	return '095,158,160';	break;
-                case 'CadetBlue1':	return '152,245,255';	break;
-                case 'CadetBlue2':	return '142,229,238';	break;
-                case 'CadetBlue3':	return '122,197,205';	break;
-                case 'CadetBlue4':	return '083,134,139';	break;
-                case 'Chartreuse':	return '127,255,000';	break;
-                case 'Chartreuse1':	return '127,255,000';	break;
-                case 'Chartreuse2':	return '118,238,000';	break;
-                case 'Chartreuse3':	return '102,205,000';	break;
-                case 'Chartreuse4':	return '069,139,000';	break;
-                case 'Chocolate':	return '210,105,030';	break;
-                case 'Chocolate1':	return '255,127,036';	break;
-                case 'Chocolate2':	return '238,118,033';	break;
-                case 'Chocolate3':	return '205,102,029';	break;
-                case 'Chocolate4':	return '139,069,019';	break;
-                case 'Coral':	return '255,127,080';	break;
-                case 'Coral1':	return '255,114,086';	break;
-                case 'Coral2':	return '238,106,080';	break;
-                case 'Coral3':	return '205,091,069';	break;
-                case 'Coral4':	return '139,062,047';	break;
-                case 'CornflowerBlue':	return '100,149,237';	break;
-                case 'Cornsilk':	return '255,248,220';	break;
-                case 'Cornsilk1':	return '255,248,220';	break;
-                case 'Cornsilk2':	return '238,232,205';	break;
-                case 'Cornsilk3':	return '205,200,177';	break;
-                case 'Cornsilk4':	return '139,136,120';	break;
-                case 'Cyan':	return '000,255,255';	break;
-                case 'Cyan1':	return '000,255,255';	break;
-                case 'Cyan2':	return '000,238,238';	break;
-                case 'Cyan3':	return '000,205,205';	break;
-                case 'Cyan4':	return '000,139,139';	break;
-                case 'DarkBlue':	return '000,000,139';	break;
-                case 'DarkCyan':	return '000,139,139';	break;
-                case 'DarkGoldenrod':	return '184,134,011';	break;
-                case 'DarkGoldenrod1':	return '255,185,015';	break;
-                case 'DarkGoldenrod2':	return '238,173,014';	break;
-                case 'DarkGoldenrod3':	return '205,149,012';	break;
-                case 'DarkGoldenrod4':	return '139,101,008';	break;
-                case 'DarkGray':	return '169,169,169';	break;
-                case 'DarkGreen':	return '000,100,000';	break;
-                case 'DarkKhaki':	return '189,183,107';	break;
-                case 'DarkMagenta':	return '139,000,139';	break;
-                case 'DarkOliveGreen':	return '085,107,047';	break;
-                case 'DarkOliveGreen1':	return '202,255,112';	break;
-                case 'DarkOliveGreen2':	return '188,238,104';	break;
-                case 'DarkOliveGreen3':	return '162,205,090';	break;
-                case 'DarkOliveGreen4':	return '110,139,061';	break;
-                case 'DarkOrange':	return '255,140,000';	break;
-                case 'DarkOrange1':	return '255,127,000';	break;
-                case 'DarkOrange2':	return '238,118,000';	break;
-                case 'DarkOrange3':	return '205,102,000';	break;
-                case 'DarkOrange4':	return '139,069,000';	break;
-                case 'DarkOrchid':	return '153,050,204';	break;
-                case 'DarkOrchid1':	return '191,062,255';	break;
-                case 'DarkOrchid2':	return '178,058,238';	break;
-                case 'DarkOrchid3':	return '154,050,205';	break;
-                case 'DarkOrchid4':	return '104,034,139';	break;
-                case 'DarkRed':	return '139,000,000';	break;
-                case 'DarkSalmon':	return '233,150,122';	break;
-                case 'DarkSeaGreen':	return '143,188,143';	break;
-                case 'DarkSeaGreen1':	return '193,255,193';	break;
-                case 'DarkSeaGreen2':	return '180,238,180';	break;
-                case 'DarkSeaGreen3':	return '155,205,155';	break;
-                case 'DarkSeaGreen4':	return '105,139,105';	break;
-                case 'DarkSlateBlue':	return '072,061,139';	break;
-                case 'DarkSlateGray':	return '047,079,079';	break;
-                case 'DarkSlateGray1':	return '151,255,255';	break;
-                case 'DarkSlateGray2':	return '141,238,238';	break;
-                case 'DarkSlateGray3':	return '121,205,205';	break;
-                case 'DarkSlateGray4':	return '082,139,139';	break;
-                case 'DarkTurquoise':	return '000,206,209';	break;
-                case 'DarkViolet':	return '148,000,211';	break;
-                case 'DeepPink':	return '255,020,147';	break;
-                case 'DeepPink1':	return '255,020,147';	break;
-                case 'DeepPink2':	return '238,018,137';	break;
-                case 'DeepPink3':	return '205,016,118';	break;
-                case 'DeepPink4':	return '139,010,080';	break;
-                case 'DeepSkyBlue':	return '000,191,255';	break;
-                case 'DeepSkyBlue1':	return '000,191,255';	break;
-                case 'DeepSkyBlue2':	return '000,178,238';	break;
-                case 'DeepSkyBlue3':	return '000,154,205';	break;
-                case 'DeepSkyBlue4':	return '000,104,139';	break;
-                case 'DimGray':	return '105,105,105';	break;
-                case 'DodgerBlue':	return '030,144,255';	break;
-                case 'DodgerBlue1':	return '030,144,255';	break;
-                case 'DodgerBlue2':	return '028,134,238';	break;
-                case 'DodgerBlue3':	return '024,116,205';	break;
-                case 'DodgerBlue4':	return '016,078,139';	break;
-                case 'Firebrick':	return '178,034,034';	break;
-                case 'Firebrick1':	return '255,048,048';	break;
-                case 'Firebrick2':	return '238,044,044';	break;
-                case 'Firebrick3':	return '205,038,038';	break;
-                case 'Firebrick4':	return '139,026,026';	break;
-                case 'FloralWhite':	return '255,250,240';	break;
-                case 'ForestGreen':	return '034,139,034';	break;
-                case 'Gainsboro':	return '220,220,220';	break;
-                case 'GhostWhite':	return '248,248,255';	break;
-                case 'Gold':	return '255,215,000';	break;
-                case 'Gold1':	return '255,215,000';	break;
-                case 'Gold2':	return '238,201,000';	break;
-                case 'Gold3':	return '205,173,000';	break;
-                case 'Gold4':	return '139,117,000';	break;
-                case 'Goldenrod':	return '218,165,032';	break;
-                case 'Goldenrod1':	return '255,193,037';	break;
-                case 'Goldenrod2':	return '238,180,034';	break;
-                case 'Goldenrod3':	return '205,155,029';	break;
-                case 'Goldenrod4':	return '139,105,020';	break;
-                case 'Gray':	return '190,190,190';	break;
-                case 'Gray0':	return '000,000,000';	break;
-                case 'Gray1':	return '003,003,003';	break;
-                case 'Gray10':	return '026,026,026';	break;
-                case 'Gray100':	return '255,255,255';	break;
-                case 'Gray11':	return '028,028,028';	break;
-                case 'Gray12':	return '031,031,031';	break;
-                case 'Gray13':	return '033,033,033';	break;
-                case 'Gray14':	return '036,036,036';	break;
-                case 'Gray15':	return '038,038,038';	break;
-                case 'Gray16':	return '041,041,041';	break;
-                case 'Gray17':	return '043,043,043';	break;
-                case 'Gray18':	return '046,046,046';	break;
-                case 'Gray19':	return '048,048,048';	break;
-                case 'Gray2':	return '005,005,005';	break;
-                case 'Gray20':	return '051,051,051';	break;
-                case 'Gray21':	return '054,054,054';	break;
-                case 'Gray22':	return '056,056,056';	break;
-                case 'Gray23':	return '059,059,059';	break;
-                case 'Gray24':	return '061,061,061';	break;
-                case 'Gray25':	return '064,064,064';	break;
-                case 'Gray26':	return '066,066,066';	break;
-                case 'Gray27':	return '069,069,069';	break;
-                case 'Gray28':	return '071,071,071';	break;
-                case 'Gray29':	return '074,074,074';	break;
-                case 'Gray3':	return '008,008,008';	break;
-                case 'Gray30':	return '077,077,077';	break;
-                case 'Gray31':	return '079,079,079';	break;
-                case 'Gray32':	return '082,082,082';	break;
-                case 'Gray33':	return '084,084,084';	break;
-                case 'Gray34':	return '087,087,087';	break;
-                case 'Gray35':	return '089,089,089';	break;
-                case 'Gray36':	return '092,092,092';	break;
-                case 'Gray37':	return '094,094,094';	break;
-                case 'Gray38':	return '097,097,097';	break;
-                case 'Gray39':	return '099,099,099';	break;
-                case 'Gray4':	return '010,010,010';	break;
-                case 'Gray40':	return '102,102,102';	break;
-                case 'Gray41':	return '105,105,105';	break;
-                case 'Gray42':	return '107,107,107';	break;
-                case 'Gray43':	return '110,110,110';	break;
-                case 'Gray44':	return '112,112,112';	break;
-                case 'Gray45':	return '115,115,115';	break;
-                case 'Gray46':	return '117,117,117';	break;
-                case 'Gray47':	return '120,120,120';	break;
-                case 'Gray48':	return '122,122,122';	break;
-                case 'Gray49':	return '125,125,125';	break;
-                case 'Gray5':	return '013,013,013';	break;
-                case 'Gray50':	return '127,127,127';	break;
-                case 'Gray51':	return '130,130,130';	break;
-                case 'Gray52':	return '133,133,133';	break;
-                case 'Gray53':	return '135,135,135';	break;
-                case 'Gray54':	return '138,138,138';	break;
-                case 'Gray55':	return '140,140,140';	break;
-                case 'Gray56':	return '143,143,143';	break;
-                case 'Gray57':	return '145,145,145';	break;
-                case 'Gray58':	return '148,148,148';	break;
-                case 'Gray59':	return '150,150,150';	break;
-                case 'Gray6':	return '015,015,015';	break;
-                case 'Gray60':	return '153,153,153';	break;
-                case 'Gray61':	return '156,156,156';	break;
-                case 'Gray62':	return '158,158,158';	break;
-                case 'Gray63':	return '161,161,161';	break;
-                case 'Gray64':	return '163,163,163';	break;
-                case 'Gray65':	return '166,166,166';	break;
-                case 'Gray66':	return '168,168,168';	break;
-                case 'Gray67':	return '171,171,171';	break;
-                case 'Gray68':	return '173,173,173';	break;
-                case 'Gray69':	return '176,176,176';	break;
-                case 'Gray7':	return '018,018,018';	break;
-                case 'Gray70':	return '179,179,179';	break;
-                case 'Gray71':	return '181,181,181';	break;
-                case 'Gray72':	return '184,184,184';	break;
-                case 'Gray73':	return '186,186,186';	break;
-                case 'Gray74':	return '189,189,189';	break;
-                case 'Gray75':	return '191,191,191';	break;
-                case 'Gray76':	return '194,194,194';	break;
-                case 'Gray77':	return '196,196,196';	break;
-                case 'Gray78':	return '199,199,199';	break;
-                case 'Gray79':	return '201,201,201';	break;
-                case 'Gray8':	return '020,020,020';	break;
-                case 'Gray80':	return '204,204,204';	break;
-                case 'Gray81':	return '207,207,207';	break;
-                case 'Gray82':	return '209,209,209';	break;
-                case 'Gray83':	return '212,212,212';	break;
-                case 'Gray84':	return '214,214,214';	break;
-                case 'Gray85':	return '217,217,217';	break;
-                case 'Gray86':	return '219,219,219';	break;
-                case 'Gray87':	return '222,222,222';	break;
-                case 'Gray88':	return '224,224,224';	break;
-                case 'Gray89':	return '227,227,227';	break;
-                case 'Gray9':	return '023,023,023';	break;
-                case 'Gray90':	return '229,229,229';	break;
-                case 'Gray91':	return '232,232,232';	break;
-                case 'Gray92':	return '235,235,235';	break;
-                case 'Gray93':	return '237,237,237';	break;
-                case 'Gray94':	return '240,240,240';	break;
-                case 'Gray95':	return '242,242,242';	break;
-                case 'Gray96':	return '245,245,245';	break;
-                case 'Gray97':	return '247,247,247';	break;
-                case 'Gray98':	return '250,250,250';	break;
-                case 'Gray99':	return '252,252,252';	break;
-                case 'Green':	return '000,255,000';	break;
-                case 'Green1':	return '000,255,000';	break;
-                case 'Green2':	return '000,238,000';	break;
-                case 'Green3':	return '000,205,000';	break;
-                case 'Green4':	return '000,139,000';	break;
-                case 'GreenYellow':	return '173,255,047';	break;
-                case 'Honeydew':	return '240,255,240';	break;
-                case 'Honeydew1':	return '240,255,240';	break;
-                case 'Honeydew2':	return '224,238,224';	break;
-                case 'Honeydew3':	return '193,205,193';	break;
-                case 'Honeydew4':	return '131,139,131';	break;
-                case 'HotPink':	return '255,105,180';	break;
-                case 'HotPink1':	return '255,110,180';	break;
-                case 'HotPink2':	return '238,106,167';	break;
-                case 'HotPink3':	return '205,096,144';	break;
-                case 'HotPink4':	return '139,058,098';	break;
-                case 'IndianRed1':	return '255,106,106';	break;
-                case 'IndianRed2':	return '238,099,099';	break;
-                case 'IndianRed3':	return '205,085,085';	break;
-                case 'IndianRed4':	return '139,058,058';	break;
-                case 'Ivory':	return '255,255,240';	break;
-                case 'Ivory1':	return '255,255,240';	break;
-                case 'Ivory2':	return '238,238,224';	break;
-                case 'Ivory3':	return '205,205,193';	break;
-                case 'Ivory4':	return '139,139,131';	break;
-                case 'Khaki':	return '240,230,140';	break;
-                case 'Khaki1':	return '255,246,143';	break;
-                case 'Khaki2':	return '238,230,133';	break;
-                case 'Khaki3':	return '205,198,115';	break;
-                case 'Khaki4':	return '139,134,078';	break;
-                case 'Lavender':	return '230,230,250';	break;
-                case 'LavenderBlush':	return '255,240,245';	break;
-                case 'LavenderBlush1':	return '255,240,245';	break;
-                case 'LavenderBlush2':	return '238,224,229';	break;
-                case 'LavenderBlush3':	return '205,193,197';	break;
-                case 'LavenderBlush4':	return '139,131,134';	break;
-                case 'LawnGreen':	return '124,252,000';	break;
-                case 'LemonChiffon':	return '255,250,205';	break;
-                case 'LemonChiffon1':	return '255,250,205';	break;
-                case 'LemonChiffon2':	return '238,233,191';	break;
-                case 'LemonChiffon3':	return '205,201,165';	break;
-                case 'LemonChiffon4':	return '139,137,112';	break;
-                case 'LightBlue':	return '173,216,230';	break;
-                case 'LightBlue1':	return '191,239,255';	break;
-                case 'LightBlue2':	return '178,223,238';	break;
-                case 'LightBlue3':	return '154,192,205';	break;
-                case 'LightBlue4':	return '104,131,139';	break;
-                case 'LightCoral':	return '240,128,128';	break;
-                case 'LightCyan':	return '224,255,255';	break;
-                case 'LightCyan1':	return '224,255,255';	break;
-                case 'LightCyan2':	return '209,238,238';	break;
-                case 'LightCyan3':	return '180,205,205';	break;
-                case 'LightCyan4':	return '122,139,139';	break;
-                case 'LightGoldenrod':	return '238,221,130';	break;
-                case 'LightGoldenrod1':	return '255,236,139';	break;
-                case 'LightGoldenrod2':	return '238,220,130';	break;
-                case 'LightGoldenrod3':	return '205,190,112';	break;
-                case 'LightGoldenrod4':	return '139,129,076';	break;
-                case 'LightGoldenrodYellow':	return '250,250,210';	break;
-                case 'LightGray':	return '211,211,211';	break;
-                case 'LightGreen':	return '144,238,144';	break;
-                case 'LightPink':	return '255,182,193';	break;
-                case 'LightPink1':	return '255,174,185';	break;
-                case 'LightPink2':	return '238,162,173';	break;
-                case 'LightPink3':	return '205,140,149';	break;
-                case 'LightPink4':	return '139,095,101';	break;
-                case 'LightSalmon':	return '255,160,122';	break;
-                case 'LightSalmon1':	return '255,160,122';	break;
-                case 'LightSalmon2':	return '238,149,114';	break;
-                case 'LightSalmon3':	return '205,129,098';	break;
-                case 'LightSalmon4':	return '139,087,066';	break;
-                case 'LightSeaGreen':	return '032,178,170';	break;
-                case 'LightSkyBlue':	return '135,206,250';	break;
-                case 'LightSkyBlue1':	return '176,226,255';	break;
-                case 'LightSkyBlue2':	return '164,211,238';	break;
-                case 'LightSkyBlue3':	return '141,182,205';	break;
-                case 'LightSkyBlue4':	return '096,123,139';	break;
-                case 'LightSlateBlue':	return '132,112,255';	break;
-                case 'LightSlateGray':	return '119,136,153';	break;
-                case 'LightSteelBlue':	return '176,196,222';	break;
-                case 'LightSteelBlue1':	return '202,225,255';	break;
-                case 'LightSteelBlue2':	return '188,210,238';	break;
-                case 'LightSteelBlue3':	return '162,181,205';	break;
-                case 'LightSteelBlue4':	return '110,123,139';	break;
-                case 'LightYellow':	return '255,255,224';	break;
-                case 'LightYellow1':	return '255,255,224';	break;
-                case 'LightYellow2':	return '238,238,209';	break;
-                case 'LightYellow3':	return '205,205,180';	break;
-                case 'LightYellow4':	return '139,139,122';	break;
-                case 'LimeGreen':	return '050,205,050';	break;
-                case 'Linen':	return '250,240,230';	break;
-                case 'Magenta':	return '255,000,255';	break;
-                case 'Magenta1':	return '255,000,255';	break;
-                case 'Magenta2':	return '238,000,238';	break;
-                case 'Magenta3':	return '205,000,205';	break;
-                case 'Magenta4':	return '139,000,139';	break;
-                case 'Maroon':	return '176,048,096';	break;
-                case 'Maroon1':	return '255,052,179';	break;
-                case 'Maroon2':	return '238,048,167';	break;
-                case 'Maroon3':	return '205,041,144';	break;
-                case 'Maroon4':	return '139,028,098';	break;
-                case 'MediumAquamarine':	return '102,205,170';	break;
-                case 'MediumBlue':	return '000,000,205';	break;
-                case 'MediumOrchid':	return '186,085,211';	break;
-                case 'MediumOrchid1':	return '224,102,255';	break;
-                case 'MediumOrchid2':	return '209,095,238';	break;
-                case 'MediumOrchid3':	return '180,082,205';	break;
-                case 'MediumOrchid4':	return '122,055,139';	break;
-                case 'MediumPurple':	return '147,112,219';	break;
-                case 'MediumPurple1':	return '171,130,255';	break;
-                case 'MediumPurple2':	return '159,121,238';	break;
-                case 'MediumPurple3':	return '137,104,205';	break;
-                case 'MediumPurple4':	return '093,071,139';	break;
-                case 'MediumSeaGreen':	return '060,179,113';	break;
-                case 'MediumSlateBlue':	return '123,104,238';	break;
-                case 'MediumSpringGreen':	return '000,250,154';	break;
-                case 'MediumTurquoise':	return '072,209,204';	break;
-                case 'MediumVioletRed':	return '199,021,133';	break;
-                case 'MidnightBlue':	return '025,025,112';	break;
-                case 'MintCream':	return '245,255,250';	break;
-                case 'MistyRose':	return '255,228,225';	break;
-                case 'MistyRose1':	return '255,228,225';	break;
-                case 'MistyRose2':	return '238,213,210';	break;
-                case 'MistyRose3':	return '205,183,181';	break;
-                case 'MistyRose4':	return '139,125,123';	break;
-                case 'Moccasin':	return '255,228,181';	break;
-                case 'NavajoWhite':	return '255,222,173';	break;
-                case 'NavajoWhite1':	return '255,222,173';	break;
-                case 'NavajoWhite2':	return '238,207,161';	break;
-                case 'NavajoWhite3':	return '205,179,139';	break;
-                case 'NavajoWhite4':	return '139,121,094';	break;
-                case 'NavyBlue':	return '000,000,128';	break;
-                case 'OldLace':	return '253,245,230';	break;
-                case 'OliveDrab':	return '107,142,035';	break;
-                case 'OliveDrab1':	return '192,255,062';	break;
-                case 'OliveDrab2':	return '179,238,058';	break;
-                case 'OliveDrab3':	return '154,205,050';	break;
-                case 'OliveDrab4':	return '105,139,034';	break;
-                case 'Orange':	return '255,165,000';	break;
-                case 'Orange1':	return '255,165,000';	break;
-                case 'Orange2':	return '238,154,000';	break;
-                case 'Orange3':	return '205,133,000';	break;
-                case 'Orange4':	return '139,090,000';	break;
-                case 'OrangeRed':	return '255,069,000';	break;
-                case 'OrangeRed1':	return '255,069,000';	break;
-                case 'OrangeRed2':	return '238,064,000';	break;
-                case 'OrangeRed3':	return '205,055,000';	break;
-                case 'OrangeRed4':	return '139,037,000';	break;
-                case 'Orchid':	return '218,112,214';	break;
-                case 'Orchid1':	return '255,131,250';	break;
-                case 'Orchid2':	return '238,122,233';	break;
-                case 'Orchid3':	return '205,105,201';	break;
-                case 'Orchid4':	return '139,071,137';	break;
-                case 'PaleGoldenrod':	return '238,232,170';	break;
-                case 'PaleGreen':	return '152,251,152';	break;
-                case 'PaleGreen1':	return '154,255,154';	break;
-                case 'PaleGreen2':	return '144,238,144';	break;
-                case 'PaleGreen3':	return '124,205,124';	break;
-                case 'PaleGreen4':	return '084,139,084';	break;
-                case 'PaleTurquoise':	return '175,238,238';	break;
-                case 'PaleTurquoise1':	return '187,255,255';	break;
-                case 'PaleTurquoise2':	return '174,238,238';	break;
-                case 'PaleTurquoise3':	return '150,205,205';	break;
-                case 'PaleTurquoise4':	return '102,139,139';	break;
-                case 'PaleVioletRed':	return '219,112,147';	break;
-                case 'PaleVioletRed1':	return '255,130,171';	break;
-                case 'PaleVioletRed2':	return '238,121,159';	break;
-                case 'PaleVioletRed3':	return '205,104,137';	break;
-                case 'PaleVioletRed4':	return '139,071,093';	break;
-                case 'PapayaWhip':	return '255,239,213';	break;
-                case 'PeachPuff':	return '255,218,185';	break;
-                case 'PeachPuff1':	return '255,218,185';	break;
-                case 'PeachPuff2':	return '238,203,173';	break;
-                case 'PeachPuff3':	return '205,175,149';	break;
-                case 'PeachPuff4':	return '139,119,101';	break;
-                case 'Peru':	return '205,133,063';	break;
-                case 'Pink':	return '255,192,203';	break;
-                case 'Pink1':	return '255,181,197';	break;
-                case 'Pink2':	return '238,169,184';	break;
-                case 'Pink3':	return '205,145,158';	break;
-                case 'Pink4':	return '139,099,108';	break;
-                case 'Plum':	return '221,160,221';	break;
-                case 'Plum1':	return '255,187,255';	break;
-                case 'Plum2':	return '238,174,238';	break;
-                case 'Plum3':	return '205,150,205';	break;
-                case 'Plum4':	return '139,102,139';	break;
-                case 'PowderBlue':	return '176,224,230';	break;
-                case 'Purple':	return '160,032,240';	break;
-                case 'Purple1':	return '155,048,255';	break;
-                case 'Purple2':	return '145,044,238';	break;
-                case 'Purple3':	return '125,038,205';	break;
-                case 'Purple4':	return '085,026,139';	break;
-                case 'Red':	return '255,000,000';	break;
-                case 'Red1':	return '255,000,000';	break;
-                case 'Red2':	return '238,000,000';	break;
-                case 'Red3':	return '205,000,000';	break;
-                case 'Red4':	return '139,000,000';	break;
-                case 'RosyBrown':	return '188,143,143';	break;
-                case 'RosyBrown1':	return '255,193,193';	break;
-                case 'RosyBrown2':	return '238,180,180';	break;
-                case 'RosyBrown3':	return '205,155,155';	break;
-                case 'RosyBrown4':	return '139,105,105';	break;
-                case 'RoyalBlue':	return '065,105,225';	break;
-                case 'RoyalBlue1':	return '072,118,255';	break;
-                case 'RoyalBlue2':	return '067,110,238';	break;
-                case 'RoyalBlue3':	return '058,095,205';	break;
-                case 'RoyalBlue4':	return '039,064,139';	break;
-                case 'SaddleBrown':	return '139,069,019';	break;
-                case 'Salmon':	return '250,128,114';	break;
-                case 'Salmon1':	return '255,140,105';	break;
-                case 'Salmon2':	return '238,130,098';	break;
-                case 'Salmon3':	return '205,112,084';	break;
-                case 'Salmon4':	return '139,076,057';	break;
-                case 'SandyBrown':	return '244,164,096';	break;
-                case 'SeaGreen':	return '046,139,087';	break;
-                case 'SeaGreen1':	return '084,255,159';	break;
-                case 'SeaGreen2':	return '078,238,148';	break;
-                case 'SeaGreen3':	return '067,205,128';	break;
-                case 'SeaGreen4':	return '046,139,087';	break;
-                case 'Seashell':	return '255,245,238';	break;
-                case 'Seashell1':	return '255,245,238';	break;
-                case 'Seashell2':	return '238,229,222';	break;
-                case 'Seashell3':	return '205,197,191';	break;
-                case 'Seashell4':	return '139,134,130';	break;
-                case 'Sienna':	return '160,082,045';	break;
-                case 'Sienna1':	return '255,130,071';	break;
-                case 'Sienna2':	return '238,121,066';	break;
-                case 'Sienna3':	return '205,104,057';	break;
-                case 'Sienna4':	return '139,071,038';	break;
-                case 'SkyBlue':	return '135,206,235';	break;
-                case 'SkyBlue1':	return '135,206,255';	break;
-                case 'SkyBlue2':	return '126,192,238';	break;
-                case 'SkyBlue3':	return '108,166,205';	break;
-                case 'SkyBlue4':	return '074,112,139';	break;
-                case 'SlateBlue':	return '106,090,205';	break;
-                case 'SlateBlue1':	return '131,111,255';	break;
-                case 'SlateBlue2':	return '122,103,238';	break;
-                case 'SlateBlue3':	return '105,089,205';	break;
-                case 'SlateBlue4':	return '071,060,139';	break;
-                case 'SlateGray':	return '112,128,144';	break;
-                case 'SlateGray1':	return '198,226,255';	break;
-                case 'SlateGray2':	return '185,211,238';	break;
-                case 'SlateGray3':	return '159,182,205';	break;
-                case 'SlateGray4':	return '108,123,139';	break;
-                case 'Snow':	return '255,250,250';	break;
-                case 'Snow1':	return '255,250,250';	break;
-                case 'Snow2':	return '238,233,233';	break;
-                case 'Snow3':	return '205,201,201';	break;
-                case 'Snow4':	return '139,137,137';	break;
-                case 'SpringGreen':	return '000,255,127';	break;
-                case 'SpringGreen1':	return '000,255,127';	break;
-                case 'SpringGreen2':	return '000,238,118';	break;
-                case 'SpringGreen3':	return '000,205,102';	break;
-                case 'SpringGreen4':	return '000,139,069';	break;
-                case 'SteelBlue':	return '070,130,180';	break;
-                case 'SteelBlue1':	return '099,184,255';	break;
-                case 'SteelBlue2':	return '092,172,238';	break;
-                case 'SteelBlue3':	return '079,148,205';	break;
-                case 'SteelBlue4':	return '054,100,139';	break;
-                case 'Tan':	return '210,180,140';	break;
-                case 'Tan1':	return '255,165,079';	break;
-                case 'Tan2':	return '238,154,073';	break;
-                case 'Tan3':	return '205,133,063';	break;
-                case 'Tan4':	return '139,090,043';	break;
-                case 'Thistle':	return '216,191,216';	break;
-                case 'Thistle1':	return '255,225,255';	break;
-                case 'Thistle2':	return '238,210,238';	break;
-                case 'Thistle3':	return '205,181,205';	break;
-                case 'Thistle4':	return '139,123,139';	break;
-                case 'Tomato':	return '255,099,071';	break;
-                case 'Tomato1':	return '255,099,071';	break;
-                case 'Tomato2':	return '238,092,066';	break;
-                case 'Tomato3':	return '205,079,057';	break;
-                case 'Tomato4':	return '139,054,038';	break;
-                case 'Turquoise':	return '064,224,208';	break;
-                case 'Turquoise1':	return '000,245,255';	break;
-                case 'Turquoise2':	return '000,229,238';	break;
-                case 'Turquoise3':	return '000,197,205';	break;
-                case 'Turquoise4':	return '000,134,139';	break;
-                case 'Violet':	return '238,130,238';	break;
-                case 'VioletRed':	return '208,032,144';	break;
-                case 'VioletRed1':	return '255,062,150';	break;
-                case 'VioletRed2':	return '238,058,140';	break;
-                case 'VioletRed3':	return '205,050,120';	break;
-                case 'VioletRed4':	return '139,034,082';	break;
-                case 'Wheat':	return '245,222,179';	break;
-                case 'Wheat1':	return '255,231,186';	break;
-                case 'Wheat2':	return '238,216,174';	break;
-                case 'Wheat3':	return '205,186,150';	break;
-                case 'Wheat4':	return '139,126,102';	break;
-                case 'White':	return '255,255,255';	break;
-                case 'WhiteSmoke':	return '245,245,245';	break;
-                case 'Yellow1':	return '255,255,000';	break;
-                case 'Yellow2':	return '238,238,000';	break;
-                case 'Yellow3':	return '205,205,000';	break;
-                case 'Yellow4':	return '139,139,000';	break;
-                case 'YellowGreen':	return '154,205,050';	break;
+        foreach ($this->rgbColors as $key => $value) {
+            if ($key === $color) {
+                return $value;
             }
+        }
     }
 }
