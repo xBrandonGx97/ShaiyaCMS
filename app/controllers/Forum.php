@@ -70,7 +70,7 @@ class Forum extends \Framework\Core\CoreController
         self::view('forum/view_post', $data);
     }
 
-    public static function view_topic($id)
+    public static function viewTopic($id)
     {
         $forum = self::model(Models\Forum::class);
 

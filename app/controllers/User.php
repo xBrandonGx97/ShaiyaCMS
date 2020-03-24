@@ -31,7 +31,7 @@ class User extends \Framework\Core\CoreController
         $this->view('pages/cms/user/donate', $data);
     }
 
-    public function donate_complete()
+    public function donateComplete()
     {
         $this->user->_fetch_User();
 
@@ -47,7 +47,7 @@ class User extends \Framework\Core\CoreController
         $this->view('pages/cms/user/donate_complete', $data);
     }
 
-    public function donate_process()
+    public function donateProcess()
     {
         $this->user->_fetch_User();
 

@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-    class Core extends \Framework\Core\CoreController
+class Core extends \Framework\Core\CoreController
+{
+    public static function settings($id)
     {
-        public static function settings($id)
-        {
-            echo 'core/settings';
-            echo $id;
-        }
+        echo 'core/settings';
+        echo $id;
     }
+}
