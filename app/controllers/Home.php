@@ -29,7 +29,7 @@
                 'zone' => 'CMS',
                 'nav' => true,
             ],
-                'User' => $this->user,
+                'user' => $this->user,
                 'news' => $newsModel->getNews(),
                 'serverinfo' => $serverInfo,
                 'widget' => $widget,
