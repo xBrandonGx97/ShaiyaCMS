@@ -7,13 +7,9 @@
 
     class Pagination
     {
-        public function sp($perPage, $prevPage, $nextPage, $page)
+        public function sp($query, $perPage, $prevPage, $nextPage, $page)
         {
-            $result = Eloquent::table(table('NEWS'))
-                    ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
-                    ->orderBy('Date', 'DESC')
-                    ->get();
-            $total_records = count($result);
+            $total_records = count($query);
 
             // build array containing all pages
             $tmp = [];

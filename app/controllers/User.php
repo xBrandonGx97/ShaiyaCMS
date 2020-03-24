@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models as Models;
 use Classes\Utils as Utils;
 
 class User extends \Framework\Core\CoreController
@@ -16,7 +17,6 @@ class User extends \Framework\Core\CoreController
 
     public function donate()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -33,7 +33,6 @@ class User extends \Framework\Core\CoreController
 
     public function donate_complete()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -50,7 +49,6 @@ class User extends \Framework\Core\CoreController
 
     public function donate_process()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -67,9 +65,8 @@ class User extends \Framework\Core\CoreController
 
     public function friends()
     {
-        $Friends = $this->model('App\Models\Friends');
+        $Friends = $this->model(Models\Friends::class);
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -87,7 +84,6 @@ class User extends \Framework\Core\CoreController
 
     public function messages()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -104,7 +100,6 @@ class User extends \Framework\Core\CoreController
 
     public function profile()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -121,9 +116,8 @@ class User extends \Framework\Core\CoreController
 
     public function promotions()
     {
-        $promotions = $this->model('App\Models\Promotions');
+        $promotions = $this->model(Models\Promotions::class);
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -141,9 +135,8 @@ class User extends \Framework\Core\CoreController
 
     public function pvprewards()
     {
-        $rewards = $this->model('App\Models\PvPRewards');
+        $rewards = $this->model(Models\PvPRewards::class);
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $Browser = new Utils\Browser;
@@ -164,7 +157,6 @@ class User extends \Framework\Core\CoreController
 
     public function referers()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -181,7 +173,6 @@ class User extends \Framework\Core\CoreController
 
     public function settings()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -198,9 +189,8 @@ class User extends \Framework\Core\CoreController
 
     public function support()
     {
-        $support = $this->model('App\Models\Support');
+        $support = $this->model(Models\Support::class);
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -218,10 +208,9 @@ class User extends \Framework\Core\CoreController
 
     public function user($id)
     {
-        $userModel = $this->model('App\Models\User');
-        $Friends = $this->model('App\Models\Friends');
+        $userModel = $this->model(Models\User::class);
+        $Friends = $this->model(Models\Friends::class);
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -241,7 +230,6 @@ class User extends \Framework\Core\CoreController
 
     public function users()
     {
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [
@@ -258,9 +246,8 @@ class User extends \Framework\Core\CoreController
 
     public function vote()
     {
-        $vote = $this->model('App\Models\Vote');
+        $vote = $this->model(Models\Vote::class);
 
-        $this->user->run();
         $this->user->_fetch_User();
 
         $data = ['pageData' => [

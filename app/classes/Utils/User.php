@@ -42,10 +42,11 @@
         ];
 
         // Status
-        private $ADM;
-        private $GM;
-        private $GS;
-        private $Member;
+        private $memberLevel;
+        const STATUS_ADM = 16;
+        const STATUS_GM = 32;
+        const STATUS_GMA = 64;
+        const STATUS_GS = 128;
 
         // Socials
         public $Discord;
@@ -164,14 +165,6 @@
             //self::initPasswordHash();
         }
 
-        public function _class_info($level = false)
-        {
-            switch ($level) {
-                case 1:	return $this->_Props($level);	break;
-                case 2:	return $this->_Mthds($level);	break;
-            }
-        }
-
         public function _get_data($data)
         {
             if ($this->$data) {
@@ -181,51 +174,32 @@
             }
         }
 
-        public function _get_UserInfo($data)
-        {
-            switch ($data) {
-                case 'JoinDate':
-                    return date('m/d/Y', strtotime($this->$data));
-                break;
-                case 'LeaveDate':
-                    return date('m/d/Y', strtotime($this->$data));
-                break;
-                case 'LoginDate':
-                    return date('m/d/Y', strtotime($this->$data));
-                break;
-                case 'RegDate':
-                    return date('m/d/Y', strtotime($this->$data));
-                break;
-                default: return $this->$data;
-            }
-        }
-
         public function _is_staff()
         {
             if (isset($_SESSION['User'])) {
                 switch ($_SESSION['User']['Status']) {
                     case	'16':
-                        $this->ADM = true;
+                        $this->memberLevel = 'ADM';
                         return true;
                     break;
                     case	'32':
-                        $this->GM = true;
+                        $this->memberLevel = 'GM';
                         return true;
                     break;
                     case	'48':
-                        $this->GM = true;
+                        $this->memberLevel = 'GM';
                         return true;
                     break;
                     case	'64':
-                        $this->GM = true;
+                        $this->memberLevel = 'GMA';
                         return true;
                     break;
                     case	'80':
-                        $this->GM = true;
+                        $this->memberLevel = 'GMA';
                         return true;
                     break;
                     case	'128':
-                        $this->GS = true;
+                        $this->memberLevel = 'GS';
                         return true;
                     break;
                 }
@@ -279,31 +253,6 @@
                 self::$LoginStatus	=	0;
                 return false;
             }*/
-        }
-
-        public function get_isCharExist()
-        {
-            // Char Existence Check
-            $sql = ('SELECT * FROM ' . Chars . ' WHERE UserUID=?');
-            $stmt = odbc_prepare($cxn, $sql);
-            $args = [$this->UserUID];
-            if (!odbc_execute($stmt, $args)) {
-                return false;
-            } elseif ($row = odbc_fetch_array($stmt)) {
-                return true;
-            }
-        }
-
-        public function get_isLoggedInName()
-        {
-            // User Login Check
-            $UserLoginStatus = false;
-            if (isset($this->UserUID,$this->UserID)) {
-                $UserLoginStatus = $this->UserID;
-            } else {
-                $UserLoginStatus = 'Guest';
-            }
-            return $UserLoginStatus;
         }
 
         public function Auth()
@@ -481,70 +430,6 @@
             }
         }
 
-        public function _fetch_UserGameInfo($UserUID, $col = false)
-        {
-            $return = false;
-
-            $sql = ('SELECT * FROM ' . MSSQL::getTable('SH_USERDATA') . ' WHERE UserUID=:uid ');
-            MSSQL::query($sql);
-            MSSQL::bind(':uid', $UserUID);
-
-            if (MSSQL::$stmt->execute()) {
-                $return = [];
-                $cnt = 0;
-
-                while ($results = MSSQL::$stmt->fetch()) {
-                    foreach ($results as $key => $value) {
-                        if ($col) {
-                            if ($key == $col) {
-                                $return = $results[$col];
-                                break;
-                            } else {
-                                $return = 'Datatype Invalid';
-                            }
-                        } else {
-                            $return[$key] = $value;
-                        }
-                    }
-                    $cnt++;
-                }
-            }
-
-            return $return;
-        }
-
-        public function _fetch_UserWebInfo($UserUID, $col = false)
-        {
-            $return = false;
-
-            $sql = ('SELECT * FROM ' . MSSQL::getTable('WEB_PRESENCE') . ' WHERE UserID=:uid ');
-            MSSQL::query($sql);
-            MSSQL::bind(':uid', $UserUID);
-
-            if (MSSQL::$stmt->execute()) {
-                $return = [];
-                $cnt = 0;
-
-                while ($results = MSSQL::$stmt->fetch(\PDO::FETCH_OBJ)) {
-                    foreach ($results as $key => $value) {
-                        if ($col) {
-                            if ($key == $col) {
-                                $return = $results[$col];
-                                break;
-                            } else {
-                                $return = 'Datatype Invalid';
-                            }
-                        } else {
-                            $return[$key] = $value;
-                        }
-                    }
-                    $cnt++;
-                }
-            }
-
-            return $return;
-        }
-
         public function _fetch_User()
         {
             return get_class_vars(get_called_class());
@@ -673,15 +558,23 @@
         }
 
         // MISC
+        public function _class_info($level = false)
+        {
+            switch ($level) {
+                case 1:	$this->_Props($level);	break;
+                case 2:	$this->_Mthds($level);	break;
+            }
+        }
+
         public function _Props()
         {
             echo '<div class="col-md-12">';
             echo '<b>Properties for class (' . get_class($this) . '):</b><br>';
             echo '<pre>';
-            echo print_r(get_object_vars($this));
+            print_r(get_object_vars($this));
             echo '</pre>';
             echo '</div>';
-            exit();
+            exit;
         }
 
         public function _Mthds()
@@ -695,6 +588,6 @@
             }
             echo '</pre>';
             echo '</div>';
-            exit();
+            exit;
         }
     }

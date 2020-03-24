@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+    use App\Models as Models;
     use Classes\Utils as Utils;
 
     class ServerInfo extends \Framework\Core\CoreController
@@ -29,7 +30,7 @@ namespace App\Controllers;
 
         public function bossrecords()
         {
-            $bossRecords = $this->model('App\Models\BossRecords');
+            $bossRecords = $this->model(Models\BossRecords::class);
 
             $this->user->_fetch_User();
 
@@ -47,7 +48,7 @@ namespace App\Controllers;
 
         public function dropfinder()
         {
-            $dropFinder = $this->model('App\Models\DropFinder');
+            $dropFinder = $this->model(Models\DropFinder::class);
 
             $this->user->_fetch_User();
 

@@ -2,8 +2,9 @@
 
     namespace App\Controllers;
 
-    use Illuminate\Database\Capsule\Manager as Eloquent;
+    use App\Models as Models;
     use Classes\Utils as Utils;
+    use Illuminate\Database\Capsule\Manager as Eloquent;
 
     class Home extends \Framework\Core\CoreController
     {
@@ -16,8 +17,8 @@
 
         public function index()
         {
-            $newsModel = $this->model('App\Models\News');
-            $serverInfo = $this->model('App\Models\ServerInfo');
+            $newsModel = $this->model(Models\News::class);
+            $serverInfo = $this->model(Models\ServerInfo::class);
 
             // remove run and make it run on construct
             $this->user->_fetch_User();
@@ -65,7 +66,13 @@
                 $nextPage = $page + 1;
 
                 $start_from = ($page - 1) * $records_per_page;
-                $this->pagination->sp($records_per_page, $prevPage, $nextPage, $page);
+
+                $query = Eloquent::table(table('NEWS'))
+                    ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
+                    ->orderBy('Date', 'DESC')
+                    ->get();
+
+                $this->pagination->sp($query, $records_per_page, $prevPage, $nextPage, $page);
 
                 try {
                     $news = Eloquent::table(table('NEWS'))
@@ -81,7 +88,7 @@
                 } catch (\Exception $e) {
                     // query failed
                 }
-                $this->pagination->sp($records_per_page, $prevPage, $nextPage, $page);
+                $this->pagination->sp($query, $records_per_page, $prevPage, $nextPage, $page);
             }
         }
 

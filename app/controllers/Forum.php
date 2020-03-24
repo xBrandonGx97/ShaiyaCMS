@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models as Models;
 use Classes\Utils as Utils;
 
 class Forum extends \Framework\Core\CoreController
@@ -13,7 +14,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function forum()
     {
-        $forum = self::model('App\Models\Forum');
+        $forum = self::model(Models\Forum::class);
 
         $this->user->_fetch_User();
 
@@ -32,7 +33,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function topics($id)
     {
-        $forum = self::model('App\Models\Forum');
+        $forum = self::model(Models\Forum::class);
 
         $this->user->_fetch_User();
         $data = ['pageData' => [
@@ -51,7 +52,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function posts($id)
     {
-        $forum = self::model('App\Models\Forum');
+        $forum = self::model(Models\Forum::class);
 
         $this->user->_fetch_User();
 
@@ -71,7 +72,7 @@ class Forum extends \Framework\Core\CoreController
 
     public static function view_topic($id)
     {
-        $forum = self::model('App\Models\Forum');
+        $forum = self::model(Models\Forum::class);
 
         $this->user->_fetch_User();
 
