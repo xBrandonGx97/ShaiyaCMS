@@ -21,7 +21,7 @@
             $serverInfo = $this->model(Models\ServerInfo::class);
 
             // remove run and make it run on construct
-            $this->user->_fetch_User();
+            $this->user->fetchUser();
 
             $widget = new Utils\Widget();
             $widget = $widget->display();
