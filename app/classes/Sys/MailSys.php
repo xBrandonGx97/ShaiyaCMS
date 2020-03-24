@@ -10,12 +10,12 @@ class MailSys
     private $msgSubject;
     private $msgContent;
 
-    public function __construct($host)
+    public function __construct(string $host)
     {
         $this->getMailer($host);
     }
 
-    public function getMailer($host)
+    public function getMailer(string $host)
     {
         $this->mail = new PHPMailer();
         if ($host === 'local') {
@@ -50,7 +50,7 @@ class MailSys
         $this->mail->addAddress('brandonjm033@gmail.com');
     }
 
-    public function sendMail($mail_for, $data)
+    public function sendMail(string $mail_for, string $data): string
     {
         $this->messages($mail_for, $data);
         $this->mail->Subject = $this->msgSubject;
@@ -62,13 +62,14 @@ class MailSys
         }
     }
 
-    public function messages($mail_for, $data)
+    public function messages(string $mail_for, string $data): string
     {
         if ($mail_for === 'testEmail') {
             $this->msgSubject = 'Hello - from the other side!';
             $this->msgContent = 'Hi dood!</br>';
             $this->msgContent .= 'Your username is: ' . $data;
         }
+        return 'messageCreated';
     }
 
     public function setMailHost()
