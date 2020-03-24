@@ -15,7 +15,7 @@ class MailSys
         $this->getMailer($host);
     }
 
-    public function getMailer(string $host): void
+    public function getMailer(string $host): string
     {
         $this->mail = new PHPMailer();
         if ($host === 'local') {
