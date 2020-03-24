@@ -5,6 +5,7 @@ namespace App;
 use Compiler\Compiler;
 use Dotenv\Dotenv;
 use Framework\Core\Loader;
+use Classes\DB\MSSQL as DB;
 use Classes\Utils as Utils;
 
 class Bootstrap
@@ -54,20 +55,20 @@ class Bootstrap
             define('config', require_once CONFIG_PATH . 'config.php');
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
+            // Load Helpers
+            $this->load_helpers();
             // Init Session
             $this->session = new Utils\Session;
             // Init PHP
             $this->php = new Utils\PHP;
-            // Init Capsule/DB
-            \Classes\DB\MSSQL::initCapsule();
+            // Init DB
+            $this->database = new DB;
             // Init Settings
             $this->settings = new \Classes\Settings\Settings;
             // Init Data
             $this->data = new Utils\Data;
             // Load Purifier
             $this->data->do('load_purifier');
-            // Load Helpers
-            $this->load_helpers();
             // Load Langs
             $this->getLang();
             $this->load_langs();

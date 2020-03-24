@@ -2,7 +2,6 @@
 
    namespace Classes\Settings;
 
-    use Classes\DB\MSSQL;
     use Illuminate\Database\Capsule\Manager as Eloquent;
 
     class Settings
@@ -10,7 +9,7 @@
         public function __construct()
         {
             $settings = [];
-            $datas = Eloquent::table(MSSQL::getTable('CMS_MAIN'))
+            $datas = Eloquent::table(table('CMS_MAIN'))
              ->select()
              ->get();
             foreach ($datas as $data) {
