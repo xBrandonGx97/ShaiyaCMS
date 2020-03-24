@@ -1,16 +1,16 @@
 <?php
 
-   namespace Classes\DB;
+namespace Classes\DB;
 
-    class SQL
+class SQL
+{
+    public function viewData()
     {
-        public static function viewData()
-        {
-            $sql = ('
-					SELECT UserID from PS_UserData.dbo.Users_Master
-			');
-            MSSQL::query($sql);
-            $data = MSSQL::resultSet(2);
-            return $data;
-        }
+        $sql = ('
+				    SELECT UserID from PS_UserData.dbo.Users_Master
+		');
+        MSSQL::query($sql);
+        $data = MSSQL::resultSet(2);
+        return $data;
     }
+}
