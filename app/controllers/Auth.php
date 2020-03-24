@@ -13,6 +13,7 @@ class Auth extends \Framework\Core\CoreController
     {
         $this->session = $session;
         $this->auth = new Utils\Auth($this->session);
+        $this->data = new Utils\Data;
         $this->user = $user;
         $this->browser = new Utils\Browser;
     }
@@ -65,8 +66,8 @@ class Auth extends \Framework\Core\CoreController
             //If json_decode succeeded, the JSON is valid.
             if (is_array($decoded)) {
                 // Declare Required Variables
-                $userName = isset($decoded['user']) ? Utils\Data::_do('escData', trim($decoded['user'])) : false;
-                $Password = isset($decoded['pw']) ? Utils\Data::_do('escData', trim($decoded['pw'])) : false;
+                $userName = isset($decoded['user']) ? $this->data->do('escData', trim($decoded['user'])) : false;
+                $Password = isset($decoded['pw']) ? $this->data->do('escData', trim($decoded['pw'])) : false;
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 // Error Checking
                 $this->arr = [

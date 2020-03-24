@@ -17,9 +17,6 @@ class Bootstrap
         require_once dirname(__DIR__) . '/vendor/autoload.php';
 
         $this->init();
-
-        // Init Session
-        $this->session = new Utils\Session;
     }
 
     private function init()
@@ -53,32 +50,35 @@ class Bootstrap
             require_once CORE_PATH . 'loader.php';
             // Load Dotenv
             $this->initDotEnv();
-
             // Load configuration file
             define('config', require_once CONFIG_PATH . 'config.php');
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
+            // Init Session
+            $this->session = new Utils\Session;
+            // Init PHP
+            $this->php = new Utils\PHP;
+            // Init Capsule/DB
+            \Classes\DB\MSSQL::initCapsule();
+            // Init Settings
+            $this->settings = new \Classes\Settings\Settings;
+            // Init Data
+            $this->data = new Utils\Data;
+            // Load Purifier
+            $this->data->do('load_purifier');
+            // Load Helpers
+            $this->load_helpers();
+            // Load Langs
+            $this->getLang();
+            $this->load_langs();
+            $this->load_defaults();
         }
-        // Start session
-        //	session_start();
     }
 
     public function dispatch()
     {
-        // Init Capsule
-        \Classes\DB\MSSQL::initCapsule();
-        // Load Helpers
-        $this->load_helpers();
-        // Init DotEnv
-        //self::initDotEnv();
-        // Init
-        require_once 'init.php';
-        // Load Langs
-        $this->getLang();
-        $this->load_langs();
         // Load Routes
         $this->dispatchFastRoute();
-        $this->load_defaults();
     }
 
     public function _is_ajax()
@@ -92,7 +92,7 @@ class Bootstrap
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Load Purifier Method
-            \Classes\Utils\Data::_do('load_purifier');
+            $this->data->do('load_purifier');
 
             // Load Helpers
             foreach (scandir(config['FWROOT'] . '/Helpers/') as $filename) {
@@ -159,8 +159,7 @@ class Bootstrap
     public function initDotEnv()
     {
         $rootDir = dirname(dirname(__FILE__));
-        //echo 'dirname: ' . $rootDir;
-        $dotenv = \Dotenv\Dotenv::createImmutable($rootDir);
+        $dotenv = Dotenv::createImmutable($rootDir);
         $dotenv->load();
     }
 

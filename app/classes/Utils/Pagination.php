@@ -6,7 +6,7 @@
 
     class Pagination
     {
-        public static function showPages($perPage, $prevPage, $nextPage, $page, $topicID)
+        public function showPages($perPage, $prevPage, $nextPage, $page, $topicID)
         {
             $sql = ("
                     SELECT * FROM ShaiyaCMS.dbo.FORUM_POSTS WHERE TopicID=$topicID ORDER BY PostID DESC
@@ -69,7 +69,7 @@
             echo '</div>';
         }
 
-        public static function showPages_Rankings($perPage, $prevPage, $nextPage, $page)
+        public function showPages_Rankings($perPage, $prevPage, $nextPage, $page)
         {
             $sql = ('
                     SELECT * FROM PS_GameData.dbo.Chars ORDER BY CharID DESC

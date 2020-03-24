@@ -7,7 +7,7 @@
 
     class Settings
     {
-        public static function run()
+        public function __construct()
         {
             $settings = [];
             $datas = Eloquent::table(MSSQL::getTable('CMS_MAIN'))
@@ -19,7 +19,7 @@
             $_SESSION['Settings'] = $settings;
         }
 
-        public static function _Props()
+        public function _Props()
         {
             echo '<div class="col-md-12">';
             echo '<b>Properties for class (' . get_called_class() . '):</b><br>';

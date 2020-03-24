@@ -12,15 +12,16 @@
         public function __construct()
         {
             $this->MSSQL = new \Classes\DB\MSSQL;
+            $this->data = new Data;
             $this->getDropFinder();
         }
 
         public function getDropFinder()
         {
-            $Item = isset($_POST['item']) ? Data::_do('escData', trim($_POST['item'])) : false;
-            $ItemName = Data::_do('escData', $Item);
-            $MobID = isset($_POST['MobID']) ? Data::_do('escData', trim($_POST['MobID'])) : false;
-            $ItemID = isset($_POST['ItemID']) ? Data::_do('escData', trim($_POST['ItemID'])) : false;
+            $Item = isset($_POST['item']) ? $this->data->do('escData', trim($_POST['item'])) : false;
+            $ItemName = $this->data->do('escData', $Item);
+            $MobID = isset($_POST['MobID']) ? $this->data->do('escData', trim($_POST['MobID'])) : false;
+            $ItemID = isset($_POST['ItemID']) ? $this->data->do('escData', trim($_POST['ItemID'])) : false;
             if (isset($_POST['SCN'])) {
                 $sql = (
                     '
