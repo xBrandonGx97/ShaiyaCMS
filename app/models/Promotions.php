@@ -10,12 +10,6 @@ class Promotions extends Model
     protected $table;
     public $timestamps = false;
 
-    /* public $Code;
-    public $NumOfUses;
-    public $MaxUses;
-    public $Points;
-    public $fet; */
-
     public function __construct()
     {
         $this->MSSQL = new \Classes\DB\MSSQL;

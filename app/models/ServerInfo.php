@@ -14,10 +14,10 @@ class ServerInfo
 
     public function __construct()
     {
-        $this->MSSQL = new \Classes\DB\MSSQL;
+        $this->db = new \Classes\DB\MSSQL;
     }
 
-    public function ServerStatus()
+    public function serverStatus()
     {
         $LoginConn = @fsockopen($this->ServerIP, $this->ServerPorts[0], $errno, $errstr, 0.01);
         $GameConn = @fsockopen($this->ServerIP, $this->ServerPorts[1], $errno, $errstr, 0.01);
@@ -37,18 +37,8 @@ class ServerInfo
         @fclose($GameConn);
     }
 
-    public function PlayersOnline()
+    public function playersOnline()
     {
-        $select = (
-            '
-                    COUNT(*) AS \'Players Online\',
-                    (SELECT COUNT(*) FROM ' . table('SH_CHARDATA') . ' WHERE LoginStatus=1 AND Faction = 0)
-                    AS AoL,
-                    (SELECT COUNT(*) FROM ' . table('SH_CHARDATA') . ' WHERE LoginStatus=1 AND Faction = 1)
-                    AS UoF
-                '
-        );
-
         $sql = ('
                     SELECT COUNT(*) AS \'Players\',
                     (SELECT COUNT(*) FROM PS_GameData.dbo.Chars WHERE LoginStatus=? AND Faction = ?) AS \'AoL\',
@@ -62,38 +52,5 @@ class ServerInfo
             $this->AoL = $fet->AoL;
             $this->UoF = $fet->UoF;
         }
-
-        /* $fet = $this->MSSQL->query()
-            ->select('COUNT(*)')
-            ->as('Players')
-            ->select('COUNT(*)', 1)
-            ->from('SH_CHARDATA')
-            ->where('LoginStatus', ':status1')
-            ->where('Faction', ':faction1', 'AND')
-            ->as('AoL', 1)
-            ->select('COUNT(*)', 1)
-            ->from('SH_CHARDATA')
-            ->where('LoginStatus', ':status2')
-            ->where('Faction', ':faction2', 'AND')
-            ->as('UoF', 2)
-            /* ->bind(':status1', 1)
-            ->bind(':faction1', 0)
-            ->bind(':status2', 1)
-            ->bind(':faction2', 1) */
-        //->get('single');
-        /* $sql = (
-           "
-                   SELECT COUNT(*) AS 'Players Online',
-                   (SELECT COUNT(*) FROM " . $this->MSSQL->getTable('SH_CHARDATA') . " WHERE LoginStatus=1 AND Faction = '0') AS 'AoL',
-                   (SELECT COUNT(*) FROM " . $this->MSSQL->getTable('SH_CHARDATA') . " WHERE LoginStatus=1 AND Faction = '1') AS 'UoF'
-                   FROM " . $this->MSSQL->getTable('SH_CHARDATA') . ' WHERE LoginStatus=:status'
-         );
-         $this->MSSQL->query($sql);
-         $this->MSSQL->bind(':status', 1);
-
-         $fet = $this->MSSQL->single(true); */
-        /* $this->pOnline = $fet['Players'];
-        $this->AoL = $fet['AoL'];
-        $this->UoF = $fet['UoF']; */
     }
 }

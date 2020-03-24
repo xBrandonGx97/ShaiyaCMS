@@ -14,9 +14,9 @@ class PatchNotes
     public function getPatchNotes()
     {
         $patchnotes = Eloquent::table(table('PATCHNOTES'))
-             ->select()
-             ->orderBy('Date', 'DESC')
-             ->get();
+            ->select()
+            ->orderBy('Date', 'DESC')
+            ->get();
         return $patchnotes;
     }
 }

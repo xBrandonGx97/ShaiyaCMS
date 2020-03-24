@@ -1,19 +1,19 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    class Notifications
+class Notifications
+{
+    public function __construct()
     {
-        public function __construct()
-        {
-            $this->MSSQL = new \Classes\DB\MSSQL;
-        }
-
-        public function sendNotification()
-        {
-        }
-
-        public function deleteNotification()
-        {
-        }
+        $this->MSSQL = new \Classes\DB\MSSQL;
     }
+
+    public function sendNotification()
+    {
+    }
+
+    public function deleteNotification()
+    {
+    }
+}
