@@ -1,7 +1,8 @@
 <?php
 
-   namespace Classes\Sys;
+namespace Classes\Sys;
 
-    class LogSys
-    {
-    }
+class LogSys
+{
+   //
+}

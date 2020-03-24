@@ -45,11 +45,14 @@ class Session
         }
     }
 
-    public function has($key)
+    public function has($key, $key2 = false)
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
                 if (isset($_SESSION[$key])) {
+                    return true;
+                }
+                if (isset($_SESSION[$key2])) {
                     return true;
                 }
                 return false;

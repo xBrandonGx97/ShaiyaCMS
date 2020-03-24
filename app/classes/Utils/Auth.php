@@ -59,7 +59,7 @@ class Auth
         // was authenticated from remember me cookie
     }
 
-    public function _get()
+    public function get()
     {
         return get_class_methods(get_called_class());
     }
