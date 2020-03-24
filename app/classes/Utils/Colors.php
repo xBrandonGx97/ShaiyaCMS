@@ -1,63 +1,63 @@
 <?php
 
-   namespace Classes\Utils;
+namespace Classes\Utils;
 
-    class Colors
+class Colors
+{
+    private $Alpha = false;
+    private $BGColor = false;
+    private $Color = false;
+    private $ColorType = false;
+    private $Hex = false;
+    private $RGB = false;
+    private $Type = false;
+
+    // Public Methods
+    public function do($method_name, $data = null, $page = null, $line = null)
     {
-        private $Alpha = false;
-        private $BGColor = false;
-        private $Color = false;
-        private $ColorType = false;
-        private $Hex = false;
-        private $RGB = false;
-        private $Type = false;
+        $method = $method_name;
 
-        // Public Methods
-        public function _do($method_name, $data = null, $page = null, $line = null)
-        {
-            $method = $method_name;
-
-            if (method_exists(__CLASS__, $method)) {
-                $bla = __CLASS__;
-                return $bla::$method($data);
-            }
-
-            echo '<b>ERROR: Class (' . get_called_class() . '):</b><br>';
-            echo 'Defined method (' . $method . ') not found!<br>';
-            if ($page == null) {
-                echo 'Page: N/A<br>';
-            } else {
-                echo 'Page: ' . $page . '<br>';
-            }
-            if ($line == null) {
-                echo 'Line: N/A<br><br>';
-            } else {
-                echo 'Line: ' . $line . '<br><br>';
-            }
+        if (method_exists(__CLASS__, $method)) {
+            $bla = __CLASS__;
+            return $bla::$method($data);
         }
 
-        // Private Methods
-        private function _do_Alpha($data)
-        {
-            switch ($data) {
-                case '0.1':return '0.1';break;
-                case '0.2':return '0.2';break;
-                case '0.25':return '0.25';break;
-                case '0.3':return '0.3';break;
-                case '0.4':return '0.4';break;
-                case '0.5':return '0.5';break;
-                case '0.6':return '0.6';break;
-                case '0.7':return '0.7';break;
-                case '0.8':return '0.8';break;
-                case '0.9':return '0.9';break;
-                case '1':return '1';break;
-                default:return $data;break;
-            }
+        echo '<b>ERROR: Class (' . get_called_class() . '):</b><br>';
+        echo 'Defined method (' . $method . ') not found!<br>';
+        if ($page == null) {
+            echo 'Page: N/A<br>';
+        } else {
+            echo 'Page: ' . $page . '<br>';
         }
+        if ($line == null) {
+            echo 'Line: N/A<br><br>';
+        } else {
+            echo 'Line: ' . $line . '<br><br>';
+        }
+    }
 
-        private function HEX($data)
-        {
-            switch ($data) {
+    // Private Methods
+    private function _do_Alpha($data)
+    {
+        switch ($data) {
+            case '0.1':return '0.1';break;
+            case '0.2':return '0.2';break;
+            case '0.25':return '0.25';break;
+            case '0.3':return '0.3';break;
+            case '0.4':return '0.4';break;
+            case '0.5':return '0.5';break;
+            case '0.6':return '0.6';break;
+            case '0.7':return '0.7';break;
+            case '0.8':return '0.8';break;
+            case '0.9':return '0.9';break;
+            case '1':return '1';break;
+            default:return $data;break;
+        }
+    }
+
+    private function HEX($data)
+    {
+        switch ($data) {
                 case 'AliceBlue':	return 'F0F8FF';	break;
                 case 'AntiqueWhite':	return 'FAEBD7';	break;
                 case 'AntiqueWhite1':	return 'FFEFDB';	break;
@@ -605,11 +605,11 @@
                 case 'Yellow4':	return '8B8B00';	break;
                 case 'YellowGreen':	return '9ACD32';	break;
             }
-        }
+    }
 
-        private function RGB($data)
-        {
-            switch ($data) {
+    private function RGB($data)
+    {
+        switch ($data) {
                 case 'AliceBlue':	return '240,248,255';	break;
                 case 'AntiqueWhite':	return '250,235,215';	break;
                 case 'AntiqueWhite1':	return '255,239,219';	break;
@@ -1157,5 +1157,5 @@
                 case 'Yellow4':	return '139,139,000';	break;
                 case 'YellowGreen':	return '154,205,050';	break;
             }
-        }
     }
+}
