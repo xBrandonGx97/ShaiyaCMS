@@ -21,6 +21,7 @@ class CoreController
         $blade->loadView($view, $data);
     }
 
+    // Load widget
     public function widget($view, $data = [])
     {
         $blade = new \Framework\Blade\BladeController('widget', $view);

@@ -34,6 +34,11 @@
 <script src="/resources/themes/Godlike/vendor/jquery/dist/jquery.min.js"></script>
 {{--<script src="/resources/themes/core/js/user/search_users.js" type=module></script>--}}
 <script src="/resources/themes/core/js/functions.js" type=module></script>
+@if($data['pageData']['index']==='home')
+    <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/load_p_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/load_next_data.js" type=module></script>
+@endif
 @if($data['pageData']['index']==='view_topic')
     <script src="/resources/themes/core/js/forum_functions.js" type=module></script>
     <script src="/resources/themes/core/js/forum/pagination/load_data.js" type=module></script>

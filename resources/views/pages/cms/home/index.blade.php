@@ -16,7 +16,10 @@
 		<div class="container">
         @Separator(80)
         <div class="row">
-            @include('partials.cms.news')
+            <div class="col-lg-8">
+              <div id="newsData"></div>
+            </div>
+            {{-- @include('partials.cms.news') --}}
             @include('partials.cms.widgets')
         </div>
         @Separator(80)

@@ -8,6 +8,10 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // Default Route
     $r->addRoute('GET', '/', [($home), 'index']);
+    // News
+    $r->addRoute('POST', '/news', [($home), 'news']);
+    // Server Time
+    $r->addRoute('POST', '/servertime', [($home), 'serverTime']);
 
     // Community
     $r->addGroup('/community', function (FastRoute\RouteCollector $r) {

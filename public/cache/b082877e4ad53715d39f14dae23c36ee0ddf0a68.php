@@ -15,7 +15,10 @@
 		<div class="container">
         <?php Separator(80) ?>
         <div class="row">
-            <?php echo $__env->make('partials.cms.news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <div class="col-lg-8">
+              <div id="newsData"></div>
+            </div>
+            
             <?php echo $__env->make('partials.cms.widgets', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>
         <?php Separator(80) ?>

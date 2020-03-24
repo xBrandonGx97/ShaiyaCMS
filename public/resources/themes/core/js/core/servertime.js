@@ -2,7 +2,7 @@ export function serverTime() {
   document.addEventListener('readystatechange', e => {
     if (e.target.readyState === 'complete') {
       e.preventDefault();
-      fetch('/resources/themes/core/js/fetch/core/servertime/servertime.php', {
+      fetch('/servertime', {
         method: 'post',
         mode: 'same-origin',
         credentials: 'same-origin',
