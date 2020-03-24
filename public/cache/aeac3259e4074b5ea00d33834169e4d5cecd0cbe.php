@@ -77,7 +77,7 @@
                         <div class="nk-gap-2"></div>
                         
                         
-                        <?php echo $data['select']->sec_question(); ?>
+                        <?php echo $data['select']->secQuestion(); ?>
 
                         <div class="error-register-sec-question nk-error"></div>
                         <div class="nk-gap-2"></div>
@@ -368,4 +368,5 @@
 			});
 		});
 	});*/
-</script><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/partials/cms/signForms.blade.php ENDPATH**/ ?>
+</script>
+<?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/partials/cms/signForms.blade.php ENDPATH**/ ?>
