@@ -27,6 +27,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/pvprankings', [($community), 'pvprankings']);
         $r->addRoute('GET', '/guildrankings', [($community), 'guildrankings']);
         $r->addRoute('GET', '/staffteam', [($community), 'staffteam']);
+
+        // Patch Notes
+        $r->addRoute('POST', '/getPatchNotes', [($community), 'getPatchNotes']);
     });
     // Server Info
     $r->addGroup('/serverinfo', function (FastRoute\RouteCollector $r) {

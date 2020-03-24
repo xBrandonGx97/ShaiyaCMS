@@ -17,6 +17,8 @@ class Bootstrap
         // Load Vendor autoloader for Vendor resources
         require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+        $this->loader = new Loader;
+
         $this->init();
     }
 
@@ -51,8 +53,8 @@ class Bootstrap
             require_once CORE_PATH . 'loader.php';
             // Load Dotenv
             $this->initDotEnv();
-            // Load configuration file
-            define('config', require_once CONFIG_PATH . 'config.php');
+            // Load configuration files
+            $this->load_configs();
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Load Helpers
@@ -168,6 +170,12 @@ class Bootstrap
         $user = new Utils\User($this->session);
         $user->initPrivacy();
         $user->initSocials();
+    }
+
+    public function load_configs()
+    {
+        define('config', $this->loader->config('config'));
+        define('maps', $this->loader->config('maps'));
     }
 
     public function load_helpers()

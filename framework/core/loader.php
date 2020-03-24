@@ -4,6 +4,14 @@ namespace Framework\Core;
 
     class Loader
     {
+        // Load config files
+        public function config($config)
+        {
+            if (file_exists(CONFIG_PATH . $config . '.php')) {
+                return require_once CONFIG_PATH . $config . '.php';
+            }
+        }
+
         // Load library classes
         public function library($lib)
         {

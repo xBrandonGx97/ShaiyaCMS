@@ -16,22 +16,7 @@
 		@include('partials.cms.signForms')
         @Separator(80)
         <div class="container">
-            @if(count($data['patchnotes']) > 0)
-                @foreach($data['patchnotes'] as $patchnotes)
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="nk-box-3 bg-dark-2">
-                                <h2 class="nk-title h3 text-xs-center">{{$patchnotes->Title}}</h2>
-                                @php echo $patchnotes->Detail; @endphp
-                                <span class="float-right">{{date('F d, Y', strtotime($patchnotes->Date))}}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nk-gap-2"></div>
-                @endforeach
-            @else
-                <p>No Patch Notes found. Please check back later.</p>
-            @endif
+            <div id="patchData"></div>
         </div>
         @Separator(40)
         @Separator(80)

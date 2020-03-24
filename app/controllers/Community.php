@@ -12,6 +12,7 @@ class Community extends \Framework\Core\CoreController
     {
         $this->user = $user;
         $this->select = new Utils\Select;
+        $this->pagination = new Utils\Pagination;
     }
 
     public function discord()
@@ -135,7 +136,7 @@ class Community extends \Framework\Core\CoreController
     // POST
     public function getPatchNotes()
     {
-        $records_per_page = 5;
+        $records_per_page = 1;
         $page = '';
         $output = '';
 
@@ -154,23 +155,23 @@ class Community extends \Framework\Core\CoreController
 
             $start_from = ($page - 1) * $records_per_page;
 
-            $query = Eloquent::table(table('PATCH_NOTES'))
-                    ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
+            $query = Eloquent::table(table('PATCHNOTES'))
+                    ->select('RowID', 'Title', 'Detail', 'Date')
                     ->orderBy('Date', 'DESC')
                     ->get();
 
             $this->pagination->sp($query, $records_per_page, $prevPage, $nextPage, $page);
 
             try {
-                $news = Eloquent::table(table('PATCH_NOTES'))
-                    ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
+                $news = Eloquent::table(table('PATCHNOTES'))
+                    ->select('RowID', 'Title', 'Detail', 'Date')
                     ->offset($start_from)
                     ->limit($records_per_page)
                     ->orderBy('Date', 'DESC')
                     ->get();
 
                 if ($news) {
-                    $this->view('partials/cms/news', $news);
+                    $this->view('fetch/patch_notes/patchNotes', $news);
                 }
             } catch (\Exception $e) {
                 // query failed

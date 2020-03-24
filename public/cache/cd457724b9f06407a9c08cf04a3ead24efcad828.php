@@ -36,8 +36,13 @@
 <script src="/resources/themes/core/js/functions.js" type=module></script>
 <?php if($data['pageData']['index']==='home' || $data['pageData']['index']==='news'): ?>
     <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
-    <script src="/resources/themes/core/js/pagination/load_p_data.js" type=module></script>
-    <script src="/resources/themes/core/js/pagination/load_next_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/news/load_news_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/news/load_next_news_data.js" type=module></script>
+<?php endif; ?>
+<?php if($data['pageData']['index']==='patchNotes'): ?>
+    <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/patchNotes/load_patch_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/patchNotes/load_next_patch_data.js" type=module></script>
 <?php endif; ?>
 <?php if($data['pageData']['index']==='view_topic'): ?>
     <script src="/resources/themes/core/js/forum_functions.js" type=module></script>

@@ -15,22 +15,7 @@
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php Separator(80) ?>
         <div class="container">
-            <?php if(count($data['patchnotes']) > 0): ?>
-                <?php $__currentLoopData = $data['patchnotes']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $patchnotes): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="nk-box-3 bg-dark-2">
-                                <h2 class="nk-title h3 text-xs-center"><?php echo e($patchnotes->Title); ?></h2>
-                                <?php echo $patchnotes->Detail; ?>
-                                <span class="float-right"><?php echo e(date('F d, Y', strtotime($patchnotes->Date))); ?></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nk-gap-2"></div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <?php else: ?>
-                <p>No Patch Notes found. Please check back later.</p>
-            <?php endif; ?>
+            <div id="patchData"></div>
         </div>
         <?php Separator(40) ?>
         <?php Separator(80) ?>
