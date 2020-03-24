@@ -23,6 +23,9 @@ class Home extends Controller
 
         $this->user->fetchUser();
 
+        $this->colors = new Utils\Colors;
+        $this->colors->get('hex', 'SpringGreen1');
+
         $widget = new Utils\Widget();
         $widget = $widget->display();
 
