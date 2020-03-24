@@ -6,7 +6,6 @@ class Session
 {
     private $sessionName;
     private $name = config['sessionName'];
-    // later set session name in env/config file
 
     public function __construct()
     {

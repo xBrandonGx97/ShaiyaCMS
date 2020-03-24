@@ -9,6 +9,7 @@ class Forum extends \Framework\Core\CoreController
     public function __construct(Utils\User $user)
     {
         $this->user = $user;
+        $this->select = new Utils\Select;
     }
 
     public static function forum()
@@ -25,7 +26,8 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         self::view('forum/forum', $data);
     }
@@ -43,7 +45,8 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'topicID' => $id,
         ];
         self::view('forum/topics', $data);
@@ -63,7 +66,8 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'topicID' => $id,
         ];
         self::view('forum/view_post', $data);
@@ -84,7 +88,8 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'topicID' => $id,
             'UserStatus' => $UserStatus
         ];

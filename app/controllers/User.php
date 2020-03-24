@@ -9,6 +9,7 @@ class User extends \Framework\Core\CoreController
     public function __construct(Utils\User $user)
     {
         $this->user = $user;
+        $this->select = new Utils\Select;
     }
 
     /* Get Methods */
@@ -24,7 +25,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/donate', $data);
     }
@@ -40,7 +42,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/donate_complete', $data);
     }
@@ -56,7 +59,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/donate_process', $data);
     }
@@ -74,8 +78,9 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
-            'Friends' => $Friends
+            'user' => $this->user,
+            'select' => $this->select,
+            'friends' => $Friends
         ];
         $this->view('pages/cms/user/friends', $data);
     }
@@ -91,7 +96,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/messages', $data);
     }
@@ -107,7 +113,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/profile', $data);
     }
@@ -125,7 +132,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'promotions' => $promotions,
         ];
         $this->view('pages/cms/user/promotions', $data);
@@ -146,8 +154,9 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
-            'Browser' => $Browser,
+            'user' => $this->user,
+            'select' => $this->select,
+            'browser' => $Browser,
             'rewards' => $rewards,
         ];
         $this->view('pages/cms/user/pvprewards', $data);
@@ -164,7 +173,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/referers', $data);
     }
@@ -180,7 +190,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/settings', $data);
     }
@@ -198,7 +209,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'support' => $support,
         ];
         $this->view('pages/cms/user/support', $data);
@@ -218,10 +230,11 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'userModel' => $userModel,
             'userID' => $id,
-            'Friends' => $Friends
+            'friends' => $Friends
         ];
         $this->view('pages/cms/user/user', $data);
     }
@@ -237,7 +250,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('pages/cms/user/users', $data);
     }
@@ -255,7 +269,8 @@ class User extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user,
+            'user' => $this->user,
+            'select' => $this->select,
             'vote' => $vote
         ];
         $this->view('pages/cms/user/vote', $data);

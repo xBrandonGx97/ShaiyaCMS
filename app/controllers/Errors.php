@@ -9,6 +9,7 @@ class Errors extends \Framework\Core\CoreController
     public function __construct(Utils\User $user)
     {
         $this->user = $user;
+        $this->select = new Utils\Select;
     }
 
     public function error301()
@@ -21,7 +22,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/301', $data);
     }
@@ -36,7 +38,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/307', $data);
     }
@@ -51,7 +54,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/400', $data);
     }
@@ -66,7 +70,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/401', $data);
     }
@@ -81,7 +86,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/403', $data);
     }
@@ -96,7 +102,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/404', $data);
     }
@@ -111,7 +118,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/405', $data);
     }
@@ -126,7 +134,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/408', $data);
     }
@@ -141,7 +150,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/500', $data);
     }
@@ -156,7 +166,8 @@ class Errors extends \Framework\Core\CoreController
             'zone' => 'CMS',
             'nav' => true
         ],
-            'User' => $this->user
+            'user' => $this->user,
+            'select' => $this->select
         ];
         $this->view('errors/502', $data);
     }

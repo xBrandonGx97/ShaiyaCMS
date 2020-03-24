@@ -9,6 +9,7 @@ namespace App\Controllers;
         public function __construct(Utils\User $user)
         {
             $this->user = $user;
+            $this->select = new Utils\Select;
         }
 
         public function about()
@@ -21,7 +22,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/serverinfo/about', $data);
         }
@@ -39,7 +41,8 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'bossrecords' => $bossRecords,
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/serverinfo/bossrecords', $data);
         }
@@ -57,7 +60,8 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'dropfinder' => $dropFinder,
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/serverinfo/dropfinder', $data);
         }
@@ -72,7 +76,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/serverinfo/drops', $data);
         }
@@ -87,7 +92,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/serverinfo/terms', $data);
         }

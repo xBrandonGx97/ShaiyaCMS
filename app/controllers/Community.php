@@ -9,6 +9,7 @@ namespace App\Controllers;
         public function __construct(Utils\User $user)
         {
             $this->user = $user;
+            $this->select = new Utils\Select;
         }
 
         public function discord()
@@ -21,7 +22,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
 
             $this->view('pages/cms/community/discord', $data);
@@ -37,7 +39,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/community/downloads', $data);
         }
@@ -55,7 +58,8 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'guildrankings' => $guildRankingsModel->getGuildRankings(),
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/community/guildrankings', $data);
         }
@@ -113,7 +117,8 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'news' => $newsModel->getNews(),
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/community/news', $data);
         }
@@ -131,7 +136,8 @@ namespace App\Controllers;
                 'nav' => true
             ],
                 'patchnotes' => $patchNotesModel->getPatchNotes(),
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/community/patchnotes', $data);
         }
@@ -148,7 +154,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select,
                 'Rankings' => $rankings
             ];
             $this->view('pages/cms/community/pvprankings', $data);
@@ -164,7 +171,8 @@ namespace App\Controllers;
                 'zone' => 'CMS',
                 'nav' => true
             ],
-                'User' => $this->user,
+                'user' => $this->user,
+                'select' => $this->select
             ];
             $this->view('pages/cms/community/staffteam', $data);
         }

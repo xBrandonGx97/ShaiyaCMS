@@ -9,6 +9,7 @@
         public function __construct(Utils\User $user)
         {
             $this->user = $user;
+            $this->select = new Utils\Select;
         }
 
         public function index()
@@ -23,8 +24,6 @@
             $widget = new Utils\Widget();
             $widget = $widget->display();
 
-            $select = new Utils\Select;
-
             $data = ['pageData' => [
                 'index' => 'index',
                 'title' => 'Home',
@@ -35,7 +34,7 @@
                 'news' => $newsModel->getNews(),
                 'serverinfo' => $serverInfo,
                 'widget' => $widget,
-                'select' => $select
+                'select' => $this->select
             ];
 
             //	$User=new User();
