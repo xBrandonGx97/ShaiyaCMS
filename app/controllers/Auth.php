@@ -7,9 +7,14 @@ use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class Auth extends \Framework\Core\CoreController
 {
-    public function __construct(Utils\User $user)
+    private $arr = [];
+
+    public function __construct(Utils\User $user, Utils\Session $session)
     {
+        $this->session = $session;
+        $this->auth = new Utils\Auth($this->session);
         $this->user = $user;
+        $this->browser = new Utils\Browser;
     }
 
     /* Get Methods */
@@ -39,7 +44,7 @@ class Auth extends \Framework\Core\CoreController
                     'loggedOut' => true
                 ];
 
-                Utils\Auth::logout();
+                $this->auth->logout();
             }
             echo json_encode($arr);
         }
@@ -64,25 +69,25 @@ class Auth extends \Framework\Core\CoreController
                 $Password = isset($decoded['pw']) ? Utils\Data::_do('escData', trim($decoded['pw'])) : false;
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 // Error Checking
-                $arr = [
+                $this->arr = [
                     'finished' => '',
                     'errors' => []
                 ];
                 if (isset($decoded['login'])) {
                     // Validate Username
                     if (empty($userName)) {
-                        $arr['errors'][] .= '1';
+                        $this->arr['errors'][] .= '1';
                     }
                     // Validate Password
                     if (empty($Password)) {
-                        $arr['errors'][] .= '2';
+                        $this->arr['errors'][] .= '2';
                     } elseif (strlen($Password) < 3 || strlen($Password) > 16) {
-                        $arr['errors'][] .= '3';
+                        $this->arr['errors'][] .= '3';
                     }
                     // If No Errors Continue
-                    if (count($arr['errors']) == 0) {
+                    if (count($this->arr['errors']) == 0) {
                         $fet = Eloquent::table(table('WEB_PRESENCE') . ' as Web')
-                            ->select(['[User].UserUID', 'Web.UserID', 'Web.Pw', 'Web.Email', '[User].Status'])
+                            ->select(['[User].UserUID', 'Web.UserID', 'Web.Pw', 'Web.Email', '[User].Status', 'Web.RestrictIP'])
                             ->join(table('SH_USERDATA') . ' as  [User]', '[User].UserID', '=', 'Web.UserID')
                             ->where('Web.UserID', $userName)
                             ->orWhere('Web.Email', $userName)
@@ -90,28 +95,40 @@ class Auth extends \Framework\Core\CoreController
                         if ($fet) {
                             foreach ($fet as $userInfo) {
                                 if (password_verify($Password, $userInfo->Pw)) {
-                                    if ($userInfo->Status == 0 || $userInfo->Status == 16 || $userInfo->Status == 32 || $userInfo->Status == 48 || $userInfo->Status == 64 || $userInfo->Status == 80 || $userInfo->Status == 128) {
-                                        Utils\Session::put('User', 'UserUID', $userInfo->UserUID);
-                                        Utils\Session::put('User', 'UserID', $userInfo->UserID);
-                                        Utils\Session::put('User', 'Status', $userInfo->Status);
-                                        $this->user->updateLoginStatus(1);
-                                        $arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
-                                        $LastPage = $_SERVER['HTTP_REFERER'];
-                                        $arr['finished'] .= 'true';
+                                    if ($userInfo->RestrictIP !== null) {
+                                        if ($userInfo->RestrictIP === $this->browser->IP) {
+                                            // IP is same, continue
+                                            $this->loginSuccess($userInfo);
+                                        }
                                     } else {
-                                        $arr['errors'][] .= '6';
+                                        $this->loginSuccess($userInfo);
                                     }
                                 } else {
-                                    $arr['errors'][] .= '4';
+                                    $this->arr['errors'][] .= '4';
                                 }
                             }
                         } else {
-                            $arr['errors'][] .= '5';
+                            $this->arr['errors'][] .= '5';
                         }
                     }
-                    echo json_encode($arr);
+                    echo json_encode($this->arr);
                 }
             }
+        }
+    }
+
+    public function loginSuccess($userInfo)
+    {
+        if ($userInfo->Status == 0 || $userInfo->Status == 16 || $userInfo->Status == 32 || $userInfo->Status == 48 || $userInfo->Status == 64 || $userInfo->Status == 80 || $userInfo->Status == 128) {
+            $this->session->put('User', 'UserUID', $userInfo->UserUID);
+            $this->session->put('User', 'UserID', $userInfo->UserID);
+            $this->session->put('User', 'Status', $userInfo->Status);
+            $this->user->updateLoginStatus(1);
+            $this->arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
+            $LastPage = $_SERVER['HTTP_REFERER'];
+            $this->arr['finished'] .= 'true';
+        } else {
+            $this->arr['errors'][] .= '6';
         }
     }
 }

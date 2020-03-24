@@ -139,7 +139,6 @@ class User extends \Framework\Core\CoreController
         $this->user->_fetch_User();
 
         $Browser = new Utils\Browser;
-        $Browser = $Browser->run();
 
         $data = ['pageData' => [
             'index' => 'index',

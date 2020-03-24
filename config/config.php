@@ -15,6 +15,8 @@
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]
         ],
+        // Session
+        'sessionName' => env('SESSION_NAME'),
         // Mail
         'mail' => [
             'host' => env('MAIL_HOST'),

@@ -17,6 +17,9 @@ class Bootstrap
         require_once dirname(__DIR__) . '/vendor/autoload.php';
 
         $this->init();
+
+        // Init Session
+        $this->session = new Utils\Session;
     }
 
     private function init()
@@ -62,12 +65,8 @@ class Bootstrap
 
     public function dispatch()
     {
-        $modal = new \Classes\Utils\Modal();
-        $helpers = new \Classes\Utils\Helpers($modal);
         // Init Capsule
         \Classes\DB\MSSQL::initCapsule();
-        // Init Session
-        \Classes\Utils\Session::init('Default');
         // Load Helpers
         $this->load_helpers();
         // Init DotEnv
@@ -140,7 +139,7 @@ class Bootstrap
 
     public function load_defaults()
     {
-        $user = new Utils\User();
+        $user = new Utils\User($this->session);
         $user->initPrivacy();
         $user->initSocials();
     }

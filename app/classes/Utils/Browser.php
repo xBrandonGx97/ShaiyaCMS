@@ -4,38 +4,37 @@
 
     class Browser
     {
-        public static $OS;
-        public static $Browser;
-        public static $UA;
-        public static $IP;
-        public static $IPv4;
-        public static $IPv6;
-        public static $data;
+        public $OS;
+        public $Browser;
+        public $UA;
+        public $IP;
+        public $IPv4;
+        public $IPv6;
+        public $data;
 
         // PUBLIC
-        public static function run()
+        public function __construct()
         {
-            self::_UA();
-            self::_OS();
-            self::_Browser();
-            self::_IP();
-            //	$this->_ipv4_ipv6($this->IP);
+            $this->_UA();
+            $this->_OS();
+            $this->_Browser();
+            $this->_IP();
         }
 
-        public static function _get_browser_info($data)
+        public function _get_browser_info($data)
         {
-            return self::$data;
+            return $this->data;
         }
 
         // PRIVATE
-        private static function _UA()
+        private function _UA()
         {
             if (isset($_SERVER['HTTP_USER_AGENT'])) {
-                self::$UA = $_SERVER['HTTP_USER_AGENT'];
+                $this->UA = $_SERVER['HTTP_USER_AGENT'];
             }
         }
 
-        private static function _OS()
+        private function _OS()
         {
             $OS_Platform = 'Unknown OS Platform';
             $OS_Arr = [
@@ -66,13 +65,13 @@
             ];
 
             foreach ($OS_Arr as $RegEx => $Value) {
-                if (preg_match($RegEx, self::$UA)) {
-                    self::$OS = $Value;
+                if (preg_match($RegEx, $this->UA)) {
+                    $this->OS = $Value;
                 }
             }
         }
 
-        private static function _Browser()
+        private function _Browser()
         {
             $Browser = 'Unknown Browser';
             $Browser_Arr = [
@@ -89,26 +88,26 @@
             ];
 
             foreach ($Browser_Arr as $RegEx => $Value) {
-                if (preg_match($RegEx, self::$UA)) {
-                    self::$Browser = $Value;
+                if (preg_match($RegEx, $this->UA)) {
+                    $this->Browser = $Value;
                 }
             }
         }
 
-        private static function _IP()
+        private function _IP()
         {
             if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-                self::$IP = $_SERVER['HTTP_CLIENT_IP'];
+                $this->IP = $_SERVER['HTTP_CLIENT_IP'];
             } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                self::$IP = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                $this->IP = $_SERVER['HTTP_X_FORWARDED_FOR'];
             } elseif (!empty($_SERVER['REMOTE_HOST'])) {
-                self::$IP = $_SERVER['REMOTE_HOST'];
+                $this->IP = $_SERVER['REMOTE_HOST'];
             } else {
-                self::$IP = $_SERVER['REMOTE_ADDR'];
+                $this->IP = $_SERVER['REMOTE_ADDR'];
             }
         }
 
-        public static function _ipv4_ipv6($ipaddr)
+        public function _ipv4_ipv6($ipaddr)
         {
             $value = '';
             $mask = '';
@@ -176,7 +175,7 @@
         }
 
         // MISC
-        public static function _Props()
+        public function _Props()
         {
             echo '<b>Browser Class => Display Properties:</b>';
             echo '<pre>';

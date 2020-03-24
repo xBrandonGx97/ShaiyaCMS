@@ -2,7 +2,8 @@
     use Framework\Core\Route;
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $userClass = new Classes\Utils\User;
+    $session = new Classes\Utils\Session;
+    $userClass = new Classes\Utils\User($session);
     $home = new App\Controllers\Home($userClass);
 
     // Default Route
@@ -10,7 +11,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     // Community
     $r->addGroup('/community', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
+
         $community = new App\Controllers\Community($userClass);
 
         $r->addRoute('GET', '/downloads', [($community), 'downloads']);
@@ -23,7 +26,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     });
     // Server Info
     $r->addGroup('/serverinfo', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
+
         $serverInfo = new App\Controllers\ServerInfo($userClass);
 
         $r->addRoute('GET', '/about', [($serverInfo), 'about']);
@@ -34,15 +39,18 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     });
     // Auth
     $r->addGroup('/auth', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
-        $auth = new App\Controllers\Auth($userClass);
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
+        $auth = new App\Controllers\Auth($userClass, $session);
 
         $r->addRoute('POST', '/login', [($auth), 'login']);
         $r->addRoute('POST', '/logout', [($auth), 'logout']);
     });
     // User
     $r->addGroup('/user', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
+
         $user = new App\Controllers\User($userClass);
 
         $r->addRoute('GET', '/profile', [($user), 'profile']);
@@ -67,7 +75,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     });
     // Forum
     $r->addGroup('/forum', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
         $forum = new App\Controllers\Forum($userClass);
 
         $r->addRoute('GET', '', [($forum), 'forum']);
@@ -77,7 +86,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     });
     // Admin
     $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
         $admin = new App\Controllers\Admin($userClass);
 
         $r->addRoute('GET', '', [($admin), 'index']);
@@ -86,7 +96,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     });
     // Errors
     $r->addGroup('/errors', function (FastRoute\RouteCollector $r) {
-        $userClass = new Classes\Utils\User;
+        $session = new Classes\Utils\Session;
+        $userClass = new Classes\Utils\User($session);
         $errors = new App\Controllers\Errors($userClass);
 
         $r->addRoute('GET', '/301', [($errors), 'error301']);

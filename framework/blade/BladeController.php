@@ -3,7 +3,7 @@
 namespace Framework\Blade;
 
 use Jenssegers\Blade\Blade;
-use \Classes\Utils\Auth;
+use \Classes\Utils as Utils;
 
 class BladeController
 {
@@ -16,16 +16,18 @@ class BladeController
         } elseif ($type === 'widget') {
             $this->blade = new Blade(config['WIDGETDIR'] . '/' . $view . '/php', 'cache');
         }
+        $this->session = new Utils\Session;
+        $this->auth = new Utils\Auth($this->session);
     }
 
     public function loadDirectives()
     {
         $this->blade->if('auth', function () {
-            return Auth::check();
+            return $this->auth->check();
         });
 
         $this->blade->if('guest', function () {
-            return Auth::guest();
+            return $this->auth->guest();
         });
 
         $this->blade->directive('endauth', function ($expression) {

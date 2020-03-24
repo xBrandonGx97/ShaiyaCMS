@@ -77,7 +77,7 @@
                         <div class="nk-gap-2"></div>
                         
                         
-                        <?php echo \Classes\Utils\Select::sec_question(); ?>
+                        <?php echo $data['select']->sec_question(); ?>
 
                         <div class="error-register-sec-question nk-error"></div>
                         <div class="nk-gap-2"></div>

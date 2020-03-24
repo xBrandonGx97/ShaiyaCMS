@@ -16,11 +16,14 @@
             $newsModel = $this->model('App\Models\News');
             $serverInfo = $this->model('App\Models\ServerInfo');
 
+            // remove run and make it run on construct
             $this->user->run();
             $this->user->_fetch_User();
 
             $widget = new Utils\Widget();
             $widget = $widget->display();
+
+            $select = new Utils\Select;
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -32,6 +35,7 @@
                 'news' => $newsModel->getNews(),
                 'serverinfo' => $serverInfo,
                 'widget' => $widget,
+                'select' => $select
             ];
 
             //	$User=new User();

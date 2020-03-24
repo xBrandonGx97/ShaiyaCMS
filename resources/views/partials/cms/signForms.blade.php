@@ -78,7 +78,7 @@
                         {{--<input class="form-control register-referrer" type="text" placeholder="Referrer">
                         <div class="nk-gap-2"></div>--}}
                         {{--<input class="form-control register-security-question" type="text" placeholder="Security Question">--}}
-                        {!!\Classes\Utils\Select::sec_question()!!}
+                        {!!$data['select']->sec_question()!!}
                         <div class="error-register-sec-question nk-error"></div>
                         <div class="nk-gap-2"></div>
                         <input class="form-control register-security-answer" type="text" placeholder="Security Answer" name="SecAnswer">

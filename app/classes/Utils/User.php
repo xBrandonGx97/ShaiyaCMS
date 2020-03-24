@@ -65,6 +65,11 @@
         // Other
         public $MapID;
 
+        public function __construct(Session $session)
+        {
+            $this->session = $session;
+        }
+
         public function run()
         {
             //Session::flush();
@@ -562,13 +567,13 @@
             if (isset($_SESSION['User']['UserUID'])) {
                 $privacy = Eloquent::table(table('USER_PRIVACY'))
                             ->select()
-                            ->where('UserUID', Session::get('User', 'UserUID'))
+                            ->where('UserUID', $this->session->get('User', 'UserUID'))
                             ->first();
                 if (!is_null($privacy)) {
                     try {
                         $privacyIns = Eloquent::table(table('USER_PRIVACY'))
                             ->insert([
-                                'UserUID' => Session::get('User', 'UserUID'),
+                                'UserUID' => $this->session->get('User', 'UserUID'),
                                 'DisplayProfile' => 'Public',
                                 'DisplaySocials' => 'Public'
                             ]);
@@ -606,13 +611,13 @@
             if (isset($_SESSION['User']['UserUID'])) {
                 $socials = Eloquent::table(table('USER_SOCIALS'))
                             ->select()
-                            ->where('UserUID', Session::get('User', 'UserUID'))
+                            ->where('UserUID', $this->session->get('User', 'UserUID'))
                             ->first();
                 if (!is_null($socials)) {
                     try {
                         $socialsIns = Eloquent::table(table('USER_SOCIALS'))
                             ->insert([
-                                'UserUID' => Session::get('User', 'UserUID')
+                                'UserUID' => $this->session->get('User', 'UserUID')
                             ]);
                     } catch (\Exception $e) {
                         echo 'problem inserting.';
@@ -659,7 +664,7 @@
             ];
             try {
                 $loginStatus = Eloquent::table(table('WEB_PRESENCE'))
-                    ->where('UserID', Session::get('User', 'UserID'))
+                    ->where('UserID', $this->session->get('User', 'UserID'))
                     ->update($data);
             } catch (\Exception $e) {
                 echo 'problem inserting.';

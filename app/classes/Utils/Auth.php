@@ -4,56 +4,62 @@ namespace Classes\Utils;
 
 class Auth
 {
+    public function __construct(Session $session)
+    {
+        $this->session = $session;
+        $this->user = new User($this->session);
+    }
+
     // similar to laravels auth class
-    public static function check()
+    public function check()
     {
         // Check if user is logged in
-        if (Session::has('User')) {
+        if ($this->session->has('User')) {
             return true;
         }
     }
 
-    public static function guest()
+    public function guest()
     {
         // Check if user is not logged in
-        if (!Session::has('User')) {
+        if (!$this->session->has('User')) {
             return true;
         }
     }
 
-    public static function attempt($credentials)
+    public function attempt($credentials)
     {
         // Authentication passed
     }
 
-    public static function login($user, $remember = false)
+    public function login($user, $remember = false)
     {
         // Log user in
     }
 
-    public static function loginUsingId($user, $remember = false)
+    public function loginUsingId($user, $remember = false)
     {
         // Log user in using their primary id
     }
 
-    public static function logout()
+    public function logout()
     {
         // Log user out
-        if (Session::has('User')) {
-            User::updateLoginStatus(0);
-            Session::regenerate();
-            Session::forget('User');
+        if ($this->session->has('User')) {
+            $this->user->updateLoginStatus(0);
+            $this->session->regenerate();
+            $this->session->forget('User');
             $referrer = $_SERVER['HTTP_REFERER'];
             redirect($referrer);
         }
     }
 
-    public static function viaRemember()
+    public function viaRemember()
     {
         // was authenticated from remember me cookie
     }
 
-    public static function _get()
+    public function _get()
     {
         return get_class_methods(get_called_class());
     }

@@ -4,24 +4,26 @@ namespace Classes\Utils;
 
 class Session
 {
-    public static $sessionName;
+    private $sessionName;
+    private $name = config['sessionName'];
+    // later set session name in env/config file
 
-    public static function init($name)
+    public function __construct()
     {
         if (!isset($_SESSION)) {
             // Start our session
-            session_name($name);
+            session_name($this->name);
             session_start();
-            setcookie($name, session_id(), 0, '/', null, null, true);
-            self::$sessionName = $name;
+            setcookie($this->name, session_id(), 0, '/', null, null, true);
         }
+        $this->sessionName = $this->name;
     }
 
-    public static function put($key, $key2 = false, $value)
+    public function put($key, $key2 = false, $value)
     {
         // check if session started on each function
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 if ($key2 || !empty($key2)) {
                     if (!isset($_SESSION[$key][$key2])) {
                         $_SESSION[$key][$key2] = $value;
@@ -35,19 +37,19 @@ class Session
         }
     }
 
-    public static function regenerate()
+    public function regenerate()
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 session_regenerate_id(true);
             }
         }
     }
 
-    public static function has($key)
+    public function has($key)
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 if (isset($_SESSION[$key])) {
                     return true;
                 }
@@ -56,10 +58,10 @@ class Session
         }
     }
 
-    public static function get($key, $key2 = false)
+    public function get($key, $key2 = false)
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 if ($key2) {
                     if (isset($_SESSION[$key][$key2])) {
                         return $_SESSION[$key][$key2];
@@ -78,10 +80,10 @@ class Session
         }
     }
 
-    public static function exists($key)
+    public function exists($key)
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 if (isset($_SESSION[$key])) {
                     return true;
                 } else {
@@ -91,19 +93,19 @@ class Session
         }
     }
 
-    public static function all()
+    public function all()
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 return print_r($_SESSION);
             }
         }
     }
 
-    public static function forget($key)
+    public function forget($key)
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 if (isset($_SESSION[$key])) {
                     unset($_SESSION[$key]);
                 }
@@ -111,17 +113,17 @@ class Session
         }
     }
 
-    public static function flush()
+    public function flush()
     {
         if (isset($_SESSION)) {
-            if (session_name() === self::$sessionName) {
+            if (session_name() === $this->sessionName) {
                 session_unset();
                 session_destroy();
             }
         }
     }
 
-    public static function save()
+    public function save()
     {
     }
 }
