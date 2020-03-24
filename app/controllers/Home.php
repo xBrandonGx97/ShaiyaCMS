@@ -21,7 +21,6 @@ class Home extends Controller
         $newsModel = $this->model(Models\News::class);
         $serverInfo = $this->model(Models\ServerInfo::class);
 
-        // remove run and make it run on construct
         $this->user->fetchUser();
 
         $widget = new Utils\Widget();

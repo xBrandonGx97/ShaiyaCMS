@@ -66,7 +66,7 @@ class Bootstrap
             // Init DB
             $this->database = new DB;
             // Init Settings
-            $this->settings = new \Classes\Settings\Settings;
+            $this->settings = new \Classes\Settings\Settings($this->session);
             // Init Data
             $this->data = new Utils\Data;
             // Load Purifier

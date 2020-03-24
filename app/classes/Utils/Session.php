@@ -18,7 +18,7 @@ class Session
         $this->sessionName = $this->name;
     }
 
-    public function put($key, $key2 = false, $value)
+    public function put($key, $value, $key2 = false)
     {
         // check if session started on each function
         if (isset($_SESSION)) {
@@ -28,7 +28,7 @@ class Session
                         $_SESSION[$key][$key2] = $value;
                     }
                 } else {
-                    if (isset($_SESSION[$key])) {
+                    if (!isset($_SESSION[$key])) {
                         $_SESSION[$key] = $value;
                     }
                 }

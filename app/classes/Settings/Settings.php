@@ -3,11 +3,13 @@
 namespace Classes\Settings;
 
 use Illuminate\Database\Capsule\Manager as Eloquent;
+use Classes\Utils;
 
 class Settings
 {
-    public function __construct()
+    public function __construct(Utils\Session $session)
     {
+        $this->session = $session;
         $settings = [];
         $datas = Eloquent::table(table('CMS_MAIN'))
             ->select()
@@ -15,7 +17,7 @@ class Settings
         foreach ($datas as $data) {
             $settings[$data->SETTING] = $data->VALUE;
         }
-        $_SESSION['Settings'] = $settings;
+        $this->session->put('Settings', $settings);
     }
 
     public function props()

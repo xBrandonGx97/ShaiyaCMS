@@ -122,9 +122,9 @@ class Auth extends Controller
     public function loginSuccess($userInfo)
     {
         if ($userInfo->Status == 0 || $userInfo->Status == 16 || $userInfo->Status == 32 || $userInfo->Status == 48 || $userInfo->Status == 64 || $userInfo->Status == 80 || $userInfo->Status == 128) {
-            $this->session->put('User', 'UserUID', $userInfo->UserUID);
-            $this->session->put('User', 'UserID', $userInfo->UserID);
-            $this->session->put('User', 'Status', $userInfo->Status);
+            $this->session->put('User', $userInfo->UserUID, 'UserUID');
+            $this->session->put('User', $userInfo->UserID, 'UserID');
+            $this->session->put('User', $userInfo->Status, 'Status');
             $this->user->updateLoginStatus(1);
             $this->arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
             $LastPage = $_SERVER['HTTP_REFERER'];
