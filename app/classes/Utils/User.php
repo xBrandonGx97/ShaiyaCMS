@@ -328,7 +328,7 @@ class User
 
     public function getMap(int $id): string
     {
-        return maps[$id] ?? 'Unknown';
+        return MAPS[$id] ?? 'Unknown';
     }
 
     public function fetchUser(): array

@@ -12,9 +12,9 @@ class BladeController
     public function __construct($type, $view = false)
     {
         if ($type === 'view') {
-            $this->blade = new Blade('../resources/views', config['PUBROOT'] . 'cache');
+            $this->blade = new Blade('../resources/views', CONFIG['PUBROOT'] . 'cache');
         } elseif ($type === 'widget') {
-            $this->blade = new Blade(config['WIDGETDIR'] . '/' . $view . '/php', 'cache');
+            $this->blade = new Blade(CONFIG['WIDGETDIR'] . '/' . $view . '/php', 'cache');
         }
         $this->session = new Utils\Session;
         $this->auth = new Utils\Auth($this->session);

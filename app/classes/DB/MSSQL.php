@@ -17,7 +17,7 @@ class MSSQL
 
     public function connect()
     {
-        $config = config['database'];
+        $config = CONFIG['database'];
         // Set DSN
         $dsn = 'sqlsrv:Server=' . $config['host'] . ';Database=' . $config['name'];
 
@@ -36,7 +36,7 @@ class MSSQL
 
     public function initEloquent()
     {
-        $config = config['database'];
+        $config = CONFIG['database'];
 
         $capsule = new Capsule;
 

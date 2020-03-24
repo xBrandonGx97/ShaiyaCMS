@@ -31,7 +31,7 @@
            ];
            foreach ($widgets as $key => $sub) {
                if ($sub['mode'] === 'right' && $sub['enabled'] === true) {
-                   require $GLOBALS['config']['WIDGETDIR'] . $key . '/php/script.php';
+                   require CONFIG['WIDGETDIR'] . $key . '/php/script.php';
                }
            }
        }

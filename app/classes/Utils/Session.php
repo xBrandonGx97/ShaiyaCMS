@@ -5,7 +5,7 @@ namespace Classes\Utils;
 class Session
 {
     private $sessionName;
-    private $name = config['sessionName'];
+    private $name = CONFIG['sessionName'];
 
     public function __construct()
     {

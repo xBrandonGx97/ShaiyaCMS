@@ -10,8 +10,6 @@ use Classes\Utils as Utils;
 
 class Bootstrap
 {
-    protected $debug = false;
-
     public function __construct()
     {
         // Load Vendor autoloader for Vendor resources
@@ -54,11 +52,11 @@ class Bootstrap
             // Load Dotenv
             $this->initDotEnv();
             // Load configuration files
-            $this->load_configs();
+            $this->loadConfigs();
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Load Helpers
-            $this->load_helpers();
+            $this->loadHelpers();
             // Init Session
             $this->session = new Utils\Session;
             // Init PHP
@@ -73,8 +71,8 @@ class Bootstrap
             $this->data->do('load_purifier');
             // Load Langs
             $this->getLang();
-            $this->load_langs();
-            $this->load_defaults();
+            $this->loadLangs();
+            $this->loadDefaults();
         }
     }
 
@@ -109,13 +107,13 @@ class Bootstrap
         }
     }
 
-    public function _is_ajax()
+    public function isAjax()
     {
         if (defined('AJAX_CALL')) {
             //$this->run();
 
             // Load Config
-            define('config', require_once CONFIG_PATH . 'config.php');
+            define('CONFIG', require_once CONFIG_PATH . 'config.php');
 
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
@@ -123,8 +121,8 @@ class Bootstrap
             $this->data->do('load_purifier');
 
             // Load Helpers
-            foreach (scandir(config['FWROOT'] . '/Helpers/') as $filename) {
-                $path = config['FWROOT'] . '/Helpers/' . $filename;
+            foreach (scandir(CONFIG['FWROOT'] . '/Helpers/') as $filename) {
+                $path = CONFIG['FWROOT'] . '/Helpers/' . $filename;
                 if (is_file($path)) {
                     require_once $path;
                 }
@@ -158,27 +156,27 @@ class Bootstrap
         }
     }
 
-    public function load_langs()
+    public function loadLangs()
     {
         $compiler = new Compiler;
         $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
         require_once LIB_PATH . 'translate.php';
     }
 
-    public function load_defaults()
+    public function loadDefaults()
     {
         $user = new Utils\User($this->session);
         $user->initPrivacy();
         $user->initSocials();
     }
 
-    public function load_configs()
+    public function loadConfigs()
     {
-        define('config', $this->loader->config('config'));
-        define('maps', $this->loader->config('maps'));
+        define('CONFIG', $this->loader->config('config'));
+        define('MAPS', $this->loader->config('maps'));
     }
 
-    public function load_helpers()
+    public function loadHelpers()
     {
         $loader = new Loader;
         $loader->helper('modal');
