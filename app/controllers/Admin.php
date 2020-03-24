@@ -2,15 +2,19 @@
 
     namespace App\Controllers;
 
-//	use Classes\Utils\Browser;
-    use Classes\Utils\User;
+    use Classes\Utils as Utils;
 
     class Admin extends \Framework\Core\CoreController
     {
+        public function __construct(Utils\User $user)
+        {
+            $this->user = $user;
+        }
+
         public static function index()
         {
-            User::run();
-            $User = User::_fetch_User();
+            $this->user->run();
+            $this->user->_fetch_User();
 
             $data = ['pageData' => [
                 'index' => 'index',
@@ -18,7 +22,7 @@
                 'zone' => 'AP',
                 'nav' => true,
             ],
-                'User' => $User,
+                'User' => $this->user,
             ];
 
             self::view('ap/index', $data);

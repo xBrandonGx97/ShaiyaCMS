@@ -2,15 +2,22 @@
 
 namespace App\Controllers;
 
-use Classes\Utils\User;
+use Classes\Utils as Utils;
 
 class Forum extends \Framework\Core\CoreController
 {
+    public function __construct(Utils\User $user)
+    {
+        $this->user = $user;
+    }
+
     public static function forum()
     {
         $forum = self::model('App\Models\Forum');
-        User::run();
-        $User = User::_fetch_User();
+
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'forum',
             'title' => 'Forum',
@@ -18,7 +25,7 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $User,
+            'User' => $this->user,
         ];
         self::view('forum/forum', $data);
     }
@@ -26,8 +33,9 @@ class Forum extends \Framework\Core\CoreController
     public static function topics($id)
     {
         $forum = self::model('App\Models\Forum');
-        User::run();
-        $User = User::_fetch_User();
+
+        $this->user->run();
+        $this->user->_fetch_User();
         $data = ['pageData' => [
             'index' => 'topics',
             'title' => 'Topics',
@@ -35,7 +43,7 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $User,
+            'User' => $this->user,
             'topicID' => $id,
         ];
         self::view('forum/topics', $data);
@@ -44,8 +52,10 @@ class Forum extends \Framework\Core\CoreController
     public static function posts($id)
     {
         $forum = self::model('App\Models\Forum');
-        User::run();
-        $User = User::_fetch_User();
+
+        $this->user->run();
+        $this->user->_fetch_User();
+
         $data = ['pageData' => [
             'index' => 'posts',
             'title' => 'Post',
@@ -53,7 +63,7 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $User,
+            'User' => $this->user,
             'topicID' => $id,
         ];
         self::view('forum/view_post', $data);
@@ -62,9 +72,11 @@ class Forum extends \Framework\Core\CoreController
     public static function view_topic($id)
     {
         $forum = self::model('App\Models\Forum');
-        User::run();
-        $User = User::_fetch_User();
-        $UserStatus = User::get_Status($User['Status']);
+
+        $this->user->run();
+        $this->user->_fetch_User();
+
+        $UserStatus = $this->user->get_Status($this->user->Status);
         $data = ['pageData' => [
             'index' => 'view_topic',
             'title' => 'Topic',
@@ -72,7 +84,7 @@ class Forum extends \Framework\Core\CoreController
             'nav' => true
         ],
             'forum' => $forum,
-            'User' => $User,
+            'User' => $this->user,
             'topicID' => $id,
             'UserStatus' => $UserStatus
         ];
