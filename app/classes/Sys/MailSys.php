@@ -50,58 +50,61 @@ class MailSys
         return $mail;
     }
 
-    public function sendMail(string $mail_for, string $data): PHPMailer
+    public function sendMail(string $mail_for, string $data): void
     {
         $this->addMessageSubjectToMail($mail_for);
         $this->addMessageBodyToMail($mail_for, $data);
         $this->mail->Subject = $this->msgSubject;
         $this->mail->Body = $this->msgContent;
         if ($this->mail->send()) {
-            return $this->mail;
+            //
         } else {
             throw new $this->mail->ErrorInfo;
         }
     }
 
-    public function addMessageSubjectToMail(string $mail_for): PHPMailer
+    private function addMessageSubjectToMail(string $mail_for): void
     {
         if ($mail_for === 'testEmail') {
             $this->msgSubject = 'Hello - from the other side!';
         }
-        return $this->mail;
     }
 
-    public function addMessageBodyToMail(string $mail_for, string $data): PHPMailer
+    private function addMessageBodyToMail(string $mail_for, string $data): void
     {
         if ($mail_for === 'testEmail') {
             $this->msgSubject = 'Hello - from the other side!';
             $this->msgContent = 'Hi dood!</br>';
             $this->msgContent .= 'Your username is: ' . $data;
         }
-        return $this->mail;
     }
 
-    public function setMailHost()
+    private function presetMessages()
+    {
+        // add preset messages here
+    }
+
+    private function setMailHost()
     {
     }
 
-    public function setMailPort()
+    private function setMailPort()
     {
     }
 
-    public function setMailFrom()
+    private function setMailFrom()
     {
     }
 
-    public function addMailAddress()
+    private function addMailAddress()
     {
     }
 
-    public function setMessageTitle()
+    private function setMessageTitle()
     {
     }
 
-    public function setMessageContent()
+    private function setMessageContent()
     {
     }
 }
