@@ -2,14 +2,31 @@
 function lang($lang)
 {
     switch ($lang) {
-        case 'en': echo 'English'; break;
-        case 'es': echo 'Spanish'; break;
-        case 'pt': echo 'Portugese'; break;
-        case 'fr': echo 'French'; break;
-        case 'tr': echo 'Turkish'; break;
-        case 'nl': echo 'Dutch'; break;
-        case 'de': echo 'German'; break;
-        case 'it': echo 'Italian'; break;
-        case 'fil': echo 'Filipino';
+        case 'en':
+            return 'English';
+            break;
+        case 'es':
+            return 'Spanish';
+            break;
+        case 'pt':
+            return 'Portugese';
+            break;
+        case 'fr':
+            return 'French';
+            break;
+        case 'tr':
+            return 'Turkish';
+            break;
+        case 'nl':
+            return 'Dutch';
+            break;
+        case 'de':
+            return 'German';
+            break;
+        case 'it':
+            return 'Italian';
+            break;
+        case 'fil':
+            return 'Filipino';
     }
 }

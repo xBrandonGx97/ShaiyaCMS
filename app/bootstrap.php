@@ -188,6 +188,7 @@ class Bootstrap
         $loader->helper('redirect');
         $loader->helper('table');
         $loader->helper('lang');
+        $loader->helper('saddsadsa');
     }
 
     public function initDotEnv()
