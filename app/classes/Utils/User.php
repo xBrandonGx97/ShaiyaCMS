@@ -208,7 +208,7 @@
             return false;
         }
 
-        public function _is_ADM()
+        public function _is_ADM(): bool
         {
             if (isset($_SESSION)) {
                 if ($_SESSION['User']['Status'] == 16) {
@@ -219,7 +219,7 @@
             return false;
         }
 
-        public function _is_GM()
+        public function _is_GM(): bool
         {
             if ($this->Status == 32 || $this->Status == 48 || $this->Status == 64 || $this->Status == 80) {
                 return true;
@@ -228,7 +228,7 @@
             return false;
         }
 
-        public function _is_GS()
+        public function _is_GS(): bool
         {
             if ($this->Status == 128) {
                 return true;
@@ -236,7 +236,7 @@
             return false;
         }
 
-        public function _is_Logged_In()
+        public function _is_Logged_In(): bool
         {
             if (!empty($this->UserUID) && !empty($this->UserID) && is_numeric($this->UserUID)) {
                 $this->LoginStatus = true;
@@ -245,14 +245,6 @@
                 $this->LoginStatus = false;
                 return false;
             }
-            /*if(!empty(self::$UserUID) && !empty(self::$UserID) && is_numeric(self::$UserUID)){
-                self::$LoginStatus	=	1;
-                return true;
-            }
-            else{
-                self::$LoginStatus	=	0;
-                return false;
-            }*/
         }
 
         public function Auth()
@@ -293,7 +285,7 @@
             }
         }
 
-        public function get_Status($Status)
+        public function get_Status(int $Status): string
         {
             switch ($Status) {
                 case '0':	return 'Player'; break;
@@ -306,7 +298,7 @@
             }
         }
 
-        public function get_Faction($Faction)
+        public function get_Faction(int $Faction): string
         {
             switch ($Faction) {
                 case '0':	return	'Alliance of Light';		break;
@@ -314,7 +306,7 @@
             }
         }
 
-        public function get_Class($Faction, $Class)
+        public function get_Class(int $Faction, int $Class): string
         {
             if ($Faction == 0) {
                 switch ($Class) {
@@ -342,7 +334,7 @@
             return maps[$id] ?? 'Unknown';
         }
 
-        public function _fetch_User()
+        public function _fetch_User(): array
         {
             return get_class_vars(get_called_class());
         }
