@@ -2249,7 +2249,7 @@ class Colors
     {
         foreach ($this->colors as $key => $value) {
             if ($color === $key) {
-                echo $value['hex'];
+                return $value['hex'];
             }
         }
     }
@@ -2258,7 +2258,7 @@ class Colors
     {
         foreach ($this->colors as $key => $value) {
             if ($color === $key) {
-                echo $value['rgb'];
+                return $value['rgb'];
             }
         }
     }
