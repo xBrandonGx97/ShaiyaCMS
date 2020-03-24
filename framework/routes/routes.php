@@ -68,7 +68,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     // Forum
     $r->addGroup('/forum', function (FastRoute\RouteCollector $r) {
         $userClass = new Classes\Utils\User;
-        $forum = new App\Controllers\Forum();
+        $forum = new App\Controllers\Forum($userClass);
 
         $r->addRoute('GET', '', [($forum), 'forum']);
         $r->addRoute('GET', '/topics/{id:\d+}', [($forum), 'topics']);
@@ -78,7 +78,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     // Admin
     $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {
         $userClass = new Classes\Utils\User;
-        $admin = new App\Controllers\Admin();
+        $admin = new App\Controllers\Admin($userClass);
 
         $r->addRoute('GET', '', [($admin), 'index']);
         $r->addRoute('GET', '/core/settings', [($admin), 'index']);

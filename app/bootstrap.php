@@ -1,15 +1,17 @@
 <?php
-use Compiler\Compiler;
-use Classes\Utils\User;
-use Dotenv\Dotenv;
 
 namespace App;
+
+use Compiler\Compiler;
+use Dotenv\Dotenv;
+use Framework\Core\Loader;
+use Classes\Utils as Utils;
 
 class Bootstrap
 {
     protected $debug = false;
 
-    public function run()
+    public function __construct()
     {
         // Load Vendor autoloader for Vendor resources
         require_once dirname(__DIR__) . '/vendor/autoload.php';
@@ -83,7 +85,7 @@ class Bootstrap
     public function _is_ajax()
     {
         if (defined('AJAX_CALL')) {
-            $this->run();
+            //$this->run();
 
             // Load Config
             define('config', require_once CONFIG_PATH . 'config.php');
@@ -131,21 +133,21 @@ class Bootstrap
 
     public function load_langs()
     {
-        $compiler = new \Compiler\Compiler();
+        $compiler = new Compiler;
         $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
         require_once LIB_PATH . 'translate.php';
     }
 
     public function load_defaults()
     {
-        $user = new \Classes\Utils\User();
+        $user = new Utils\User();
         $user->initPrivacy();
         $user->initSocials();
     }
 
     public function load_helpers()
     {
-        $loader = new \Framework\Core\Loader();
+        $loader = new Loader;
         $loader->helper('modal');
         $loader->helper('template');
         $loader->helper('url');
