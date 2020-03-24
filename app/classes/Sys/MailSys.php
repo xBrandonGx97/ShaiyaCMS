@@ -10,7 +10,7 @@ class MailSys
     private $msgSubject;
     private $msgContent;
 
-    public function __construct(string $host): void
+    public function __construct(string $host)
     {
         $this->getMailer($host);
     }
