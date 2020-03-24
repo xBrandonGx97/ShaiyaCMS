@@ -7,15 +7,11 @@
 
     class Home extends \Framework\Core\CoreController
     {
-        public $recordsPerPage;
-        public $startFrom;
-        public $prevPage;
-        public $nextPage;
-
         public function __construct(Utils\User $user)
         {
             $this->user = $user;
             $this->select = new Utils\Select;
+            $this->pagination = new Utils\Pagination;
         }
 
         public function index()
@@ -51,7 +47,7 @@
         // POST
         public function news()
         {
-            $this->records_per_page = 5;
+            $records_per_page = 5;
             $page = '';
             $output = '';
 
@@ -65,17 +61,17 @@
                 } else {
                     $page = 1;
                 }
-                $this->prevPage = $page - 1;
-                $this->nextPage = $page + 1;
+                $prevPage = $page - 1;
+                $nextPage = $page + 1;
 
-                $this->start_from = ($page - 1) * $this->records_per_page;
-                $RankNum = ($page - 1) * $this->records_per_page;
+                $start_from = ($page - 1) * $records_per_page;
+                $this->pagination->sp($records_per_page, $prevPage, $nextPage, $page);
 
                 try {
                     $news = Eloquent::table(table('NEWS'))
                     ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
-                    ->offset($this->start_from)
-                    ->limit($this->records_per_page)
+                    ->offset($start_from)
+                    ->limit($records_per_page)
                     ->orderBy('Date', 'DESC')
                     ->get();
 
@@ -85,6 +81,7 @@
                 } catch (\Exception $e) {
                     // query failed
                 }
+                $this->pagination->sp($records_per_page, $prevPage, $nextPage, $page);
             }
         }
 

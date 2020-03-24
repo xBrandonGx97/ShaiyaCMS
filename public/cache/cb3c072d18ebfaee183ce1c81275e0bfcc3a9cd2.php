@@ -15,23 +15,8 @@
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php Separator(80) ?>
         <div class="container">
-            <?php if(count($data['news']) > 0): ?>
-                <?php $__currentLoopData = $data['news']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $news): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2">
-                            <div class="nk-box-3 bg-dark-2">
-                                <h2 class="nk-title h3 text-xs-center"><?php echo e($news->Title); ?></h2>
-                                <span><?php echo e($news->Detail); ?></span>
-                                <span class="float-right"><?php echo e(date('F d, Y', strtotime($news->Date))); ?></span>
-                                <span class="float-right"><strong><?php echo e($news->UserID); ?></strong> &nbsp;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nk-gap-2"></div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <?php else: ?>
-                <p>No News found. Please check back later.</p>
-            <?php endif; ?>
+            <div id="newsData"></div>
+            
         </div>
         <?php Separator(40) ?>
         <?php Separator(80) ?>

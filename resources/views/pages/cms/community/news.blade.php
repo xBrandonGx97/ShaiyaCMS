@@ -16,7 +16,8 @@
 		@include('partials.cms.signForms')
         @Separator(80)
         <div class="container">
-            @if(count($data['news']) > 0)
+            <div id="newsData"></div>
+            {{-- @if(count($data['news']) > 0)
                 @foreach($data['news'] as $news)
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
@@ -32,7 +33,7 @@
                 @endforeach
             @else
                 <p>No News found. Please check back later.</p>
-            @endif
+            @endif --}}
         </div>
         @Separator(40)
         @Separator(80)

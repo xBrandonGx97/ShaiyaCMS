@@ -34,7 +34,7 @@
 <script src="/resources/themes/Godlike/vendor/jquery/dist/jquery.min.js"></script>
 
 <script src="/resources/themes/core/js/functions.js" type=module></script>
-<?php if($data['pageData']['index']==='home'): ?>
+<?php if($data['pageData']['index']==='home' || $data['pageData']['index']==='news'): ?>
     <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/load_p_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/load_next_data.js" type=module></script>

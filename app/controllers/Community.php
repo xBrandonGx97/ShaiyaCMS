@@ -63,52 +63,12 @@ namespace App\Controllers;
 
         public function news()
         {
-            //Session::put('color2', 'red');
-            //Session::forget('color2');
-            //Session::flush();
-            //var_dump($_SESSION);
-            /* $users = MSSQL::query()
-                    ->select('UserID,Status')
-                    ->from('WEB_PRESENCE')
-                    ->where('UserID', ':user')
-                    ->where('Status', ':status', 'AND')
-                    ->where('PIN', ':pin', 'AND')
-                    ->bind(':user', 'Brandon')
-                    ->bind(':status', 16)
-                    ->bind(':pin', 1222)
-                    ->get();
-            var_dump($users); */
-
-            /* $users = MSSQL::query()
-                ->table('NEWS')
-                ->delete()
-                ->where('Title', 'testTitle');
-            var_dump($users); */
-
-            // what about binds??
-
-            //var_dump($users);
-            /* $users = MSSQL::query()
-                    ->insert('NEWS')
-                    ->columns('Title', 'Detail', 'UserID')
-                    ->values('test123', 'test145', 'B')
-                    ->save();
-            var_dump($users); */
-
-            /* $arr = [
-                'Title' => 'test123',
-                'Detail' => 'test145',
-                'UserID' => 'Bx'
-            ];
-            $users = MSSQL::query()->table('NEWS')->insert($arr);
-            var_dump($users); */
-
             $newsModel = $this->model('App\Models\News');
 
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
-                'index' => 'index',
+                'index' => 'news',
                 'zone' => 'CMS',
                 'nav' => true
             ],
@@ -126,7 +86,7 @@ namespace App\Controllers;
             $this->user->_fetch_User();
 
             $data = ['pageData' => [
-                'index' => 'index',
+                'index' => 'patchNotes',
                 'zone' => 'CMS',
                 'nav' => true
             ],
