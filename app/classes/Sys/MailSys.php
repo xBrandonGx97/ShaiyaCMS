@@ -31,8 +31,6 @@
            self::$mail->isHTML(true);
            self::$mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
            self::$mail->addAddress('userNametoSendTo@gmail.com');
-           self::$mail->Subject = self::$msgSubject;
-           self::$mail->Body = self::$msgContent;
        }
 
        public function mail_gmail()
