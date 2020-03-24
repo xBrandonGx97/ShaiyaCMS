@@ -12,11 +12,11 @@ class Promotions extends Model
 
     public function __construct()
     {
-        $this->MSSQL = new \Classes\DB\MSSQL;
-        $this->Data = new Utils\Data;
+        $this->db = new \Classes\DB\MSSQL;
+        $this->data = new Utils\Data;
         $this->session = new Utils\Session;
-        $this->User = new Utils\User($this->session);
-        $this->User = $this->User->_fetch_User();
+        $this->user = new Utils\User($this->session);
+        $this->user->fetchUser();
         //$this->getPromotions();
     }
 
@@ -24,7 +24,7 @@ class Promotions extends Model
     {
         $this->table = table('SH_PROMOS');
 
-        $Code = isset($_POST['code']) ? $this->Data->_do('escData', trim($_POST['code'])) : false;
+        $Code = isset($_POST['code']) ? $this->data->do('escData', trim($_POST['code'])) : false;
         $this->Code = $Code;
 
         $promotions = self::select()
@@ -39,7 +39,7 @@ class Promotions extends Model
         $this->table = table('SH_USERDATA');
 
         $user = self::select()
-            ->where('UserUID', $this->User['UserUID'])
+            ->where('UserUID', $this->user->UserUID)
             ->limit(1)
             ->get();
 
@@ -48,7 +48,7 @@ class Promotions extends Model
             $NewPoints = $user->Point + $Points;
         }
 
-        $updatePoints = self::where('UserUID', $this->User['UserUID'])
+        $updatePoints = self::where('UserUID', $this->user->UserUID)
             ->update(['Point' => $NewPoints]);
 
         $NewNumOfUses = $NumOfUses + 1;
@@ -62,8 +62,8 @@ class Promotions extends Model
 
         $logsIns = self::insert([
             'Code' => $Code,
-            'UserUID' => $this->User['UserUID'],
-            'UserID' => $this->User['UserID']
+            'UserUID' => $this->user->UserUID,
+            'UserID' => $this->user->UserID
         ]);
     }
 }

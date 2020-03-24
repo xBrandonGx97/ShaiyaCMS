@@ -13,7 +13,7 @@ class News extends Model
     {
         //$this->table = table('NEWS');
 
-        $this->MSSQL = new \Classes\DB\MSSQL;
+        $this->db = new \Classes\DB\MSSQL;
     }
 
     public function getNews()

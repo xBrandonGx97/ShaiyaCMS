@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Classes\Utils as Utils;
 
 class Support extends Model
 {
@@ -16,18 +17,18 @@ class Support extends Model
     {
         $this->table = table('SH_TICKETS');
 
-        $this->MSSQL = new \Classes\DB\MSSQL;
-        $this->Data = new \Classes\Utils\Data;
-        $this->User = new \Classes\Utils\User;
-        $this->User->run();
-        $this->User = $this->User->_fetch_User();
+        $this->db = new \Classes\DB\MSSQL;
+        $this->data = new Utils\Data;
+        $this->session = new Utils\Session;
+        $this->user = new Utils\User($this->session);
+        $this->user->fetchUser();
         //$this->getTickets();
     }
 
     public function getTickets()
     {
         $tickets = self::select()
-            ->where('UserUID', $this->User['UserUID'])
+            ->where('UserUID', $this->user->UserUID)
             ->where('Main', 1)
             ->orderBy('Date', 'ASC')
             ->get();
@@ -42,19 +43,19 @@ class Support extends Model
 
     public function getStatus($Status)
     {
-        $this->Status = $this->Data->_do('tracker', $Status);
+        $this->Status = $this->data->do('tracker', $Status);
         return $this->Status;
     }
 
     public function editTicket($UserUID, $TicketID)
     {
-        $this->MSSQL->query('SELECT *
+        $this->db->query('SELECT *
 					FROM ShaiyaCMS.dbo.TICKETS
 					WHERE UserUID=:uid AND ticketID=:tid
 					ORDER BY Date ASC');
-        $this->MSSQL->bind(':uid', $UserUID);
-        $this->MSSQL->bind(':tid', $TicketID);
-        $res = $this->MSSQL->resultSet(true);
+        $this->db->bind(':uid', $UserUID);
+        $this->db->bind(':tid', $TicketID);
+        $res = $this->db->resultSet(true);
         $this->row = $res;
     }
 }

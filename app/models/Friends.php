@@ -8,12 +8,11 @@ class Friends
 {
     public function __construct()
     {
-        $this->MSSQL = new \Classes\DB\MSSQL;
-        $this->Data = new Utils\Data;
+        $this->db = new \Classes\DB\MSSQL;
+        $this->data = new Utils\Data;
         $this->session = new Utils\Session;
-        $this->User = new Utils\User($this->session);
-        $this->User->run();
-        $this->User = $this->User->_fetch_User();
+        $this->user = new Utils\User($this->session);
+        $this->user = $this->user->_fetch_User();
     }
 
     public function ifFriendsExist($user1, $user2)
@@ -24,12 +23,12 @@ class Friends
 					WHERE ToUser = :touser AND FromUser = :fromuser
 					OR ToUser = :touser2 AND FromUser = :fromuser2
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user1);
-        $this->MSSQL->bind(':fromuser', $user2);
-        $this->MSSQL->bind(':touser2', $user2);
-        $this->MSSQL->bind(':fromuser2', $user1);
-        $res = $this->MSSQL->resultSet();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user1);
+        $this->db->bind(':fromuser', $user2);
+        $this->db->bind(':touser2', $user2);
+        $this->db->bind(':fromuser2', $user1);
+        $res = $this->db->resultSet();
         return $res;
     }
 
@@ -40,10 +39,10 @@ class Friends
 					(ToUser,FromUser)
 					VALUES(:touser,:fromuser)
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user1);
-        $this->MSSQL->bind(':fromuser', $user2);
-        $this->MSSQL->execute();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user1);
+        $this->db->bind(':fromuser', $user2);
+        $this->db->execute();
     }
 
     public function removeFriend($user1, $user2)
@@ -53,14 +52,14 @@ class Friends
 					WHERE ToUser = :touser AND FromUser = :fromuser AND Pending = :pending
 					OR ToUser = :touser2 AND FromUser = :fromuser2 AND Pending = :pending2
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user1);
-        $this->MSSQL->bind(':fromuser', $user2);
-        $this->MSSQL->bind(':pending', 0);
-        $this->MSSQL->bind(':touser2', $user2);
-        $this->MSSQL->bind(':fromuser2', $user1);
-        $this->MSSQL->bind(':pending2', 0);
-        $this->MSSQL->execute();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user1);
+        $this->db->bind(':fromuser', $user2);
+        $this->db->bind(':pending', 0);
+        $this->db->bind(':touser2', $user2);
+        $this->db->bind(':fromuser2', $user1);
+        $this->db->bind(':pending2', 0);
+        $this->db->execute();
     }
 
     public function blockUser($user1, $user2)
@@ -78,14 +77,14 @@ class Friends
 					WHERE ToUser = :touser AND FromUser = :fromuser AND Pending = :pending
 					OR ToUser = :touser2 AND FromUser = :fromuser2 AND Pending = :pending2
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user1);
-        $this->MSSQL->bind(':fromuser', $user2);
-        $this->MSSQL->bind(':pending', 1);
-        $this->MSSQL->bind(':touser2', $user2);
-        $this->MSSQL->bind(':fromuser2', $user1);
-        $this->MSSQL->bind(':pending2', 1);
-        $res = $this->MSSQL->resultSet();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user1);
+        $this->db->bind(':fromuser', $user2);
+        $this->db->bind(':pending', 1);
+        $this->db->bind(':touser2', $user2);
+        $this->db->bind(':fromuser2', $user1);
+        $this->db->bind(':pending2', 1);
+        $res = $this->db->resultSet();
         return $res;
     }
 
@@ -95,10 +94,10 @@ class Friends
 					SELECT * FROM ShaiyaCMS.dbo.USER_FRIENDS
 					WHERE ToUser = :touser AND Pending = :pending
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user);
-        $this->MSSQL->bind(':pending', 1);
-        $res = $this->MSSQL->resultSet();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user);
+        $this->db->bind(':pending', 1);
+        $res = $this->db->resultSet();
         return $res;
     }
 
@@ -110,15 +109,15 @@ class Friends
 					WHERE ToUser = :touser AND FromUser = :fromuser AND Pending = :status
 					OR ToUser = :touser2 AND FromUser = :fromuser2 AND Pending = :status2
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':pending', 0);
-        $this->MSSQL->bind(':touser', $user1);
-        $this->MSSQL->bind(':fromuser', $user2);
-        $this->MSSQL->bind(':touser2', $user2);
-        $this->MSSQL->bind(':fromuser2', $user1);
-        $this->MSSQL->bind(':status', 1);
-        $this->MSSQL->bind(':status2', 1);
-        $this->MSSQL->execute();
+        $this->db->query($sql);
+        $this->db->bind(':pending', 0);
+        $this->db->bind(':touser', $user1);
+        $this->db->bind(':fromuser', $user2);
+        $this->db->bind(':touser2', $user2);
+        $this->db->bind(':fromuser2', $user1);
+        $this->db->bind(':status', 1);
+        $this->db->bind(':status2', 1);
+        $this->db->execute();
     }
 
     public function checkFriends($user)
@@ -130,12 +129,12 @@ class Friends
 					WHERE ToUser = :touser AND Pending = :pending
 					OR FromUser = :touser2 AND Pending = :pending2
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user);
-        $this->MSSQL->bind(':pending', 0);
-        $this->MSSQL->bind(':touser2', $user);
-        $this->MSSQL->bind(':pending2', 0);
-        $res = $this->MSSQL->resultSet();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user);
+        $this->db->bind(':pending', 0);
+        $this->db->bind(':touser2', $user);
+        $this->db->bind(':pending2', 0);
+        $res = $this->db->resultSet();
             return $res;
     }
 
@@ -146,13 +145,13 @@ class Friends
 					WHERE ToUser = :touser AND FromUser = :fromuser AND Pending = :pending
 					OR ToUser = :touser2 AND FromUser = :fromuser2 AND Pending = :pending2
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':touser', $user1);
-        $this->MSSQL->bind(':fromuser', $user2);
-        $this->MSSQL->bind(':touser2', $user2);
-        $this->MSSQL->bind(':fromuser2', $user1);
-        $this->MSSQL->bind(':pending', 1);
-        $this->MSSQL->bind(':pending2', 1);
-        $this->MSSQL->execute();
+        $this->db->query($sql);
+        $this->db->bind(':touser', $user1);
+        $this->db->bind(':fromuser', $user2);
+        $this->db->bind(':touser2', $user2);
+        $this->db->bind(':fromuser2', $user1);
+        $this->db->bind(':pending', 1);
+        $this->db->bind(':pending2', 1);
+        $this->db->execute();
     }
 }

@@ -8,12 +8,11 @@ class User
 {
     public function __construct()
     {
-            $this->MSSQL = new \Classes\DB\MSSQL;
-            $this->Data = new Utils\Data;
+            $this->db = new \Classes\DB\MSSQL;
+            $this->data = new Utils\Data;
             $this->session = new Utils\Session;
-            $this->User = new Utils\User($this->session);
-            $this->User->run();
-            $this->User = $this->User->_fetch_User();
+            $this->user = new Utils\User($this->session);
+            $this->user->fetchUser();
     }
 
     public function getUsers()
@@ -31,9 +30,9 @@ class User
 					INNER JOIN ShaiyaCMS.dbo.WEB_PRESENCE AS [WP] ON [U].[UserID] = [WP].[UserID]
 					WHERE [U].[UserUID]=:uid
 		');
-        $this->MSSQL->query($sql);
-        $this->MSSQL->bind(':uid', $id);
-        $res = $this->MSSQL->resultSet();
+        $this->db->query($sql);
+        $this->db->bind(':uid', $id);
+        $res = $this->db->resultSet();
         return $res;
     }
 }

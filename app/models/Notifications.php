@@ -6,7 +6,7 @@ class Notifications
 {
     public function __construct()
     {
-        $this->MSSQL = new \Classes\DB\MSSQL;
+        $this->db = new \Classes\DB\MSSQL;
     }
 
     public function sendNotification()
