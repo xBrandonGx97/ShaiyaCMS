@@ -12,52 +12,48 @@ class MailSys
 
     public function __construct(string $host)
     {
-        $this->getMailer($host);
-    }
-
-    public function getMailer(string $host): PHPMailer
-    {
         if ($host === 'local') {
-            return $this->mailLocal();
+            $this->mail = $this->mailLocal();
         }
-        return $this->mailGmail();
+
+        $this->mail = $this->mailGmail();
     }
 
-    public function mailLocal(): PHPMailer
+    private function mailLocal(): PHPMailer
     {
-        $this->mail = new PHPMailer();
-        $this->mail->isSMTP();
-        $this->mail->Host = config['mail']['host'];
-        $this->mail->Port = config['mail']['port'];
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = config['mail']['host'];
+        $mail->Port = config['mail']['port'];
+        $mail->isHTML(true);
+        $mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
+        $mail->addAddress('userNametoSendTo@gmail.com');
 
-        $this->mail->isHTML(true);
-        $this->mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
-        $this->mail->addAddress('userNametoSendTo@gmail.com');
-
-        return $this->mail;
+        return $mail;
     }
 
-    public function mailGmail(): PHPMailer
+    private function mailGmail(): PHPMailer
     {
-        $this->mail = new PHPMailer();
-        $this->mail->isSMTP();
-        $this->mail->Host = config['mail']['host'];
-        $this->mail->SMTPAuth = config['mail']['auth'];
-        $this->mail->Username = config['mail']['user'];
-        $this->mail->Password = config['mail']['pass'];
-        $this->mail->Port = config['mail']['port'];
-        $this->mail->SMTPSecure = config['mail']['protocol'];
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = config['mail']['host'];
+        $mail->SMTPAuth = config['mail']['auth'];
+        $mail->Username = config['mail']['user'];
+        $mail->Password = config['mail']['pass'];
+        $mail->Port = config['mail']['port'];
+        $mail->SMTPSecure = config['mail']['protocol'];
 
-        $this->mail->isHTML(true);
-        $this->mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
-        $this->mail->addAddress('brandonjm033@gmail.com');
+        $mail->isHTML(true);
+        $mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
+        $mail->addAddress('brandonjm033@gmail.com');
 
-        return $this->mail;
+        return $mail;
     }
 
     public function sendMail(string $mail_for, string $data): PHPMailer
     {
-        $this->messages($mail_for, $data);
+        $this->addMessageSubjectToMail($mail_for);
+        $this->addMessageBodyToMail($mail_for, $data);
         $this->mail->Subject = $this->msgSubject;
         $this->mail->Body = $this->msgContent;
         if ($this->mail->send()) {
@@ -67,7 +63,15 @@ class MailSys
         }
     }
 
-    public function messages(string $mail_for, string $data): PHPMailer
+    public function addMessageSubjectToMail(string $mail_for): PHPMailer
+    {
+        if ($mail_for === 'testEmail') {
+            $this->msgSubject = 'Hello - from the other side!';
+        }
+        return $this->mail;
+    }
+
+    public function addMessageBodyToMail(string $mail_for, string $data): PHPMailer
     {
         if ($mail_for === 'testEmail') {
             $this->msgSubject = 'Hello - from the other side!';
