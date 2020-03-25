@@ -33,7 +33,7 @@
         // App Root
         'APPROOT' => dirname(dirname(__FILE__)) . '/app',
         // URL Root
-        'URLROOT' => 'http://my_own_router.local',
+        'URLROOT' => 'http://shaiyacms.local',
         // Base Dir
         'BASEDIR' => '/',
         // Framework Root

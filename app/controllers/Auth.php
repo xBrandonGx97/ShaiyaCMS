@@ -5,7 +5,6 @@ namespace App\Controllers;
 use Framework\Core\CoreController as Controller;
 use Classes\Utils as Utils;
 use Illuminate\Database\Capsule\Manager as Eloquent;
-use Spatie\UrlSigner\MD5UrlSigner;
 
 class Auth extends Controller
 {
@@ -16,6 +15,7 @@ class Auth extends Controller
     {
         $this->session = $session;
         $this->auth = new Utils\Auth($this->session);
+        $this->data = new Utils\Data;
         $this->browser = new Utils\Browser;
         $this->data = new Utils\Data;
         $this->user = $user;
@@ -102,9 +102,8 @@ class Auth extends Controller
                                 if (password_verify($Password, $userInfo->Pw)) {
                                     if (!isset($_COOKIE['ua'])) {
                                         $this->arr['newDevice'] .= 'true';
-                                        $mail = new \Classes\Sys\MailSys('gmail');
-                                        $mail->addMailAddress('brandonjm033@gmail.com');
-                                        $mail->sendMail('verifyNewDevice', 'xx');
+
+                                        $this->sendActivationCode();
                                     } else {
                                         if ($userInfo->RestrictIP !== null) {
                                             if ($userInfo->RestrictIP === $this->browser->IP) {
@@ -147,31 +146,57 @@ class Auth extends Controller
         }
     }
 
-    public function signUrl()
+    public function sendActivationCode()
     {
-        $urlSigner = new MD5UrlSigner('random_monkey');
-        $expiration = (new \DateTime)->modify('1 minute');
-        $signedUrl = $urlSigner->sign('http://shaiyacms.local/auth/newDevice/verify/12', $expiration);
-        $this->session->put('expiration', $signedUrl);
+        $activationCode = $this->data->do('rand_str', '64');
+
+        $query = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
+            ->insert([
+                'ActivationCode' => $activationCode
+            ]);
+
+        $mail = new \Classes\Sys\MailSys('gmail');
+        $mail->addMailAddress('brandonjm033@gmail.com');
+        $mail->sendMail('verifyNewDevice', $activationCode);
     }
 
     public function verifyNewDevice()
     {
-        if (isset($_GET)) {
-            if ($_GET['url']) {
-                $this->signUrl();
-                $expiration = $this->session->get('expiration');
-                $urlSigner = new MD5UrlSigner('random_monkey');
-                if ($urlSigner->validate($expiration)) {
-                    // Set UA Cookie
-                    $hour = time() + 10 * 365 * 24 * 60 * 60;
-                    setcookie('ua', $this->browser->UA, $hour, '/', null, null, true);
-                    echo 'new Device verified.';
-                    //redirect('/', 2);
+        $url = explode('/', filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
+        $query = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
+                        ->select('ActivationCode', 'Date', 'Used')
+                        ->where('ActivationCode', $url[4])
+                        ->limit(1)
+                        ->get();
+        if (count($query) > 0) {
+            foreach ($query as $verify) {
+                $activationCode = $verify->ActivationCode;
+                $date = $verify->Date;
+                $used = $verify->Used;
+                date_default_timezone_set('America/Chicago');
+                $currentDate = new \Datetime('now');
+                $dateToCheck = new \Datetime($date);
+                $twelveHoursAgo = (new \Datetime("now"))->modify("-2 hour");
+                if ($dateToCheck < $twelveHoursAgo) {
+                    echo 'Activation Code has expired.';
                 } else {
-                    echo 'This activation key has expired.';
+                    if ($used === '1') {
+                        echo 'Activation Code has expired.';
+                    } else {
+                        // Set UA Cookie
+                        $hour = time() + 10 * 365 * 24 * 60 * 60;
+                        setcookie('ua', $this->browser->UA, $hour, '/', null, null, true);
+                        $updateActivation = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
+                        ->where('ActivationCode', $activationCode)
+                        ->update(['Used' => 1]);
+                        redirect('/', 3);
+                        echo 'new Device verified.<br>';
+                        echo 'Redirecting you in 3 seconds.';
+                    }
                 }
             }
+        } else {
+            echo 'Activation Code doesn\'t exist.';
         }
     }
 }

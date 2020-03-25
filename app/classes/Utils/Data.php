@@ -255,13 +255,13 @@
             }
         }
 
-        private function _rand_str()
+        private function _rand_str($length)
         {
             $alpha_num = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
             $pass = []; //remember to declare $pass as an array
             $alpha_num_length = strlen($alpha_num) - 1; //put the length -1 in cache
 
-            for ($i = 0;$i < 64;$i++) {
+            for ($i = 0; $i < $length;$i++) {
                 $n = rand(0, $alpha_num_length);
                 $pass[] = $alpha_num[$n];
             }

@@ -4,7 +4,6 @@ namespace Classes\Sys;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
-use Spatie\UrlSigner\MD5UrlSigner;
 
 class MailSys
 {
@@ -83,13 +82,8 @@ class MailSys
             $this->msgContent = 'Hi dood!</br>';
             $this->msgContent = 'Your username is: ' . $data;
         } elseif ($mail_for === 'verifyNewDevice') {
-            $data = new \Classes\Utils\Data;
-            $activationCode = $data->do('rand_str');
-            $urlSigner = new MD5UrlSigner('mysecretkey');
-            $expirationDate = (new \DateTime)->modify('2 minutes');
-            $urlSigner->sign('http://shaiyacms.local/auth/newDevice/verify/12', $expirationDate);
             $this->msgSubject = 'Please verify your new device';
-            $this->msgContent .= '<a href="http://shaiyacms.local/auth/newDevice/verify/12">Go to link</a>';
+            $this->msgContent .= '<a href="http://shaiyacms.local/auth/newDevice/verify/'.$data.'">Go to link</a>';
             $this->msgContent .= 'This link expires in 2 hours.';
         }
     }
