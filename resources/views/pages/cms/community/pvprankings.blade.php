@@ -14,17 +14,12 @@
     <div class="nk-main">
 		@include('partials.cms.pageHeader')
 		@include('partials.cms.signForms')
+        @Separator(80)
         <div class="container text-xs-center">
-            @Separator(80)
-            <div class="table-responsive" id="pagination_data">
-                <div class="container">
-                    <div class="row paginationData">
-                        <div class="col-md-3 order-md-2 text-right">
-                            <input type="search" class="form-control form-control-sm" name="search" id="searchBox" placeholder="Search..">
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-3 order-md-2 text-right float-right">
+                <input type="search" class="form-control form-control-sm" name="search" id="searchBox" placeholder="Search..">
             </div>
+            <div id="rankingsData"></div>
         </div>
         @Separator(40)
         @Separator(80)

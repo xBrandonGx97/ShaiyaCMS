@@ -86,4 +86,5 @@
         <script src="/resources/themes/core/js/socket.io-client/dist/socket.io.js"></script>
         <script src="/resources/themes/core/js/client.js"></script>
     </body>
-</html><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/footer.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/footer.blade.php ENDPATH**/ ?>

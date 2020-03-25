@@ -5,18 +5,20 @@ namespace App\Controllers;
 use Framework\Core\CoreController as Controller;
 use Classes\Utils as Utils;
 use Illuminate\Database\Capsule\Manager as Eloquent;
+use Spatie\UrlSigner\MD5UrlSigner;
 
 class Auth extends Controller
 {
     private $arr = [];
+    private $expiration = null;
 
     public function __construct(Utils\User $user, Utils\Session $session)
     {
         $this->session = $session;
         $this->auth = new Utils\Auth($this->session);
+        $this->browser = new Utils\Browser;
         $this->data = new Utils\Data;
         $this->user = $user;
-        $this->browser = new Utils\Browser;
     }
 
     /* Get Methods */
@@ -73,6 +75,7 @@ class Auth extends Controller
                 // Error Checking
                 $this->arr = [
                     'finished' => '',
+                    'newDevice' => '',
                     'errors' => []
                 ];
                 if (isset($decoded['login'])) {
@@ -97,13 +100,20 @@ class Auth extends Controller
                         if ($fet) {
                             foreach ($fet as $userInfo) {
                                 if (password_verify($Password, $userInfo->Pw)) {
-                                    if ($userInfo->RestrictIP !== null) {
-                                        if ($userInfo->RestrictIP === $this->browser->IP) {
-                                            // IP is same, continue
+                                    if (!isset($_COOKIE['ua'])) {
+                                        $this->arr['newDevice'] .= 'true';
+                                        $mail = new \Classes\Sys\MailSys('gmail');
+                                        $mail->addMailAddress('brandonjm033@gmail.com');
+                                        $mail->sendMail('verifyNewDevice', 'xx');
+                                    } else {
+                                        if ($userInfo->RestrictIP !== null) {
+                                            if ($userInfo->RestrictIP === $this->browser->IP) {
+                                                // IP is same, continue
+                                                $this->loginSuccess($userInfo);
+                                            }
+                                        } else {
                                             $this->loginSuccess($userInfo);
                                         }
-                                    } else {
-                                        $this->loginSuccess($userInfo);
                                     }
                                 } else {
                                     $this->arr['errors'][] .= '4';
@@ -129,8 +139,39 @@ class Auth extends Controller
             $this->arr['errors'][] .= 'Login successful.<br>Loading your homepage now...';
             $LastPage = $_SERVER['HTTP_REFERER'];
             $this->arr['finished'] .= 'true';
+        /* // Set UA Cookie
+        $hour = time() + 10 * 365 * 24 * 60 * 60;
+        setcookie("ua", $this->browser->UA, $hour, "/", null, null, true); */
         } else {
             $this->arr['errors'][] .= '6';
+        }
+    }
+
+    public function signUrl()
+    {
+        $urlSigner = new MD5UrlSigner('random_monkey');
+        $expiration = (new \DateTime)->modify('1 minute');
+        $signedUrl = $urlSigner->sign('http://shaiyacms.local/auth/newDevice/verify/12', $expiration);
+        $this->session->put('expiration', $signedUrl);
+    }
+
+    public function verifyNewDevice()
+    {
+        if (isset($_GET)) {
+            if ($_GET['url']) {
+                $this->signUrl();
+                $expiration = $this->session->get('expiration');
+                $urlSigner = new MD5UrlSigner('random_monkey');
+                if ($urlSigner->validate($expiration)) {
+                    // Set UA Cookie
+                    $hour = time() + 10 * 365 * 24 * 60 * 60;
+                    setcookie('ua', $this->browser->UA, $hour, '/', null, null, true);
+                    echo 'new Device verified.';
+                    //redirect('/', 2);
+                } else {
+                    echo 'This activation key has expired.';
+                }
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/staffteam', [($community), 'staffteam']);
 
         // Patch Notes
+        $r->addRoute('POST', '/rankings', [($community), 'rankings']);
         $r->addRoute('POST', '/getPatchNotes', [($community), 'getPatchNotes']);
     });
     // Server Info
@@ -52,6 +53,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $r->addRoute('POST', '/login', [($auth), 'login']);
         $r->addRoute('POST', '/logout', [($auth), 'logout']);
+
+        $r->addRoute('GET', '/newDevice/verify/{name}', [($auth), 'verifyNewDevice']);
     });
     // User
     $r->addGroup('/user', function (FastRoute\RouteCollector $r) {

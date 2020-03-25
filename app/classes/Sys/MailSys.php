@@ -4,6 +4,7 @@ namespace Classes\Sys;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
+use Spatie\UrlSigner\MD5UrlSigner;
 
 class MailSys
 {
@@ -31,10 +32,10 @@ class MailSys
     {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host = config['mail']['host'];
-        $mail->Port = config['mail']['port'];
+        $mail->Host = CONFIG['mail']['host'];
+        $mail->Port = CONFIG['mail']['port'];
         $mail->isHTML(true);
-        $mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
+        $mail->setFrom(CONFIG['mail']['reply_email'], CONFIG['mail']['reply_name']);
 
         return $mail;
     }
@@ -43,15 +44,15 @@ class MailSys
     {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host = config['mail']['host'];
-        $mail->SMTPAuth = config['mail']['auth'];
-        $mail->Username = config['mail']['user'];
-        $mail->Password = config['mail']['pass'];
-        $mail->Port = config['mail']['port'];
-        $mail->SMTPSecure = config['mail']['protocol'];
+        $mail->Host = CONFIG['mail']['host'];
+        $mail->SMTPAuth = CONFIG['mail']['auth'];
+        $mail->Username = CONFIG['mail']['user'];
+        $mail->Password = CONFIG['mail']['pass'];
+        $mail->Port = CONFIG['mail']['port'];
+        $mail->SMTPSecure = CONFIG['mail']['protocol'];
 
         $mail->isHTML(true);
-        $mail->setFrom(config['mail']['reply_email'], config['mail']['reply_name']);
+        $mail->setFrom(CONFIG['mail']['reply_email'], CONFIG['mail']['reply_name']);
 
         return $mail;
     }
@@ -69,9 +70,9 @@ class MailSys
     public function addMessageBodyToMail(string $body, string $data = null): void
     {
         if (!$body) {
-            $this->msgContent = $body .$data;
+            $this->msgContent = $body . $data;
         } else {
-            $this->msgContent .= $body .$data.'<br>';
+            $this->msgContent .= $body . $data . '<br>';
         }
     }
 
@@ -81,6 +82,15 @@ class MailSys
             $this->msgSubject = 'Hello - from the other side!';
             $this->msgContent = 'Hi dood!</br>';
             $this->msgContent = 'Your username is: ' . $data;
+        } elseif ($mail_for === 'verifyNewDevice') {
+            $data = new \Classes\Utils\Data;
+            $activationCode = $data->do('rand_str');
+            $urlSigner = new MD5UrlSigner('mysecretkey');
+            $expirationDate = (new \DateTime)->modify('2 minutes');
+            $urlSigner->sign('http://shaiyacms.local/auth/newDevice/verify/12', $expirationDate);
+            $this->msgSubject = 'Please verify your new device';
+            $this->msgContent .= '<a href="http://shaiyacms.local/auth/newDevice/verify/12">Go to link</a>';
+            $this->msgContent .= 'This link expires in 2 hours.';
         }
     }
 

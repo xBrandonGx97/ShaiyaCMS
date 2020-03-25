@@ -8,8 +8,7 @@ class Browser
     public $Browser;
     public $UA;
     public $IP;
-    public $IPv4;
-    public $IPv6;
+    public $hostName;
     public $data;
 
     // PUBLIC
@@ -105,6 +104,11 @@ class Browser
         } else {
             $this->IP = $_SERVER['REMOTE_ADDR'];
         }
+    }
+
+    private function hostname($ip)
+    {
+        $this->hostName = gethostbyaddr($ip);
     }
 
     // MISC

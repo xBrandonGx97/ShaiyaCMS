@@ -73,7 +73,7 @@ class Session
                         if (is_array($_SESSION[$key])) {
                             $result = var_dump($_SESSION[$key]);
                         } else {
-                            echo $result = $_SESSION[$key];
+                            $result = $_SESSION[$key];
                         }
                         return $result;
                     }

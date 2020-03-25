@@ -1121,3 +1121,15 @@ div.nk-success {
 .nk-form-style-1 .form-control.nk-success {
   border-bottom: 1px solid #87d96b;
 }
+
+.link-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}

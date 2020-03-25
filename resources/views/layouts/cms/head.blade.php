@@ -51,9 +51,9 @@
     <script src="/resources/themes/core/js/forum/pagination/load_next_topics_data.js" type=module></script>
 @endif
 @if($data['pageData']['index']==='rankings')
-    <script src="/resources/themes/core/js/rankings/pagination/load_data.js" type=module></script>
-    <script src="/resources/themes/core/js/rankings/pagination/load_rankings_data.js" type=module></script>
-    <script src="/resources/themes/core/js/rankings/pagination/load_next_rankings_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/rankings/load_rankings_data.js" type=module></script>
+    <script src="/resources/themes/core/js/pagination/rankings/load_next_rankings_data.js" type=module></script>
     <script src="/resources/themes/core/js/rankings/pagination/load_search_rankings_data.js" type=module></script>
 @endif
 <title>@yield('title', 'undefined') - {{CONFIG['app']['title']}}</title>

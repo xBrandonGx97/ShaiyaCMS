@@ -132,51 +132,77 @@
             .then(r => r.json())
             .then(data => {
                 console.log(data);
-                if(data.finished==='true') {
-                    userError.classList.add("nk-success");
-                    errorDivUser.innerHTML = "";
-                    passError.classList.add("nk-success");
-                    errorDivPass.innerHTML = "";
-                    successLogin.innerHTML = "Login successful.<br>Redirecting now...";
-                    const referrer = document.location.href;
-                    window.setTimeout(function(){
-						window.location.href = referrer
-					}, 2000);
+                if(data.newDevice==='true') {
+                    console.log("New Device");
+                    let signForm = document.querySelector(".nk-sign-form-login");
+                    let form = document.createElement('form');
+                        form.method = 'post';
+                        form.id = 'newForm';
+                        form.action = '/auth/newDevice/verify/14';
+                    signForm.appendChild(form);
+
+                    let input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'newDevice';
+                        input.value = true;
+
+                    form.appendChild(input);
+
+                    let a = document.createElement('a');
+                        a.href = '#';
+                        a.id = 'submitNewDeviceForm';
+                        a.text = 'hi';
+                    form.appendChild(a);
+                    document.getElementById("submitNewDeviceForm").addEventListener("click", function () {
+                        document.querySelector('#newForm').submit();
+                    });
                 } else {
-                    data.errors.forEach((error) => {
-                        console.log(error);
-                        if (error === '1') {
-                            userError.classList.remove("nk-success");
-                            userError.classList.add("nk-error");
-                            successLogin.innerHTML = "";
-                            errorDivUser.innerHTML = "A Username or Email is required. How else would you be able to log in?";
-                        } else if (error === '2') {
-                            passError.classList.remove("nk-success");
-                            passError.classList.add("nk-error");
-                            successLogin.innerHTML = "";
-                            errorDivPass.innerHTML = "A password is required for all accounts.<br>Please provide a password.";
-                        } else if (error === '3') {
-                            passError.classList.remove("nk-success");
-                            passError.classList.add("nk-error");
-                            successLogin.innerHTML = "";
-                            errorDivPass.innerHTML = "Your password must be between 3 and 16 characters in length.";
-                        } else if (error === '4') {
-                            passError.classList.remove("nk-success");
-                            passError.classList.add("nk-error");
-                            successLogin.innerHTML = "";
-                            errorDivPass.innerHTML = "Unable to locate an account with the information that you provided.<br>If you believe this to be in error, please notify an Admin so that this issue can be resolved.";
-                        } else if (error === '5') {
-                            userError.classList.remove("nk-success");
-                            userError.classList.add("nk-error");
-                            successLogin.innerHTML = "";
-                            errorDivUser.innerHTML = "Unable to locate an account with the information that you provided.<br>If you believe this to be in error, please notify an Admin so that this issue can be resolved.";
-                        } else if (error === '6') {
-                            userError.classList.remove("nk-success");
-                            userError.classList.add("nk-error");
-                            successLogin.innerHTML = "";
-                            errorDivUser.innerHTML = "Your account has been banned due to rules infractions.<br>To find out what infraction you were banned for, as well as ban period,<br>please ask a GM or GS.";
-                        }
-                    })
+                    if(data.finished==='true') {
+                        userError.classList.add("nk-success");
+                        errorDivUser.innerHTML = "";
+                        passError.classList.add("nk-success");
+                        errorDivPass.innerHTML = "";
+                        successLogin.innerHTML = "Login successful.<br>Redirecting now...";
+                        const referrer = document.location.href;
+                        window.setTimeout(function(){
+                            window.location.href = referrer
+                        }, 2000);
+                    } else {
+                        data.errors.forEach((error) => {
+                            console.log(error);
+                            if (error === '1') {
+                                userError.classList.remove("nk-success");
+                                userError.classList.add("nk-error");
+                                successLogin.innerHTML = "";
+                                errorDivUser.innerHTML = "A Username or Email is required. How else would you be able to log in?";
+                            } else if (error === '2') {
+                                passError.classList.remove("nk-success");
+                                passError.classList.add("nk-error");
+                                successLogin.innerHTML = "";
+                                errorDivPass.innerHTML = "A password is required for all accounts.<br>Please provide a password.";
+                            } else if (error === '3') {
+                                passError.classList.remove("nk-success");
+                                passError.classList.add("nk-error");
+                                successLogin.innerHTML = "";
+                                errorDivPass.innerHTML = "Your password must be between 3 and 16 characters in length.";
+                            } else if (error === '4') {
+                                passError.classList.remove("nk-success");
+                                passError.classList.add("nk-error");
+                                successLogin.innerHTML = "";
+                                errorDivPass.innerHTML = "Unable to locate an account with the information that you provided.<br>If you believe this to be in error, please notify an Admin so that this issue can be resolved.";
+                            } else if (error === '5') {
+                                userError.classList.remove("nk-success");
+                                userError.classList.add("nk-error");
+                                successLogin.innerHTML = "";
+                                errorDivUser.innerHTML = "Unable to locate an account with the information that you provided.<br>If you believe this to be in error, please notify an Admin so that this issue can be resolved.";
+                            } else if (error === '6') {
+                                userError.classList.remove("nk-success");
+                                userError.classList.add("nk-error");
+                                successLogin.innerHTML = "";
+                                errorDivUser.innerHTML = "Your account has been banned due to rules infractions.<br>To find out what infraction you were banned for, as well as ban period,<br>please ask a GM or GS.";
+                            }
+                        })
+                    }
                 }
             })
             .catch(err => {

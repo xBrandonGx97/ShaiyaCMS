@@ -1,9 +1,17 @@
 <?php
-function redirect($location)
+function redirect($location, $delay = null)
 {
     if (substr($location, 0, 1) == '/') {
-        header('location: ' . config['URLROOT'] . $location);
+        if ($delay) {
+            header('refresh:'.$delay.';url= ' . CONFIG['URLROOT'] . $location);
+        } else {
+            header('location: ' . $location);
+        }
     } elseif (substr($location, 0, 4) == 'http') {
-        header('location: ' . $location);
+        if ($delay) {
+            header('refresh:'.$delay.';url= ' . $location);
+        } else {
+            header('location: ' . $location);
+        }
     }
 }
