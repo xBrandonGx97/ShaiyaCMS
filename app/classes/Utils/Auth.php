@@ -11,7 +11,7 @@ class Auth
     }
 
     // similar to laravels auth class
-    public function check(): bool
+    public function check()
     {
         // Check if user is logged in
         if ($this->session->has('User')) {

@@ -44,6 +44,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/dropfinder', [($serverInfo), 'dropfinder']);
         $r->addRoute('GET', '/bossrecords', [($serverInfo), 'bossrecords']);
         $r->addRoute('GET', '/terms', [($serverInfo), 'terms']);
+
+        $r->addRoute('POST', '/dropfinder', [($serverInfo), 'dropfinder']);
     });
     // Auth
     $r->addGroup('/auth', function (FastRoute\RouteCollector $r) {

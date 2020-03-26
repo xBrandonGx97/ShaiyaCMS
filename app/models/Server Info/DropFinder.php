@@ -19,16 +19,16 @@ class DropFinder
 
     public function getDropFinder()
     {
-        $Item = isset($_POST['item']) ? $this->data->do('escData', trim($_POST['item'])) : false;
-        $ItemName = $this->data->do('escData', $Item);
-        $MobID = isset($_POST['MobID']) ? $this->data->do('escData', trim($_POST['MobID'])) : false;
-        $ItemID = isset($_POST['ItemID']) ? $this->data->do('escData', trim($_POST['ItemID'])) : false;
+        $Item = isset($_POST['item']) ? $this->data->purify(trim($_POST['item'])) : false;
+        $ItemName = $this->data->purify($Item);
+        $MobID = isset($_POST['MobID']) ? $this->data->purify(trim($_POST['MobID'])) : false;
+        $ItemID = isset($_POST['ItemID']) ? $this->data->purify(trim($_POST['ItemID'])) : false;
         if (isset($_POST['SCN'])) {
             $sql = (
                     '
 						SELECT DISTINCT m.ItemName,m.Grade,m.ItemID,mi.MobID,mi.ItemOrder
-						FROM ' . $this->db->getTable('SH_ITEMS') . '
-						m INNER JOIN ' . $this->db->getTable('SH_MOBITEMS') . "
+						FROM ' . table('SH_ITEMS') . '
+						m INNER JOIN ' . table('SH_MOBITEMS') . "
 						mi on mi.Grade = m.Grade Where mi.MobID = :mobid AND m.ItemName NOT LIKE '%'+'???'+'%'"
             );
             $this->db->query($sql);
@@ -39,7 +39,7 @@ class DropFinder
             $sql = (
                     '
 					    SELECT DISTINCT ItemName,ItemID
-						FROM ' . $this->db->getTable('SH_ITEMS') . '
+						FROM ' . table('SH_ITEMS') . '
 						WHERE ItemName LIKE :item ORDER BY ItemID'
             );
             $this->db->query($sql);
@@ -50,10 +50,10 @@ class DropFinder
             $sql = (
                     '
 						SELECT DISTINCT m.MobName,m.MobID,mi.Grade,mi.DropRate,drp.MapID,m.Attrib,m.Level,mi.ItemOrder
-						FROM ' . $this->db->getTable('SH_MOBS') . '
-						m INNER JOIN ' . $this->db->getTable('SH_MOBITEMS') . ' mi on mi.MobID = m.MobID
-						INNER JOIN ' . $this->db->getTable('SH_ITEMS') . ' i on mi.Grade = i.Grade
-						INNER JOIN ' . $this->db->getTable('SH_DROP_FINDER') . " drp on m.MobID = drp.MobID
+						FROM ' . table('SH_MOBS') . '
+						m INNER JOIN ' . table('SH_MOBITEMS') . ' mi on mi.MobID = m.MobID
+						INNER JOIN ' . table('SH_ITEMS') . ' i on mi.Grade = i.Grade
+						INNER JOIN ' . table('SH_DROP_FINDER') . " drp on m.MobID = drp.MobID
 						WHERE i.ItemID = :item AND m.MobName not like '%Error Monster%' order by m.MobID"
             );
             $this->db->query($sql);
