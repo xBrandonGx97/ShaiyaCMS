@@ -20,11 +20,7 @@ class Community extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -36,11 +32,7 @@ class Community extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -53,11 +45,7 @@ class Community extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'guildrankings' => $guildRankingsModel->getGuildRankings(),
             'user' => $this->user,
             'select' => $this->select
@@ -71,11 +59,7 @@ class Community extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'news',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'news' => $newsModel->getNews(),
             'user' => $this->user,
             'select' => $this->select
@@ -89,11 +73,7 @@ class Community extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'patchNotes',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'patchnotes' => $patchNotesModel->getPatchNotes(),
             'user' => $this->user,
             'select' => $this->select
@@ -107,11 +87,7 @@ class Community extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'Rankings' => $rankings
@@ -123,11 +99,7 @@ class Community extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];

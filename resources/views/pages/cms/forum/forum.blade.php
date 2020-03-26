@@ -1,5 +1,7 @@
 @extends('layouts.app')
+@section('index', 'forum')
 @section('title', 'Forum')
+@section('zone', 'CMS')
 @section('content')
     @include('home.inc.page_bg')
     @include('home.inc.page_border')

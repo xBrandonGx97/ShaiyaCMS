@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'dropFinder')
 @section('title', 'Drop Finder')
 @section('zone', 'CMS')
 @section('headerTitle', 'Drop Finder')

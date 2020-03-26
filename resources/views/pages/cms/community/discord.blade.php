@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'discord')
 @section('title', 'Discord')
 @section('zone', 'CMS')
 @section('headerTitle', 'Discord')

@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'pvpRewards')
 @section('title', 'PvP Rewards')
 @section('zone', 'CMS')
 @section('headerTitle', 'PvP Rewards')

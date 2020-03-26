@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'promotions')
 @section('title', 'Promotions')
 @section('zone', 'CMS')
 @section('headerTitle', 'Promotions')

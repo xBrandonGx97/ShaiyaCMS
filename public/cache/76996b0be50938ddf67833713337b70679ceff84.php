@@ -1,3 +1,4 @@
+<?php $__env->startSection('index', 'dropFinder'); ?>
 <?php $__env->startSection('title', 'Drop Finder'); ?>
 <?php $__env->startSection('zone', 'CMS'); ?>
 <?php $__env->startSection('headerTitle', 'Drop Finder'); ?>
@@ -104,4 +105,5 @@
 		<?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/cms/serverinfo/dropfinder.blade.php ENDPATH**/ ?>

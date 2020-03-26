@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'vote')
 @section('title', 'Vote for Us')
 @section('zone', 'CMS')
 @section('content')

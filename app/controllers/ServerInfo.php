@@ -19,11 +19,6 @@ class ServerInfo extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'pageData' => [
-                'index' => 'index',
-                'zone' => 'CMS',
-                'nav' => true
-            ],
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -37,11 +32,6 @@ class ServerInfo extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'pageData' => [
-                'index' => 'index',
-                'zone' => 'CMS',
-                'nav' => true
-            ],
             'bossrecords' => $bossRecords,
             'user' => $this->user,
             'select' => $this->select
@@ -56,11 +46,6 @@ class ServerInfo extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'pageData' => [
-                'index' => 'index',
-                'zone' => 'CMS',
-                'nav' => true
-            ],
             'dropfinder' => $dropFinder,
             'user' => $this->user,
             'select' => $this->select
@@ -73,11 +58,6 @@ class ServerInfo extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'pageData' => [
-                'index' => 'index',
-                'zone' => 'CMS',
-                'nav' => true
-            ],
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -89,11 +69,6 @@ class ServerInfo extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'pageData' => [
-                'index' => 'index',
-                'zone' => 'CMS',
-                'nav' => true
-            ],
             'user' => $this->user,
             'select' => $this->select
         ];

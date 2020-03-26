@@ -17,13 +17,8 @@ class Admin extends Controller
         $this->user->run();
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'AP',
-            'nav' => true,
-        ],
-            'User' => $this->user,
+        $data = [
+            'user' => $this->user,
         ];
 
         self::view('ap/index', $data);

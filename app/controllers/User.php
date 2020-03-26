@@ -20,12 +20,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -36,12 +31,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -52,12 +42,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -70,12 +55,7 @@ class User extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'friends',
-            'title' => 'Friends',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'friends' => $Friends
@@ -87,12 +67,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -103,12 +78,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -121,12 +91,7 @@ class User extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'promotions' => $promotions,
@@ -142,12 +107,7 @@ class User extends Controller
 
         $Browser = new Utils\Browser;
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'browser' => $Browser,
@@ -160,12 +120,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -176,12 +131,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -194,12 +144,7 @@ class User extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'support' => $support,
@@ -214,12 +159,7 @@ class User extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'userModel' => $userModel,
@@ -233,12 +173,7 @@ class User extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -251,12 +186,7 @@ class User extends Controller
 
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'index',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select,
             'vote' => $vote

@@ -34,23 +34,23 @@
 <script src="/resources/themes/Godlike/vendor/jquery/dist/jquery.min.js"></script>
 {{--<script src="/resources/themes/core/js/user/search_users.js" type=module></script>--}}
 <script src="/resources/themes/core/js/functions.js" type=module></script>
-@if($data['pageData']['index']==='home' || $data['pageData']['index']==='news')
+@if ($__env->yieldContent('index')==='home' || $__env->yieldContent('index')==='news')
     <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/news/load_news_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/news/load_next_news_data.js" type=module></script>
 @endif
-@if($data['pageData']['index']==='patchNotes')
+@if ($__env->yieldContent('index')==='patchNotes')
     <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/patchNotes/load_patch_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/patchNotes/load_next_patch_data.js" type=module></script>
 @endif
-@if($data['pageData']['index']==='view_topic')
+@if ($__env->yieldContent('index')==='view_topic')
     <script src="/resources/themes/core/js/forum_functions.js" type=module></script>
     <script src="/resources/themes/core/js/forum/pagination/load_data.js" type=module></script>
     <script src="/resources/themes/core/js/forum/pagination/load_topics_data.js" type=module></script>
     <script src="/resources/themes/core/js/forum/pagination/load_next_topics_data.js" type=module></script>
 @endif
-@if($data['pageData']['index']==='rankings')
+@if ($__env->yieldContent('index')==='rankings')
     <script src="/resources/themes/core/js/pagination/load_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/rankings/load_rankings_data.js" type=module></script>
     <script src="/resources/themes/core/js/pagination/rankings/load_next_rankings_data.js" type=module></script>

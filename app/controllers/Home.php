@@ -26,12 +26,7 @@ class Home extends Controller
         $widget = new Utils\Widget();
         $widget = $widget->display();
 
-        $data = ['pageData' => [
-            'index' => 'home',
-            'title' => 'Home',
-            'zone' => 'CMS',
-            'nav' => true,
-        ],
+        $data = [
             'user' => $this->user,
             'news' => $newsModel->getNews(),
             'serverinfo' => $serverInfo,

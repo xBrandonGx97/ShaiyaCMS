@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'tos')
 @section('title', 'Terms of Service')
 @section('zone', 'CMS')
 @section('headerTitle', 'Terms of Service')

@@ -1,3 +1,4 @@
+<?php $__env->startSection('index', 'tos'); ?>
 <?php $__env->startSection('title', 'Terms of Service'); ?>
 <?php $__env->startSection('zone', 'CMS'); ?>
 <?php $__env->startSection('headerTitle', 'Terms of Service'); ?>
@@ -30,4 +31,5 @@
         <?php echo $__env->make('layouts.cms.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/cms/serverinfo/terms.blade.php ENDPATH**/ ?>

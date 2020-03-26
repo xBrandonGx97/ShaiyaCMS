@@ -1,7 +1,7 @@
-<?php $__env->startSection('index', 'about'); ?>
-<?php $__env->startSection('title', 'About'); ?>
+<?php $__env->startSection('index', 'donate'); ?>
+<?php $__env->startSection('title', 'Donate'); ?>
 <?php $__env->startSection('zone', 'CMS'); ?>
-<?php $__env->startSection('headerTitle', 'About'); ?>
+<?php $__env->startSection('headerTitle', 'Donate'); ?>
 <?php $__env->startSection('content'); ?>
     
     <?php echo $__env->make('partials.cms.pageBorder', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -16,15 +16,12 @@
 		<?php echo $__env->make('partials.cms.signForms', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="container text-xs-center">
             <?php Separator(80) ?>
-            <ul>
-                <li>Episode 6.4</li>
-                <li>Max Level 80</li>
-                <li>Custom Commands</li>
-                <li>PvE/PvP</li>
-                <li>EP8 Data/Custom Costumes/Wings/Pets</li>
-                <li>x2 Killrate (Double on weekends)</li>
-                <li>x20 ExpRate (Double on weekends)</li>
-            </ul>
+            <h2 class="display-4">Donate</h2>
+            <?php if (\Illuminate\Support\Facades\Blade::check('guest')): ?>
+                <p>Please login to continue.</p>
+                <?php else: ?>
+                <div class="text-center mb-50">For billing inquiries, you may send an email to <a href = "mailto:7mano1320@gmail.com">7mano1320@gmail.com</a>.</div>
+            <?php endif; ?>
         </div>
         <?php Separator(40) ?>
         <?php Separator(80) ?>
@@ -32,4 +29,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/cms/serverinfo/about.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.cms.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/cms/user/donate.blade.php ENDPATH**/ ?>

@@ -17,11 +17,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -32,11 +28,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -47,11 +39,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -62,11 +50,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -77,11 +61,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -92,11 +72,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -107,11 +83,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -122,11 +94,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -137,11 +105,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];
@@ -152,11 +116,7 @@ class Errors extends Controller
     {
         $this->user->fetchUser();
 
-        $data = ['pageData' => [
-            'index' => 'rankings',
-            'zone' => 'CMS',
-            'nav' => true
-        ],
+        $data = [
             'user' => $this->user,
             'select' => $this->select
         ];

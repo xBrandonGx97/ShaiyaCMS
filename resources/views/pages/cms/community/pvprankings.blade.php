@@ -1,4 +1,5 @@
 @extends('layouts.cms.app')
+@section('index', 'rankings')
 @section('title', 'PvP Rankings')
 @section('zone', 'CMS')
 @section('headerTitle', 'PvP Rankings')
