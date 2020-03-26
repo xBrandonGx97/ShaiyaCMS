@@ -2,6 +2,11 @@
 
 namespace Classes\Utils;
 
+/**
+ * @author Brandon Gonzalez
+ * @copyright Copyright (c) 2020, Brandon Gonzalez
+ */
+
 class Session
 {
     private $sessionName;
@@ -18,6 +23,17 @@ class Session
         $this->sessionName = $this->name;
     }
 
+    /**
+     * Creates a session variable
+     *
+     * @param $key
+     * The key of the session
+     * @param $value
+     * The value of said key
+     * @param $key2
+     * The second key of the session (if needed)
+     * @return void
+     */
     public function put($key, $value, $key2 = null): void
     {
         // check if session started on each function
@@ -100,14 +116,14 @@ class Session
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
                 $result = '<pre>';
-                    $result .= $this->variables($type, $_SESSION);
+                $result .= $this->variables($type, $_SESSION);
                 $result .= '</pre>';
                 return $result;
             }
         }
     }
 
-    public function forget($key): void
+    public function forget(string $key): void
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {

@@ -7,7 +7,6 @@ class Auth
     public function __construct(Session $session)
     {
         $this->session = $session;
-        $this->user = new User($this->session);
     }
 
     // similar to laravels auth class
@@ -44,9 +43,10 @@ class Auth
 
     public function logout(): void
     {
+        $user = new User($this->session);
         // Log user out
         if ($this->session->has('User')) {
-            $this->user->updateLoginStatus(0);
+            $user->updateLoginStatus(0);
             $this->session->regenerate();
             $this->session->forget('User');
             $referrer = $_SERVER['HTTP_REFERER'];

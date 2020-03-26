@@ -6,6 +6,7 @@ use Compiler\Compiler;
 use Dotenv\Dotenv;
 use Framework\Core\Loader;
 use Classes\DB\MSSQL as DB;
+use Classes\Security\Security;
 use Classes\Utils as Utils;
 
 class Bootstrap
@@ -55,6 +56,8 @@ class Bootstrap
             $this->loadConfigs();
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
+            // Init SSL Check
+            $this->security = new Security;
             // Load Helpers
             $this->loadHelpers();
             // Init Session
