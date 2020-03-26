@@ -1,5 +1,5 @@
 <?php
-    use Framework\Core\Route;
+use Framework\Core\Route;
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $session = new Classes\Utils\Session;
@@ -103,8 +103,55 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $admin = new App\Controllers\Admin($userClass);
 
         $r->addRoute('GET', '', [($admin), 'index']);
-        $r->addRoute('GET', '/core/settings', [($admin), 'index']);
-        $r->addRoute('GET', '/core/user/{id:\d+}', [($admin), 'index']);
+
+        // Admin
+        $r->addRoute('GET', '/accessLogs', [($admin), 'index']);
+        $r->addRoute('GET', '/commandLogs', [($admin), 'index']);
+
+        // Account
+        $r->addRoute('GET', '/account/ban', [($admin), 'index']);
+        $r->addRoute('GET', '/account/banSearch', [($admin), 'index']);
+        $r->addRoute('GET', '/account/dpHandout', [($admin), 'index']);
+        $r->addRoute('GET', '/account/edit', [($admin), 'index']);
+        $r->addRoute('GET', '/account/ipSearch', [($admin), 'index']);
+        $r->addRoute('GET', '/account/search', [($admin), 'index']);
+        $r->addRoute('GET', '/account/unban', [($admin), 'index']);
+
+        // Player
+        $r->addRoute('GET', '/player/edit', [($admin), 'index']);
+        $r->addRoute('GET', '/player/itemDelete', [($admin), 'index']);
+        $r->addRoute('GET', '/player/itemEdit', [($admin), 'index']);
+        $r->addRoute('GET', '/player/jail', [($admin), 'index']);
+        $r->addRoute('GET', '/player/chatSearch', [($admin), 'index']);
+        $r->addRoute('GET', '/player/restore', [($admin), 'index']);
+        $r->addRoute('GET', '/player/unJail', [($admin), 'index']);
+        $r->addRoute('GET', '/player/linkedGear', [($admin), 'index']);
+        $r->addRoute('GET', '/player/deleteWhItems', [($admin), 'index']);
+        $r->addRoute('GET', '/player/editWhItems', [($admin), 'index']);
+
+        // Misc
+        $r->addRoute('GET', '/misc/disbandGuild', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/factionChange', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/worldChat', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/guildLeaderChange', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/guildNameChange', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/guildSearch', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/itemList', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/itemSearch', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/mobList', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/playersOnline', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/statPadders', [($admin), 'index']);
+
+        // SExtended
+        $r->addRoute('GET', '/sExtended/sendNotice', [($admin), 'index']);
+        $r->addRoute('GET', '/sExtended/sendPlayerNotice', [($admin), 'index']);
+
+        // Game Sage
+        $r->addRoute('GET', '/gs/worldChat', [($admin), 'index']);
+        $r->addRoute('GET', '/gs/playersOnline', [($admin), 'index']);
+
+        /* $r->addRoute('GET', '/core/settings', [($admin), 'index']);
+        $r->addRoute('GET', '/core/user/{id:\d+}', [($admin), 'index']); */
     });
     // Errors
     $r->addGroup('/errors', function (FastRoute\RouteCollector $r) {
