@@ -2,6 +2,8 @@
 
 namespace Framework\Core;
 
+use App\Exceptions;
+
 class Loader
 {
     // Load config files
@@ -9,6 +11,8 @@ class Loader
     {
         if (file_exists(CONFIG_PATH . $config . '.php')) {
             return require_once CONFIG_PATH . $config . '.php';
+        } else {
+            throw new Exceptions\ConfigException;
         }
     }
 
@@ -27,6 +31,8 @@ class Loader
         //echo 'Loading helper ('.$helper.')..<br>';
         if (file_exists(HELPER_PATH . $helper . '.php')) {
             include HELPER_PATH . $helper . '.php';
+        } else {
+            throw new Exceptions\HelperException;
         }
     }
 }

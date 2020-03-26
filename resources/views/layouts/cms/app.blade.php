@@ -1,17 +1,9 @@
 <!doctype html>
-<html lang="{{$_SESSION['Settings']['SITE_LANG']}}">
+<html lang="{{APP['lang']}}">
     <head>
-        @if ($__env->yieldContent('zone')==='CMS')
-            @include('layouts.cms.head')
-        @else
-            {{-- include here --}}
-        @endif
+        @include('layouts.cms.head')
     </head>
     <body>
-        @if ($__env->yieldContent('zone')==='CMS')
-            @include('layouts.cms.body')
-        @else
-            {{-- include here --}}
-        @endif
+        @include('layouts.cms.body')
     </body>
 </html>

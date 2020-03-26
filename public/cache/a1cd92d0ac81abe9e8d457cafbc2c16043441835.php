@@ -1,0 +1,1 @@
+<?php echo $__env->yieldContent('content'); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/ap/body.blade.php ENDPATH**/ ?>

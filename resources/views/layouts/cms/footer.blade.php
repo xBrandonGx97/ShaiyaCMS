@@ -31,7 +31,7 @@
 <!-- Object Fit Polyfill -->
 <script src="/resources/themes/Godlike/vendor/object-fit-images/dist/ofi.min.js"></script>
 <!-- GSAP -->
-<script src="/resources/themes/Godlike/vendor/gsap/src/minified/TweenMax.min.js"></script> --}}
+<script src="/resources/themes/Godlike/vendor/gsap/src/minified/TweenMax.min.js"></script>
 <script src="/resources/themes/Godlike/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
 <!-- Popper -->
 <script src="/resources/themes/Godlike/vendor/popper.js/dist/umd/popper.min.js"></script>
@@ -85,7 +85,7 @@
 <!-- WZ ToolTip -->
 <script src="/resources/themes/core/js/wz_tooltip.js"></script>
 <!-- socket.io -->
--- <script src="/resources/themes/core/js/socket.io-client/dist/socket.io.js"></script>
+<script src="/resources/themes/core/js/socket.io-client/dist/socket.io.js"></script>
 <script src="/resources/themes/core/js/client.js"></script>
 </body>
 </html>

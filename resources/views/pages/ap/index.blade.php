@@ -1,11 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.ap.app')
+@section('index', 'dashboard')
+@section('title', 'Dashboard')
+@section('zone', 'AP')
 @section('content')
-    @include('inc.ap.header')
-    <div id="wrapper">
-        @include('inc.ap.nav')
-        <div id="content-wrapper">
-            <div class="container-fluid">
-                @include('inc.ap.breadcrumb')
+    @include('partials.ap.header')
+    @include('partials.ap.nav')
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    yeet
+                </div>
             </div>
         </div>
     </div>
