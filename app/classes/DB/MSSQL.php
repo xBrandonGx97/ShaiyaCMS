@@ -17,13 +17,12 @@ class MSSQL
 
     public function connect()
     {
-        $config = CONFIG['database'];
         // Set DSN
-        $dsn = 'sqlsrv:Server=' . $config['host'] . ';Database=' . $config['name'];
+        $dsn = 'sqlsrv:Server=' . DB['host'] . ';Database=' . DB['name'];
 
         // Create PDO instance
         try {
-            $this->dbh = new PDO($dsn, $config['user'], $config['pass'], $config['options']);
+            $this->dbh = new PDO($dsn, DB['user'], DB['pass'], DB['options']);
         } catch (\PDOException $e) {
             $this->error = $e->getMessage();
             throw new \Classes\Exception\SystemException($e->getMessage(), 0, 0, __FILE__, __LINE__);
@@ -36,16 +35,14 @@ class MSSQL
 
     public function initEloquent()
     {
-        $config = CONFIG['database'];
-
         $capsule = new Capsule;
 
         $capsule->addConnection([
-            'driver' => $config['driver'],
-            'host' => $config['host'],
-            'database' => $config['name'],
-            'username' => $config['user'],
-            'password' => $config['pass']
+            'driver' => DB['driver'],
+            'host' => DB['host'],
+            'database' => DB['name'],
+            'username' => DB['user'],
+            'password' => DB['pass']
         ]);
 
         // Make this Capsule instance available globally via static methods

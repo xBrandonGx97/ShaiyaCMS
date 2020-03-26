@@ -9,8 +9,8 @@
         </div>
         <div class="nk-gap"></div>
         <p>
-            {!!$_SESSION['Settings']['SITE_FOOTER']!!}<br>
-            Developed By {{$_SESSION['Settings']['AUTHOR']}}.
+            {!!APP['footer']!!}<br>
+            Developed By {{APP['author']}}.
         </p>
         <div class="nk-footer-links">
             <a href="/serverinfo/terms" class="link-effect">Terms of Service</a>

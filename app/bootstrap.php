@@ -172,7 +172,10 @@ class Bootstrap
 
     public function loadConfigs()
     {
+        define('APP', $this->loader->config('app'));
         define('CONFIG', $this->loader->config('config'));
+        define('DB', $this->loader->config('database'));
+        define('MAIL', $this->loader->config('mail'));
         define('MAPS', $this->loader->config('maps'));
     }
 

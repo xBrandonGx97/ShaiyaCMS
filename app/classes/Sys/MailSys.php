@@ -31,10 +31,10 @@ class MailSys
     {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host = CONFIG['mail']['host'];
-        $mail->Port = CONFIG['mail']['port'];
+        $mail->Host = MAIL['host'];
+        $mail->Port = MAIL['port'];
         $mail->isHTML(true);
-        $mail->setFrom(CONFIG['mail']['reply_email'], CONFIG['mail']['reply_name']);
+        $mail->setFrom(MAIL['reply_email'], MAIL['reply_name']);
 
         return $mail;
     }
@@ -43,15 +43,15 @@ class MailSys
     {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host = CONFIG['mail']['host'];
-        $mail->SMTPAuth = CONFIG['mail']['auth'];
-        $mail->Username = CONFIG['mail']['user'];
-        $mail->Password = CONFIG['mail']['pass'];
-        $mail->Port = CONFIG['mail']['port'];
-        $mail->SMTPSecure = CONFIG['mail']['protocol'];
+        $mail->Host = MAIL['host'];
+        $mail->SMTPAuth = MAIL['auth'];
+        $mail->Username = MAIL['user'];
+        $mail->Password = MAIL['pass'];
+        $mail->Port = MAIL['port'];
+        $mail->SMTPSecure = MAIL['protocol'];
 
         $mail->isHTML(true);
-        $mail->setFrom(CONFIG['mail']['reply_email'], CONFIG['mail']['reply_name']);
+        $mail->setFrom(MAIL['reply_email'], MAIL['reply_name']);
 
         return $mail;
     }

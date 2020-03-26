@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="{{APP['author']}}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
@@ -56,4 +57,4 @@
     <script src="/resources/themes/core/js/pagination/rankings/load_next_rankings_data.js" type=module></script>
     <script src="/resources/themes/core/js/rankings/pagination/load_search_rankings_data.js" type=module></script>
 @endif
-<title>@yield('title', 'undefined') - {{CONFIG['app']['title']}}</title>
+<title>@yield('title', 'undefined') - {{APP['title']}}</title>

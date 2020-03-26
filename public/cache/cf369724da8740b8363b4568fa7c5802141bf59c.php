@@ -9,8 +9,8 @@
         </div>
         <div class="nk-gap"></div>
         <p>
-            <?php echo $_SESSION['Settings']['SITE_FOOTER']; ?><br>
-            Developed By <?php echo e($_SESSION['Settings']['AUTHOR']); ?>.
+            <?php echo APP['footer']; ?><br>
+            Developed By <?php echo e(APP['author']); ?>.
         </p>
         <div class="nk-footer-links">
             <a href="/serverinfo/terms" class="link-effect">Terms of Service</a>

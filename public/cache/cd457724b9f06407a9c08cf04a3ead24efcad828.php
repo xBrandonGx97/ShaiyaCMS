@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="<?php echo e(APP['author']); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
@@ -56,5 +57,5 @@
     <script src="/resources/themes/core/js/pagination/rankings/load_next_rankings_data.js" type=module></script>
     <script src="/resources/themes/core/js/rankings/pagination/load_search_rankings_data.js" type=module></script>
 <?php endif; ?>
-<title><?php echo $__env->yieldContent('title', 'undefined'); ?> - <?php echo e(CONFIG['app']['title']); ?></title>
+<title><?php echo $__env->yieldContent('title', 'undefined'); ?> - <?php echo e(APP['title']); ?></title>
 <?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/head.blade.php ENDPATH**/ ?>

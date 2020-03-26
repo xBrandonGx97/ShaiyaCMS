@@ -14,7 +14,7 @@
     style="padding-top: 0px; background-image: none; background-attachment: scroll; background-size: auto;"
     data-jarallax-original-styles="padding-top: 0px;">
     <div class="bg-image" style="transform: translateY(0px) translateZ(0px); opacity: 1;">
-        <div style="background-image: url(&quot;/resources/themes/Godlike/images/gif-3-s.gif&quot;); transform: translateY(0px) translateZ(0px);"  
+        <div style="background-image: url(&quot;/resources/themes/Godlike/images/gif-3-s.gif&quot;); transform: translateY(0px) translateZ(0px);"
            class="op-5"></div>
     </div>
     <div class="nk-header-table">
@@ -23,7 +23,6 @@
                 <a href="/" class="nk-nav-logo">
                     <img src="/resources/themes/core/images/logos/logo.png" alt="" width="50%">
                 </a>
-                <h4><a href="#" class="luneth-click-register">Click here to register now !</a></h4>
             </div>
         </div>
     </div>
