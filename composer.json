@@ -16,6 +16,7 @@
     "psr-4": {
       "Compiler\\": "framework/libraries/compiler",
       "Classes\\": "app/classes",
+      "App\\Exceptions\\": "app/exceptions",
       "App\\Controllers\\": "app/controllers",
       "App\\Models\\": "app/models",
       "Framework\\Core\\": "framework/core",

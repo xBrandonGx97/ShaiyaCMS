@@ -9,12 +9,13 @@
     class SystemException extends \ErrorException
     {
         private $trace;
-        private $codename = 'MVC';
-        private $version = '2.0.0';
+        private $codename = APP['title'];
+        private $version = APP['version'];
 
         public function __construct($message = '', $code = 0, $severity = 100, $filename = '', $lineno = 0)
         {
             parent::__construct($message, $code, $severity, $filename, $lineno);
+            $this->parser = new Parser;
         }
 
         public function getStacktrace()
@@ -29,7 +30,7 @@
             echo '<!DOCTYPE html>';
             echo '<html lang="en">';
             echo '<head>';
-            echo '<title>ERROR!</title>';
+            echo '<title>'.$this->title.'</title>';
 
             echo '<link rel="stylesheet" type="text/css" href="/Resources/jQuery/Addons/Bootstrap/v4.3.1/css/bootstrap.css" media="all">';
             echo '<link rel="stylesheet" type="text/css" href="/Resources/Styles/Standard/CSS/master.css" media="all">';
@@ -53,11 +54,11 @@
             echo '</tr>';
             echo '<tr>';
             echo '<td class="col-2">CMS CodeName:</td>';
-            echo '<td>' . $_SESSION['Settings']['SITE_TITLE'] . '</td>';
+            echo '<td>' . $this->codename . '</td>';
             echo '</tr>';
             echo '<tr>';
             echo '<td class="col-2">CMS Version:</td>';
-            echo '<td>' . $_SESSION['Settings']['VERSION'] . '</td>';
+            echo '<td>' . $this->version . '</td>';
             echo '</tr>';
             echo '</table>';
             echo '</div>';
@@ -71,7 +72,7 @@
             echo '<table class="table table-sm text-white bg-black">';
             echo '<tr>';
             echo '<td class="col-2">Error Date:</td>';
-            echo '<td>' . Parser::do_date(time()) . '</td>';
+            echo '<td>' . $this->parser->do_date(time()) . '</td>';
             echo '</tr>';
 
             echo '<tr>';

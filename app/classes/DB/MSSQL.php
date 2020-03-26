@@ -4,6 +4,7 @@ namespace Classes\DB;
 
 use \PDO;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Exceptions\DatabaseException;
 
 class MSSQL
 {
@@ -25,7 +26,7 @@ class MSSQL
             $this->dbh = new PDO($dsn, DB['user'], DB['pass'], DB['options']);
         } catch (\PDOException $e) {
             $this->error = $e->getMessage();
-            throw new \Classes\Exception\SystemException($e->getMessage(), 0, 0, __FILE__, __LINE__);
+            throw new DatabaseException($e->getMessage());
         }
 
         $this->initEloquent();
