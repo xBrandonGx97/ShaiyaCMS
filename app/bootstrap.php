@@ -8,6 +8,7 @@ use Framework\Core\Loader;
 use Classes\DB\MSSQL as DB;
 use Classes\Security\Security;
 use Classes\Utils as Utils;
+use Classes\Exception\Exception;
 
 class Bootstrap
 {
@@ -54,6 +55,9 @@ class Bootstrap
             $this->initDotEnv();
             // Load configuration files
             $this->loadConfigs();
+            // Set Default Exception
+            $exception = new Exception;
+            set_exception_handler([$exception, 'handler']);
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Init SSL Check
@@ -70,8 +74,6 @@ class Bootstrap
             $this->settings = new \Classes\Settings\Settings($this->session);
             // Init Data
             $this->data = new Utils\Data;
-            // Load Purifier
-            #$this->data->loadPurifier();
             // Load Langs
             $this->getLang();
             $this->loadLangs();

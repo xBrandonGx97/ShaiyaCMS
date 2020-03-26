@@ -12,15 +12,14 @@ class Admin extends Controller
             $this->user = $user;
     }
 
-    public static function index()
+    public function index()
     {
-        $this->user->run();
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
         ];
 
-        self::view('ap/index', $data);
+        $this->view('pages/ap/index', $data);
     }
 }

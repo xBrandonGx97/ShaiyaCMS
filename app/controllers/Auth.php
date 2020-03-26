@@ -104,7 +104,7 @@ class Auth extends Controller
                                         $this->sendActivationCode();
                                     } else {
                                         if ($userInfo->RestrictIP !== null) {
-                                            if ($userInfo->RestrictIP === $this->browser->IP) {
+                                            if ($userInfo->RestrictIP === $this->browser->ip()) {
                                                 // IP is same, continue
                                                 $this->loginSuccess($userInfo);
                                             }
@@ -183,7 +183,7 @@ class Auth extends Controller
                     } else {
                         // Set UA Cookie
                         $hour = time() + 10 * 365 * 24 * 60 * 60;
-                        setcookie('ua', $this->browser->UA, $hour, '/', null, null, true);
+                        setcookie('ua', $this->browser->userAgent(), $hour, '/', null, null, true);
                         $updateActivation = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
                         ->where('ActivationCode', $activationCode)
                         ->update(['Used' => 1]);
