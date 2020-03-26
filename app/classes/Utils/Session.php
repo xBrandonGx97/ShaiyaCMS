@@ -95,11 +95,14 @@ class Session
         }
     }
 
-    public function all()
+    public function all($type = null)
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
-                return print_r($_SESSION);
+                $result = '<pre>';
+                    $result .= $this->variables($type, $_SESSION);
+                $result .= '</pre>';
+                return $result;
             }
         }
     }
@@ -127,5 +130,17 @@ class Session
 
     public function save()
     {
+    }
+
+    public function variables($type, $vars)
+    {
+        switch ($type) {
+            case '1':
+                return var_dump($vars);
+            case '2':
+                return print_r($vars);
+            default:
+                return var_dump($vars);
+        }
     }
 }

@@ -4,43 +4,62 @@ namespace Classes\Utils;
 
 class Cookie
 {
-    public function __construct()
+
+    public function put($key, $value, $time)
     {
-        //
+        setcookie($key, $value, $time, '/', null, null, true);
     }
 
-    public function put()
+    public function has($key)
     {
-        //
+        if (isset($_COOKIE[$key])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public function has()
+    public function get($key)
     {
-        //
+        if (isset($_COOKIE[$key])) {
+            $result = $_COOKIE[$key];
+            return $result;
+        }
     }
 
-    public function get()
+    public function exists($key)
     {
-        //
+        if (isset($_COOKIE[$key])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public function exists()
+    public function all($type = null)
     {
-        //
+        $result = '<pre>';
+            $result .= $this->variables($type, $_COOKIE);
+        $result .= '</pre>';
+        return $result;
     }
 
-    public function all()
+    public function forget($key)
     {
-        //
+        if (isset($_COOKIE[$key])) {
+            unset($_COOKIE[$key]);
+        }
     }
 
-    public function forget()
+    public function variables($type, $vars)
     {
-        //
-    }
-
-    public function flush()
-    {
-        //
+        switch ($type) {
+            case '1':
+                return var_dump($vars);
+            case '2':
+                return print_r($vars);
+            default:
+                return var_dump($vars);
+        }
     }
 }

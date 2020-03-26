@@ -4,43 +4,41 @@ namespace Classes\Utils;
 
 class Post
 {
-    public function __construct()
+
+    public function get($key)
     {
-        //
+        if (isset($_POST[$key])) {
+            $result = $_POST[$key];
+            return $result;
+        }
     }
 
-    public function put()
+    public function exists($key)
     {
-        //
+        if (isset($_POST[$key])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public function has()
+    public function all($type = null)
     {
-        //
+        $result = '<pre>';
+            $result .= $this->variables($type, $_POST);
+        $result .= '</pre>';
+        return $result;
     }
 
-    public function get()
+    public function variables($type, $vars)
     {
-        //
-    }
-
-    public function exists()
-    {
-        //
-    }
-
-    public function all()
-    {
-        //
-    }
-
-    public function forget()
-    {
-        //
-    }
-
-    public function flush()
-    {
-        //
+        switch ($type) {
+            case '1':
+                return var_dump($vars);
+            case '2':
+                return print_r($vars);
+            default:
+                return var_dump($vars);
+        }
     }
 }
