@@ -6,7 +6,8 @@
     "rase/socket.io-emitter": "dev-master",
     "vlucas/phpdotenv": "^4.1@dev",
     "phpmailer/phpmailer": "dev-master",
-    "nikic/fast-route": "^2.0@dev"
+    "nikic/fast-route": "^2.0@dev",
+    "cbschuld/browser.php": "^1.9@dev"
   },
   "minimum-stability": "dev",
   "config": {

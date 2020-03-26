@@ -10,7 +10,7 @@ class PHP
         $this->defaultIni();
     }
 
-    public function errorReporting()
+    private function errorReporting()
     {
         // Error-checking | Uncomment the one that suits your needs at the moment.
         // Know that everyone can see the error messages, not just you.
@@ -18,7 +18,7 @@ class PHP
         // error_reporting(E_ALL ^ E_NOTICE);
     }
 
-    public function defaultIni()
+    private function defaultIni()
     {
         // Sets default params without having to edit php.ini config
         // Options are 0/1

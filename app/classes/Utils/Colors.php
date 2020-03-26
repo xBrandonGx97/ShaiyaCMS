@@ -2193,12 +2193,12 @@ class Colors
 
     // Public Methods
 
-    public function hex($color)
+    public function getHex($color)
     {
         return $this->colors[$color]['hex'] ?? null;
     }
 
-    public function rgb($color)
+    public function getRgb($color)
     {
         return $this->colors[$color]['rgb'] ?? null;
     }

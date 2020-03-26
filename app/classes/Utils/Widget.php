@@ -6,7 +6,7 @@ use Illuminate\Database\Capsule\Manager as Eloquent;
 
 class Widget
 {
-    public function display($mode = 'right')
+    public function display(string $mode = 'right'): object
     {
         $widgets = Eloquent::table(table('CMS_WIDGETS'))
             ->select()
@@ -14,25 +14,5 @@ class Widget
             ->orderBy('Priority', 'ASC')
             ->get();
         return $widgets;
-    }
-
-    public function displayVanilla($mode = 'right')
-    {
-        // Widget Name => Enabled - true/false
-        $widgets = [
-            'guildRankingTimer' => [
-                'mode' => 'right',
-                'enabled' => true,
-            ],
-            'playerCount' => [
-                'mode' => 'right',
-                'enabled' => true,
-            ],
-        ];
-        foreach ($widgets as $key => $sub) {
-            if ($sub['mode'] === 'right' && $sub['enabled'] === true) {
-                require_once CONFIG['WIDGETDIR'] . $key . '/php/script.php';
-            }
-        }
     }
 }

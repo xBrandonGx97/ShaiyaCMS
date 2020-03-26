@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99230517bbcaf7e01acd52a0cea91049",
+    "content-hash": "55ca1102d9eb281e7fc2cb1288aec0da",
     "packages": [
+        {
+            "name": "cbschuld/browser.php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cbschuld/Browser.php.git",
+                "reference": "9fdf0aab6220e8e505dfdccc4d033a8761ce26a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cbschuld/Browser.php/zipball/9fdf0aab6220e8e505dfdccc4d033a8761ce26a3",
+                "reference": "9fdf0aab6220e8e505dfdccc4d033a8761ce26a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lib/Browser.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Schuld",
+                    "email": "chris@chrisschuld.com",
+                    "homepage": "http://chrisschuld.com"
+                }
+            ],
+            "description": "A PHP Class to detect a user's Browser",
+            "homepage": "https://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php/",
+            "keywords": [
+                "browser",
+                "detection",
+                "user agent"
+            ],
+            "time": "2019-12-18T05:03:30+00:00"
+        },
         {
             "name": "doctrine/inflector",
             "version": "1.3.1",
@@ -1795,7 +1846,7 @@
         "vlucas/phpdotenv": 20,
         "phpmailer/phpmailer": 20,
         "nikic/fast-route": 20,
-        "spatie/url-signer": 20
+        "cbschuld/browser.php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

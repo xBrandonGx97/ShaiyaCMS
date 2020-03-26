@@ -4,36 +4,14 @@ namespace Classes\Utils;
 
 class Browser
 {
-    public $OS;
-    public $Browser;
-    public $UA;
-    public $IP;
-    public $hostName;
-    public $data;
-
-    // PUBLIC
-    public function __construct()
-    {
-        $this->userAgent();
-        $this->operatingSystem();
-        $this->browser();
-        $this->ip();
-    }
-
-    public function getBrowserInfo($data)
-    {
-        return $this->data;
-    }
-
-    // PRIVATE
-    private function userAgent()
+    public function userAgent(): string
     {
         if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            $this->UA = $_SERVER['HTTP_USER_AGENT'];
+            return $_SERVER['HTTP_USER_AGENT'];
         }
     }
 
-    private function operatingSystem()
+    public function operatingSystem(): string
     {
         $OS_Platform = 'Unknown OS Platform';
         $OS_Arr = [
@@ -64,15 +42,14 @@ class Browser
         ];
 
         foreach ($OS_Arr as $RegEx => $Value) {
-            if (preg_match($RegEx, $this->UA)) {
-                $this->OS = $Value;
+            if (preg_match($RegEx, $this->userAgent())) {
+                return $Value;
             }
         }
     }
 
-    private function browser()
+    public function browser(): string
     {
-        $Browser = 'Unknown Browser';
         $Browser_Arr = [
             '/msie/i' => 'Internet Explorer',
             '/firefox/i' => 'Firefox',
@@ -87,28 +64,28 @@ class Browser
         ];
 
         foreach ($Browser_Arr as $RegEx => $Value) {
-            if (preg_match($RegEx, $this->UA)) {
-                $this->Browser = $Value;
+            if (preg_match($RegEx, $this->userAgent())) {
+                return $Value;
             }
         }
     }
 
-    private function ip()
+    public function ip(): string
     {
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-            $this->IP = $_SERVER['HTTP_CLIENT_IP'];
+            return $_SERVER['HTTP_CLIENT_IP'];
         } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            $this->IP = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
         } elseif (!empty($_SERVER['REMOTE_HOST'])) {
-            $this->IP = $_SERVER['REMOTE_HOST'];
+            return $_SERVER['REMOTE_HOST'];
         } else {
-            $this->IP = $_SERVER['REMOTE_ADDR'];
+            return $_SERVER['REMOTE_ADDR'];
         }
     }
 
-    private function hostname($ip)
+    public function hostname($ip): string
     {
-        $this->hostName = gethostbyaddr($ip);
+        return gethostbyaddr($ip);
     }
 
     // MISC
