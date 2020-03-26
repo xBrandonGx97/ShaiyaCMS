@@ -5,12 +5,12 @@ namespace Classes\Utils;
 class Cookie
 {
 
-    public function put($key, $value, $time)
+    public function put(string $key, $value, $time): void
     {
         setcookie($key, $value, $time, '/', null, null, true);
     }
 
-    public function has($key)
+    public function has(string $key): bool
     {
         if (isset($_COOKIE[$key])) {
             return true;
@@ -19,7 +19,7 @@ class Cookie
         }
     }
 
-    public function get($key)
+    public function get(string $key): string
     {
         if (isset($_COOKIE[$key])) {
             $result = $_COOKIE[$key];
@@ -27,7 +27,7 @@ class Cookie
         }
     }
 
-    public function exists($key)
+    public function exists(string $key): bool
     {
         if (isset($_COOKIE[$key])) {
             return true;
@@ -44,7 +44,7 @@ class Cookie
         return $result;
     }
 
-    public function forget($key)
+    public function forget(string $key): void
     {
         if (isset($_COOKIE[$key])) {
             unset($_COOKIE[$key]);

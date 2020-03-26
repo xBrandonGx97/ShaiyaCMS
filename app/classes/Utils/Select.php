@@ -6,6 +6,7 @@ use Classes\DB\MSSQL;
 
 class Select
 {
+    //TODO: clean this up, a lot of this is redundant.
     public function dobM()
     {
         echo '<select class="form-control" name="DOB_M">';

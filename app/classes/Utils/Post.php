@@ -5,7 +5,7 @@ namespace Classes\Utils;
 class Post
 {
 
-    public function get($key)
+    public function get(string $key): string
     {
         if (isset($_POST[$key])) {
             $result = $_POST[$key];
@@ -13,7 +13,16 @@ class Post
         }
     }
 
-    public function exists($key)
+    public function has(string $key): bool
+    {
+        if (isset($_POST[$key])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function exists(string $key): bool
     {
         if (isset($_POST[$key])) {
             return true;

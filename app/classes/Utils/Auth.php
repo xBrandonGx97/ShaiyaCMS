@@ -11,7 +11,7 @@ class Auth
     }
 
     // similar to laravels auth class
-    public function check()
+    public function check(): bool
     {
         // Check if user is logged in
         if ($this->session->has('User')) {
@@ -42,7 +42,7 @@ class Auth
         // Log user in using their primary id
     }
 
-    public function logout()
+    public function logout(): void
     {
         // Log user out
         if ($this->session->has('User')) {

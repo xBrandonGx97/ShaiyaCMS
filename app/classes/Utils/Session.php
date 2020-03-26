@@ -18,7 +18,7 @@ class Session
         $this->sessionName = $this->name;
     }
 
-    public function put($key, $value, $key2 = false)
+    public function put($key, $value, $key2 = null): void
     {
         // check if session started on each function
         if (isset($_SESSION)) {
@@ -36,7 +36,7 @@ class Session
         }
     }
 
-    public function regenerate()
+    public function regenerate(): void
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
@@ -45,7 +45,7 @@ class Session
         }
     }
 
-    public function has($key, $key2 = false)
+    public function has(string $key, $key2 = null): bool
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
@@ -60,7 +60,7 @@ class Session
         }
     }
 
-    public function get($key, $key2 = false)
+    public function get(string $key, $key2 = null): string
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
@@ -82,7 +82,7 @@ class Session
         }
     }
 
-    public function exists($key)
+    public function exists(string $key): bool
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
@@ -107,7 +107,7 @@ class Session
         }
     }
 
-    public function forget($key)
+    public function forget($key): void
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
@@ -118,7 +118,7 @@ class Session
         }
     }
 
-    public function flush()
+    public function flush(): void
     {
         if (isset($_SESSION)) {
             if (session_name() === $this->sessionName) {
@@ -126,10 +126,6 @@ class Session
                 session_destroy();
             }
         }
-    }
-
-    public function save()
-    {
     }
 
     public function variables($type, $vars)
