@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 403 Forbidden'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 403')
 @section('zone', 'CMS')
 @section('content')

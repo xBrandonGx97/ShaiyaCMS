@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 307 Temporary Redirect'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 307')
 @section('zone', 'CMS')
 @section('content')

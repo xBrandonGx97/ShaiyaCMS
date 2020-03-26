@@ -1,5 +1,6 @@
 @php header('HTTP/1.0 404 Not Found'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 404')
 @section('zone', 'CMS')
 @section('content')

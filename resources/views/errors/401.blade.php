@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 401 Unauthorized'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 401')
 @section('zone', 'CMS')
 @section('content')

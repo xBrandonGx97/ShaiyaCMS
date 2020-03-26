@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 500 Internal Server Error'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 500')
 @section('zone', 'CMS')
 @section('content')

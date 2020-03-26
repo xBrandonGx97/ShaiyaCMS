@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 301 Moved Permanently'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 301')
 @section('zone', 'CMS')
 @section('content')

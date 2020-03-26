@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 400 Bad Request'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 400')
 @section('zone', 'CMS')
 @section('content')

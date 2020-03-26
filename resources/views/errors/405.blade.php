@@ -1,5 +1,6 @@
 @php header('HTTP/1.1 405 Method Not Allowed'); @endphp
 @extends('layouts.cms.app')
+@section('index', 'error')
 @section('title', 'ERROR 405')
 @section('zone', 'CMS')
 @section('content')
