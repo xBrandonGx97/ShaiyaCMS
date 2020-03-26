@@ -113,7 +113,7 @@
               <div style="border-bottom: 1px solid white;"</div>
               <?php if(in_array($data['user']->Status, $data['user']->is_staff)): ?>
                 <li class="  ">
-                <a href="/user/account">Staff Panel</a>
+                <a href="/admin" target="_blank">Staff Panel</a>
               <?php endif; ?>
               <li class="  ">
                 <a href="/user/profile">Profile</a>
