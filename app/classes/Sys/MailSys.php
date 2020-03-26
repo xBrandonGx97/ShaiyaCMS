@@ -4,6 +4,7 @@ namespace Classes\Sys;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
+use App\Exceptions\MailException;
 
 class MailSys
 {
@@ -99,7 +100,8 @@ class MailSys
 
             $this->mail->send();
         } catch (PHPMailerException $e) {
-            echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
+            throw new MailException($e->getMessage());
+            #echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
