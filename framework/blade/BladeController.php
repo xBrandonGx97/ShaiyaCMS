@@ -69,7 +69,7 @@ class BladeController
         if (file_exists('../app/widgets/' . $view . '/php/script.blade.php')) {
             echo $this->blade->make('script', ['data' => $data])->render();
         } else {
-            echo 'no';
+            echo 'Widget doesn\'t exist';
         }
     }
 }

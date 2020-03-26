@@ -11,6 +11,7 @@
                     <div class="nk-gap-2"></div>
                     <!-- START: Login Form -->
                     <form class="nk-sign-form-login active" novalidate="novalidate">
+                        <div class="error-login-new-device nk-error"></div>
                         <input class="form-control login-username" type="text" placeholder="Username or Email" name="UserName">
                         <div class="error-login-username nk-error"></div>
                         <div class="nk-gap-2"></div>
@@ -112,6 +113,7 @@
             const userError =  document.querySelector('input[name="UserName"]');
             const passError =  document.querySelector('input[name="Password"]');
 
+            const errorDivNewDevice = document.querySelector(".error-login-new-device");
             const errorDivUser = document.querySelector(".error-login-username");
             const errorDivPass = document.querySelector(".error-login-password");
             const successLogin = document.querySelector(".success-login");
@@ -133,29 +135,7 @@
             .then(data => {
                 console.log(data);
                 if(data.newDevice==='true') {
-                    console.log("New Device");
-                    let signForm = document.querySelector(".nk-sign-form-login");
-                    let form = document.createElement('form');
-                        form.method = 'post';
-                        form.id = 'newForm';
-                        form.action = '/auth/newDevice/verify/14';
-                    signForm.appendChild(form);
-
-                    let input = document.createElement('input');
-                        input.type = 'hidden';
-                        input.name = 'newDevice';
-                        input.value = true;
-
-                    form.appendChild(input);
-
-                    let a = document.createElement('a');
-                        a.href = '#';
-                        a.id = 'submitNewDeviceForm';
-                        a.text = 'hi';
-                    form.appendChild(a);
-                    document.getElementById("submitNewDeviceForm").addEventListener("click", function () {
-                        document.querySelector('#newForm').submit();
-                    });
+                    errorDivNewDevice.innerHTML = "It looks like you're logging in from a new device. Please confirm this action by checking your email.";
                 } else {
                     if(data.finished==='true') {
                         userError.classList.add("nk-success");

@@ -9,7 +9,6 @@ use Illuminate\Database\Capsule\Manager as Eloquent;
 class Auth extends Controller
 {
     private $arr = [];
-    private $expiration = null;
 
     public function __construct(Utils\User $user, Utils\Session $session)
     {
@@ -69,8 +68,8 @@ class Auth extends Controller
             //If json_decode succeeded, the JSON is valid.
             if (is_array($decoded)) {
                 // Declare Required Variables
-                $userName = isset($decoded['user']) ? $this->data->do('escData', trim($decoded['user'])) : false;
-                $Password = isset($decoded['pw']) ? $this->data->do('escData', trim($decoded['pw'])) : false;
+                $userName = isset($decoded['user']) ? $this->data->purify(trim($decoded['user'])) : false;
+                $Password = isset($decoded['pw']) ? $this->data->purify(trim($decoded['pw'])) : false;
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 // Error Checking
                 $this->arr = [
@@ -102,7 +101,6 @@ class Auth extends Controller
                                 if (password_verify($Password, $userInfo->Pw)) {
                                     if (!isset($_COOKIE['ua'])) {
                                         $this->arr['newDevice'] .= 'true';
-
                                         $this->sendActivationCode();
                                     } else {
                                         if ($userInfo->RestrictIP !== null) {
@@ -148,7 +146,7 @@ class Auth extends Controller
 
     public function sendActivationCode()
     {
-        $activationCode = $this->data->do('rand_str', '64');
+        $activationCode = $this->data->randStr('64');
 
         $query = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
             ->insert([
