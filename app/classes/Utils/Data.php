@@ -7,7 +7,6 @@ use HTMLPurifier;
 class Data
 {
     protected $config;
-    public $purifier;
 
     public function __construct()
     {
