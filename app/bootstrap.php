@@ -68,7 +68,7 @@ class Bootstrap
             // Init Data
             $this->data = new Utils\Data;
             // Load Purifier
-            $this->data->do('load_purifier');
+            #$this->data->loadPurifier();
             // Load Langs
             $this->getLang();
             $this->loadLangs();
