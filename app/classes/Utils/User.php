@@ -228,39 +228,30 @@ class User
     public function getStatus(int $Status): string
     {
         switch ($Status) {
-            case '0':
+            case 0:
                 return 'Player';
-                break;
-            case '10':
+            case 16:
                 return 'Administrator';
-                break;
-            case '16':
-                return 'Administrator';
-                break;
-            case '32':
+            case 32:
                 return 'GameMaster';
-                 break;
-            case '48':
+            case 48:
                 return 'GameMaster';
-                 break;
-            case '64':
+            case 64:
                 return 'GameMaster Assistant';
-                 break;
-            case '80':
+            case 80:
+                return 'GameMaster Assistant';
+            case 128:
                 return 'GameSage';
-                 break;
         }
     }
 
     public function getFaction(int $Faction): string
     {
         switch ($Faction) {
-            case '0':
+            case 0:
                 return 'Alliance of Light';
-                break;
-            case '1':
+            case 1:
                 return 'Union of Fury';
-                break;
         }
     }
 
@@ -270,43 +261,31 @@ class User
             switch ($Class) {
                 case 0:
                     return 'Fighter';
-                    break;
                 case 1:
                     return 'Defender';
-                    break;
                 case 2:
                     return 'Archer';
-                    break;
                 case 3:
                     return 'Ranger';
-                    break;
                 case 4:
                     return 'Mage';
-                    break;
                 case 5:
                     return 'Priest';
-                    break;
             }
         } else {
             switch ($Class) {
                 case 0:
                     return 'Warrior';
-                    break;
                 case 1:
                     return 'Guardian';
-                    break;
                 case 2:
                     return 'Hunter';
-                    break;
                 case 3:
                     return 'Assassin';
-                    break;
                 case 4:
                     return 'Pagan';
-                    break;
                 case 5:
                     return 'Oracle';
-                    break;
             }
         }
     }
