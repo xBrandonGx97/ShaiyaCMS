@@ -6,6 +6,6 @@
         'footer' => env('APP_FOOTER'),
         'lang' => env('APP_LANG'),
         'secureHTTPS' => false,
-        'maintenance' => 0,
-        'dev' => 0
+        'maintenance' => false,
+        'dev' => true
     ];

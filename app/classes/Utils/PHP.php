@@ -22,8 +22,15 @@ class PHP
     {
         // Sets default params without having to edit php.ini config
         // Options are 0/1
-        //ini_set('display_errors','0');
-        ini_set('display_startup_errors', '0');
+        if (APP['dev'] === true) {
+            ini_set('display_errors', '1');
+            ini_set('display_startup_errors', '1');
+        } else {
+            ini_set('display_errors', '0');
+            ini_set('display_startup_errors', '0');
+        }
         ini_set('short_open_tag', '1');
+        ini_set('log_errors', 1);
+        ini_set('error_log', '../logs/ShaiyaCMS.log');
     }
 }
