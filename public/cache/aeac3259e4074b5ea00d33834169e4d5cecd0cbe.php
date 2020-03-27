@@ -5,18 +5,18 @@
             <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
                 <div class="nk-sign-form-container" style="opacity: 1; transform: translate3d(0px, 0px, 0px);">
                     <div class="nk-sign-form-toggle h3">
-                        <a href="#" class="nk-sign-form-login-toggle active">Log In</a>
-                        <a href="#" class="nk-sign-form-register-toggle">Register</a>
+                        <a href="#" class="nk-sign-form-login-toggle active"><?php echo e(__("loginTab")); ?></a>
+                        <a href="#" class="nk-sign-form-register-toggle"><?php echo e(__("registerTab")); ?></a>
                     </div>
                     <div class="nk-gap-2"></div>
                     <!-- START: Login Form -->
                     <form class="nk-sign-form-login active" novalidate="novalidate">
                         <div class="error-login-new-device nk-error"></div>
-                        <input class="form-control login-username" type="text" placeholder="Username or Email" name="UserName">
+                        <input class="form-control login-username" type="text" placeholder="<?php echo e(__("loginUserIdPlaceholder")); ?>" name="UserName">
                         <div class="error-login-username nk-error"></div>
                         <div class="nk-gap-2"></div>
                         <div class="input-group">
-                            <input class="form-control login-password" type="password" placeholder="Password or Pin" id="password3" name="Password">
+                            <input class="form-control login-password" type="password" placeholder="<?php echo e(__("loginPasswordPlaceholder")); ?>" id="password3" name="Password">
                             <span class="input-group-append">
                                 <span class="input-group-text bg-transparent border-0">
                                     <a href="#" class="password_visibility_login"><i class="far fa-eye-slash" id="password_icon3"></i></a>
@@ -28,14 +28,15 @@
                         <div class="nk-gap-2"></div>
                         <div class="form-check pull-left">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input login-remember" checked=""> Stay Logged In
+                                <input type="checkbox" class="form-check-input login-remember" checked=""> <?php echo e(__("stayLoggedInCheckbox")); ?>
+
                             </label>
                         </div>
                         <input type="hidden" name="doLogin" value="true"/>
-                        <div class="clearfix login-submit-container"><button type="button" class="nk-btn nk-btn-color-white link-effect-4 pull-right login-submit ready" id="login" name="doLogin"><span class="link-effect-inner"><span class="link-effect-l"><span>Log In</span></span><span class="link-effect-r"><span>Log In</span></span><span class="link-effect-shade"><span>Log In</span></span></span></button></div>
+                        <div class="clearfix login-submit-container"><button type="button" class="nk-btn nk-btn-color-white link-effect-4 pull-right login-submit ready" id="login" name="doLogin"><span class="link-effect-inner"><span class="link-effect-l"><span><?php echo e(__("loginButton")); ?></span></span><span class="link-effect-r"><span><?php echo e(__("loginButton")); ?></span></span><span class="link-effect-shade"><span><?php echo e(__("loginButton")); ?></span></span></span></button></div>
                         <div class="error-login-submit-container nk-error error-ignore"></div>
                         <div class="nk-gap-1"></div>
-                        <a class="nk-sign-form-lost-toggle pull-right" href="#">Lost Password ?</a>
+                        <a class="nk-sign-form-lost-toggle pull-right" href="#"><?php echo e(__("lostPassword")); ?></a>
                     </form>
                     <!-- END: Login Form -->
                     <!-- START: Lost Password Form -->
@@ -47,17 +48,17 @@
                     <!-- END: Lost Password Form -->
                     <!-- START: Register Form -->
                     <form class="nk-sign-form-register" novalidate="novalidate">
-                        <input class="form-control register-username" type="text" placeholder="Username" name="Username">
+                        <input class="form-control register-username" type="text" placeholder="<?php echo e(__("userName")); ?>" name="Username">
                         <div class="error-register-username nk-error"></div>
                         <div class="nk-gap-2"></div>
-                        <input class="form-control register-display-name" type="text" placeholder="Display name" name="DisplayName">
+                        <input class="form-control register-display-name" type="text" placeholder="<?php echo e(__("displayName")); ?>" name="DisplayName">
                         <div class="error-register-display-name nk-error"></div>
                         <div class="nk-gap-2"></div>
-                        <input class="form-control register-email" type="email" placeholder="Email address" name="email">
+                        <input class="form-control register-email" type="email" placeholder="<?php echo e(__("emailAddress")); ?>" name="email">
                         <div class="error-register-email nk-error"></div>
                         <div class="nk-gap-2"></div>
                         <div class="input-group">
-                            <input class="form-control register-password" type="password" placeholder="Password" id="password" name="Pwd">
+                            <input class="form-control register-password" type="password" placeholder="<?php echo e(__("password")); ?>" id="password" name="Pwd">
                             <span class="input-group-append">
                                 <span class="input-group-text bg-transparent border-0">
                                     <a href="#" class="password_visibility_reg"><i class="far fa-eye-slash" id="password_icon"></i></a>
@@ -67,7 +68,7 @@
                         <div class="error-register-password nk-error"></div>
                         <div class="nk-gap-2"></div>
                         <div class="input-group">
-                            <input class="form-control register-repeat-password" type="password" placeholder="Repeat password" id="password2" name="cPassword">
+                            <input class="form-control register-repeat-password" type="password" placeholder="<?php echo e(__("repeatPassword")); ?>" id="password2" name="cPassword">
                             <span class="input-group-append">
                                  <span class="input-group-text bg-transparent border-0">
                                      <a href="#" class="password_visibility_reg"><i class="far fa-eye-slash" id="password_icon2"></i></a>
@@ -82,16 +83,16 @@
 
                         <div class="error-register-sec-question nk-error"></div>
                         <div class="nk-gap-2"></div>
-                        <input class="form-control register-security-answer" type="text" placeholder="Security Answer" name="SecAnswer">
+                        <input class="form-control register-security-answer" type="text" placeholder="<?php echo e(__("securityAnswer")); ?>" name="SecAnswer">
                         <div class="error-register-sec-answer nk-error"></div>
                         <div class="nk-gap-2"></div>
                         <input name="Terms" id="Terms" type="radio"/>
-                        <label for="Terms">I Agree to the <?php echo $_SESSION['Settings']['SITE_TITLE']; ?>'s <a href="/serverinfo/terms" target="_blank">Terms of Use.</a></label>
+                        <label for="Terms"><?php echo e(__("iAgree")); ?> <?php echo e(APP['title']); ?>'s <a href="/serverinfo/terms" target="_blank"><?php echo e(__("termsOfUse")); ?></a></label>
                         <div class="error-register-terms nk-error"></div>
                         <div class="nk-gap-2"></div>
                         <div class="success-register nk-success"></div>
                         <input type="hidden" name="doReg" value="true"/>
-                        <div class="clearfix register-submit-container"><button type="button" class="nk-btn nk-btn-color-white link-effect-4 pull-right register-submit ready" id="registration" name="doReg"><span class="link-effect-inner"><span class="link-effect-l"><span>Register</span></span><span class="link-effect-r"><span>Register</span></span><span class="link-effect-shade"><span>Register</span></span></span></button></div>
+                        <div class="clearfix register-submit-container"><button type="button" class="nk-btn nk-btn-color-white link-effect-4 pull-right register-submit ready" id="registration" name="doReg"><span class="link-effect-inner"><span class="link-effect-l"><span><?php echo e(__("registerBtn")); ?></span></span><span class="link-effect-r"><span><?php echo e(__("registerBtn")); ?></span></span><span class="link-effect-shade"><span><?php echo e(__("registerBtn")); ?></span></span></span></button></div>
                         <div class="error-register-submit-container nk-error error-ignore"></div>
                     </form>
                     <!-- END: Register Form -->

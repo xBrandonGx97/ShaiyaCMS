@@ -220,23 +220,6 @@ class Select
         return $return;
     }
 
-    public function getForumDestinations($forumID)
-    {
-        MSSQL::query('SELECT ForumID,ForumName FROM ShaiyaCMS.dbo.FORUMS');
-        $res = MSSQL::resultSet();
-        $return = '<select class="form-control tac" name="Destination">';
-        foreach ($res as $name) {
-            if ($forumID == $name->ForumID) {
-                $return .= '<option value="' . $name->ForumID . '" selected>' . $name->ForumName . '</option>';
-            } else {
-                $return .= '<option value="' . $name->ForumID . '">' . $name->ForumName . '</option>';
-            }
-        }
-        $return .= '</select>';
-
-        return $return;
-    }
-
     public function gender()
     {
         echo '<select class="form-control tac" name="Gender">';

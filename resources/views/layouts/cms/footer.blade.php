@@ -10,10 +10,10 @@
         <div class="nk-gap"></div>
         <p>
             {!!APP['footer']!!}<br>
-            Developed By {{APP['author']}}.
+            {{__("developedBy")}} {{APP['author']}}.
         </p>
         <div class="nk-footer-links">
-            <a href="/serverinfo/terms" class="link-effect">Terms of Service</a>
+            <a href="/serverinfo/terms" class="link-effect">{{__("terms")}}</a>
         </div>
         <div class="nk-gap-4"></div>
     </div>

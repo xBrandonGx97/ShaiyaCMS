@@ -13,25 +13,25 @@
           <a href="/"><?php echo e(__("home")); ?></a>
 		</li>
         <li class="  ">
-          <a href="/community/downloads"><?php echo e(__("dwnl")); ?></a>
+          <a href="/community/downloads"><?php echo e(__("downloads")); ?></a>
         </li>
         <li class="  nk-drop-item">
-          <a href="#"><?php echo e(__("srvinfo")); ?></a>
+          <a href="#"><?php echo e(__("serverInfo")); ?></a>
           <ul class="dropdown">
             <li class="  ">
               <a href="/serverinfo/about"><?php echo e(__("about")); ?></a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/bossrecords"><?php echo e(__("boss_rcrds")); ?></a>
+              <a href="/serverinfo/bossrecords"><?php echo e(__("bossRecords")); ?></a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/dropfinder"><?php echo e(__("drp_finder")); ?></a>
+              <a href="/serverinfo/dropfinder"><?php echo e(__("dropFinder")); ?></a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/drops"><?php echo e(__("drp_lst")); ?></a>
+              <a href="/serverinfo/drops"><?php echo e(__("dropList")); ?></a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/terms"><?php echo e(__("trms")); ?></a>
+              <a href="/serverinfo/terms"><?php echo e(__("terms")); ?></a>
             </li>
           </ul>
         </li>
@@ -39,22 +39,22 @@
           <a href="#"><?php echo e(__("community")); ?></a>
           <ul class="dropdown">
             <li class="  ">
-              <a href="/community/discord"><?php echo e(__("dscord")); ?></a>
+              <a href="/community/discord"><?php echo e(__("discord")); ?></a>
             </li>
             <li class="  ">
-              <a href="/community/guildrankings"><?php echo e(__("gld_rnkigns")); ?></a>
+              <a href="/community/guildrankings"><?php echo e(__("guildRankings")); ?></a>
             </li>
             <li class="  ">
               <a href="/community/news"><?php echo e(__("news")); ?></a>
             </li>
             <li class="  ">
-              <a href="/community/patchnotes"><?php echo e(__("ptch_nts")); ?></a>
+              <a href="/community/patchnotes"><?php echo e(__("patchNotes")); ?></a>
             </li>
             <li class="  ">
-              <a href="/community/pvprankings"><?php echo e(__("pvp_rnkings")); ?></a>
+              <a href="/community/pvprankings"><?php echo e(__("pvpRankings")); ?></a>
             </li>
             <li class="  ">
-              <a href="/community/staffteam"><?php echo e(__("stff_tm")); ?></a>
+              <a href="/community/staffteam"><?php echo e(__("staffTeam")); ?></a>
             </li>
           </ul>
         </li>
@@ -102,14 +102,14 @@
               <div style="border-bottom: 1px solid white;"</div>
               <?php if(in_array($data['user']->Status, $data['user']->is_staff)): ?>
                 <li class="  ">
-                <a href="/admin" target="_blank">Staff Panel</a>
+                <a href="/admin" target="_blank"><?php echo e(__("staffPanel")); ?></a>
               <?php endif; ?>
               <li class="  ">
                 <a href="/user/profile">Profile</a>
               <li class="  ">
                 <a href="/user/settings#general">Settings</a>
               <li class="logout">
-                <a href="/auth/logout">Logout</a>
+                <a href="/auth/logout"><?php echo e(__("logout")); ?></a>
               </li>
             </ul>
           </li>

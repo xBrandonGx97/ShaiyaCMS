@@ -11,36 +11,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
 
+# CMS
+
 # Home
 msgid "home"
 msgstr "Home"
 
 # Downloads
-msgid "dwnl"
+msgid "downloads"
 msgstr "Downloads"
 
+msgid "gameFiles"
+msgstr "Game Files"
+
+msgid "patchFiles"
+msgstr "Patch Files"
+
+msgid "lastUpdatedOn"
+msgstr "Last Updated On"
+
 # Server Info
-msgid "srvinfo"
+msgid "serverInfo"
 msgstr "Server Info"
 
 # About
 msgid "about"
 msgstr "About"
 
-# Drop List
-msgid "drp_lst"
-msgstr "Droplist"
-
-# Drop Finder
-msgid "drp_finder"
-msgstr "Dropfinder"
-
 # Boss Records
-msgid "boss_rcrds"
+msgid "bossRecords"
 msgstr "Boss Records"
 
+# Drop Finder
+msgid "dropFinder"
+msgstr "Drop Finder"
+
+# Drop List
+msgid "dropList"
+msgstr "Drop List"
+
 # Terms
-msgid "trms"
+msgid "terms"
 msgstr "Terms and Conditions"
 
 # Community
@@ -48,29 +59,191 @@ msgid "community"
 msgstr "Community"
 
 # Discord
-msgid "dscord"
+msgid "discord"
 msgstr "Discord"
+
+# Guild Rankings
+msgid "guildRankings"
+msgstr "Guild Rankings"
 
 # News
 msgid "news"
 msgstr "News"
 
 # Patch Notes
-msgid "ptch_nts"
+msgid "patchNotes"
 msgstr "Patch Notes"
 
 # PvP Rankings
-msgid "pvp_rnkings"
+msgid "pvpRankings"
 msgstr "PvP Rankings"
 
-# Guild Rankings
-msgid "gld_rnkigns"
-msgstr "Guild Rankings"
-
 # Staff Team
-msgid "stff_tm"
+msgid "staffTeam"
 msgstr "Staff Team"
 
 # Guilds
-msgid "glds"
+msgid "guilds"
 msgstr "Guilds"
+
+# Developed By
+msgid "developedBy"
+msgstr "Developed By"
+
+# Staff Panel
+msgid "staffPanel"
+msgstr "Staff Panel"
+
+# Register
+msgid "registerTab"
+msgstr "Register"
+
+msgid "register"
+msgstr "Register"
+
+msgid "userName"
+msgstr "Username"
+
+msgid "displayName"
+msgstr "Display name"
+
+msgid "emailAddress"
+msgstr "Email Address"
+
+msgid "password"
+msgstr "Password"
+
+msgid "repeatPassword"
+msgstr "Repeat password"
+
+msgid "securityQuestion"
+msgstr "Please Select a Security Question."
+
+msgid "securityAnswer"
+msgstr "Security Answer"
+
+msgid "iAgree"
+msgstr "I Agree to"
+
+msgid "registerBtn"
+msgstr "Register"
+
+msgid "termsOfUse"
+msgstr "Terms of Use."
+
+# Login
+msgid "loginTab"
+msgstr "Log In"
+
+msgid "login"
+msgstr "Login"
+
+msgid "loginUserIdPlaceholder"
+msgstr "Username or Email"
+
+msgid "loginPasswordPlaceholder"
+msgstr "Password or Pin"
+
+msgid "stayLoggedInCheckbox"
+msgstr "Stay Logged In"
+
+msgid "loginButton"
+msgstr "Log In"
+
+msgid "lostPassword"
+msgstr "Lost Password ?"
+
+msgid "loginSuccess"
+msgstr "Login successful."
+
+msgid "loginRedirect"
+msgstr "Redirecting now..."
+
+# Logout
+msgid "logout"
+msgstr "Logout"
+
+# Admin Panel
+msgid "adminPanel"
+msgstr "Admin Panel"
+
+# Sidebar Nav
+
+# Admin Tools
+msgid "adminTools"
+msgstr "Admin Tools"
+
+msgid "accessLogs"
+msgstr "Access Logs"
+
+msgid "gmCommandsLogs"
+msgstr "GM Commands Logs"
+
+# Account Tools
+msgid "accountBan"
+msgstr "Account Ban"
+
+msgid "accountBanSearch"
+msgstr "Account Ban Search"
+
+msgid "accountDPHandout"
+msgstr "Account DP Handout"
+
+msgid "accountEdit"
+msgstr "Account Edit"
+
+msgid "accountIPSearch"
+msgstr "Account IP Search"
+
+msgid "accountSearch"
+msgstr "Account Ban Search"
+
+msgid "accountUnban"
+msgstr "Account Unban"
+
+# Player Tools
+msgid "accountUnban"
+msgstr "Account Unban"
+
+# Misc Tools
+msgid "disbandGuild"
+msgstr "Disband Guild"
+
+msgid "factionChange"
+msgstr "Faction Change"
+
+msgid "worldChat"
+msgstr "World Chat"
+
+msgid "guildLeaderChange"
+msgstr "Guild Leader Change"
+
+msgid "guildNameChange"
+msgstr "Guild Name Change"
+
+msgid "guildSearch"
+msgstr "Guild Serach"
+
+msgid "itemList"
+msgstr "Item List"
+
+msgid "itemSearch"
+msgstr "Item Search"
+
+msgid "mobList"
+msgstr "Mob List"
+
+msgid "playersOnline"
+msgstr "Players Online"
+
+msgid "statPadders"
+msgstr "Possible Stat Padders"
+
+# SExtended Tools
+msgid "sendNotice"
+msgstr "Send Notice"
+
+msgid "sendPlayerNotice"
+msgstr "Send Player Notice"
+
+# GS Tools

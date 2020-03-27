@@ -10,10 +10,10 @@
         <div class="nk-gap"></div>
         <p>
             <?php echo APP['footer']; ?><br>
-            Developed By <?php echo e(APP['author']); ?>.
+            <?php echo e(__("developedBy")); ?> <?php echo e(APP['author']); ?>.
         </p>
         <div class="nk-footer-links">
-            <a href="/serverinfo/terms" class="link-effect">Terms of Service</a>
+            <a href="/serverinfo/terms" class="link-effect"><?php echo e(__("terms")); ?></a>
         </div>
         <div class="nk-gap-4"></div>
     </div>

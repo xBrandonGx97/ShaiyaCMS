@@ -13,25 +13,25 @@
           <a href="/">{{__("home")}}</a>
 		</li>
         <li class="  ">
-          <a href="/community/downloads">{{__("dwnl")}}</a>
+          <a href="/community/downloads">{{__("downloads")}}</a>
         </li>
         <li class="  nk-drop-item">
-          <a href="#">{{__("srvinfo")}}</a>
+          <a href="#">{{__("serverInfo")}}</a>
           <ul class="dropdown">
             <li class="  ">
               <a href="/serverinfo/about">{{__("about")}}</a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/bossrecords">{{__("boss_rcrds")}}</a>
+              <a href="/serverinfo/bossrecords">{{__("bossRecords")}}</a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/dropfinder">{{__("drp_finder")}}</a>
+              <a href="/serverinfo/dropfinder">{{__("dropFinder")}}</a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/drops">{{__("drp_lst")}}</a>
+              <a href="/serverinfo/drops">{{__("dropList")}}</a>
             </li>
             <li class="  ">
-              <a href="/serverinfo/terms">{{__("trms")}}</a>
+              <a href="/serverinfo/terms">{{__("terms")}}</a>
             </li>
           </ul>
         </li>
@@ -39,22 +39,22 @@
           <a href="#">{{__("community")}}</a>
           <ul class="dropdown">
             <li class="  ">
-              <a href="/community/discord">{{__("dscord")}}</a>
+              <a href="/community/discord">{{__("discord")}}</a>
             </li>
             <li class="  ">
-              <a href="/community/guildrankings">{{__("gld_rnkigns")}}</a>
+              <a href="/community/guildrankings">{{__("guildRankings")}}</a>
             </li>
             <li class="  ">
               <a href="/community/news">{{__("news")}}</a>
             </li>
             <li class="  ">
-              <a href="/community/patchnotes">{{__("ptch_nts")}}</a>
+              <a href="/community/patchnotes">{{__("patchNotes")}}</a>
             </li>
             <li class="  ">
-              <a href="/community/pvprankings">{{__("pvp_rnkings")}}</a>
+              <a href="/community/pvprankings">{{__("pvpRankings")}}</a>
             </li>
             <li class="  ">
-              <a href="/community/staffteam">{{__("stff_tm")}}</a>
+              <a href="/community/staffteam">{{__("staffTeam")}}</a>
             </li>
           </ul>
         </li>
@@ -102,14 +102,14 @@
               <div style="border-bottom: 1px solid white;"</div>
               @if (in_array($data['user']->Status, $data['user']->is_staff))
                 <li class="  ">
-                <a href="/admin" target="_blank">Staff Panel</a>
+                <a href="/admin" target="_blank">{{__("staffPanel")}}</a>
               @endif
               <li class="  ">
                 <a href="/user/profile">Profile</a>
               <li class="  ">
                 <a href="/user/settings#general">Settings</a>
               <li class="logout">
-                <a href="/auth/logout">Logout</a>
+                <a href="/auth/logout">{{__("logout")}}</a>
               </li>
             </ul>
           </li>

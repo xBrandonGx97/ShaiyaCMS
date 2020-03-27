@@ -19,4 +19,5 @@
     <p>Players Online: <span><?php echo e($pOnline); ?></span></p>
     <p>AoL: <span><?php echo e($AoL); ?></span></p>
     <p>UoF: <span><?php echo e($UoF); ?></span></p>
-</div><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\widgets\playerCount\php/script.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\widgets\playerCount\php/script.blade.php ENDPATH**/ ?>

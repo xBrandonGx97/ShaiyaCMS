@@ -17,7 +17,7 @@
 		@include('partials.cms.signForms')
         <div class="container text-xs-center">
             @Separator(80)
-            <p class="lead">By downloading ServerName You agree to Our <a href="">Terms of Service and Conditions</a>. If you Violate these terms you can be banned without any warnings and permenantly.</p>
+            <p class="lead">By downloading {{APP['title']}} You agree to Our <a href="">{{__("terms")}}</a>. If you Violate these terms you can be banned without any warnings and permenantly.</p>
                 <div class="row vertical-gap align-items-center">
                     <div class="col-md-3"></div>
                     <div class="col-md-4" style="height: 707px;">
