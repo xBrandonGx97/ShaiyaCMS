@@ -77,7 +77,6 @@ class Bootstrap
             // Load Langs
             $this->getLang();
             $this->loadLangs();
-            $this->loadDefaults();
         }
     }
 
@@ -166,13 +165,6 @@ class Bootstrap
         $compiler = new Compiler;
         $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
         require_once LIB_PATH . 'translate.php';
-    }
-
-    public function loadDefaults()
-    {
-        $user = new Utils\User($this->session);
-        $user->initPrivacy();
-        $user->initSocials();
     }
 
     public function loadConfigs()

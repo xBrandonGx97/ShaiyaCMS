@@ -66,35 +66,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $user = new App\Controllers\User($userClass);
 
         $r->addRoute('GET', '/profile', [($user), 'profile']);
-        $r->addRoute('GET', '/donate', [($user), 'donate']);
-        $r->addRoute('GET', '/donate_complete', [($user), 'donate_complete']);
-        $r->addRoute('GET', '/donate_process', [($user), 'donate_process']);
-        $r->addRoute('GET', '/messages', [($user), 'messages']);
-        $r->addRoute('GET', '/promotions', [($user), 'promotions']);
-        $r->addRoute('GET', '/pvprewards', [($user), 'pvprewards']);
-        $r->addRoute('GET', '/referers', [($user), 'referers']);
         $r->addRoute('GET', '/settings', [($user), 'settings']);
-        $r->addRoute('GET', '/settings/privacy', [($user), 'settings']);
-        $r->addRoute('GET', '/settings/signature', [($user), 'settings']);
-        $r->addRoute('GET', '/support', [($user), 'support']);
-        $r->addRoute('GET', '/vote', [($user), 'vote']);
         $r->addRoute('GET', '/users', [($user), 'users']);
-        $r->addRoute('GET', '/friends', [($user), 'friends']);
-        $r->addRoute('GET', '/{id:\d+}', [($user), 'user']);
-
-        // Post
-        $r->addRoute('POST', '/promotions', [($user), 'promotions']);
-    });
-    // Forum
-    $r->addGroup('/forum', function (FastRoute\RouteCollector $r) {
-        $session = new Classes\Utils\Session;
-        $userClass = new Classes\Utils\User($session);
-        $forum = new App\Controllers\Forum($userClass);
-
-        $r->addRoute('GET', '', [($forum), 'forum']);
-        $r->addRoute('GET', '/topics/{id:\d+}', [($forum), 'topics']);
-        $r->addRoute('GET', '/post/{id:\d+}', [($forum), 'posts']);
-        $r->addRoute('GET', '/topics/view_topic/{id:\d+}', [($forum), 'view_topic']);
     });
     // Admin
     $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {

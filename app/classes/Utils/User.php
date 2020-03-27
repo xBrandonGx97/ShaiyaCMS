@@ -36,26 +36,13 @@ class User
         '80',
         '128'
     ];
-    public $userFlags = [];
 
     // Status
     private $memberLevel;
     const STATUS_ADM = 16;
-    const STATUS_GM = 32;
-    const STATUS_GMA = 64;
+    const STATUS_GM = [32, 48];
+    const STATUS_GMA = [64, 80];
     const STATUS_GS = 128;
-
-    // Socials
-    public $Discord;
-    public $Skype;
-    public $Steam;
-
-    // Privacy
-    public $DisplayProfile;
-    public $DisplaySocials;
-
-    // Forum
-    public $userTitle;
 
     // Session
     public $LoginGuest;
@@ -76,10 +63,8 @@ class User
             $SessionCookieCheck = isset($_COOKIE['stayLoggedIn']) ? $_COOKIE['UserUID'] : $_SESSION['User']['UserUID'];
             if ($_SESSION['Settings']['SITE_TYPE'] == 'SH') {
                 $query = Eloquent::table(table('shUserData') . ' as [UM]')
-                        ->select(['[UM].UserUID', '[UM].UserID', '[UM].Pw', '[UM].Point', '[UM].Status', '[UM].JoinDate', '[UM].LeaveDate', '[WP].DisplayName', '[WP].PIN', '[WP].Email', '[WP].ActivationKey', '[WP].UserIP', '[WP].LoginStatus', '[WP].UserTitle', '[US].Discord', '[US].Skype', '[US].Steam', '[UP].DisplayProfile', '[UP].DisplaySocials'])
+                        ->select(['[UM].UserUID', '[UM].UserID', '[UM].Pw', '[UM].Point', '[UM].Status', '[UM].JoinDate', '[UM].LeaveDate', '[WP].DisplayName', '[WP].PIN', '[WP].Email', '[WP].ActivationKey', '[WP].UserIP', '[WP].LoginStatus'])
                         ->join(table('webPresence') . ' as  [WP]', '[UM].UserID', '=', '[WP].UserID')
-                        ->join(table('userSocials') . ' as  [US]', '[UM].UserUID', '=', '[US].UserUID')
-                        ->join(table('userPrivacy') . ' as  [UP]', '[UM].UserUID', '=', '[UP].UserUID')
                         ->where('[UM].UserUID', $SessionCookieCheck)
                         ->limit(1)
                         ->get();
@@ -98,15 +83,6 @@ class User
                     $this->UserID = $fet->UserID;
                     $this->UserIP = $fet->UserIP;
                     $this->UserUID = $fet->UserUID;
-
-                    $this->Discord = $fet->Discord;
-                    $this->Skype = $fet->Skype;
-                    $this->Steam = $fet->Steam;
-
-                    $this->userTitle = $fet->UserTitle;
-
-                    $this->DisplayProfile = $fet->DisplayProfile;
-                    $this->DisplaySocials = $fet->DisplaySocials;
                 }
             }
 
@@ -131,8 +107,8 @@ class User
 
     public function isStaff()
     {
-        if (isset($_SESSION['User'])) {
-            switch ($_SESSION['User']['Status']) {
+        if (isset($this->Status)) {
+            switch ($this->Status) {
                 case '16':
                     $this->memberLevel = 'ADM';
                     return true;
@@ -165,27 +141,31 @@ class User
 
     public function isADM(): bool
     {
-        if (isset($_SESSION)) {
-            if ($_SESSION['User']['Status'] == 16) {
-                return true;
-            }
+        if ($this->Status == self::STATUS_ADM) {
+            return true;
         }
-
         return false;
     }
 
     public function isGM(): bool
     {
-        if ($this->Status == 32 || $this->Status == 48 || $this->Status == 64 || $this->Status == 80) {
+        if (in_array($this->Status, self::STATUS_GM)) {
             return true;
         }
+        return false;
+    }
 
+    public function isGMA(): bool
+    {
+        if (in_array($this->Status, self::STATUS_GMA)) {
+            return true;
+        }
         return false;
     }
 
     public function isGS(): bool
     {
-        if ($this->Status == 128) {
+        if ($this->Status == self::STATUS_GS) {
             return true;
         }
         return false;
@@ -238,6 +218,11 @@ class User
                 //Template::doACP_Foot();
             }
         }
+    }
+
+    public function getUserStatus(): string
+    {
+        return $this->Status;
     }
 
     public function getStatus(int $Status): string
@@ -347,89 +332,6 @@ class User
         $this->userFlags = $res->Perms;
         $this->userFlags = explode('~', $res->Perms);
         ;
-    }
-
-    public function initPrivacy()
-    {
-        if (isset($_SESSION['User']['UserUID'])) {
-            $privacy = Eloquent::table(table('userPrivacy'))
-                            ->select()
-                            ->where('UserUID', $this->session->get('User', 'UserUID'))
-                            ->first();
-            if (!is_null($privacy)) {
-                try {
-                    $privacyIns = Eloquent::table(table('userPrivacy'))
-                            ->insert([
-                                'UserUID' => $this->session->get('User', 'UserUID'),
-                                'DisplayProfile' => 'Public',
-                                'DisplaySocials' => 'Public'
-                            ]);
-                } catch (\Exception $e) {
-                    echo 'problem inserting.';
-                }
-            }
-            //var_dump($privacy);
-
-                /* $sql = ('
-                        SELECT * FROM ShaiyaCMS.dbo.USER_PRIVACY
-                        WHERE UserUID = :user
-                ');
-                MSSQL::query($sql);
-                MSSQL::bind(':user', $_SESSION['User']['UserUID']);
-                $res = MSSQL::resultSet();
-                $rowCount = count($res);
-                if (!$rowCount > 0) {
-                    $sql = ('
-                            INSERT INTO ShaiyaCMS.dbo.USER_PRIVACY
-                            (UserUID,DisplayProfile, DisplaySocials)
-                            VALUES(:user,:dprofile,:dsocials)
-                    ');
-                    MSSQL::query($sql);
-                    MSSQL::bind(':user', $_SESSION['User']['UserUID']);
-                    MSSQL::bind(':dprofile', 'Public');
-                    MSSQL::bind(':dsocials', 'Public');
-                    MSSQL::execute();
-                } */
-        }
-    }
-
-    public function initSocials()
-    {
-        if (isset($_SESSION['User']['UserUID'])) {
-            $socials = Eloquent::table(table('userSocials'))
-                            ->select()
-                            ->where('UserUID', $this->session->get('User', 'UserUID'))
-                            ->first();
-            if (!is_null($socials)) {
-                try {
-                    $socialsIns = Eloquent::table(table('userSocials'))
-                            ->insert([
-                                'UserUID' => $this->session->get('User', 'UserUID')
-                            ]);
-                } catch (\Exception $e) {
-                    echo 'problem inserting.';
-                }
-            }
-
-            /* $sql = ('
-                    SELECT * FROM ShaiyaCMS.dbo.USER_SOCIALS
-                    WHERE UserUID = :user
-            ');
-            MSSQL::query($sql);
-            MSSQL::bind(':user', $_SESSION['User']['UserUID']);
-            $res = MSSQL::resultSet();
-            $rowCount = count($res);
-            if (!$rowCount > 0) {
-                $sql = ('
-                        INSERT INTO ShaiyaCMS.dbo.USER_SOCIALS
-                        (UserUID)
-                        VALUES(:user)
-                ');
-                MSSQL::query($sql);
-                MSSQL::bind(':user', $_SESSION['User']['UserUID']);
-                MSSQL::execute();
-            } */
-        }
     }
 
     public function initPasswordHash()
