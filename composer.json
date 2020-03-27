@@ -1,27 +1,37 @@
 {
-  "require": {
-    "jenssegers/blade": "dev-master",
-    "illuminate/database": "^7.2",
-    "ephp/socketio": "dev-master",
-    "rase/socket.io-emitter": "dev-master",
-    "vlucas/phpdotenv": "^4.1@dev",
-    "phpmailer/phpmailer": "dev-master",
-    "nikic/fast-route": "^2.0@dev",
-    "cbschuld/browser.php": "^1.9@dev"
-  },
-  "minimum-stability": "dev",
-  "config": {
-    "optimize-autoloader": true
-  },
-  "autoload": {
-    "psr-4": {
-      "Compiler\\": "framework/libraries/compiler",
-      "Classes\\": "app/classes",
-      "App\\Exceptions\\": "app/exceptions",
-      "App\\Controllers\\": "app/controllers",
-      "App\\Models\\": "app/models",
-      "Framework\\Core\\": "framework/core",
-      "Framework\\Blade\\": "framework/blade"
+    "name": "brandon/shaiyacms",
+    "description": "ShaiyaCMS",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brandon Gonzalez",
+            "email": "lunethdev@gmail.com"
+        }
+    ],
+    "require": {
+      "jenssegers/blade": "dev-master",
+      "illuminate/database": "^7.2",
+      "ephp/socketio": "dev-master",
+      "rase/socket.io-emitter": "dev-master",
+      "vlucas/phpdotenv": "^4.1@dev",
+      "phpmailer/phpmailer": "dev-master",
+      "nikic/fast-route": "^2.0@dev",
+      "cbschuld/browser.php": "^1.9@dev"
+    },
+    "minimum-stability": "dev",
+    "config": {
+      "optimize-autoloader": true
+    },
+    "autoload": {
+      "psr-4": {
+        "Compiler\\": "framework/libraries/compiler",
+        "Classes\\": "app/classes",
+        "App\\Exceptions\\": "app/exceptions",
+        "App\\Controllers\\": "app/controllers",
+        "App\\Models\\": "app/models",
+        "Framework\\Core\\": "framework/core",
+        "Framework\\Blade\\": "framework/blade"
+      }
     }
-  }
 }
