@@ -53,7 +53,7 @@ class DropFinder
 						FROM ' . table('SH_MOBS') . '
 						m INNER JOIN ' . table('SH_MOBITEMS') . ' mi on mi.MobID = m.MobID
 						INNER JOIN ' . table('SH_ITEMS') . ' i on mi.Grade = i.Grade
-						INNER JOIN ' . table('SH_DROP_FINDER') . " drp on m.MobID = drp.MobID
+						INNER JOIN ' . table('drop_finder') . " drp on m.MobID = drp.MobID
 						WHERE i.ItemID = :item AND m.MobName not like '%Error Monster%' order by m.MobID"
             );
             $this->db->query($sql);

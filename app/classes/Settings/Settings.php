@@ -11,7 +11,7 @@ class Settings
     {
         $this->session = $session;
         $settings = [];
-        $datas = Eloquent::table(table('CMS_MAIN'))
+        $datas = Eloquent::table(table('cmsMain'))
             ->select()
             ->get();
         foreach ($datas as $data) {
@@ -25,7 +25,7 @@ class Settings
         echo '<div class="col-md-12">';
         echo '<b>Properties for class (' . get_called_class() . '):</b><br>';
         echo '<pre>';
-        print_r(get_class_vars(get_called_class()));
+            print_r(get_class_vars(get_called_class()));
         echo '</pre>';
         echo '</div>';
         exit();

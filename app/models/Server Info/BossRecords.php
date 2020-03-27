@@ -18,7 +18,7 @@ class BossRecords
 
     public function getBossRecords($time, $value)
     {
-        $records = Eloquent::table(table('LOG_BOSS_DEATH'))
+        $records = Eloquent::table(table('logBossDeath'))
              ->select('MobName', 'CharName', 'ActionTime')
              ->where('MobID', $value)
              ->limit(1)

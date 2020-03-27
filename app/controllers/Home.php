@@ -58,7 +58,7 @@ class Home extends Controller
 
             $start_from = ($page - 1) * $records_per_page;
 
-            $query = Eloquent::table(table('NEWS'))
+            $query = Eloquent::table(table('news'))
                 ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
                 ->orderBy('Date', 'DESC')
                 ->get();
@@ -66,7 +66,7 @@ class Home extends Controller
             $this->pagination->sp($query, $records_per_page, $prevPage, $nextPage, $page);
 
             try {
-                $news = Eloquent::table(table('NEWS'))
+                $news = Eloquent::table(table('news'))
                 ->select('RowID', 'UserID', 'Title', 'Detail', 'Date')
                 ->offset($start_from)
                 ->limit($records_per_page)

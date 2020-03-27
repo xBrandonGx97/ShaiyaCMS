@@ -90,9 +90,9 @@ class Auth extends Controller
                     }
                     // If No Errors Continue
                     if (count($this->arr['errors']) == 0) {
-                        $fet = Eloquent::table(table('WEB_PRESENCE') . ' as Web')
+                        $fet = Eloquent::table(table('webPresence') . ' as Web')
                             ->select(['[User].UserUID', 'Web.UserID', 'Web.Pw', 'Web.Email', '[User].Status', 'Web.RestrictIP'])
-                            ->join(table('SH_USERDATA') . ' as  [User]', '[User].UserID', '=', 'Web.UserID')
+                            ->join(table('shUserData') . ' as  [User]', '[User].UserID', '=', 'Web.UserID')
                             ->where('Web.UserID', $userName)
                             ->orWhere('Web.Email', $userName)
                             ->get();

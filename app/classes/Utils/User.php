@@ -75,11 +75,11 @@ class User
         if (isset($_SESSION) && isset($_SESSION['User']['UserUID']) || isset($_COOKIE['stayLoggedIn'])) {
             $SessionCookieCheck = isset($_COOKIE['stayLoggedIn']) ? $_COOKIE['UserUID'] : $_SESSION['User']['UserUID'];
             if ($_SESSION['Settings']['SITE_TYPE'] == 'SH') {
-                $query = Eloquent::table(table('SH_USERDATA') . ' as [UM]')
+                $query = Eloquent::table(table('shUserData') . ' as [UM]')
                         ->select(['[UM].UserUID', '[UM].UserID', '[UM].Pw', '[UM].Point', '[UM].Status', '[UM].JoinDate', '[UM].LeaveDate', '[WP].DisplayName', '[WP].PIN', '[WP].Email', '[WP].ActivationKey', '[WP].UserIP', '[WP].LoginStatus', '[WP].UserTitle', '[US].Discord', '[US].Skype', '[US].Steam', '[UP].DisplayProfile', '[UP].DisplaySocials'])
-                        ->join(table('WEB_PRESENCE') . ' as  [WP]', '[UM].UserID', '=', '[WP].UserID')
-                        ->join(table('USER_SOCIALS') . ' as  [US]', '[UM].UserUID', '=', '[US].UserUID')
-                        ->join(table('USER_PRIVACY') . ' as  [UP]', '[UM].UserUID', '=', '[UP].UserUID')
+                        ->join(table('webPresence') . ' as  [WP]', '[UM].UserID', '=', '[WP].UserID')
+                        ->join(table('userSocials') . ' as  [US]', '[UM].UserUID', '=', '[US].UserUID')
+                        ->join(table('userPrivacy') . ' as  [UP]', '[UM].UserUID', '=', '[UP].UserUID')
                         ->where('[UM].UserUID', $SessionCookieCheck)
                         ->limit(1)
                         ->get();
@@ -352,13 +352,13 @@ class User
     public function initPrivacy()
     {
         if (isset($_SESSION['User']['UserUID'])) {
-            $privacy = Eloquent::table(table('USER_PRIVACY'))
+            $privacy = Eloquent::table(table('userPrivacy'))
                             ->select()
                             ->where('UserUID', $this->session->get('User', 'UserUID'))
                             ->first();
             if (!is_null($privacy)) {
                 try {
-                    $privacyIns = Eloquent::table(table('USER_PRIVACY'))
+                    $privacyIns = Eloquent::table(table('userPrivacy'))
                             ->insert([
                                 'UserUID' => $this->session->get('User', 'UserUID'),
                                 'DisplayProfile' => 'Public',
@@ -396,13 +396,13 @@ class User
     public function initSocials()
     {
         if (isset($_SESSION['User']['UserUID'])) {
-            $socials = Eloquent::table(table('USER_SOCIALS'))
+            $socials = Eloquent::table(table('userSocials'))
                             ->select()
                             ->where('UserUID', $this->session->get('User', 'UserUID'))
                             ->first();
             if (!is_null($socials)) {
                 try {
-                    $socialsIns = Eloquent::table(table('USER_SOCIALS'))
+                    $socialsIns = Eloquent::table(table('userSocials'))
                             ->insert([
                                 'UserUID' => $this->session->get('User', 'UserUID')
                             ]);
@@ -450,7 +450,7 @@ class User
             'LoginStatus' => $status
         ];
         try {
-            $loginStatus = Eloquent::table(table('WEB_PRESENCE'))
+            $loginStatus = Eloquent::table(table('webPresence'))
                     ->where('UserID', $this->session->get('User', 'UserID'))
                     ->update($data);
         } catch (\Exception $e) {

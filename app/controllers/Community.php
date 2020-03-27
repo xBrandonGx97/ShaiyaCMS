@@ -130,7 +130,7 @@ class Community extends Controller
 
             $start_from = ($page - 1) * $records_per_page;
 
-            $query = Eloquent::table(table('PATCHNOTES'))
+            $query = Eloquent::table(table('patchNotes'))
                     ->select('RowID', 'Title', 'Detail', 'Date')
                     ->orderBy('Date', 'DESC')
                     ->get();
@@ -138,7 +138,7 @@ class Community extends Controller
             $this->pagination->sp($query, $records_per_page, $prevPage, $nextPage, $page);
 
             try {
-                $news = Eloquent::table(table('PATCHNOTES'))
+                $news = Eloquent::table(table('patchNotes'))
                     ->select('RowID', 'Title', 'Detail', 'Date')
                     ->offset($start_from)
                     ->limit($records_per_page)

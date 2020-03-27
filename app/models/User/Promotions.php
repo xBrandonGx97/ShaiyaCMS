@@ -22,9 +22,9 @@ class Promotions extends Model
 
     public function getPromotions()
     {
-        $this->table = table('SH_PROMOS');
+        $this->table = table('sh_promos');
 
-        $Code = isset($_POST['code']) ? $this->data->do('escData', trim($_POST['code'])) : false;
+        $Code = isset($_POST['code']) ? $this->data->purify(trim($_POST['code'])) : false;
         $this->Code = $Code;
 
         $promotions = self::select()
@@ -36,7 +36,7 @@ class Promotions extends Model
 
     public function validations($NumOfUses, $Code)
     {
-        $this->table = table('SH_USERDATA');
+        $this->table = table('sh_userdata');
 
         $user = self::select()
             ->where('UserUID', $this->user->UserUID)
@@ -53,12 +53,12 @@ class Promotions extends Model
 
         $NewNumOfUses = $NumOfUses + 1;
 
-        $this->table = table('SH_PROMOS');
+        $this->table = table('sh_promos');
 
         $updatePromos = self::where('Code', $Code)
             ->update(['Used' => 1, 'NumOfUses' => $NewNumOfUses]);
 
-        $this->table = table('SH_PROMOS_LOGS');
+        $this->table = table('sh_promos_logs');
 
         $logsIns = self::insert([
             'Code' => $Code,
