@@ -1,10 +1,10 @@
 <?php
     return [
         'author' => env('APP_AUTHOR'),
-        'title' => env('APP_TITLE'),
+        'title' => 'ShaiyaCMS',
         'version' => env('APP_VERSION'),
-        'footer' => env('APP_FOOTER'),
-        'lang' => env('APP_LANG'),
+        'footer' => '&copy; 2020 ShaiyaCMS v3.0. All rights reserved.',
+        'lang' => 'en',
         'secureHTTPS' => false,
         'maintenance' => false,
         'dev' => true

@@ -2162,3 +2162,8 @@ Stack trace:
 [27-Mar-2020 07:56:07 UTC] PHP   7. App\Bootstrap->{closure:C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:130-145}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\nikic\fast-route\src\RouteCollector.php:51
 [27-Mar-2020 07:56:07 UTC] PHP   8. Classes\Utils\User->__construct() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:132
 [27-Mar-2020 07:56:07 UTC] PHP   9. in_array() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Utils\User.php:59
+[27-Mar-2020 08:04:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
