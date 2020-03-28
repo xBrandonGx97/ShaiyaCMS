@@ -18,6 +18,19 @@ check_display();
 /*
 $("#login_form_modal").modal('show');*/
 
+let all_links = document.getElementById("nav").getElementsByTagName("a"),
+i=0, len=all_links.length,
+full_path = location.href.split('#')[0]; //Ignore hashes?
+
+// Loop through each link.
+for(; i<len; i++) {
+  if(all_links[i].href.split("#")[0] == full_path) {
+    if (all_links[i].parentElement.id == "item") {
+      all_links[i].parentElement.className += " active";
+    }
+  }
+}
+
 document.body.addEventListener('click', e => {
   if (e.target.closest('.open_register')) {
     e.preventDefault();

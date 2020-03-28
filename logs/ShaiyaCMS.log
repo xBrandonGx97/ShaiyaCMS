@@ -2182,3 +2182,73 @@ Stack trace:
 #0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
 #1 {main}
   thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:24:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:24:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:25:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:25:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:25:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:26:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:26:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:27:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:27:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:27:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:27:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:28:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:29:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[28-Mar-2020 22:59:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98

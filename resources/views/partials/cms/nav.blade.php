@@ -2,35 +2,35 @@
   Display('register_form_modal','<i class="fas fa-user-plus"></i>','0','2','Registration Form');
   Display('login_form_modal','<i class="fas fa-sign-in-alt"></i>','0','2','Login Form');
 @endphp
-<nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-autohide">
+<nav id="nav" class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-autohide">
   <div class="container">
     <div class="nk-nav-table">
       <a href="/" class="nk-nav-logo">
         <img src="/resources/themes/core/images/logos/logo.png" alt="" width="150">
       </a>
       <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
-        <li class="active  ">
+        <li id="item" class="  ">
           <a href="/">{{__("home")}}</a>
 		</li>
-        <li class="  ">
+        <li id="item" class="  ">
           <a href="/community/downloads">{{__("downloads")}}</a>
         </li>
         <li class="  nk-drop-item">
           <a href="#">{{__("serverInfo")}}</a>
           <ul class="dropdown">
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/serverinfo/about">{{__("about")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/serverinfo/bossrecords">{{__("bossRecords")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/serverinfo/dropfinder">{{__("dropFinder")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/serverinfo/drops">{{__("dropList")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/serverinfo/terms">{{__("terms")}}</a>
             </li>
           </ul>
@@ -38,22 +38,22 @@
         <li class="  nk-drop-item">
           <a href="#">{{__("community")}}</a>
           <ul class="dropdown">
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/community/discord">{{__("discord")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/community/guildrankings">{{__("guildRankings")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/community/news">{{__("news")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/community/patchnotes">{{__("patchNotes")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/community/pvprankings">{{__("pvpRankings")}}</a>
             </li>
-            <li class="  ">
+            <li id="item" class="  ">
               <a href="/community/staffteam">{{__("staffTeam")}}</a>
             </li>
           </ul>
