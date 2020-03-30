@@ -26,9 +26,6 @@ class Home extends Controller
         $widget = new Utils\Widget();
         $widget = $widget->display();
 
-        $panels = new \Classes\Utils\Panels;
-        echo $panels->getNewlyRegistered();
-
         $data = [
             'user' => $this->user,
             'news' => $newsModel->getNews(),
