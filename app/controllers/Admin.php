@@ -25,7 +25,9 @@ class Admin extends Controller
             'totalAccounts' => $panelInstance->getTotalAccounts(),
             'onlineLast24' => $panelInstance->getOnlineLast1(),
             'onlineCurrent' => $panelInstance->getOnlineCurrent(),
-            'actionLogs' => $panelInstance->actionLogs()
+            'actionLogs' => $panelInstance->actionLogs(),
+            'gmLogs' => $panelInstance->gmLogs(),
+            'newUsers' => $panelInstance->newUsers()
         ];
 
         $data = [

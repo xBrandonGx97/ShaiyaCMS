@@ -252,6 +252,12 @@ class User
                 return 'GameMaster Assistant';
             case 128:
                 return 'GameSage';
+            case -1:
+                return 'Player';
+            case -5:
+                return 'Player';
+            default:
+                return 'Player';
         }
     }
 

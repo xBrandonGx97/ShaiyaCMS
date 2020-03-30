@@ -22,42 +22,12 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-md-6 m_t_10">
-                                    <div id="content_card" class="card custom-card">
-                                        <div class="card-header cstm-card-head tac">
-                                            <i class="fas fa-clock"></i>
-                                            Admin Panel Action Log
-                                        </div>
-                                        <div class="card-block content_bg content pContent">
-                                            <div class="card-text">
-                                                <div class="table-responsive">
-                                                    <table class="table table-striped table-dark">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Action</th>
-                                                                <th>Time</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <?php $__currentLoopData = $data['panels']['actionLogs']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $action): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                    <td><?php echo e($action->UserID); ?> - <?php echo e($action->Action); ?></td>
-                                                                    <td>
-                                                                        <span class="badge badge-pill badge-secondary"><?php echo e($data['data']->getDateDiff($action->ActionTime)); ?></span>
-                                                                    </td>
-                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                            <div class="text-center">
-                                                <a class="badge badge-pill badge-primary b_i f14" href="/admin/accesslogs">View All Activity</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php echo $__env->make('partials.ap.panels.actionLogs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                <?php echo $__env->make('partials.ap.panels.gmLogs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
+                            <?php Separator(10) ?>
+                            
+                            <?php echo $__env->make('partials.ap.panels.newUsers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <?php endif; ?>
                     <?php else: ?>
                         You must be logged in to access the admin dashboard.
