@@ -51,8 +51,6 @@ document.body.addEventListener('click', e => {
 
     let nav = document.querySelector('.nk-nav-table');
     let drop = document.querySelector('.logNav');
-    let users = document.querySelector('.logUsers');
-    let bell = document.querySelector('.logBell');
 
     fetch('/auth/logout', {
       method: 'post',
@@ -69,8 +67,6 @@ document.body.addEventListener('click', e => {
 
         //drop.style.display = 'none';
         drop.parentNode.removeChild(drop);
-        users.parentNode.removeChild(users);
-        bell.parentNode.removeChild(bell);
 
         let newli = document.createElement('li');
         newli.classList.add('single-icon');

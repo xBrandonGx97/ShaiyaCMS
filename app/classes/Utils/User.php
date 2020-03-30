@@ -220,7 +220,7 @@ class User
         }
     }
 
-    public function isAuthorized()
+    public function isAuthorized(): bool
     {
         if ($this->isLoggedIn()) {
             if ($this->isStaff()) {
