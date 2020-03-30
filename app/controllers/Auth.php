@@ -99,19 +99,7 @@ class Auth extends Controller
                         if ($fet) {
                             foreach ($fet as $userInfo) {
                                 if (password_verify($Password, $userInfo->Pw)) {
-                                    if (!isset($_COOKIE['ua'])) {
-                                        $this->arr['newDevice'] .= 'true';
-                                        $this->sendActivationCode();
-                                    } else {
-                                        if ($userInfo->RestrictIP !== null) {
-                                            if ($userInfo->RestrictIP === $this->browser->ip()) {
-                                                // IP is same, continue
-                                                $this->loginSuccess($userInfo);
-                                            }
-                                        } else {
-                                            $this->loginSuccess($userInfo);
-                                        }
-                                    }
+                                    $this->loginSuccess($userInfo);
                                 } else {
                                     $this->arr['errors'][] .= '4';
                                 }
@@ -141,60 +129,6 @@ class Auth extends Controller
         setcookie("ua", $this->browser->UA, $hour, "/", null, null, true); */
         } else {
             $this->arr['errors'][] .= '6';
-        }
-    }
-
-    public function sendActivationCode()
-    {
-        $activationCode = $this->data->randStr('64');
-
-        $query = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
-            ->insert([
-                'ActivationCode' => $activationCode
-            ]);
-
-        $mail = new \Classes\Sys\MailSys('gmail');
-        $mail->addMailAddress('brandonjm033@gmail.com');
-        $mail->sendMail('verifyNewDevice', $activationCode);
-    }
-
-    public function verifyNewDevice()
-    {
-        $url = explode('/', filter_var(rtrim($_SERVER['REQUEST_URI'], '/'), FILTER_SANITIZE_URL));
-        $query = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
-                        ->select('ActivationCode', 'Date', 'Used')
-                        ->where('ActivationCode', $url[4])
-                        ->limit(1)
-                        ->get();
-        if (count($query) > 0) {
-            foreach ($query as $verify) {
-                $activationCode = $verify->ActivationCode;
-                $date = $verify->Date;
-                $used = $verify->Used;
-                date_default_timezone_set('America/Chicago');
-                $currentDate = new \Datetime('now');
-                $dateToCheck = new \Datetime($date);
-                $twelveHoursAgo = (new \Datetime("now"))->modify("-2 hour");
-                if ($dateToCheck < $twelveHoursAgo) {
-                    echo 'Activation Code has expired.';
-                } else {
-                    if ($used === '1') {
-                        echo 'Activation Code has expired.';
-                    } else {
-                        // Set UA Cookie
-                        $hour = time() + 10 * 365 * 24 * 60 * 60;
-                        setcookie('ua', $this->browser->userAgent(), $hour, '/', null, null, true);
-                        $updateActivation = Eloquent::table('ShaiyaCMS.dbo.ACTIVATION_CODES')
-                        ->where('ActivationCode', $activationCode)
-                        ->update(['Used' => 1]);
-                        redirect('/', 3);
-                        echo 'new Device verified.<br>';
-                        echo 'Redirecting you in 3 seconds.';
-                    }
-                }
-            }
-        } else {
-            echo 'Activation Code doesn\'t exist.';
         }
     }
 }
