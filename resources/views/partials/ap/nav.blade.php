@@ -15,7 +15,7 @@
           <label>Navigation</label>
         </li>
         <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
-          <a href="/control" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+          <a href="/admin" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
         </li>
           {{acpNav('Admin','Access Logs','home/accesslogs','GM Commands Logs','home/gmcmds',false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,1,0)}}
           {{acpNav('Account','Account Ban','home/actban','Account Ban Search','home/actbansrch','Account DP Handout','home/actdphandout','Account Edit','home/actedit','Account IP Search','home/actipsrch','Account Search','home/actsrch','Account Unban','home/actunban',false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,1,0)}}

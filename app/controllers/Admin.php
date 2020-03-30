@@ -16,6 +16,8 @@ class Admin extends Controller
     {
         $this->user->fetchUser();
 
+        $dataClass = new Utils\Data;
+
         $panelInstance = new Utils\Panels;
 
         $panels = [
@@ -23,11 +25,13 @@ class Admin extends Controller
             'totalAccounts' => $panelInstance->getTotalAccounts(),
             'onlineLast24' => $panelInstance->getOnlineLast1(),
             'onlineCurrent' => $panelInstance->getOnlineCurrent(),
+            'actionLogs' => $panelInstance->actionLogs()
         ];
 
         $data = [
             'user' => $this->user,
-            'panels' => $panels
+            'panels' => $panels,
+            'data' => $dataClass,
         ];
 
         $this->view('pages/ap/index', $data);

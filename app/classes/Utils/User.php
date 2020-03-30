@@ -220,6 +220,16 @@ class User
         }
     }
 
+    public function isAuthorized()
+    {
+        if ($this->isLoggedIn()) {
+            if ($this->isStaff()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function getUserStatus(): string
     {
         return $this->Status;

@@ -58,6 +58,8 @@ class Bootstrap
             // Set Default Exception
             $exception = new Exception;
             set_exception_handler([$exception, 'handler']);
+            // Set Timezone
+            date_default_timezone_set(CONFIG['timeZone']);
             // Load HTMLPurifier
             require_once LIB_PATH . 'HTMLPurifier/HTMLPurifier.auto.php';
             // Init SSL Check
