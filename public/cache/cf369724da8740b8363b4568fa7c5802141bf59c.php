@@ -75,7 +75,7 @@
 <!-- Key Master -->
 <script src="/resources/themes/Godlike/vendor/keymaster/keymaster.js"></script>
 <!-- Summer Note -->
-<script src="/resources/themes/Godlike/vendor/summernote/dist/summernote-bs4.min.js" type=module></script>
+
 <!-- Godlike JS -->
 <script src="/resources/themes/Godlike/js/godlike.min.js"></script>
 <script src="/resources/themes/Godlike/js/godlike-init.js"></script>
@@ -84,8 +84,7 @@
 <!-- WZ ToolTip -->
 <script src="/resources/themes/core/js/wz_tooltip.js"></script>
 <!-- socket.io -->
-<script src="/resources/themes/core/js/socket.io-client/dist/socket.io.js"></script>
-<script src="/resources/themes/core/js/client.js"></script>
+
 </body>
 </html>
 <?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/layouts/cms/footer.blade.php ENDPATH**/ ?>
