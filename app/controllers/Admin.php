@@ -16,8 +16,18 @@ class Admin extends Controller
     {
         $this->user->fetchUser();
 
+        $panelInstance = new Utils\Panels;
+
+        $panels = [
+            'newlyRegistered' => $panelInstance->getNewlyRegistered(),
+            'totalAccounts' => $panelInstance->getTotalAccounts(),
+            'onlineLast24' => $panelInstance->getOnlineLast1(),
+            'onlineCurrent' => $panelInstance->getOnlineCurrent(),
+        ];
+
         $data = [
             'user' => $this->user,
+            'panels' => $panels
         ];
 
         $this->view('pages/ap/index', $data);

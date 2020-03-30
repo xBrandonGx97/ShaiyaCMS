@@ -2626,3 +2626,90 @@ Stack trace:
 #0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
 #1 {main}
   thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 09:23:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 09:23:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 11:27:11 UTC] PHP Notice:  Trying to get property 'newlyRegistered' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\ff0fcddcc0b4a165b544f6ad6db22a128efdeb58.php on line 4
+[30-Mar-2020 11:27:11 UTC] PHP Stack trace:
+[30-Mar-2020 11:27:11 UTC] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[30-Mar-2020 11:27:11 UTC] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[30-Mar-2020 11:27:11 UTC] PHP   3. App\Controllers\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:109
+[30-Mar-2020 11:27:11 UTC] PHP   4. App\Controllers\Admin->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin.php:30
+[30-Mar-2020 11:27:11 UTC] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[30-Mar-2020 11:27:11 UTC] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:58
+[30-Mar-2020 11:27:11 UTC] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[30-Mar-2020 11:27:11 UTC] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[30-Mar-2020 11:27:11 UTC] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[30-Mar-2020 11:27:11 UTC] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[30-Mar-2020 11:27:11 UTC] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[30-Mar-2020 11:27:11 UTC] PHP  12. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\bbb327320bc46c391f9c5b1e3182c3739f7150b1.php:14
+[30-Mar-2020 11:27:11 UTC] PHP  13. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[30-Mar-2020 11:27:11 UTC] PHP  14. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[30-Mar-2020 11:27:11 UTC] PHP  15. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[30-Mar-2020 11:27:11 UTC] PHP  16. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[30-Mar-2020 11:27:11 UTC] PHP  17. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[30-Mar-2020 11:27:11 UTC] PHP Notice:  Trying to get property 'newlyRegistered' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\ff0fcddcc0b4a165b544f6ad6db22a128efdeb58.php on line 4
+[30-Mar-2020 11:27:11 UTC] PHP Stack trace:
+[30-Mar-2020 11:27:11 UTC] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[30-Mar-2020 11:27:11 UTC] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[30-Mar-2020 11:27:11 UTC] PHP   3. App\Controllers\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:109
+[30-Mar-2020 11:27:11 UTC] PHP   4. App\Controllers\Admin->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin.php:30
+[30-Mar-2020 11:27:11 UTC] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[30-Mar-2020 11:27:11 UTC] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:58
+[30-Mar-2020 11:27:11 UTC] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[30-Mar-2020 11:27:11 UTC] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[30-Mar-2020 11:27:11 UTC] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[30-Mar-2020 11:27:11 UTC] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[30-Mar-2020 11:27:11 UTC] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[30-Mar-2020 11:27:11 UTC] PHP  12. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\bbb327320bc46c391f9c5b1e3182c3739f7150b1.php:15
+[30-Mar-2020 11:27:11 UTC] PHP  13. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[30-Mar-2020 11:27:11 UTC] PHP  14. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[30-Mar-2020 11:27:11 UTC] PHP  15. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[30-Mar-2020 11:27:11 UTC] PHP  16. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[30-Mar-2020 11:27:11 UTC] PHP  17. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[30-Mar-2020 11:29:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Exception::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Exception))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 11:31:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Exception::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Exception))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 11:32:04 UTC] PHP Notice:  Undefined index: Login in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[30-Mar-2020 11:32:04 UTC] PHP Stack trace:
+[30-Mar-2020 11:32:04 UTC] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[30-Mar-2020 11:32:04 UTC] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[30-Mar-2020 11:32:04 UTC] PHP   3. App\Controllers\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:109
+[30-Mar-2020 11:32:04 UTC] PHP   4. Classes\Utils\Panels->getNewlyRegistered() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin.php:21
+[30-Mar-2020 11:32:04 UTC] PHP   5. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Utils\Panels.php:16
+[30-Mar-2020 11:32:04 UTC] PHP Notice:  Undefined index: Login in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[30-Mar-2020 11:32:04 UTC] PHP Stack trace:
+[30-Mar-2020 11:32:04 UTC] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[30-Mar-2020 11:32:04 UTC] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[30-Mar-2020 11:32:04 UTC] PHP   3. App\Controllers\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:109
+[30-Mar-2020 11:32:04 UTC] PHP   4. Classes\Utils\Panels->getNewlyRegistered() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin.php:24
+[30-Mar-2020 11:32:04 UTC] PHP   5. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Utils\Panels.php:16
+[30-Mar-2020 11:32:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Exception::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Exception))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 11:33:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Exception::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Exception))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 11:34:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ParseError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(ParseError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98

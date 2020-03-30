@@ -24,3 +24,5 @@
           {{acpNav('SExtended','Send Notice','home/sendnotice','Send Player Notice','home/sendplrnotice',false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,1,0)}}
           {{acpNav('GS','World Chat','home/worldchat','Players Online','home/plrsonline',false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,1,0)}}
     </div>
+  </div>
+</nav>

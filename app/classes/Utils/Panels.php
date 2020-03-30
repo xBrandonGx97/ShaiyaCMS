@@ -12,27 +12,28 @@ class Panels
         $query = db::table(table('shUserData'))
                         ->selectRaw('COUNT(*) AS \'Login\'')
                         ->whereRaw('JoinDate >= DATEADD(day, -14, GETDATE())')
+                        ->limit(1)
                         ->get();
-        return $query;
+        return $query[0]->Login;
     }
 
     public function getTotalAccounts()
     {
         $query = db::table(table('shUserData'))
                         ->selectRaw('COUNT(*) AS \'Count\'')
+                        ->limit(1)
                         ->get();
-        return $query;
+        return $query[0]->Count;
     }
-
-    // These can be cleaned up, just different dates
 
     public function getOnlineLastDate($dateDiff)
     {
         $query = db::table(table('shUserLoginStatus'))
                         ->selectRaw('COUNT(*) AS \'Login\'')
                         ->whereRaw('LogoutTime >= DATEADD(day, -'.$dateDiff.', GETDATE())')
+                        ->limit(1)
                         ->get();
-        return $query;
+        return $query[0]->Login;
     }
 
     public function getOnlineLast1()
@@ -60,8 +61,9 @@ class Panels
         $query = db::table(table('shCharData'))
                         ->selectRaw('COUNT(*) AS \'Login\'')
                         ->where('LoginStatus', 1)
+                        ->limit(1)
                         ->get();
-        return $query;
+        return $query[0]->Login;
     }
 
     public function actionLogs($limit = 8)

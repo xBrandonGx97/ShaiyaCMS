@@ -30,4 +30,6 @@
           <?php echo e(acpNav('GS','World Chat','home/worldchat','Players Online','home/plrsonline',false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,1,0)); ?>
 
     </div>
+  </div>
+</nav>
 <?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/partials/ap/nav.blade.php ENDPATH**/ ?>
