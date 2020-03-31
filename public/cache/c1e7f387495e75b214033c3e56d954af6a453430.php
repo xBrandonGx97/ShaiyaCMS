@@ -30,7 +30,7 @@
               </div>
             <?php endif; ?>
           <?php else: ?>
-            <?php echo e(redirect('/admin/login')); ?>
+            <?php echo e(redirect('/admin/auth/login')); ?>
 
           <?php endif; ?>
         </div>
