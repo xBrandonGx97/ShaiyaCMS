@@ -7,6 +7,6 @@
   </a>
   <ul class="pcoded-submenu">
     <li class=""><a href="/admin/accessLogs" class="">Access Logs</a></li>
-    <li class=""><a href="/admin/gmLogs" class="">GM Commands Logs</a></li>
+    <li class=""><a href="/admin/commandLogs" class="">GM Commands Logs</a></li>
   </ul>
 </li>
