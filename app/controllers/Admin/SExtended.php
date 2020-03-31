@@ -12,7 +12,7 @@ class SExtended extends Controller
             $this->user = $user;
     }
 
-    public function index()
+    public function sendNotice()
     {
         $this->user->fetchUser();
 
@@ -20,6 +20,17 @@ class SExtended extends Controller
             'user' => $this->user
         ];
 
-        $this->view('pages/ap/index', $data);
+        $this->view('pages/ap/SExtended/sendNotice', $data);
+    }
+
+    public function sendPlayerNotice()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/SExtended/sendPlayerNotice', $data);
     }
 }

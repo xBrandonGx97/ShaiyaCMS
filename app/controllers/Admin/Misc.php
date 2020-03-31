@@ -12,7 +12,7 @@ class Misc extends Controller
             $this->user = $user;
     }
 
-    public function index()
+    public function disbandGuild()
     {
         $this->user->fetchUser();
 
@@ -20,6 +20,105 @@ class Misc extends Controller
             'user' => $this->user
         ];
 
-        $this->view('pages/ap/index', $data);
+        $this->view('pages/ap/misc/disbandGuild', $data);
+    }
+
+    public function guildLeaderChange()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/guildLeaderChange', $data);
+    }
+
+    public function guildNameChange()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/guildNameChange', $data);
+    }
+
+    public function guildSearch()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/guildSearch', $data);
+    }
+
+    public function itemList()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/itemList', $data);
+    }
+
+    public function itemSearch()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/itemSearch', $data);
+    }
+
+    public function mobList()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/mobList', $data);
+    }
+
+    public function playersOnline()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/playersOnline', $data);
+    }
+
+    public function statPadders()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/statPadders', $data);
+    }
+
+    public function worldChat()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user
+        ];
+
+        $this->view('pages/ap/misc/worldChat', $data);
     }
 }
