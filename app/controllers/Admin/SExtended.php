@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use Framework\Core\CoreController as Controller;
+use Classes\Sys\LogSys;
 use Classes\Utils as Utils;
 
 class SExtended extends Controller
@@ -10,6 +11,7 @@ class SExtended extends Controller
     public function __construct(Utils\User $user)
     {
             $this->user = $user;
+            $this->logSys = new LogSys;
     }
 
     public function sendNotice()
@@ -17,7 +19,8 @@ class SExtended extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/SExtended/sendNotice', $data);
@@ -28,7 +31,8 @@ class SExtended extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/SExtended/sendPlayerNotice', $data);

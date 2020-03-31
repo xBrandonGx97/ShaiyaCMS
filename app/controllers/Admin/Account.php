@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use Framework\Core\CoreController as Controller;
+use Classes\Sys\LogSys;
 use Classes\Utils as Utils;
 
 class Account extends Controller
@@ -10,6 +11,7 @@ class Account extends Controller
     public function __construct(Utils\User $user)
     {
             $this->user = $user;
+            $this->logSys = new LogSys;
     }
 
     public function ban()
@@ -17,7 +19,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/ban', $data);
@@ -28,7 +31,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/banSearch', $data);
@@ -39,7 +43,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/dpHandout', $data);
@@ -50,7 +55,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/edit', $data);
@@ -61,7 +67,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/ipSearch', $data);
@@ -72,7 +79,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/search', $data);
@@ -83,7 +91,8 @@ class Account extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/account/unban', $data);

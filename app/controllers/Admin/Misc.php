@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use Framework\Core\CoreController as Controller;
+use Classes\Sys\LogSys;
 use Classes\Utils as Utils;
 
 class Misc extends Controller
@@ -10,6 +11,7 @@ class Misc extends Controller
     public function __construct(Utils\User $user)
     {
             $this->user = $user;
+            $this->logSys = new LogSys;
     }
 
     public function disbandGuild()
@@ -17,7 +19,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/disbandGuild', $data);
@@ -28,7 +31,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/guildLeaderChange', $data);
@@ -39,7 +43,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/guildNameChange', $data);
@@ -50,7 +55,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/guildSearch', $data);
@@ -61,7 +67,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/itemList', $data);
@@ -72,7 +79,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/itemSearch', $data);
@@ -83,7 +91,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/mobList', $data);
@@ -94,7 +103,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/playersOnline', $data);
@@ -105,7 +115,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/statPadders', $data);
@@ -116,7 +127,8 @@ class Misc extends Controller
         $this->user->fetchUser();
 
         $data = [
-            'user' => $this->user
+            'user' => $this->user,
+            'logSys' => $this->logSys
         ];
 
         $this->view('pages/ap/misc/worldChat', $data);

@@ -13,16 +13,43 @@
           @if($data['user']->isAuthorized())
             {{-- is adm, gm or gma --}}
             @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
+              {{$data['logSys']->createLog('Visited Access Logs Page')}}
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Search All Accounts Associated to IP of a Character</h5>
+                          <h5>Admin Panel Access Logs</h5>
                         </div>
                         <div class="card-body">
-                          facts
+                          <table class="table table-striped" id="AccessLogs">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>UserID</th>
+                                <th>UserIP</th>
+                                <th>Action</th>
+                                <th>Action Time</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @if(count($data['accessLogs']->getAccessLogs()) > 0)
+                                @foreach($data['accessLogs']->getAccessLogs() as $logs)
+                                  <tr>
+                                    <td>{{$data['accessLogs']->count}}</td>
+                                    <td>{{$logs->UserID}}</td>
+                                    <td>{{$logs->UserIP}}</td>
+                                    <td>{{$logs->Action}}</td>
+                                    <td>{{date("m/d/y H:i A", strtotime($logs->ActionTime))}}</td>
+                                  </tr>
+                                  @php
+                                    $data['accessLogs']->count++
+                                  @endphp
+                                @endforeach
+                              @endif
+                            </tbody>
+                          </table>
                         </div>
                       </div>
                     </div>
@@ -37,4 +64,13 @@
       </div>
     </div>
   </div>
+  <script>
+  $(document).ready(function(){
+	  $('#AccessLogs').dataTable({
+		  "searching": false,
+			"info": false,
+			"bLengthChange": false
+    });
+	});
+</script>
 @endsection

@@ -3,6 +3,7 @@
 namespace Framework\Blade;
 
 use Jenssegers\Blade\Blade;
+use Classes\Sys\LogSys;
 use \Classes\Utils as Utils;
 
 class BladeController
@@ -18,6 +19,7 @@ class BladeController
         }
         $this->session = new Utils\Session;
         $this->auth = new Utils\Auth($this->session);
+        $this->logSys = new LogSys;
     }
 
     public function loadDirectives()
@@ -44,6 +46,10 @@ class BladeController
 
         $this->blade->directive('Separator', function ($height) {
             return "<?php Separator($height) ?>";
+        });
+
+        $this->blade->directive('createLog', function ($action) {
+            return $this->logSys->createLog($action);
         });
 
         $this->blade->directive('hellox', function ($expression) {

@@ -90,7 +90,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         // Account
         $r->addRoute('GET', '/account/ban', [($admin), 'index']);
         $r->addRoute('GET', '/account/banSearch', [($admin), 'index']);
-        $r->addRoute('GET', '/account/dpHandout', [($admin), 'index']);
+        $r->addRoute('GET', '/account/dpHandout', [($account), 'dpHandout']);
         $r->addRoute('GET', '/account/edit', [($admin), 'index']);
         $r->addRoute('GET', '/account/ipSearch', [($admin), 'index']);
         $r->addRoute('GET', '/account/search', [($admin), 'index']);
