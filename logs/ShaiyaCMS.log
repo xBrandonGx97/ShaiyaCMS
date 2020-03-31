@@ -5227,3 +5227,72 @@ Stack trace:
 #0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
 #1 {main}
   thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:04:19 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:07:20 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:07:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:22:37 America/Chicago] PHP Warning:  include(C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer/../../app/controllers/Admin.php): failed to open stream: No such file or directory in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer\ClassLoader.php on line 444
+[30-Mar-2020 19:22:37 America/Chicago] PHP Stack trace:
+[30-Mar-2020 19:22:37 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[30-Mar-2020 19:22:37 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[30-Mar-2020 19:22:37 America/Chicago] PHP   3. require_once() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:87
+[30-Mar-2020 19:22:37 America/Chicago] PHP   4. FastRoute\simpleDispatcher() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:149
+[30-Mar-2020 19:22:37 America/Chicago] PHP   5. App\Bootstrap->{closure:C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:4-149}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\nikic\fast-route\src\functions.php:32
+[30-Mar-2020 19:22:37 America/Chicago] PHP   6. FastRoute\RouteCollector->addGroup() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:131
+[30-Mar-2020 19:22:37 America/Chicago] PHP   7. App\Bootstrap->{closure:C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:73-131}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\nikic\fast-route\src\RouteCollector.php:51
+[30-Mar-2020 19:22:37 America/Chicago] PHP   8. spl_autoload_call() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:76
+[30-Mar-2020 19:22:37 America/Chicago] PHP   9. Composer\Autoload\ClassLoader->loadClass() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:76
+[30-Mar-2020 19:22:37 America/Chicago] PHP  10. Composer\Autoload\includeFile() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer\ClassLoader.php:322
+[30-Mar-2020 19:22:37 America/Chicago] PHP Warning:  include(): Failed opening 'C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer/../../app/controllers/Admin.php' for inclusion (include_path='C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\libraries\HTMLPurifier;.;E:/laragon/etc/php/pear') in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer\ClassLoader.php on line 444
+[30-Mar-2020 19:22:37 America/Chicago] PHP Stack trace:
+[30-Mar-2020 19:22:37 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[30-Mar-2020 19:22:37 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[30-Mar-2020 19:22:37 America/Chicago] PHP   3. require_once() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:87
+[30-Mar-2020 19:22:37 America/Chicago] PHP   4. FastRoute\simpleDispatcher() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:149
+[30-Mar-2020 19:22:37 America/Chicago] PHP   5. App\Bootstrap->{closure:C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:4-149}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\nikic\fast-route\src\functions.php:32
+[30-Mar-2020 19:22:37 America/Chicago] PHP   6. FastRoute\RouteCollector->addGroup() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:131
+[30-Mar-2020 19:22:37 America/Chicago] PHP   7. App\Bootstrap->{closure:C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:73-131}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\nikic\fast-route\src\RouteCollector.php:51
+[30-Mar-2020 19:22:37 America/Chicago] PHP   8. spl_autoload_call() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:76
+[30-Mar-2020 19:22:37 America/Chicago] PHP   9. Composer\Autoload\ClassLoader->loadClass() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\routes\routes.php:76
+[30-Mar-2020 19:22:37 America/Chicago] PHP  10. Composer\Autoload\includeFile() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer\ClassLoader.php:322
+[30-Mar-2020 19:22:38 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:25:04 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:27:50 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:28:14 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:33:03 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[30-Mar-2020 19:33:22 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98

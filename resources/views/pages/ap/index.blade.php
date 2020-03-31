@@ -30,7 +30,8 @@
                             @include('partials.ap.panels.newUsers')
                         @endif
                     @else
-                        You must be logged in to access the admin dashboard.
+                        {{-- You must be logged in to access the admin dashboard. --}}
+                        {{redirect('/admin/login')}}
                     @endif
                 </div>
             </div>

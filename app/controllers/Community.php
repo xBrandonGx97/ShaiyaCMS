@@ -41,7 +41,7 @@ class Community extends Controller
 
     public function guildrankings()
     {
-        $guildRankingsModel = $this->model(Models\GuildRankings::class);
+        $guildRankingsModel = $this->model(Models\Community\GuildRankings::class);
 
         $this->user->fetchUser();
 
@@ -55,7 +55,7 @@ class Community extends Controller
 
     public function news()
     {
-        $newsModel = $this->model(Models\News::class);
+        $newsModel = $this->model(Models\Community\News::class);
 
         $this->user->fetchUser();
 
@@ -69,7 +69,7 @@ class Community extends Controller
 
     public function patchnotes()
     {
-        $patchNotesModel = $this->model(Models\PatchNotes::class);
+        $patchNotesModel = $this->model(Models\Community\PatchNotes::class);
 
         $this->user->fetchUser();
 
@@ -83,7 +83,7 @@ class Community extends Controller
 
     public function pvprankings()
     {
-        $rankings = $this->model(Models\Rankings::class);
+        $rankings = $this->model(Models\Community\Rankings::class);
 
         $this->user->fetchUser();
 

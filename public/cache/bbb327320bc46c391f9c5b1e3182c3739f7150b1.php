@@ -30,7 +30,9 @@
                             <?php echo $__env->make('partials.ap.panels.newUsers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <?php endif; ?>
                     <?php else: ?>
-                        You must be logged in to access the admin dashboard.
+                        
+                        <?php echo e(redirect('/admin/login')); ?>
+
                     <?php endif; ?>
                 </div>
             </div>

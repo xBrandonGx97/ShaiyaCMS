@@ -29,6 +29,7 @@
         "Classes\\": "app/classes",
         "App\\Exceptions\\": "app/exceptions",
         "App\\Controllers\\": "app/controllers",
+        "App\\Controllers\\Admin\\": "app/controllers/admin",
         "App\\Models\\": "app/models",
         "Framework\\Core\\": "framework/core",
         "Framework\\Blade\\": "framework/blade"

@@ -73,13 +73,19 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addGroup('/admin', function (FastRoute\RouteCollector $r) {
         $session = new Classes\Utils\Session;
         $userClass = new Classes\Utils\User($session);
-        $admin = new App\Controllers\Admin($userClass);
+
+        $admin = new App\Controllers\Admin\Admin($userClass);
+        $account = new App\Controllers\Admin\Account($userClass);
+        $auth = new App\Controllers\Admin\Auth($userClass);
 
         $r->addRoute('GET', '', [($admin), 'index']);
 
+        // Auth
+        $r->addRoute('GET', '/login', [($auth), 'login']);
+
         // Admin
-        $r->addRoute('GET', '/accessLogs', [($admin), 'index']);
-        $r->addRoute('GET', '/commandLogs', [($admin), 'index']);
+        $r->addRoute('GET', '/accessLogs', [($admin), 'accessLogs']);
+        $r->addRoute('GET', '/commandLogs', [($admin), 'commandLogs']);
 
         // Account
         $r->addRoute('GET', '/account/ban', [($admin), 'index']);

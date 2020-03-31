@@ -27,7 +27,7 @@ class ServerInfo extends Controller
 
     public function bossRecords()
     {
-        $bossRecords = $this->model(Models\BossRecords::class);
+        $bossRecords = $this->model(Models\ServerInfo\BossRecords::class);
 
         $this->user->fetchUser();
 
@@ -41,7 +41,7 @@ class ServerInfo extends Controller
 
     public function dropfinder()
     {
-        $dropFinder = $this->model(Models\DropFinder::class);
+        $dropFinder = $this->model(Models\ServerInfo\DropFinder::class);
 
         $this->user->fetchUser();
 

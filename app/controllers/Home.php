@@ -18,8 +18,8 @@ class Home extends Controller
 
     public function index()
     {
-        $newsModel = $this->model(Models\News::class);
-        $serverInfo = $this->model(Models\ServerInfo::class);
+        $newsModel = $this->model(Models\Community\News::class);
+        $serverInfo = $this->model(Models\ServerInfo\ServerInfo::class);
 
         $this->user->fetchUser();
 

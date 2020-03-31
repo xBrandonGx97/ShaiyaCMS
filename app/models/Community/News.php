@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Community;
 
 use Illuminate\Database\Capsule\Manager as Eloquent;
 use Illuminate\Database\Eloquent\Model;
