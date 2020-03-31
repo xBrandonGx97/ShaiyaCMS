@@ -31,7 +31,7 @@
               </div>
             @endif
           @else
-            {{redirect('/admin/login')}}
+            {{redirect('/admin/auth/login')}}
           @endif
         </div>
       </div>

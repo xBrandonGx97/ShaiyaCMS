@@ -31,7 +31,7 @@
                         @endif
                     @else
                         {{-- You must be logged in to access the admin dashboard. --}}
-                        {{redirect('/admin/login')}}
+                        {{redirect('/admin/auth/login')}}
                     @endif
                 </div>
             </div>
