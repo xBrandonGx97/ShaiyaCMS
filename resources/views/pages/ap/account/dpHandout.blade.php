@@ -23,6 +23,17 @@
                           <h5>DP Handout</h5>
                         </div>
                         <div class="card-body">
+                          @if (isset($_POST['submit']))
+                            @if (!empty($_POST['UserID']))
+                              @if(count($data['dpHandout']->getChar()) > 0)
+                                @foreach($data['dpHandout']->getChar() as $res)
+                                    {{$data['dpHandout']->updateChar($res)}}
+                                @endforeach
+                              @else
+                                No Characters found
+                              @endif
+                            @endif
+                          @endif
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
                               <input type="text" name="UserID" placeholder="Char Name" class="form-control tac b_i"/>

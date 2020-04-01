@@ -39,8 +39,8 @@
                               <tbody>
                               @foreach($data['banned']->getBannedUsers() as $res)
                                 <tr>
-                                  <td>{{$res->CharName}}</td>
-                                  <td>{{$res->Reason}}</td>
+                                  <td>{{$data['data']->purify($res->CharName)}}</td>
+                                  <td>{{$data['data']->purify($res->Reason)}}</td>
                                   <td>{{$res->Duration}}</td>
                                   <td>{{$res->BannedBy}}</td>
                                   <td>{{date("d/m/Y g:i:s A", strtotime($res->BanDate))}}</td>

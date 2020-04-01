@@ -253,9 +253,9 @@ class User
             case 128:
                 return 'GameSage';
             case -1:
-                return 'Player';
+                return 'Banned';
             case -5:
-                return 'Player';
+                return 'Permanently Banned';
             default:
                 return 'Player';
         }

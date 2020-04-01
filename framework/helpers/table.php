@@ -38,31 +38,6 @@ function table($table)
             return 'ShaiyaCMS.dbo.news';
         case 'patchNotes':
             return 'ShaiyaCMS.dbo.patch_notes';
-        // Forum
-        case 'FORUMS':
-            return 'ShaiyaCMS.dbo.FORUMS';
-        case 'TOPICS':
-            return 'ShaiyaCMS.dbo.FORUM_TOPICS';
-        case 'POSTS':
-            return 'ShaiyaCMS.dbo.FORUM_POSTS';
-        case 'FORUM_LIKES':
-            return 'ShaiyaCMS.dbo.FORUM_POST_LIKES';
-        case 'FORUM_PERMS':
-            return 'ShaiyaCMS.dbo.FORUM_PERMS';
-        case 'FORUM_PERMS':
-            return 'ShaiyaCMS.dbo.FORUM_PERMS';
-        case 'FORUM_ROLES':
-            return 'ShaiyaCMS.dbo.FORUM_ROLES';
-        case 'FORUM_ROLE_FLAGS':
-            return 'ShaiyaCMS.dbo.FORUM_ROLE_FLAGS';
-        case 'FORUM_USER_NAMES':
-            return 'ShaiyaCMS.dbo.FORUM_USER_NAMES';
-        case 'FORUM_USER_ROLES':
-            return 'ShaiyaCMS.dbo.FORUM_USER_ROLES';
-        case 'FORUM_USER_SIGNATURES':
-            return 'ShaiyaCMS.dbo.FORUM_USER_SIGNATURES';
-        case 'FORUM_USER_SOCIALS':
-            return 'ShaiyaCMS.dbo.FORUM_USER_SOCIALS';
         // Account Tools
         case 'banned':
             return 'ShaiyaCMS.dbo.banned';

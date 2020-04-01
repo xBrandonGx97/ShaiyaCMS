@@ -7,7 +7,7 @@
   </a>
   <ul class="pcoded-submenu">
     <li class=""><a href="/admin/account/ban" class="">Account Ban</a></li>
-    <li class=""><a href="/admin/account/banSearch" class="">Account Ban Search</a></li>
+    <li class=""><a href="/admin/account/bannedUsers" class="">Banned Accounts</a></li>
     <li class=""><a href="/admin/account/dpHandout" class="">Account DP Handout</a></li>
     <li class=""><a href="/admin/account/edit" class="">Account Edit</a></li>
     <li class=""><a href="/admin/account/ipSearch" class="">Account IP Search</a></li>

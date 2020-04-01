@@ -23,6 +23,18 @@
                           <h5>DP Handout</h5>
                         </div>
                         <div class="card-body">
+                          <?php if(isset($_POST['submit'])): ?>
+                            <?php if(!empty($_POST['UserID'])): ?>
+                              <?php if(count($data['dpHandout']->getChar()) > 0): ?>
+                                <?php $__currentLoopData = $data['dpHandout']->getChar(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php echo e($data['dpHandout']->updateChar($res)); ?>
+
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              <?php else: ?>
+                                No Characters found
+                              <?php endif; ?>
+                            <?php endif; ?>
+                          <?php endif; ?>
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
                               <input type="text" name="UserID" placeholder="Char Name" class="form-control tac b_i"/>

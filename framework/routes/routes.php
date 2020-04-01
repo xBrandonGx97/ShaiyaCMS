@@ -88,13 +88,17 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/commandLogs', [($admin), 'commandLogs']);
 
         // Account
-        $r->addRoute('GET', '/account/ban', [($admin), 'index']);
-        $r->addRoute('GET', '/account/banSearch', [($admin), 'index']);
+        $r->addRoute('GET', '/account/ban', [($account), 'ban']);
+        $r->addRoute('GET', '/account/bannedUsers', [($account), 'bannedUsers']);
         $r->addRoute('GET', '/account/dpHandout', [($account), 'dpHandout']);
-        $r->addRoute('GET', '/account/edit', [($admin), 'index']);
-        $r->addRoute('GET', '/account/ipSearch', [($admin), 'index']);
-        $r->addRoute('GET', '/account/search', [($admin), 'index']);
-        $r->addRoute('GET', '/account/unban', [($admin), 'index']);
+        $r->addRoute('GET', '/account/edit', [($account), 'edit']);
+        $r->addRoute('GET', '/account/ipSearch', [($account), 'ipSearch']);
+        $r->addRoute('GET', '/account/search', [($account), 'search']);
+        $r->addRoute('GET', '/account/unban', [($account), 'unban']);
+
+        // POST
+        $r->addRoute('POST', '/account/dpHandout', [($account), 'dpHandout']);
+        $r->addRoute('POST', '/account/search', [($account), 'search']);
 
         // Player
         $r->addRoute('GET', '/player/chatSearch', [($admin), 'index']);
