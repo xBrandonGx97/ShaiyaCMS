@@ -6534,3 +6534,447 @@ Stack trace:
 [01-Apr-2020 13:08:17 America/Chicago] PHP  15. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
 [01-Apr-2020 13:08:17 America/Chicago] PHP  16. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
 [01-Apr-2020 13:08:17 America/Chicago] PHP  17. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 13:36:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method ArgumentCountError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(ArgumentCountError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:36:52 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:37:58 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:38:10 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:43:47 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:43:47 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:43:47 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:43:47 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:43:47 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:43:47 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:43:47 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:43:47 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:43:47 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:43:47 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:43:47 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:43:47 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:43:47 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:43:47 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:43:47 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:43:47 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:43:47 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:43:47 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:43:47 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:44:53 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:44:53 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:44:53 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:44:53 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:44:53 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:44:53 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:44:53 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:44:53 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:44:53 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:44:53 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:44:53 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:44:53 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:44:53 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:44:53 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:44:53 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:44:53 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:44:53 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:44:53 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:44:54 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:44:55 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:44:55 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:44:55 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:44:55 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:44:55 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:44:55 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:44:55 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:44:55 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:44:55 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:44:55 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:44:55 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:44:55 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:44:55 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:44:55 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:44:55 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:44:55 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:44:55 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:44:55 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:44:56 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:45:02 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:45:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:45:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:45:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:45:02 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:45:02 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:45:02 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:45:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:45:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:45:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:45:02 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:45:02 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:45:02 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 13:45:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:45:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:45:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:45:02 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:45:02 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 13:45:03 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:45:45 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:49:49 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:51:33 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:52:35 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:12 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:21 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:28 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:35 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:42 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:53 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:54 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:55 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:55 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:53:56 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:54:09 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:54:10 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method TypeError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(TypeError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:58:18 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:58:33 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Error::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Error))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:00:15 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:03:32 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:03:51 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 14:03:51 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:03:51 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:03:51 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:03:51 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:03:51 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:03:51 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 14:03:52 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:03:52 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:03:52 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:03:52 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:03:52 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:03:52 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 14:03:52 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:03:52 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:03:52 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:03:52 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:03:52 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:03:52 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:04:02 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 14:04:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:04:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:04:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:04:02 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:04:02 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:04:02 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 14:04:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:04:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:04:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:04:02 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:04:02 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:04:02 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 24
+[01-Apr-2020 14:04:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:04:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:04:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:04:02 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:04:02 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:04:02 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:04:15 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:04:57 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:05:13 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:05:31 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:05:38 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:05:52 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:06:09 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:06:38 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:06:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:07:16 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:08:04 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:08:25 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:08:38 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method ParseError::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(ParseError))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:08:46 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:09:00 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:09:11 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:09:15 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:09:59 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:12:43 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 33
+[01-Apr-2020 14:12:43 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:12:43 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:12:43 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:12:43 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:12:43 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:12:43 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 33
+[01-Apr-2020 14:12:43 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:12:43 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:12:43 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:12:43 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:12:43 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:12:43 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 33
+[01-Apr-2020 14:12:43 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:12:43 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:12:43 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:12:43 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:12:43 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:12:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:13:06 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 33
+[01-Apr-2020 14:13:06 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:13:06 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:13:06 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:13:06 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:13:06 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:13:06 America/Chicago] PHP Warning:  A non-numeric value encountered in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 33
+[01-Apr-2020 14:13:06 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:13:06 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:13:06 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:13:06 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:13:06 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:13:06 America/Chicago] PHP Warning:  Division by zero in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 33
+[01-Apr-2020 14:13:06 America/Chicago] PHP Stack trace:
+[01-Apr-2020 14:13:06 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 14:13:06 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 14:13:06 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 14:13:06 America/Chicago] PHP   4. Classes\Shaiya\SExtended->commandSend() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:24
+[01-Apr-2020 14:13:06 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:13:31 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:17:55 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:19:00 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:23:37 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:26:16 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:30:33 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:35:18 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:35:36 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
