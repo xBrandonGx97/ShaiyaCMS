@@ -7304,3 +7304,310 @@ Stack trace:
 [01-Apr-2020 15:32:20 America/Chicago] PHP   5. spl_autoload_call() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:11
 [01-Apr-2020 15:32:20 America/Chicago] PHP   6. Composer\Autoload\ClassLoader->loadClass() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:11
 [01-Apr-2020 15:32:20 America/Chicago] PHP   7. Composer\Autoload\includeFile() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer\ClassLoader.php:322
+[01-Apr-2020 16:57:49 America/Chicago] PHP Notice:  Undefined index: sE in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php on line 25
+[01-Apr-2020 16:57:49 America/Chicago] PHP Stack trace:
+[01-Apr-2020 16:57:49 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 16:57:49 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 16:57:49 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 16:57:49 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:41
+[01-Apr-2020 16:57:49 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 16:57:49 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 16:57:49 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 16:57:49 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 16:57:49 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 16:57:49 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 16:57:49 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 16:59:31 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 16:59:31 America/Chicago] PHP Stack trace:
+[01-Apr-2020 16:59:31 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 16:59:31 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 16:59:31 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 16:59:31 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 16:59:31 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 16:59:31 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 16:59:31 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 16:59:31 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 16:59:31 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 16:59:31 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 16:59:31 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 16:59:32 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 16:59:32 America/Chicago] PHP  13. Classes\Shaiya\SExtended->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:75
+[01-Apr-2020 16:59:32 America/Chicago] PHP  14. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:52
+[01-Apr-2020 16:59:32 America/Chicago] PHP Notice:  Trying to get property 'CharID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 52
+[01-Apr-2020 16:59:32 America/Chicago] PHP Stack trace:
+[01-Apr-2020 16:59:32 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 16:59:32 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 16:59:32 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 16:59:32 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 16:59:32 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 16:59:32 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 16:59:32 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 16:59:32 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 16:59:32 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 16:59:32 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 16:59:32 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 16:59:32 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 16:59:32 America/Chicago] PHP  13. Classes\Shaiya\SExtended->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:75
+[01-Apr-2020 17:00:14 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 17:00:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:00:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:00:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:00:14 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:00:14 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:00:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:00:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:00:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:00:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:00:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:00:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:00:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:00:14 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:00:14 America/Chicago] PHP  13. Classes\Shaiya\SExtended->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:75
+[01-Apr-2020 17:00:14 America/Chicago] PHP  14. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:52
+[01-Apr-2020 17:00:14 America/Chicago] PHP Notice:  Trying to get property 'CharID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 52
+[01-Apr-2020 17:00:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:00:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:00:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:00:14 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:00:14 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:00:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:00:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:00:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:00:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:00:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:00:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:00:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:00:14 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:00:14 America/Chicago] PHP  13. Classes\Shaiya\SExtended->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:75
+[01-Apr-2020 17:02:40 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 78
+[01-Apr-2020 17:02:40 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:02:40 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:02:40 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:02:40 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:02:40 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:02:40 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:02:40 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:02:40 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:02:40 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:02:40 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:02:40 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:02:40 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:02:40 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:03:29 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 17:03:29 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:03:29 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:03:29 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:03:29 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:03:29 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:03:29 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:03:29 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:03:29 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:03:29 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:03:29 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:03:29 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:03:29 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:03:29 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:03:29 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:79
+[01-Apr-2020 17:03:29 America/Chicago] PHP Notice:  Trying to get property 'CharName' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:03:29 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:03:29 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:03:29 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:03:29 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:03:29 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:03:29 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:03:29 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:03:29 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:03:29 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:03:29 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:03:29 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:03:29 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:03:29 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:03:37 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:03:37 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:03:37 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:03:37 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:03:37 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:03:37 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:03:37 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:03:37 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:03:37 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:03:37 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:03:37 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:03:37 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:03:37 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:03:37 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:03:57 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:03:57 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:03:57 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:03:57 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:03:57 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:03:57 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:03:57 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:03:57 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:03:57 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:03:57 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:03:57 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:03:57 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:03:57 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:03:57 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:04:03 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 17:04:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:04:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:04:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:04:03 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:04:03 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:04:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:04:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:04:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:04:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:04:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:04:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:04:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:04:03 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:04:03 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:77
+[01-Apr-2020 17:04:03 America/Chicago] PHP Notice:  Trying to get property 'CharID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 77
+[01-Apr-2020 17:04:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:04:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:04:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:04:03 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:04:03 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:04:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:04:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:04:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:04:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:04:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:04:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:04:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:04:03 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:04:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharID in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 77
+[01-Apr-2020 17:04:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:04:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:04:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:04:14 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:04:14 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:04:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:04:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:04:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:04:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:04:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:04:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:04:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:04:14 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:04:41 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 75
+[01-Apr-2020 17:04:41 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:04:41 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:04:41 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:04:41 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:04:41 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:04:41 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:04:41 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:04:41 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:04:41 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:04:41 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:04:41 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:04:41 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:04:41 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:04:41 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:04:41 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:04:41 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:04:41 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:04:41 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:04:41 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:04:41 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:04:41 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:04:41 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:04:41 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:04:41 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:04:41 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:04:41 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:04:41 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:04:48 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharID in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 77
+[01-Apr-2020 17:04:48 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:04:48 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:04:48 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:04:48 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:04:48 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:04:48 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:04:48 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:04:48 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:04:48 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:04:48 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:04:48 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:04:48 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:04:48 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:05:03 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:05:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:05:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:05:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:05:03 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:05:03 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:05:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:05:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:05:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:05:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:05:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:05:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:05:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:05:03 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:06:57 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:06:57 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:06:57 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:06:57 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:06:57 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:06:57 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:06:57 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:06:57 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:06:57 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:06:57 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:06:57 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:06:57 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:06:57 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:06:57 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:07:31 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 79
+[01-Apr-2020 17:07:31 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:07:31 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:07:31 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:07:31 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:07:31 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:07:31 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:07:31 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:07:31 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:07:31 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:07:31 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:07:31 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:07:31 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:07:31 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:08:02 America/Chicago] PHP Notice:  Undefined property: stdClass::$CharName in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 80
+[01-Apr-2020 17:08:02 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:08:02 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:08:02 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:08:02 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:08:02 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:08:02 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:08:02 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:08:02 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:08:02 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:08:02 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:08:02 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:08:02 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:08:02 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:08:28 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 17:10:09 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php on line 75
+[01-Apr-2020 17:10:09 America/Chicago] PHP Stack trace:
+[01-Apr-2020 17:10:09 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 17:10:09 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 17:10:09 America/Chicago] PHP   3. App\Controllers\Admin\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 17:10:09 America/Chicago] PHP   4. App\Controllers\Admin\SExtended->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\SExtended.php:42
+[01-Apr-2020 17:10:09 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 17:10:09 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 17:10:09 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 17:10:09 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 17:10:09 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 17:10:09 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 17:10:09 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 17:10:09 America/Chicago] PHP  12. Classes\Shaiya\SExtended->sendPlayerNotice() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\b709e4d4b8be5be0b1033aa32b00441f827aa282.php:25
+[01-Apr-2020 17:10:09 America/Chicago] PHP  13. count() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Shaiya\SExtended.php:75

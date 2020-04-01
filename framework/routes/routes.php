@@ -76,6 +76,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $admin = new App\Controllers\Admin\Admin($userClass);
         $account = new App\Controllers\Admin\Account($userClass);
+        $sExtended = new App\Controllers\Admin\SExtended($userClass);
         $auth = new App\Controllers\Admin\Auth($userClass);
 
         $r->addRoute('GET', '', [($admin), 'index']);
@@ -127,8 +128,12 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/misc/worldChat', [($admin), 'index']);
 
         // SExtended
-        $r->addRoute('GET', '/sExtended/sendNotice', [($admin), 'index']);
-        $r->addRoute('GET', '/sExtended/sendPlayerNotice', [($admin), 'index']);
+        $r->addRoute('GET', '/sExtended/sendNotice', [($sExtended), 'sendNotice']);
+        $r->addRoute('GET', '/sExtended/sendPlayerNotice', [($sExtended), 'sendPlayerNotice']);
+
+        // POST
+        $r->addRoute('POST', '/sExtended/sendNotice', [($sExtended), 'sendNotice']);
+        $r->addRoute('POST', '/sExtended/sendPlayerNotice', [($sExtended), 'sendPlayerNotice']);
 
         // Game Sage
         $r->addRoute('GET', '/gs/playersOnline', [($admin), 'index']);

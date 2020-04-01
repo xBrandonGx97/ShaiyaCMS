@@ -4,14 +4,16 @@ namespace App\Controllers\Admin;
 
 use Framework\Core\CoreController as Controller;
 use Classes\Sys\LogSys;
+use Classes\Shaiya\SExtended as SE;
 use Classes\Utils as Utils;
 
 class SExtended extends Controller
 {
     public function __construct(Utils\User $user)
     {
-            $this->user = $user;
-            $this->logSys = new LogSys;
+        $this->user = $user;
+        $this->sExtended = new SE;
+        $this->logSys = new LogSys;
     }
 
     public function sendNotice()
@@ -20,6 +22,7 @@ class SExtended extends Controller
 
         $data = [
             'user' => $this->user,
+            'sE' => $this->sExtended,
             'logSys' => $this->logSys
         ];
 
@@ -32,6 +35,7 @@ class SExtended extends Controller
 
         $data = [
             'user' => $this->user,
+            'sE' => $this->sExtended,
             'logSys' => $this->logSys
         ];
 

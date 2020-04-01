@@ -3,6 +3,7 @@
 namespace Classes\Shaiya;
 
 use Illuminate\Database\Capsule\Manager as DB;
+use Classes\Utils as Utils;
 
 class SExtended
 {
@@ -10,7 +11,9 @@ class SExtended
 
     public function __construct()
     {
-        //
+        $this->data = new Utils\Data;
+        $this->noticeChar = isset($_POST['noticeChar']) ? $this->data->purify(trim($_POST['noticeChar'])) : false;
+        $this->notice = isset($_POST['notice']) ? $this->data->purify(trim($_POST['notice'])) : false;
     }
 
     public function status()
@@ -18,7 +21,7 @@ class SExtended
         //
     }
 
-    public function commandSend($cmd): void
+    public function sendCommand($cmd): void
     {
         $query = ("
                     DECLARE @msgg varchar(MAX) = N'/' + '".$cmd."'
@@ -29,9 +32,10 @@ class SExtended
                     @cmmd = @msgg
         ");
         $stmt = DB::statement($query);
+        var_dump($stmt);
     }
 
-    public function getChar($char): string
+    public function getChar($char)
     {
         if (is_numeric($char)) {
             $query = DB::table(table('shCharData'))
@@ -39,17 +43,17 @@ class SExtended
                 ->where('CharID', $char)
                 ->limit(1)
                 ->get();
-            return $query[0]->CharName;
+            return $query;
         }
         $query = DB::table(table('shCharData'))
             ->select('CharID')
             ->where('CharName', $char)
             ->limit(1)
             ->get();
-        return $query[0]->CharID;
+        return $query;
     }
 
-    public function getUser($user): string
+    public function getUser($user)
     {
         if (is_numeric($user)) {
             $query = DB::table(table('shUserData'))
@@ -67,16 +71,24 @@ class SExtended
         return $query[0]->UserUID;
     }
 
-    public function playerSend($char, $message): void
+    public function sendPlayerNotice($char, $message)
     {
-        $char = $this->getChar($char);
-        $command = 'ntplayer '.$char.' '.$message.'';
-		$this->commandSend($command);
+        if (count($this->getChar($char)) > 0) {
+            if (is_numeric($char)) {
+                $char = $this->getChar($char)[0]->CharName;
+            } else {
+                $char = $this->getChar($char)[0]->CharID;
+            }
+            $command = 'ntplayer '.$char.' '.$message.'';
+            $this->sendCommand($command);
+            return true;
+        }
+        return false;
     }
 
-    public function noticeSend($message): void
+    public function sendNotice($message): void
     {
         $command = 'nt '.$message.'';
-		$this->commandSend($command);
+        $this->sendCommand($command);
     }
 }
