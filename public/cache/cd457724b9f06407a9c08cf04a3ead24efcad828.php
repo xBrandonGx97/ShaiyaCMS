@@ -2,6 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="<?php echo e(APP['author']); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon -->
+<link href="/resources/themes/core/images/icons/favicon.png" rel="icon" type="image/x-icon">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
 <!-- Bootstrap v4.2.1 -->

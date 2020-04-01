@@ -2,10 +2,8 @@
   <div class="navbar-wrapper">
     <div class="navbar-brand header-logo">
       <a href="/admin" class="b-brand">
-        <div class="b-bg">
-          <i class="feather icon-trending-up"></i>
-        </div>
-        <span class="b-title">Admin Panel</span>
+        <img src="/resources/themes/core/images/logos/icon.png" width="70px" alt="ShaiyaCMS Admin Panel">
+        
       </a>
       <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
     </div>
