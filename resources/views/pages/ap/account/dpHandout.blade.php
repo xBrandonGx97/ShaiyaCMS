@@ -25,8 +25,8 @@
                         <div class="card-body">
                           @if (isset($_POST['submit']))
                             @if (!empty($_POST['UserID']))
-                              @if(count($data['dpHandout']->getChar()) > 0)
-                                @foreach($data['dpHandout']->getChar() as $res)
+                              @if (count($data['dpHandout']->getChar()) > 0)
+                                @foreach ($data['dpHandout']->getChar() as $res)
                                     {{$data['dpHandout']->updateChar($res)}}
                                 @endforeach
                               @else

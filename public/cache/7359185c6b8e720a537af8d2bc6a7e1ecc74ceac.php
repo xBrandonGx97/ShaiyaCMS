@@ -12,7 +12,7 @@
           <?php if($data['user']->isAuthorized()): ?>
             
             <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-              <?php echo e($data['logSys']->createLog('Visited Banned Users Page')); ?>
+              <?php echo e($data['logSys']->createLog('Visited Ban User Page')); ?>
 
               <div class="main-body">
                 <div class="page-wrapper">
@@ -20,48 +20,44 @@
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Banned Accounts</h5>
+                          <h5>Account Ban</h5>
                         </div>
                         <div class="card-body">
-                          <?php if(count($data['banned']->getBannedUsers()) > 0): ?>
-                            <table class="table table-dark">
-                              <thead>
-                                <tr>
-                                  <th>CharName</th>
-                                  <th>Reason</th>
-                                  <th>Duration</th>
-                                  <th>Banned By</th>
-                                  <th>Date</th>
-                                  <th>Unban Date</th>
-                                  <th>Ban Status</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                              <?php $__currentLoopData = $data['banned']->getBannedUsers(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <tr>
-                                  <td><?php echo e($res->CharName); ?></td>
-                                  <td><?php echo e($res->Reason); ?></td>
-                                  <td><?php echo e($res->Duration); ?></td>
-                                  <td><?php echo e($res->BannedBy); ?></td>
-                                  <td><?php echo e(date("d/m/Y g:i:s A", strtotime($res->BanDate))); ?></td>
+                          <?php if(isset($_POST['submit'])): ?>
+                            <?php if(count($data['ban']->getUserUID()) > 0): ?>
+                              <?php if(count($data['ban']->checkIfBanned()) < 1): ?>
+                                <?php if(!empty($data['ban']->checkErrors())): ?>
+                                  Errors found. Please make sure you filled out all form inputs.
+                                <?php else: ?>
+                                  <?php echo e($data['ban']->setUserToBanned()); ?>
 
-                                  <?php if($res->Duration === 'permanent'): ?>
-                                    <td>&infin;</td>
-                                    <td>&#10006;</td>
-                                  <?php elseif(time() >= strtotime('+'.str_replace('s', '', $res->Duration), strtotime($res->BanDate))): ?>
-                                    <td><?php echo e(date("d/m/Y g:i:s A", strtotime('+'.str_replace('s', '', $res->Duration), strtotime($res->BanDate)))); ?></td>
-                                    <td>&#10003;</td>
-                                  <?php else: ?>
-                                    <td><?php echo e(date("d/m/Y g:i:s A", strtotime('+'.str_replace('s', '', $res->Duration), strtotime($res->BanDate)))); ?></td>
-                                    <td>&#10006;</td>
-                                  <?php endif; ?>
-                                </tr>
-                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endif; ?>
                               <?php else: ?>
-                                There are currently no banned users.
-                              </tbody>
-                            </table>
+                                Character is already banned.
+                              <?php endif; ?>
+                            <?php else: ?>
+                              Character not found.
+                            <?php endif; ?>
                           <?php endif; ?>
+                          <form method="post">
+                            <div class="form-group mx-sm-3 mb-2">
+                              Character:
+                              <input type="text" class="form-control" name="CharName" placeholder="Character Name"/>
+                              <?php Separator(20) ?>
+                              <textarea class="form-control" name="Reason" cols="50" rows="10" placeholder="Reason/Infraction"></textarea>
+                              <?php Separator(10) ?>
+                              Ban Length:
+                              <select name="Length" class="form-control" style="width:auto;">
+                                <option value="12 hours">12 Hours</option>
+                                <option value="5 days">5 Days</option>
+                                <option value="2 weeks">2 Weeks</option>
+                                <option value="permanent">Permanent</option>
+                              </select>
+                            </div>
+                            <p class="text-center">
+                              <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>
+                            </p>
+                          </form>
                         </div>
                       </div>
                     </div>

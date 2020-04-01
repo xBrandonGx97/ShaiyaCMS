@@ -18,11 +18,14 @@ class Account extends Controller
 
     public function ban()
     {
+        $ban = $this->model(Models\Admin\Account\AccountBan::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'ban' => $ban
         ];
 
         $this->view('pages/ap/account/ban', $data);

@@ -97,6 +97,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/account/unban', [($account), 'unban']);
 
         // POST
+        $r->addRoute('POST', '/account/ban', [($account), 'ban']);
         $r->addRoute('POST', '/account/dpHandout', [($account), 'dpHandout']);
         $r->addRoute('POST', '/account/ipSearch', [($account), 'ipSearch']);
         $r->addRoute('POST', '/account/search', [($account), 'search']);

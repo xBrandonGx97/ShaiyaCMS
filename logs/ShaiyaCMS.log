@@ -6978,3 +6978,329 @@ Stack trace:
 #0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
 #1 {main}
   thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 14:54:30 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 15:06:46 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php on line 27
+[01-Apr-2020 15:06:46 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:06:46 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:06:46 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:06:46 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:06:46 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:06:46 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:06:46 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:06:46 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:06:46 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:06:46 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:06:46 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:06:46 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:08:54 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php on line 27
+[01-Apr-2020 15:08:54 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:08:54 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:08:54 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:08:54 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:08:54 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:08:54 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:08:54 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:08:54 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:08:54 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:08:54 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:08:54 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:08:54 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:09:24 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 15:09:24 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:09:24 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:09:24 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:09:24 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:09:24 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:09:24 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:09:24 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:09:24 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:09:24 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:09:24 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:09:24 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:09:24 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:09:24 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:09:24 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:25
+[01-Apr-2020 15:09:24 America/Chicago] PHP Notice:  Trying to get property 'UserUID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 25
+[01-Apr-2020 15:09:24 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:09:24 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:09:24 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:09:24 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:09:24 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:09:24 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:09:24 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:09:24 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:09:24 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:09:24 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:09:24 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:09:24 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:09:24 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:13:19 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 15:14:09 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 15:14:12 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method Illuminate\Database\QueryException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(Illuminate\Database\QueryException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 15:15:44 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 15:15:44 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:15:44 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:15:44 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:15:44 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:15:44 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:15:44 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:15:44 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:15:44 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:15:44 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:15:44 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:15:44 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:15:44 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:15:44 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:15:44 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:26
+[01-Apr-2020 15:15:44 America/Chicago] PHP Notice:  Trying to get property 'UserUID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:15:44 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:15:44 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:15:44 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:15:44 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:15:44 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:15:44 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:15:44 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:15:44 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:15:44 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:15:44 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:15:44 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:15:44 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:15:44 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:16:57 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to int in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:16:57 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:16:57 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:16:57 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:16:57 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:16:57 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:16:57 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:16:57 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:16:57 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:16:57 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:16:57 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:16:57 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:16:57 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:16:57 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:16:57 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:16:57 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:16:57 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:16:57 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:16:57 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:16:57 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:16:57 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:16:57 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:16:57 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:16:57 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:16:57 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:16:57 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:16:57 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:16:57 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:16:57 America/Chicago] PHP  13. count() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:26
+[01-Apr-2020 15:16:57 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 15:16:57 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:16:57 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:16:57 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:16:57 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:16:57 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:16:57 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:16:57 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:16:57 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:16:57 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:16:57 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:16:57 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:16:57 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:16:57 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:16:57 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:27
+[01-Apr-2020 15:16:57 America/Chicago] PHP Notice:  Trying to get property 'UserUID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 27
+[01-Apr-2020 15:16:57 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:16:57 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:16:57 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:16:57 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:16:57 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:16:57 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:16:57 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:16:57 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:16:57 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:16:57 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:16:57 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:16:57 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:16:57 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:17:49 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to int in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:17:49 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:17:49 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:17:49 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:17:49 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:17:49 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:17:49 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:17:49 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:17:49 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:17:49 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:17:49 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:17:49 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:17:49 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:17:49 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:17:49 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:17:49 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:17:49 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:17:49 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:17:49 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:17:49 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:17:49 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:17:49 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:17:49 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:17:49 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:17:49 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:17:49 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:17:49 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:17:49 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:17:49 America/Chicago] PHP  13. count() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:26
+[01-Apr-2020 15:17:49 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 15:17:49 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:17:49 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:17:49 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:17:49 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:17:49 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:17:49 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:17:49 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:17:49 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:17:49 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:17:49 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:17:49 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:17:49 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:17:49 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:17:49 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:27
+[01-Apr-2020 15:17:49 America/Chicago] PHP Notice:  Trying to get property 'UserUID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 27
+[01-Apr-2020 15:17:49 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:17:49 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:17:49 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:17:49 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:17:49 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:17:49 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:17:49 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:17:49 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:17:49 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:17:49 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:17:49 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:17:49 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:17:49 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:18:13 America/Chicago] PHP Notice:  Object of class Illuminate\Support\Collection could not be converted to int in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:18:13 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:18:13 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:18:13 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:18:13 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:18:13 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:18:13 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:18:13 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:18:13 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:18:13 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:18:13 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:18:13 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:18:13 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:18:13 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:18:13 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 26
+[01-Apr-2020 15:18:13 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:18:13 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:18:13 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:18:13 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:18:13 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:18:13 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:18:13 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:18:13 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:18:13 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:18:13 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:18:13 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:18:13 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:18:13 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:18:13 America/Chicago] PHP  13. count() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:26
+[01-Apr-2020 15:18:53 America/Chicago] PHP Notice:  Undefined offset: 0 in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\support\Collection.php on line 1307
+[01-Apr-2020 15:18:53 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:18:53 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:18:53 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:18:53 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:18:53 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:18:53 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:18:53 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:18:53 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:18:53 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:18:53 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:18:53 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:18:53 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:18:53 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:18:53 America/Chicago] PHP  13. Illuminate\Support\Collection->offsetGet() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php:27
+[01-Apr-2020 15:18:53 America/Chicago] PHP Notice:  Trying to get property 'UserUID' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 27
+[01-Apr-2020 15:18:53 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:18:53 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:18:53 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:18:53 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:18:53 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:18:53 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:18:53 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:18:53 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:18:53 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:18:53 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:18:53 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:18:53 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:18:53 America/Chicago] PHP  12. App\Models\Admin\Account\AccountBan->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php:27
+[01-Apr-2020 15:24:19 America/Chicago] PHP Notice:  Undefined variable: result in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php on line 28
+[01-Apr-2020 15:24:19 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:24:19 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:24:19 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:24:19 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:24:19 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:24:19 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:24:19 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:24:19 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:24:19 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:24:19 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:24:19 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:24:19 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:24:19 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php on line 28
+[01-Apr-2020 15:24:19 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:24:19 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:24:19 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:24:19 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:24:19 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:24:19 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:24:19 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:24:19 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:24:19 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:24:19 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:24:19 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:24:19 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:30:23 America/Chicago] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php on line 30
+[01-Apr-2020 15:30:23 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:30:23 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:30:23 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:30:23 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:30:23 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:31
+[01-Apr-2020 15:30:23 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 15:30:23 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 15:30:23 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 15:30:23 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 15:30:23 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 15:30:23 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 15:30:23 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 15:32:20 America/Chicago] PHP Fatal error:  Cannot use [] for reading in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\AccountBan.php on line 50
+[01-Apr-2020 15:32:20 America/Chicago] PHP Stack trace:
+[01-Apr-2020 15:32:20 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 15:32:20 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 15:32:20 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 15:32:20 America/Chicago] PHP   4. App\Controllers\Admin\Account->model() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:21
+[01-Apr-2020 15:32:20 America/Chicago] PHP   5. spl_autoload_call() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:11
+[01-Apr-2020 15:32:20 America/Chicago] PHP   6. Composer\Autoload\ClassLoader->loadClass() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:11
+[01-Apr-2020 15:32:20 America/Chicago] PHP   7. Composer\Autoload\includeFile() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\composer\ClassLoader.php:322
