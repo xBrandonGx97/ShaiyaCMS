@@ -11,9 +11,9 @@ class Account extends Controller
 {
     public function __construct(Utils\User $user)
     {
-            $this->data = new Utils\Data;
-            $this->user = $user;
-            $this->logSys = new LogSys;
+        $this->data = new Utils\Data;
+        $this->user = $user;
+        $this->logSys = new LogSys;
     }
 
     public function ban()
@@ -73,11 +73,14 @@ class Account extends Controller
 
     public function ipSearch()
     {
+        $ipSearch = $this->model(Models\Admin\Account\IPSearch::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'search' => $ipSearch
         ];
 
         $this->view('pages/ap/account/ipSearch', $data);

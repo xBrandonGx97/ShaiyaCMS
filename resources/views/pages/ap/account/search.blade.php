@@ -13,7 +13,7 @@
           @if($data['user']->isAuthorized())
             {{-- is adm, gm or gma --}}
             @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
-              {{$data['logSys']->createLog('Visited Banned Users Page')}}
+              {{$data['logSys']->createLog('Visited Account Search Page')}}
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">

@@ -1,19 +1,19 @@
-@extends('layouts.ap.app')
-@section('index', 'dashboard')
-@section('title', 'Dashboard')
-@section('zone', 'AP')
-@section('content')
-  @include('partials.ap.nav')
-  @include('partials.ap.header')
+<?php $__env->startSection('index', 'dashboard'); ?>
+<?php $__env->startSection('title', 'Dashboard'); ?>
+<?php $__env->startSection('zone', 'AP'); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('partials.ap.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
       <div class="pcoded-content">
         <div class="pcoded-inner-content">
-          {{-- is logged in and is staff --}}
-          @if($data['user']->isAuthorized())
-            {{-- is adm, gm or gma --}}
-            @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
-              {{$data['logSys']->createLog('Visited Account IP Search Page')}}
+          
+          <?php if($data['user']->isAuthorized()): ?>
+            
+            <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
+              <?php echo e($data['logSys']->createLog('Visited Banned Users Page')); ?>
+
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -23,9 +23,9 @@
                           <h5>Account Search</h5>
                         </div>
                         <div class="card-body">
-                          @if (isset($_POST['submit']))
-                            @if (!empty($data['search']->charName))
-                              @if(count($data['search']->getCharIp()) > 0)
+                          <?php if(isset($_POST['submit'])): ?>
+                            <?php if(!empty($data['search']->charName)): ?>
+                              <?php if(count($data['search']->getCharIp()) > 0): ?>
                                 <form method="post">
                                   <div class="table-responsive">
                                     <table class="table table-dark" id="dataTable" width="100%" cellspacing="0">
@@ -38,18 +38,18 @@
                                         </tr>
                                       </thead>
                                       <tbody>
-                                        @if(count($data['search']->getUsersByIp()) > 0)
-                                          @foreach($data['search']->getUsersByIp() as $fet)
+                                        <?php if(count($data['search']->getUsersByIp()) > 0): ?>
+                                          <?php $__currentLoopData = $data['search']->getUsersByIp(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fet): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
-                                              <td>{{$fet->UserID}}</td>
-                                              <td>{{$fet->UserUID}}</td>
+                                              <td><?php echo e($fet->UserID); ?></td>
+                                              <td><?php echo e($fet->UserUID); ?></td>
                                               <td>
-                                                <input type="radio" name="CharID" value="{{$fet->UserUID}}">
+                                                <input type="radio" name="CharID" value="<?php echo e($fet->UserUID); ?>">
                                               </td>
-                                              <td>{{$fet->UserIp}}</td>
+                                              <td><?php echo e($fet->UserIp); ?></td>
                                             </tr>
-                                          @endforeach
-                                        @endif
+                                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
                                       </tbody>
                                     </table>
                                   </div>
@@ -57,15 +57,15 @@
                                     <button type="submit" class="btn btn-sm btn-primary" name="submit2">Submit</button>
                                   </p>
                                 </form>
-                              @else
+                              <?php else: ?>
                                 No accounts found.
-                              @endif
-                            @else
+                              <?php endif; ?>
+                            <?php else: ?>
                               Character name can not be empty.
-                            @endif
-                          @elseif (isset($_POST['submit2']))
-                            @if (!empty($data['search']->charID))
-                              @if(count($data['search']->getCharFromIpSearch()) > 0)
+                            <?php endif; ?>
+                          <?php elseif(isset($_POST['submit2'])): ?>
+                            <?php if(!empty($data['search']->charID)): ?>
+                              <?php if(count($data['search']->getCharFromIpSearch()) > 0): ?>
                                 <form method="post">
                                   <div class="table-responsive">
                                     <table class="table table-dark">
@@ -76,23 +76,23 @@
                                         </tr>
                                       </thead>
                                       <tbody>
-                                      @foreach($data['search']->getCharFromIpSearch() as $data)
+                                      <?php $__currentLoopData = $data['search']->getCharFromIpSearch(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                          <td>{{$data->CharName}}</td>
-                                          <td>{{$data->Slot}}</td>
+                                          <td><?php echo e($data->CharName); ?></td>
+                                          <td><?php echo e($data->Slot); ?></td>
                                         </tr>
-                                      @endforeach
+                                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                       </tbody>
                                     </table>
                                   </div>
                                 </form>
-                              @else
+                              <?php else: ?>
                                 No characters found.
-                              @endif
-                            @else
+                              <?php endif; ?>
+                            <?php else: ?>
                               Character id can not be empty.
-                            @endif
-                          @else
+                            <?php endif; ?>
+                          <?php else: ?>
                             <form method="post">
                               <div class="form-group mx-sm-3 mb-2">
                                 <input type="text" name="CharName" placeholder="Character Name" class="form-control">
@@ -101,19 +101,22 @@
                                 <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>
                               </p>
                             </form>
-                          @endif
+                          <?php endif; ?>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            @endif
-          @else
-            {{redirect('/admin/auth/login')}}
-          @endif
+            <?php endif; ?>
+          <?php else: ?>
+            <?php echo e(redirect('/admin/auth/login')); ?>
+
+          <?php endif; ?>
         </div>
       </div>
     </div>
   </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/ap/account/ipSearch.blade.php ENDPATH**/ ?>

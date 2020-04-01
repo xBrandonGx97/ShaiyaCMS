@@ -98,6 +98,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         // POST
         $r->addRoute('POST', '/account/dpHandout', [($account), 'dpHandout']);
+        $r->addRoute('POST', '/account/ipSearch', [($account), 'ipSearch']);
         $r->addRoute('POST', '/account/search', [($account), 'search']);
 
         // Player

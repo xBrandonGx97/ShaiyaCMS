@@ -2,12 +2,12 @@
   <div id="content_card" class="card custom-card">
     <div class="card-header cstm-card-head tac">
       <i class="fas fa-clock"></i>
-      Admin Panel Action Log
+      Admin Panel Action Logs
     </div>
     <div class="card-block content_bg content pContent">
-      <div class="card-text">
+      <?php if(count($data['panels']['actionLogs']) > 0): ?>
         <div class="table-responsive">
-          <table class="table table-striped table-dark">
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th>Action</th>
@@ -29,9 +29,11 @@
             </tbody>
           </table>
         </div>
-      </div>
+      <?php else: ?>
+        <p class="text-center">There are currently no access logs.</p>
+      <?php endif; ?>
       <div class="text-center">
-        <a class="btn btn-sm btn-outline-info b_i f14" href="/admin/accesslogs">View All Activity</a>
+        <a class="btn btn-sm btn-outline-info b_i f14" href="/admin/accessLogs">View All Activity</a>
       </div>
     </div>
   </div>

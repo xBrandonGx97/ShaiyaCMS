@@ -2,7 +2,7 @@
   <div class="col-md-12 m_t_10">
     <div id="content_card" class="card custom-card">
       <div class="card-header cstm-card-head tac">New Users</div>
-      <table class="table table-striped table-dark" id="NewPlayers">
+      <table class="table table-striped" id="NewPlayers">
         <thead>
           <tr>
             <th>Faction</th>

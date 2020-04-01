@@ -6266,3 +6266,271 @@ Stack trace:
 #0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
 #1 {main}
   thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 10:00:13 America/Chicago] PHP Notice:  Undefined index: banned in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\7359185c6b8e720a537af8d2bc6a7e1ecc74ceac.php on line 26
+[01-Apr-2020 10:00:13 America/Chicago] PHP Stack trace:
+[01-Apr-2020 10:00:13 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 10:00:13 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 10:00:13 America/Chicago] PHP   3. App\Controllers\Admin\Account->ban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 10:00:13 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:28
+[01-Apr-2020 10:00:13 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 10:00:13 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 10:00:13 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 10:00:13 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 10:00:13 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 10:00:13 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 10:00:13 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 10:01:57 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 10:02:42 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 10:03:44 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 10:55:58 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 11:42:28 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 11:43:24 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 11:44:08 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 12:23:39 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\Account\IPSearch::$userID in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\IPSearch.php on line 21
+[01-Apr-2020 12:23:39 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:23:39 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:23:39 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:23:39 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:23:39 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:23:39 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:23:39 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:23:39 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:23:39 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:23:39 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:23:39 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:23:39 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:23:39 America/Chicago] PHP  12. App\Models\Admin\Account\IPSearch->getChar() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php:28
+[01-Apr-2020 12:32:03 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\Account\IPSearch::$getChar in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\IPSearch.php on line 30
+[01-Apr-2020 12:32:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:32:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:32:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:32:03 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:32:03 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:32:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:32:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:32:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:32:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:32:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:32:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:32:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:32:03 America/Chicago] PHP  12. App\Models\Admin\Account\IPSearch->getUsersByIp() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php:43
+[01-Apr-2020 12:32:03 America/Chicago] PHP Notice:  Trying to get property 'UserIp' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\IPSearch.php on line 30
+[01-Apr-2020 12:32:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:32:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:32:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:32:03 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:32:03 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:32:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:32:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:32:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:32:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:32:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:32:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:32:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:32:03 America/Chicago] PHP  12. App\Models\Admin\Account\IPSearch->getUsersByIp() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php:43
+[01-Apr-2020 12:32:03 America/Chicago] PHP Notice:  Undefined property: App\Models\Admin\Account\IPSearch::$getChar in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\IPSearch.php on line 30
+[01-Apr-2020 12:32:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:32:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:32:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:32:03 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:32:03 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:32:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:32:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:32:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:32:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:32:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:32:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:32:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:32:03 America/Chicago] PHP  12. App\Models\Admin\Account\IPSearch->getUsersByIp() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php:44
+[01-Apr-2020 12:32:03 America/Chicago] PHP Notice:  Trying to get property 'UserIp' of non-object in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\models\Admin\Account\IPSearch.php on line 30
+[01-Apr-2020 12:32:03 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:32:03 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:32:03 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:32:03 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:32:03 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:32:03 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:32:03 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:32:03 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:32:03 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:32:03 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:32:03 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:32:03 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:32:03 America/Chicago] PHP  12. App\Models\Admin\Account\IPSearch->getUsersByIp() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php:44
+[01-Apr-2020 12:37:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$UserIp in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php on line 50
+[01-Apr-2020 12:37:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:37:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:37:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:37:14 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:37:14 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:37:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:37:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:37:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:37:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:37:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:37:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:37:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:37:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$UserIp in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php on line 50
+[01-Apr-2020 12:37:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:37:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:37:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:37:14 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:37:14 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:37:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:37:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:37:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:37:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:37:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:37:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:37:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:37:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$UserIp in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php on line 50
+[01-Apr-2020 12:37:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:37:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:37:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:37:14 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:37:14 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:37:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:37:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:37:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:37:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:37:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:37:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:37:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:37:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$UserIp in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php on line 50
+[01-Apr-2020 12:37:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:37:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:37:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:37:14 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:37:14 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:37:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:37:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:37:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:37:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:37:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:37:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:37:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:37:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$UserIp in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php on line 50
+[01-Apr-2020 12:37:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:37:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:37:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:37:14 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:37:14 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:37:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:37:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:37:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:37:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:37:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:37:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:37:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:37:14 America/Chicago] PHP Notice:  Undefined property: stdClass::$UserIp in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\41f0131ff5ef95c1a3b8b27150f9e613edc64da0.php on line 50
+[01-Apr-2020 12:37:14 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:37:14 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:37:14 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:37:14 America/Chicago] PHP   3. App\Controllers\Admin\Account->ipSearch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 12:37:14 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:86
+[01-Apr-2020 12:37:14 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 12:37:14 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 12:37:14 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 12:37:14 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 12:37:14 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 12:37:14 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 12:37:14 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 12:43:15 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 12:43:15 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Utils\Session.php:21) in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\helpers\redirect.php on line 8
+[01-Apr-2020 12:43:15 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:43:15 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:43:15 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:43:15 America/Chicago] PHP   3. abort() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:102
+[01-Apr-2020 12:43:15 America/Chicago] PHP   4. redirect() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\helpers\abort.php:21
+[01-Apr-2020 12:43:15 America/Chicago] PHP   5. header() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\helpers\redirect.php:8
+[01-Apr-2020 12:43:15 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Utils\Session.php:21) in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\helpers\redirect.php on line 8
+[01-Apr-2020 12:43:15 America/Chicago] PHP Stack trace:
+[01-Apr-2020 12:43:15 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 12:43:15 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 12:43:15 America/Chicago] PHP   3. abort() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:102
+[01-Apr-2020 12:43:15 America/Chicago] PHP   4. redirect() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\helpers\abort.php:21
+[01-Apr-2020 12:43:15 America/Chicago] PHP   5. header() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\helpers\redirect.php:8
+[01-Apr-2020 12:50:38 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 12:50:39 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:04:58 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 13:08:08 America/Chicago] PHP Notice:  Undefined index: accessLogs in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\07dc1d134eed0b04a9360345199c99f9205f8b55.php on line 8
+[01-Apr-2020 13:08:08 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:08:08 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:08:08 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:08:08 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:08:08 America/Chicago] PHP   4. App\Controllers\Admin\Admin->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:42
+[01-Apr-2020 13:08:08 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 13:08:08 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 13:08:08 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 13:08:08 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 13:08:08 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 13:08:08 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 13:08:08 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 13:08:08 America/Chicago] PHP  12. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\bbb327320bc46c391f9c5b1e3182c3739f7150b1.php:25
+[01-Apr-2020 13:08:08 America/Chicago] PHP  13. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 13:08:08 America/Chicago] PHP  14. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 13:08:08 America/Chicago] PHP  15. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 13:08:08 America/Chicago] PHP  16. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 13:08:08 America/Chicago] PHP  17. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 13:08:17 America/Chicago] PHP Notice:  Undefined index: accessLogs in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\07dc1d134eed0b04a9360345199c99f9205f8b55.php on line 8
+[01-Apr-2020 13:08:17 America/Chicago] PHP Stack trace:
+[01-Apr-2020 13:08:17 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 13:08:17 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 13:08:17 America/Chicago] PHP   3. App\Controllers\Admin\Admin->index() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 13:08:17 America/Chicago] PHP   4. App\Controllers\Admin\Admin->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Admin.php:42
+[01-Apr-2020 13:08:17 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 13:08:17 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 13:08:17 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 13:08:17 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 13:08:17 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 13:08:17 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 13:08:17 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 13:08:17 America/Chicago] PHP  12. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\bbb327320bc46c391f9c5b1e3182c3739f7150b1.php:25
+[01-Apr-2020 13:08:17 America/Chicago] PHP  13. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 13:08:17 America/Chicago] PHP  14. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 13:08:17 America/Chicago] PHP  15. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 13:08:17 America/Chicago] PHP  16. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 13:08:17 America/Chicago] PHP  17. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41

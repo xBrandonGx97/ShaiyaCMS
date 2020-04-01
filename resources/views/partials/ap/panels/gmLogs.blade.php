@@ -4,36 +4,38 @@
       <i class="fas fa-clock"></i>
       GM Command Logs
     </div>
-    <div class="table-responsive">
-      <table class="table table-striped table-dark">
-        <thead>
-          <tr>
-            <th>CharName</th>
-            <th>Command</th>
-            <th>Command Result</th>
-            <th>Player Affected</th>
-            <th>Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($data['panels']['gmLogs'] as $log)
+    <div class="card-block content_bg content pContent">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td>{{$log->CharName}}</td>
-              <td>{{$log->Command}}</td>
-              <td>{{$log->CommandResult}}</td>
-              <td>{{$log->PlayerAffected}}</td>
-              <td>
-                <span class="badge badge-pill badge-secondary">
-                  {{date('F d, Y', strtotime($log->ActionTime))}}
-                </span>
-              </td>
+              <th>CharName</th>
+              <th>Command</th>
+              <th>Command Result</th>
+              <th>Player Affected</th>
+              <th>Time</th>
             </tr>
-          @endforeach
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            @foreach ($data['panels']['gmLogs'] as $log)
+              <tr>
+                <td>{{$log->CharName}}</td>
+                <td>{{$log->Command}}</td>
+                <td>{{$log->CommandResult}}</td>
+                <td>{{$log->PlayerAffected}}</td>
+                <td>
+                  <span class="badge badge-pill badge-secondary">
+                    {{date('F d, Y', strtotime($log->ActionTime))}}
+                  </span>
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center">
+        <a class="btn btn-sm btn-outline-info b_i f14" href="/admin/commandLogs">View All Activity</a>
+      </div>
     </div>
-  </div>
-  <div class="text-center">
-    <a class="btn btn-sm btn-outline-info b_i f14" href="/admin/accesslogs">View All Activity</a>
   </div>
 </div>

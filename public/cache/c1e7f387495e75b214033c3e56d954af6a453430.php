@@ -22,19 +22,19 @@
                         <div class="card-header">
                           <h5>Admin Panel Access Logs</h5>
                         </div>
-                        <div class="card-body">
-                          <table class="table table-striped" id="AccessLogs">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>UserID</th>
-                                <th>UserIP</th>
-                                <th>Action</th>
-                                <th>Action Time</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <?php if(count($data['accessLogs']->getAccessLogs()) > 0): ?>
+                        <div class="card-body table-responsive">
+                          <?php if(count($data['accessLogs']->getAccessLogs()) > 0): ?>
+                            <table class="table table-striped" id="AccessLogs">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>UserID</th>
+                                  <th>UserIP</th>
+                                  <th>Action</th>
+                                  <th>Action Time</th>
+                                </tr>
+                              </thead>
+                              <tbody>
                                 <?php $__currentLoopData = $data['accessLogs']->getAccessLogs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $logs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                   <tr>
                                     <td><?php echo e($data['accessLogs']->count); ?></td>
@@ -47,9 +47,11 @@
                                     $data['accessLogs']->count++
                                   ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                              <?php endif; ?>
-                            </tbody>
-                          </table>
+                              </tbody>
+                            </table>
+                          <?php else: ?>
+                            <p class="text-center">There are currently no access logs.</p>
+                          <?php endif; ?>
                         </div>
                       </div>
                     </div>

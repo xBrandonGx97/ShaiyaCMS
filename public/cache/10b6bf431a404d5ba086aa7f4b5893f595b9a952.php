@@ -22,7 +22,7 @@
                         <div class="card-header">
                           <h5>GM Commands Log</h5>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                           <table class="table table-striped" id="GmLogs">
                             <thead>
                               <tr>

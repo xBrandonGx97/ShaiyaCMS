@@ -36,12 +36,14 @@
                           @endif
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
-                              <input type="text" name="UserID" placeholder="Char Name" class="form-control tac b_i"/>
+                              <input type="text" name="UserID" placeholder="Char Name" class="form-control"/>
                             </div>
                             <div class="form-group mx-sm-3 mb-2">
-                              <input type="text" name="DP" placeholder="DP Amount" class="form-control tac b_i" style="margin-left:5px !important"/>
+                              <input type="text" name="DP" placeholder="DP Amount" class="form-control"/>
                             </div>
-                            <input type="submit" class="btn btn-sm btn-primary m_auto" style="margin-left:5px !important;" value="Submit" name="submit" />
+                            <p class="text-center">
+                              <button type="submit" class="btn btn-sm btn-primary m_auto" name="submit">Submit</button>
+                            </p>
                           </form>
                         </div>
                       </div>
