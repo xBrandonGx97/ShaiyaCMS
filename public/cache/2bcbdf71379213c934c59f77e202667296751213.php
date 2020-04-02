@@ -5,7 +5,7 @@
       <div class="b-bg">
         <i class="feather icon-trending-up"></i>
       </div>
-      <span class="b-title">Diverge</span>
+      <span class="b-title">Admin Panel</span>
     </a>
   </div>
   <a class="mobile-menu" id="mobile-header" href="javascript:">
@@ -19,11 +19,20 @@
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="dropdown-toggle" href="javascript:" data-toggle="dropdown">Dropdown</a>
+        <a class="dropdown-toggle" href="<?php echo e(isset($_GET['lang']) ? '?lang='.LANG : '?lang=en'); ?>" data-toggle="dropdown"><?php echo e(lang(LANG)); ?></a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="javascript:">Action</a></li>
-          <li><a class="dropdown-item" href="javascript:">Another action</a></li>
-          <li><a class="dropdown-item" href="javascript:">Something else here</a></li>
+          <?php
+            /* $is_admin = ($user['permissions'] == 'admin' ? true : false); */
+          ?>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=en' : '?lang=en'); ?>">English</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=fr' : '?lang=fr'); ?>">French</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=tr' : '?lang=tr'); ?>">Turkish</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=es' : '?lang=es'); ?>">Spanish</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=pt' : '?lang=pt'); ?>">Portugese</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=it' : '?lang=it'); ?>">Italian</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=nl' : '?lang=nl'); ?>">Dutch</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=de' : '?lang=de'); ?>">German</a></li>
+          <li><a class="dropdown-item" href="<?php echo e(isset($_GET['lang']) ? '?lang=fil' : '?lang=fil'); ?>">Filipino</a></li>
         </ul>
       </li>
       <li class="nav-item">
