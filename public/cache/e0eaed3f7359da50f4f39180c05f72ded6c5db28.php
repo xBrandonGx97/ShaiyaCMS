@@ -12,7 +12,7 @@
           <?php if($data['user']->isAuthorized()): ?>
             
             <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-              <?php echo e($data['logSys']->createLog('Visited Banned Users Page')); ?>
+              <?php echo e($data['logSys']->createLog('Visited Account Search Page')); ?>
 
               <div class="main-body">
                 <div class="page-wrapper">

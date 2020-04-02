@@ -106,11 +106,14 @@ class Account extends Controller
 
     public function unban()
     {
+        $unBan = $this->model(Models\Admin\Account\AccountUnBan::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'unban' => $unBan
         ];
 
         $this->view('pages/ap/account/unban', $data);

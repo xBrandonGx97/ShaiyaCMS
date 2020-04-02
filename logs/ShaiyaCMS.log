@@ -7621,3 +7621,21 @@ Stack trace:
 #0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
 #1 {main}
   thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98
+[01-Apr-2020 18:35:55 America/Chicago] PHP Notice:  Undefined index: ban in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\cache\a528ea090e0df2b4e64d3a257c5b8a5db8cd223e.php on line 27
+[01-Apr-2020 18:35:55 America/Chicago] PHP Stack trace:
+[01-Apr-2020 18:35:55 America/Chicago] PHP   1. {main}() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:0
+[01-Apr-2020 18:35:55 America/Chicago] PHP   2. App\Bootstrap->dispatch() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\public\index.php:4
+[01-Apr-2020 18:35:55 America/Chicago] PHP   3. App\Controllers\Admin\Account->unban() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\bootstrap.php:111
+[01-Apr-2020 18:35:55 America/Chicago] PHP   4. App\Controllers\Admin\Account->view() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\controllers\Admin\Account.php:119
+[01-Apr-2020 18:35:55 America/Chicago] PHP   5. Framework\Blade\BladeController->loadView() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\core\CoreController.php:21
+[01-Apr-2020 18:35:55 America/Chicago] PHP   6. Illuminate\View\View->render() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\framework\blade\BladeController.php:64
+[01-Apr-2020 18:35:55 America/Chicago] PHP   7. Illuminate\View\View->renderContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:91
+[01-Apr-2020 18:35:55 America/Chicago] PHP   8. Illuminate\View\View->getContents() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:122
+[01-Apr-2020 18:35:55 America/Chicago] PHP   9. Illuminate\View\Engines\CompilerEngine->get() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\View.php:139
+[01-Apr-2020 18:35:55 America/Chicago] PHP  10. Illuminate\View\Engines\CompilerEngine->evaluatePath() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\CompilerEngine.php:57
+[01-Apr-2020 18:35:55 America/Chicago] PHP  11. include() C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\vendor\illuminate\view\Engines\PhpEngine.php:41
+[01-Apr-2020 19:46:57 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method InvalidArgumentException::getSeverity() in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php:98
+Stack trace:
+#0 [internal function]: Classes\Exception\Exception->handler(Object(InvalidArgumentException))
+#1 {main}
+  thrown in C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\app\classes\Exception\Exception.php on line 98

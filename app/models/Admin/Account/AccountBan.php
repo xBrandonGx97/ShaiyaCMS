@@ -34,6 +34,16 @@ class AccountBan
 
     public function checkIfBanned()
     {
+        $banned = DB::table(table('shUserData'))
+            ->select('UserID')
+            ->where('UserUID', $this->getUserUID()[0]->UserUID)
+            ->whereIn('Status', [-1, -5])
+            ->get();
+        return $banned;
+    }
+
+    public function checkIfBannedLog()
+    {
         $banned = DB::table(table('banned'))
           ->select()
           ->where('CharName', $this->charName)
