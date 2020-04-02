@@ -11,9 +11,9 @@ class Misc extends Controller
 {
     public function __construct(Utils\User $user)
     {
-            $this->data = new Utils\Data;
-            $this->user = $user;
-            $this->logSys = new LogSys;
+        $this->data = new Utils\Data;
+        $this->user = $user;
+        $this->logSys = new LogSys;
     }
 
     public function disbandGuild()
@@ -42,11 +42,14 @@ class Misc extends Controller
 
     public function guildNameChange()
     {
+        $guildNameChange = $this->model(Models\Admin\Misc\GuildNameChange::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'guild' => $guildNameChange
         ];
 
         $this->view('pages/ap/misc/guildNameChange', $data);
