@@ -30,11 +30,14 @@ class Misc extends Controller
 
     public function guildLeaderChange()
     {
+        $guildLeaderChange = $this->model(Models\Admin\Misc\GuildLeaderChange::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'guild' => $guildLeaderChange
         ];
 
         $this->view('pages/ap/misc/guildLeaderChange', $data);
