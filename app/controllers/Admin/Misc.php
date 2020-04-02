@@ -66,11 +66,14 @@ class Misc extends Controller
 
     public function itemList()
     {
+        $itemList = $this->model(Models\Admin\Misc\ItemList::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'items' => $itemList
         ];
 
         $this->view('pages/ap/misc/itemList', $data);
@@ -78,11 +81,14 @@ class Misc extends Controller
 
     public function itemSearch()
     {
+        $items = $this->model(Models\Admin\Misc\ItemSearch::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'items' => $items
         ];
 
         $this->view('pages/ap/misc/itemSearch', $data);
@@ -90,11 +96,14 @@ class Misc extends Controller
 
     public function mobList()
     {
+        $mobList = $this->model(Models\Admin\Misc\MobList::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'mobs' => $mobList
         ];
 
         $this->view('pages/ap/misc/mobList', $data);

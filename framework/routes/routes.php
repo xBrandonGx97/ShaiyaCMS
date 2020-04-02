@@ -132,6 +132,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/misc/statPadders', [($misc), 'statPadders']);
         $r->addRoute('GET', '/misc/worldChat', [($misc), 'worldChat']);
 
+        // POST
+        $r->addRoute('POST', '/misc/itemSearch', [($misc), 'itemSearch']);
+
         // SExtended
         $r->addRoute('GET', '/sExtended/sendNotice', [($sExtended), 'sendNotice']);
         $r->addRoute('GET', '/sExtended/sendPlayerNotice', [($sExtended), 'sendPlayerNotice']);

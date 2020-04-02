@@ -3,14 +3,15 @@
 namespace App\Models\Admin\Misc;
 
 use Illuminate\Database\Capsule\Manager as DB;
-use Classes\Sys\LogSys;
-use Classes\Utils as Utils;
 
 class ItemList
 {
-    public function __construct()
+    public function getItems()
     {
-        $this->data = new Utils\Data;
-        $this->logSys = new LogSys;
+        $items = DB::table(table('shItems'))
+            ->select()
+            ->where('ItemName', 'NOT LIKE', '%?%')
+            ->get();
+        return $items;
     }
 }

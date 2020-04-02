@@ -20,10 +20,33 @@
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Live In-Game Chat</h5>
+                          <h5>Mob List</h5>
                         </div>
                         <div class="card-body">
-                          Players Online
+                          <table class="table table-sm table-striped" id="MobList">
+                            <thead>
+                              <tr>
+                                <th>MobID</th>
+                                <th>Mob Name</th>
+                                <th>Mob Ele</th>
+                                <th>Mob Lvl</th>
+                                <th>Mob HP</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php if(count($data['mobs']->getMobs()) > 0): ?>
+                                <?php $__currentLoopData = $data['mobs']->getMobs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                  <tr>
+                                    <td><?php echo e($res->MobID); ?></td>
+                                    <td><?php echo e($res->MobName); ?></td>
+                                    <td><img src="/resources/themes/core/images/dropfinder/ele_<?php echo e($res->Attrib); ?>.png"></td>
+                                    <td><?php echo e($res->Level); ?></td>
+                                    <td><?php echo e($res->HP); ?></td>
+                                  </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              <?php endif; ?>
+                            </tbody>
+                          </table>
                         </div>
                       </div>
                     </div>
@@ -39,6 +62,15 @@
       </div>
     </div>
   </div>
+  <script>
+	$(document).ready(function(){
+	  $('#MobList').dataTable({
+		  "info": false,
+			"bLengthChange": false,
+			"pageLength": 10,
+    });
+	});
+</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/ap/misc/mobList.blade.php ENDPATH**/ ?>
