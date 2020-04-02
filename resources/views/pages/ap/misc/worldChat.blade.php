@@ -13,7 +13,7 @@
           @if($data['user']->isAuthorized())
             {{-- is adm, gm or gma --}}
             @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
-              {{$data['logSys']->createLog('Visited Global Chat Log')}}
+              {{$data['logSys']->createLog('Visited World Chat Log')}}
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -52,7 +52,7 @@
                                       <tr style="background-color:rgba(92,203,255,0.30)">
                                         <td>{{$data['user']->getMap((int)$res->MapID)}}</td>
                                         <td>
-                                          <a href="">{{$res->CharName}}</a>
+                                          <a href="#">{{$res->CharName}}</a>
                                         </td>
                                         <td class="{{$data['data']->chatColor((int)$res->ChatType)}}">
                                           @if (!empty($res->TargetName))
@@ -69,7 +69,7 @@
                                       <tr style="background-color:rgba(255,92,139,0.30)">
                                         <td>{{$data['user']->getMap((int)$res->MapID)}}</td>
                                         <td>
-                                          <a href="">{{$res->CharName}}</a>
+                                          <a href="#">{{$res->CharName}}</a>
                                         </td>
                                         <td>&nbsp;</td>
                                         <td class="{{$data['data']->chatColor((int)$res->ChatType)}}">

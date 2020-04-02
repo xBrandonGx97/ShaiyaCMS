@@ -102,11 +102,14 @@ class Misc extends Controller
 
     public function playersOnline()
     {
+        $playersOnline = $this->model(Models\Admin\Misc\PlayersOnline::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'players' => $playersOnline
         ];
 
         $this->view('pages/ap/misc/playersOnline', $data);

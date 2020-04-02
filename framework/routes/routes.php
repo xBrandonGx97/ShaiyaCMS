@@ -121,15 +121,15 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/player/unJail', [($admin), 'index']);
 
         // Misc
-        $r->addRoute('GET', '/misc/disbandGuild', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/guildLeaderChange', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/guildNameChange', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/guildSearch', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/itemList', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/itemSearch', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/mobList', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/playersOnline', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/statPadders', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/disbandGuild', [($misc), 'disbandGuild']);
+        $r->addRoute('GET', '/misc/guildLeaderChange', [($misc), 'guildLeaderChange']);
+        $r->addRoute('GET', '/misc/guildNameChange', [($misc), 'guildNameChange']);
+        $r->addRoute('GET', '/misc/guildSearch', [($misc), 'guildSearch']);
+        $r->addRoute('GET', '/misc/itemList', [($misc), 'itemList']);
+        $r->addRoute('GET', '/misc/itemSearch', [($misc), 'itemSearch']);
+        $r->addRoute('GET', '/misc/mobList', [($misc), 'mobList']);
+        $r->addRoute('GET', '/misc/playersOnline', [($misc), 'playersOnline']);
+        $r->addRoute('GET', '/misc/statPadders', [($misc), 'statPadders']);
         $r->addRoute('GET', '/misc/worldChat', [($misc), 'worldChat']);
 
         // SExtended

@@ -8,11 +8,6 @@ use Classes\Utils as Utils;
 
 class WorldChat
 {
-    public function __construct()
-    {
-        $this->data = new Utils\Data;
-        $this->logSys = new LogSys;
-    }
 
     public function getTimer()
     {

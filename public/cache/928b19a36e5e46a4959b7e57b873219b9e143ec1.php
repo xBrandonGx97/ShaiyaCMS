@@ -12,7 +12,7 @@
           <?php if($data['user']->isAuthorized()): ?>
             
             <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-              <?php echo e($data['logSys']->createLog('Visited Global Chat Log')); ?>
+              <?php echo e($data['logSys']->createLog('Visited World Chat Log')); ?>
 
               <div class="main-body">
                 <div class="page-wrapper">
@@ -52,7 +52,7 @@
                                       <tr style="background-color:rgba(92,203,255,0.30)">
                                         <td><?php echo e($data['user']->getMap((int)$res->MapID)); ?></td>
                                         <td>
-                                          <a href=""><?php echo e($res->CharName); ?></a>
+                                          <a href="#"><?php echo e($res->CharName); ?></a>
                                         </td>
                                         <td class="<?php echo e($data['data']->chatColor((int)$res->ChatType)); ?>">
                                           <?php if(!empty($res->TargetName)): ?>
@@ -72,7 +72,7 @@
                                       <tr style="background-color:rgba(255,92,139,0.30)">
                                         <td><?php echo e($data['user']->getMap((int)$res->MapID)); ?></td>
                                         <td>
-                                          <a href=""><?php echo e($res->CharName); ?></a>
+                                          <a href="#"><?php echo e($res->CharName); ?></a>
                                         </td>
                                         <td>&nbsp;</td>
                                         <td class="<?php echo e($data['data']->chatColor((int)$res->ChatType)); ?>">
