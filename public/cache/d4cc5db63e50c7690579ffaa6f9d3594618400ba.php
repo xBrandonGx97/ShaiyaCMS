@@ -6,7 +6,7 @@
     </div>
     <div class="card-block content_bg content pContent">
       <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-striped" id="gmLogs">
           <thead>
             <tr>
               <th>CharName</th>
@@ -40,4 +40,9 @@
     </div>
   </div>
 </div>
+<script>
+setInterval(function(){
+  $("#gmLogs").load(window.location.href + " #gmLogs" )
+}, 60000);
+</script>
 <?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/partials/ap/panels/gmLogs.blade.php ENDPATH**/ ?>

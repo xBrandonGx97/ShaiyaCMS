@@ -7,7 +7,7 @@
     <div class="card-block content_bg content pContent">
       @if(count($data['panels']['actionLogs']) > 0)
         <div class="table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped" id="actionLogs">
             <thead>
               <tr>
                 <th>Action</th>
@@ -37,3 +37,8 @@
     </div>
   </div>
 </div>
+<script>
+setInterval(function(){
+  $("#actionLogs").load(window.location.href + " #actionLogs" )
+}, 60000);
+</script>

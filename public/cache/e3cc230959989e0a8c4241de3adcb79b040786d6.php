@@ -4,7 +4,7 @@
       <h6 class="mb-4">Online (Live)</h6>
       <div class="row d-flex align-items-center">
         <div class="col-9">
-          <h3 class="f-w-300 d-flex align-items-center m-b-0">
+          <h3 class="f-w-300 d-flex align-items-center m-b-0" id="onlineCurrent">
             <i class="fas fa-fw fa-globe text-c-green f-30 m-r-10"></i>
             <?php echo e($data['panels']['onlineCurrent']); ?>
 
@@ -14,4 +14,9 @@
     </div>
   </div>
 </div>
+<script>
+setInterval(function(){
+  $("#onlineCurrent").load(window.location.href + " #onlineCurrent" )
+}, 60000);
+</script>
 <?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/partials/ap/panels/onlineCurrent.blade.php ENDPATH**/ ?>
