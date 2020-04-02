@@ -76,6 +76,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $admin = new App\Controllers\Admin\Admin($userClass);
         $account = new App\Controllers\Admin\Account($userClass);
+        $player = new App\Controllers\Admin\Player($userClass);
         $misc = new App\Controllers\Admin\Misc($userClass);
         $sExtended = new App\Controllers\Admin\SExtended($userClass);
         $auth = new App\Controllers\Admin\Auth($userClass);
@@ -109,16 +110,19 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('POST', '/account/unban', [($account), 'unban']);
 
         // Player
-        $r->addRoute('GET', '/player/chatSearch', [($admin), 'index']);
-        $r->addRoute('GET', '/player/edit', [($admin), 'index']);
-        $r->addRoute('GET', '/player/editWhItems', [($admin), 'index']);
-        $r->addRoute('GET', '/player/deleteWhItems', [($admin), 'index']);
-        $r->addRoute('GET', '/player/itemDelete', [($admin), 'index']);
-        $r->addRoute('GET', '/player/itemEdit', [($admin), 'index']);
-        $r->addRoute('GET', '/player/jail', [($admin), 'index']);
-        $r->addRoute('GET', '/player/linkedGear', [($admin), 'index']);
-        $r->addRoute('GET', '/player/restore', [($admin), 'index']);
-        $r->addRoute('GET', '/player/unJail', [($admin), 'index']);
+        $r->addRoute('GET', '/player/chatSearch', [($player), 'chatSearch']);
+        $r->addRoute('GET', '/player/edit', [($player), 'edit']);
+        $r->addRoute('GET', '/player/editWhItems', [($player), 'editWhItems']);
+        $r->addRoute('GET', '/player/deleteWhItems', [($player), 'deleteWhItems']);
+        $r->addRoute('GET', '/player/itemDelete', [($player), 'itemDelete']);
+        $r->addRoute('GET', '/player/itemEdit', [($player), 'itemEdit']);
+        $r->addRoute('GET', '/player/jail', [($player), 'jail']);
+        $r->addRoute('GET', '/player/linkedGear', [($player), 'linkedGear']);
+        $r->addRoute('GET', '/player/restore', [($player), 'restore']);
+        $r->addRoute('GET', '/player/unJail', [($player), 'unJail']);
+
+        // POST
+        $r->addRoute('POST', '/player/jail', [($admin), 'index']);
 
         // Misc
         $r->addRoute('GET', '/misc/disbandGuild', [($misc), 'disbandGuild']);

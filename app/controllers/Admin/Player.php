@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use Framework\Core\CoreController as Controller;
+use App\Models as Models;
 use Classes\Sys\LogSys;
 use Classes\Utils as Utils;
 
@@ -88,11 +89,14 @@ class Player extends Controller
 
     public function jail()
     {
+        $jail = $this->model(Models\Admin\Player\Jail::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'jail' => $jail
         ];
 
         $this->view('pages/ap/player/jail', $data);
