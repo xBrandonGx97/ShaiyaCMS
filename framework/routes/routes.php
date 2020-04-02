@@ -76,6 +76,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $admin = new App\Controllers\Admin\Admin($userClass);
         $account = new App\Controllers\Admin\Account($userClass);
+        $misc = new App\Controllers\Admin\Misc($userClass);
         $sExtended = new App\Controllers\Admin\SExtended($userClass);
         $auth = new App\Controllers\Admin\Auth($userClass);
 
@@ -129,7 +130,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/misc/mobList', [($admin), 'index']);
         $r->addRoute('GET', '/misc/playersOnline', [($admin), 'index']);
         $r->addRoute('GET', '/misc/statPadders', [($admin), 'index']);
-        $r->addRoute('GET', '/misc/worldChat', [($admin), 'index']);
+        $r->addRoute('GET', '/misc/worldChat', [($misc), 'worldChat']);
 
         // SExtended
         $r->addRoute('GET', '/sExtended/sendNotice', [($sExtended), 'sendNotice']);

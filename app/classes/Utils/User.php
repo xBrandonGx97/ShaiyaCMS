@@ -306,7 +306,7 @@ class User
         }
     }
 
-    public function getMap(int $id): string
+    public function getMap(int $id)
     {
         return MAPS[$id] ?? 'Unknown';
     }

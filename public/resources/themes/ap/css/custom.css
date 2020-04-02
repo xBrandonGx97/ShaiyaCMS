@@ -20,31 +20,31 @@
 
 /* world chat */
 
-.normal{
+#normal{
 	color:#845405;
 }
 
-.whisper{
+#whisper{
 	color:#20B2AA;
 }
 
-.area{
+#area{
 	color:#512E5F;
 }
 
-.yelling{
+#yelling{
 	color:#196F3D;
 }
 
-.party{
+#party{
 	color:#9A7D0A;
 }
 
-.guild{
+#guild{
 	color:#78281F;
 }
 
-.trade{
+#trade{
 	color:#154360 ;
 }
 
