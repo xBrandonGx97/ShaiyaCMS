@@ -55,6 +55,7 @@
                                   </div>
                                   <p class="text-center">
                                     <button type="submit" class="btn btn-sm btn-primary" name="submit2">Submit</button>
+                                    <button type="button" onclick="window.location.href='{{$_SERVER['REQUEST_URI']}}'" class="btn btn-sm btn-primary" name="return">Return back to account IP Search</button>
                                   </p>
                                 </form>
                               @else
@@ -86,6 +87,9 @@
                                     </table>
                                   </div>
                                 </form>
+                                <p class="text-center">
+                                  <button type="button" onclick="window.location.href='{{$_SERVER['REQUEST_URI']}}'" class="btn btn-sm btn-primary" name="return">Return back to account IP Search</button>
+                                </p>
                               @else
                                 No characters found.
                               @endif

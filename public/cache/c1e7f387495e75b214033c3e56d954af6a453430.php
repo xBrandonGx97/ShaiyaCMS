@@ -12,8 +12,7 @@
           <?php if($data['user']->isAuthorized()): ?>
             
             <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-              <?php echo e($data['logSys']->createLog('Visited Access Logs Page')); ?>
-
+              
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">

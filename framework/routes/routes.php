@@ -133,6 +133,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/misc/worldChat', [($misc), 'worldChat']);
 
         // POST
+        $r->addRoute('POST', '/misc/guildSearch', [($misc), 'guildSearch']);
         $r->addRoute('POST', '/misc/itemSearch', [($misc), 'itemSearch']);
 
         // SExtended

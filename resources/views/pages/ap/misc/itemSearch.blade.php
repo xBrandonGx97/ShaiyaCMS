@@ -45,6 +45,9 @@
                                 @endforeach
                                 </tbody>
                               </table>
+                              <p class="text-center">
+                                <button type="button" onclick="window.location.href='{{$_SERVER['REQUEST_URI']}}'" class="btn btn-sm btn-primary" name="return">Return back to item Search</button>
+                              </p>
                             @else
                               Could not find any results matching the criteria.
                             @endif

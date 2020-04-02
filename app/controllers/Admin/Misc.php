@@ -54,11 +54,14 @@ class Misc extends Controller
 
     public function guildSearch()
     {
+        $guildSearch = $this->model(Models\Admin\Misc\GuildSearch::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'guild' => $guildSearch
         ];
 
         $this->view('pages/ap/misc/guildSearch', $data);
