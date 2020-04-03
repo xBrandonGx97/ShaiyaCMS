@@ -11,33 +11,30 @@ class Jail
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->guildName = isset($_POST['guild']) ? $this->data->purify(trim($_POST['guild'])) : false;
+        $this->charName = isset($_POST['CharName']) ? $this->data->purify(trim($_POST['CharName'])) : false;
 
         $this->logSys = new LogSys;
     }
 
-    public function getGuildData()
+    public function getChar()
     {
-        $guild = DB::table(table('shCharData') . ' as c')
-            ->select('g.MasterName', 'g.GuildID', 'c.CharName', 'c.UserUID', 'c.UserID', 'c.CharID')
-            ->join(table('shGuildChars') . ' as  gc', 'c.CharID', '=', 'gc.CharID')
-            ->join(table('shGuilds') . ' as  g', 'gc.GuildID', '=', 'g.GuildID')
-            ->where('gc.GuildLevel', 2)
-            ->where('g.GuildName', $this->guildName)
+        $char = DB::table(table('shCharData'))
+            ->select('UserUID', 'UserID', 'CharID', 'CharName', 'Map', 'PosX', 'PosY', 'PosZ')
+            ->where('CharName', $this->charName)
+            ->limit(1)
             ->get();
-        return $guild;
+        return $char;
     }
 
-    public function removeGuildLeader()
+    public function jailPlayer()
     {
         try {
-            $update = DB::table(table('shGuildChars'))
-            ->where('GuildLevel', 1)
-            ->where('GuildID', $this->guildId)
-            ->update(['GuildLevel' => 8]);
-            $this->logSys->createLog('Removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
+            $update = DB::table(table('shCharData'))
+            ->where('UserUID', 'uid')
+            ->update(['Map' => 41, 'PosX' => 46, 'PosY' => 3, 'PosZ' => 45]);
+            $this->logSys->createLog('');
         } catch (\Illuminate\Database\QueryException $e) {
-            $this->logSys->createLog('Failed to removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
+            $this->logSys->createLog('');
             return 'Could not remove guild leader.';
         }
     }

@@ -23,12 +23,19 @@
                           <h5>Jail ALL toons for this account by /kicking online toon then submit the toon name here</h5>
                         </div>
                         <div class="card-body">
+                          @if (isset($_POST['SC']))
+                            @if (!empty($data['jail']->userID))
+
+                            @else
+                              Character name can not be empty.
+                            @endif
+                          @endif
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
                               <input type="text" class="form-control" placeholder="Character Name" name="CharName">
                             </div>
                             <p class="text-center">
-                              <button type="submit" class="btn btn-sm btn-primary" name="SC">Submit</button>
+                              <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>
                             </p>
                           </form>
                         </div>

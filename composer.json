@@ -25,7 +25,6 @@
     },
     "autoload": {
       "psr-4": {
-        "Compiler\\": "framework/libraries/compiler",
         "Classes\\": "app/classes",
         "App\\Exceptions\\": "app/exceptions",
         "App\\Controllers\\": "app/controllers",

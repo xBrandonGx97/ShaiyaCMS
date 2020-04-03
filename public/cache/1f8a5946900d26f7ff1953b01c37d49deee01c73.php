@@ -10,10 +10,10 @@
       </a>
       <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
         <li id="item" class="  ">
-          <a href="/"><?php echo e(__("home")); ?></a>
+          <a href="/"><?php echo __('home') ?></a>
 		</li>
         <li id="item" class="  ">
-          <a href="/community/downloads"><?php echo e(__("downloads")); ?></a>
+          <a href="/community/downloads"><?php echo __('downloads') ?></a>
         </li>
         <li class="  nk-drop-item">
           <a href="#"><?php echo e(__("serverInfo")); ?></a>

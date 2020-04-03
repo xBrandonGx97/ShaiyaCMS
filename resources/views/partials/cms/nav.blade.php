@@ -10,10 +10,10 @@
       </a>
       <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
         <li id="item" class="  ">
-          <a href="/">{{__("home")}}</a>
+          <a href="/">@lang('home')</a>
 		</li>
         <li id="item" class="  ">
-          <a href="/community/downloads">{{__("downloads")}}</a>
+          <a href="/community/downloads">@lang('downloads')</a>
         </li>
         <li class="  nk-drop-item">
           <a href="#">{{__("serverInfo")}}</a>

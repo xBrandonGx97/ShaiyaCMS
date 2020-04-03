@@ -48,6 +48,10 @@ class BladeController
             return "<?php Separator($height) ?>";
         });
 
+        $this->blade->directive('lang', function ($string) {
+            return "<?php echo __($string) ?>";
+        });
+
         $this->blade->directive('createLog', function ($action) {
             return $this->logSys->createLog($action);
         });

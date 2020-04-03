@@ -22,6 +22,11 @@ class Bootstrap
         $this->init();
     }
 
+    public function __($string)
+    {
+        //return translation of string here
+    }
+
     private function init()
     {
         // Define misc helpers
@@ -38,6 +43,7 @@ class Bootstrap
         define('FRAMEWORK_PATH', ROOT_PATH . '../framework' . DS);
         define('PUBLIC_PATH', 'Public' . DS);
         define('CONFIG_PATH', APP_PATH . '../config' . DS);
+        define('RESOURCES_PATH', APP_PATH . '../resources' . DS);
         define('CONTROLLER_PATH', APP_PATH . 'controllers' . DS);
         define('MODELS_PATH', APP_PATH . 'models' . DS);
         define('VIEWS_PATH', APP_PATH . 'views' . DS);
@@ -164,9 +170,7 @@ class Bootstrap
 
     public function loadLangs()
     {
-        $compiler = new Compiler;
-        $compiler->compile(dirname(__DIR__) . '/resources/locale/' . LANG . '/LC_MESSAGES/messages.po');
-        require_once LIB_PATH . 'translate.php';
+        define('MESSAGES', require_once RESOURCES_PATH . '/langs/' .LANG. '/messages.php');
     }
 
     public function loadConfigs()
@@ -189,6 +193,7 @@ class Bootstrap
         $loader->helper('table');
         $loader->helper('lang');
         $loader->helper('acpNav');
+        $loader->helper('translate');
     }
 
     public function initDotEnv()
