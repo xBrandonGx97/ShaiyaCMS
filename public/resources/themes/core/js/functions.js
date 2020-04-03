@@ -18,13 +18,32 @@ check_display();
 /*
 $("#login_form_modal").modal('show');*/
 
+function removeParam(key, sourceURL) {
+    var rtn = sourceURL.split("?")[0],
+        param,
+        params_arr = [],
+        queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+    if (queryString !== "") {
+        params_arr = queryString.split("&");
+        for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+            param = params_arr[i].split("=")[0];
+            if (param === key) {
+                params_arr.splice(i, 1);
+            }
+        }
+        rtn = rtn + params_arr.join("&");
+    }
+    return rtn;
+}
+
 let all_links = document.getElementById("nav").getElementsByTagName("a"),
 i=0, len=all_links.length,
-full_path = location.href.split('#')[0]; //Ignore hashes?
+full_path = location.href.split('#')[0],
+new_path = removeParam('lang', full_path); //Ignore hashes?
 
 // Loop through each link.
 for(; i<len; i++) {
-  if(all_links[i].href.split("#")[0] == full_path) {
+  if(all_links[i].href.split("#")[0] == new_path) {
     if (all_links[i].parentElement.id == "item") {
       all_links[i].parentElement.className += " active";
     }
