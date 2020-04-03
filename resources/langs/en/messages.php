@@ -1,16 +1,20 @@
 <?php
     return [
+        // CMS
         'home' => 'Home',
+        // Downloads
         'downloads' => 'Downloads',
         'gameFiles' => 'Game Files',
         'patchFiles' => 'Patch Files',
         'lastUpdatedOn' => 'Last Updated On',
+        // Server Info
         'serverInfo' => 'Server Info',
         'about' => 'About',
         'bossRecords' => 'Boss Records',
         'dropFinder' => 'Drop Finder',
         'dropList' => 'Drop List',
         'terms' => 'Terms and Conditions',
+        // Community
         'community' => 'Community',
         'discord' => 'Discord',
         'guildRankings' => 'Guild Rankings',
@@ -19,8 +23,10 @@
         'pvpRankings' => 'PvP Rankings',
         'staffTeam' => 'Staff Team',
         'guilds' => 'Guilds',
+        // Footer
         'developedBy' => 'Developed By',
-        'staffPanel' => 'Staff Panel',
+        //'staffPanel' => 'Staff Panel',
+        // Sign Panel
         'registerTab' => 'Register',
         'register' => 'Register',
         'userName' => 'Username',
@@ -42,7 +48,10 @@
         'lostPassword' => 'Lost Password ?',
         'loginSuccess' => 'Login successful.',
         'loginRedirect' => 'Redirecting now...',
+        // Logout
         'logout' => 'Logout',
+        // ACP
+        // Nav
         'adminPanel' => 'Admin Panel',
         'adminTools' => 'Admin Tools',
         'accessLogs' => 'Access Logs',

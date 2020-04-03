@@ -48,7 +48,7 @@ class BladeController
             return "<?php Separator($height) ?>";
         });
 
-        $this->blade->directive('lang', function ($string) {
+        $this->blade->directive('lang', function ($string, $params = []) {
             return "<?php echo __($string) ?>";
         });
 
