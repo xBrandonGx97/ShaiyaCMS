@@ -122,6 +122,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/player/unJail', [($player), 'unJail']);
 
         // POST
+        $r->addRoute('POST', '/player/chatSearch', [($player), 'chatSearch']);
         $r->addRoute('POST', '/player/jail', [($player), 'jail']);
         $r->addRoute('POST', '/player/restore', [($player), 'restore']);
         $r->addRoute('POST', '/player/unJail', [($player), 'unJail']);

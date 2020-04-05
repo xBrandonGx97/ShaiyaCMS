@@ -11,17 +11,22 @@ class Player extends Controller
 {
     public function __construct(Utils\User $user)
     {
-            $this->user = $user;
-            $this->logSys = new LogSys;
+        $this->data = new Utils\Data;
+        $this->user = $user;
+        $this->logSys = new LogSys;
     }
 
     public function chatSearch()
     {
+        $chat = $this->model(Models\Admin\Player\ChatSearch::class);
+
         $this->user->fetchUser();
 
         $data = [
+            'data' => $this->data,
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'chat' => $chat
         ];
 
         $this->view('pages/ap/player/chatSearch', $data);
