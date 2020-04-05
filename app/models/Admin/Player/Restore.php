@@ -11,34 +11,41 @@ class Restore
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->guildName = isset($_POST['guild']) ? $this->data->purify(trim($_POST['guild'])) : false;
+        $this->userID = isset($_POST['userId']) ? $this->data->purify(trim($_POST['userId'])) : false;
+        $this->charID = isset($_POST['char']) ? $this->data->purify(trim($_POST['char'])) : false;
+        $this->char =  explode(',', $this->charID);
 
         $this->logSys = new LogSys;
     }
 
-    public function getGuildData()
+    public function getDeadChars()
     {
-        $guild = DB::table(table('shCharData') . ' as c')
-            ->select('g.MasterName', 'g.GuildID', 'c.CharName', 'c.UserUID', 'c.UserID', 'c.CharID')
-            ->join(table('shGuildChars') . ' as  gc', 'c.CharID', '=', 'gc.CharID')
-            ->join(table('shGuilds') . ' as  g', 'gc.GuildID', '=', 'g.GuildID')
-            ->where('gc.GuildLevel', 2)
-            ->where('g.GuildName', $this->guildName)
+        $chars = DB::table(table('shUmg') . ' as umg')
+            ->select('umg.Country', 'c.Family', 'c.CharName', 'c.CharID', 'c.Job', 'c.Level')
+            ->join(table('shCharData') . ' as  c', 'umg.UserUID', '=', 'c.UserUID')
+            ->where('c.UserID', $this->userID)
+            ->where('c.del', 1)
             ->get();
-        return $guild;
+        return $chars;
     }
 
-    public function removeGuildLeader()
+    public function getSlot()
+    {
+        $slot = DB::select(DB::raw('SELECT MIN(Slots.Slot) AS OpenSlot FROM (SELECT 0 AS Slot UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4) AS Slots LEFT JOIN (SELECT c.Slot FROM '.table("shCharData").' AS c WHERE c.UserID = ? AND c.Del = ?) AS Chars ON Chars.Slot = Slots.Slot WHERE Chars.Slot IS NULL'), ['ibolangpo', 0]);
+        return $slot;
+    }
+
+    public function updateRestore()
     {
         try {
-            $update = DB::table(table('shGuildChars'))
-            ->where('GuildLevel', 1)
-            ->where('GuildID', $this->guildId)
-            ->update(['GuildLevel' => 8]);
-            $this->logSys->createLog('Removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
+            $update = DB::table(table('shCharData'))
+            ->where('CharID', $this->char[1])
+            ->update(['Del' => 0, 'Slot' => $this->getSlot()[0]->OpenSlot, 'Map' => 42, 'PosX' => 63, 'PosZ' => 57, 'DeleteDate' => null, 'RemainTime' => 0]);
+            $this->logSys->createLog('Resurrected character: '.$this->char[0]);
+            return 'Resurrected character: '.$this->char[0];
         } catch (\Illuminate\Database\QueryException $e) {
-            $this->logSys->createLog('Failed to removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
-            return 'Could not remove guild leader.';
+            $this->logSys->createLog('Failed to resurrect char: '.$this->char[0]);
+            return 'Could not resurrect character.';
         }
     }
 }

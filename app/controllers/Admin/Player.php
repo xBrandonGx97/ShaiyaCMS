@@ -116,11 +116,14 @@ class Player extends Controller
 
     public function restore()
     {
+        $restore = $this->model(Models\Admin\Player\Restore::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'restore' => $restore
         ];
 
         $this->view('pages/ap/player/restore', $data);
