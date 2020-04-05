@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'worldChat'); ?>
-<?php $__env->startSection('title', 'World Chat'); ?>
+<?php $__env->startSection('index', 'jail'); ?>
+<?php $__env->startSection('title', 'Jail Player'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -23,12 +23,26 @@
                           <h5>Jail ALL toons for this account by /kicking online toon then submit the toon name here</h5>
                         </div>
                         <div class="card-body">
+                          <?php if(isset($_POST['submit'])): ?>
+                            <?php if(!empty($data['jail']->charName)): ?>
+                              <?php if(count($data['jail']->getChar()) > 0): ?>
+                                <?php $__currentLoopData = $data['jail']->getChar(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                  <?php echo e($data['jail']->jailPlayer()); ?>
+
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              <?php else: ?>
+                                Could not find a character matching the query.
+                              <?php endif; ?>
+                            <?php else: ?>
+                              Character name can not be empty.
+                            <?php endif; ?>
+                          <?php endif; ?>
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
                               <input type="text" class="form-control" placeholder="Character Name" name="CharName">
                             </div>
                             <p class="text-center">
-                              <button type="submit" class="btn btn-sm btn-primary" name="SC">Submit</button>
+                              <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>
                             </p>
                           </form>
                         </div>

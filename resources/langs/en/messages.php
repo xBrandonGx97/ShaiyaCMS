@@ -25,7 +25,6 @@
         'guilds' => 'Guilds',
         // Footer
         'developedBy' => 'Developed By',
-        //'staffPanel' => 'Staff Panel',
         // Sign Panel
         'registerTab' => 'Register',
         'register' => 'Register',
@@ -52,6 +51,7 @@
         'logout' => 'Logout',
         // ACP
         // Nav
+        'staffPanel' => 'Staff Panel',
         'adminPanel' => 'Admin Panel',
         'adminTools' => 'Admin Tools',
         'accessLogs' => 'Access Logs',

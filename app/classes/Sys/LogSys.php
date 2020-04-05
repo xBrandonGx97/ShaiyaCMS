@@ -9,14 +9,18 @@ class LogSys
 {
     public function createLog(string $action): void
     {
-         $browser = new Utils\Browser;
-         $session = new Utils\Session;
+        $browser = new Utils\Browser;
+        $session = new Utils\Session;
 
-         $log = DB::table(table('logAccess'))
+        if (empty($action)) {
+            throw new \Exception('Log Action can not be empty.');
+        }
+
+        $log = DB::table(table('logAccess'))
             ->insert([
-               'UserID' => $session->get('User', 'UserID'),
-               'UserIP' => $browser->ip(),
-               'Action' => $action
-            ]);
+                'UserID' => $session->get('User', 'UserID'),
+                'UserIP' => $browser->ip(),
+                'Action' => $action
+        ]);
     }
 }

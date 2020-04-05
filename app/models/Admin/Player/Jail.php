@@ -19,7 +19,7 @@ class Jail
     public function getChar()
     {
         $char = DB::table(table('shCharData'))
-            ->select('UserUID', 'UserID', 'CharID', 'CharName', 'Map', 'PosX', 'PosY', 'PosZ')
+            ->select('UserUID', 'UserID', 'CharID', 'CharName', 'PosX', 'PosY', 'PosZ')
             ->where('CharName', $this->charName)
             ->limit(1)
             ->get();
@@ -30,12 +30,13 @@ class Jail
     {
         try {
             $update = DB::table(table('shCharData'))
-            ->where('UserUID', 'uid')
+            ->where('UserUID', $this->getChar()[0]->UserUID)
             ->update(['Map' => 41, 'PosX' => 46, 'PosY' => 3, 'PosZ' => 45]);
-            $this->logSys->createLog('');
+            $this->logSys->createLog('Jailed' . ' ' . $this->charName);
+            return 'Jailed' . ' ' . $this->charName;
         } catch (\Illuminate\Database\QueryException $e) {
-            $this->logSys->createLog('');
-            return 'Could not remove guild leader.';
+            $this->logSys->createLog('Failed to jail' . ' ' . $this->charName);
+            return 'Could not jail player.';
         }
     }
 }

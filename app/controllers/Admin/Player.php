@@ -128,11 +128,14 @@ class Player extends Controller
 
     public function unJail()
     {
+        $unJail = $this->model(Models\Admin\Player\UnJail::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'jail' => $unJail
         ];
 
         $this->view('pages/ap/player/unJail', $data);

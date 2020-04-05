@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'worldChat')
-@section('title', 'World Chat')
+@section('index', 'jail')
+@section('title', 'Jail Player')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')
@@ -23,9 +23,15 @@
                           <h5>Jail ALL toons for this account by /kicking online toon then submit the toon name here</h5>
                         </div>
                         <div class="card-body">
-                          @if (isset($_POST['SC']))
-                            @if (!empty($data['jail']->userID))
-
+                          @if (isset($_POST['submit']))
+                            @if (!empty($data['jail']->charName))
+                              @if (count($data['jail']->getChar()) > 0)
+                                @foreach ($data['jail']->getChar() as $res)
+                                  {{$data['jail']->jailPlayer()}}
+                                @endforeach
+                              @else
+                                Could not find a character matching the query.
+                              @endif
                             @else
                               Character name can not be empty.
                             @endif
