@@ -109,11 +109,14 @@ class Player extends Controller
 
     public function linkedGear()
     {
+        $player = $this->model(Models\Admin\Player\PlayerLinked::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'player' => $player
         ];
 
         $this->view('pages/ap/player/linkedGear', $data);

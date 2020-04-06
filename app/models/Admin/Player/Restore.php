@@ -25,6 +25,8 @@ class Restore
             ->join(table('shCharData') . ' as  c', 'umg.UserUID', '=', 'c.UserUID')
             ->where('c.UserID', $this->userID)
             ->where('c.del', 1)
+            ->orWhere('c.CharName', $this->userID)
+            ->where('c.del', 1)
             ->get();
         return $chars;
     }

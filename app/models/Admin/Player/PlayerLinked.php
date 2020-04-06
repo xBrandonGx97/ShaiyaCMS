@@ -11,34 +11,61 @@ class PlayerLinked
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->guildName = isset($_POST['guild']) ? $this->data->purify(trim($_POST['guild'])) : false;
+        $this->userId = isset($_POST['userId']) ? $this->data->purify(trim($_POST['userId'])) : false;
 
         $this->logSys = new LogSys;
     }
 
-    public function getGuildData()
+    public function getCharId()
     {
-        $guild = DB::table(table('shCharData') . ' as c')
-            ->select('g.MasterName', 'g.GuildID', 'c.CharName', 'c.UserUID', 'c.UserID', 'c.CharID')
-            ->join(table('shGuildChars') . ' as  gc', 'c.CharID', '=', 'gc.CharID')
-            ->join(table('shGuilds') . ' as  g', 'gc.GuildID', '=', 'g.GuildID')
-            ->where('gc.GuildLevel', 2)
-            ->where('g.GuildName', $this->guildName)
+        $charId = DB::table(table('shCharData'))
+            ->select('CharID')
+            ->where('CharName', $this->userId)
+            ->where('Del', 0)
+            ->limit(1)
             ->get();
-        return $guild;
+        if (count($charId) > 0) {
+            foreach ($charId as $char) {
+                $charId = $char->CharID;
+            }
+        } else {
+            $charId = null;
+        }
+        return $charId;
     }
 
-    public function removeGuildLeader()
+    public function getItems()
     {
-        try {
-            $update = DB::table(table('shGuildChars'))
-            ->where('GuildLevel', 1)
-            ->where('GuildID', $this->guildId)
-            ->update(['GuildLevel' => 8]);
-            $this->logSys->createLog('Removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
-        } catch (\Illuminate\Database\QueryException $e) {
-            $this->logSys->createLog('Failed to removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
-            return 'Could not remove guild leader.';
-        }
+        $items = DB::table(table('shCharItems') . ' as ci')
+            ->select('i.ItemName', 'ci.ItemUID', 'ci.Gem1', 'ci.Gem2', 'ci.Gem3', 'ci.Gem4', 'ci.Gem5', 'ci.Gem6')
+            ->join(table('shItems') . ' as  i', 'i.ItemID', '=', 'ci.ItemId')
+            ->where('CharID', $this->getCharId())
+            ->where('Bag', 0)
+            ->get();
+            /* $items->transform(function ($item) {
+                return (array)$item;
+            }); */
+        /* return $items->toArray(); */
+        return $items;
+    }
+
+    public function getLapis()
+    {
+        $lapis = DB::table(table('shItems'))
+            ->select('ItemName', 'TypeID')
+            ->where('Type', 30)
+            ->get();
+        return $lapis;
+    }
+
+    public function lapisIdToName($id)
+    {
+        $name = DB::table(table('shItems'))
+            ->select('ItemName')
+            ->where('Type', 30)
+            ->where('TypeID', $id)
+            ->limit(1)
+            ->get();
+        return $name[0]->ItemName;
     }
 }

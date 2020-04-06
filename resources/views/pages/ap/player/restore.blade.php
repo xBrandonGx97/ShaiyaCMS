@@ -83,7 +83,7 @@
                           @else
                             <form method="post">
                               <div class="form-group mx-sm-3 mb-2">
-                                <input type="text" class="form-control" placeholder="Account ID" name="userId">
+                                <input type="text" class="form-control" placeholder="Advanced search" name="userId">
                               </div>
                               <p class="text-center">
                                 <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>
