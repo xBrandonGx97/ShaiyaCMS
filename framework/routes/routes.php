@@ -110,6 +110,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('POST', '/account/unban', [($account), 'unban']);
 
         // Player
+        // GET
         $r->addRoute('GET', '/player/chatSearch', [($player), 'chatSearch']);
         $r->addRoute('GET', '/player/edit', [($player), 'edit']);
         $r->addRoute('GET', '/player/editWhItems', [($player), 'editWhItems']);
@@ -120,10 +121,10 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/player/linkedGear', [($player), 'linkedGear']);
         $r->addRoute('GET', '/player/restore', [($player), 'restore']);
         $r->addRoute('GET', '/player/unJail', [($player), 'unJail']);
-
         // POST
         $r->addRoute('POST', '/player/chatSearch', [($player), 'chatSearch']);
         $r->addRoute('POST', '/player/edit', [($player), 'edit']);
+        $r->addRoute('POST', '/player/itemDelete', [($player), 'itemDelete']);
         $r->addRoute('POST', '/player/jail', [($player), 'jail']);
         $r->addRoute('POST', '/player/linkedGear', [($player), 'linkedGear']);
         $r->addRoute('POST', '/player/restore', [($player), 'restore']);

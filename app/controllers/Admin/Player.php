@@ -73,11 +73,13 @@ class Player extends Controller
 
     public function itemDelete()
     {
+        $item = $this->model(Models\Admin\Player\ItemDelete::class);
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'item' => $item
         ];
 
         $this->view('pages/ap/player/itemDelete', $data);
