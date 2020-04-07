@@ -19,7 +19,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $userClass = new Classes\Utils\User($session);
 
         $community = new App\Controllers\Community($userClass);
-
+        // GET
         $r->addRoute('GET', '/downloads', [($community), 'downloads']);
         $r->addRoute('GET', '/discord', [($community), 'discord']);
         $r->addRoute('GET', '/news', [($community), 'news']);
@@ -27,8 +27,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/pvprankings', [($community), 'pvprankings']);
         $r->addRoute('GET', '/guildrankings', [($community), 'guildrankings']);
         $r->addRoute('GET', '/staffteam', [($community), 'staffteam']);
-
-        // Patch Notes
+        // POST
         $r->addRoute('POST', '/rankings', [($community), 'rankings']);
         $r->addRoute('POST', '/getPatchNotes', [($community), 'getPatchNotes']);
     });
@@ -38,13 +37,13 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $userClass = new Classes\Utils\User($session);
 
         $serverInfo = new App\Controllers\ServerInfo($userClass);
-
+        // GET
         $r->addRoute('GET', '/about', [($serverInfo), 'about']);
         $r->addRoute('GET', '/drops', [($serverInfo), 'drops']);
         $r->addRoute('GET', '/dropfinder', [($serverInfo), 'dropfinder']);
         $r->addRoute('GET', '/bossrecords', [($serverInfo), 'bossrecords']);
         $r->addRoute('GET', '/terms', [($serverInfo), 'terms']);
-
+        // POST
         $r->addRoute('POST', '/dropfinder', [($serverInfo), 'dropfinder']);
     });
     // Auth
@@ -55,8 +54,6 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $r->addRoute('POST', '/login', [($auth), 'login']);
         $r->addRoute('POST', '/logout', [($auth), 'logout']);
-
-        $r->addRoute('GET', '/newDevice/verify/{name}', [($auth), 'verifyNewDevice']);
     });
     // User
     $r->addGroup('/user', function (FastRoute\RouteCollector $r) {
@@ -91,7 +88,6 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/commandLogs', [($admin), 'commandLogs']);
 
         // Account
-
         // GET
         $r->addRoute('GET', '/account/ban', [($account), 'ban']);
         $r->addRoute('GET', '/account/bannedUsers', [($account), 'bannedUsers']);
@@ -100,7 +96,6 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/account/ipSearch', [($account), 'ipSearch']);
         $r->addRoute('GET', '/account/search', [($account), 'search']);
         $r->addRoute('GET', '/account/unban', [($account), 'unban']);
-
         // POST
         $r->addRoute('POST', '/account/ban', [($account), 'ban']);
         $r->addRoute('POST', '/account/dpHandout', [($account), 'dpHandout']);
@@ -124,14 +119,17 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         // POST
         $r->addRoute('POST', '/player/chatSearch', [($player), 'chatSearch']);
         $r->addRoute('POST', '/player/edit', [($player), 'edit']);
+        $r->addRoute('POST', '/player/editWhItems', [($player), 'editWhItems']);
         $r->addRoute('POST', '/player/deleteWhItems', [($player), 'deleteWhItems']);
         $r->addRoute('POST', '/player/itemDelete', [($player), 'itemDelete']);
+        $r->addRoute('POST', '/player/itemEdit', [($player), 'itemEdit']);
         $r->addRoute('POST', '/player/jail', [($player), 'jail']);
         $r->addRoute('POST', '/player/linkedGear', [($player), 'linkedGear']);
         $r->addRoute('POST', '/player/restore', [($player), 'restore']);
         $r->addRoute('POST', '/player/unJail', [($player), 'unJail']);
 
         // Misc
+        // GET
         $r->addRoute('GET', '/misc/disbandGuild', [($misc), 'disbandGuild']);
         $r->addRoute('GET', '/misc/guildLeaderChange', [($misc), 'guildLeaderChange']);
         $r->addRoute('GET', '/misc/guildNameChange', [($misc), 'guildNameChange']);
@@ -142,7 +140,6 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/misc/playersOnline', [($misc), 'playersOnline']);
         $r->addRoute('GET', '/misc/statPadders', [($misc), 'statPadders']);
         $r->addRoute('GET', '/misc/worldChat', [($misc), 'worldChat']);
-
         // POST
         $r->addRoute('POST', '/misc/guildLeaderChange', [($misc), 'guildLeaderChange']);
         $r->addRoute('POST', '/misc/guildNameChange', [($misc), 'guildNameChange']);
@@ -150,9 +147,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('POST', '/misc/itemSearch', [($misc), 'itemSearch']);
 
         // SExtended
+        // GET
         $r->addRoute('GET', '/sExtended/sendNotice', [($sExtended), 'sendNotice']);
         $r->addRoute('GET', '/sExtended/sendPlayerNotice', [($sExtended), 'sendPlayerNotice']);
-
         // POST
         $r->addRoute('POST', '/sExtended/sendNotice', [($sExtended), 'sendNotice']);
         $r->addRoute('POST', '/sExtended/sendPlayerNotice', [($sExtended), 'sendPlayerNotice']);
