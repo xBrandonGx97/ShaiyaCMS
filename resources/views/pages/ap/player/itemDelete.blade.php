@@ -93,7 +93,7 @@
                                 Could not find any items matching your provided character information.
                               @endif
                             @else
-                              Character id can not be empty.
+                              You must select a character!
                             @endif
                           @elseif (isset($_POST['submit3']))
                             <input type="hidden" name="userId" value="{{$data['item']->userId}}"/>

@@ -50,7 +50,7 @@ class ItemDelete
 
             return 'Item deleted successfully.';
         } catch (\Illuminate\Database\QueryException $e) {
-            $this->logSys->createLog('Failed to delete item: '.$this->itemIdToItemName());
+            $this->logSys->createLog('Failed to delete item: '.$this->itemIdToItemName() . ' from '. $this->userId.'\'s character.');
             return 'Failed to delete item.';
         }
     }

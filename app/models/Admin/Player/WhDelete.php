@@ -11,34 +11,49 @@ class WhDelete
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->guildName = isset($_POST['guild']) ? $this->data->purify(trim($_POST['guild'])) : false;
+        $this->charName = isset($_POST['charName']) ? $this->data->purify(trim($_POST['charName'])) : false;
+        $this->userId = isset($_POST['UserID']) ? $this->data->purify(trim($_POST['UserID'])) : false;
+        $this->userUid = isset($_POST['UserUID']) ? $this->data->purify(trim($_POST['UserUID'])) : false;
+        $this->itemName = isset($_POST['ItemName']) ? $this->data->purify(trim($_POST['ItemName'])) : false;
+        $this->itemUid = isset($_POST['ItemUID']) ? $this->data->purify(trim($_POST['ItemUID'])) : false;
 
         $this->logSys = new LogSys;
     }
 
-    public function getGuildData()
+    public function getChar()
     {
-        $guild = DB::table(table('shCharData') . ' as c')
-            ->select('g.MasterName', 'g.GuildID', 'c.CharName', 'c.UserUID', 'c.UserID', 'c.CharID')
-            ->join(table('shGuildChars') . ' as  gc', 'c.CharID', '=', 'gc.CharID')
-            ->join(table('shGuilds') . ' as  g', 'gc.GuildID', '=', 'g.GuildID')
-            ->where('gc.GuildLevel', 2)
-            ->where('g.GuildName', $this->guildName)
+        $char = DB::table(table('shCharData'))
+            ->select()
+            ->where('CharName', $this->charName)
+            ->where('Del', 0)
             ->get();
-        return $guild;
+        return $char;
     }
 
-    public function removeGuildLeader()
+    public function getItems()
+    {
+        $items = DB::table(table('shUserWh') . ' as ci')
+            ->select('i.ItemName', 'ci.Slot', 'ci.Count', 'ci.ItemUID', 'ci.UserUID')
+            ->join(table('shItems') . ' as  i', 'i.ItemID', '=', 'ci.ItemID')
+            ->where('ci.UserUID', $this->userUid)
+            ->orderBy('ci.Slot')
+            ->get();
+        return $items;
+    }
+
+    public function deleteItem()
     {
         try {
-            $update = DB::table(table('shGuildChars'))
-            ->where('GuildLevel', 1)
-            ->where('GuildID', $this->guildId)
-            ->update(['GuildLevel' => 8]);
-            $this->logSys->createLog('Removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
+            $this->logSys->createLog('Deleted item: ' . $this->itemName . ' from ' . $this->userId . '\'s account (warehouse).');
+
+            $item = DB::table(table('shUserWh'))
+            ->where('ItemUID', $this->itemUid)
+            ->delete();
+
+            return 'Item deleted successfully.';
         } catch (\Illuminate\Database\QueryException $e) {
-            $this->logSys->createLog('Failed to removed guild leader of guild: ' . $this->guildName . ' old leader: ' . $this->oldGuildLeader);
-            return 'Could not remove guild leader.';
+            $this->logSys->createLog('Failed to delete item: ' . $this->itemName . ' from ' . $this->userId . '\'s account (warehouse).');
+            return 'Failed to delete item.';
         }
     }
 }

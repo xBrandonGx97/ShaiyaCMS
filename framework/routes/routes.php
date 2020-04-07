@@ -124,6 +124,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         // POST
         $r->addRoute('POST', '/player/chatSearch', [($player), 'chatSearch']);
         $r->addRoute('POST', '/player/edit', [($player), 'edit']);
+        $r->addRoute('POST', '/player/deleteWhItems', [($player), 'deleteWhItems']);
         $r->addRoute('POST', '/player/itemDelete', [($player), 'itemDelete']);
         $r->addRoute('POST', '/player/jail', [($player), 'jail']);
         $r->addRoute('POST', '/player/linkedGear', [($player), 'linkedGear']);

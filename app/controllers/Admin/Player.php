@@ -61,11 +61,14 @@ class Player extends Controller
 
     public function deleteWhItems()
     {
+        $item = $this->model(Models\Admin\Player\WhDelete::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'item' => $item
         ];
 
         $this->view('pages/ap/player/deleteWhItems', $data);
@@ -74,6 +77,7 @@ class Player extends Controller
     public function itemDelete()
     {
         $item = $this->model(Models\Admin\Player\ItemDelete::class);
+
         $this->user->fetchUser();
 
         $data = [
