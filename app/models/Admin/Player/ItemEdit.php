@@ -8,8 +8,6 @@ use Classes\Utils as Utils;
 
 class ItemEdit
 {
-    private $set;
-
     public function __construct()
     {
         $this->data = new Utils\Data;
@@ -94,36 +92,6 @@ class ItemEdit
         return $bag[$bagSlot];
     }
 
-    public function getSet()
-    {
-        return $this->set;
-    }
-
-    public function updateSet()
-    {
-        $this->set = true;
-    }
-
-    public function itemUidToItemId()
-    {
-        $id = DB::table(table('shCharItems'))
-            ->select('ItemID')
-            ->where('ItemUID', $this->itemUid)
-            ->limit(1)
-            ->get();
-        return $id[0]->ItemID;
-    }
-
-    public function itemIdToItemName()
-    {
-        $name = DB::table(table('shItems'))
-            ->select('ItemName')
-            ->where('ItemID', $this->itemUidToItemId())
-            ->limit(1)
-            ->get();
-        return $name[0]->ItemName;
-    }
-
     private function getCharNameFromCharId()
     {
         $name = DB::table(table('shCharData'))
@@ -144,7 +112,7 @@ class ItemEdit
         return isset($_POST['ItemName']) ? $this->data->purify(trim($_POST['ItemName'])) : false;
     }
 
-    public function getType()
+    private function getType()
     {
         return isset($_POST['Type']) ? $this->data->purify(trim($_POST['Type'])) : false;
     }
@@ -242,5 +210,10 @@ class ItemEdit
     private function getCraftname()
     {
         return $this->getStr() . $this->getDex() . $this->getRec() . $this->getInt() . $this->getWis() . $this->getLuc() . $this->getHp() . $this->getMp() . $this->getSp() . $this->getEnchant();
+    }
+
+    public function getNewValue($value)
+    {
+        return isset($_POST[$value]) ? $this->data->purify(trim($_POST[$value])) : false;
     }
 }

@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'jail'); ?>
-<?php $__env->startSection('title', 'Jail Player'); ?>
+<?php $__env->startSection('index', 'itemEdit'); ?>
+<?php $__env->startSection('title', 'Item Edit'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -94,8 +94,6 @@
                               You must select a character!
                             <?php endif; ?>
                           <?php elseif(isset($_POST['submit3'])): ?>
-                            <?php echo e($data['item']->updateSet()); ?>
-
                             <?php if(count($data['item']->getItemInfo()) > 0): ?>
                               <form method="post">
                                 <div class="table-responsive">
@@ -154,6 +152,14 @@
                           <?php elseif(isset($_POST['submit4'])): ?>
                             <?php echo e($data['item']->updateItem()); ?>
 
+                            <br>
+                            <?php $__currentLoopData = $data['item']->getItemInfo(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                              <?php $__currentLoopData = $data['item']->getColumns(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if(!in_array($value, $data['item']->getGreyedColumns())): ?>
+                                  <?php echo e($value); ?> => <?php echo e($data['item']->getNewValue($value)); ?><br>
+                                <?php endif; ?>
+                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <p class="text-center">
                               <button type="button" onclick="window.location.href='<?php echo e($_SERVER['REQUEST_URI']); ?>'" class="btn btn-sm btn-primary" name="return">Return back to item edit</button>
                             </p>

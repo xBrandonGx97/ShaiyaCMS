@@ -95,7 +95,6 @@
                               You must select a character!
                             @endif
                           @elseif (isset($_POST['submit3']))
-                            {{$data['item']->updateSet()}}
                             @if (count($data['item']->getItemInfo()) > 0)
                               <form method="post">
                                 <div class="table-responsive">
@@ -153,6 +152,14 @@
                             @endif
                           @elseif (isset($_POST['submit4']))
                             {{$data['item']->updateItem()}}
+                            <br>
+                            @foreach ($data['item']->getItemInfo() as $res)
+                              @foreach ($data['item']->getColumns() as $value)
+                                @if (!in_array($value, $data['item']->getGreyedColumns()))
+                                  {{$value}} => {{$data['item']->getNewValue($value)}}<br>
+                                @endif
+                              @endforeach
+                            @endforeach
                             <p class="text-center">
                               <button type="button" onclick="window.location.href='{{$_SERVER['REQUEST_URI']}}'" class="btn btn-sm btn-primary" name="return">Return back to item edit</button>
                             </p>
