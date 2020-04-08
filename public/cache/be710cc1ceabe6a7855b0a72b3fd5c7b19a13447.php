@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'worldChat'); ?>
-<?php $__env->startSection('title', 'World Chat'); ?>
+<?php $__env->startSection('index', 'chatSearch'); ?>
+<?php $__env->startSection('title', 'Chat Search'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

@@ -20,7 +20,7 @@
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Account Search</h5>
+                          <h5>Account IP Search</h5>
                         </div>
                         <div class="card-body">
                           <?php if(isset($_POST['submit'])): ?>
