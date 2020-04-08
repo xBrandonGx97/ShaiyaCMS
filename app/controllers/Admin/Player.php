@@ -49,11 +49,14 @@ class Player extends Controller
 
     public function editWhItems()
     {
+        $item = $this->model(Models\Admin\Player\WhEdit::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'item' => $item
         ];
 
         $this->view('pages/ap/player/editWhItems', $data);
@@ -91,11 +94,14 @@ class Player extends Controller
 
     public function itemEdit()
     {
+        $item = $this->model(Models\Admin\Player\ItemEdit::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'item' => $item
         ];
 
         $this->view('pages/ap/player/itemEdit', $data);

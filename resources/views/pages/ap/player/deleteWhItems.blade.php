@@ -20,7 +20,7 @@
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Delete Player Items</h5>
+                          <h5>Warehouse Item Delete</h5>
                         </div>
                         <div class="card-body">
                           @if (isset($_POST['submit']))
