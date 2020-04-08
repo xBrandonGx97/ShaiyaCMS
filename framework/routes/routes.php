@@ -72,9 +72,6 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $userClass = new Classes\Utils\User($session);
 
         $admin = new App\Controllers\Admin\Admin($userClass);
-        $account = new App\Controllers\Admin\Account($userClass);
-        $player = new App\Controllers\Admin\Player($userClass);
-        $misc = new App\Controllers\Admin\Misc($userClass);
         $sExtended = new App\Controllers\Admin\SExtended($userClass);
         $auth = new App\Controllers\Admin\Auth($userClass);
 
@@ -88,63 +85,80 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/commandLogs', [($admin), 'commandLogs']);
 
         // Account
-        // GET
-        $r->addRoute('GET', '/account/ban', [($account), 'ban']);
-        $r->addRoute('GET', '/account/bannedUsers', [($account), 'bannedUsers']);
-        $r->addRoute('GET', '/account/dpHandout', [($account), 'dpHandout']);
-        $r->addRoute('GET', '/account/edit', [($account), 'edit']);
-        $r->addRoute('GET', '/account/ipSearch', [($account), 'ipSearch']);
-        $r->addRoute('GET', '/account/search', [($account), 'search']);
-        $r->addRoute('GET', '/account/unban', [($account), 'unban']);
-        // POST
-        $r->addRoute('POST', '/account/ban', [($account), 'ban']);
-        $r->addRoute('POST', '/account/dpHandout', [($account), 'dpHandout']);
-        $r->addRoute('POST', '/account/edit', [($account), 'edit']);
-        $r->addRoute('POST', '/account/ipSearch', [($account), 'ipSearch']);
-        $r->addRoute('POST', '/account/search', [($account), 'search']);
-        $r->addRoute('POST', '/account/unban', [($account), 'unban']);
+        $r->addGroup('/account', function (FastRoute\RouteCollector $r) {
+            $session = new Classes\Utils\Session;
+            $userClass = new Classes\Utils\User($session);
+            $account = new App\Controllers\Admin\Account($userClass);
+
+            // GET
+            $r->addRoute('GET', '/ban', [($account), 'ban']);
+            $r->addRoute('GET', '/bannedUsers', [($account), 'bannedUsers']);
+            $r->addRoute('GET', '/dpHandout', [($account), 'dpHandout']);
+            $r->addRoute('GET', '/edit', [($account), 'edit']);
+            $r->addRoute('GET', '/ipSearch', [($account), 'ipSearch']);
+            $r->addRoute('GET', '/search', [($account), 'search']);
+            $r->addRoute('GET', '/unban', [($account), 'unban']);
+            // POST
+            $r->addRoute('POST', '/ban', [($account), 'ban']);
+            $r->addRoute('POST', '/dpHandout', [($account), 'dpHandout']);
+            $r->addRoute('POST', '/edit', [($account), 'edit']);
+            $r->addRoute('POST', '/ipSearch', [($account), 'ipSearch']);
+            $r->addRoute('POST', '/search', [($account), 'search']);
+            $r->addRoute('POST', '/unban', [($account), 'unban']);
+        });
 
         // Player
-        // GET
-        $r->addRoute('GET', '/player/chatSearch', [($player), 'chatSearch']);
-        $r->addRoute('GET', '/player/edit', [($player), 'edit']);
-        $r->addRoute('GET', '/player/editWhItems', [($player), 'editWhItems']);
-        $r->addRoute('GET', '/player/deleteWhItems', [($player), 'deleteWhItems']);
-        $r->addRoute('GET', '/player/itemDelete', [($player), 'itemDelete']);
-        $r->addRoute('GET', '/player/itemEdit', [($player), 'itemEdit']);
-        $r->addRoute('GET', '/player/jail', [($player), 'jail']);
-        $r->addRoute('GET', '/player/linkedGear', [($player), 'linkedGear']);
-        $r->addRoute('GET', '/player/restore', [($player), 'restore']);
-        $r->addRoute('GET', '/player/unJail', [($player), 'unJail']);
-        // POST
-        $r->addRoute('POST', '/player/chatSearch', [($player), 'chatSearch']);
-        $r->addRoute('POST', '/player/edit', [($player), 'edit']);
-        $r->addRoute('POST', '/player/editWhItems', [($player), 'editWhItems']);
-        $r->addRoute('POST', '/player/deleteWhItems', [($player), 'deleteWhItems']);
-        $r->addRoute('POST', '/player/itemDelete', [($player), 'itemDelete']);
-        $r->addRoute('POST', '/player/itemEdit', [($player), 'itemEdit']);
-        $r->addRoute('POST', '/player/jail', [($player), 'jail']);
-        $r->addRoute('POST', '/player/linkedGear', [($player), 'linkedGear']);
-        $r->addRoute('POST', '/player/restore', [($player), 'restore']);
-        $r->addRoute('POST', '/player/unJail', [($player), 'unJail']);
+        $r->addGroup('/player', function (FastRoute\RouteCollector $r) {
+            $session = new Classes\Utils\Session;
+            $userClass = new Classes\Utils\User($session);
+            $player = new App\Controllers\Admin\Player($userClass);
+
+            // GET
+            $r->addRoute('GET', '/chatSearch', [($player), 'chatSearch']);
+            $r->addRoute('GET', '/edit', [($player), 'edit']);
+            $r->addRoute('GET', '/editWhItems', [($player), 'editWhItems']);
+            $r->addRoute('GET', '/deleteWhItems', [($player), 'deleteWhItems']);
+            $r->addRoute('GET', '/itemDelete', [($player), 'itemDelete']);
+            $r->addRoute('GET', '/itemEdit', [($player), 'itemEdit']);
+            $r->addRoute('GET', '/jail', [($player), 'jail']);
+            $r->addRoute('GET', '/linkedGear', [($player), 'linkedGear']);
+            $r->addRoute('GET', '/restore', [($player), 'restore']);
+            $r->addRoute('GET', '/unJail', [($player), 'unJail']);
+            // POST
+            $r->addRoute('POST', '/chatSearch', [($player), 'chatSearch']);
+            $r->addRoute('POST', '/edit', [($player), 'edit']);
+            $r->addRoute('POST', '/editWhItems', [($player), 'editWhItems']);
+            $r->addRoute('POST', '/deleteWhItems', [($player), 'deleteWhItems']);
+            $r->addRoute('POST', '/itemDelete', [($player), 'itemDelete']);
+            $r->addRoute('POST', '/itemEdit', [($player), 'itemEdit']);
+            $r->addRoute('POST', '/jail', [($player), 'jail']);
+            $r->addRoute('POST', '/linkedGear', [($player), 'linkedGear']);
+            $r->addRoute('POST', '/restore', [($player), 'restore']);
+            $r->addRoute('POST', '/unJail', [($player), 'unJail']);
+        });
 
         // Misc
-        // GET
-        $r->addRoute('GET', '/misc/disbandGuild', [($misc), 'disbandGuild']);
-        $r->addRoute('GET', '/misc/guildLeaderChange', [($misc), 'guildLeaderChange']);
-        $r->addRoute('GET', '/misc/guildNameChange', [($misc), 'guildNameChange']);
-        $r->addRoute('GET', '/misc/guildSearch', [($misc), 'guildSearch']);
-        $r->addRoute('GET', '/misc/itemList', [($misc), 'itemList']);
-        $r->addRoute('GET', '/misc/itemSearch', [($misc), 'itemSearch']);
-        $r->addRoute('GET', '/misc/mobList', [($misc), 'mobList']);
-        $r->addRoute('GET', '/misc/playersOnline', [($misc), 'playersOnline']);
-        $r->addRoute('GET', '/misc/statPadders', [($misc), 'statPadders']);
-        $r->addRoute('GET', '/misc/worldChat', [($misc), 'worldChat']);
-        // POST
-        $r->addRoute('POST', '/misc/guildLeaderChange', [($misc), 'guildLeaderChange']);
-        $r->addRoute('POST', '/misc/guildNameChange', [($misc), 'guildNameChange']);
-        $r->addRoute('POST', '/misc/guildSearch', [($misc), 'guildSearch']);
-        $r->addRoute('POST', '/misc/itemSearch', [($misc), 'itemSearch']);
+        $r->addGroup('/misc', function (FastRoute\RouteCollector $r) {
+            $session = new Classes\Utils\Session;
+            $userClass = new Classes\Utils\User($session);
+            $misc = new App\Controllers\Admin\Misc($userClass);
+            // GET
+            $r->addRoute('GET', '/disbandGuild', [($misc), 'disbandGuild']);
+            $r->addRoute('GET', '/guildLeaderChange', [($misc), 'guildLeaderChange']);
+            $r->addRoute('GET', '/guildNameChange', [($misc), 'guildNameChange']);
+            $r->addRoute('GET', '/guildSearch', [($misc), 'guildSearch']);
+            $r->addRoute('GET', '/itemList', [($misc), 'itemList']);
+            $r->addRoute('GET', '/itemSearch', [($misc), 'itemSearch']);
+            $r->addRoute('GET', '/mobList', [($misc), 'mobList']);
+            $r->addRoute('GET', '/playersOnline', [($misc), 'playersOnline']);
+            $r->addRoute('GET', '/statPadders', [($misc), 'statPadders']);
+            $r->addRoute('GET', '/worldChat', [($misc), 'worldChat']);
+            // POST
+            $r->addRoute('POST', '/guildLeaderChange', [($misc), 'guildLeaderChange']);
+            $r->addRoute('POST', '/guildNameChange', [($misc), 'guildNameChange']);
+            $r->addRoute('POST', '/guildSearch', [($misc), 'guildSearch']);
+            $r->addRoute('POST', '/itemSearch', [($misc), 'itemSearch']);
+        });
 
         // SExtended
         // GET

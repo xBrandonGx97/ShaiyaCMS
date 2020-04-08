@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Compiler\Compiler;
 use Dotenv\Dotenv;
 use Framework\Core\Loader;
 use Classes\DB\MSSQL as DB;
@@ -20,11 +19,6 @@ class Bootstrap
         $this->loader = new Loader;
 
         $this->init();
-    }
-
-    public function __($string)
-    {
-        //return translation of string here
     }
 
     private function init()
@@ -170,7 +164,7 @@ class Bootstrap
 
     public function loadLangs()
     {
-        define('MESSAGES', require_once RESOURCES_PATH . '/langs/' .LANG. '/messages.php');
+        define('MESSAGES', require_once RESOURCES_PATH . '/langs/' . LANG . '/messages.php');
     }
 
     public function loadConfigs()

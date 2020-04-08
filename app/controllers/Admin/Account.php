@@ -64,11 +64,14 @@ class Account extends Controller
 
     public function edit()
     {
+        $edit = $this->model(Models\Admin\Account\AccountEdit::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'edit' => $edit
         ];
 
         $this->view('pages/ap/account/edit', $data);

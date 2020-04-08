@@ -16,9 +16,17 @@ class Session
     {
         if (!isset($_SESSION)) {
             // Start our session
-            session_name($this->name);
+            if (!empty($name)) {
+                session_name($this->name);
+            } else {
+                session_name('Default');
+            }
             session_start();
-            setcookie($this->name, session_id(), 0, '/', null, null, true);
+            if (!empty($name)) {
+                setcookie($this->name, session_id(), 0, '/', null, null, true);
+            } else {
+                setcookie('Default', session_id(), 0, '/', null, null, true);
+            }
         }
         $this->sessionName = $this->name;
     }
