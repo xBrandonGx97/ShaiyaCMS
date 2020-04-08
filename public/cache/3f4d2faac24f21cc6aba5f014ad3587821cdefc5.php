@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'jail'); ?>
-<?php $__env->startSection('title', 'Jail Player'); ?>
+<?php $__env->startSection('index', 'deleteWhItems'); ?>
+<?php $__env->startSection('title', 'Delete WhItems'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -19,7 +19,7 @@
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Delete Player Items</h5>
+                          <h5>Warehouse Item Delete</h5>
                         </div>
                         <div class="card-body">
                           <?php if(isset($_POST['submit'])): ?>

@@ -92,7 +92,7 @@
                                 Could not find any items matching your provided character information.
                               <?php endif; ?>
                             <?php else: ?>
-                              Character id can not be empty.
+                              You must select a character!
                             <?php endif; ?>
                           <?php elseif(isset($_POST['submit3'])): ?>
                             <input type="hidden" name="userId" value="<?php echo e($data['item']->userId); ?>"/>

@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'worldChat')
-@section('title', 'World Chat')
+@section('index', 'chatSearch')
+@section('title', 'Chat Search')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')

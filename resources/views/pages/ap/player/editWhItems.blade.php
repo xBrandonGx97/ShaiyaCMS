@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'jail')
-@section('title', 'Jail Player')
+@section('index', 'editWhItems')
+@section('title', 'Edit WhItems')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')
