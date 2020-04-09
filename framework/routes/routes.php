@@ -154,6 +154,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('GET', '/statPadders', [($misc), 'statPadders']);
             $r->addRoute('GET', '/worldChat', [($misc), 'worldChat']);
             // POST
+            $r->addRoute('POST', '/disbandGuild', [($misc), 'disbandGuild']);
             $r->addRoute('POST', '/guildLeaderChange', [($misc), 'guildLeaderChange']);
             $r->addRoute('POST', '/guildNameChange', [($misc), 'guildNameChange']);
             $r->addRoute('POST', '/guildSearch', [($misc), 'guildSearch']);

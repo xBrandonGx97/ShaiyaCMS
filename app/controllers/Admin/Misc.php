@@ -18,11 +18,14 @@ class Misc extends Controller
 
     public function disbandGuild()
     {
+        $guild = $this->model(Models\Admin\Misc\DisbandGuild::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'guild' => $guild
         ];
 
         $this->view('pages/ap/misc/disbandGuild', $data);
