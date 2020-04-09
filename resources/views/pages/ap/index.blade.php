@@ -32,7 +32,9 @@
                             @endif
                         @else
                             {{-- You must be logged in to access the admin dashboard. --}}
-                            Sorry, you do not have permission to control the admin panel.
+                            {{-- Sorry, you do not have permission to control the admin panel. --}}
+                            {{-- {{redirect('/')}} --}}
+                            {{abort(404)}}
                         @endif
                     @else
                         {{redirect('/admin/auth/login')}}

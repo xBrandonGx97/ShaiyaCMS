@@ -32,7 +32,10 @@
                             <?php endif; ?>
                         <?php else: ?>
                             
-                            Sorry, you do not have authorization to control the admin panel.
+                            
+                            
+                            <?php echo e(abort(404)); ?>
+
                         <?php endif; ?>
                     <?php else: ?>
                         <?php echo e(redirect('/admin/auth/login')); ?>
