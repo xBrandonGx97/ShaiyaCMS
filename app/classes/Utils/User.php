@@ -261,6 +261,32 @@ class User
         }
     }
 
+    public function getStatusColor(int $Status): string
+    {
+        switch ($Status) {
+            case 0:
+                return 'Player';
+            case 16:
+                return '<span class="fw_bold" style="color:#FF0000;">Administrator</span>';
+            case 32:
+                return 'GameMaster';
+            case 48:
+                return 'GameMaster';
+            case 64:
+                return 'GameMaster Assistant';
+            case 80:
+                return 'GameMaster Assistant';
+            case 128:
+                return 'GameSage';
+            case -1:
+                return 'Banned';
+            case -5:
+                return 'Permanently Banned';
+            default:
+                return 'Player';
+        }
+    }
+
     public function getFaction(int $Faction): string
     {
         switch ($Faction) {
