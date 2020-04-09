@@ -79,6 +79,8 @@ function table($table)
             return 'PS_GameDefs.dbo.MobItems';
         case 'shSkills':
             return 'PS_GameDefs.dbo.Skills';
+        case 'shPointLog':
+            return 'PS_GameData.dbo.PointLog';
         case 'statPadders':
             return 'ShaiyaCMS.dbo.stat_padders';
         case 'tickets':

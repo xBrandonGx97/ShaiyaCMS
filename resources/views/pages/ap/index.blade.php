@@ -17,8 +17,8 @@
                             <div class="row">
                                 @include('partials.ap.panels.newlyRegistered')
                                 @include('partials.ap.panels.totalAccounts')
-                                @include('partials.ap.panels.onlineLast24')
-                                @include('partials.ap.panels.onlineCurrent')
+                                @include('partials.ap.panels.online')
+                                @include('partials.ap.panels.spentPoints')
                             </div>
                             {{-- Action Logs --}}
                             <div class="row">

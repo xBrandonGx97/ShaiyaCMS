@@ -14,7 +14,7 @@
     </li>
   </ul>
   <div class="card daily-sales">
-    <div class="tab-content" id="myTabContent1">
+    <div class="tab-content">
       <div class="tab-pane fade" id="nr-7" role="tabpanel" aria-labelledby="nr-7-tab">
         <h6 class="mb-4">Newly Registered (Last 7D)</h6>
         <div class="row d-flex align-items-center">

@@ -17,8 +17,8 @@
                             <div class="row">
                                 <?php echo $__env->make('partials.ap.panels.newlyRegistered', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php echo $__env->make('partials.ap.panels.totalAccounts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <?php echo $__env->make('partials.ap.panels.onlineLast24', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <?php echo $__env->make('partials.ap.panels.onlineCurrent', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                <?php echo $__env->make('partials.ap.panels.online', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                <?php echo $__env->make('partials.ap.panels.spentPoints', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
                             
                             <div class="row">

@@ -14,12 +14,12 @@
     </li>
   </ul>
   <div class="card daily-sales">
-    <div class="tab-content" id="myTabContent1">
+    <div class="tab-content">
       <div class="tab-pane fade" id="nr-7" role="tabpanel" aria-labelledby="nr-7-tab">
         <h6 class="mb-4">Newly Registered (Last 7D)</h6>
         <div class="row d-flex align-items-center">
           <div class="col-9">
-            <h3 class="f-w-300 d-flex align-items-center m-b-0" id="newlyRegistered">
+            <h3 class="f-w-300 d-flex align-items-center m-b-0" id="newlyRegistered7">
               <i class="fas fa-fw fa-user-plus text-c-green f-30 m-r-10"></i>
               {{$data['panels']->getNewlyRegistered(7)}}
             </h3>
@@ -30,7 +30,7 @@
         <h6 class="mb-4">Newly Registered (Last 14D)</h6>
         <div class="row d-flex align-items-center">
           <div class="col-9">
-            <h3 class="f-w-300 d-flex align-items-center m-b-0" id="newlyRegistered">
+            <h3 class="f-w-300 d-flex align-items-center m-b-0" id="newlyRegistered14">
               <i class="fas fa-fw fa-user-plus text-c-green f-30 m-r-10"></i>
               {{$data['panels']->getNewlyRegistered(14)}}
             </h3>
@@ -41,7 +41,7 @@
         <h6 class="mb-4">Newly Registered (Last 30D)</h6>
         <div class="row d-flex align-items-center">
           <div class="col-9">
-            <h3 class="f-w-300 d-flex align-items-center m-b-0" id="newlyRegistered">
+            <h3 class="f-w-300 d-flex align-items-center m-b-0" id="newlyRegistered30">
               <i class="fas fa-fw fa-user-plus text-c-green f-30 m-r-10"></i>
               {{$data['panels']->getNewlyRegistered(30)}}
             </h3>
@@ -64,6 +64,9 @@
 </div>
 <script>
 setInterval(function(){
+  $("#newlyRegistered7").load(window.location.href + " #newlyRegistered7" )
+  $("#newlyRegistered14").load(window.location.href + " #newlyRegistered14" )
+  $("#newlyRegistered30").load(window.location.href + " #newlyRegistered30" )
   $("#newlyRegistered").load(window.location.href + " #newlyRegistered" )
 }, 60000);
 </script>

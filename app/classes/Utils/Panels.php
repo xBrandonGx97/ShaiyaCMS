@@ -33,44 +33,39 @@ class Panels
         return $query[0]->Count;
     }
 
-    public function getOnlineLastDate($dateDiff)
+    public function getOnline($dateDiff = null)
     {
-        $query = db::table(table('shUserLoginStatus'))
-                        ->selectRaw('COUNT(*) AS \'Login\'')
-                        ->whereRaw('LogoutTime >= DATEADD(day, -' . $dateDiff . ', GETDATE())')
-                        ->limit(1)
-                        ->get();
+        if ($dateDiff) {
+            $query = db::table(table('shUserLoginStatus'))
+                ->selectRaw('COUNT(*) AS \'Login\'')
+                ->whereRaw('LogoutTime >= DATEADD(day, -' . $dateDiff . ', GETDATE())')
+                ->limit(1)
+                ->get();
+        } else {
+            $query = db::table(table('shCharData'))
+                ->selectRaw('COUNT(*) AS \'Login\'')
+                ->where('LoginStatus', 1)
+                ->limit(1)
+                ->get();
+        }
         return $query[0]->Login;
     }
 
-    public function getOnlineLast1()
+    public function getSpentPoints($dateDiff = null)
     {
-        return $this->getOnlineLastDate(1);
-    }
-
-    public function getOnlineLast7()
-    {
-        return $this->getOnlineLastDate(7);
-    }
-
-    public function getOnlineLast14()
-    {
-        return $this->getOnlineLastDate(14);
-    }
-
-    public function getOnlineLast30()
-    {
-        return $this->getOnlineLastDate(30);
-    }
-
-    public function getOnlineCurrent()
-    {
-        $query = db::table(table('shCharData'))
-                        ->selectRaw('COUNT(*) AS \'Login\'')
-                        ->where('LoginStatus', 1)
-                        ->limit(1)
-                        ->get();
-        return $query[0]->Login;
+        if ($dateDiff) {
+            $query = db::table(table('shPointLog'))
+                ->selectRaw('COUNT(UsePoint) AS \'SpentPoints\'')
+                ->whereRaw('UseDate >= DATEADD(day, -' . $dateDiff . ', GETDATE())')
+                ->limit(1)
+                ->get();
+        } else {
+            $query = db::table(table('shPointLog'))
+                ->selectRaw('COUNT(UsePoint) AS \'SpentPoints\'')
+                ->limit(1)
+                ->get();
+        }
+        return $query[0]->SpentPoints;
     }
 
     public function actionLogs($limit = 8)
