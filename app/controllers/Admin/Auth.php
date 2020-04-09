@@ -7,9 +7,11 @@ use Classes\Utils as Utils;
 
 class Auth extends Controller
 {
-    public function __construct(Utils\User $user)
+    public function __construct(Utils\User $user, Utils\Session $session)
     {
-            $this->user = $user;
+        $this->session = $session;
+        $this->auth = new Utils\Auth($this->session);
+        $this->user = $user;
     }
 
     public function login()
@@ -21,5 +23,10 @@ class Auth extends Controller
         ];
 
         $this->view('pages/ap/auth/login', $data);
+    }
+
+    public function logout()
+    {
+        $this->auth->logout();
     }
 }

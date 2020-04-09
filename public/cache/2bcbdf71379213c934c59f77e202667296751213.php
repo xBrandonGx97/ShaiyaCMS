@@ -59,12 +59,12 @@
           <div class="dropdown-menu dropdown-menu-right profile-notification">
             <div class="pro-head">
               <span><?php echo e($data['user']->DisplayName); ?> - <?php echo $data['user']->getStatusColor($data['user']->Status); ?></span>
-              <a href="#" class="dud-logout" title="Logout">
+              <a href="/admin/auth/logout" class="dud-logout" title="Logout">
                 <i class="feather icon-log-out"></i>
               </a>
             </div>
             <ul class="pro-body">
-              <li><a href="javascript:" class="dropdown-item"><i class="feather icon-log-out"></i> Logout</a></li>
+              <li><a href="/admin/auth/logout" class="dropdown-item"><i class="feather icon-log-out"></i> Logout</a></li>
             </ul>
           <?php endif; ?>
           </div>

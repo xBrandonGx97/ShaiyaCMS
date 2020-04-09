@@ -73,12 +73,13 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         $admin = new App\Controllers\Admin\Admin($userClass);
         $sExtended = new App\Controllers\Admin\SExtended($userClass);
-        $auth = new App\Controllers\Admin\Auth($userClass);
+        $auth = new App\Controllers\Admin\Auth($userClass, $session);
 
         $r->addRoute('GET', '', [($admin), 'index']);
 
         // Auth
         $r->addRoute('GET', '/auth/login', [($auth), 'login']);
+        $r->addRoute('GET', '/auth/logout', [($auth), 'logout']);
 
         // Admin
         $r->addRoute('GET', '/accessLogs', [($admin), 'accessLogs']);

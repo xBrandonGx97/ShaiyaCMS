@@ -50,6 +50,8 @@ class Auth extends Controller
                 $this->auth->logout();
             }
             echo json_encode($arr);
+        } else {
+            $this->auth->logout();
         }
     }
 
