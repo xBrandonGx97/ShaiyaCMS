@@ -1,5 +1,5 @@
 <div class="col-md-6 col-xl-3">
-  <div class="card daily-sales">
+  <div class="card totalAccts">
     <div class="card-block">
       <h6 class="mb-4">Total Accounts</h6>
       <div class="row d-flex align-items-center">

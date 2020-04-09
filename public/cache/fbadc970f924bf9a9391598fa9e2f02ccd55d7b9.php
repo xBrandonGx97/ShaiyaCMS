@@ -13,7 +13,7 @@
       <a class="nav-link active" id="on-live-tab" data-toggle="tab" href="#on-live" role="tab" aria-controls="on-live" aria-selected="true">Live</a>
     </li>
   </ul>
-  <div class="card daily-sales">
+  <div class="card onlineUsers">
     <div class="tab-content">
       <div class="tab-pane fade" id="on-7" role="tabpanel" aria-labelledby="on-7-tab">
         <h6 class="mb-4">Online (Last 24 Hours)</h6>

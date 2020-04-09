@@ -13,7 +13,7 @@
       <a class="nav-link active" id="sp-all-tab" data-toggle="tab" href="#sp-all" role="tab" aria-controls="sp-all" aria-selected="true">All</a>
     </li>
   </ul>
-  <div class="card daily-sales">
+  <div class="card spendPoints">
     <div class="tab-content">
       <div class="tab-pane fade" id="sp-7" role="tabpanel" aria-labelledby="sp-7-tab">
         <h6 class="mb-4">Spent Points (Last 24 Hours)</h6>
