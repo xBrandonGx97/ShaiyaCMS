@@ -53,3 +53,9 @@
 .table-dark{
 	background-color:#3f4d67 !important;
 }
+
+/* Fix header dropdown bug */
+
+.dropdown-toggle::after {
+	width: auto !important;
+}
