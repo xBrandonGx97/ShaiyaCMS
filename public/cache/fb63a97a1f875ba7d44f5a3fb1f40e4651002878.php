@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="/resources/themes/ap/plugins/animation/css/animate.min.css">
 <!-- Vendor CSS -->
 <link rel="stylesheet" href="/resources/themes/ap/css/style.css">
+<!-- Dark Theme -->
+<link rel="stylesheet" href="/resources/themes/ap/css/layouts/dark.css">
 <!-- Custom CSS -->
 <link rel="stylesheet" href="/resources/themes/ap/css/custom.css">
 <link rel="stylesheet" href="/resources/themes/ap/css/helpers.css">

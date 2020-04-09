@@ -1,4 +1,4 @@
-<nav class="pcoded-navbar">
+<nav class="pcoded-navbar navbar-dark brand-dark">
   <div class="navbar-wrapper">
     <div class="navbar-brand header-logo">
       <a href="/admin" class="b-brand">
