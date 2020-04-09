@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'search'); ?>
-<?php $__env->startSection('title', 'Account Search'); ?>
+<?php $__env->startSection('index', 'edit'); ?>
+<?php $__env->startSection('title', 'Account Edit'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -19,7 +19,7 @@
                     <div class="col-sm-12">
                       <div class="card align-items-center">
                         <div class="card-header">
-                          <h5>Account Search</h5>
+                          <h5>Edit Account</h5>
                         </div>
                         <div class="card-body">
                           <?php if(isset($_POST['submit'])): ?>
