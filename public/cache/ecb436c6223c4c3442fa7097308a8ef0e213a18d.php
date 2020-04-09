@@ -15,20 +15,20 @@
         <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
           <a href="/admin" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
         </li>
-        <?php if($data['user']->isADM()): ?>
-          <?php echo $__env->make('partials.ap.nav.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
+          <?php if($data['user']->isADM()): ?>
+            <?php echo $__env->make('partials.ap.nav.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+          <?php endif; ?>
+          <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
+            <?php echo $__env->make('partials.ap.nav.account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('partials.ap.nav.player', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('partials.ap.nav.misc', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('partials.ap.nav.sExtended', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+          <?php endif; ?>
+          <?php if($data['user']->isGS()): ?>
+            <?php echo $__env->make('partials.ap.nav.gs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+          <?php endif; ?>
         <?php endif; ?>
-        <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-          <?php echo $__env->make('partials.ap.nav.account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-          <?php echo $__env->make('partials.ap.nav.player', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-          <?php echo $__env->make('partials.ap.nav.misc', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-          <?php echo $__env->make('partials.ap.nav.sExtended', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <?php endif; ?>
-        <?php if($data['user']->isGS()): ?>
-          <?php echo $__env->make('partials.ap.nav.gs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <?php endif; ?>
-          
-          
     </div>
   </div>
 </nav>

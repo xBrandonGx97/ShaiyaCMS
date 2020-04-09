@@ -10,29 +10,34 @@
             <div class="pcoded-content">
                 <div class="pcoded-inner-content">
                     
-                    <?php if($data['user']->isAuthorized()): ?>
-                        
-                        <?php if($data['user']->isADM()): ?>
+                    <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
+                        <?php if($data['user']->isStaff()): ?>
                             
-                            <div class="row">
-                                <?php echo $__env->make('partials.ap.panels.newlyRegistered', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <?php echo $__env->make('partials.ap.panels.totalAccounts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <?php echo $__env->make('partials.ap.panels.online', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <?php echo $__env->make('partials.ap.panels.spentPoints', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            </div>
+                            <?php if($data['user']->isADM()): ?>
+                                
+                                <div class="row">
+                                    <?php echo $__env->make('partials.ap.panels.newlyRegistered', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('partials.ap.panels.totalAccounts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('partials.ap.panels.online', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('partials.ap.panels.spentPoints', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                </div>
+                                
+                                <div class="row">
+                                    <?php echo $__env->make('partials.ap.panels.actionLogs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                    <?php echo $__env->make('partials.ap.panels.gmLogs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                </div>
+                                <?php Separator(10) ?>
+                                
+                                <?php echo $__env->make('partials.ap.panels.newUsers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            <?php endif; ?>
+                        <?php else: ?>
                             
-                            <div class="row">
-                                <?php echo $__env->make('partials.ap.panels.actionLogs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <?php echo $__env->make('partials.ap.panels.gmLogs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            </div>
-                            <?php Separator(10) ?>
-                            
-                            <?php echo $__env->make('partials.ap.panels.newUsers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            Sorry, you do not have authorization to control the admin panel.
                         <?php endif; ?>
                     <?php else: ?>
-                        
                         <?php echo e(redirect('/admin/auth/login')); ?>
 
+                        
                     <?php endif; ?>
                 </div>
             </div>

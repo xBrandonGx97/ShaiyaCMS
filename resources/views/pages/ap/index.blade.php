@@ -10,29 +10,34 @@
             <div class="pcoded-content">
                 <div class="pcoded-inner-content">
                     {{-- is logged in and is staff --}}
-                    @if($data['user']->isAuthorized())
-                        {{-- is admin --}}
-                        @if($data['user']->isADM())
-                            {{-- panels --}}
-                            <div class="row">
-                                @include('partials.ap.panels.newlyRegistered')
-                                @include('partials.ap.panels.totalAccounts')
-                                @include('partials.ap.panels.online')
-                                @include('partials.ap.panels.spentPoints')
-                            </div>
-                            {{-- Action Logs --}}
-                            <div class="row">
-                                @include('partials.ap.panels.actionLogs')
-                                @include('partials.ap.panels.gmLogs')
-                            </div>
-                            @Separator(10)
-                            {{-- New Users --}}
-                            @include('partials.ap.panels.newUsers')
+                    @auth
+                        @if($data['user']->isStaff())
+                            {{-- is admin --}}
+                            @if($data['user']->isADM())
+                                {{-- panels --}}
+                                <div class="row">
+                                    @include('partials.ap.panels.newlyRegistered')
+                                    @include('partials.ap.panels.totalAccounts')
+                                    @include('partials.ap.panels.online')
+                                    @include('partials.ap.panels.spentPoints')
+                                </div>
+                                {{-- Action Logs --}}
+                                <div class="row">
+                                    @include('partials.ap.panels.actionLogs')
+                                    @include('partials.ap.panels.gmLogs')
+                                </div>
+                                @Separator(10)
+                                {{-- New Users --}}
+                                @include('partials.ap.panels.newUsers')
+                            @endif
+                        @else
+                            {{-- You must be logged in to access the admin dashboard. --}}
+                            Sorry, you do not have permission to control the admin panel.
                         @endif
                     @else
-                        {{-- You must be logged in to access the admin dashboard. --}}
                         {{redirect('/admin/auth/login')}}
-                    @endif
+                        {{-- You must be logged in to control the admin panel. --}}
+                    @endauth
                 </div>
             </div>
         </div>

@@ -59,3 +59,8 @@
 .dropdown-toggle::after {
 	width: auto !important;
 }
+
+/* .pcoded-navbar.navbar-dark .pcoded-inner-navbar li.active>a, .pcoded-navbar.navbar-dark .pcoded-inner-navbar li:focus>a, .pcoded-navbar.navbar-dark .pcoded-inner-navbar li:hover>a {
+	background: rgba(4,169,245,.1) !important;
+}
+ */
