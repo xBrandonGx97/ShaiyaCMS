@@ -138,11 +138,14 @@ class Misc extends Controller
 
     public function statPadders()
     {
+        $stat = $this->model(Models\Admin\Misc\StatPadders::class);
+
         $this->user->fetchUser();
 
         $data = [
             'user' => $this->user,
-            'logSys' => $this->logSys
+            'logSys' => $this->logSys,
+            'stat' => $stat
         ];
 
         $this->view('pages/ap/misc/statPadders', $data);

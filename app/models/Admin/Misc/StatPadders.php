@@ -13,4 +13,12 @@ class StatPadders
         $this->data = new Utils\Data;
         $this->logSys = new LogSys;
     }
+
+    public function getStatPadders()
+    {
+        $stat = DB::table(table('statPadders'))
+            ->select()
+            ->get();
+        return $stat;
+    }
 }
