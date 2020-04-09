@@ -53,7 +53,7 @@
       <li>
         <div class="dropdown drp-user">
           <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="icon feather icon-settings"></i>
+            <i class="icon feather icon-user"></i>
           </a>
           <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
           <div class="dropdown-menu dropdown-menu-right profile-notification">
