@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <?php $__currentLoopData = $data['panels']['newUsers']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <?php $__currentLoopData = $data['panels']->newUsers(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
               <td><?php echo e($data['user']->getFaction($user->Faction)); ?></td>
               <td><?php echo e($user->UserID); ?></td>

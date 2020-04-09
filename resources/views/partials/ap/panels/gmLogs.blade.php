@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($data['panels']['gmLogs'] as $log)
+            @foreach ($data['panels']->gmLogs() as $log)
               <tr>
                 <td>{{$log->CharName}}</td>
                 <td>{{$log->Command}}</td>

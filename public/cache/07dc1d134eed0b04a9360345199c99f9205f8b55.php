@@ -5,7 +5,7 @@
       Admin Panel Action Logs
     </div>
     <div class="card-block content_bg content pContent">
-      <?php if(count($data['panels']['actionLogs']) > 0): ?>
+      <?php if(count($data['panels']->actionLogs()) > 0): ?>
         <div class="table-responsive">
           <table class="table table-striped" id="actionLogs">
             <thead>
@@ -15,7 +15,7 @@
               </tr>
             </thead>
             <tbody>
-              <?php $__currentLoopData = $data['panels']['actionLogs']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $action): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php $__currentLoopData = $data['panels']->actionLogs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $action): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <td><?php echo e($action->UserID); ?> - <?php echo e($action->Action); ?></td>
                   <td>

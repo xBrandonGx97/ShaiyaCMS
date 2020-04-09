@@ -11,8 +11,8 @@ class Admin extends Controller
 {
     public function __construct(Utils\User $user)
     {
-            $this->user = $user;
-            $this->logSys = new LogSys;
+        $this->user = $user;
+        $this->logSys = new LogSys;
     }
 
     public function index()
@@ -21,17 +21,7 @@ class Admin extends Controller
 
         $dataClass = new Utils\Data;
 
-        $panelInstance = new Utils\Panels;
-
-        $panels = [
-            'newlyRegistered' => $panelInstance->getNewlyRegistered(),
-            'totalAccounts' => $panelInstance->getTotalAccounts(),
-            'onlineLast24' => $panelInstance->getOnlineLast1(),
-            'onlineCurrent' => $panelInstance->getOnlineCurrent(),
-            'actionLogs' => $panelInstance->actionLogs(),
-            'gmLogs' => $panelInstance->gmLogs(),
-            'newUsers' => $panelInstance->newUsers()
-        ];
+        $panels = new Utils\Panels;
 
         $data = [
             'user' => $this->user,

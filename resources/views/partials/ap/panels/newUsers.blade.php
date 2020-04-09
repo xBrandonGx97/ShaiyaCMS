@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($data['panels']['newUsers'] as $user)
+          @foreach ($data['panels']->newUsers() as $user)
             <tr>
               <td>{{$data['user']->getFaction($user->Faction)}}</td>
               <td>{{$user->UserID}}</td>

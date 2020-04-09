@@ -6,7 +6,7 @@
         <div class="col-9">
           <h3 class="f-w-300 d-flex align-items-center m-b-0" id="onlineCurrent">
             <i class="fas fa-fw fa-globe text-c-green f-30 m-r-10"></i>
-            {{$data['panels']['onlineCurrent']}}
+            {{$data['panels']->getOnlineCurrent()}}
           </h3>
         </div>
       </div>

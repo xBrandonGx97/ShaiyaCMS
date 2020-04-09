@@ -6,7 +6,7 @@
         <div class="col-9">
           <h3 class="f-w-300 d-flex align-items-center m-b-0" id="totalAccounts">
             <i class="fas fa-fw fa-search-plus text-c-green f-30 m-r-10"></i>
-            {{$data['panels']['totalAccounts']}}
+            {{$data['panels']->getTotalAccounts()}}
           </h3>
         </div>
       </div>

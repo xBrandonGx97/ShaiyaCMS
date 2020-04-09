@@ -5,7 +5,7 @@
       Admin Panel Action Logs
     </div>
     <div class="card-block content_bg content pContent">
-      @if(count($data['panels']['actionLogs']) > 0)
+      @if(count($data['panels']->actionLogs()) > 0)
         <div class="table-responsive">
           <table class="table table-striped" id="actionLogs">
             <thead>
@@ -15,7 +15,7 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($data['panels']['actionLogs'] as $action)
+              @foreach ($data['panels']->actionLogs() as $action)
                 <tr>
                   <td>{{$action->UserID}} - {{$action->Action}}</td>
                   <td>

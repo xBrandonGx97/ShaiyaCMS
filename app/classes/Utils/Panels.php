@@ -1,19 +1,26 @@
 <?php
 
 namespace Classes\Utils;
+
 use Illuminate\Database\Capsule\Manager as db;
 
 class Panels
 {
-
     // maybe make model instead?
-    public function getNewlyRegistered()
+    public function getNewlyRegistered($dateDiff = null)
     {
-        $query = db::table(table('shUserData'))
-                        ->selectRaw('COUNT(*) AS \'Login\'')
-                        ->whereRaw('JoinDate >= DATEADD(day, -14, GETDATE())')
-                        ->limit(1)
-                        ->get();
+        if ($dateDiff) {
+            $query = db::table(table('shUserData'))
+                ->selectRaw('COUNT(*) AS \'Login\'')
+                ->whereRaw('JoinDate >= DATEADD(day, -' . $dateDiff . ', GETDATE())')
+                ->limit(1)
+                ->get();
+        } else {
+            $query = db::table(table('shUserData'))
+                ->selectRaw('COUNT(*) AS \'Login\'')
+                ->limit(1)
+                ->get();
+        }
         return $query[0]->Login;
     }
 
@@ -30,7 +37,7 @@ class Panels
     {
         $query = db::table(table('shUserLoginStatus'))
                         ->selectRaw('COUNT(*) AS \'Login\'')
-                        ->whereRaw('LogoutTime >= DATEADD(day, -'.$dateDiff.', GETDATE())')
+                        ->whereRaw('LogoutTime >= DATEADD(day, -' . $dateDiff . ', GETDATE())')
                         ->limit(1)
                         ->get();
         return $query[0]->Login;

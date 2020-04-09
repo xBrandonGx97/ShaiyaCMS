@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <?php $__currentLoopData = $data['panels']['gmLogs']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $log): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $data['panels']->gmLogs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $log): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <tr>
                 <td><?php echo e($log->CharName); ?></td>
                 <td><?php echo e($log->Command); ?></td>
