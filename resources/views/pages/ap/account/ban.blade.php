@@ -44,6 +44,7 @@
                               <input type="text" class="form-control" name="CharName" placeholder="Character Name"/>
                               @Separator(20)
                               <textarea class="form-control" name="Reason" cols="50" rows="10" placeholder="Reason/Infraction"></textarea>
+                              {{-- <textarea id="classic-editor"></textarea> --}}
                               @Separator(10)
                               Ban Length:
                               <select name="Length" class="form-control" style="width:auto;">
