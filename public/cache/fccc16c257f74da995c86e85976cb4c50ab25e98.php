@@ -19,8 +19,8 @@
       <a href="#!" class="">Find Items</a>
       <ul class="pcoded-submenu" style="display: block;">
         <li class=""><a href="/admin/misc/itemList" class="">Item List</a></li>
-        <li class=""><a href="/admin/misc/itemSearch" class="">Item Search By Category</a></li>
-        <li class=""><a href="#" class="">Item Search By Name</a></li>
+        <li class=""><a href="/admin/misc/itemSearchCat" class="">Item Search By Category</a></li>
+        <li class=""><a href="/admin/misc/itemSearchName" class="">Item Search By Name</a></li>
       </ul>
     </li>
     <li class=""><a href="/admin/misc/mobList" class="">Mob List</a></li>

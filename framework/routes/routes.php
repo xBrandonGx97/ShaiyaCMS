@@ -149,7 +149,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('GET', '/guildNameChange', [($misc), 'guildNameChange']);
             $r->addRoute('GET', '/guildSearch', [($misc), 'guildSearch']);
             $r->addRoute('GET', '/itemList', [($misc), 'itemList']);
-            $r->addRoute('GET', '/itemSearch', [($misc), 'itemSearch']);
+            $r->addRoute('GET', '/itemSearchCat', [($misc), 'itemSearchCat']);
+            $r->addRoute('GET', '/itemSearchName', [($misc), 'itemSearchName']);
             $r->addRoute('GET', '/mobList', [($misc), 'mobList']);
             $r->addRoute('GET', '/playersOnline', [($misc), 'playersOnline']);
             $r->addRoute('GET', '/statPadders', [($misc), 'statPadders']);
@@ -159,7 +160,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('POST', '/guildLeaderChange', [($misc), 'guildLeaderChange']);
             $r->addRoute('POST', '/guildNameChange', [($misc), 'guildNameChange']);
             $r->addRoute('POST', '/guildSearch', [($misc), 'guildSearch']);
-            $r->addRoute('POST', '/itemSearch', [($misc), 'itemSearch']);
+            $r->addRoute('POST', '/itemSearchCat', [($misc), 'itemSearchCat']);
         });
 
         // SExtended

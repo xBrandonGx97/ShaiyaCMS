@@ -5,7 +5,7 @@ namespace App\Models\Admin\Misc;
 use Illuminate\Database\Capsule\Manager as DB;
 use Classes\Utils as Utils;
 
-class ItemSearch
+class ItemSearchName
 {
     public function __construct()
     {

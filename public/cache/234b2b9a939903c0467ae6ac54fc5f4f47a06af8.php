@@ -1,19 +1,19 @@
-@extends('layouts.ap.app')
-@section('index', 'itemSearch')
-@section('title', 'Item Search')
-@section('zone', 'AP')
-@section('content')
-  @include('partials.ap.nav')
-  @include('partials.ap.header')
+<?php $__env->startSection('index', 'itemSearch'); ?>
+<?php $__env->startSection('title', 'Item Search'); ?>
+<?php $__env->startSection('zone', 'AP'); ?>
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('partials.ap.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
       <div class="pcoded-content">
         <div class="pcoded-inner-content">
-          {{-- is logged in and is staff --}}
-          @if($data['user']->isAuthorized())
-            {{-- is adm, gm or gma --}}
-            @if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA())
-              {{$data['logSys']->createLog('Visited World Chat Log')}}
+          
+          <?php if($data['user']->isAuthorized()): ?>
+            
+            <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
+              <?php echo e($data['logSys']->createLog('Visited World Chat Log')); ?>
+
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -22,10 +22,10 @@
                         <div class="card-header">
                           <h5>Item Search By Category</h5>
                         </div>
-                        <div class="card-body">
-                          @if (isset($_POST['submit']))
-                            @if (count($data['items']->getItems()) > 0)
-                              <table class="table table-dark" id="ItmSrch">
+                        <div class="card-body table-responsive">
+                          <?php if(isset($_POST['submit'])): ?>
+                            <?php if(count($data['items']->getItems()) > 0): ?>
+                              <table class="table table-striped" id="ItmSrch">
                                 <thead>
                                   <tr>
                                     <th>ItemName</th>
@@ -35,23 +35,23 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($data['items']->getItems() as $res)
+                                <?php $__currentLoopData = $data['items']->getItems(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                   <tr>
-                                    <td>{{$res->ItemName}}</td>
-                                    <td>{{$res->ItemID}}</td>
-                                    <td>{{$res->Type}}</td>
-                                    <td>{{$res->TypeID}}</td>
+                                    <td><?php echo e($res->ItemName); ?></td>
+                                    <td><?php echo e($res->ItemID); ?></td>
+                                    <td><?php echo e($res->Type); ?></td>
+                                    <td><?php echo e($res->TypeID); ?></td>
                                   </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                               </table>
                               <p class="text-center">
-                                <button type="button" onclick="window.location.href='{{$_SERVER['REQUEST_URI']}}'" class="btn btn-sm btn-primary" name="return">Return back to item Search</button>
+                                <button type="button" onclick="window.location.href='<?php echo e($_SERVER['REQUEST_URI']); ?>'" class="btn btn-sm btn-primary" name="return">Return back to item Search</button>
                               </p>
-                            @else
+                            <?php else: ?>
                               Could not find any results matching the criteria.
-                            @endif
-                          @else
+                            <?php endif; ?>
+                          <?php else: ?>
                             <form method="post">
                               <div class="form-group mx-sm-3 mb-2">
                                 <table class="table table-striped">
@@ -108,17 +108,18 @@
                                 </p>
                               </div>
                             </form>
-                          @endif
+                          <?php endif; ?>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            @endif
-          @else
-            {{redirect('/admin/auth/login')}}
-          @endif
+            <?php endif; ?>
+          <?php else: ?>
+            <?php echo e(redirect('/admin/auth/login')); ?>
+
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -132,4 +133,6 @@
     });
 	});
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.ap.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Brandon\Documents\GitHub\Shaiya-Project-v3\resources\views/pages/ap/misc/itemSearchCat.blade.php ENDPATH**/ ?>
