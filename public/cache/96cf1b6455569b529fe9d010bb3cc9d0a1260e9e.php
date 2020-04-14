@@ -40,7 +40,7 @@
                               </thead>
                               <tbody>
                                 <?php $__currentLoopData = $data['guild']->getGuildData(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                  <tr>
+                                  <tr id="<?php echo e($res->GuildID); ?>">
                                     <td><?php echo e($res->Rank); ?></td>
                                     <td>
                                       <input type="text" class="form-control" name="guildName" value="<?php echo e($res->GuildName); ?>"/>
@@ -62,7 +62,11 @@
                                     </td>
                                     <td><textarea class="form-control" name="Remark"><?php echo e($res->Remark); ?></textarea></td>
                                     <td><?php echo e(date("M d, Y", strtotime($res->CreateDate))); ?></td>
-                                    <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Update</button></td>
+                                    <td>
+                                      <button type="submit" class="btn btn-sm btn-primary" id="<?php echo e($res->GuildID); ?>" name="submit">
+                                        Update
+                                      </button>
+                                    </td>
                                   </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </tbody>

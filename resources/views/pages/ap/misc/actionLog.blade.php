@@ -104,8 +104,8 @@
                                   <input type="text" class="form-control" placeholder="User ID" name="user"/>
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
-                                  <input type="date" class="form-control" name="startDate"/>
-                                  <input type="date" class="form-control m_l_5" name="endDate"/>
+                                  <input type="date" class="form-control" name="startDate" value="{{date('Y-m-d')}}"/>
+                                  <input type="date" class="form-control m_l_5" name="endDate" value="{{date('Y-m-d', time()+86400)}}"/>
                                 </div>
                                 <p class="text-center">
                                   <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>

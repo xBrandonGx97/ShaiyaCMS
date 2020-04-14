@@ -41,7 +41,7 @@
                               </thead>
                               <tbody>
                                 @foreach ($data['guild']->getGuildData() as $res)
-                                  <tr>
+                                  <tr id="{{$res->GuildID}}">
                                     <td>{{$res->Rank}}</td>
                                     <td>
                                       <input type="text" class="form-control" name="guildName" value="{{$res->GuildName}}"/>
@@ -63,7 +63,11 @@
                                     </td>
                                     <td><textarea class="form-control" name="Remark">{{$res->Remark}}</textarea></td>
                                     <td>{{date("M d, Y", strtotime($res->CreateDate))}}</td>
-                                    <td><button type="submit" class="btn btn-sm btn-primary" name="submit">Update</button></td>
+                                    <td>
+                                      <button type="submit" class="btn btn-sm btn-primary" id="{{$res->GuildID}}" name="submit">
+                                        Update
+                                      </button>
+                                    </td>
                                   </tr>
                                 @endforeach
                               </tbody>
