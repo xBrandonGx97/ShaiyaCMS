@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'itemEdit')
-@section('title', 'Item Edit')
+@section('index', 'editWhItems')
+@section('title', 'Edit Warehouse Items')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')

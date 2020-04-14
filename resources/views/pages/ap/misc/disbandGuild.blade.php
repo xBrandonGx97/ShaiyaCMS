@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'guildLeaderChange')
-@section('title', 'Guild Leader Change')
+@section('index', 'disbandGuild')
+@section('title', 'Disband Guild')
 @section('zone', 'AP')
 @section('content')
   @include('partials.ap.nav')

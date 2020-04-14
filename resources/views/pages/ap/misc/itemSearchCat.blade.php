@@ -1,5 +1,5 @@
 @extends('layouts.ap.app')
-@section('index', 'itemSearch')
+@section('index', 'itemSearchCat')
 @section('title', 'Item Search')
 @section('zone', 'AP')
 @section('content')

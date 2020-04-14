@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'itemEdit'); ?>
-<?php $__env->startSection('title', 'Item Edit'); ?>
+<?php $__env->startSection('index', 'editWhItems'); ?>
+<?php $__env->startSection('title', 'Edit Warehouse Items'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

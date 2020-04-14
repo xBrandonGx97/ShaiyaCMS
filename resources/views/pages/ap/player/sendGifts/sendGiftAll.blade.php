@@ -1,6 +1,6 @@
 @extends('layouts.ap.app')
-@section('index', 'dashboard')
-@section('title', 'Dashboard')
+@section('index', 'sendGiftAll')
+@section('title', 'Send Gift All')
 @section('zone', 'AP')
 @section('content')
     @include('partials.ap.nav')
