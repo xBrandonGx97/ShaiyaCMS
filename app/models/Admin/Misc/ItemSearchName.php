@@ -10,13 +10,13 @@ class ItemSearchName
     public function __construct()
     {
         $this->data = new Utils\Data;
-        $this->type = isset($_POST["ItemID"]) ? $this->data->purify(trim($_POST["ItemID"])) : false;
+        $this->name = isset($_POST["search"]) ? $this->data->purify(trim($_POST["search"])) : false;
     }
     public function getItems()
     {
         $items = DB::table(table('shItems'))
             ->select()
-            ->where('Type', $this->type)
+            ->where('ItemName', 'LIKE', '%'.$this->name.'%')
             ->where('ItemName', 'NOT LIKE', '%?%')
             ->orderBy('ItemID')
             ->get();

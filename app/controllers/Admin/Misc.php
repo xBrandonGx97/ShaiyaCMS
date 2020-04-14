@@ -16,6 +16,21 @@ class Misc extends Controller
         $this->logSys = new LogSys;
     }
 
+    public function actionLog()
+    {
+        $action = $this->model(Models\Admin\Misc\ActionLog::class);
+
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'action' => $action
+        ];
+
+        $this->view('pages/ap/misc/actionLog', $data);
+    }
+
     public function disbandGuild()
     {
         $guild = $this->model(Models\Admin\Misc\DisbandGuild::class);
@@ -119,6 +134,21 @@ class Misc extends Controller
         ];
 
         $this->view('pages/ap/misc/itemSearchName', $data);
+    }
+
+    public function manageGuilds()
+    {
+        $guild = $this->model(Models\Admin\Misc\ManageGuilds::class);
+
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'guild' => $guild
+        ];
+
+        $this->view('pages/ap/misc/manageGuilds', $data);
     }
 
     public function mobList()

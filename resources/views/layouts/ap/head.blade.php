@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="{{APP['author']}}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Favicon -->
 <link href="/resources/themes/core/images/icons/favicon.png" rel="icon" type="image/x-icon">
 <!-- Google Fonts -->

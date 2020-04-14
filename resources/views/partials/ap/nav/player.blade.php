@@ -26,5 +26,12 @@
     </li>
     <li class=""><a href="/admin/player/chatSearch" class="">Player Chat Search</a></li>
     <li class=""><a href="/admin/player/restore" class="">Restore Character</a></li>
+    <li class="pcoded-hasmenu pcoded-trigger">
+      <a href="#!" class="">Send Items to Giftbox</a>
+      <ul class="pcoded-submenu" style="display: block;">
+        <li class=""><a href="/admin/player/sendGiftPlayer" class="">Send Gift to Player</a></li>
+        <li class=""><a href="/admin/player/sendGiftAll" class="">Send Gift to All Players</a></li>
+      </ul>
+    </li>
   </ul>
 </li>

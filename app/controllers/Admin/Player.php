@@ -152,6 +152,152 @@ class Player extends Controller
         $this->view('pages/ap/player/restore', $data);
     }
 
+    public function sendGiftPlayer()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys
+        ];
+
+        $this->view('pages/ap/player/sendGifts/sendGiftPlayer', $data);
+    }
+
+    public function sendGiftAll()
+    {
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys
+        ];
+
+        $this->view('pages/ap/player/sendGifts/sendGiftAll', $data);
+    }
+
+    public function sgpPost()
+    {
+        $gift = $this->model(Models\Admin\Player\Gift::class);
+
+        $charName = isset($_POST['CharName']) ? $this->data->purify(trim($_POST['CharName'])) : false;
+        $itemId = isset($_POST['ItemID']) ? $this->data->purify(trim($_POST['ItemID'])) : false;
+        $itemCount = isset($_POST['ItemCount']) ? $this->data->purify(trim($_POST['ItemCount'])) : false;
+
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'postChecks' => [
+                'char' => $charName,
+                'itemId' => $itemId,
+                'itemCount' => $itemCount
+            ],
+            'gift' => $gift
+        ];
+
+        $this->view('pages/ap/fetchApi/player/sendGiftPlayer', $data);
+    }
+
+    public function sgpVerifyPost()
+    {
+        $gift = $this->model(Models\Admin\Player\Gift::class);
+
+        $this->user->fetchUser();
+
+        $charName = isset($_POST['CharName']) ? $this->data->purify(trim($_POST['CharName'])) : false;
+        $itemId = isset($_POST['ItemID']) ? $this->data->purify(trim($_POST['ItemID'])) : false;
+        $itemCount = isset($_POST['ItemCount']) ? $this->data->purify(trim($_POST['ItemCount'])) : false;
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'postChecks' => [
+                'char' => $charName,
+                'itemId' => $itemId,
+                'itemCount' => $itemCount
+            ],
+            'gift' => $gift
+        ];
+
+        $this->view('pages/ap/fetchApi/player/verifySendGiftPlayer', $data);
+    }
+
+    public function sgpSubmitPost()
+    {
+        $gift = $this->model(Models\Admin\Player\Gift::class);
+
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'gift' => $gift
+        ];
+
+        $this->view('pages/ap/fetchApi/player/submitSendGiftPlayer', $data);
+    }
+
+    public function sgaPost()
+    {
+        $gift = $this->model(Models\Admin\Player\Gift::class);
+
+        $itemId = isset($_POST['ItemID']) ? $this->data->purify(trim($_POST['ItemID'])) : false;
+        $itemCount = isset($_POST['ItemCount']) ? $this->data->purify(trim($_POST['ItemCount'])) : false;
+
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'postChecks' => [
+                'itemId' => $itemId,
+                'itemCount' => $itemCount
+            ],
+            'gift' => $gift
+        ];
+
+        $this->view('pages/ap/fetchApi/player/sendGiftAll', $data);
+    }
+
+    public function sgaVerifyPost()
+    {
+        $gift = $this->model(Models\Admin\Player\Gift::class);
+
+        $this->user->fetchUser();
+
+        $itemId = isset($_POST['ItemID']) ? $this->data->purify(trim($_POST['ItemID'])) : false;
+        $itemCount = isset($_POST['ItemCount']) ? $this->data->purify(trim($_POST['ItemCount'])) : false;
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'postChecks' => [
+                'itemId' => $itemId,
+                'itemCount' => $itemCount
+            ],
+            'gift' => $gift
+        ];
+
+        $this->view('pages/ap/fetchApi/player/verifySendGiftAll', $data);
+    }
+
+    public function sgaSubmitPost()
+    {
+        $gift = $this->model(Models\Admin\Player\Gift::class);
+
+        $this->user->fetchUser();
+
+        $data = [
+            'user' => $this->user,
+            'logSys' => $this->logSys,
+            'gift' => $gift
+        ];
+
+        $this->view('pages/ap/fetchApi/player/submitSendGiftAll', $data);
+    }
+
     public function unJail()
     {
         $unJail = $this->model(Models\Admin\Player\UnJail::class);

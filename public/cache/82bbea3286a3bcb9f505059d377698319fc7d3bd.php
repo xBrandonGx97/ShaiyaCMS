@@ -1,5 +1,5 @@
-<?php $__env->startSection('index', 'dashboard'); ?>
-<?php $__env->startSection('title', 'Dashboard'); ?>
+<?php $__env->startSection('index', 'mobList'); ?>
+<?php $__env->startSection('title', 'Mob List'); ?>
 <?php $__env->startSection('zone', 'AP'); ?>
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.ap.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

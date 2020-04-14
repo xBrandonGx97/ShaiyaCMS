@@ -124,6 +124,9 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('GET', '/jail', [($player), 'jail']);
             $r->addRoute('GET', '/linkedGear', [($player), 'linkedGear']);
             $r->addRoute('GET', '/restore', [($player), 'restore']);
+            $r->addRoute('GET', '/sendGiftPlayer', [($player), 'sendGiftPlayer']);
+            $r->addRoute('GET', '/sendGiftPlayers', [($player), 'sendGiftPlayers']);
+            $r->addRoute('GET', '/sendGiftAll', [($player), 'sendGiftAll']);
             $r->addRoute('GET', '/unJail', [($player), 'unJail']);
             // POST
             $r->addRoute('POST', '/chatSearch', [($player), 'chatSearch']);
@@ -135,6 +138,12 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('POST', '/jail', [($player), 'jail']);
             $r->addRoute('POST', '/linkedGear', [($player), 'linkedGear']);
             $r->addRoute('POST', '/restore', [($player), 'restore']);
+            $r->addRoute('POST', '/sendGiftPlayer', [($player), 'sgpPost']);
+            $r->addRoute('POST', '/verifySendGiftPlayer', [($player), 'sgpVerifyPost']);
+            $r->addRoute('POST', '/submitSendGiftPlayer', [($player), 'sgpSubmitPost']);
+            $r->addRoute('POST', '/sendGiftAll', [($player), 'sgaPost']);
+            $r->addRoute('POST', '/verifySendGiftAll', [($player), 'sgaVerifyPost']);
+            $r->addRoute('POST', '/submitSendGiftAll', [($player), 'sgaSubmitPost']);
             $r->addRoute('POST', '/unJail', [($player), 'unJail']);
         });
 
@@ -144,6 +153,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $userClass = new Classes\Utils\User($session);
             $misc = new App\Controllers\Admin\Misc($userClass);
             // GET
+            $r->addRoute('GET', '/actionLog', [($misc), 'actionLog']);
             $r->addRoute('GET', '/disbandGuild', [($misc), 'disbandGuild']);
             $r->addRoute('GET', '/guildLeaderChange', [($misc), 'guildLeaderChange']);
             $r->addRoute('GET', '/guildNameChange', [($misc), 'guildNameChange']);
@@ -151,16 +161,19 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('GET', '/itemList', [($misc), 'itemList']);
             $r->addRoute('GET', '/itemSearchCat', [($misc), 'itemSearchCat']);
             $r->addRoute('GET', '/itemSearchName', [($misc), 'itemSearchName']);
+            $r->addRoute('GET', '/manageGuilds', [($misc), 'manageGuilds']);
             $r->addRoute('GET', '/mobList', [($misc), 'mobList']);
             $r->addRoute('GET', '/playersOnline', [($misc), 'playersOnline']);
             $r->addRoute('GET', '/statPadders', [($misc), 'statPadders']);
             $r->addRoute('GET', '/worldChat', [($misc), 'worldChat']);
             // POST
+            $r->addRoute('POST', '/actionLog', [($misc), 'actionLog']);
             $r->addRoute('POST', '/disbandGuild', [($misc), 'disbandGuild']);
             $r->addRoute('POST', '/guildLeaderChange', [($misc), 'guildLeaderChange']);
             $r->addRoute('POST', '/guildNameChange', [($misc), 'guildNameChange']);
             $r->addRoute('POST', '/guildSearch', [($misc), 'guildSearch']);
             $r->addRoute('POST', '/itemSearchCat', [($misc), 'itemSearchCat']);
+            $r->addRoute('POST', '/itemSearchName', [($misc), 'itemSearchName']);
         });
 
         // SExtended
