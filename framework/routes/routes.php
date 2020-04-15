@@ -79,7 +79,11 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         // Auth
         $r->addRoute('GET', '/auth/login', [($auth), 'login']);
+        $r->addRoute('GET', '/auth/signup', [($auth), 'signup']);
         $r->addRoute('GET', '/auth/logout', [($auth), 'logout']);
+
+        // POST
+        $r->addRoute('POST', '/auth/login', [($auth), 'login']);
 
         // Admin
         $r->addRoute('GET', '/accessLogs', [($admin), 'accessLogs']);
