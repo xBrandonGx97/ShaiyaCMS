@@ -178,6 +178,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
             $r->addRoute('POST', '/guildSearch', [($misc), 'guildSearch']);
             $r->addRoute('POST', '/itemSearchCat', [($misc), 'itemSearchCat']);
             $r->addRoute('POST', '/itemSearchName', [($misc), 'itemSearchName']);
+            $r->addRoute('POST', '/manageGuilds', [($misc), 'manageGuilds']);
         });
 
         // SExtended

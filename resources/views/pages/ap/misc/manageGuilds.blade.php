@@ -23,6 +23,9 @@
                           <h5>Manage Guilds</h5>
                         </div>
                         <div class="card-body">
+                          @if (isset($_POST['submit']))
+                            {!!$data['guild']->updateGuild()!!}
+                          @endif
                           @if (count($data['guild']->getGuildData()) > 0)
                             <table class="table table-striped">
                               <thead>
@@ -41,34 +44,36 @@
                               </thead>
                               <tbody>
                                 @foreach ($data['guild']->getGuildData() as $res)
-                                  <tr id="{{$res->GuildID}}">
-                                    <td>{{$res->Rank}}</td>
-                                    <td>
-                                      <input type="text" class="form-control" name="guildName" value="{{$res->GuildName}}"/>
-                                    </td>
-                                    <td>
-                                      <select name="guildMaster" class="form-control">
-                                        @foreach ($data['guild']->getGuildCharsByGuild($res->GuildID) as $chars)
-                                          <option value="{{$chars->CharID}}">[{{$chars->GuildLevel}}]{{$chars->CharName}}</option>
-                                        @endforeach
-                                      </select>
-                                    </td>
-                                    <td>{{$data['user']->getFaction($res->Country)}}</td>
-                                    <td>{{$res->GuildPoint}}</td>
-                                    <td>
-                                      <input type="text" class="form-control" name="guildHouse" value="{{$res->BuyHouse}}"/>
-                                    </td>
-                                    <td>
-                                      <input type="text" class="form-control" name="guildEtin" value="{{$res->Etin}}"/>
-                                    </td>
-                                    <td><textarea class="form-control" name="Remark">{{$res->Remark}}</textarea></td>
-                                    <td>{{date("M d, Y", strtotime($res->CreateDate))}}</td>
-                                    <td>
-                                      <button type="submit" class="btn btn-sm btn-primary" id="{{$res->GuildID}}" name="submit">
-                                        Update
-                                      </button>
-                                    </td>
-                                  </tr>
+                                  <form method="post">
+                                    <tr>
+                                      <td>{{$res->Rank}}</td>
+                                      <td>
+                                        <input type="text" class="form-control" name="guildName" value="{{$res->GuildName}}"/>
+                                      </td>
+                                      <td>
+                                        <select name="guildMaster" class="form-control">
+                                          @foreach ($data['guild']->getGuildCharsByGuild($res->GuildID) as $chars)
+                                            <option value="{{$chars->UserID}},{{$chars->CharID}},{{$chars->CharName}}">[{{$chars->GuildLevel}}]{{$chars->CharName}}</option>
+                                          @endforeach
+                                        </select>
+                                      </td>
+                                      <td>{{$data['user']->getFaction($res->Country)}}</td>
+                                      <td>{{$res->GuildPoint}}</td>
+                                      <td>
+                                        <input type="text" class="form-control" name="guildHouse" value="{{$res->BuyHouse}}"/>
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control" name="guildEtin" value="{{$res->Etin}}"/>
+                                      </td>
+                                      <td><textarea class="form-control" name="remark">{{$res->Remark}}</textarea></td>
+                                      <td>{{date("M d, Y", strtotime($res->CreateDate))}}</td>
+                                      <td>
+                                        <button type="submit" class="btn btn-sm btn-primary" name="submit" value="{{$res->GuildID}}">
+                                          Update
+                                        </button>
+                                      </td>
+                                    </tr>
+                                  </form>
                                 @endforeach
                               </tbody>
                             </table>

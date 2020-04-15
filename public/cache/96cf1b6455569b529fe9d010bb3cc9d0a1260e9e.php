@@ -22,6 +22,10 @@
                           <h5>Manage Guilds</h5>
                         </div>
                         <div class="card-body">
+                          <?php if(isset($_POST['submit'])): ?>
+                            <?php echo $data['guild']->updateGuild(); ?>
+
+                          <?php endif; ?>
                           <?php if(count($data['guild']->getGuildData()) > 0): ?>
                             <table class="table table-striped">
                               <thead>
@@ -40,34 +44,36 @@
                               </thead>
                               <tbody>
                                 <?php $__currentLoopData = $data['guild']->getGuildData(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                  <tr id="<?php echo e($res->GuildID); ?>">
-                                    <td><?php echo e($res->Rank); ?></td>
-                                    <td>
-                                      <input type="text" class="form-control" name="guildName" value="<?php echo e($res->GuildName); ?>"/>
-                                    </td>
-                                    <td>
-                                      <select name="guildMaster" class="form-control">
-                                        <?php $__currentLoopData = $data['guild']->getGuildCharsByGuild($res->GuildID); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chars): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                          <option value="<?php echo e($chars->CharID); ?>">[<?php echo e($chars->GuildLevel); ?>]<?php echo e($chars->CharName); ?></option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                      </select>
-                                    </td>
-                                    <td><?php echo e($data['user']->getFaction($res->Country)); ?></td>
-                                    <td><?php echo e($res->GuildPoint); ?></td>
-                                    <td>
-                                      <input type="text" class="form-control" name="guildHouse" value="<?php echo e($res->BuyHouse); ?>"/>
-                                    </td>
-                                    <td>
-                                      <input type="text" class="form-control" name="guildEtin" value="<?php echo e($res->Etin); ?>"/>
-                                    </td>
-                                    <td><textarea class="form-control" name="Remark"><?php echo e($res->Remark); ?></textarea></td>
-                                    <td><?php echo e(date("M d, Y", strtotime($res->CreateDate))); ?></td>
-                                    <td>
-                                      <button type="submit" class="btn btn-sm btn-primary" id="<?php echo e($res->GuildID); ?>" name="submit">
-                                        Update
-                                      </button>
-                                    </td>
-                                  </tr>
+                                  <form method="post">
+                                    <tr>
+                                      <td><?php echo e($res->Rank); ?></td>
+                                      <td>
+                                        <input type="text" class="form-control" name="guildName" value="<?php echo e($res->GuildName); ?>"/>
+                                      </td>
+                                      <td>
+                                        <select name="guildMaster" class="form-control">
+                                          <?php $__currentLoopData = $data['guild']->getGuildCharsByGuild($res->GuildID); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chars): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($chars->UserID); ?>,<?php echo e($chars->CharID); ?>,<?php echo e($chars->CharName); ?>">[<?php echo e($chars->GuildLevel); ?>]<?php echo e($chars->CharName); ?></option>
+                                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                      </td>
+                                      <td><?php echo e($data['user']->getFaction($res->Country)); ?></td>
+                                      <td><?php echo e($res->GuildPoint); ?></td>
+                                      <td>
+                                        <input type="text" class="form-control" name="guildHouse" value="<?php echo e($res->BuyHouse); ?>"/>
+                                      </td>
+                                      <td>
+                                        <input type="text" class="form-control" name="guildEtin" value="<?php echo e($res->Etin); ?>"/>
+                                      </td>
+                                      <td><textarea class="form-control" name="remark"><?php echo e($res->Remark); ?></textarea></td>
+                                      <td><?php echo e(date("M d, Y", strtotime($res->CreateDate))); ?></td>
+                                      <td>
+                                        <button type="submit" class="btn btn-sm btn-primary" name="submit" value="<?php echo e($res->GuildID); ?>">
+                                          Update
+                                        </button>
+                                      </td>
+                                    </tr>
+                                  </form>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </tbody>
                             </table>
