@@ -27,7 +27,7 @@
                             {!!$data['guild']->updateGuild()!!}
                           @endif
                           @if (count($data['guild']->getGuildData()) > 0)
-                            <table class="table table-striped">
+                            <table class="table table-striped" id="guilds">
                               <thead>
                                 <tr>
                                   <th>Rank</th>
@@ -96,7 +96,7 @@
   </div>
   <script>
 	$(document).ready(function(){
-	  $('#guildSearch').dataTable({
+	  $('#guilds').dataTable({
       "searching": false,
 		  "info": false,
 			"bLengthChange": false,
