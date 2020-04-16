@@ -21,6 +21,7 @@ class UnJail
         $char = DB::table(table('shCharData'))
             ->select('UserUID', 'UserID', 'CharID', 'CharName', 'PosX', 'PosY', 'PosZ')
             ->where('CharName', $this->charName)
+            ->orWhere('UserID', $this->charName)
             ->limit(1)
             ->get();
         return $char;
@@ -32,8 +33,8 @@ class UnJail
             $update = DB::table(table('shCharData'))
             ->where('UserUID', $this->getChar()[0]->UserUID)
             ->update(['Map' => 42, 'PosX' => 55, 'PosY' => 3, 'PosZ' => 54]);
-            $this->logSys->createLog('Un-jailed'. ' ' . $this->charName);
-            return 'Un-jailed'. ' ' . $this->charName;
+            $this->logSys->createLog('Un-jailed' . ' ' . $this->charName);
+            return 'Un-jailed' . ' ' . $this->charName;
         } catch (\Illuminate\Database\QueryException $e) {
             $this->logSys->createLog('Failed to un-jail' . ' ' . $this->charName);
             return 'Could not Un-jail player.';

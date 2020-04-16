@@ -12,8 +12,7 @@
           <?php if($data['user']->isAuthorized()): ?>
             
             <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-              <?php echo e($data['logSys']->createLog('Visited World Chat Log')); ?>
-
+              
               <div class="main-body">
                 <div class="page-wrapper">
                   <div class="row">
@@ -39,7 +38,7 @@
                           <?php endif; ?>
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
-                              <input type="text" class="form-control" placeholder="Character Name" name="CharName">
+                              <input type="text" class="form-control" placeholder="Advanced Search" name="CharName">
                             </div>
                             <p class="text-center">
                               <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>

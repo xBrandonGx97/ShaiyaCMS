@@ -38,7 +38,7 @@
                           @endif
                           <form method="post">
                             <div class="form-group mx-sm-3 mb-2">
-                              <input type="text" class="form-control" placeholder="Character Name" name="CharName">
+                              <input type="text" class="form-control" placeholder="Advanced Search" name="CharName">
                             </div>
                             <p class="text-center">
                               <button type="submit" class="btn btn-sm btn-primary" name="submit">Submit</button>

@@ -21,6 +21,7 @@ class Jail
         $char = DB::table(table('shCharData'))
             ->select('UserUID', 'UserID', 'CharID', 'CharName', 'PosX', 'PosY', 'PosZ')
             ->where('CharName', $this->charName)
+            ->orWhere('UserID', $this->charName)
             ->limit(1)
             ->get();
         return $char;
