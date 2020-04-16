@@ -10,8 +10,8 @@
             <th>Join Date</th>
             <th>Last Online Date</th>
             <th>Account Status</th>
-
             <th>Donation Points</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +23,12 @@
               <td><?php echo e(date('F d, Y', strtotime($user->LogOutTime))); ?></td>
               <td><?php echo e($data['user']->getStatus($user->Status)); ?></td>
               <td><?php echo e($user->Point); ?></td>
+              <form method="post" action="/admin/account/edit">
+                <input type="hidden" name="userId" value="<?php echo e($user->UserID); ?>"/>
+                <td>
+                  <button type="submit" class="btn btn-sm btn-primary" name="submit">Edit</button>
+                </td>
+              </form>
             </tr>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>

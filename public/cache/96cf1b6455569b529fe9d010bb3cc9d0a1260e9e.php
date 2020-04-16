@@ -101,7 +101,7 @@
       "searching": false,
 		  "info": false,
 			"bLengthChange": false,
-			"pageLength": 3,
+			"pageLength": 10,
     });
 	});
 </script>
