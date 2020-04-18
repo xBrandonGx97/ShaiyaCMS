@@ -9,67 +9,76 @@
       <div class="pcoded-content">
         <div class="pcoded-inner-content">
           
-          <?php if($data['user']->isAuthorized()): ?>
-            
-            <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
-              <?php echo e($data['logSys']->createLog('Visited Command Logs Page')); ?>
+          <?php if (\Illuminate\Support\Facades\Blade::check('auth')): ?>
+            <?php if($data['user']->isStaff()): ?>
+              
+              <?php if($data['user']->isADM() || $data['user']->isGM() || $data['user']->isGMA()): ?>
+                <?php echo e($data['logSys']->createLog('Visited Command Logs Page')); ?>
 
-              <div class="main-body">
-                <div class="page-wrapper">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="card align-items-center">
-                        <div class="card-header">
-                          <h5>GM Commands Log</h5>
-                        </div>
-                        <div class="card-body table-responsive">
-                          <table class="table table-striped" id="GmLogs">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>CharName</th>
-                                <th>Map</th>
-                                <th>PosX</th>
-                                <th>PosY</th>
-                                <th>Command</th>
-                                <th>Player Affected</th>
-                                <th>Command Result</th>
-                                <th>Usage Date</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <?php if(count($data['commandLogs']->getCommandLogs()) > 0): ?>
-                                <?php $__currentLoopData = $data['commandLogs']->getCommandLogs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $logs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                  <tr>
-                                    <td><?php echo e($data['commandLogs']->count); ?></td>
-                                    <td><?php echo e($logs->CharName); ?></td>
-                                    <td><?php echo e($data['user']->getMap($logs->MapID)); ?></td>
-                                    <td><?php echo e($logs->PosX); ?></td>
-                                    <td><?php echo e($logs->PosY); ?></td>
-                                    <td><?php echo e($logs->Command); ?></td>
-                                    <td><?php echo e($logs->PlayerAffected); ?></td>
-                                    <td><?php echo e($logs->CommandResult); ?></td>
-                                    <td><?php echo e(date("m/d/y H:i A", strtotime($logs->ActionTime))); ?></td>
-                                  </tr>
-                                  <?php
-                                    $data['commandLogs']->count++
-                                  ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                              <?php else: ?>
-                                There are currently no logs listed in the database.
-                              <?php endif; ?>
-                            </tbody>
-                          </table>
+                <div class="main-body">
+                  <div class="page-wrapper">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="card align-items-center">
+                          <div class="card-header">
+                            <h5>GM Commands Log</h5>
+                          </div>
+                          <div class="card-body table-responsive">
+                            <table class="table table-striped" id="GmLogs">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>CharName</th>
+                                  <th>Map</th>
+                                  <th>PosX</th>
+                                  <th>PosY</th>
+                                  <th>Command</th>
+                                  <th>Player Affected</th>
+                                  <th>Command Result</th>
+                                  <th>Usage Date</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <?php if(count($data['commandLogs']->getCommandLogs()) > 0): ?>
+                                  <?php $__currentLoopData = $data['commandLogs']->getCommandLogs(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $logs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr>
+                                      <td><?php echo e($data['commandLogs']->count); ?></td>
+                                      <td><?php echo e($logs->CharName); ?></td>
+                                      <td><?php echo e($data['user']->getMap($logs->MapID)); ?></td>
+                                      <td><?php echo e($logs->PosX); ?></td>
+                                      <td><?php echo e($logs->PosY); ?></td>
+                                      <td><?php echo e($logs->Command); ?></td>
+                                      <td><?php echo e($logs->PlayerAffected); ?></td>
+                                      <td><?php echo e($logs->CommandResult); ?></td>
+                                      <td><?php echo e(date("m/d/y H:i A", strtotime($logs->ActionTime))); ?></td>
+                                    </tr>
+                                    <?php
+                                      $data['commandLogs']->count++
+                                    ?>
+                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php else: ?>
+                                  There are currently no logs listed in the database.
+                                <?php endif; ?>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              <?php endif; ?>
+            <?php else: ?>
+              
+              
+              
+              <?php echo e(abort(404)); ?>
+
             <?php endif; ?>
           <?php else: ?>
             <?php echo e(redirect('/admin/auth/login')); ?>
 
+            
           <?php endif; ?>
         </div>
       </div>
