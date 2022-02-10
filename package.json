@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "sass-loader": "^8.0.2",
